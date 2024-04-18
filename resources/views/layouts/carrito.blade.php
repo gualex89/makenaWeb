@@ -11,7 +11,7 @@
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
 
 		<title>Makena</title>
-		<link rel="shortcut icon" href="images/logo/makenaMiniIcon.png">
+		<link rel="shortcut icon" href="images/logo/makenaminiicon.png">
 
 		<!-- fraimwork - css include -->
 		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
