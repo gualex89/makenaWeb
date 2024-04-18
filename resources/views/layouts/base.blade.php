@@ -300,7 +300,7 @@
 								<img src="images/ventajastpu.webp" alt="image_not_found">
 								<div class="item_content">
 									<h3 class="item_title text-white mb_30">BORDES</h3>
-									<h3 class="item_title text-white mb_30">ANTIDESLIZANTESososo</h3>
+									<h3 class="item_title text-white mb_30">ANTIDESLIZANTES</h3>
 								</div>
 							</div>
 						</div>
