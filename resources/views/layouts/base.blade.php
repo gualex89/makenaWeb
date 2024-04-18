@@ -411,42 +411,6 @@
 
 						<div class="item">
 							<a class="brand_item" href="#!">
-								<img src="images/logos/LG.png" alt="logo_LG">
-							</a>
-						</div>
-
-						<div class="item">
-							<a class="brand_item" href="#!">
-								<img src="images/logos/motorola.png" alt="logo_motorola">
-							</a>
-						</div>
-
-						<div class="item">
-							<a class="brand_item" href="#!">
-								<img src="images/logos/samsung.png" alt="logo_samsung">
-							</a>
-						</div>
-
-						<div class="item">
-							<a class="brand_item" href="#!">
-								<img src="images/logos/iphone.png" alt="logo_iphone">
-							</a>
-						</div>
-
-						<div class="item">
-							<a class="brand_item" href="#!">
-								<img src="images/logos/zte.png" alt="logo_zte">
-							</a>
-						</div>
-
-						<div class="item">
-							<a class="brand_item" href="#!">
-								<img src="images/logos/xiaomi.png" alt="logo_xiaomi">
-							</a>
-						</div>
-
-						<div class="item">
-							<a class="brand_item" href="#!">
 								<img src="images/logos/lg.png" alt="logo_LG">
 							</a>
 						</div>
@@ -456,6 +420,8 @@
 								<img src="images/logos/motorola.png" alt="logo_motorola">
 							</a>
 						</div>
+
+						
 					</div>
 				</div>
 			</div>
