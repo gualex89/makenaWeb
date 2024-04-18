@@ -1,30 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	@php
-		
-		// SDK de Mercado Pago
-		use MercadoPago\MercadoPagoConfig;
-		use MercadoPago\Client\Preference\PreferenceClient;
-		// Agrega credenciales
-		MercadoPagoConfig::setAccessToken(config('services.mercadopago.token'));
-
-		$client = new PreferenceClient();
-		$preference = $client->create([
-		"items"=> array(
-			array(
-			"title" => "Mi producto",
-			"quantity" => 1,
-			"unit_price" => 9550
-			)
-		)
-		]);
-		$preference->back_urls = array(
-			"success" => "https://www.tu-sitio/success",
-			"failure" => "http://www.tu-sitio/failure",
-			"pending" => "http://www.tu-sitio/pending"
-		);
-	@endphp	
+	
 
 
 	<head>
@@ -469,26 +446,7 @@
 
 
 		</script>
-		<script src="https://sdk.mercadopago.com/js/v2"></script>
-		<script>
-			
-			const mp = new MercadoPago("{{config('services.mercadopago.key')}}");
-			const bricksBuilder = mp.bricks();
-
-
-			mp.bricks().create("wallet", "wallet_container", {
-				initialization: {
-					preferenceId: '{{$preference->id}}',
-				},
-				customization: {
-				texts: {
-					
-					valueProp: 'smart_option',
-				},
-				},
-				});
-
-		</script>
+		
 		
 		
 		
