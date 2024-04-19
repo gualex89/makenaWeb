@@ -502,7 +502,7 @@
 			<div class="footer_bottom text-center" data-bg-color="#151515">
 				<div class="container">
 					<p class="copyright_text mb-0">
-						© All Rights Reserved <a href="#!" class="author_link text-white">jthemes</a>
+						© Diseñado por <a href="https://wa.me/56967656673" class="author_link text-white">Tatsu Web Design</a>
 					</p>
 				</div>
 			</div>
