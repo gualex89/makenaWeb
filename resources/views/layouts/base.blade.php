@@ -235,7 +235,6 @@
 				<div class="container maxw_1430">
 					<div class="motorcyclenuevas_section_title mb_30 text-center">
 						<h2 class="title_text">Nuestros <span>Productos</span></h2>
-						<p class="mb-0">Aliquam lorem ante, dapibus in, viverra</p>
 					</div>
 					<div class="tab-content mb_50">
 						<div class="row justify-content-center">
@@ -248,18 +247,12 @@
 										<div class="motorcycle_product_grid">
 											<div class="item_image">
 												<img src="{{ Voyager::image($producto->image) }}" alt="image_not_found">
-												<ul class="product_action_btns ul_li_block text-uppercase text-center clearfix">
-													<li><a href="#!"><span><i class="fas fa-shopping-cart"></i></span> <span>Add To Cart</span></a></li>
-													<li><a href="#!"><span><i class="fas fa-eye"></i></span> <span>Quick View</span></a></li>
-													<li><a href="#!"><span><i class="fas fa-filter"></i></span> <span>Compare</span></a></li>
-												</ul>
 											</div>
 											<div class="item_content">
 												<span class="item_price">{{ ($producto->price) }}</span>
 												<h3 class="item_title">
 													<a href="#!">{{ ($producto->name) }}</a>
 												</h3>
-												<span class="item_type text-uppercase">helmets - quality</span>
 												<ul class="rating_star ul_li clearfix">
 													<li><i class="fas fa-star"></i></li>
 													<li><i class="fas fa-star"></i></li>
