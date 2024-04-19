@@ -234,7 +234,7 @@
 			<section class="product_section sec_ptb_100 deco_wrap clearfix">
 				<div class="container maxw_1430">
 					<div class="motorcyclenuevas_section_title mb_30 text-center">
-						<h2 class="title_text">Nuestros <span>Productos</span></h2>
+						<h1 class="title_text">Nuestros <span>Productos</span></h1>
 					</div>
 					<div class="tab-content mb_50">
 						<div class="row justify-content-center">
@@ -273,7 +273,7 @@
 				</div>
 
 				<div class="deco_image motorcycle_image_1">
-					<img src="images/backgroundLateral.png" alt="image_not_found">
+					<img class="imagen_lateral_base" src="images/backgroundLateral.png" alt="image_not_found">
 				</div>
 			</section>
 			<!-- product_section - end

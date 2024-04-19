@@ -21053,7 +21053,9 @@ blockquote .blockquote_title {
     padding-left: 15px;
     padding-right: 15px;
   }
-
+  .imagen_lateral_base{
+    display: none;
+  }
   .arrow_ycenter .carousel_nav button:nth-child(1) {
     left: -15px;
   }
@@ -21587,6 +21589,9 @@ blockquote .blockquote_title {
   /* global - start */
   .arrow_ycenter .slick-prev {
     left: 0px;
+  }
+  .imagen_lateral_base{
+    display: none;
   }
 
   .arrow_ycenter .slick-next {
