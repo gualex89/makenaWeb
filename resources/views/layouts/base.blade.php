@@ -347,7 +347,7 @@
 			<!-- testimonial_section - start
 			================================================== -->
 			<section class="testimonial_section motorcycle_testimonial sec_ptb_100 clearfix">
-				<div class="half_bg parallaxie" data-background="images/backgrounds/bg_17.jpg"></div>
+				<div class="half_bg parallaxie" data-background="images/backgrounds/ventajasbackground.webp"></div>
 				<div class="container maxw_1430">
 					<div class="carousel_wrap position-relative">
 						<div class="motorcycle_testimonial_carousel" data-slick='{"dots": false}'>
