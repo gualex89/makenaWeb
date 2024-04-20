@@ -43,11 +43,12 @@
 
 		<!-- backtotop - start -->
 		<div id="thetop"></div>
-		<div class="backtotop bg_carparts_red">
-			<a href="#" class="scroll">
-				<i class="far fa-arrow-up"></i>
+		<div class="backtotop bg_wts">
+			<a href="http://wa.me/541122444188" class="go_to_wts" >
+				<i class="fab fa-whatsapp" style="font-size: 24px;"></i>
 			</a>
 		</div>
+		
 		<!-- backtotop - end -->
 
 		<!-- preloader - start -->

@@ -948,12 +948,13 @@ hr {
   height: 50px;
   z-index: 999;
   bottom: 50px;
-  display: none;
+  display: block !important;
   font-size: 16px;
   position: fixed;
   border-radius: 100%;
   box-shadow: 0px 10px 30px 1px rgba(0, 0, 0, 0.15);
 }
+
 .backtotop .scroll {
   z-index: 1;
   width: 100%;
@@ -964,9 +965,21 @@ hr {
   align-items: center;
   justify-content: center;
 }
+.backtotop .go_to_wts {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  color: #ffffff;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+}
+
 .backtotop.bg_carparts_red {
   box-shadow: 0px 10px 30px 1px rgba(237, 29, 36, 0.15);
 }
+
 .boton_slider {
   right: 15px;
   width: 50px;
@@ -1178,6 +1191,10 @@ button {
 
 .bg_carparts_red {
   background-color: #F831FE;
+}
+.bg_wts{
+  background-color: #25D366;
+
 }
 
 .bg_furniture_brown {
@@ -11936,7 +11953,7 @@ padding: 10px;
 .motorcycle_slider .slider_image {
   right: 70px;
   bottom: 0px;
-  max-width: 900px;
+  max-width: 700px;
   position: absolute;
 }
 .motorcycle_slider .carousel_nav {
@@ -25212,7 +25229,8 @@ blockquote .blockquote_title {
   }
 
   .motorcycle_slider .slider_image {
-    max-width: 180px;
+    max-width: 250px;
+    
   }
 
   .motorcycle_slider .item {
