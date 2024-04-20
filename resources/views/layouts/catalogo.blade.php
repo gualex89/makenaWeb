@@ -133,6 +133,7 @@
 
 			<!-- header_section - start
 		================================================== -->
+			
 		
 			<!-- sidebar mobile menu & sidebar cart - start
 			================================================== -->
@@ -201,6 +202,7 @@
 			================================================== -->
 			<!-- product_section - start
 			================================================== -->
+			<div id="aviso" class="aviso-flotante"></div>
 			<section class="product_section sec_ptb_50 clearfix" style="margin-top: 50px">
 				<div class="container maxw_1430">
 					<div class="row justify-content-lg-between">
@@ -542,7 +544,17 @@
 						element.textContent = cartItemCount;
 					});
 				}
-		
+				
+				function mostrarAviso() {
+					var aviso = document.getElementById("aviso");
+					aviso.innerText = "¡Producto agregado al carrito!";
+					aviso.style.display = "block";
+
+					// Oculta el aviso después de 3 segundos
+					setTimeout(function() {
+						aviso.style.display = "none";
+					}, 3000);
+				}
 				function updatePrices() {
 					const subtotalElement = document.querySelector('.total_price li:nth-child(1) span:nth-child(2)');
 					const totalElement = document.querySelector('.total_price li:nth-child(2) span:nth-child(2)');
@@ -560,6 +572,8 @@
 					
 					// Mostrar la modal
 					$('#addToCartModal').modal('show');
+					
+
 				}
 
 				// Agregar un manejador de eventos para el botón "OK" dentro de la modal
@@ -586,7 +600,7 @@
 					localStorage.setItem('cartItems', JSON.stringify(cartItems));
 					updateCartItems();
 					updatePrices();
-
+					mostrarAviso();
 					// Cerrar la modal
 					$('#addToCartModal').modal('hide');
 
@@ -617,7 +631,7 @@
 						`;
 						cartItemsList.innerHTML += cartItemHTML;
 					});
-
+					
 					// Actualizar el contador del carrito
 					updateCartCounter();
 				}

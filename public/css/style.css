@@ -647,6 +647,18 @@ hr {
   display: block;
   list-style: none;
 }
+.aviso-flotante {
+  position: fixed;
+  top: 100px; /* Ajusta la posición vertical según sea necesario */
+  left: 80%; /* Centra horizontalmente */
+  transform: translateX(-50%);
+  background-color: #4CAF50; /* Color de fondo */
+  color: white; /* Color del texto */
+  padding: 15px; /* Espaciado interno */
+  border-radius: 10px; /* Bordes redondeados */
+  display: none; /* Oculta por defecto */
+  z-index: 2000; /* Asegura que esté por encima de otros elementos */
+}
 
 /* list style settings - end
 ================================================== */
