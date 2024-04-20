@@ -64,30 +64,22 @@
 		<!-- preloader - start -->
 		<!-- <div id="preloader"></div> -->
 		<!-- preloader - end -->
-
-
-		<!-- header_section - start
-		================================================== -->
 		<header class="header_section motorcycle_header sticky_header clearfix">
-			<div class="header_content_wrap d-flex align-items-center">
+			<div class="header_content_wrap d-flex align-items-center" id="cintillo_carrito">
 				<div class="container-fluid prl_90">
 					<div class="row align-items-center">
 						<div class="col-lg-2">
 							<div class="brand_logo">
 								<a class="brand_link" href="/">
-									<img src="images/logo/logomakena.png" srcset="images/logo/logomakena.png 2x" alt="logo_not_found">
+									<img src="images/logo/logoMakena.png" srcset="images/logo/logoMakena.png 2x" alt="logo_not_found">
 								</a>
 
 								<ul class="mh_action_btns ul_li clearfix">
-									<li>
-										<button type="button" class="search_btn" data-toggle="collapse" data-target="#search_body_collapse" aria-expanded="false" aria-controls="search_body_collapse">
-											<i class="fal fa-search"></i>
-										</button>
-									</li>
+									
 									<li>
 										<button type="button" class="cart_btn">
 											<i class="fal fa-shopping-cart"></i>
-											<span class="btn_badge">0</span>
+											<span class="btn_badge">2</span>
 										</button>
 									</li>
 									<li><button type="button" class="mobile_menu_btn"><i class="far fa-bars"></i></button></li>
@@ -113,7 +105,6 @@
 
 						<div class="col-lg-4">
 							<ul class="action_items ul_li_right clearfix">
-								
 								<li>
 									<button type="button" class="cart_btn">CARRITO <small class="btn_badge">0</small></button>
 								</li>
@@ -131,14 +122,18 @@
 			
 		</header>
 		<!-- header_section - end
-		================================================== -->
+		================================================== 
+
+		
 
 
 		<!-- main body - start
 		================================================== -->
 		<main>
 
-
+			<!-- header_section - start
+		================================================== -->
+		
 			<!-- sidebar mobile menu & sidebar cart - start
 			================================================== -->
 			<div class="sidebar-menu-wrapper">
@@ -201,15 +196,12 @@
 
 			<!-- breadcrumb_section - start
 			================================================== -->
-			<section class="breadcrumb_section motorcycle_breadcrumb has_overlay text-white text-center d-flex align-items-end clearfix" data-background="images/slider/motorcycle/bg_01.webp">
-				<div class="overlay" data-bg-color="#191919"></div>
-				
-			</section>
+			
 			<!-- breadcrumb_section - end
 			================================================== -->
 			<!-- product_section - start
 			================================================== -->
-			<section class="product_section sec_ptb_50 clearfix">
+			<section class="product_section sec_ptb_50 clearfix" style="margin-top: 50px">
 				<div class="container maxw_1430">
 					<div class="row justify-content-lg-between">
 						<div id="filtro_lateral" class="col-lg-3 order-first">
