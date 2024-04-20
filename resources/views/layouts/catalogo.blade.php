@@ -215,7 +215,7 @@
 						<div id="filtro_lateral" class="col-lg-3 order-first">
 							<aside class="motorcycle_sidebar sidebar_section" data-bg-color="#f9f9f9">
 								<div class="sb_widget sb_category">
-									<h3 class="sb_widget_title">Categories</h3>
+									<h3 class="sb_widget_title">Categorías</h3>
 									<ul class="ul_li_block clearfix">
 										<li class="parent"><a href="#" data-category="all">Todas</a></li>
 										<li class="parent"><a href="#">Anime</a>
@@ -367,7 +367,7 @@
 				<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-					<h3 class="modal-title" id="addToCartModalLabel">Selecciona tu modelo</h3>
+					<h3 class="modal-title" id="addToCartModalLabel">Seleccioná tu modelo</h3>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -377,11 +377,13 @@
 							<div class="sb_widget sb_category">
 								
 								<div class="col-lg-12">
+									<label for="marcasDropdown" style="font-weight: bold; font-size: larger; margin:10px">Marca</label>
 									<select name="marcas" id="marcasDropdown">
-										<option value="">Seleccione</option>
+										<option value="">Seleccione</option> 
 									</select>
 								</div>
 								<div class="col-lg-12">
+									<label for="marcasDropdown" style="font-weight: bold; font-size: larger; margin:10px">Modelo</label>
 									<select name="modelos" id="modelosDropdown">
 										<option value="">Seleccione</option>
 									</select>
