@@ -212,6 +212,35 @@
 			<section class="product_section sec_ptb_50 clearfix">
 				<div class="container maxw_1430">
 					<div class="row justify-content-lg-between">
+						<div id="filtro_lateral" class="col-lg-3 order-first">
+							<aside class="motorcycle_sidebar sidebar_section" data-bg-color="#f9f9f9">
+								<div class="sb_widget sb_category">
+									<h3 class="sb_widget_title">Categories</h3>
+									<ul class="ul_li_block clearfix">
+										<li class="parent"><a href="#" data-category="all">Todas</a></li>
+										<li class="parent"><a href="#">Anime</a>
+											<ul>
+												<li><a href="#" data-category="DB">Dragon Ball</a></li>
+												<li><a href="#" data-category="OP">One Piece</a></li>
+											</ul>
+										</li>
+										<li class="parent"><a href="#" data-category="FT">Fútbol</a>
+											<ul>
+												<li><a href="#">Messi</a></li>
+												<li><a href="#">Equipos</a></li>
+											</ul>
+										</li>
+										<li class="parent"><a href="#" data-category="MU">Música</a>
+											<ul>
+												<li><a href="#">Géneros</a></li>
+												<li><a href="#">Artistas</a></li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+							</aside>
+						</div>
+			
 						<div class="col-lg-9 order-last">
 							<div class="tab-content">
 								<div id="grid_layout" class="tab-pane active">
@@ -223,7 +252,6 @@
 													<img src="{{ Voyager::image($image->image) }}" alt="{{ $image->file_name }}">
 													<ul class="product_action_btns ul_li_block text-uppercase text-center clearfix">
 														<li><a href="#!"><span><i class="fas fa-shopping-cart"></i></span> <span>Agregar al Carrito</span></a></li>
-														
 													</ul>
 												</div>
 												<div class="item_content">
@@ -245,82 +273,6 @@
 									</div>
 								</div>
 							</div>
-						</div>
-						
-						<div class="col-lg-3">
-							<aside class="motorcycle_sidebar sidebar_section" data-bg-color="#f9f9f9">
-								<div class="sb_widget sb_category">
-									<h3 class="sb_widget_title">Categories</h3>
-									<ul class="ul_li_block clearfix">
-										<li class="parent"><a href="#" data-category="all">Todas</a></li>
-										<li class="parent"><a href="#" >Anime</a>
-											<ul>
-												<li><a href="#" data-category="DB">Dragon Ball</a></li>
-												<li><a href="#" data-category="OP">One Piece</a></li>
-											</ul>
-										</li>
-										<li class="parent"><a href="#!" data-category="FT">Fútbol</a>
-											<ul>
-												<li><a href="#">Messi</a></li>
-												<li><a href="#">Equipos</a></li>
-											</ul>
-										</li>
-										<li class="parent"><a href="#!" data-category="MU">Música</a>
-											<ul>
-												<li><a href="#">Géneros</a></li>
-												<li><a href="#">Artistas</a></li>
-											</ul>
-										</li>
-									</ul>
-								</div>
-
-								
-
-								<div class="sb_widget sb_recent_post">
-									<h3 class="sb_widget_title">Más Vendidos</h3>
-									<div class="carparts_small_blog">
-										<a  href="blog_details.html">
-											<img src="images/masVendido2.png" alt="image_not_found">
-										</a>
-										<div class="item_content">
-											<ul class="rating_star ul_li clearfix">
-												<li><i class="fas fa-star"></i></li>
-												<li><i class="fas fa-star"></i></li>
-												<li><i class="fas fa-star"></i></li>
-												<li><i class="fas fa-star"></i></li>
-												<li><i class="fas fa-star"></i></li>
-											</ul>
-											<h3 class="item_title text-uppercase">
-												<a href="blog_details.html">
-													DB-11
-												</a>
-											</h3>
-											<div class="item_price"><strong data-text-color="#39b54a">{{$precioFundas}}</strong> </div>
-										</div>
-									</div>
-
-									<div class="carparts_small_blog">
-										<a  href="blog_details.html">
-											<img src="images/masVendido2.png" alt="image_not_found">
-										</a>
-										<div class="item_content">
-											<ul class="rating_star ul_li clearfix">
-												<li><i class="fas fa-star"></i></li>
-												<li><i class="fas fa-star"></i></li>
-												<li><i class="fas fa-star"></i></li>
-												<li><i class="fas fa-star"></i></li>
-												<li><i class="fas fa-star"></i></li>
-											</ul>
-											<h3 class="item_title text-uppercase">
-												<a href="blog_details.html">
-													DB-33
-												</a>
-											</h3>
-											<div class="item_price"><strong data-text-color="#39b54a">{{$precioFundas}}</strong></div>
-										</div>
-									</div>
-								</div>
-							</aside>
 						</div>
 					</div>
 				</div>

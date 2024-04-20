@@ -1019,6 +1019,9 @@ hr {
   position: fixed;
   overflow: visible;
 }
+#filtro_lateral{
+  height: fit-content;
+}
 
 /* preloader - end
 ================================================== */
