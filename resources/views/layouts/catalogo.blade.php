@@ -306,7 +306,7 @@
 
 						<div class="item">
 							<a class="brand_item" href="#!">
-								<img src="images/logos/LG.png" alt="logo_LG">
+								<img src="images/logos/lg.png" alt="logo_LG">
 							</a>
 						</div>
 
@@ -439,7 +439,7 @@
 			<div class="footer_bottom text-center" data-bg-color="#151515">
 				<div class="container">
 					<p class="copyright_text mb-0">
-						© All Rights Reserved <a href="#!" class="author_link text-white">jthemes</a>
+						© Diseñado por <a href="https://wa.me/56967656673" class="author_link text-white">Tatsu Web Design</a>
 					</p>
 				</div>
 			</div>
