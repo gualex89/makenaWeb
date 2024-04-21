@@ -245,7 +245,9 @@
 												<div class="item_image">
 													<img src="{{ Voyager::image($image->image) }}" alt="{{ $image->file_name }}">
 													<ul class="product_action_btns ul_li_block text-uppercase text-center clearfix">
-														<li><a href="#!"><span><i class="fas fa-shopping-cart"></i></span> <span>Agregar al Carrito</span></a></li>
+														<li><a class="alCarrito" href="#!"><span><i class="fas fa-shopping-cart"></i></span> <span>Agregar al Carrito</span></a></li>
+														<li><a href="#!" class="ver-btn" data-image="{{ Voyager::image($image->image) }}"><span><i class="fas fa-search"></i></span> <span>Ver</span></a></li>
+														
 													</ul>
 												</div>
 												<div class="item_content">
@@ -446,6 +448,22 @@
 		</footer>
 		<!-- footer_section - end
 		================================================== -->
+		{{-- modal de la imagen del modelo --}}
+		<div class="modal fade" id="productImageModal" tabindex="-1" role="dialog" aria-labelledby="productImageModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-sm" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="productImageModalLabel">{{ $image->file_name }}</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<img src="" alt="Imagen del Producto" id="productImage" style="max-width: 100%;">
+					</div>
+				</div>
+			</div>
+		</div>
 
 		
 		<!-- fraimwork - jquery include -->
@@ -684,11 +702,20 @@
 				// Llamar a la función para restaurar el carrito al cargar la página
 				restoreCart();
 		
-				document.querySelectorAll('.product_action_btns a').forEach(btn => {
+				document.querySelectorAll('.product_action_btns .alCarrito').forEach(btn => {
 					btn.addEventListener('click', function(event) {
 						event.preventDefault();
 						const productItem = this.closest('.motorcycle_product_grid');
 						addToCart(productItem);
+					});
+				});
+				document.querySelectorAll('.ver-btn').forEach(btn => {
+					btn.addEventListener('click', function(event) {
+						event.preventDefault();
+						const imageUrl = this.getAttribute('data-image');
+						const productImageElement = document.getElementById('productImage');
+						productImageElement.src = imageUrl;
+						$('#productImageModal').modal('show');
 					});
 				});
 		
