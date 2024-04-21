@@ -246,7 +246,7 @@
 													<img src="{{ Voyager::image($image->image) }}" alt="{{ $image->file_name }}">
 													<ul class="product_action_btns ul_li_block text-uppercase text-center clearfix">
 														<li><a class="alCarrito" href="#!"><span><i class="fas fa-shopping-cart"></i></span> <span>Agregar al Carrito</span></a></li>
-														<li><a href="#!" class="ver-btn" data-image="{{ Voyager::image($image->image) }}"><span><i class="fas fa-search"></i></span> <span>Ver</span></a></li>
+														<li><a href="#!" class="ver-btn" data-image="{{ Voyager::image($image->image) }}" data-title="{{ $image->file_name }}"><span><i class="fas fa-search"></i></span> <span>Ver</span></a></li>
 														
 													</ul>
 												</div>
@@ -713,12 +713,15 @@
 					btn.addEventListener('click', function(event) {
 						event.preventDefault();
 						const imageUrl = this.getAttribute('data-image');
+						const productName = this.getAttribute('data-title');
 						const productImageElement = document.getElementById('productImage');
 						productImageElement.src = imageUrl;
+						const modalTitleElement = document.getElementById('productImageModalLabel');
+						modalTitleElement.textContent = productName;
 						$('#productImageModal').modal('show');
 					});
 				});
-		
+						
 				document.querySelector('.cart_items_list').addEventListener('click', function(event) {
 					if (event.target.classList.contains('remove_btn')) {
 						const item = event.target.closest('li');
