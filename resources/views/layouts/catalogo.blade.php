@@ -342,7 +342,7 @@
 
 						<div class="item">
 							<a class="brand_item" href="#!">
-								<img src="images/logos/LG.png" alt="logo_LG">
+								<img src="images/logos/lg.png" alt="logo_LG">
 							</a>
 						</div>
 
