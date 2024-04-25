@@ -59,7 +59,7 @@
 		<!-- header_section - start
 		================================================== -->
 		<header class="header_section motorcycle_header sticky_header clearfix">
-			<div class="header_content_wrap d-flex align-items-center">
+			<div class="header_content_wrap d-flex align-items-center" id="cintillo_carrito">
 				<div class="container-fluid prl_90">
 					<div class="row align-items-center">
 						<div class="col-lg-2">
@@ -69,11 +69,7 @@
 								</a>
 
 								<ul class="mh_action_btns ul_li clearfix">
-									<li>
-										<button type="button" class="search_btn" data-toggle="collapse" data-target="#search_body_collapse" aria-expanded="false" aria-controls="search_body_collapse">
-											<i class="fal fa-search"></i>
-										</button>
-									</li>
+									
 									<li>
 										<button type="button" class="cart_btn">
 											<i class="fal fa-shopping-cart"></i>
@@ -103,9 +99,8 @@
 
 						<div class="col-lg-4">
 							<ul class="action_items ul_li_right clearfix">
-								
 								<li>
-									<button type="button" class="cart_btn">CARRITO<small class="btn_badge">0</small></button>
+									<button type="button" class="cart_btn">CARRITO <small class="btn_badge">0</small></button>
 								</li>
 								<li>
 									<button type="button" class="mobile_menu_btn bg_carparts_red">
@@ -121,14 +116,19 @@
 			
 		</header>
 		<!-- header_section - end
-		================================================== -->
+		================================================== 
+
+		
 
 
 		<!-- main body - start
 		================================================== -->
 		<main>
 
-
+			<!-- header_section - start
+		================================================== -->
+			
+		
 			<!-- sidebar mobile menu & sidebar cart - start
 			================================================== -->
 			<div class="sidebar-menu-wrapper">
@@ -191,15 +191,13 @@
 
 			<!-- breadcrumb_section - start
 			================================================== -->
-			<section class="breadcrumb_section motorcycle_breadcrumb has_overlay text-white text-center d-flex align-items-end clearfix" data-background="images/slider/motorcycle/bg_01.webp">
-				<div class="overlay" data-bg-color="#191919"></div>
-				
-			</section>
+			
 			<!-- breadcrumb_section - end
 			================================================== -->
 			<!-- product_section - start
 			================================================== -->
-			<section class="product_section sec_ptb_50 clearfix">
+			<div id="aviso" class="aviso-flotante"></div>
+			<section class="product_section sec_ptb_50 clearfix" style="margin-top: 80px">
 				<div class="container maxw_1430">
 					<div class="row justify-content-lg-between">
 						<div class="col-lg-9 order-last">

@@ -203,7 +203,7 @@
 			<!-- product_section - start
 			================================================== -->
 			<div id="aviso" class="aviso-flotante"></div>
-			<section class="product_section sec_ptb_50 clearfix" style="margin-top: 50px">
+			<section class="product_section sec_ptb_50 clearfix" style="margin-top: 80px">
 				<div class="container maxw_1430">
 					<div class="row justify-content-lg-between">
 						<div id="filtro_lateral" class="col-lg-3 order-first">
