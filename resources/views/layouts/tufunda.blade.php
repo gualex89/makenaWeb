@@ -271,7 +271,7 @@
 															</div>
 														</div>
 														
-														<button id="agregarAlCarritoBtn" class="css-button css-button-sliding-to-bottom css-button-sliding-to-bottom--rose buttons-editor"> Agregar al carrito</button>
+														<button id="agregarAlCarritoBtn" class="css-button css-button-sliding-to-bottom css-button-sliding-to-bottom--rose buttons-editor" style="display: none"> Agregar al carrito</button>
 														
 														
 														
@@ -290,12 +290,12 @@
 								<div class="sb_widget sb_recent_post seleccionadores">
 									<div class="sb_widget sb_category">
 										<h3 class="sb_widget_title">Selecciona tu modelo</h3>
-										<div class="col-lg-12">
+										<div class="col-lg-12 divMarcaDropdown">
 											<select name="marcas" id="marcasDropdown">
 												<option value="">Seleccione</option>
 											</select>
 										</div>
-										<div class="col-lg-12">
+										<div class="col-lg-12 divModeloDropdown">
 											<select name="modelos" id="modelosDropdown">
 												<option value="">Seleccione</option>
 											</select>
@@ -304,10 +304,7 @@
 								</div>
 								<div class="abtn_wrap col3 text-center mt-3" id="div_del_boton" data-animation="fadeInUp" data-delay=".8s">
 									<div class="col-lg-12 col-md-12 col-sm-12">
-										<a id="seleccionarModeloBtn" class="custom_btn bg_carparts_red text-uppercase special_button"  style=" max-width: 200px;">Seleccionar Modelo</a>
-									</div>
-									<div class="col-lg-12 col-md-12 col-sm-12">
-										<a id="seleccionarModeloBtn" class="custom_btn bg_carparts_red text-uppercase special_button" style="max-width: 200px;" onclick="restablecerCanvas()">Empezar de Nuevo</a>
+										<a id="btnEmpezarDeNuevo" class="custom_btn bg_carparts_red text-uppercase special_button" style="max-width: 200px;" onclick="restablecerCanvas()">Empezar de Nuevo</a>
 									</div>
 
 								</div>
@@ -545,40 +542,7 @@
 			});
 		</script>
 		<script>
-			function llenar_cmb2() {
-				console.log("llenar_cmb2 se está llamando");
-				var cmb1 = document.getElementById("cmb1");
-				var cmb2 = document.getElementById("cmb2");
-				console.log(cmb2);
-				var valor = cmb1.value;
-				var opciones_cmb2 = cmb2.options;
-				// Limpiar las opciones actuales en cmb2
-				opciones_cmb2.length = 1; // Deja el primer elemento "Seleccione"
-				
-				// Llenar cmb2 según la selección de cmb1
-				if (valor === "motorola") {
-					console.log("entro a motorola");
-					agregarOpcion(cmb2, "moto1", "Moto 1");
-					agregarOpcion(cmb2, "moto2", "Moto 2");
-					agregarOpcion(cmb2, "moto3", "Moto 3");
-					$('#cmb2').niceSelect('update');
-				} else if (valor === "apple") {
-					// Agregar opciones para la marca Apple
-					agregarOpcion(cmb2, "iphone1", "iPhone 1");
-					agregarOpcion(cmb2, "iphone2", "iPhone 2");
-					$('#cmb2').niceSelect('update');
-					// Puedes seguir añadiendo más opciones según sea necesario
-				} else if (valor === "samsung") {
-					// Agregar opciones para la marca Samsung
-					agregarOpcion(cmb2, "galaxy1", "Galaxy 1");
-					agregarOpcion(cmb2, "galaxy2", "Galaxy 2");
-					$('#cmb2').niceSelect('update');
-					// Puedes seguir añadiendo más opciones según sea necesario
-				}
-				// Puedes agregar más condiciones según las marcas que tengas
 			
-			}
-
    			 // Función auxiliar para agregar opciones al select
 			function agregarOpcion(select, valor, texto) {
 				var opcion = document.createElement("option");
@@ -601,12 +565,17 @@
 		
 				// Manejar cambio en el dropdown de marcas
 				$('#marcasDropdown').change(function() {
+					restablecerCanvas()
 					var marcaSeleccionada = $(this).val();
 		
 					// Hacer una solicitud AJAX para obtener modelos según la marca seleccionada
 					$.get('/obtener-modelos/' + marcaSeleccionada, function(data) {
 						// Limpiar modelos existentes
 						$('#modelosDropdown').empty();
+						$('#modelosDropdown').append($('<option>', {
+							value: '',
+							text: 'Seleccione'
+						}));
 		
 						// Llenar modelos
 						data.forEach(function(modelo) {
@@ -619,20 +588,21 @@
 		</script>
 		<script>
 			$(document).ready(function() {
-				// Manejar clic en el botón "Seleccionar Modelo"
-				$('#seleccionarModeloBtn').click(function() {
+				// Manejar cambio en el dropdown de modelos
+				$('#modelosDropdown').change(function() {
+					restablecerCanvas()
 					// Obtener el modelo seleccionado en el dropdown
-					var modeloSeleccionado = $('#modelosDropdown').val();
-					console.log(modeloSeleccionado)
+					var modeloSeleccionado = $(this).val();
+					console.log(modeloSeleccionado);
+					document.getElementById('agregarAlCarritoBtn').style.display = "inline-block";
 					// Hacer una solicitud AJAX para obtener la información de la base de datos
 					$.get('/obtener-imagen/' + modeloSeleccionado, function(data) {
 						// La respuesta 'data' debería contener la información de la imagen u otro dato que necesitas
 						console.log(data);
-						var rutaImagen = "storage\\" + data[0]
+						var rutaImagen = "storage\\" + data[0];
 						console.log(rutaImagen);
 						cargarImagenDeFondo(rutaImagen);
 						//$('#imagenResultado').attr('src', rutaImagen);
-						
 					});
 				});
 			});
@@ -654,7 +624,15 @@
 			function cargarImagen() {
 				document.getElementById('imageLoader').click();
 			}
-
+			function mostrarAviso() {
+				var aviso = document.getElementById("aviso");
+				aviso.innerText = "¡Producto agregado al carrito!";
+				aviso.style.display = "block";
+				// Oculta el aviso después de 3 segundos
+				setTimeout(function() {
+					aviso.style.display = "none";
+				}, 3000);
+			}
 		
 			function cargarImagenDeFondo(url) {
 				fabric.Image.fromURL(url, function (bgImg) {
@@ -823,6 +801,7 @@
 			function restablecerCanvas() {
     			canvas.clear();
 				canvas.renderAll();
+				document.getElementById('agregarAlCarritoBtn').style.display = "none";
 			}
 			function mostrarDesplegable() {
 				var desplegableContainer = document.getElementById('desplegableContainer');
@@ -898,6 +877,10 @@
 					updateCartCounter();
 					updatePrices();
 					updateCartItems();
+					mostrarAviso();
+					document.getElementById('agregarAlCarritoBtn').style.display = 'none';
+					canvas.clear();
+					canvas.renderAll();
 					// Actualizar el contador del carrito y la visualización del carrito
 					
 					// Verificar si hay un diseño en el canvas

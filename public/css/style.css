@@ -19677,6 +19677,24 @@ blockquote .blockquote_title {
 #collapseThree {
   padding-top: 10px;
 }
+.divModeloDropdown .nice-select {
+  width: 100%;
+  font-size: 19px;
+    
+}
+.divMarcaDropdown .nice-select {
+  width: 100%;
+  font-size: 19px;
+}
+.divModeloDropdown .nice-select .list {
+  width: 100%  ;
+  font-size: 19px;
+}
+.divMarcaDropdown .nice-select .list {
+  width: 100%;
+  font-size: 19px;
+}
+
 
 /* contact page - end
 ==================================================================================================== */
