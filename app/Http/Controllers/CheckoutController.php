@@ -35,7 +35,7 @@ class CheckoutController extends Controller
     $id = $preference->id;
     
 
-    dd($preference);
+   /*  dd($preference); */
     return view('layouts.checkout', array('id' => $id, 'urls' => $urls));
 
        
