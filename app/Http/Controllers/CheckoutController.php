@@ -3,13 +3,42 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use MercadoPago\MercadoPagoConfig;
+use MercadoPago\Client\Preference\PreferenceClient;
 use Illuminate\Http\Request;
 
 class CheckoutController extends Controller
 {
     public function checkout(){
+        MercadoPagoConfig::setAccessToken('APP_USR-392304675465626-030213-da3c92df128f31d0d16c935beaf2b877-514039926');
 
-        return view('layouts.checkout');
+    $client = new PreferenceClient();
+    $preference = $client->create([
+    "items"=> array(
+        array(
+        "title" => "Mi producto",
+        "quantity" => 1,
+        "unit_price" => 500
+        )
+    )
+    ]);
+    
+    $preference->back_urls = array(
+        "success" => "https://www.makenafundas.com.ar/",
+        "failure" => "https://www.makenafundas.com.ar/",
+        "pending" => "https://www.makenafundas.com.ar/"
+    );
+    $preference->auto_return = "all";
+    $preference->binary_mode = true;
+    
+    $urls = $preference->back_urls;
+    $id = $preference->id;
+    
+
+   /*  dd($preference); */
+    return view('layouts.checkout', array('id' => $id, 'urls' => $urls));
+
+       
     }
     public function SaveOrder(Request $request){
         $data = $request->all();

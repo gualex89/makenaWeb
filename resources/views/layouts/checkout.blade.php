@@ -1,33 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	@php
-		
-		// SDK de Mercado Pago
-		use MercadoPago\MercadoPagoConfig;
-		use MercadoPago\Client\Preference\PreferenceClient;
-		// Agrega credenciales
-		MercadoPagoConfig::setAccessToken(config('services.mercadopago.token'));
-
-		$client = new PreferenceClient();
-		$preference = $client->create([
-		"items"=> array(
-			array(
-			"title" => "Mi producto",
-			"quantity" => 1,
-			"unit_price" => 500,
-			)
-		)
-		]);
-		$preference->back_urls = array(
-			"success" => "https://www.makenafundas.com.ar/generica",
-			"failure" => "https://www.makenafundas.com.ar/failure",
-			"pending" => "https://www.makenafundas.com.ar/pending"
-		);
-		$preference->auto_return = "all";
-		
-
-	@endphp	
+	
 
 	<style>
 		#mensajeEntrega {
@@ -588,7 +562,7 @@
 			mp.bricks().create("wallet", "wallet_container", {
 				initialization: {
 					redirectMode: "self",
-					preferenceId: '{{$preference->id}}',
+					preferenceId: '{{$id}}',
 				},
 				customization: {
 					texts: {
@@ -1045,7 +1019,7 @@
 				console.log(email, nombre, apellido, documento, tipo_entrega,cantidad_items, valor_subtotal );
 				console.log(codigo_postal, provincia, localidad, direccion, comentarios, valor_envio);
 				console.log(logistic_type, service_type_code, carrier_id, point_id_selected);
-				console.log('{{$preference->id}}', valor_total);
+				console.log('{{$id}}', valor_total);
 				
 				const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
@@ -1075,7 +1049,7 @@
 						service_type_code: service_type_code,
 						carrier_id: carrier_id,
 						point_id_selected: point_id_selected,
-						preference_id: '{{$preference->id}}',
+						preference_id: '{{$id}}',
 						items_cart: itemsCart	
 
 					})
