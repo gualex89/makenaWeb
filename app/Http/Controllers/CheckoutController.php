@@ -24,12 +24,12 @@ class CheckoutController extends Controller
     ]);
     
     $preference->back_urls = array(
-        "success" => "https://www.makenafundas.com.ar/",
-        "failure" => "https://www.makenafundas.com.ar/",
-        "pending" => "https://www.makenafundas.com.ar/"
+        "success" => "https://www.makenafundas.com.ar/success",
+        "failure" => "https://www.makenafundas.com.ar/failure",
+        "pending" => "https://www.makenafundas.com.ar/pending"
     );
     $preference->auto_return = "all";
-    $preference->binary_mode = true;
+    
     
     $urls = $preference->back_urls;
     $id = $preference->id;
