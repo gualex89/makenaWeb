@@ -24,7 +24,7 @@
 			"failure" => "https://www.makenafundas.com.ar/failure",
 			"pending" => "https://www.makenafundas.com.ar/pending"
 		);
-		$preference->auto_return = "approved";
+		$preference->auto_return = "all";
 		
 
 	@endphp	
