@@ -263,6 +263,7 @@
 			<!-- product_section - start
 			================================================== -->
 			<section class="product_section sec_ptb_50 clearfix">
+				<h1>{{$request}}</h1>
 				<div class="container maxw_1430">
 					<div class="row justify-content-lg-between">
 						<div class="col-lg-9 order-last">

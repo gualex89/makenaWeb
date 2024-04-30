@@ -27,9 +27,11 @@ class HomeImagesController extends Controller
         return view('layouts.catalogo' );
     }
 
-    public function generica(){
+    public function generica(Request $request){
 
-        return view('layouts.generica' );
+        $payment_id = $request->payment_id;
+
+        return $request->all();
     }
 }
 

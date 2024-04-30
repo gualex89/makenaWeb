@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class CheckoutController extends Controller
 {
     public function checkout(){
-        MercadoPagoConfig::setAccessToken('APP_USR-392304675465626-030213-da3c92df128f31d0d16c935beaf2b877-514039926');
+        MercadoPagoConfig::setAccessToken(env('MP_ACCESS_TOKEN'));
 
     $client = new PreferenceClient();
     $preference = $client->create([
@@ -20,23 +20,23 @@ class CheckoutController extends Controller
         "quantity" => 1,
         "unit_price" => 500
         )
-    )
-    ]);
-    
-    $preference->back_urls = array(
-        "success" => "https://www.makenafundas.com.ar/success",
+    ),
+    "back_urls" => array(
+        
+        "success" => "https://makenaweb.test/generica",
         "failure" => "https://www.makenafundas.com.ar/failure",
         "pending" => "https://www.makenafundas.com.ar/pending"
-    );
-    $preference->auto_return = "all";
+        
+    ),
+    "auto_return" => "all"
     
+    ]);
     
-    $urls = $preference->back_urls;
     $id = $preference->id;
     
 
    /*  dd($preference); */
-    return view('layouts.checkout', array('id' => $id, 'urls' => $urls));
+    return view('layouts.checkout', array('id' => $id));
 
        
     }
