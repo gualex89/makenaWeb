@@ -15,16 +15,16 @@
 			array(
 			"title" => "Mi producto",
 			"quantity" => 1,
-			"unit_price" => 9550
+			"unit_price" => 500,
 			)
 		)
 		]);
 		$preference->back_urls = array(
-			"success" => "https://www.tu-sitio/success",
-			"failure" => "http://www.tu-sitio/failure",
-			"pending" => "http://www.tu-sitio/pending"
+			"success" => "https://www.makenafundas.com.ar/generica",
+			"failure" => "https://www.makenafundas.com.ar/failure",
+			"pending" => "https://www.makenafundas.com.ar/pending"
 		);
-		
+		$preference->auto_return = "approved";
 		
 
 	@endphp	
@@ -587,7 +587,7 @@
 
 			mp.bricks().create("wallet", "wallet_container", {
 				initialization: {
-					redirectMode: "blank",
+					redirectMode: "self",
 					preferenceId: '{{$preference->id}}',
 				},
 				customization: {

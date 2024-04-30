@@ -29,7 +29,7 @@ class HomeImagesController extends Controller
 
     public function generica(){
 
-        return view('layouts.editor' );
+        return view('layouts.generica' );
     }
 }
 
