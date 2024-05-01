@@ -26,6 +26,21 @@ class HomeImagesController extends Controller
 
         return view('layouts.catalogo' );
     }
+    public function aprobado(Request $request){
+        $preferenceId = $request->query('preference_id');
+        $status = $request->query('status');
+        $externalReference = $request->query('external_reference');
+
+        return view('layouts.success' , [
+            'preferenceId' => $preferenceId,
+            'status' => $status,
+            'externalReference' => $externalReference
+        ]);
+    }
+    public function rechazado(){
+
+        return view('layouts.failure' );
+    }
 
     public function generica(Request $request){
 

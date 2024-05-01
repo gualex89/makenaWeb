@@ -16,6 +16,10 @@ Route::get('/catalogo', [HomeImagesController::class, 'catalogo'])->name('catalo
 
 Route::get('/generica', [HomeImagesController::class, 'generica'])->name('generica');
 
+Route::get('/aprobado', [HomeImagesController::class, 'aprobado'])->name('aprobado');
+
+Route::get('/rechazado', [HomeImagesController::class, 'rechazado'])->name('rechazado');
+
 // RUTAS DEL CATALOGO
 Route::get('/catalogo', [CatalogueController::class, 'catalogo'])->name('catalogo');
 

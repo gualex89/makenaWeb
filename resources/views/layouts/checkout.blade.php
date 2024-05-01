@@ -553,24 +553,7 @@
 		<script src="https://sdk.mercadopago.com/js/v2"></script>
 		<script>
 			
-			const mp = new MercadoPago("{{config('services.mercadopago.key')}}", {
-				locale: 'es-AR'
-			});
-			const bricksBuilder = mp.bricks();
-
-
-			mp.bricks().create("wallet", "wallet_container", {
-				initialization: {
-					redirectMode: "self",
-					preferenceId: '{{$id}}',
-				},
-				customization: {
-					texts: {
-						
-						valueProp: 'smart_option',
-					},
-				},
-				});
+			
 
 		</script>
 		<script>
@@ -614,13 +597,13 @@
 				$('#tercerAcordeon').attr('disabled', 'disabled');
 				total = 0;
 				subtotal = 0;
-				
+				$('#wallet_container').empty();				
 			});
 			$('#segundoAcordeon').on('click', function() {
 				$('#tercerAcordeon').attr('disabled', 'disabled');
 				subtotal = 0;
 				total = 0;
-				
+				$('#wallet_container').empty();
 			});
 			
 			let total = 0;
@@ -647,7 +630,7 @@
 						}
 					});
 				}
-		
+				let shippingCost = 0;
 				function updateCartItems(cartItems) {
 					const cartTableBody = $('.cart_section table tbody');
 					cartTableBody.html('');
@@ -678,7 +661,7 @@
 				
 					// Calcular el total basado en el subtotal
 							// Calcular el total basado en el subtotal
-					let shippingCost = parseFloat($('input[name="carrier"]:checked').val());
+					shippingCost = parseFloat($('input[name="carrier"]:checked').val());
 
 					// Obtener el valor del radio button tipo de entrega
 					const tipoEntrega = $('input[name="tipoEntrega"]:checked').val();
@@ -727,7 +710,10 @@
 
 					let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 					updateCartItems(cartItems);
+					mercadoPago(total, subtotal, shippingCost);
 				});
+
+				
 		
 				$('#continuarButton2').on('click', function() {
 					// Verificar si se han completado los campos del segundo formulario (dirección de envío)
@@ -741,7 +727,7 @@
 					$('#collapseThree').collapse('show');
 					let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 					updateCartItems(cartItems);
-					console.log(logistic_type);
+					mercadoPago(total, subtotal, shippingCost);
 					
 				});
 				$('#continuarButtonRetiroSucursal').on('click', function() {
@@ -750,11 +736,64 @@
 					$('#collapseThree').collapse('show');
 					let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 					updateCartItems(cartItems);
+					mercadoPago(total, subtotal, shippingCost);
 				});
 				
 			});
 
+			function mercadoPago(total, subtotal, shippingCost) {
+				
+				const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+				
+				fetch('/api/mercado-pago', {	
+						method: 'POST',
+						headers: {
+							'Content-Type': 'application/json',
+							'X-CSRF-TOKEN': '{{ csrf_token() }}' // Agrega el token CSRF de Laravel
+						},
+						body: JSON.stringify(
+							{
+								total : total,
+								shippingCost : shippingCost,
+								subtotal : subtotal
+							}
+						),
+					}).then(response => {
+						if (response.ok) {
+							return response.json();
+						}
+						throw new Error('Error en la respuesta del servidor.');
+					})
+					.then(data => {
+						console.log('Respuesta del servidor:', data);
+						console.log(data);
+						
+						const mp = new MercadoPago("{{config('services.mercadopago.key')}}", {
+							locale: 'es-AR'
+						});
+						const bricksBuilder = mp.bricks();
 
+
+						mp.bricks().create("wallet", "wallet_container", {
+							initialization: {
+								redirectMode: "self",
+								preferenceId: data.preferenceId,
+							},
+							customization: {
+								texts: {
+									
+									valueProp: 'smart_option',
+								},
+							},
+						});
+						// Puedes manejar la respuesta del servidor aquí
+					})
+					.catch(error => {
+						console.error('Error al enviar los datos:', error);
+					});
+			
+				
+			}
 					
 		
 		
