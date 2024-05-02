@@ -740,7 +740,7 @@
 				});
 				
 			});
-
+			let preference_id = null;
 			function mercadoPago(total, subtotal, shippingCost) {
 				
 				const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
@@ -767,7 +767,7 @@
 					.then(data => {
 						console.log('Respuesta del servidor:', data);
 						console.log(data);
-						
+						preference_id = data.preferenceId
 						const mp = new MercadoPago("{{config('services.mercadopago.key')}}", {
 							locale: 'es-AR'
 						});
@@ -1058,7 +1058,7 @@
 				console.log(email, nombre, apellido, documento, tipo_entrega,cantidad_items, valor_subtotal );
 				console.log(codigo_postal, provincia, localidad, direccion, comentarios, valor_envio);
 				console.log(logistic_type, service_type_code, carrier_id, point_id_selected);
-				console.log('{{$id}}', valor_total);
+				console.log( valor_total, preference_id);
 				
 				const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
@@ -1088,7 +1088,7 @@
 						service_type_code: service_type_code,
 						carrier_id: carrier_id,
 						point_id_selected: point_id_selected,
-						preference_id: '{{$id}}',
+						preference_id: preference_id,
 						items_cart: itemsCart	
 
 					})
