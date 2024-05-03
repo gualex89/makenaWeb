@@ -28,8 +28,9 @@ class HomeImagesController extends Controller
         return view('layouts.catalogo' );
     }
     public function aprobado(Request $request){
+
+        //Datos traido de la url de compra
         $preferenceId = $request->query('preference_id');
-        $status = $request->query('status');
         $externalReference = $request->query('external_reference');
         $payment_id = $request->query('payment_id');
 
@@ -39,19 +40,24 @@ class HomeImagesController extends Controller
         ])->get('https://api.mercadopago.com/v1/payments/' . $payment_id);
         
         if ($response->successful()) {
+
+            //Datos que vienen de la API
             $payment_data = $response->json();
             $apiExternalReference = $payment_data['external_reference'];
             $apiStatus = $payment_data['status'];
             $apiMontoPagado = $payment_data['transaction_details'] ['total_paid_amount'];
 
-            $consultaMonto = Order::find($apiExternalReference);
-            $montoAPagar = $consultaMonto->total;
+            //Datos de la base de datos
+            $BDdatos = Order::find($apiExternalReference);
+            $montoAPagar = $BDdatos->total;
+            $emailComprador = $BDdatos->email;
+
+
             if($externalReference == $apiExternalReference && $apiStatus == 'approved' && $apiMontoPagado == $montoAPagar){
                 
                 $order = Order::find($apiExternalReference);
                 
                 if($order){ 
-                    echo "El pago se ha realizado correctamente";
                     $order->update ([
                         'status' => 'Aprobado',
                     ]);
@@ -59,19 +65,8 @@ class HomeImagesController extends Controller
                 }
 
             }
-            
-            $emailTo = 'gualex89@gmail.com';
-            $pathToImage = public_path('images/logo/logomakena.png');
-
-            Mail::send('emails.test', [], function ($message) use ($emailTo, $pathToImage) {
-                $message->to($emailTo)->subject('Prueba de correo electrónico con imagen adjunta');
-                $message->attach($pathToImage, [
-                    'as' => 'logomakena.png',
-                    'mime' => 'image/png',
-                ]);
-            });
-            
-            
+                        
+            $this->sendEmail($emailComprador, $apiExternalReference);
             
 
             return view('layouts.success', [
@@ -82,6 +77,21 @@ class HomeImagesController extends Controller
             $error_message = $response->body();
             echo $error_message;
         }
+    }
+    public function sendEmail($emailComprador, $apiExternalReference) {
+        $emailTo = $emailComprador;
+        $pathToImage = public_path('images/logo/logomakena.png');
+
+        Mail::send('emails.test', [
+            'orden' => $apiExternalReference,
+
+        ], function ($message) use ($emailTo, $pathToImage) {
+            $message->to($emailTo)->subject('Prueba de correo electrónico con imagen adjunta');
+            $message->attach($pathToImage, [
+                'as' => 'logomakena.png',
+                'mime' => 'image/png',
+            ]);
+        });
     }
     public function rechazado(){
 
