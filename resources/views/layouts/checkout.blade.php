@@ -713,10 +713,10 @@
 					saveOrder();
 					setTimeout(function() {
 						mercadoPago(total, subtotal, shippingCost, idOrder);
-					}, 2000);
+					}, 1500);
 					setTimeout(function() {
 						updateOrder();
-					}, 2000);
+					}, 3000);
 					console.log(idOrder);
 					
 				});
@@ -738,10 +738,10 @@
 					saveOrder();
 					setTimeout(function() {
 						mercadoPago(total, subtotal, shippingCost, idOrder);
-					}, 5000);
+					}, 1500);
 					setTimeout(function() {
 						updateOrder();
-					}, 8000);
+					}, 3000);
 				});
 				$('#continuarButtonRetiroSucursal').on('click', function() {
 					// Habilitar y expandir el tercer acordeón
@@ -752,10 +752,10 @@
 					saveOrder();
 					setTimeout(function() {
 						mercadoPago(total, subtotal, shippingCost, idOrder);
-					}, 2000);
+					}, 1500);
 					setTimeout(function() {
 						updateOrder();
-					}, 2000);
+					}, 3000);
 				});
 				
 			});
