@@ -710,7 +710,15 @@
 
 					let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 					updateCartItems(cartItems);
-					mercadoPago(total, subtotal, shippingCost);
+					saveOrder();
+					setTimeout(function() {
+						mercadoPago(total, subtotal, shippingCost, idOrder);
+					}, 1000);
+					setTimeout(function() {
+						updateOrder();
+					}, 2000);
+					console.log(idOrder);
+					
 				});
 
 				
@@ -727,8 +735,13 @@
 					$('#collapseThree').collapse('show');
 					let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 					updateCartItems(cartItems);
-					mercadoPago(total, subtotal, shippingCost);
-					
+					saveOrder();
+					setTimeout(function() {
+						mercadoPago(total, subtotal, shippingCost, idOrder);
+					}, 1000);
+					setTimeout(function() {
+						updateOrder();
+					}, 2000);
 				});
 				$('#continuarButtonRetiroSucursal').on('click', function() {
 					// Habilitar y expandir el tercer acordeón
@@ -736,12 +749,18 @@
 					$('#collapseThree').collapse('show');
 					let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 					updateCartItems(cartItems);
-					mercadoPago(total, subtotal, shippingCost);
+					saveOrder();
+					setTimeout(function() {
+						mercadoPago(total, subtotal, shippingCost, idOrder);
+					}, 1000);
+					setTimeout(function() {
+						updateOrder();
+					}, 2000);
 				});
 				
 			});
 			let preference_id = null;
-			function mercadoPago(total, subtotal, shippingCost) {
+			function mercadoPago(total, subtotal, shippingCost, idOrder) {
 				
 				const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 				
@@ -755,7 +774,9 @@
 							{
 								total : total,
 								shippingCost : shippingCost,
-								subtotal : subtotal
+								subtotal : subtotal,
+								externalReference : idOrder
+							
 							}
 						),
 					}).then(response => {
@@ -1001,7 +1022,8 @@
 			
 			var point_id_selected='';
 			var codigo_postal='';	
-			var provincia='';	
+			var provincia='';
+				
 			var localidad='';	
 			var calle='';
 			var altura='';
@@ -1010,11 +1032,12 @@
 			var valor_envio='';
 			var logistic_type='';
 			var service_type_code='';
+			let idOrder='';
 			var carrier_id='';00
 
 			
-
-			document.getElementById("wallet_container").addEventListener("click", function(event) {
+			function saveOrder() {
+			
 				var nombre = document.querySelector('input[name="nombre"]').value;
 				var apellido = document.querySelector('input[name="apellido"]').value;
 				var documento = document.querySelector('input[name="dni"]').value;
@@ -1058,7 +1081,7 @@
 				console.log(email, nombre, apellido, documento, tipo_entrega,cantidad_items, valor_subtotal );
 				console.log(codigo_postal, provincia, localidad, direccion, comentarios, valor_envio);
 				console.log(logistic_type, service_type_code, carrier_id, point_id_selected);
-				console.log( valor_total, preference_id);
+				console.log( valor_total);
 				
 				const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
@@ -1088,7 +1111,6 @@
 						service_type_code: service_type_code,
 						carrier_id: carrier_id,
 						point_id_selected: point_id_selected,
-						preference_id: preference_id,
 						items_cart: itemsCart	
 
 					})
@@ -1100,12 +1122,44 @@
 					throw new Error('Error en la respuesta del servidor.');
 				})
 				.then(data => {
+					console.log('Respuesta del servidor:', data);
+					idOrder = data.id;
 					 // Puedes manejar la respuesta del servidor aquí
 				})
 				.catch(error => {
 					console.error('Error al enviar los datos:', error);
 				});
-			})
+			
+			}
+			function updateOrder(){
+				fetch('/actualizar-orden', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+						'X-CSRF-TOKEN': '{{ csrf_token() }}' // Agrega el token CSRF de Laravel
+					},
+					body: JSON.stringify({
+						preference_id: preference_id,
+						idOrder: idOrder
+							
+
+					})
+				})
+				.then(response => {
+					if (response.ok) {
+						return response.json();
+					}
+					throw new Error('Error en la respuesta del servidor.');
+				})
+				.then(data => {
+					console.log('Respuesta del servidor:', data);
+					
+					 // Puedes manejar la respuesta del servidor aquí
+				})
+				.catch(error => {
+					console.error('Error al enviar los datos:', error);
+				});
+			}
 			
 
 			

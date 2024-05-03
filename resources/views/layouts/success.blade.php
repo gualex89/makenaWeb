@@ -179,10 +179,10 @@
 			<section class="cart_section sec_ptb_140 clearfix cart_section vh-100">
 				<div class="container d-flex align-items-start">
 					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-					<h1>Gracias por tu compra</h1>
-					<h1>id {{ $preferenceId }}</h1>	
-					<h1>status {{ $status }}</h1>
-					<h1>external_reference {{ $externalReference }}</h1>
+						<h1>Gracias por tu compra</h1>
+
+						<p>En breve recibiras un correo con tu pedido.</p>
+						
 					</div>
 				</div>
 			</section>

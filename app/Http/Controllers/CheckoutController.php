@@ -38,11 +38,35 @@ class CheckoutController extends Controller
         $order->service_type_code = $data['service_type_code'];
         $order->carrier_id = $data['carrier_id'];
         $order->point_id = $data['point_id_selected'];
-        $order->preference_id = $data['preference_id'];
         $order->items_cart = json_encode($data['items_cart']);
         $order->save();
+        $id =$order->id_order;
         
-        return response()->json(['message' => 'Orden guardada exitosamente']);
+        return response()->json(['message' => 'Orden guardada exitosamente', 'id' => $id]);
+        
+    }
+    public function updateOrder(Request $request){
+        $data = $request->all();
+        $idOrder = $data['idOrder'];
+        $preference_id = $data['preference_id'];
+
+        $order = Order::find($idOrder);
+        if($order){
+            $order->update([
+                'preference_id' => $preference_id,
+                
+            ]);
+            
+            
+            /* dd($order); */
+            // Devolver una respuesta o realizar alguna otra lógica si es necesario
+            return response()->json(['message' => 'Orden actualizada correctamente'], 200);
+        } else {
+            // La orden no fue encontrada, puedes manejar este caso según tu lógica de aplicación
+            return response()->json(['message' => 'Orden no encontrada', 'idOrder' => $preference_id], 404);
+        }
+        
+        
         
     }
 

@@ -15,6 +15,7 @@ class MercadoPagoController extends Controller
         $total = $request->total;
         $subtotal = $request->subtotal;
         $envio = $request->shippingCost;
+        $externalReference = $request->externalReference;
         
         
         
@@ -40,14 +41,16 @@ class MercadoPagoController extends Controller
         "shipments"  => array(
             "cost" => $envio,
             "mode" => "not_specified",
-        )
+        ),
+        "external_reference" => $externalReference
+        
         
         ]);
         
         $id = $preference->id;
         
 
-    /*  dd($preference); */
+     /* dd($externalReference); */
         return response()->json(['preferenceId' => $id]);
 
        

@@ -46,4 +46,8 @@ Route::group(['prefix' => 'admin'], function () {
 Route::get('/test-zippin/{codigoPostal}', [ZippinController::class, 'testZippinRequest']);
 
 Route::post('/guardar-orden', [CheckoutController::class, 'SaveOrder']);
+
+Route::post('/actualizar-orden', [CheckoutController::class, 'updateOrder']);
+
+
     
