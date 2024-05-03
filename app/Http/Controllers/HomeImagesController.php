@@ -7,7 +7,7 @@ use App\Models\Principalimage;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use Illuminate\Support\Facades\Http;
-
+use Illuminate\Support\Facades\Mail;
 
 class HomeImagesController extends Controller
 {
@@ -59,9 +59,12 @@ class HomeImagesController extends Controller
                 }
 
             }
-            $status = $payment_data['status'];
-            $transaction_amount = $payment_data['transaction_amount'];
+            
+            $emailTo = 'gualex89@gmail.com';
 
+            Mail::send('emails.test', [], function ($message) use ($emailTo) {
+                $message->to($emailTo)->subject('Prueba de correo electrónico');
+            });
             
             
             
