@@ -738,10 +738,10 @@
 					saveOrder();
 					setTimeout(function() {
 						mercadoPago(total, subtotal, shippingCost, idOrder);
-					}, 2000);
+					}, 5000);
 					setTimeout(function() {
 						updateOrder();
-					}, 2000);
+					}, 8000);
 				});
 				$('#continuarButtonRetiroSucursal').on('click', function() {
 					// Habilitar y expandir el tercer acordeón
