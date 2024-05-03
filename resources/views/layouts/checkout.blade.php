@@ -738,7 +738,7 @@
 					saveOrder();
 					setTimeout(function() {
 						mercadoPago(total, subtotal, shippingCost, idOrder);
-					}, 1000);
+					}, 2000);
 					setTimeout(function() {
 						updateOrder();
 					}, 2000);
@@ -752,7 +752,7 @@
 					saveOrder();
 					setTimeout(function() {
 						mercadoPago(total, subtotal, shippingCost, idOrder);
-					}, 1000);
+					}, 2000);
 					setTimeout(function() {
 						updateOrder();
 					}, 2000);
