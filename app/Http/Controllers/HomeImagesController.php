@@ -61,9 +61,14 @@ class HomeImagesController extends Controller
             }
             
             $emailTo = 'gualex89@gmail.com';
+            $pathToImage = public_path('images/logo/logomakena.png');
 
-            Mail::send('emails.test', [], function ($message) use ($emailTo) {
-                $message->to($emailTo)->subject('Prueba de correo electrónico');
+            Mail::send('emails.test', [], function ($message) use ($emailTo, $pathToImage) {
+                $message->to($emailTo)->subject('Prueba de correo electrónico con imagen adjunta');
+                $message->attach($pathToImage, [
+                    'as' => 'logomakena.png',
+                    'mime' => 'image/png',
+                ]);
             });
             
             
