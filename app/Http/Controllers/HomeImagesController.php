@@ -86,13 +86,11 @@ class HomeImagesController extends Controller
             'orden' => $apiExternalReference,
 
         ], function ($message) use ($emailTo, $pathToImage) {
-            $message->to($emailTo)->subject('Prueba de correo electrónico con imagen adjunta');
-            $message->attach($pathToImage, [
-                'as' => 'logomakena.png',
-                'mime' => 'image/png',
-            ]);
+            $message->to($emailTo)->subject('Gracias por tu compra');
+            
         });
     }
+    
     public function rechazado(){
 
         return view('layouts.failure' );
