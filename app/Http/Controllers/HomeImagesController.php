@@ -65,7 +65,7 @@ class HomeImagesController extends Controller
                 }
 
             }
-                 
+            dd($apiExternalReference);
             $this->sendEmail($emailComprador, $apiExternalReference, $payment_id);
             $this->sendMailNuevaVenta($BDdatos, $payment_id);
 
