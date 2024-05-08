@@ -65,7 +65,7 @@ class HomeImagesController extends Controller
                 }
 
             }
-            dd($apiExternalReference);
+            
             $this->sendEmail($emailComprador, $apiExternalReference, $payment_id);
             $this->sendMailNuevaVenta($BDdatos, $payment_id);
 
@@ -95,7 +95,7 @@ class HomeImagesController extends Controller
         	$emailTo = 'ventas@makenafundas.com.ar';
             $pathToImage = public_path('images/logo/logomakena.png');
 
-            Mail::send('emails.graciasEmail', [
+            Mail::send('emails.ventaNuevaMail', [
                 'BDdatos' => $BDdatos,
                 'payment_id' => $payment_id
                 
