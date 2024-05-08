@@ -66,8 +66,8 @@ class HomeImagesController extends Controller
 
             }
                  
-            $this->sendEmail($emailComprador, $apiExternalReference, $BDdatos);
-            $this->sendMailNuevaVenta();
+            $this->sendEmail($emailComprador, $apiExternalReference, $payment_id);
+            $this->sendMailNuevaVenta($BDdatos, $payment_id);
 
             return view('layouts.success', [
                 'mensaje' => $preferenceId,
@@ -78,21 +78,32 @@ class HomeImagesController extends Controller
             echo $error_message;
         }
     }
-    public function sendEmail($emailComprador, $apiExternalReference, $BDdatos){ 
+    public function sendEmail($emailComprador, $apiExternalReference, $payment_id){ 
         $emailTo = $emailComprador;
         $pathToImage = public_path('images/logo/logomakena.png');
 
         Mail::send('emails.graciasEmail', [
             'orden' => $apiExternalReference,
-            'payment_id' => $BDdatos
+            'payment_id' => $payment_id
 
         ], function ($message) use ($emailTo, $pathToImage) {
             $message->to($emailTo)->subject('Gracias por tu compra');
             
         });
     }
-    public function sendMailNuevaVenta(){
-        	
+    public function sendMailNuevaVenta($BDdatos, $payment_id){
+        	$emailTo = 'ventas@makenafundas.com.ar';
+            $pathToImage = public_path('images/logo/logomakena.png');
+
+            Mail::send('emails.graciasEmail', [
+                'BDdatos' => $BDdatos,
+                'payment_id' => $payment_id
+                
+
+            ], function ($message) use ($emailTo, $pathToImage) {
+                $message->to($emailTo)->subject('Gracias por tu compra');
+                
+            });
     }
     
     public function rechazado(){
