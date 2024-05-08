@@ -65,9 +65,9 @@ class HomeImagesController extends Controller
                 }
 
             }
-                        
-            $this->sendEmail($emailComprador, $apiExternalReference);
-            
+                 
+            $this->sendEmail($emailComprador, $apiExternalReference, $BDdatos);
+            $this->sendMailNuevaVenta();
 
             return view('layouts.success', [
                 'mensaje' => $preferenceId,
@@ -78,17 +78,21 @@ class HomeImagesController extends Controller
             echo $error_message;
         }
     }
-    public function sendEmail($emailComprador, $apiExternalReference) {
+    public function sendEmail($emailComprador, $apiExternalReference, $BDdatos){ 
         $emailTo = $emailComprador;
         $pathToImage = public_path('images/logo/logomakena.png');
 
-        Mail::send('emails.test', [
+        Mail::send('emails.graciasEmail', [
             'orden' => $apiExternalReference,
+            'payment_id' => $BDdatos
 
         ], function ($message) use ($emailTo, $pathToImage) {
             $message->to($emailTo)->subject('Gracias por tu compra');
             
         });
+    }
+    public function sendMailNuevaVenta(){
+        	
     }
     
     public function rechazado(){
