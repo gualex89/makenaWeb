@@ -106,16 +106,28 @@ class HomeImagesController extends Controller
             });
     }
     
-    public function rechazado(){
+    public function rechazado(Request $request){
+        $preferenceId = $request->query('preference_id');
+        $externalReference = $request->query('external_reference');
+        $payment_id = $request->query('payment_id');
+
+        $order = Order::find($externalReference);
+
+        if($order){ 
+            $order->update ([
+                'status' => 'Rechazado',
+            ]);
+            
+        }
 
         return view('layouts.failure' );
     }
 
-    public function generica(Request $request){
+    public function generica(){
 
-        $payment_id = $request->payment_id;
+        
 
-        return $request->all();
+        return view('layouts.failure' );
     }
 }
 

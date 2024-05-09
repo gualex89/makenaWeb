@@ -208,30 +208,30 @@
 														<div class="form_item">
 															<span class="input_title">Nombre<sup>*</sup></span>
 															<input type="text" name="nombre" 
-															class="form-control">
+															class="form-control" value="{{ old('nombre') }}">
 														</div>
 													</div>
 													<div class="col-lg-4">
 														<div class="form_item">
 															<span class="input_title">Apellido<sup>*</sup></span>
-															<input type="text" name="apellido" class="form-control">
+															<input type="text" name="apellido" class="form-control" value="{{ old('apellido') }}">
 														</div>
 													</div>
 													<div class="col-lg-4">
 														<div class="form_item">
 															<span class="input_title">DNI<sup>*</sup></span>
-															<input type="text" name="dni" class="form-control" maxlength="8" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+															<input type="text" name="dni" class="form-control" maxlength="8" oninput="this.value = this.value.replace(/[^0-9]/g, '');" value="{{ old('dni') }}" >
 														</div>
 													</div>
 												</div>
 												<div class="row">
 													<div class="col-lg-6 form_item">
 														<span class="input_title">Email<sup>*</sup></span>
-														<input type="email" name="email" class="form-control" required>
+														<input type="email" name="email" class="form-control" value="{{ old('email') }}" required>
 													</div>
 													<div class="col-lg-6 form_item">
 														<span class="input_title">Telefono<sup>*</sup></span>
-														<input type="tel" name="telefono" class="form-control" id="telefonoInput" pattern="\d*" title="Ingrese solo números">
+														<input type="tel" name="telefono" class="form-control" id="telefonoInput" pattern="\d*" title="Ingrese solo números" value="{{ old('telefono') }}">
 													</div>
 												</div>
 												<button  id="continuarButton1" class="custom_btn bg_carparts_red text-uppercase special_button"  style=" max-width: 200px;">Continuar</button>

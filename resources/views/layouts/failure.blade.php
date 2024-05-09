@@ -176,14 +176,22 @@
 			
 				<!-- cart_section - start
 			================================================== -->
-			<section class="cart_section sec_ptb_140 clearfix cart_section vh-100">
-				<div class="container d-flex align-items-start">
+			<section class="cart_section sec_ptb_140 clearfix cart_section vh-100 d-flex justify-content-center align-items-center">
+				<div class="container text-center">
 					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-					<h1>Lo siento, el pago ha fallado...</h1>	
+						<img src="images/logos/fail.png" alt="" width="20%">
+						<h1>¡Oh No, Ocurrió un error en el pago!</h1>
+
+						<h3></h3>
+						<h3></h3>
+						<h2 class="mt-5"> Ánimo volvé a intentarlo </h2>
+			
+						<a class="custom_btn bg_carparts_red text-uppercase" href="/carrito">Volver al Carrito</a>
+			
+						<p class="mt-5"></p>
 					</div>
 				</div>
 			</section>
-		
 			<!-- cart_section - end
 			================================================== -->
 			
