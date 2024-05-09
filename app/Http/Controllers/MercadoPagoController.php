@@ -32,9 +32,9 @@ class MercadoPagoController extends Controller
         ),
         "back_urls" => array(
             
-            "success" => "https://www.makenafundas.com.ar/aprobado",
-            "failure" => "https://www.makenafundas.com.ar/rechazado",
-            "pending" => "https://www.makenafundas.com.ar/rechazado"
+            "success" => "https://makenaweb.test/aprobado",
+            "failure" => "https://makenaweb.test/rechazado",
+            "pending" => "https://makenaweb.test/rechazado"
             
         ),
         "auto_return" => "all",
