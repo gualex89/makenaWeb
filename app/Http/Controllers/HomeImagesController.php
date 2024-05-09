@@ -101,7 +101,7 @@ class HomeImagesController extends Controller
                 
 
             ], function ($message) use ($emailTo, $pathToImage) {
-                $message->to($emailTo)->subject('Gracias por tu compra');
+                $message->to($emailTo)->subject('Tienes una venta');
                 
             });
     }

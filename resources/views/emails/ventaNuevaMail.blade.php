@@ -3,7 +3,7 @@
     
 
 <head>
-    <title>Gracias por tu Compra</title>
+    <title>Ey tienes una nueva venta</title>
 </head>
 <body>
 
