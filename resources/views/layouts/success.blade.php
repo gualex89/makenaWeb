@@ -176,17 +176,22 @@
 			
 				<!-- cart_section - start
 			================================================== -->
-			<section class="cart_section sec_ptb_140 clearfix cart_section vh-100">
-				<div class="container d-flex align-items-start">
+			<section class="cart_section sec_ptb_140 clearfix cart_section vh-100 d-flex justify-content-center align-items-center">
+				<div class="container text-center">
 					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-						<h1>Gracias por tu compra</h1>
-
-						<p>En breve recibiras un correo con tu pedido.</p>
-						
+						<img src="images/logos/check.png" alt="" width="20%">
+						<h1>¡Gracias por tu compra!</h1>
+						<h3>Recibirás un correo electrónico con la confirmación</h3>
+						<h3>de tu pedido y el número de orden.</h3>
+						<h2 class="mt-5">¿Querés seguir mirando?</h2>
+			
+						<a class="custom_btn bg_carparts_red text-uppercase" href="/catalogo">Ver Catálogo</a>
+			
+						<p class="mt-5">*La compra está sujeta a stock. En caso de no contar con <br>
+							el mismo en el momento de la compra, nos comunicaremos con ud.</p>
 					</div>
 				</div>
 			</section>
-		
 			<!-- cart_section - end
 			================================================== -->
 			
