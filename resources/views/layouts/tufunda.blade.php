@@ -211,8 +211,9 @@
 										</div>
 
 										<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 image-item">
-											<div class="col-lg-12 ">
-												<canvas id="canvas" width="383" height="500" class="mx-auto d-block"></canvas>
+											<div class="container">
+												<img src="" id="imagenCover" alt="">
+												<canvas id="canvas" width="360" height="495" class="mx-auto d-block"></canvas>
 											</div>
 											<div class="col-lg-12 barra_de_texto">
 												<button onclick="enviarAlFondo()" id="editarFunda" class="css-button css-button-sliding-to-bottom css-button-sliding-to-bottom--rose buttons-editor" style="display: none">
@@ -602,11 +603,21 @@
 						console.log(data);
 						var rutaImagen = "storage\\" + data[0];
 						console.log(rutaImagen);
+						$('#imagenCover').attr('src', rutaImagen);
 						cargarImagenDeFondo(rutaImagen);
 						//$('#imagenResultado').attr('src', rutaImagen);
 					});
 				});
 			});
+		</script>
+		<script>
+			// Desactivar la selección de la imagen
+			var imagenCover = document.getElementById('imagenCover');
+			imagenCover.addEventListener('mousedown', function(event) {
+				event.preventDefault();
+			 
+			});
+			imagenCover.style.pointerEvents = 'none';
 		</script>
 		<script>
 			var canvas = new fabric.Canvas('canvas', {
@@ -645,6 +656,7 @@
 						selectable: false,
 						crossOrigin: 'anonymous'  // Agrega esta línea
 					});
+					bgImg.opacity = 0;
 					bgImg.scaleToWidth(canvas.width);
 					bgImg.scaleToHeight(canvas.height);
 					canvas.add(bgImg);
@@ -670,7 +682,7 @@
 						canvas.add(img);
 						
 						userImg = img;
-						canvas.sendToBack(userImg);
+						/* canvas.sendToBack(userImg); */
 						
 					});
 				};
@@ -817,6 +829,7 @@
 			function restablecerCanvas() {
     			canvas.clear();
 				canvas.renderAll();
+				$('#imagenCover').attr('src', '');
 				document.getElementById('agregarAlCarritoBtn').style.display = "none";
 			}
 			function mostrarDesplegable() {

@@ -672,7 +672,16 @@ hr {
 .rating_star > li:not(:last-child) {
   margin-right: 2px;
 }
-
+#imagenCover{
+  position: absolute;
+  left: 68px;
+  z-index: 1;
+  width: 384px;
+}
+#canvas{
+  width: 360px;
+  height: 495px;
+}
 /* rating star - end
 ================================================== */
 /* product label - start
@@ -27126,6 +27135,19 @@ blockquote .blockquote_title {
   /* global - start */
   .custom_btn {
     height: 45px;
+  }
+  #canvas{
+    position: absolute;
+    width: 322px;
+    height: 422px;
+    top: -14px;
+
+  }
+  #imagenCover{
+    width: 382px;
+    left: 30px;
+    position: absolute;
+    z-index: 1;
   }
 
   /* global - end */
