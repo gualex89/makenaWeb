@@ -215,13 +215,14 @@
 												<canvas id="canvas" width="383" height="500" class="mx-auto d-block"></canvas>
 											</div>
 											<div class="col-lg-12 barra_de_texto">
-												<button onclick="enviarAlFondo()" class="css-button css-button-sliding-to-bottom css-button-sliding-to-bottom--rose buttons-editor"> Mover Imagen</button>
-												<button onclick="cambiarOrden()" class="css-button css-button-sliding-to-bottom css-button-sliding-to-bottom--rose buttons-editor"> Previsualizar</button>
-												<button onclick="eliminarElementoSeleccionado()" class="css-button css-button-sliding-to-bottom css-button-sliding-to-bottom--rose buttons-editor"> Eliminar Elemento</button>
+												<button onclick="enviarAlFondo()" id="editarFunda" class="css-button css-button-sliding-to-bottom css-button-sliding-to-bottom--rose buttons-editor" style="display: none">
+													<i class="fas fa-image"></i> Editar Funda </button>
+												<button onclick="cambiarOrden()" id="cambiarOrden" class="css-button css-button-sliding-to-bottom css-button-sliding-to-bottom--rose buttons-editor" style="display: none">  <i class="fas fa-mobile-alt"></i> Previsualizar Funda  </button>
+												<button onclick="eliminarElementoSeleccionado()" class="css-button css-button-sliding-to-bottom css-button-sliding-to-bottom--rose buttons-editor"> Eliminar Elemento </button>
 											</div>
 											<div class="col-lg-12 barra_de_texto">
 												<input type="file" id="imageLoader" style="display: none;"/>
-												<button onclick="cargarImagen()" class="css-button css-button-rounded css-button-rounded--rose"> Subir imagen </button>
+												<button onclick="cargarImagen()" class="css-button css-button-rounded css-button-rounded--rose"> Subí tu imagen </button>
 											</div>
 											<div class="col-lg-12 barra_de_texto">
 												<button id="btn">Generar imagen</button>
@@ -235,7 +236,7 @@
 														<button id="boton_cerrar" onclick="ocultarDesplegable()"><strong>Cerrar (X)</strong></button>
 														<div class="desplegable_tu_funda" id="desplegable1">
 															<div class="encabezado_tu_funda" onclick="toggleDesplegable('desplegable1')">
-																<h2>Texto</h2>
+																<h2>Añadir Texto</h2>
 															</div>
 															<div class="contenido_del_desplegable">
 																<div class="col-lg-12 barra_de_texto">
@@ -261,7 +262,7 @@
 													<div class="col-md-12">
 														<div class="desplegable_tu_funda" id="desplegable2">
 															<div class="encabezado_tu_funda" onclick="toggleDesplegable('desplegable2')">
-																<h2>Fondo</h2>
+																<h2>Color de Fondo</h2>
 															</div>
 															<div class="contenido_del_desplegable">
 																<div class="col-lg-12 barra_de_texto">
@@ -608,7 +609,11 @@
 			});
 		</script>
 		<script>
-			var canvas = new fabric.Canvas('canvas');
+			var canvas = new fabric.Canvas('canvas', {
+				selection: false // Deshabilitar la selección múltiple
+
+			});
+			
 			var fondoImg, userImg, texto;
 			var tiposDeLetra = [
 				'Arial',
@@ -647,27 +652,32 @@
 				});
 			}
 			document.getElementById('imageLoader').addEventListener('change', function(e) {
-			var file = e.target.files[0];
-			var reader = new FileReader();
-		
-			reader.onload = function(e) {
-				fabric.Image.fromURL(e.target.result, function(img) {
-				if (img.width > 280) {
-					img.scaleToWidth(280);
-				}
-				img.set({
-					hasControls: true,
-					hasBorders: true,
-					selectable: true,
-					cornerColor: 'red'
-				});
-		
-				canvas.add(img);
-				userImg = img;
-				});
-			};
-		
-			reader.readAsDataURL(file);
+				var file = e.target.files[0];
+				var reader = new FileReader();
+			
+				reader.onload = function(e) {
+					fabric.Image.fromURL(e.target.result, function(img) {
+						if (img.width > 280) {
+							img.scaleToWidth(280);
+						}
+						img.set({
+							hasControls: true,
+							hasBorders: true,
+							selectable: true,
+							cornerColor: 'red'
+						});
+				
+						canvas.add(img);
+						
+						userImg = img;
+						canvas.sendToBack(userImg);
+						
+					});
+				};
+				canvas.sendToBack(fondoImg);
+				canvas.renderAll();
+				$('#editarFunda').show();
+				reader.readAsDataURL(file);
 			});
 			function cambiarColorCanvas(colorOrImage) {
 				if (colorOrImage.startsWith("http") || colorOrImage.startsWith("data:")) {
@@ -689,14 +699,16 @@
 			}
 		
 			function cambiarOrden() {
-				if (userImg && fondoImg) {
+				
 				canvas.remove(fondoImg);
 				canvas.remove(userImg);
 				canvas.add(fondoImg);
 				canvas.add(userImg);
-				canvas.sendToBack(userImg);
+				canvas.bringToFront(fondoImg);
 				canvas.renderAll();
-				}
+				$('#cambiarOrden').hide();
+				$('#editarFunda').show();
+				
 			}
 			function eliminarElementoSeleccionado() {
 				var activeObject = canvas.getActiveObject();
@@ -704,15 +716,19 @@
 				if (activeObject) {
 				canvas.remove(activeObject);
 				canvas.discardActiveObject();
+				canvas.sendToBack(fondoImg);
 				canvas.renderAll();
 				}
 			}
 		
 			function enviarAlFondo() {
-			  if (fondoImg) {
-				canvas.sendToBack(fondoImg);
-				canvas.renderAll();
-			}
+				if (fondoImg) {
+					canvas.sendToBack(fondoImg);
+					canvas.renderAll();
+					$('#editarFunda').hide();
+					$('#cambiarOrden').show();
+
+				}
 			}
 		
 			function descargarImagenSubida() {
@@ -855,7 +871,21 @@
 				agregarAlCarritoBtn.addEventListener('click', function() {
 					const selectedMarca = document.getElementById('marcasDropdown').value;
 					const selectedModelo = document.getElementById('modelosDropdown').value;
-					const dataURL = canvas.toDataURL("image/png");
+
+					// Eliminar la imagen de fondo del lienzo
+					if (fondoImg) {
+						canvas.remove(fondoImg);
+					}
+
+					const dataURL = canvas.toDataURL({
+						format: 'png',
+						quality: 1 // Calidad máxima
+					});
+
+					// Restaurar la imagen de fondo si se eliminó
+					if (fondoImg) {
+						canvas.add(fondoImg);
+					}
 					
 					// Agregar la URL de la imagen al cartItems
 					const cartItem = {
@@ -874,6 +904,10 @@
 
 					// Guardar el carrito en el almacenamiento local (si es necesario)
 					localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+					// Guardar la composición en el almacenamiento local del navegador
+					localStorage.setItem('composicion', dataURL);
+
 					updateCartCounter();
 					updatePrices();
 					updateCartItems();
@@ -881,10 +915,6 @@
 					document.getElementById('agregarAlCarritoBtn').style.display = 'none';
 					canvas.clear();
 					canvas.renderAll();
-					// Actualizar el contador del carrito y la visualización del carrito
-					
-					// Verificar si hay un diseño en el canvas
-					
 				});
 			
 					function addToCart(productItem) {
