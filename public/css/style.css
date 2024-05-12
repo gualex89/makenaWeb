@@ -1438,8 +1438,14 @@ button {
 .custom_btn.bg_carparts_red {
   background-color: #F831FE;
 }
+.custom_btn.bg_carparts_inverso {
+  background-color: #2e2e2e;
+}
 .custom_btn.bg_carparts_red:before {
   background: #2e2e2e;
+}
+.custom_btn.bg_carparts_inverso:before {
+  background: #f831fe;
 }
 .custom_btn.bg_furniture_brown:before {
   background: #90512d;
