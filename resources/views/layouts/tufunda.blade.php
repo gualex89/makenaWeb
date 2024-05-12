@@ -322,7 +322,7 @@
 								</div>
 								<div class="abtn_wrap col3 text-center mt-3" id="div_del_boton" data-animation="fadeInUp" data-delay=".8s">
 									<div class="col-lg-12 col-md-12 col-sm-12">
-										<a id="btnEmpezarDeNuevo" class="custom_btn bg_carparts_red text-uppercase special_button" style="max-width: 200px;" onclick="restablecerCanvas()">Empezar de Nuevo</a>
+										<a id="btnEmpezarDeNuevo" class="custom_btn bg_carparts_red text-uppercase special_button" style="max-width: 200px;" onclick="restablecerCanvas(); limpiarDropdowns();">Empezar de Nuevo</a>
 									</div>
 
 								</div>
@@ -623,6 +623,7 @@
 						//$('#imagenResultado').attr('src', rutaImagen);
 					});
 					$('#subirImagen').show();
+					
 				});
 			});
 		</script>
@@ -901,6 +902,18 @@
 				$('#agregarAlCarritoBtn').hide();
 				$('#subirImagen').hide();
 			}
+			function limpiarDropdowns() {
+				$('#modelosDropdown').val('');
+				$('#modelosDropdown').empty();
+				$('#modelosDropdown').append($('<option>', { // Agrega una nueva opción "Seleccione"
+					value: '',
+					text: 'Seleccione'
+				}));
+				$('#modelosDropdown').niceSelect('update');
+				$('#marcasDropdown').val('');
+				$('#marcasDropdown').niceSelect('update');
+				
+			}
 			function mostrarDesplegable() {
 				var desplegableContainer = document.getElementById('desplegableContainer');
 				desplegableContainer.style.right = '0';
@@ -1002,6 +1015,7 @@
 					canvas.clear();
 					fondoImg.opacity = 0;
 					canvas.renderAll();
+					limpiarDropdowns();
 
 				});
 			

@@ -19700,14 +19700,17 @@ blockquote .blockquote_title {
 .divMarcaDropdown .nice-select {
   width: 100%;
   font-size: 19px;
+  
 }
 .divModeloDropdown .nice-select .list {
   width: 100%  ;
   font-size: 19px;
+  max-height: 300px;
 }
 .divMarcaDropdown .nice-select .list {
   width: 100%;
   font-size: 19px;
+  max-height: 300px;
 }
 
 
