@@ -219,24 +219,24 @@
 												<div class="col-lg-12  barra_de_texto">
 													
 													<input type="file" id="imageLoader" style="display: none" />
-													<button onclick="cargarImagen()" id="subirImagen" class="css-button css-button-rounded css-button-rounded--rose" style="min-width: 70px " > <i class="fas fa-upload"></i></button>
-													<button onclick="eliminarElementoSeleccionado()" id="btnEliminar" class="css-button css-button-sliding-to-bottom css-button-sliding-to-bottom--rose buttons-editor" style="min-width: 70px " ><i class="fas fa-trash"></i></button>
-													<button onclick="cambiarOrden()" id="cambiarOrden" class="css-button css-button-sliding-to-bottom css-button-sliding-to-bottom--rose buttons-editor">Traer al frente</button>
+													<button onclick="cargarImagen()" id="subirImagen" class="css-button css-button-rounded css-button-rounded--rose" style="min-width: 70px; display: none " > <i class="fas fa-upload"></i></button>
+													<button onclick="eliminarElementoSeleccionado()" id="btnEliminar" class="css-button css-button-rounded css-button-rounded--rose" style="min-width: 70px; display: none " ><i class="fas fa-trash"></i></button>
+													<button onclick="cambiarOrden()" id="cambiarOrden" class="css-button css-button-sliding-to-bottom css-button-sliding-to-bottom--rose buttons-editor" style="display: none">Traer al frente</button>
 													
 												</div>
 												<div class="col-lg-12 barra_de_texto" style="display: flex">
-													<div class="col-lg-6" id="divTamanioImagen">
+													<div class="col-lg-6" id="divTamanioImagen" style="display: none">
 														<label for="tamañoImagen" class="d-block">Tamaño imagen</label>
 														<input type="range" id="imageSizeSlider" min="10" max="200" value="100" oninput="cambiarTamanoImagen(this.value)">
 													</div>
-													<div class="col-lg-6" id="divRotacionImagen" >
+													<div class="col-lg-6" id="divRotacionImagen" style="display: none" >
 														<label for="rotacionImagen" class="d-block">Rotación imagen</label>
 														<input type="range" id="imageRotationSlider" min="0" max="360" value="0" oninput="rotarImagen(this.value)">
 													</div>
 												</div>
 												<div class="col-lg-12 barra_de_texto">
 													<div class="col-lg-12 col-md-12 col-sm-12">
-														<a id="agregarAlCarritoBtn" class="custom_btn bg_carparts_inverso text-uppercase special_button" style="max-width: 200%; margin: 0px"> FINALIZAR    <i class="fas fa-shopping-cart cart-icon"></i> </a>
+														<a id="agregarAlCarritoBtn" class="custom_btn bg_carparts_inverso text-uppercase special_button" style="max-width: 200%; margin: 0px; display: none"> FINALIZAR    <i class="fas fa-shopping-cart cart-icon"></i> </a>
 													</div>
 												</div>		
 												
@@ -998,6 +998,7 @@
 					updateCartItems();
 					mostrarAviso();
 					document.getElementById('agregarAlCarritoBtn').style.display = 'none';
+					restablecerCanvas()
 					canvas.clear();
 					fondoImg.opacity = 0;
 					canvas.renderAll();
