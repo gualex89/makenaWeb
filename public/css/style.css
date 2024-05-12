@@ -27152,6 +27152,9 @@ blockquote .blockquote_title {
     top: -14px;
 
   }
+  #seccionTufunda{
+    margin-top: 0px !important;
+  }
   #imagenCover{
     width: 382px;
     left: 30px;

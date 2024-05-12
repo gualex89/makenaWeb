@@ -197,9 +197,34 @@
 			<!-- product_section - start
 			================================================== -->
 			<div id="aviso" class="aviso-flotante"></div>
-			<section class="product_section sec_ptb_50 clearfix" style="margin-top: 80px">
+			<section class="product_section sec_ptb_50 clearfix" id="seccionTufunda" style="margin-top: 60px">
 				<div class="container maxw_1430">
 					<div class="row justify-content-lg-between">
+						<div class="col-lg-3 col-md-6 mx-auto ">
+							<aside class="motorcycle_sidebar sidebar_section" data-bg-color="#f9f9f9">
+								<div class="sb_widget sb_recent_post seleccionadores">
+									<div class="sb_widget sb_category">
+										<h3 class="sb_widget_title">Selecciona tu modelo</h3>
+										<div class="col-lg-12 divMarcaDropdown">
+											<select name="marcas" id="marcasDropdown">
+												<option value="">Seleccione</option>
+											</select>
+										</div>
+										<div class="col-lg-12 divModeloDropdown">
+											<select name="modelos" id="modelosDropdown">
+												<option value="">Seleccione</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="abtn_wrap col3 text-center mt-3" id="div_del_boton" data-animation="fadeInUp" data-delay=".8s">
+									<div class="col-lg-12 col-md-12 col-sm-12">
+										<a id="btnEmpezarDeNuevo" class="custom_btn bg_carparts_red text-uppercase special_button" style="max-width: 200px;" onclick="restablecerCanvas(); limpiarDropdowns();">Empezar de Nuevo</a>
+									</div>
+
+								</div>
+							</aside>
+						</div>
 						<div class="col-lg-9 order-last">
 							<div class="tab-content">
 								<div id="grid_layout" class="tab-pane active">
@@ -254,7 +279,7 @@
 												<div class="row">
 													<div class="col-md-12">
 														<button id="boton_cerrar" onclick="ocultarDesplegable()"><strong>Cerrar (X)</strong></button>
-														<div class="desplegable_tu_funda" id="desplegable1">
+														<div class="desplegable_tu_funda" id="desplegable1" style="display: none">
 															<div class="encabezado_tu_funda" onclick="toggleDesplegable('desplegable1')">
 																<h2>Añadir Texto</h2>
 															</div>
@@ -278,7 +303,7 @@
 														</div>
 													</div>
 													<div class="col-md-12">
-														<div class="desplegable_tu_funda" id="desplegable2">
+														<div class="desplegable_tu_funda" id="desplegable2" style="display: none">
 															<div class="encabezado_tu_funda" onclick="toggleDesplegable('desplegable2')">
 																<h2>Color de Fondo</h2>
 															</div>
@@ -303,31 +328,7 @@
 							</div>
 						</div>
 
-						<div class="col-lg-3 col-md-6 mx-auto">
-							<aside class="motorcycle_sidebar sidebar_section" data-bg-color="#f9f9f9">
-								<div class="sb_widget sb_recent_post seleccionadores">
-									<div class="sb_widget sb_category">
-										<h3 class="sb_widget_title">Selecciona tu modelo</h3>
-										<div class="col-lg-12 divMarcaDropdown">
-											<select name="marcas" id="marcasDropdown">
-												<option value="">Seleccione</option>
-											</select>
-										</div>
-										<div class="col-lg-12 divModeloDropdown">
-											<select name="modelos" id="modelosDropdown">
-												<option value="">Seleccione</option>
-											</select>
-										</div>
-									</div>
-								</div>
-								<div class="abtn_wrap col3 text-center mt-3" id="div_del_boton" data-animation="fadeInUp" data-delay=".8s">
-									<div class="col-lg-12 col-md-12 col-sm-12">
-										<a id="btnEmpezarDeNuevo" class="custom_btn bg_carparts_red text-uppercase special_button" style="max-width: 200px;" onclick="restablecerCanvas(); limpiarDropdowns();">Empezar de Nuevo</a>
-									</div>
-
-								</div>
-							</aside>
-						</div>
+						
 					</div>
 				</div>
 			</section>
@@ -436,7 +437,7 @@
 							<div class="footer_widget footer_about text-center">
 								<div class="brand_logo mb_30">
 									<a href="#!">
-										<img src="images/logo/logomakena.png" srcset="images/logo/logo_22_2x.png 2x" alt="logo_not_found">
+										<img src="images/logo/logomakena.png"  alt="logo_not_found">
 									</a>
 								</div>
 
@@ -623,6 +624,8 @@
 						//$('#imagenResultado').attr('src', rutaImagen);
 					});
 					$('#subirImagen').show();
+					$('#desplegable1').show();
+					$('#desplegable2').show();
 					
 				});
 			});
@@ -778,21 +781,23 @@
 			}
 		
 			function agregarTexto() {
-			  texto = new fabric.Textbox('Texto aquí', {
-				left: 50,
-				top: 50,
-				width: 200,
-				fontSize: 20,
-				fontFamily: tiposDeLetra[indiceTipoLetra],
-				fill: 'black',
-				selectable: true,
-				hasControls: true,
-				editable: true
-			  });
-		
-			  canvas.add(texto);
-			  canvas.setActiveObject(texto);
-			  canvas.requestRenderAll();
+				var canvasWidth = canvas.width;
+				var canvasHeight = canvas.height;
+				var texto = new fabric.Textbox('Texto aquí', {
+					left: canvasWidth / 2, // Centrar horizontalmente
+					top: canvasHeight / 2, // Centrar verticalmente
+					width: 200,
+					fontSize: 20,
+					fontFamily: tiposDeLetra[indiceTipoLetra],
+					fill: 'black',
+					selectable: true,
+					hasControls: true,
+					editable: true
+				});
+
+				canvas.add(texto);
+				canvas.setActiveObject(texto);
+				canvas.requestRenderAll();
 			}
 		
 			function cambiarTipoDeLetra() {
