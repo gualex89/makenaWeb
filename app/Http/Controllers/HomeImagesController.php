@@ -51,6 +51,7 @@ class HomeImagesController extends Controller
             $BDdatos = Order::find($apiExternalReference);
             $montoAPagar = $BDdatos->total;
             $emailComprador = $BDdatos->email;
+            
 
 
             if($externalReference == $apiExternalReference && $apiStatus == 'approved' && $apiMontoPagado == $montoAPagar){

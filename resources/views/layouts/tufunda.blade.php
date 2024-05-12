@@ -216,14 +216,13 @@
 												<canvas id="canvas" width="360" height="495" class="mx-auto d-block"></canvas>
 											</div>
 											<div class="col-lg-12 barra_de_texto">
-												<button onclick="enviarAlFondo()" id="editarFunda" class="css-button css-button-sliding-to-bottom css-button-sliding-to-bottom--rose buttons-editor" style="display: none">
+												<button onclick="enviarAlFondo()" id="editarFunda" class="css-button css-button-sliding-to-bottom css-button-sliding-to-bottom--rose buttons-editor d-none" style="display: none">
 													<i class="fas fa-image"></i> Editar Funda </button>
-												<button onclick="cambiarOrden()" id="cambiarOrden" class="css-button css-button-sliding-to-bottom css-button-sliding-to-bottom--rose buttons-editor" style="display: none">  <i class="fas fa-mobile-alt"></i> Previsualizar Funda  </button>
-												<button onclick="eliminarElementoSeleccionado()" class="css-button css-button-sliding-to-bottom css-button-sliding-to-bottom--rose buttons-editor"> Eliminar Elemento </button>
+												<button onclick="eliminarElementoSeleccionado()" id="btnEliminar" class="css-button css-button-sliding-to-bottom css-button-sliding-to-bottom--rose buttons-editor" style="display: none"> Eliminar Elemento </button>
 											</div>
 											<div class="col-lg-12 barra_de_texto">
 												<input type="file" id="imageLoader" style="display: none;"/>
-												<button onclick="cargarImagen()" class="css-button css-button-rounded css-button-rounded--rose"> Subí tu imagen </button>
+												<button onclick="cargarImagen()" id="subirImagen" class="css-button css-button-rounded css-button-rounded--rose" style="display: none;"> Subí tu imagen </button>
 											</div>
 											<div class="col-lg-12 barra_de_texto">
 												<button id="btn">Generar imagen</button>
@@ -255,8 +254,6 @@
 																	<label for="textRotationSlider" class="d-block">Rotación del Texto</label>
 																	<input type="range" id="textRotationSlider" min="0" max="360" value="0" oninput="cambiarRotacionTexto(this.value)">
 																</div>
-
-
 															</div>
 														</div>
 													</div>
@@ -273,8 +270,16 @@
 															</div>
 														</div>
 														
-														<button id="agregarAlCarritoBtn" class="css-button css-button-sliding-to-bottom css-button-sliding-to-bottom--rose buttons-editor" style="display: none"> Agregar al carrito</button>
-														
+														<button id="agregarAlCarritoBtn" class="css-button css-button-rounded css-button-rounded--rose" style="display: none"> Agregar al carrito</button>
+														<div class="col-lg-12 barra_de_texto" id="divTamanioImagen" style="display: none">
+															<label for="tamañoImagen" class="d-block">Tamaño de imagen</label>
+															<input type="range" id="imageSizeSlider" min="10" max="200" value="100" oninput="cambiarTamanoImagen(this.value)">
+														</div>
+														<div class="col-lg-12 barra_de_texto" id="divRotacionImagen" style="display: none">
+															<label for="rotacionImagen" class="d-block">Rotación de la imagen</label>
+															<input type="range" id="imageRotationSlider" min="0" max="360" value="0" oninput="rotarImagen(this.value)">
+														</div>
+														<button onclick="cambiarOrden()" id="cambiarOrden" class="css-button css-button-sliding-to-bottom css-button-sliding-to-bottom--rose buttons-editor" style="display: none" > Traer al frente  </button>
 														
 														
 													</div>
@@ -596,7 +601,6 @@
 					// Obtener el modelo seleccionado en el dropdown
 					var modeloSeleccionado = $(this).val();
 					console.log(modeloSeleccionado);
-					document.getElementById('agregarAlCarritoBtn').style.display = "inline-block";
 					// Hacer una solicitud AJAX para obtener la información de la base de datos
 					$.get('/obtener-imagen/' + modeloSeleccionado, function(data) {
 						// La respuesta 'data' debería contener la información de la imagen u otro dato que necesitas
@@ -607,6 +611,7 @@
 						cargarImagenDeFondo(rutaImagen);
 						//$('#imagenResultado').attr('src', rutaImagen);
 					});
+					$('#subirImagen').show();
 				});
 			});
 		</script>
@@ -688,8 +693,13 @@
 				};
 				canvas.sendToBack(fondoImg);
 				canvas.renderAll();
-				$('#editarFunda').show();
+				
 				reader.readAsDataURL(file);
+				$('#cambiarOrden').show();
+				$('#btnEliminar').show();
+				$('#divTamanioImagen').show();
+				$('#divRotacionImagen').show();
+				$('#agregarAlCarritoBtn').show();
 			});
 			function cambiarColorCanvas(colorOrImage) {
 				if (colorOrImage.startsWith("http") || colorOrImage.startsWith("data:")) {
@@ -712,14 +722,12 @@
 		
 			function cambiarOrden() {
 				
-				canvas.remove(fondoImg);
-				canvas.remove(userImg);
-				canvas.add(fondoImg);
-				canvas.add(userImg);
-				canvas.bringToFront(fondoImg);
-				canvas.renderAll();
-				$('#cambiarOrden').hide();
-				$('#editarFunda').show();
+				var activeObject = canvas.getActiveObject();
+				if (activeObject) {
+					canvas.bringForward(activeObject);
+					canvas.renderAll();
+				}
+				
 				
 			}
 			function eliminarElementoSeleccionado() {
@@ -730,6 +738,10 @@
 				canvas.discardActiveObject();
 				canvas.sendToBack(fondoImg);
 				canvas.renderAll();
+				userImg = null;
+				$('#imageLoader').val(''); 
+				
+
 				}
 			}
 		
@@ -805,6 +817,46 @@
 					canvas.requestRenderAll();
 				 }
 			}
+			function cambiarTamanoImagen(delta) {
+				var obj = canvas.getActiveObject();
+
+				if (obj && obj.type === 'image') {
+					// Dividir el rango del deslizador en 10 posiciones
+					var posicion = Math.round(delta / 15) * 10;
+
+					// Calcular la cantidad de cambio basada en la posición
+					var cambioEscala = (posicion - 100) / 100;
+
+					// Aplicar el cambio en la escala tanto horizontal como verticalmente
+					obj.scaleX = 1 + cambioEscala;
+					obj.scaleY = 1 + cambioEscala;
+
+					
+
+					// Actualizar el lienzo
+					canvas.renderAll();
+				}
+			}
+			function rotarImagen(grados) {
+    var obj = canvas.getActiveObject();
+
+    if (obj && obj.type === 'image') {
+        // Rango completo de rotación (360 grados)
+        var rangoRotacion = 360;
+
+        // Obtener el rango completo del control deslizante (de min a max)
+        var rangoControlDeslizante = parseFloat(document.getElementById('imageRotationSlider').max) - parseFloat(document.getElementById('imageRotationSlider').min);
+
+        // Calcular la rotación proporcional al rango completo del control deslizante
+        var rotacionDeseada = (parseFloat(grados) / rangoControlDeslizante) * rangoRotacion;
+
+        // Aplicar la rotación al objeto
+        obj.set('angle', rotacionDeseada);
+
+        // Actualizar el lienzo
+        canvas.renderAll();
+    }
+}
 			
 			function cambiarRotacionTexto(angulo) {
 				if (canvas.getActiveObject() && canvas.getActiveObject().isType('textbox')) {
@@ -831,6 +883,12 @@
 				canvas.renderAll();
 				$('#imagenCover').attr('src', '');
 				document.getElementById('agregarAlCarritoBtn').style.display = "none";
+				$('#cambiarOrden').hide();
+				$('#btnEliminar').hide();
+				$('#divTamanioImagen').hide();
+				$('#divRotacionImagen').hide();
+				$('#agregarAlCarritoBtn').hide();
+				$('#subirImagen').hide();
 			}
 			function mostrarDesplegable() {
 				var desplegableContainer = document.getElementById('desplegableContainer');
@@ -887,7 +945,10 @@
 
 					// Eliminar la imagen de fondo del lienzo
 					if (fondoImg) {
-						canvas.remove(fondoImg);
+						fondoImg.opacity = 1;
+						canvas.bringToFront(fondoImg);
+						
+						
 					}
 
 					const dataURL = canvas.toDataURL({
@@ -927,7 +988,9 @@
 					mostrarAviso();
 					document.getElementById('agregarAlCarritoBtn').style.display = 'none';
 					canvas.clear();
+					fondoImg.opacity = 0;
 					canvas.renderAll();
+
 				});
 			
 					function addToCart(productItem) {
