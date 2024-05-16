@@ -81,14 +81,16 @@ class HomeImagesController extends Controller
     }
     public function sendEmail($emailComprador, $apiExternalReference, $payment_id){ 
         $emailTo = $emailComprador;
-        $pathToImage = public_path('images/logo/logomakena.png');
+        $pathToImage = public_path('images/logo/logo_black.png');
 
         Mail::send('emails.graciasEmail', [
             'orden' => $apiExternalReference,
-            'payment_id' => $payment_id
+            'payment_id' => $payment_id,
+            'pathToImage' => $pathToImage
 
         ], function ($message) use ($emailTo, $pathToImage) {
             $message->to($emailTo)->subject('Gracias por tu compra');
+            $message->embed($pathToImage); 
             
         });
     }

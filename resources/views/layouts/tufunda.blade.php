@@ -989,6 +989,8 @@
 					if (fondoImg) {
 						canvas.add(fondoImg);
 					}
+
+					const uniqueName = 'Personalizado_' + Date.now() + '_' + Math.floor(100 + Math.random() * 900);
 					
 					// Agregar la URL de la imagen al cartItems
 					const cartItem = {
@@ -996,7 +998,8 @@
 						price: 9550, // Puedes establecer un precio para el diseño si es necesario
 						image: dataURL,
 						marca: selectedMarca,
-						modelo: selectedModelo // Guardar la URL de la imagen generada por el canvas
+						modelo: selectedModelo, // Guardar la URL de la imagen generada por el canvas
+						uniqueName : uniqueName
 					};
 					cartItemCount++;
 					subtotal += cartItem.price;
@@ -1009,7 +1012,7 @@
 					localStorage.setItem('cartItems', JSON.stringify(cartItems));
 
 					// Guardar la composición en el almacenamiento local del navegador
-					localStorage.setItem('composicion', dataURL);
+					localStorage.setItem(uniqueName, dataURL);
 
 					updateCartCounter();
 					updatePrices();
@@ -1101,6 +1104,9 @@
 						subtotal -= price;
 						total = subtotal;
 						
+						const uniqueNameToRemove = cartItems[indexToRemove].uniqueName;
+						localStorage.removeItem(uniqueNameToRemove);
+
 						// Eliminar el elemento del carrito
 						cartItems.splice(indexToRemove, 1);
 						
