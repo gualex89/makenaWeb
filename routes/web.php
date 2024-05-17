@@ -23,7 +23,15 @@ Route::get('/rechazado', [HomeImagesController::class, 'rechazado'])->name('rech
 // RUTAS DEL CATALOGO
 Route::get('/catalogo', [CatalogueController::class, 'catalogo'])->name('catalogo');
 
+//RUTAS TUFUNDA
+
 Route::get('/tufunda', [TuFundaController::class, 'tufunda'])->name('tufunda');
+
+Route::post('/guardar-imagen-personalizada', [TuFundaController::class, 'guardarImagenPersonalizada'])->name('guardarImagenPersonalizada');
+
+Route::post('/borrar-imagen-personalizada', [TuFundaController::class, 'borrarImagenPersonalizada'])->name('borrarImagenPersonalizada');
+
+
 
 Route::get('/obtener-marcas', [TuFundaController::class, 'obtenerMarcas']);
 

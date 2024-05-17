@@ -6,6 +6,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="csrf-token" content="{{ csrf_token() }}">
 
 		<title>Makena</title>
 		<link rel="shortcut icon" href="images/logo/makenaminiicon.png">
@@ -689,8 +690,8 @@
 			
 				reader.onload = function(e) {
 					fabric.Image.fromURL(e.target.result, function(img) {
-						if (img.width > 280) {
-							img.scaleToWidth(280);
+						if (img.width > 300) {
+							img.scaleToWidth(300);
 						}
 						img.set({
 							hasControls: true,
@@ -945,6 +946,7 @@
 		
 		
 		<script>
+			const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 			document.addEventListener("DOMContentLoaded", function() {
 				let cartItemCount = 0;
 				let subtotal = 0;
@@ -971,35 +973,82 @@
 				agregarAlCarritoBtn.addEventListener('click', function() {
 					const selectedMarca = document.getElementById('marcasDropdown').value;
 					const selectedModelo = document.getElementById('modelosDropdown').value;
+					const modeloSinEspacios = selectedModelo.replace(/\s+/g, '-');
 
 					// Eliminar la imagen de fondo del lienzo
-					if (fondoImg) {
-						fondoImg.opacity = 1;
-						canvas.bringToFront(fondoImg);
-						
-						
-					}
-
+					
+					const uniqueName = modeloSinEspacios +'_' + Date.now() + '_' + Math.floor(100 + Math.random() * 900) + '.png';
+					const uniqueNameComposicion = 'Comp-'+ uniqueName;
+					
+					canvas.renderAll();
 					const dataURL = canvas.toDataURL({
 						format: 'png',
-						quality: 1 // Calidad máxima
+						quality: 1 
 					});
 
+
+					//renderizar todo
+					if (fondoImg) {
+						console.log("entro a fondoImg");
+						
+						fondoImg.opacity = 1;
+						canvas.bringToFront(fondoImg);
+						canvas.renderAll();
+						
+						
+					}
+					canvas.renderAll();
+					const dataComposicionURL = canvas.toDataURL({
+						format: 'png',
+						quality: 1 
+					});
+					
+
+					
+
+					const formData = new FormData();
+					formData.append('dataURL', dataURL);
+					formData.append('uniqueName', uniqueName);
+					formData.append('dataComposicionURL', dataComposicionURL);
+					formData.append('uniqueNameComposicion', uniqueNameComposicion);
+					fetch('/guardar-imagen-personalizada', {
+						method: 'POST',
+						headers: {
+							'X-CSRF-TOKEN': csrfToken // Agregar el token CSRF a la cabecera de la petición
+						},
+						body: formData
+					})
+					.then(response => {
+						if (!response.ok) {
+							throw new Error('Error al GUARDAR la imagen');
+						}
+						return response.json();
+					})
+					.then(data => {
+						// Lógica adicional después de agregar el artículo al carrito (si es necesario)
+						console.log('se guardo la imagen: ', data);
+					})
+					.catch(error => {
+						console.error('Error:', error);
+					});
 					// Restaurar la imagen de fondo si se eliminó
+					
 					if (fondoImg) {
 						canvas.add(fondoImg);
+						canvas.renderAll();
 					}
 
-					const uniqueName = 'Personalizado_' + Date.now() + '_' + Math.floor(100 + Math.random() * 900);
+					
 					
 					// Agregar la URL de la imagen al cartItems
 					const cartItem = {
 						name: "Diseño personalizado", // Puedes darle un nombre apropiado al diseño
 						price: 9550, // Puedes establecer un precio para el diseño si es necesario
-						image: dataURL,
+						image: dataComposicionURL,
 						marca: selectedMarca,
-						modelo: selectedModelo, // Guardar la URL de la imagen generada por el canvas
-						uniqueName : uniqueName
+						modelo: selectedModelo,
+						uniqueName: uniqueName, 
+						uniqueNameComposicion : uniqueNameComposicion
 					};
 					cartItemCount++;
 					subtotal += cartItem.price;
@@ -1011,8 +1060,7 @@
 					// Guardar el carrito en el almacenamiento local (si es necesario)
 					localStorage.setItem('cartItems', JSON.stringify(cartItems));
 
-					// Guardar la composición en el almacenamiento local del navegador
-					localStorage.setItem(uniqueName, dataURL);
+					
 
 					updateCartCounter();
 					updatePrices();
@@ -1021,7 +1069,8 @@
 					document.getElementById('agregarAlCarritoBtn').style.display = 'none';
 					restablecerCanvas()
 					canvas.clear();
-					fondoImg.opacity = 0;
+
+					fondoImg.opacity = 1;
 					canvas.renderAll();
 					limpiarDropdowns();
 
@@ -1104,10 +1153,33 @@
 						subtotal -= price;
 						total = subtotal;
 						
-						const uniqueNameToRemove = cartItems[indexToRemove].uniqueName;
-						localStorage.removeItem(uniqueNameToRemove);
-
-						// Eliminar el elemento del carrito
+						
+						
+						const formData = new FormData();
+						
+						formData.append('nombreImagen', nombreImagen);
+						fetch('/borrar-imagen-personalizada', {
+							method: 'POST',
+							headers: {
+								'X-CSRF-TOKEN': csrfToken // Agregar el token CSRF a la cabecera de la petición
+							},
+							body: formData
+						})
+						.then(response => {
+							if (!response.ok) {
+								throw new Error('Error al Borrar la imagen');
+							}
+							return response.json();
+						})
+						.then(data => {
+							// Lógica adicional después de agregar el artículo al carrito (si es necesario)
+							console.log('Se borro la imagen correctamente ', data);
+						})
+						.catch(error => {
+							console.error('Error:', error);
+						});
+										
+						 // Eliminar el elemento del carrito
 						cartItems.splice(indexToRemove, 1);
 						
 						// Actualizar el almacenamiento local

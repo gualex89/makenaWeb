@@ -51,7 +51,8 @@ class HomeImagesController extends Controller
             $BDdatos = Order::find($apiExternalReference);
             $montoAPagar = $BDdatos->total;
             $emailComprador = $BDdatos->email;
-            
+           /*  $itemsCart = $BDdatos->items_cart; */
+            /* dd($itemsCart); */
 
 
             if($externalReference == $apiExternalReference && $apiStatus == 'approved' && $apiMontoPagado == $montoAPagar){
@@ -97,15 +98,39 @@ class HomeImagesController extends Controller
     public function sendMailNuevaVenta($BDdatos, $payment_id){
         	$emailTo = 'ventas@makenafundas.com.ar';
             $pathToImage = public_path('images/logo/logomakena.png');
+            /* dd($pathToImage); */
+            $itemsCart = json_decode($BDdatos->items_cart, true);
+            $datosArray = $itemsCart;
+            $nombresImagen = [];
+            foreach ($itemsCart as $item) {
+                if (isset($item['nombreImagen'])) {
+                    $nombresImagenes[] = $item['nombreImagen'];
+                }
+            }
+            /* dd($nombresImagenes);  */
 
             Mail::send('emails.ventaNuevaMail', [
                 'BDdatos' => $BDdatos,
                 'payment_id' => $payment_id
-                
-
-            ], function ($message) use ($emailTo, $pathToImage) {
+            ], function ($message) use ($emailTo, $pathToImage, $nombresImagenes) {
                 $message->to($emailTo)->subject('Tienes una venta');
-                
+    
+                // Adjuntar las imágenes al correo si es necesario
+                foreach ($nombresImagenes as $nombreImagen) {
+                    $imagePath = public_path('storage/images/') . $nombreImagen;
+                    $nombreImagenComposicion = 'Comp-' . $nombreImagen;
+                    $imagePathComposicion = public_path('storage/images/') . $nombreImagenComposicion;
+                    if (file_exists($imagePath)) {
+                        $message->attach($imagePath, [
+                            'as' => $nombreImagen,
+                            'mime' => 'image/png' // Ajusta el tipo MIME según el tipo de imagen
+                        ]);
+                        $message->attach($imagePathComposicion, [
+                            'as' =>  $nombreImagenComposicion,
+                            'mime' => 'image/png' // Ajusta el tipo MIME según el tipo de imagen
+                        ]);
+                    }
+                }
             });
     }
     

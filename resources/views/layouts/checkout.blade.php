@@ -650,6 +650,7 @@
 										<div class="item_content">
 											<h4 class="item_title">${cartItem.name}</h4>
 											<span class="item_type">${cartItem.marca} ${cartItem.modelo}</span>
+											<span style="display: none" class="item_nombre_imagen">${cartItem.uniqueName}</span>
 										</div>
 									</div>
 								</td>
@@ -1062,6 +1063,7 @@
 
 				// Obtener todos los elementos con la clase 'item_title'
 				const diseno = document.querySelectorAll('.item_title');
+				const nombreImagen = document.querySelectorAll('.item_nombre_imagen');
 
 				// Crear un array para almacenar los modelos de los elementos del carrito junto con sus títulos
 				const itemsCart = [];
@@ -1071,13 +1073,14 @@
 					// Obtener el texto dentro del elemento 'item_type' y 'item_title'
 					const tipo = item.textContent.trim();
 					let titulo = diseno[index].textContent.trim();
+					let nombreImagenPNG = nombreImagen[index].textContent.trim();
 					if (titulo === "Diseño personalizado") {
 						titulo = "Diseno personalizado";
 					}
 					// Agregar el modelo junto con su título al array de modelos
-					itemsCart.push({ modelo: tipo, diseno: titulo });
+					itemsCart.push({ modelo: tipo, diseno: titulo, nombreImagen: nombreImagenPNG });
 				});
-
+				console.log(itemsCart);
 				console.log(email, nombre, apellido, documento, tipo_entrega,cantidad_items, valor_subtotal );
 				console.log(codigo_postal, provincia, localidad, direccion, comentarios, valor_envio);
 				console.log(logistic_type, service_type_code, carrier_id, point_id_selected);
