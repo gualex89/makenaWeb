@@ -962,8 +962,8 @@
 					const subtotalElement = document.querySelector('.total_price li:nth-child(1) span:nth-child(2)');
 					const totalElement = document.querySelector('.total_price li:nth-child(2) span:nth-child(2)');
 		
-					subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
-					totalElement.textContent = `$${total.toFixed(2)}`;
+					subtotalElement.textContent = `$${subtotal}`;
+					totalElement.textContent = `$${total}`;
 				}
 				const agregarAlCarritoBtn = document.getElementById('agregarAlCarritoBtn');
 
@@ -1056,10 +1056,14 @@
 						canvas.renderAll();
 					}
 
+					
+
+					//Este valor viene dado por el controlador, y viene de el precio que se le asigne en voyager a la funda
+					const precio = {{ $precioFundas }};
 					// Agregar la URL de la imagen al cartItems
 					const cartItem = {
 						name: "Diseño personalizado",
-						price: 9550,
+						price: precio,
 						image: dataComposicionURL,
 						marca: selectedMarca,
 						modelo: selectedModelo,
@@ -1126,7 +1130,7 @@
 								</div>
 								<div class="item_content">
 									<h4 class="item_title">${cartItem.name}</h4>
-									<span class="item_price">$${cartItem.price.toFixed(2)}</span>
+									<span class="item_price">$${cartItem.price}</span>
 								</div>
 								<button type="button" class="remove_btn"><i class="fal fa-trash-alt remove_btn"></i></button>
 							</li>

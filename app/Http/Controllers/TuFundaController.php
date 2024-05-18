@@ -15,9 +15,10 @@ class TuFundaController extends Controller
 
         foreach ($misProductos as $producto) {
             if ($producto->name === 'Fundas') {
-                $precioFundas = $producto->price;
+                $precioFundas = str_replace('$', '', $producto->price);
                 
             }
+          
         
         }   
         return view('layouts.tufunda', compact( 'precioFundas') );
