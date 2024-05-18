@@ -690,9 +690,7 @@
 			
 				reader.onload = function(e) {
 					fabric.Image.fromURL(e.target.result, function(img) {
-						if (img.width > 300) {
-							img.scaleToWidth(300);
-						}
+						
 						img.set({
 							hasControls: true,
 							hasBorders: true,
@@ -970,40 +968,60 @@
 				const agregarAlCarritoBtn = document.getElementById('agregarAlCarritoBtn');
 
 				// Agregar evento click al botón "Agregar al Carrito"
-				agregarAlCarritoBtn.addEventListener('click', function() {
+				document.getElementById('agregarAlCarritoBtn').addEventListener('click', function() {
 					const selectedMarca = document.getElementById('marcasDropdown').value;
 					const selectedModelo = document.getElementById('modelosDropdown').value;
 					const modeloSinEspacios = selectedModelo.replace(/\s+/g, '-');
 
-					// Eliminar la imagen de fondo del lienzo
-					
-					const uniqueName = modeloSinEspacios +'_' + Date.now() + '_' + Math.floor(100 + Math.random() * 900) + '.png';
-					const uniqueNameComposicion = 'Comp-'+ uniqueName;
-					
-					canvas.renderAll();
-					const dataURL = canvas.toDataURL({
-						format: 'png',
-						quality: 1 
-					});
+					const uniqueName = modeloSinEspacios + '_' + Date.now() + '_' + Math.floor(100 + Math.random() * 900) + '.png';
+					const uniqueNameComposicion = 'Comp-' + uniqueName;
 
-
-					//renderizar todo
+					// Renderizar todo
 					if (fondoImg) {
-						console.log("entro a fondoImg");
-						
 						fondoImg.opacity = 1;
 						canvas.bringToFront(fondoImg);
 						canvas.renderAll();
-						
-						
 					}
+
 					canvas.renderAll();
 					const dataComposicionURL = canvas.toDataURL({
 						format: 'png',
-						quality: 1 
+						quality: 1
 					});
-					
 
+					if (fondoImg) {
+						fondoImg.opacity = 0;
+						canvas.bringToFront(fondoImg);
+						canvas.renderAll();
+					}
+					
+					// Crear un nuevo canvas de alta resolución para la exportación
+					var exportCanvas = document.createElement('canvas');
+					exportCanvas.width = 1280;
+					exportCanvas.height = 1980;
+					var exportContext = exportCanvas.getContext('2d');
+
+					var exportFabricCanvas = new fabric.Canvas(exportCanvas);
+					exportFabricCanvas.setWidth(exportCanvas.width);
+					exportFabricCanvas.setHeight(exportCanvas.height);
+
+					// Calcular las proporciones de escalado
+					const scaleWidth = exportCanvas.width / canvas.width;
+					const scaleHeight = exportCanvas.height / canvas.height;
+
+					// Clonar todos los objetos del canvas visible al canvas de alta definición
+					canvas.getObjects().forEach(function(obj) {
+						var clonedObj = fabric.util.object.clone(obj);
+						clonedObj.scaleX = obj.scaleX * scaleWidth;
+						clonedObj.scaleY = obj.scaleY * scaleHeight;
+						clonedObj.left = obj.left * scaleWidth;
+						clonedObj.top = obj.top * scaleHeight;
+						exportFabricCanvas.add(clonedObj);
+					});
+
+					exportFabricCanvas.renderAll();
+
+					var dataURL = exportFabricCanvas.toDataURL({ format: 'png', quality: 1.0 });
 					
 
 					const formData = new FormData();
@@ -1026,29 +1044,27 @@
 					})
 					.then(data => {
 						// Lógica adicional después de agregar el artículo al carrito (si es necesario)
-						console.log('se guardo la imagen: ', data);
+						console.log('Se guardó la imagen: ', data);
 					})
 					.catch(error => {
 						console.error('Error:', error);
 					});
+
 					// Restaurar la imagen de fondo si se eliminó
-					
 					if (fondoImg) {
 						canvas.add(fondoImg);
 						canvas.renderAll();
 					}
 
-					
-					
 					// Agregar la URL de la imagen al cartItems
 					const cartItem = {
-						name: "Diseño personalizado", // Puedes darle un nombre apropiado al diseño
-						price: 9550, // Puedes establecer un precio para el diseño si es necesario
+						name: "Diseño personalizado",
+						price: 9550,
 						image: dataComposicionURL,
 						marca: selectedMarca,
 						modelo: selectedModelo,
-						uniqueName: uniqueName, 
-						uniqueNameComposicion : uniqueNameComposicion
+						uniqueName: uniqueName,
+						uniqueNameComposicion: uniqueNameComposicion
 					};
 					cartItemCount++;
 					subtotal += cartItem.price;
@@ -1060,20 +1076,17 @@
 					// Guardar el carrito en el almacenamiento local (si es necesario)
 					localStorage.setItem('cartItems', JSON.stringify(cartItems));
 
-					
-
 					updateCartCounter();
 					updatePrices();
 					updateCartItems();
 					mostrarAviso();
 					document.getElementById('agregarAlCarritoBtn').style.display = 'none';
-					restablecerCanvas()
+					restablecerCanvas();
 					canvas.clear();
 
 					fondoImg.opacity = 1;
 					canvas.renderAll();
 					limpiarDropdowns();
-
 				});
 			
 					function addToCart(productItem) {
@@ -1146,6 +1159,8 @@
 					// Encontrar el índice del elemento a eliminar en cartItems
 					const indexToRemove = cartItems.findIndex(cartItem => cartItem.name === itemName);
 					
+					nombreImagen = cartItems[indexToRemove].uniqueName;
+
 					if (indexToRemove !== -1) { // Verificar si se encontró el elemento
 						const price = cartItems[indexToRemove].price;
 						

@@ -5,14 +5,22 @@ use Illuminate\Support\Facades\Storage;
 
 use Illuminate\Http\Request;
 use App\Models\Cover;
+use App\Models\Product;
 
 class TuFundaController extends Controller
 {
     public function tufunda(){
+        $misProductos = Product::all();
+        $precioFundas = null;
 
+        foreach ($misProductos as $producto) {
+            if ($producto->name === 'Fundas') {
+                $precioFundas = $producto->price;
+                
+            }
         
-
-        return view('layouts.tufunda');
+        }   
+        return view('layouts.tufunda', compact( 'precioFundas') );
     }
 
     public function guardarImagenPersonalizada(Request $request){
@@ -37,6 +45,7 @@ class TuFundaController extends Controller
 
         if (Storage::disk('public')->exists('images/' . $nombreImagen)) {
             Storage::disk('public')->delete('images/' . $nombreImagen);
+            Storage::disk('public')->delete('images/Comp-' . $nombreImagen);
             return response()->json(['success' => true, 'message' => 'La imagen ha sido eliminada correctamente']);
         } else {
             return response()->json(['success' => false, 'message' => 'La imagen no existe']);
