@@ -211,25 +211,102 @@
 								<div class="sb_widget sb_category">
 									<h3 class="sb_widget_title">Categorías</h3>
 									<ul class="ul_li_block clearfix">
-										<li class="parent"><a href="#" data-category="all">Todas</a></li>
+										<li class="parent"><a href="/catalogo" data-category="all">Todas</a></li>
 										<li class="parent"><a href="#">Anime</a>
 											<ul>
-												<li><a href="#" data-category="DB">Dragon Ball</a></li>
-												<li><a href="#" data-category="OP">One Piece</a></li>
+												<li><a href="/catalogo?categoria=AT" >Attack on Titan</a></li>
+												<li><a href="/catalogo?categoria=BK">Bersek</a></li>
+												<li><a href="/catalogo?categoria=BH">Boku no Hero Academy</a></li>
+												<li><a href="/catalogo?categoria=CZ">Caballeros Del Zodiaco</a></li>
+												<li><a href="/catalogo?categoria=DN">Death Note</a></li>
+												<li><a href="/catalogo?categoria=DS">Demon Slayer</a></li>
+												<li><a href="/catalogo?categoria=DB">Dragon Ball</a></li>
+												<li><a href="/catalogo?categoria=CH">El viaje de Chihiro</a></li>
+												<li><a href="/catalogo?categoria=EV">Evangelion</a></li>
+												<li><a href="/catalogo?categoria=HK">Haikyuu!</a></li>
+												<li><a href="/catalogo?categoria=HH">Hunter X Hunter</a></li>
+												<li><a href="/catalogo?categoria=JJ">Jojo's</a></li>
+												<li><a href="/catalogo?categoria=JK">Jujutsu Kaisen</a></li>
+												<li><a href="/catalogo?categoria=NA">Naruto</a></li>
+												<li><a href="/catalogo?categoria=OP">One Peace</a></li>
+												<li><a href="/catalogo?categoria=PK">Pokemon</a></li>
+												<li><a href="/catalogo?categoria=SM">Sailor Moon</a></li>
+												<li><a href="/catalogo?categoria=SD">Slam Dunk</a></li>
 											</ul>
 										</li>
-										<li class="parent"><a href="#" data-category="FT">Fútbol</a>
+										<li class="parent"><a href="/catalogo?categoria=BS">Basquet</a></li>
+											
+										<li class="parent"><a href="#">Videojuegos</a>
 											<ul>
-												<li><a href="#">Messi</a></li>
-												<li><a href="#">Equipos</a></li>
+												<li><a href="/catalogo?categoria=AC">Assasins Creed</a></li>
+												<li><a href="/catalogo?categoria=FN">Fortnite</a></li>
+												<li><a href="/catalogo?categoria=GW">God of War</a></li>
+												<li><a href="/catalogo?categoria=LOL">Lol</a></li>
+												<li><a href="/catalogo?categoria=OTR">Otros</a></li>
+												<li><a href="/catalogo?categoria=RE">Resident Evil</a></li>
+												<li><a href="/catalogo?categoria=TLU">The Last of us</a></li>
+												<li><a href="/catalogo?categoria=TW">The Witcher</a></li>
+												<li><a href="/catalogo?categoria=VL">Valorant</a></li>
+
 											</ul>
 										</li>
-										<li class="parent"><a href="#" data-category="MU">Música</a>
+										<li class="parent"><a href="/catalogo?categoria=DI">Diseños</a></li>
+											
+										<li class="parent"><a href="#">Futbol</a>
 											<ul>
-												<li><a href="#">Géneros</a></li>
-												<li><a href="#">Artistas</a></li>
+												<li><a href="/catalogo?categoria=FB">Boca</a></li>
+												<li><a href="/catalogo?categoria=FTI">Clubes internacionales</a></li>
+												<li><a href="/catalogo?categoria=FI">Independiente</a></li>
+												<li><a href="/catalogo?categoria=FME">Messi</a></li>
+												<li><a href="/catalogo?categoria=FMO">Momentos del futbol</a></li>
+												<li><a href="/catalogo?categoria=FON">Otros clubes nacionales</a></li>
+												<li><a href="/catalogo?categoria=FRA">Racing</a></li>
+												<li><a href="/catalogo?categoria=FRI">River</a></li>
+												<li><a href="/catalogo?categoria=FSL">San Lorenzo</a></li>
+												<li><a href="/catalogo?categoria=FSA">Seleccion argentina</a></li>
 											</ul>
 										</li>
+										<li class="parent"><a href="/catalogo?categoria=ME">Momentos Épicos</a></li>
+										<li class="parent"><a href="/catalogo?categoria=RT">Retro</a></li>
+										
+										
+										<li class="parent"><a href="#">Música</a>
+											<ul>
+												<li><a href="/catalogo?categoria=MM">Mas</a></li>
+												<li><a href="/catalogo?categoria=MP">POP</a></li>
+												<li><a href="/catalogo?categoria=MRI">Rock Internacional</a></li>
+												<li><a href="/catalogo?categoria=MRN">Rock Nacional</a></li>
+												<li><a href="/catalogo?categoria=MUR">Urbano</a></li>
+											</ul>
+										</li>
+										<li class="parent"><a href="#">Películas</a>
+											<ul>
+												<li><a href="#" data-category="DY">Disney</a></li>
+												<li><a href="#" data-category="HP">Harry Potter</a></li>
+												<li><a href="#" data-category="LR">Lord of the Rings</a></li>
+												<li><a href="#" data-category="MV">Marvel</a></li>
+												<li><a href="#" data-category="SW">Star Wars</a></li>
+												<li><a href="#" data-category="VF">Volver al Futuro</a></li>
+											</ul>
+										</li>
+										<li class="parent"><a href="#">Tv y Series</a>
+											<ul>
+												<li><a href="#" data-category="AV">Avatar</a></li>
+												<li><a href="#" data-category="FS">Friends</a></li>
+												<li><a href="#" data-category="GT">Games of thrones</a></li>
+												<li><a href="#" data-category="HA">Hora de aventura</a></li>
+												<li><a href="#" data-category="HD">House of the Dragon</a></li>
+												<li><a href="#" data-category="LS">Los Simpsons</a></li>
+												<li><a href="#" data-category="OS">Otras</a></li>
+												<li><a href="#" data-category="PB">Peacky Blinders</a></li>
+												<li><a href="#" data-category="RM">Rick y Morty</a></li>
+												<li><a href="#" data-category="ST">Stranger Things</a></li>
+												<li><a href="#" data-category="TU">The Last of us</a></li>
+												<li><a href="#" data-category="TWD">The Walking Death</a></li>
+												
+											</ul>
+										</li>
+										
 									</ul>
 								</div>
 							</aside>
@@ -266,6 +343,25 @@
 											</div>
 										</div>
 										@endforeach
+									</div>
+									<div class="pagination-info text-center">
+										<p>
+											Mostrando {{ $imagesCatalogo->firstItem() }} a {{ $imagesCatalogo->lastItem() }} de {{ $imagesCatalogo->total() }} resultados
+										</p>
+										<div class="pagination-navigation carousel_nav">
+											<div class="pagination-navigation carousel_nav">
+												<button type="button" class="pagination-button main_left_arrow{{ $imagesCatalogo->onFirstPage() ? ' disabled' : '' }}"
+														onclick="if (!this.classList.contains('disabled')) { window.location='{{ $imagesCatalogo->previousPageUrl() }}{{ request()->has('categoria') ? '&categoria=' . request('categoria') : '' }}'; }">
+													<i class="fal fa-arrow-left"></i>
+												</button>
+												<button type="button" class="pagination-button main_right_arrow{{ $imagesCatalogo->hasMorePages() ? '' : ' disabled' }}"
+														onclick="if (!this.classList.contains('disabled')) { window.location='{{ $imagesCatalogo->nextPageUrl() }}{{ request()->has('categoria') ? '&categoria=' . request('categoria') : '' }}'; }">
+													<i class="fal fa-arrow-right"></i>
+												</button>
+											</div>
+										</div>
+									<!-- Agregar enlaces de paginación aquí -->
+									
 									</div>
 								</div>
 							</div>
@@ -506,46 +602,42 @@
 		<script src="js/custom.js"></script>
 		<script>
 			$(document).ready(function() {
-				// Mostrar todas las imágenes al cargar la página
-				showImages('all');
+    // Mostrar todas las imágenes al cargar la página
+    showImages('all');
 
-				// Manejar el clic en los enlaces de filtrado
-				$('a[data-category]').on('click', function(e) {
-					e.preventDefault();
-					var category = $(this).data('category');
-					showImages(category);
-				});
+    // Función para mostrar/ocultar imágenes según la categoría
+    function showImages(category) {
+        $('.image-item').hide(); // Ocultar todas las imágenes
 
-				// Función para mostrar/ocultar imágenes según la categoría
-				function showImages(category) {
-					$('.image-item').hide(); // Ocultar todas las imágenes
+        if (category === 'all') {
+            $('.image-item').show(); // Mostrar todas las imágenes si la categoría es 'all'
+        } else {
+            $('.image-item[data-category="' + category + '"]').show(); // Mostrar imágenes de la categoría seleccionada
+        }
+    }
 
-					if (category === 'all') {
-						$('.image-item').show(); // Mostrar todas las imágenes si la categoría es 'all'
-					} else {
-						$('.image-item[data-category="' + category + '"]').show(); // Mostrar imágenes de la categoría seleccionada
-					}
-				}
-			});
-			document.addEventListener('DOMContentLoaded', function () {
-				const parentItems = document.querySelectorAll('.parent');
+    // Manejar el clic en los enlaces de filtrado
+    $('a[data-category]').on('click', function(e) {
+        var category = $(this).data('category');
+        showImages(category);
+    });
 
-				parentItems.forEach(item => {
-					item.addEventListener('click', function (event) {
-						event.preventDefault();
-						this.classList.toggle('active');
+    // Capturar el clic en los elementos de categoría para alternar la clase 'active'
+    const parentItems = document.querySelectorAll('.parent');
 
-						// Desactivar todas las categorías
-						parentItems.forEach(parent => {
-                        	if (parent !== this && parent.classList.contains('active')) {
-                            	parent.classList.remove('active');
-                        	}
-                    	});
-						// Activar la categoría seleccionada
-						
-					});
-				});
-			});
+    parentItems.forEach(item => {
+        item.addEventListener('click', function (event) {
+            this.classList.toggle('active');
+
+            // Desactivar todas las categorías excepto la actual
+            parentItems.forEach(parent => {
+                if (parent !== this && parent.classList.contains('active')) {
+                    parent.classList.remove('active');
+                }
+            });
+        });
+    });
+});
 
 		</script>
 		

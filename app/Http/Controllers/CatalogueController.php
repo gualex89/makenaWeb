@@ -13,17 +13,29 @@ use App\Models\Product;
 
 class CatalogueController extends Controller
 {
-    public function catalogo(){
+    public function catalogo(Request $request){
 
-        $imagesCatalogo= Catalogue::all();
-        $totalImagesCatalogo = $imagesCatalogo->count();
-
-        //Obetenemos los productos para asi obtener precios
+        // Obtener el parámetro de categoría de la solicitud
+        $categoria = $request->query('categoria');
+    
+        // Consulta inicial sin filtrar por categoría
+        $query = Catalogue::query();
+    
+        // Si se especifica una categoría, filtrar por esa categoría
+        if($categoria) {
+            $query->where('file_name', 'like', $categoria . '%');
+        }
+    
+        // Paginar los resultados
+        $imagesCatalogo = $query->paginate(12);
+        $totalImagesCatalogo = $imagesCatalogo->total();
+    
+        //Obetenemos los productos para así obtener precios
         $misProductos = Product::all();
         $precioFundas = null;
         $precioPopSockets = null;
         $precioFundasDobles = null;
-
+    
         foreach ($misProductos as $producto) {
             if ($producto->name === 'Fundas') {
                 $precioFundas = $producto->price;
@@ -37,8 +49,8 @@ class CatalogueController extends Controller
                 $precioFundasDobles = $producto->price;
             }
         }
-
-
+    
+        // Pasar los datos a la vista
         return view('layouts.catalogo', compact('imagesCatalogo', 'totalImagesCatalogo', 'precioFundas', 'precioPopSockets', 'precioFundasDobles'));
     }
     public function obtenerMarcas(){
