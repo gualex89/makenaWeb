@@ -64,7 +64,7 @@
 					<div class="row align-items-center">
 						<div class="col-lg-2">
 							<div class="brand_logo">
-								<a class="brand_link" href="index.html">
+								<a class="brand_link" href="/">
 									<img src="images/logo/logomakena.png" srcset="images/logo/logomakena.png 2x" alt="logo_not_found">
 								</a>
 
