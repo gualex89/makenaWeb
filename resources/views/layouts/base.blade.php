@@ -93,6 +93,9 @@
 									<li class="menu_item_has_child">
 										<a href="/tufunda">Crea tu Funda</a>
 									</li>
+									<li class="menu_item_has_child">
+										<a href="/frecuentes">Preguntas Frecuentes</a>
+									</li>
 									
 								</ul>
 							</nav>
@@ -174,6 +177,9 @@
 							</li>
 							<li>
 								<a href="/tufunda" aria-haspopup="true" aria-expanded="false">Crea tu Funda</a>
+							</li>
+							<li>
+								<a href="/frecuentes" aria-haspopup="true" aria-expanded="false">Preguntas Frecuentes</a>
 							</li>
 						</ul>
 					</div>
