@@ -253,7 +253,9 @@
 									<div id="latest_tab" class="tab-pane active">
 										<div class="motorcycle_product_grid">
 											<div class="item_image">
+												<a href="/catalogo">
 												<img src="{{ Voyager::image($producto->image) }}" alt="image_not_found">
+												</a>
 											</div>
 											<div class="item_content">
 												<span class="item_price">{{ ($producto->price) }}</span>
