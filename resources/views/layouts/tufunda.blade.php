@@ -275,9 +275,7 @@
 												
 												
 												
-												<div class="col-lg-12 barra_de_texto">
-													<button id="btn">Generar imagen</button>
-												</div>
+												
 											</div>
 										</div>
 										
@@ -692,6 +690,12 @@
 			}
 			document.getElementById('imageLoader').addEventListener('change', function(e) {
 				var file = e.target.files[0];
+
+				if (file.size > 3 * 1024 * 1024) { // 3 MB en bytes
+					alert("El archivo es demasiado grande. El tamaño máximo permitido es de 3 MB.");
+					return;
+				}
+
 				var reader = new FileReader();
 			
 				reader.onload = function(e) {
@@ -892,14 +896,7 @@
 				}
 			}
 		
-			btn.onclick = () => {
-			  const dataURL = canvas.toDataURL("image/png");
-			  const a = document.createElement("a");
-			  a.download = "composicion";
-			  a.href = dataURL;
-			  a.click();
-			  descargarImagenSubida();
-			};
+			
 			function restablecerCanvas() {
     			canvas.clear();
 				canvas.renderAll();
