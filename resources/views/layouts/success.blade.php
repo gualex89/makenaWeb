@@ -58,7 +58,7 @@
 		<!-- backtotop - start -->
 		<div id="thetop"></div>
 		<div class="backtotop bg_wts">
-			<a href="http://wa.me/541122444188" class="go_to_wts" >
+			<a href="https://wa.me/541122444188" class="go_to_wts" >
 				<i class="fab fa-whatsapp" style="font-size: 24px;"></i>
 			</a>
 		</div>
@@ -236,7 +236,7 @@
 
 								<ul class="circle_social_links ul_li clearfix justify-content-center d-flex">
 									<li><a href="https://www.instagram.com/makenafundas/"><i class="fab fa-instagram"></i></a></li>
-									<li><a href="http://wa.me/541122444188"><i class="fab fa-whatsapp"></i></a></li>
+									<li><a href="https://wa.me/541122444188"><i class="fab fa-whatsapp"></i></a></li>
 									<li><a href="https://www.facebook.com/makenafundas"><i class="fab fa-facebook-f"></i></a></li>
 								</ul>
 							</div>
