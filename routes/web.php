@@ -59,6 +59,8 @@ Route::post('/guardar-orden', [CheckoutController::class, 'SaveOrder']);
 
 Route::post('/actualizar-orden', [CheckoutController::class, 'updateOrder']);
 
+Route::post('/actualizar-descuento', [CheckoutController::class, 'updateDiscount']);
+
 
 Route::get('/frecuentes', [FrecuentesController::class, 'Frecuentes'])->name('Frecuentes');
 

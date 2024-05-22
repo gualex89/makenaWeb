@@ -383,12 +383,25 @@
 													<div class="cart_pricing_table pt-0 text-uppercase" data-bg-color="#f2f3f5">
 														<h3 class="table_title text-center" data-bg-color="#ededed">Total</h3>
 														<ul class="ul_li_block clearfix">
-															<li><span>Subtotal</span> <span>$0</span></li>
-															<li><span>Envío</span> <span>$0</span></li>
-															<li><span>Total</span> <span>$0</span></li>
-														</ul>
+															<li><span>Subtotal</span> <span id="subtotalValor">$0</span></li>
+															<li><span>Envío</span> <span id="envioValor">$0</span></li>
+															<li id="descuentoSpan" style="display: none"><span>Descuento</span> <span id="descuentoValor">$0</span></li>
+															<li><span>Total</span> <span id="totalValor">$0</span></li>
 														
-														<div id="wallet_container"></div>
+														<div>
+															<div id="mercadopago_container">
+																<div id="wallet_container"></div>
+															</div>
+															<ul class="ul_li_block clearfix">
+															<div>
+																<input type="text" id="discount-code" placeholder="Código de Descuento">
+															</div>
+														</ul>
+        													<button id="apply-discount" class="custom_btn bg_success">Aplicar Descuento</button>
+														</div>
+
+														
+														
 													</div>
 												</div>
 									
@@ -598,15 +611,21 @@
 				$('#tercerAcordeon').attr('disabled', 'disabled');
 				total = 0;
 				subtotal = 0;
-				$('#wallet_container').empty();				
+				$('#wallet_container').empty();
+				$('#descuentoSpan').hide();
+								
 			});
 			$('#segundoAcordeon').on('click', function() {
 				$('#tercerAcordeon').attr('disabled', 'disabled');
 				subtotal = 0;
 				total = 0;
 				$('#wallet_container').empty();
+				$('#descuentoSpan').hide();
+				
+				
+				
 			});
-			
+			let discount = 0;
 			let total = 0;
 			let subtotal = 0;
 			$(document).ready(function() {
@@ -616,21 +635,22 @@
 						element.textContent = cartItems.length;
 					});
 				}
+				
 		
 				function updatePrices(subtotal, shippingCost, total) {
 					// Actualizar subtotal, envío y total en el resumen del carrito
-					
+					const subtotalValor = document.getElementById('subtotalValor');
+					const totalValor = document.getElementById('totalValor');
+					const envioValor = document.getElementById('envioValor');
+
+					subtotalValor.textContent = `$${subtotal.toFixed(2)}`;
+					totalValor.textContent = `$${total.toFixed(2)}`;
+					envioValor.textContent = `$${shippingCost.toFixed(2)}`;
+
 		
-					$('.cart_pricing_table ul li span:nth-child(2)').each(function(index, element) {
-						if (index === 0) { // Primer span es el subtotal
-							$(element).text(`$${subtotal.toFixed(2)}`);
-						} else if (index === 1) { // Segundo span es el envío
-							$(element).text(`$${shippingCost.toFixed(2)}`);
-						} else if (index === 2) { // Tercer span es el total
-							$(element).text(`$${total.toFixed(2)}`);
-						}
-					});
+					
 				}
+				
 				let shippingCost = 0;
 				function updateCartItems(cartItems) {
 					const cartTableBody = $('.cart_section table tbody');
@@ -679,6 +699,8 @@
 
 					// Actualizar precios del carrito
 					updatePrices(subtotal, shippingCost, total);
+
+					
 		
 					// Reasignar eventos click a los botones de eliminar
 					$('.remove_btn').each(function(index, removeButton) {
@@ -697,6 +719,43 @@
 						});
 					});
 				}
+				document.getElementById('apply-discount').addEventListener('click', function() {
+					const discountCode = document.getElementById('discount-code').value;
+					const subtotalValor = document.getElementById('subtotalValor');
+					const totalValor = document.getElementById('totalValor');
+					
+					// Get the numeric value of the subtotal
+					subtotal = parseFloat(subtotalValor.textContent.replace('$', ''));
+
+					// Check if the discount code is correct
+					if (discountCode.toLowerCase() === 'descuento') {
+						// Calculate the discount
+						discount = subtotal * 0.20;
+						$('#descuentoValor').text(`$${discount.toFixed(2)}`);
+						$('#descuentoSpan').show();
+						// Apply the discount
+						const newTotal = subtotal - discount + shippingCost;
+						const newTotalSinEnvio = subtotal - discount;
+						// Update the total element
+						totalValor.textContent = `$${newTotal.toFixed(2)}`;
+						$('#wallet_container').empty();
+						
+						
+						updateDescuento();
+						console.log(newTotalSinEnvio);
+						
+						mercadoPago(total, subtotal, shippingCost, idOrder, discount);
+						setTimeout(function() {
+						updateOrder();
+						}, 3000);
+						
+						total = newTotal;
+						
+					} else {
+						// If the code is incorrect, just set the total to the original subtotal
+						totalValor.textContent = subtotalValor.textContent;
+					}
+				});
 		
 				// Obtener los elementos del carrito almacenados en el localStorage
 				let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
@@ -714,7 +773,7 @@
 					updateCartItems(cartItems);
 					saveOrder();
 					setTimeout(function() {
-						mercadoPago(total, subtotal, shippingCost, idOrder);
+						mercadoPago(total, subtotal, shippingCost, idOrder, 0);
 					}, 1500);
 					setTimeout(function() {
 						updateOrder();
@@ -739,7 +798,7 @@
 					updateCartItems(cartItems);
 					saveOrder();
 					setTimeout(function() {
-						mercadoPago(total, subtotal, shippingCost, idOrder);
+						mercadoPago(total, subtotal, shippingCost, idOrder, 0);
 					}, 1500);
 					setTimeout(function() {
 						updateOrder();
@@ -753,7 +812,7 @@
 					updateCartItems(cartItems);
 					saveOrder();
 					setTimeout(function() {
-						mercadoPago(total, subtotal, shippingCost, idOrder);
+						mercadoPago(total, subtotal, shippingCost, idOrder, 0);
 					}, 1500);
 					setTimeout(function() {
 						updateOrder();
@@ -762,62 +821,67 @@
 				
 			});
 			let preference_id = null;
-			function mercadoPago(total, subtotal, shippingCost, idOrder) {
+			function mercadoPago(total, subtotal, shippingCost, idOrder, discount) {
+				console.log("se ejecuto la funcion de MP");
 				
-				const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 				
-				fetch('/api/mercado-pago', {	
-						method: 'POST',
-						headers: {
-							'Content-Type': 'application/json',
-							'X-CSRF-TOKEN': '{{ csrf_token() }}' // Agrega el token CSRF de Laravel
-						},
-						body: JSON.stringify(
-							{
-								total : total,
-								shippingCost : shippingCost,
-								subtotal : subtotal,
-								externalReference : idOrder
-							
-							}
-						),
-					}).then(response => {
-						if (response.ok) {
-							return response.json();
-						}
-						throw new Error('Error en la respuesta del servidor.');
-					})
-					.then(data => {
-						console.log('Respuesta del servidor:', data);
-						console.log(data);
-						preference_id = data.preferenceId
-						const mp = new MercadoPago("{{config('services.mercadopago.key')}}", {
-							locale: 'es-AR'
-						});
-						const bricksBuilder = mp.bricks();
-
-
-						mp.bricks().create("wallet", "wallet_container", {
-							initialization: {
-								redirectMode: "self",
-								preferenceId: data.preferenceId,
-							},
-							customization: {
-								texts: {
-									
-									valueProp: 'smart_option',
-								},
-							},
-						});
-						// Puedes manejar la respuesta del servidor aquí
-					})
-					.catch(error => {
-						console.error('Error al enviar los datos:', error);
-					});
-			
-				
-			}
+				if ($('#wallet_container').children().length === 0) {
+					const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+					console.log(total);
 					
+					fetch('/api/mercado-pago', {	
+							method: 'POST',
+							headers: {
+								'Content-Type': 'application/json',
+								'X-CSRF-TOKEN': '{{ csrf_token() }}' // Agrega el token CSRF de Laravel
+							},
+							body: JSON.stringify(
+								{
+									total : total,
+									shippingCost : shippingCost,
+									subtotal : subtotal,
+									externalReference : idOrder,
+									discount : discount
+								
+								}
+							),
+						}).then(response => {
+							if (response.ok) {
+								return response.json();
+							}
+							throw new Error('Error en la respuesta del servidor.');
+						})
+						.then(data => {
+							console.log('Respuesta del servidor:', data);
+							console.log(data);
+							preference_id = data.preferenceId
+							const mp = new MercadoPago("{{config('services.mercadopago.key')}}", {
+								locale: 'es-AR'
+							});
+							const bricksBuilder = mp.bricks();
+
+
+							mp.bricks().create("wallet", "wallet_container", {
+								initialization: {
+									redirectMode: "self",
+									preferenceId: data.preferenceId,
+								},
+								customization: {
+									texts: {
+										
+										valueProp: 'smart_option',
+									},
+								},
+							});
+							// Puedes manejar la respuesta del servidor aquí
+						})
+						.catch(error => {
+							console.error('Error al enviar los datos:', error);
+						});
+				
+					
+				}
+			}		
 		
 		
 			function testZippin() {
@@ -1145,6 +1209,38 @@
 					body: JSON.stringify({
 						preference_id: preference_id,
 						idOrder: idOrder
+							
+
+					})
+				})
+				.then(response => {
+					if (response.ok) {
+						return response.json();
+					}
+					throw new Error('Error en la respuesta del servidor.');
+				})
+				.then(data => {
+					console.log('Respuesta del servidor:', data);
+					
+					 // Puedes manejar la respuesta del servidor aquí
+				})
+				.catch(error => {
+					console.error('Error al enviar los datos:', error);
+				});
+			}
+			function updateDescuento(){
+				fetch('/actualizar-descuento', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+						'X-CSRF-TOKEN': '{{ csrf_token() }}' // Agrega el token CSRF de Laravel
+					},
+					body: JSON.stringify({
+						preference_id: preference_id,
+						idOrder: idOrder,
+						discount : discount,
+						
+
 							
 
 					})

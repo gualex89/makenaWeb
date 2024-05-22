@@ -69,6 +69,31 @@ class CheckoutController extends Controller
         
         
     }
+    public function updateDiscount(Request $request){
+        $data = $request->all();
+        $idOrder = $data['idOrder'];
+        $discount = $data['discount'];
+        $order = Order::find($idOrder);
+        $nuevoValorTotal = $order->subtotal + $order->valor_envio - $discount;
+        /* dd($discount, $nuevoValorTotal, $idOrder); */
+        if($order){
+            $order->descuento = $discount;
+            $order->total = $nuevoValorTotal;
+            $order->save();
+           
+            
+            
+            /* dd($order); */
+            // Devolver una respuesta o realizar alguna otra lógica si es necesario
+            return response()->json(['message' => 'Descuento actualizado correctamente'], 200);
+        } else {
+            // La orden no fue encontrada, puedes manejar este caso aquí depende de tu lógica de aplicación
+            return response()->json(['message' => 'Orden no encontrada', 'idOrder' => $discount], 404);
+        }
+        
+        
+        
+    }
 
     
 }

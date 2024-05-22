@@ -13,7 +13,8 @@ class MercadoPagoController extends Controller
 
         $data = $request->all();
         $total = $request->total;
-        $subtotal = $request->subtotal;
+        $discount = $request->discount;
+        $subtotal = $request->subtotal - $discount;
         $envio = $request->shippingCost;
         $externalReference = $request->externalReference;
         
