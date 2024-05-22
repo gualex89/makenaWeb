@@ -176,35 +176,36 @@
 					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-block ">
 						
 						<h1>Preguntas Frecuentes</h1>
-						<h3 class="text-left">¿Cómo puedo crear mi funda personalizada?</h3>
-                            <p class="text-left">En la opción “crea tu funda” o entrando al siguiente  <a href="https://makenafundas.com.ar/tufunda">link
-                            </a> podés crear la funda con la imagen que quieras.</p>
-                        <h3 class="text-left">¿Qué resolución debe tener la imagen para personalizar?</h3>
-                            <p class="text-left">Recomendamos que uses una resolución de <b>600px</b> por <b>1200px</b> pero podés usar la imagen que quieras, mientras mejor calidad tenga mejor va a quedar la funda.</p>
-                        <h3 class="text-left">¿Y si no puedo crear la funda como quería?</h3>
-                            <p class="text-left">Puede pasar que la imagen no quede justo como vos querías, si esto pasa podés escribirnos a nuestro <a href="https://Wa.me/541122444188">WhatsApp</a> para cotizar el rediseño de tu imagen asesorado por nuestro diseñador gráfico.</p>
-                        <h3 class="text-left">¿Para qué modelos de celular tienen fundas?</h3>
-                            <p class="text-left">Trabajamos la mayoría de los modelos de las marcas Samsung, Motorola, Apple, Xiaomi y algunos modelos de LG. Si querés consultar si tu modelo esta disponible entra al siguiente <a href="https://makenafundas.com.ar/tufunda">link</a> y selecciona la marca de tu celular y buscá tu modelo. </p>
-                        <h3 class="text-left">¿Hacen envios?</h3>
-                            <p class="text-left">Obvio! Podemos enviar tu funda a cualquier parte del país. Si estas en <b>CABA</b> o <b>Conurbano</b> tu pedido se envia por moto mensajería y entre 24 y 72 hs ya la tenes en tu domicilio*. Si sos del <b>interior del país</b> o <b>Provincia de Buenos Aires</b> se envia con correo argentino a tu domicilio o la sucursal cercana que vos elijas y te llega entre 2 y 7 días*.</p>
-                            <p class="text-left" style="font-size: smaller;">*Los envios pueden por razones externas a MAKENASTORE tardar mas de lo debido, no nos hacemos responsables por atrasos de empresas terceras, si nos comprometemos en orientarte para que podamos resolver el inconveniente lo más rápido posible.</p>
-                        <h3 class="text-left">¿Puedo retirar la funda?</h3>
-                            <p class="text-left">Si! Podes retirar tu pedido en nuestro taller ubicado en Lanús Oeste.</p>
-                        <h3 class="text-left">¿Hacen punto de encuentro?</h3>
-                            <p class="text-left">No. Únicamente retiros o envíos a domicilio.</p>
-                        <h3 class="text-left">¿De qué material están hechas las fundas? </h3>
-                            <p class="text-left">Están hechas de TPU flexible en los bordes (mucho mas dura y resistente que la silicona) con capacidad de absorción de impactos y bordes anti-slip; la parte personalizable es una placa alumínica recubierta de polímero el cual le da esa terminación reluciente.</p>
-                        <h3 class="text-left">¿Cuál es el tiempo de producción? </h3>
-                            <p class="text-left">Una vez recibido el diseño y el pago tenemos un tiempo de producción de 24 a 72 hs hábiles*.</p>
-                            <p class="text-left" style="font-size: smaller;">*Puede haber demoras debido a faltas en el stock, si esto sucede no te preocupes que nos comunicaremos con vos para informarte</p>
-                        <h3 class="text-left">¿Puedo hacer el seguimiento de mi pedido?</h3>
-                            <p class="text-left">Si, obvio. primero cuando hagas tu pedido recibirás un mail confirmando tu compra. En caso de hayas pedido envio te va a llegar otro mail avisándote que tu pedido fue despachado y vas a tener un numero de seguimiento. En caso de que retires nos comunicaremos con vos para avisarte cuando esté listo así podes pasar a retirar.
-                                </p>
-                        <h3 class="text-left">¿Las fundas tienen garantía?</h3>
-                            <p class="text-left">Si. Tienen 60 dias de corrido a partir de haber realizado la compra para cualquier cambio relacionado con fallas del producto. no realizamos cambios de fundas por mal uso de la misma o confusiones en el modelo del celular.</p>
-                        <h3 class="text-left">Si tenés dudas con respecto al modelo de tu celular podes consultar el siguiente <a href="https://www.instagram.com/stories/highlights/17891378999691555/">tutorial</a>  </h3>
-                            <p class="text-left"></p>
-                        
+						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-block mt-5">
+							<h3 class="text-left">¿Cómo puedo crear mi funda personalizada?</h3>
+								<p class="text-left">En la opción “crea tu funda” o entrando al siguiente  <a href="https://makenafundas.com.ar/tufunda">link
+								</a> podés crear la funda con la imagen que quieras.</p>
+							<h3 class="text-left">¿Qué resolución debe tener la imagen para personalizar?</h3>
+								<p class="text-left">Recomendamos que uses una resolución de <b>600px</b> por <b>1200px</b> pero podés usar la imagen que quieras, mientras mejor calidad tenga mejor va a quedar la funda.</p>
+							<h3 class="text-left">¿Y si no puedo crear la funda como quería?</h3>
+								<p class="text-left">Puede pasar que la imagen no quede justo como vos querías, si esto pasa podés escribirnos a nuestro <a href="https://Wa.me/541122444188">WhatsApp</a> para cotizar el rediseño de tu imagen asesorado por nuestro diseñador gráfico.</p>
+							<h3 class="text-left">¿Para qué modelos de celular tienen fundas?</h3>
+								<p class="text-left">Trabajamos la mayoría de los modelos de las marcas Samsung, Motorola, Apple, Xiaomi y algunos modelos de LG. Si querés consultar si tu modelo esta disponible entra al siguiente <a href="https://makenafundas.com.ar/tufunda">link</a> y selecciona la marca de tu celular y buscá tu modelo. </p>
+							<h3 class="text-left">¿Hacen envios?</h3>
+								<p class="text-left">Obvio! Podemos enviar tu funda a cualquier parte del país. Si estas en <b>CABA</b> o <b>Conurbano</b> tu pedido se envia por moto mensajería y entre 24 y 72 hs ya la tenes en tu domicilio*. Si sos del <b>interior del país</b> o <b>Provincia de Buenos Aires</b> se envia con correo argentino a tu domicilio o la sucursal cercana que vos elijas y te llega entre 2 y 7 días*.</p>
+								<p class="text-left" style="font-size: smaller;">*Los envios pueden por razones externas a MAKENASTORE tardar mas de lo debido, no nos hacemos responsables por atrasos de empresas terceras, si nos comprometemos en orientarte para que podamos resolver el inconveniente lo más rápido posible.</p>
+							<h3 class="text-left">¿Puedo retirar la funda?</h3>
+								<p class="text-left">Si! Podes retirar tu pedido en nuestro taller ubicado en Lanús Oeste.</p>
+							<h3 class="text-left">¿Hacen punto de encuentro?</h3>
+								<p class="text-left">No. Únicamente retiros o envíos a domicilio.</p>
+							<h3 class="text-left">¿De qué material están hechas las fundas? </h3>
+								<p class="text-left">Están hechas de TPU flexible en los bordes (mucho mas dura y resistente que la silicona) con capacidad de absorción de impactos y bordes anti-slip; la parte personalizable es una placa alumínica recubierta de polímero el cual le da esa terminación reluciente.</p>
+							<h3 class="text-left">¿Cuál es el tiempo de producción? </h3>
+								<p class="text-left">Una vez recibido el diseño y el pago tenemos un tiempo de producción de 24 a 72 hs hábiles*.</p>
+								<p class="text-left" style="font-size: smaller;">*Puede haber demoras debido a faltas en el stock, si esto sucede no te preocupes que nos comunicaremos con vos para informarte</p>
+							<h3 class="text-left">¿Puedo hacer el seguimiento de mi pedido?</h3>
+								<p class="text-left">Si, obvio. primero cuando hagas tu pedido recibirás un mail confirmando tu compra. En caso de hayas pedido envio te va a llegar otro mail avisándote que tu pedido fue despachado y vas a tener un numero de seguimiento. En caso de que retires nos comunicaremos con vos para avisarte cuando esté listo así podes pasar a retirar.
+									</p>
+							<h3 class="text-left">¿Las fundas tienen garantía?</h3>
+								<p class="text-left">Si. Tienen 60 dias de corrido a partir de haber realizado la compra para cualquier cambio relacionado con fallas del producto. no realizamos cambios de fundas por mal uso de la misma o confusiones en el modelo del celular.</p>
+							<h3 class="text-left">Si tenés dudas con respecto al modelo de tu celular podes consultar el siguiente <a href="https://www.instagram.com/stories/highlights/17891378999691555/">tutorial</a>  </h3>
+								<p class="text-left"></p>
+                        </div>
                         
 					</div>
 				</div>
