@@ -178,14 +178,13 @@
 						<h1>Preguntas Frecuentes</h1>
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-block mt-5">
 							<h3 class="text-left">¿Cómo puedo crear mi funda personalizada?</h3>
-								<p class="text-left">En la opción “crea tu funda” o entrando al siguiente  <a href="https://makenafundas.com.ar/tufunda" style="color: #F831FE">link
-								</a> podés crear la funda con la imagen que quieras.</p>
+								<p class="text-left">En la opción “crea tu funda” o entrando al siguiente  <a href="https://makenafundas.com.ar/tufunda" style="color: #F831FE"><b>link</b></a> podés crear la funda con la imagen que quieras.</p>
 							<h3 class="text-left">¿Qué resolución debe tener la imagen para personalizar?</h3>
 								<p class="text-left">Recomendamos que uses una resolución de <b>600px</b> por <b>1200px</b> pero podés usar la imagen que quieras, mientras mejor calidad tenga mejor va a quedar la funda.</p>
 							<h3 class="text-left">¿Y si no puedo crear la funda como quería?</h3>
-								<p class="text-left">Puede pasar que la imagen no quede justo como vos querías, si esto pasa podés escribirnos a nuestro <a href="https://Wa.me/541122444188" style="color: #F831FE">WhatsApp</a> para cotizar el rediseño de tu imagen asesorado por nuestro diseñador gráfico.</p>
+								<p class="text-left">Puede pasar que la imagen no quede justo como vos querías, si esto pasa podés escribirnos a nuestro <a href="https://Wa.me/541122444188" style="color: #F831FE"><b>WhatsApp</b></a> para cotizar el rediseño de tu imagen asesorado por nuestro diseñador gráfico.</p>
 							<h3 class="text-left">¿Para qué modelos de celular tienen fundas?</h3>
-								<p class="text-left">Trabajamos la mayoría de los modelos de las marcas Samsung, Motorola, Apple, Xiaomi y algunos modelos de LG. Si querés consultar si tu modelo esta disponible entra al siguiente <a href="https://makenafundas.com.ar/tufunda" style="color: #F831FE">link</a> y selecciona la marca de tu celular y buscá tu modelo. </p>
+								<p class="text-left">Trabajamos la mayoría de los modelos de las marcas Samsung, Motorola, Apple, Xiaomi y algunos modelos de LG. Si querés consultar si tu modelo esta disponible entra al siguiente <a href="https://makenafundas.com.ar/tufunda" style="color: #F831FE"><b>link</b></a> y selecciona la marca de tu celular y buscá tu modelo. </p>
 							<h3 class="text-left">¿Hacen envios?</h3>
 								<p class="text-left">Obvio! Podemos enviar tu funda a cualquier parte del país. Si estas en <b>CABA</b> o <b>Conurbano</b> tu pedido se envia por moto mensajería y entre 24 y 72 hs ya la tenes en tu domicilio*. Si sos del <b>interior del país</b> o <b>Provincia de Buenos Aires</b> se envia con correo argentino a tu domicilio o la sucursal cercana que vos elijas y te llega entre 2 y 7 días*.</p>
 								<p class="text-left" style="font-size: smaller;">*Los envios pueden por razones externas a MAKENASTORE tardar mas de lo debido, no nos hacemos responsables por atrasos de empresas terceras, si nos comprometemos en orientarte para que podamos resolver el inconveniente lo más rápido posible.</p>
