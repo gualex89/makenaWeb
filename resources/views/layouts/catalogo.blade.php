@@ -295,7 +295,7 @@
 												<li><a href= "/catalogo?categoria=VF">Volver al Futuro</a></li>
 											</ul>
 										</li>
-										<li class="parent"><a href=>Tv y Series</a>
+										<li class="parent"><a href= "#">Tv y Series</a>
 											<ul>
 												<li><a href= "/catalogo?categoria=AV">Avatar</a></li>
 												<li><a href= "/catalogo?categoria=FS">Friends</a></li>
