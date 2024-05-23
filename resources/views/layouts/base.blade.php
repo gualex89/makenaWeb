@@ -258,7 +258,7 @@
 												</a>
 											</div>
 											<div class="item_content">
-												<span class="item_price">{{ ($producto->price) }}</span>
+												
 												<h3 class="item_title">
 													<a href="#!">{{ ($producto->name) }}</a>
 												</h3>

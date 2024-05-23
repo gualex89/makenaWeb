@@ -14,7 +14,7 @@ class TuFundaController extends Controller
         $precioFundas = null;
 
         foreach ($misProductos as $producto) {
-            if ($producto->name === 'Fundas') {
+            if ($producto->name === 'Dragon Ball') {
                 $precioFundas = str_replace('$', '', $producto->price);
                 
             }

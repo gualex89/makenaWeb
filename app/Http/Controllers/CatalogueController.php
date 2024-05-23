@@ -37,7 +37,7 @@ class CatalogueController extends Controller
         $precioFundasDobles = null;
     
         foreach ($misProductos as $producto) {
-            if ($producto->name === 'Fundas') {
+            if ($producto->name === 'Dragon Ball') {
                 $precioFundas = $producto->price;
                 
             }     
