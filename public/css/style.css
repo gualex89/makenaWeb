@@ -12289,7 +12289,7 @@ padding: 10px;
   background-color: #f7f7f7;
 }
 .motorcycle_product_grid img {
-  max-height: 370px;
+  max-height: 440px;
   transition: 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 .motorcycle_product_grid:hover img {
@@ -23799,8 +23799,8 @@ blockquote .blockquote_title {
   }
 
   .motorcycle_product_grid img {
-    max-width: 270px;
-    max-height: 250px;
+    max-width: 400px;
+    max-height: 330px;
   }
 
   .motorcycle_product_grid .item_image {
