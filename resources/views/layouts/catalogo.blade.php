@@ -474,13 +474,13 @@
 						<div class="sb_widget sb_recent_post seleccionadores">
 							<div class="sb_widget sb_category">
 								
-								<div class="col-lg-12">
+								<div class="col-lg-12 divMarcaDropdown2">
 									<label for="marcasDropdown" style="font-weight: bold; font-size: larger; margin:10px">Marca</label>
 									<select name="marcas" id="marcasDropdown">
 										<option value="">Seleccione</option> 
 									</select>
 								</div>
-								<div class="col-lg-12">
+								<div class="col-lg-12 divModeloDropdown2">
 									<label for="marcasDropdown" style="font-weight: bold; font-size: larger; margin:10px">Modelo</label>
 									<select name="modelos" id="modelosDropdown">
 										<option value="">Seleccione</option>

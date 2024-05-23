@@ -19702,6 +19702,7 @@ blockquote .blockquote_title {
   font-size: 19px;
   
 }
+
 .divModeloDropdown .nice-select .list {
   width: 100%  ;
   font-size: 16px;
@@ -19713,6 +19714,18 @@ blockquote .blockquote_title {
   font-size: 16px;
   max-height: 300px;
   min-width: 213px;
+}
+.divModeloDropdown2 .nice-select .list {
+  
+  font-size: 16px;
+  max-height: 210px;
+  
+}
+.divMarcaDropdown2 .nice-select .list {
+  
+  font-size: 16px;
+  max-height: 210px;
+  
 }
 
 
