@@ -275,6 +275,9 @@
 								</div>
 							@endforeach
 						</div>
+						<div class="abtn_wrap text-center pt-5 mt_5">
+							<a  class="custom_btn bg_carparts_red text-uppercase special_button" style="max-width: 200px;" href="/catalogo">Ver Más</a>
+						</div>
 					</div>
 					
 
