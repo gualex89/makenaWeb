@@ -298,7 +298,7 @@
 										<li class="parent"><a href= "#">Tv y Series</a>
 											<ul>
 												<li><a href= "/catalogo?categoria=AV">Avatar</a></li>
-												<li><a href= "/catalogo?categoria=FS">Friends</a></li>
+												<li><a href= "/catalogo?categoria=FRD">Friends</a></li>
 												<li><a href= "/catalogo?categoria=GT">Games of thrones</a></li>
 												<li><a href= "/catalogo?categoria=HA">Hora de aventura</a></li>
 												<li><a href= "/catalogo?categoria=HD">House of the Dragon</a></li>
