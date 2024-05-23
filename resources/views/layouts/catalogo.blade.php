@@ -287,28 +287,28 @@
 										</li>
 										<li class="parent"><a href="#">Películas</a>
 											<ul>
-												<li><a href="#" data-category="DY">Disney</a></li>
-												<li><a href="#" data-category="HP">Harry Potter</a></li>
-												<li><a href="#" data-category="LR">Lord of the Rings</a></li>
-												<li><a href="#" data-category="MV">Marvel</a></li>
-												<li><a href="#" data-category="SW">Star Wars</a></li>
-												<li><a href="#" data-category="VF">Volver al Futuro</a></li>
+												<li><a href= "/catalogo?categoria=DY">Disney</a></li>
+												<li><a href= "/catalogo?categoria=HP">Harry Potter</a></li>
+												<li><a href= "/catalogo?categoria=LR">Lord of the Rings</a></li>
+												<li><a href= "/catalogo?categoria=MV">Marvel</a></li>
+												<li><a href= "/catalogo?categoria=SW">Star Wars</a></li>
+												<li><a href= "/catalogo?categoria=VF">Volver al Futuro</a></li>
 											</ul>
 										</li>
-										<li class="parent"><a href="#">Tv y Series</a>
+										<li class="parent"><a href=>Tv y Series</a>
 											<ul>
-												<li><a href="#" data-category="AV">Avatar</a></li>
-												<li><a href="#" data-category="FS">Friends</a></li>
-												<li><a href="#" data-category="GT">Games of thrones</a></li>
-												<li><a href="#" data-category="HA">Hora de aventura</a></li>
-												<li><a href="#" data-category="HD">House of the Dragon</a></li>
-												<li><a href="#" data-category="LS">Los Simpsons</a></li>
-												<li><a href="#" data-category="OS">Otras</a></li>
-												<li><a href="#" data-category="PB">Peacky Blinders</a></li>
-												<li><a href="#" data-category="RM">Rick y Morty</a></li>
-												<li><a href="#" data-category="ST">Stranger Things</a></li>
-												<li><a href="#" data-category="TU">The Last of us</a></li>
-												<li><a href="#" data-category="TWD">The Walking Death</a></li>
+												<li><a href= "/catalogo?categoria=AV">Avatar</a></li>
+												<li><a href= "/catalogo?categoria=FS">Friends</a></li>
+												<li><a href= "/catalogo?categoria=GT">Games of thrones</a></li>
+												<li><a href= "/catalogo?categoria=HA">Hora de aventura</a></li>
+												<li><a href= "/catalogo?categoria=HD">House of the Dragon</a></li>
+												<li><a href= "/catalogo?categoria=LS">Los Simpsons</a></li>
+												<li><a href= "/catalogo?categoria=OS">Otras</a></li>
+												<li><a href= "/catalogo?categoria=PB">Peacky Blinders</a></li>
+												<li><a href= "/catalogo?categoria=RM">Rick y Morty</a></li>
+												<li><a href= "/catalogo?categoria=ST">Stranger Things</a></li>
+												<li><a href= "/catalogo?categoria=TU">The Last of us</a></li>
+												<li><a href= "/catalogo?categoria=TWD">The Walking Death</a></li>
 												
 											</ul>
 										</li>
