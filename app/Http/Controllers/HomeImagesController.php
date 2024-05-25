@@ -98,7 +98,7 @@ class HomeImagesController extends Controller
         });
     }
     public function sendMailNuevaVenta($BDdatos, $payment_id){
-        	$emailTo = 'ventas@makenafundas.com.ar';
+        	$emailTo = 'ventasmakena@gmail.com';
             $pathToImage = public_path('images/logo/logomakena.png');
             /* dd($pathToImage); */
             $itemsCart = json_decode($BDdatos->items_cart, true);
