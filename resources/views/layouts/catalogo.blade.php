@@ -492,7 +492,7 @@
 						</div>
 					</div>
 					<div class="modal-footer">
-						<button type="button" id="addToCartModalOkButton" class="btn btn-secondary" data-dismiss="modal">OK</button>
+						<button type="button" id="addToCartModalOkButton" class="btn btn-secondary" data-dismiss="modal" disabled>OK</button>
 					</div>
 				</div>
 				</div>
@@ -699,31 +699,31 @@
 					const selectedMarca = document.getElementById('marcasDropdown').value;
 					const selectedModelo = document.getElementById('modelosDropdown').value;
 
-					const pendingCartItem = {
-						name: itemName,
-						price: price,
-						image: imageUrl,
-						marca: selectedMarca,
-						modelo: selectedModelo
-					};
-					console.log("aqui")
-					console.log(price)
-					console.log("hasta aqui")
+					// Verificar si se ha seleccionado un modelo
+					if (selectedModelo) {
+						const pendingCartItem = {
+							name: itemName,
+							price: price,
+							image: imageUrl,
+							marca: selectedMarca,
+							modelo: selectedModelo
+						};
 
-					// Agregar el artículo al carrito
-					cartItemCount++;
-					subtotal += pendingCartItem.price;
-					total = subtotal;
-					cartItems.push(pendingCartItem);
-					localStorage.setItem('cartItems', JSON.stringify(cartItems));
-					updateCartItems();
-					updatePrices();
-					mostrarAviso();
-					// Cerrar la modal
-					$('#addToCartModal').modal('hide');
-
-					// Eliminar el manejador de eventos para evitar que se acumulen
-					document.getElementById('addToCartModalOkButton').removeEventListener('click');
+						// Agregar el artículo al carrito
+						cartItemCount++;
+						subtotal += pendingCartItem.price;
+						total = subtotal;
+						cartItems.push(pendingCartItem);
+						localStorage.setItem('cartItems', JSON.stringify(cartItems));
+						updateCartItems();
+						updatePrices();
+						mostrarAviso();
+						// Cerrar la modal solo si se ha completado con éxito la acción
+						$('#addToCartModal').modal('hide');
+					} else {
+						// Si no se ha seleccionado un modelo, muestra un mensaje de alerta dentro de la modal
+						alert('Por favor, seleccione un modelo');
+					}
 				});
 
 				function updateCartItems() {
@@ -850,6 +850,10 @@
 					$.get('/obtener-modelos/' + marcaSeleccionada, function(data) {
 						// Limpiar modelos existentes
 						$('#modelosDropdown').empty();
+						$('#modelosDropdown').append($('<option>', {
+							value: '',
+							text: 'Seleccione'
+						}));
 		
 						// Llenar modelos
 						data.forEach(function(modelo) {
@@ -858,7 +862,18 @@
 						});
 					});
 				});
+				$('#modelosDropdown').change(function() {
+					// Verificar si se ha seleccionado un modelo
+					if ($(this).val() !== '') {
+						// Si se seleccionó un modelo, habilitar el botón "OK"
+						$('#addToCartModalOkButton').prop('disabled', false);
+					} else {
+						// Si no se seleccionó un modelo, deshabilitar el botón "OK"
+						$('#addToCartModalOkButton').prop('disabled', true);
+					}
+				});
 			});
+
 		</script>
 		
 		
