@@ -578,14 +578,32 @@
 				var apellido = $('input[name=apellido]').val().trim();
 				var email = $('input[name=email]').val().trim();
 				var telefono = $('input[name=telefono]').val().trim();
+				var telefonoPattern = /^\d{10}$/;
+				var emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+				
+				
+				
+    			
+
+				//Validadacion de formato de correo
+				if (!email.match(emailPattern)) {
+					alert('Por favor, introduce un correo electrónico válido.');
+					event.preventDefault();
+				}
+				
+				if (!telefono.match(telefonoPattern)) {
+					alert('Por favor, introduce un número de teléfono válido');
+					event.preventDefault();
+				}
 		
-				/* if (nombre !== '' && apellido !== '' && email !== '' && telefono !=='') { */
+				if (nombre !== '' && apellido !== '' && email !== '' && telefono !=='' && email.match(emailPattern) && telefono.match(telefonoPattern)) {
 					// Habilitar y expandir el segundo acordeón
 					$('#segundoAcordeon').removeAttr('disabled');
 					$('#collapseTwo').collapse('show');
-				/* } else {
+				} else {
 					alert("Por favor, complete todos los campos del formulario de datos personales.");
-				} */
+				}
 			});
 			$('input[name=tipoEntrega]').on('change', function() {
 				var selectedValue = $('input[name=tipoEntrega]:checked').val();
@@ -772,21 +790,29 @@
 				// JavaScript para controlar el botón "Continuar" y habilitar el tercer acordeón
 				$('#continuarButtonRetiro').on('click', function() {
 					// Habilitar y expandir el tercer acordeón
-					$('#tercerAcordeon').removeAttr('disabled');
-					$('#collapseThree').collapse('show');
 
-					let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-					updateCartItems(cartItems);
-					saveOrder();
-					setTimeout(function() {
-						mercadoPago(total, subtotal, shippingCost, idOrder, 0);
-					}, 1500);
-					setTimeout(function() {
-						updateOrder();
-					}, 3000);
-					console.log(idOrder);
+					if ($('#radioRetiro').is(':checked')) {
+
+						$('#tercerAcordeon').removeAttr('disabled');
+						$('#collapseThree').collapse('show');
+
+						let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+						updateCartItems(cartItems);
+						saveOrder();
+						setTimeout(function() {
+							mercadoPago(total, subtotal, shippingCost, idOrder, 0);
+						}, 1500);
+						setTimeout(function() {
+							updateOrder();
+						}, 3000);
+						console.log(idOrder);
+					}
+					if (!$('#radioRetiro').is(':checked') && !$('#radioEnvio').is(':checked')) {
+						alert('Por favor, selecciona un tipo de entrega');
+					}
 					
 				});
+
 
 				
 		
@@ -796,19 +822,24 @@
 					var localidad = $('input[name=localidad]').val().trim();
 					var calle = $('input[name=calle]').val().trim();
 					var altura = $('input[name=altura]').val().trim();
-		
+
+					if (calle !== '' && altura !== '') {
+
 					// Habilitar y expandir el tercer acordeón
-					$('#tercerAcordeon').removeAttr('disabled');
-					$('#collapseThree').collapse('show');
-					let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-					updateCartItems(cartItems);
-					saveOrder();
-					setTimeout(function() {
-						mercadoPago(total, subtotal, shippingCost, idOrder, 0);
-					}, 1500);
-					setTimeout(function() {
-						updateOrder();
-					}, 3000);
+						$('#tercerAcordeon').removeAttr('disabled');
+						$('#collapseThree').collapse('show');
+						let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+						updateCartItems(cartItems);
+						saveOrder();
+						setTimeout(function() {
+							mercadoPago(total, subtotal, shippingCost, idOrder, 0);
+						}, 1500);
+						setTimeout(function() {
+							updateOrder();
+						}, 3000);
+					}else {
+						alert('Por favor, completa todos los datos');
+					}
 				});
 				$('#continuarButtonRetiroSucursal').on('click', function() {
 					// Habilitar y expandir el tercer acordeón
@@ -1072,25 +1103,7 @@
 			// Validaciones de campos varios
 
 			
-			document.getElementById('continuarButton1').addEventListener('click', function(event) {
-				var emailInput = document.querySelector('input[name="email"]');
-				var email = emailInput.value;
-				var emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-				var telefonoInput = document.querySelector('input[name="telefono"]');
-				var telefono = telefonoInput.value;
-    			var telefonoPattern = /^\d{10}$/;
-
-				//Validadacion de formato de correo
-				if (!email.match(emailPattern)) {
-					alert('Por favor, introduce un correo electrónico válido.');
-					event.preventDefault();
-				}
-				
-				if (!telefono.match(telefonoPattern)) {
-					alert('Por favor, introduce un número de teléfono válido');
-					event.preventDefault();
-				}
-					});
+			
 			
 			var point_id_selected='';
 			var codigo_postal='';	
