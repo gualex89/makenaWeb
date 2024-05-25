@@ -7,7 +7,7 @@
 </head>
 <body>
 
-    <img src="{{ asset('images/logo/logo_black.png') }}" alt="Logo de Makena">
+    <img src="{{ $message->embed($pathToImage) }}" alt="Logo de Makena">
     <h1>¡Ey tienes una nueva venta!</h1>
     
 

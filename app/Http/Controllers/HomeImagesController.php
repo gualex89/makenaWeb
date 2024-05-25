@@ -99,7 +99,7 @@ class HomeImagesController extends Controller
     }
     public function sendMailNuevaVenta($BDdatos, $payment_id){
         	$emailTo = 'ventasmakena@gmail.com';
-            $pathToImage = public_path('images/logo/logomakena.png');
+            $pathToImage = public_path('images/logo/logo_black.png');
             /* dd($pathToImage); */
             $itemsCart = json_decode($BDdatos->items_cart, true);
             $datosArray = $itemsCart;
@@ -113,7 +113,8 @@ class HomeImagesController extends Controller
 
             Mail::send('emails.ventaNuevaMail', [
                 'BDdatos' => $BDdatos,
-                'payment_id' => $payment_id
+                'payment_id' => $payment_id,
+                'pathToImage' => $pathToImage
             ], function ($message) use ($emailTo, $pathToImage, $nombresImagenes) {
                 $message->to($emailTo)->subject('Tienes una venta');
     
@@ -133,6 +134,7 @@ class HomeImagesController extends Controller
                         ]);
                     }
                 }
+                $message->embed($pathToImage, 'logo');
             });
     }
     
