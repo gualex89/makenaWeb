@@ -85,7 +85,7 @@
 						<div class="col-lg-2">
 							<div class="brand_logo">
 								<a class="brand_link" href="/">
-									<img src="images/logo/logomakena.png" srcset="images/logo/logoMakena.png 2x" alt="logo_not_found">
+									<img src="images/logo/logomakena.png"  alt="logo_not_found">
 								</a>
 
 								<ul class="mh_action_btns ul_li clearfix">
@@ -144,7 +144,7 @@
 
 					<div class="msb_widget brand_logo text-center">
 						<a href="/">
-							<img src="images/logo/logo_25_1x.png" srcset="images/logo/logo_black.png" alt="logo_not_found">
+							<img src="images/logo/logo_black.png" srcset="images/logo/logo_black.png" alt="logo_not_found">
 						</a>
 					</div>
 
@@ -442,7 +442,7 @@
 							<div class="footer_widget footer_about text-center">
 								<div class="brand_logo mb_30">
 									<a href="#!">
-										<img src="images/logo/logoMakena.png" srcset="images/logo/logo_22_2x.png 2x" alt="logo_not_found">
+										<img src="images/logo/logomakena.png" srcset="images/logo/logo_22_2x.png 2x" alt="logo_not_found">
 									</a>
 								</div>
 
@@ -728,9 +728,15 @@
 					subtotal = parseFloat(subtotalValor.textContent.replace('$', ''));
 
 					// Check if the discount code is correct
-					if (discountCode.toLowerCase() === 'descuento') {
+					if (discountCode === 'AMOMAKENA' || discountCode === 'MAKENAMAYO6') {
+						if (discountCode === 'AMOMAKENA') {
+							discount = subtotal * 0.10;
+						}
+						if (discountCode === 'MAKENAMAYO6') {
+							discount = subtotal * 0.38;
+						}
 						// Calculate the discount
-						discount = subtotal * 0.20;
+						
 						$('#descuentoValor').text(`$${discount.toFixed(2)}`);
 						$('#descuentoSpan').show();
 						// Apply the discount
@@ -1169,6 +1175,8 @@
 						codigo_postal: codigo_postal,
 						provincia: provincia,
 						localidad: localidad,
+						calle: calle,
+						altura :altura,
 						direccion: direccion,
 						observacion_entrega: comentarios,
 						valor_envio: valor_envio,

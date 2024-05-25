@@ -54,8 +54,10 @@ class HomeImagesController extends Controller
            /*  $itemsCart = $BDdatos->items_cart; */
             /* dd($itemsCart); */
 
+            
+            
 
-            if($externalReference == $apiExternalReference && $apiStatus == 'approved' && $apiMontoPagado == $montoAPagar){
+            if($externalReference == $apiExternalReference && $apiStatus == 'approved' && (int)$apiMontoPagado == (int)$montoAPagar){
                 
                 $order = Order::find($apiExternalReference);
                 

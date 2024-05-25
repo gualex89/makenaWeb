@@ -27,7 +27,9 @@ class CheckoutController extends Controller
         $order->codigo_postal = $data['codigo_postal'];
         $order->tipo_entrega = $data['tipo_entrega'];
         $order->provincia = $data['provincia'];
-        $order->localidad = $data['localidad']; 
+        $order->localidad = $data['localidad'];
+        $order->calle = $data['calle'];
+        $order->altura = $data['altura']; 
         $order->direccion = $data['direccion']; 
         $order->observacion_entrega = $data['observacion_entrega'];
         $order->cantidad_items = $data['cantidad_items'];

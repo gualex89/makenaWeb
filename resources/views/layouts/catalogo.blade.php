@@ -221,8 +221,8 @@
 										<li class="parent"><a href="#">Anime</a>
 											<ul>
 												<li><a href="/catalogo?categoria=AT" >Attack on Titan</a></li>
-												<li><a href="/catalogo?categoria=BK">Bersek</a></li>
-												<li><a href="/catalogo?categoria=BH">Boku no Hero Academy</a></li>
+												<li><a href="/catalogo?categoria=BK">Berserk</a></li>
+												<li><a href="/catalogo?categoria=BH">Boku no Hero Academia</a></li>
 												<li><a href="/catalogo?categoria=CZ">Caballeros Del Zodiaco</a></li>
 												<li><a href="/catalogo?categoria=DN">Death Note</a></li>
 												<li><a href="/catalogo?categoria=DS">Demon Slayer</a></li>
@@ -238,21 +238,22 @@
 												<li><a href="/catalogo?categoria=PK">Pokemon</a></li>
 												<li><a href="/catalogo?categoria=SM">Sailor Moon</a></li>
 												<li><a href="/catalogo?categoria=SD">Slam Dunk</a></li>
+												<li><a href="/catalogo?categoria=AMS">Más...</a></li>
 											</ul>
 										</li>
 										<li class="parent"><a href="/catalogo?categoria=BS">Basquet</a></li>
 											
-										<li class="parent"><a href="#">Videojuegos</a>
+										<li class="parent"><a href="#">Gaming</a>
 											<ul>
 												<li><a href="/catalogo?categoria=AC">Assasins Creed</a></li>
 												<li><a href="/catalogo?categoria=FN">Fortnite</a></li>
 												<li><a href="/catalogo?categoria=GW">God of War</a></li>
 												<li><a href="/catalogo?categoria=LOL">Lol</a></li>
-												<li><a href="/catalogo?categoria=OTR">Otros</a></li>
 												<li><a href="/catalogo?categoria=RE">Resident Evil</a></li>
 												<li><a href="/catalogo?categoria=TLU">The Last of us</a></li>
 												<li><a href="/catalogo?categoria=TW">The Witcher</a></li>
 												<li><a href="/catalogo?categoria=VL">Valorant</a></li>
+												<li><a href="/catalogo?categoria=OTR">Más...</a></li>
 
 											</ul>
 										</li>
@@ -265,7 +266,7 @@
 												<li><a href="/catalogo?categoria=FI">Independiente</a></li>
 												<li><a href="/catalogo?categoria=FME">Messi</a></li>
 												<li><a href="/catalogo?categoria=FMO">Momentos del futbol</a></li>
-												<li><a href="/catalogo?categoria=FON">Otros clubes nacionales</a></li>
+												<li><a href="/catalogo?categoria=FON">Más clubes nacionales</a></li>
 												<li><a href="/catalogo?categoria=FRA">Racing</a></li>
 												<li><a href="/catalogo?categoria=FRI">River</a></li>
 												<li><a href="/catalogo?categoria=FSL">San Lorenzo</a></li>
@@ -293,6 +294,7 @@
 												<li><a href= "/catalogo?categoria=MV">Marvel</a></li>
 												<li><a href= "/catalogo?categoria=SW">Star Wars</a></li>
 												<li><a href= "/catalogo?categoria=VF">Volver al Futuro</a></li>
+												<li><a href= "/catalogo?categoria=PMS">Más...</a></li>
 											</ul>
 										</li>
 										<li class="parent"><a href= "#">Tv y Series</a>
@@ -303,12 +305,12 @@
 												<li><a href= "/catalogo?categoria=HA">Hora de aventura</a></li>
 												<li><a href= "/catalogo?categoria=HD">House of the Dragon</a></li>
 												<li><a href= "/catalogo?categoria=LS">Los Simpsons</a></li>
-												<li><a href= "/catalogo?categoria=OS">Otras</a></li>
 												<li><a href= "/catalogo?categoria=PB">Peacky Blinders</a></li>
 												<li><a href= "/catalogo?categoria=RM">Rick y Morty</a></li>
 												<li><a href= "/catalogo?categoria=ST">Stranger Things</a></li>
 												<li><a href= "/catalogo?categoria=TU">The Last of us</a></li>
 												<li><a href= "/catalogo?categoria=TWD">The Walking Death</a></li>
+												<li><a href= "/catalogo?categoria=OS">Más...</a></li>
 												
 											</ul>
 										</li>
