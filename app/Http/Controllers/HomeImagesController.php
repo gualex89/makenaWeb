@@ -36,7 +36,7 @@ class HomeImagesController extends Controller
 
         $response = Http::withHeaders([
             'Content-Type' => 'application/json',
-            'Authorization' => 'Bearer APP_USR-1411848541116243-030214-10fecfe1efd25afddec535184239e3d3-1709821538'
+            'Authorization' => 'Bearer '. env('MP_ACCESS_TOKEN')
         ])->get('https://api.mercadopago.com/v1/payments/' . $payment_id);
         
         if ($response->successful()) {
