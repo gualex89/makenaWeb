@@ -115,8 +115,8 @@ class HomeImagesController extends Controller
                 'BDdatos' => $BDdatos,
                 'payment_id' => $payment_id,
                 'pathToImage' => $pathToImage
-            ], function ($message) use ($emailTo, $pathToImage, $nombresImagenes) {
-                $message->to($emailTo)->subject('Tienes una venta');
+            ], function ($message) use ($emailTo, $pathToImage, $nombresImagenes, $BDdatos) {
+                $message->to($emailTo)->subject('Tienes una venta ' .  $BDdatos->id_order);
     
                 // Adjuntar las imágenes al correo si es necesario
                 foreach ($nombresImagenes as $nombreImagen) {
