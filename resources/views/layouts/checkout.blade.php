@@ -746,7 +746,7 @@
 					subtotal = parseFloat(subtotalValor.textContent.replace('$', ''));
 
 					// Check if the discount code is correct
-					if (discountCode === 'AMOMAKENA' || discountCode === 'MAKENAMAYO6') {
+					if (discountCode === 'AMOMAKENA' || discountCode === 'MAKENAMAYO6' || discountCode === 'IVANYGABY') {
 						if (discountCode === 'AMOMAKENA') {
 							discount = subtotal * 0.10;
 						}
@@ -754,8 +754,10 @@
 							discount = subtotal * 0.38;
 						}
 						if (discountCode === 'IVANYGABY') {
-							discount = subtotal * 0.99;
-						}
+							console.log("HOLA");
+							
+							discount = subtotal * 0.95;
+						} 
 						// Calculate the discount
 						
 						$('#descuentoValor').text(`$${discount.toFixed(2)}`);
