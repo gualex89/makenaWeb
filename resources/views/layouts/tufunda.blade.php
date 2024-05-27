@@ -646,8 +646,8 @@
 		</script>
 		<script>
 			var canvas = new fabric.Canvas('canvas', {
-				selection: false // Deshabilitar la selección múltiple
-
+				selection: false, // Deshabilitar la selección múltiple
+				passive: true
 			});
 			
 			var fondoImg, userImg, texto;
@@ -801,7 +801,8 @@
 					fill: 'black',
 					selectable: true,
 					hasControls: true,
-					editable: true
+					editable: true,
+					passive: true
 				});
 
 				canvas.add(texto);

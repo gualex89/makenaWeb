@@ -754,7 +754,7 @@
 							discount = subtotal * 0.38;
 						}
 						if (discountCode === 'IVANYGABY') {
-							console.log("HOLA");
+							
 							
 							discount = subtotal * 0.95;
 						} 
