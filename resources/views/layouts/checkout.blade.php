@@ -753,6 +753,9 @@
 						if (discountCode === 'MAKENAMAYO6') {
 							discount = subtotal * 0.38;
 						}
+						if (discountCode === 'IVANYGABY') {
+							discount = subtotal * 0.99;
+						}
 						// Calculate the discount
 						
 						$('#descuentoValor').text(`$${discount.toFixed(2)}`);
