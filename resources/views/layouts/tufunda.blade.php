@@ -1000,8 +1000,8 @@
 					
 					// Crear un nuevo canvas de alta resolución para la exportación
 					var exportCanvas = document.createElement('canvas');
-					exportCanvas.width = 1280;
-					exportCanvas.height = 1980;
+					exportCanvas.width = 1024;
+					exportCanvas.height = 1584;
 					var exportContext = exportCanvas.getContext('2d');
 
 					var exportFabricCanvas = new fabric.Canvas(exportCanvas);
