@@ -285,7 +285,7 @@
 				</div>
 
 				<div class="deco_image motorcycle_image_1">
-					<img class="imagen_lateral_base" src="images/backgroundLateral.png" alt="image_not_found">
+					<img class="imagen_lateral_base" style="display: none" src="images/backgroundLateral.png" alt="image_not_found">
 				</div>
 			</section>
 			<!-- product_section - end
