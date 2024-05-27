@@ -48,6 +48,7 @@ class MercadoPagoController extends Controller
         
         ]);
         
+        
         $id = $preference->id;
         
 

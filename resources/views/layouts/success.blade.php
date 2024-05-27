@@ -313,29 +313,7 @@
 
 				// Asegurarse de que cartItems esté vacío
 				cartItems = [];
-				var queryString = window.location.search;
-
-				// Crear un objeto URLSearchParams con la cadena de consulta
-				var urlParams = new URLSearchParams(queryString);
-
-				// Obtener el valor de una variable específica, por ejemplo, "miVariable"
-				var preferenceId = urlParams.get('preference_id');
-
-
-				function crearEnvio(){
-					fetch('/crear-envio/' + preferenceId) 
-					.then(response => response.json())
-					.then(data => {
-						console.log(data);
-					})
-					.catch(error => {
-						// Manejar errores aquí
-						console.error(error);
-						
-					});
-				}
-
-				crearEnvio();
+				
 
 
 				

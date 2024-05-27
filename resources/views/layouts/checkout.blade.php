@@ -806,10 +806,10 @@
 						saveOrder();
 						setTimeout(function() {
 							mercadoPago(total, subtotal, shippingCost, idOrder, 0);
-						}, 1500);
+						}, 2000);
 						setTimeout(function() {
 							updateOrder();
-						}, 3000);
+						}, 4000);
 						console.log(idOrder);
 					}
 					if (!$('#radioRetiro').is(':checked') && !$('#radioEnvio').is(':checked')) {
@@ -838,10 +838,10 @@
 						saveOrder();
 						setTimeout(function() {
 							mercadoPago(total, subtotal, shippingCost, idOrder, 0);
-						}, 1500);
+						}, 2000);
 						setTimeout(function() {
 							updateOrder();
-						}, 3000);
+						}, 4000);
 					}else {
 						alert('Por favor, completa todos los datos');
 					}
@@ -855,10 +855,10 @@
 					saveOrder();
 					setTimeout(function() {
 						mercadoPago(total, subtotal, shippingCost, idOrder, 0);
-					}, 1500);
+					}, 2000);
 					setTimeout(function() {
 						updateOrder();
-					}, 3000);
+					}, 4000);
 				});
 				
 			});
