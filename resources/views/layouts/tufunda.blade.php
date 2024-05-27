@@ -980,9 +980,9 @@
 					const uniqueName = modeloSinEspacios + '_' + Date.now() + '_' + Math.floor(100 + Math.random() * 900) + '.png';
 					const uniqueNameComposicion = 'Comp-' + uniqueName;
 					$('#btn_carrito').hide();
-					setTimeout(() => {
+					/* setTimeout(() => {
 						$('#btn_carrito').show();
-					},3000);
+					},3000); */
 
 					// Renderizar todo
 					if (fondoImg) {
@@ -1051,6 +1051,7 @@
 						return response.json();
 					})
 					.then(data => {
+						$('#btn_carrito').show();
 						// Lógica adicional después de agregar el artículo al carrito (si es necesario)
 						console.log('Se guardó la imagen: ', data);
 					})
