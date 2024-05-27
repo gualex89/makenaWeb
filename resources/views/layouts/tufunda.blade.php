@@ -157,7 +157,7 @@
 					</ul>
 
 					<ul class="btns_group ul_li_block clearfix">
-						<li><a href="/carrito">Ir al carrito</a></li>
+						<li><a id="btn_carrito" href="/carrito">Ir al carrito</a></li>
 						
 					</ul>
 				</div>
@@ -976,9 +976,13 @@
 					const selectedMarca = document.getElementById('marcasDropdown').value;
 					const selectedModelo = document.getElementById('modelosDropdown').value;
 					const modeloSinEspacios = selectedModelo.replace(/\s+/g, '-');
-
+					
 					const uniqueName = modeloSinEspacios + '_' + Date.now() + '_' + Math.floor(100 + Math.random() * 900) + '.png';
 					const uniqueNameComposicion = 'Comp-' + uniqueName;
+					$('#btn_carrito').hide();
+					setTimeout(() => {
+						$('#btn_carrito').show();
+					},3000);
 
 					// Renderizar todo
 					if (fondoImg) {
@@ -1095,6 +1099,7 @@
 					fondoImg.opacity = 1;
 					canvas.renderAll();
 					limpiarDropdowns();
+				
 				});
 			
 					function addToCart(productItem) {
@@ -1238,8 +1243,6 @@
 				});
 			});
 		</script>
-		
-
 		
 	</body>
 </html>
