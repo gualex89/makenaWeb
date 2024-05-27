@@ -61,7 +61,9 @@ class TuFundaController extends Controller
     }
 
     public function obtenerModelos($marca) {
-        $modelos = Cover::where('marca', $marca)->pluck('modelo');
+        $modelos = Cover::where('marca', $marca)
+                        ->orderBy('modelo', 'asc')  // Ordenar alfabéticamente en orden ascendente
+                        ->pluck('modelo');
         return response()->json($modelos);
     }
 
