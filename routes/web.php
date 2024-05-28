@@ -9,8 +9,8 @@ use App\Http\Controllers\CarritoController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\FrecuentesController;
 use App\Http\Controllers\ZippinController;
-
-
+use App\Http\Controllers\MercadoPagoController;
+use App\Http\Controllers\webhook;
 
 Route::get('/', [HomeImagesController::class, 'index'])->name('welcome');
 
@@ -66,4 +66,5 @@ Route::post('/actualizar-descuento', [CheckoutController::class, 'updateDiscount
 
 Route::get('/frecuentes', [FrecuentesController::class, 'Frecuentes'])->name('Frecuentes');
 
-    
+
+Route::post('/webhook', [webhook::class, 'handleWebhook']);

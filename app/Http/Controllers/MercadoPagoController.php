@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use MercadoPago\MercadoPagoConfig;
 use MercadoPago\Client\Preference\PreferenceClient;
-
+use Illuminate\Support\Facades\Log;
 
 use Illuminate\Http\Request;
 
@@ -57,4 +57,5 @@ class MercadoPagoController extends Controller
 
        
     }
+   
 }

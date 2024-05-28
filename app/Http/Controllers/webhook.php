@@ -1,88 +1,62 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Models\Order;
-use App\Models\Principalimage;
-use Illuminate\Http\Request;
-use App\Models\Product;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Http\Request;
+use App\Models\Order;
 use Illuminate\Support\Facades\Mail;
 use GuzzleHttp\Client;
 
-class HomeImagesController extends Controller
+class webhook extends Controller
 {
-    public function index(){
-
-        $sliderPrincipal = Principalimage::all();
-        $totalImages= $sliderPrincipal->count();
-        
-        $misProductos = Product::all();
-
-
-        return view('layouts.base', compact('sliderPrincipal', 'totalImages', 'misProductos') );
-    }
-    
-    
-    public function catalogo(){
-
-        return view('layouts.catalogo' );
-    }
-    public function aprobado(Request $request){
-
-        //Datos traido de la url de compra
-        $preferenceId = $request->query('preference_id');
-       /*  $externalReference = $request->query('external_reference');
-        $payment_id = $request->query('payment_id');
-
-        $response = Http::withHeaders([
-            'Content-Type' => 'application/json',
-            'Authorization' => 'Bearer '. env('MP_ACCESS_TOKEN')
-        ])->get('https://api.mercadopago.com/v1/payments/' . $payment_id);
-        
-        if ($response->successful()) {
-
-            //Datos que vienen de la API
-            $payment_data = $response->json();
-            $apiExternalReference = $payment_data['external_reference'];
-            $apiStatus = $payment_data['status'];
-            $apiMontoPagado = $payment_data['transaction_details'] ['total_paid_amount'];
-
-            //Datos de la base de datos
-            $BDdatos = Order::find($apiExternalReference);
-            $montoAPagar = $BDdatos->total;
-            $emailComprador = $BDdatos->email; */
-           /*  $itemsCart = $BDdatos->items_cart; */
-            /* dd($itemsCart); */
-
+    // Función para manejar los webhook
+    public function handleWebhook(Request $request)
+    {
+        try{
+            // Obtener datos del webhook
+            $datos = $request->all();
+            $id = $datos['data']['id'];
             
-            
+            $response = Http::withHeaders([
+                'Content-Type' => 'application/json',
+                'Authorization' => 'Bearer '. env('MP_ACCESS_TOKEN')
+            ])->get('https://api.mercadopago.com/v1/payments/' . $id);
 
-            /* if($externalReference == $apiExternalReference && $apiStatus == 'approved' && (int)$apiMontoPagado == (int)$montoAPagar){
-                
-                $order = Order::find($apiExternalReference);
-                
-                if($order){ 
-                    $order->update ([
-                        'status' => 'Aprobado',
-                    ]);
+            if ($response->successful()) {
+
+                //Datos que vienen de la API
+                $payment_data = $response->json();
+                $apiExternalReference = $payment_data['external_reference'];
+                $apiStatus = $payment_data['status'];
+                $apiMontoPagado = $payment_data['transaction_details'] ['total_paid_amount'];
+
+                //Datos de la base de datos
+                $BDdatos = Order::find($apiExternalReference);
+                $montoAPagar = $BDdatos->total;
+                $emailComprador = $BDdatos->email;
+
+                if($apiStatus == 'approved' && (int)$apiMontoPagado == (int)$montoAPagar){
+                    $order = Order::find($apiExternalReference);
                     
+                    if($order){ 
+                        $order->update ([
+                            'status' => 'Aprobado',
+                        ]);
+                        
+                    }
+                    $this->crearEnvio($apiExternalReference);
+                    $this->sendEmail($emailComprador, $apiExternalReference, $id);
+                    $this->sendMailNuevaVenta($BDdatos, $id);
                 }
-
-            } */
+                
+                
+            }    
             
-           /*  $this->crearEnvio($preferenceId);
-            $this->sendEmail($emailComprador, $apiExternalReference, $payment_id);
-            $this->sendMailNuevaVenta($BDdatos, $payment_id); */
-
-            return view('layouts.success', [
-                'mensaje' => $preferenceId,
             
-            ]);
-        /* } else {
-            $error_message = $response->body();
-            echo $error_message;
-        } */
+            return response()->json(['status' => 'success', 'message' => 'Webhook procesado correctamente']);
+        } catch (\Exception $e) {
+            return response()->json(['status' => 'error', 'message' => $e->getMessage()]);
+        }
     }
     public function sendEmail($emailComprador, $apiExternalReference, $payment_id){ 
         $emailTo = $emailComprador;
@@ -139,27 +113,10 @@ class HomeImagesController extends Controller
                 $message->embed($pathToImage, 'logo');
             });
     }
-    
-    public function rechazado(Request $request){
-        $preferenceId = $request->query('preference_id');
-        $externalReference = $request->query('external_reference');
-        $payment_id = $request->query('payment_id');
-
-        $order = Order::find($externalReference);
-
-        if($order){ 
-            $order->update ([
-                'status' => 'Rechazado',
-            ]);
-            
-        }
-
-        return view('layouts.failure' );
-    }
-    public function crearEnvio($preferenceId){
+    public function crearEnvio($apiExternalReference){
 
         
-        $order = Order::where('preference_id', $preferenceId)->first();
+        $order = Order::find($apiExternalReference);
         
         $tipoEntrega = $order->tipo_entrega;
         if ($tipoEntrega == "envio") {
@@ -280,13 +237,4 @@ class HomeImagesController extends Controller
         
 
     }
-
-    public function generica(){
-
-        
-
-        return view('layouts.failure' );
-    }
 }
-
-
