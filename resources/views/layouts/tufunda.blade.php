@@ -712,6 +712,8 @@
 						
 						userImg = img;
 						/* canvas.sendToBack(userImg); */
+
+						document.getElementById('imageLoader').value = '';
 						
 					});
 				};
