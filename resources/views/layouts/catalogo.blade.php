@@ -234,7 +234,7 @@
 												<li><a href="/catalogo?categoria=JJ">Jojo's</a></li>
 												<li><a href="/catalogo?categoria=JK">Jujutsu Kaisen</a></li>
 												<li><a href="/catalogo?categoria=NA">Naruto</a></li>
-												<li><a href="/catalogo?categoria=OP">One Peace</a></li>
+												<li><a href="/catalogo?categoria=OP">One Piece</a></li>
 												<li><a href="/catalogo?categoria=PK">Pokemon</a></li>
 												<li><a href="/catalogo?categoria=SM">Sailor Moon</a></li>
 												<li><a href="/catalogo?categoria=SD">Slam Dunk</a></li>
