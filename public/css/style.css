@@ -19598,6 +19598,14 @@ blockquote .blockquote_title {
   margin-bottom: 0px;
   display: inline-block;
 }
+.lodesactive {
+  pointer-events: none;
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+#btnEmpezarDeNuevo{
+  display: none;
+}
 
 /* compare page - end
 ==================================================================================================== */
@@ -27166,6 +27174,9 @@ blockquote .blockquote_title {
     height: 422px;
     top: -14px;
 
+  }
+  #btnEmpezarDeNuevo{
+    display: inline-flex;
   }
   #seccionTufunda{
     margin-top: 0px !important;

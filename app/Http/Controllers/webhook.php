@@ -117,9 +117,18 @@ class webhook extends Controller
 
         
         $order = Order::find($apiExternalReference);
+        if (!$order) {
+            return response()->json([
+                'error' => [
+                    'code' => 404,
+                    'message' => 'Order not found.',
+                ]
+            ], 404);
+        }
         
         $tipoEntrega = $order->tipo_entrega;
-        if ($tipoEntrega == "envio") {
+        $envioZippin = $order->envio_zippin;
+        if ($tipoEntrega == "envio" && $envioZippin == NULL) {
 
 
             $city = $order->localidad;
@@ -128,6 +137,7 @@ class webhook extends Controller
             $name = $order->nombre . ' ' . $order->apellido;
             $street = $order->calle;
             $street_number = $order->altura;
+            $street_extras = $order->observacion_entrega;
             $document = $order->documento;
             $email = $order->email;
             $phone = $order->telefono;
@@ -191,6 +201,7 @@ class webhook extends Controller
                         "name" => $name,
                         "street" => $street,
                         "street_number" => $street_number,
+                        "street_extras" => $street_extras,
                         "document" => $document,
                         "email" => $email,
                         "phone" => $phone,
@@ -221,8 +232,11 @@ class webhook extends Controller
                 ]);
 
                 $data = json_decode($response->getBody(), true);
+                $order->update ([
+                    'envio_zippin' => 1,
+                ]);
                 // Procesar la respuesta exitosa
-                return response()->json($data);
+                return response()->json($order);
             } catch (\Exception $e) {
                 // Manejar el error
                 return response()->json([

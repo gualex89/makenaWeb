@@ -12,5 +12,6 @@ class Order extends Model
     protected $fillable = [
         'preference_id',
         'status',
+        'envio_zippin',
     ];
 }

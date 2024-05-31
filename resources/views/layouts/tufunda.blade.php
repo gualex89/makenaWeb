@@ -226,7 +226,7 @@
 								</div>
 								<div class="abtn_wrap col3 text-center mt-3" id="div_del_boton" data-animation="fadeInUp" data-delay=".8s">
 									<div class="col-lg-12 col-md-12 col-sm-12">
-										<a id="btnEmpezarDeNuevo" class="custom_btn bg_carparts_red text-uppercase special_button" style="max-width: 200px;" onclick="restablecerCanvas(); limpiarDropdowns();">Empezar de Nuevo</a>
+										<a id="btnEmpezarDeNuevo" href="#btnEmpezarDeNuevo" class="custom_btn bg_carparts_red text-uppercase special_button lodesactive" style="max-width: 200px;" >Ir a la Funda</a>
 									</div>
 
 								</div>
@@ -631,6 +631,7 @@
 					$('#subirImagen').show();
 					$('#desplegable1').show();
 					$('#desplegable2').show();
+					document.getElementById('btnEmpezarDeNuevo').classList.remove('lodesactive');
 					
 				});
 			});
