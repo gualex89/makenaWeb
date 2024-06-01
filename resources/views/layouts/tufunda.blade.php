@@ -479,6 +479,18 @@
 		</footer>
 		<!-- footer_section - end
 		================================================== -->
+		<div class="modal fade" id="chargingModal" tabindex="-1" role="dialog" aria-labelledby="productImageModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-sm d-flex align-items-center" role="document" style="min-height: 50vh;">
+				<div class="modal-content" style="width: 100%;">
+					<div class="modal-header">
+						<h3 style="color: #f831fe; margin: auto;">Cargando ... Por favor espere</h2>
+					</div>
+					<div class="modal-body text-center d-flex justify-content-center align-items-center" style="min-height: 100px;">
+						<img src="images/cargando.gif" alt="Imagen cargando" id="cargandoImage" style="width: 20%; height: auto;">
+					</div>
+				</div>
+			</div>
+		</div>
 
 		
 		<!-- fraimwork - jquery include -->
@@ -978,6 +990,7 @@
 				document.getElementById('agregarAlCarritoBtn').addEventListener('click', function() {
 					const selectedMarca = document.getElementById('marcasDropdown').value;
 					const selectedModelo = document.getElementById('modelosDropdown').value;
+					$('#chargingModal').modal('show');
 					const modeloSinEspacios = selectedModelo.replace(/\s+/g, '-');
 					
 					const uniqueName = modeloSinEspacios + '_' + Date.now() + '_' + Math.floor(100 + Math.random() * 900) + '.png';
@@ -1063,13 +1076,7 @@
 						$('#btn_carrito').show();
 						// Lógica adicional después de agregar el artículo al carrito (si es necesario)
 						console.log('Se guardó la imagen: ', data);
-					})
-					.catch(error => {
-						console.error('Error:', error);
-					});
-
-					// Restaurar la imagen de fondo si se eliminó
-					if (fondoImg) {
+						if (fondoImg) {
 						canvas.add(fondoImg);
 						canvas.renderAll();
 					}
@@ -1109,6 +1116,14 @@
 					fondoImg.opacity = 1;
 					canvas.renderAll();
 					limpiarDropdowns();
+					$('#chargingModal').modal('hide');
+					})
+					.catch(error => {
+						console.error('Error:', error);
+					});
+
+					// Restaurar la imagen de fondo si se eliminó
+					
 				
 				});
 			
