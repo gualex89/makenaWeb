@@ -442,7 +442,7 @@
 							<div class="footer_widget footer_about text-center">
 								<div class="brand_logo mb_30">
 									<a href="#!">
-										<img src="images/logo/logomakena.png" srcset="images/logo/logo_22_2x.png 2x" alt="logo_not_found">
+										<img src="images/logo/logomakena.png"  alt="logo_not_found">
 									</a>
 								</div>
 
