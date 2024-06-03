@@ -753,11 +753,7 @@
 						if (discountCode === 'MAKENAMAYO6') {
 							discount = subtotal * 0.38;
 						}
-						if (discountCode === 'IVANYGABY') {
-							
-							
-							discount = subtotal * 0.95;
-						} 
+						
 						// Calculate the discount
 						
 						$('#descuentoValor').text(`$${discount.toFixed(2)}`);
@@ -770,13 +766,20 @@
 						$('#wallet_container').empty();
 						
 						
-						updateDescuento();
-						console.log(newTotalSinEnvio);
-						
-						mercadoPago(total, subtotal, shippingCost, idOrder, discount);
-						setTimeout(function() {
-						updateOrder();
-						}, 3000);
+						updateDescuento()
+						.then(() => {
+							console.log(newTotalSinEnvio);
+							return mercadoPago(total, subtotal, shippingCost, idOrder, discount);
+						})
+						.then(preferenceId => {
+							return updateOrder(idOrder, preferenceId);
+						})
+						.then(() => {
+							console.log("Todos los pasos completados correctamente.");
+						})
+						.catch(error => {
+							console.error("Ocurrió un error:", error);
+						});
 						
 						total = newTotal;
 						
@@ -803,14 +806,21 @@
 
 						let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 						updateCartItems(cartItems);
-						saveOrder();
-						setTimeout(function() {
-							mercadoPago(total, subtotal, shippingCost, idOrder, 0);
-						}, 2000);
-						setTimeout(function() {
-							updateOrder();
-						}, 4000);
-						console.log(idOrder);
+						saveOrder()
+						.then(idOrder => {
+							return mercadoPago(total, subtotal, shippingCost, idOrder, 0).then(preference_id => {
+								return { idOrder, preference_id };
+							});
+						})
+						.then(({ idOrder, preference_id }) => {
+							return updateOrder(idOrder, preference_id);
+						})
+						.then(() => {
+							console.log("Todos los pasos completados correctamente.");
+						})
+						.catch(error => {
+							console.error("Ocurrió un error:", error);
+						});
 					}
 					if (!$('#radioRetiro').is(':checked') && !$('#radioEnvio').is(':checked')) {
 						alert('Por favor, selecciona un tipo de entrega');
@@ -835,13 +845,21 @@
 						$('#collapseThree').collapse('show');
 						let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 						updateCartItems(cartItems);
-						saveOrder();
-						setTimeout(function() {
-							mercadoPago(total, subtotal, shippingCost, idOrder, 0);
-						}, 2000);
-						setTimeout(function() {
-							updateOrder();
-						}, 4000);
+						saveOrder()
+						.then(idOrder => {
+							return mercadoPago(total, subtotal, shippingCost, idOrder, 0).then(preference_id => {
+								return { idOrder, preference_id };
+							});
+						})
+						.then(({ idOrder, preference_id }) => {
+							return updateOrder(idOrder, preference_id);
+						})
+						.then(() => {
+							console.log("Todos los pasos completados correctamente.");
+						})
+						.catch(error => {
+							console.error("Ocurrió un error:", error);
+						});
 					}else {
 						alert('Por favor, completa todos los datos');
 					}
@@ -852,42 +870,49 @@
 					$('#collapseThree').collapse('show');
 					let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 					updateCartItems(cartItems);
-					saveOrder();
-					setTimeout(function() {
-						mercadoPago(total, subtotal, shippingCost, idOrder, 0);
-					}, 2000);
-					setTimeout(function() {
-						updateOrder();
-					}, 4000);
+					saveOrder()
+					.then(idOrder => {
+						return mercadoPago(total, subtotal, shippingCost, idOrder, 0).then(preference_id => {
+							return { idOrder, preference_id };
+						});
+					})
+					.then(({ idOrder, preference_id }) => {
+						return updateOrder(idOrder, preference_id);
+					})
+					.then(() => {
+						console.log("Todos los pasos completados correctamente.");
+					})
+					.catch(error => {
+						console.error("Ocurrió un error:", error);
+					});
 				});
 				
 			});
 			let preference_id = null;
+
 			function mercadoPago(total, subtotal, shippingCost, idOrder, discount) {
-				console.log("se ejecuto la funcion de MP");
-				
-				
-				if ($('#wallet_container').children().length === 0) {
-					const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-					console.log(total);
+				return new Promise((resolve, reject) => {
+					console.log("se ejecuto la funcion de MP");
 					
-					fetch('/api/mercado-pago', {	
+					if ($('#wallet_container').children().length === 0) {
+						const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+						console.log(total);
+						
+						fetch('/api/mercado-pago', {    
 							method: 'POST',
 							headers: {
 								'Content-Type': 'application/json',
-								'X-CSRF-TOKEN': '{{ csrf_token() }}' // Agrega el token CSRF de Laravel
+								'X-CSRF-TOKEN': csrfToken // Agrega el token CSRF de Laravel
 							},
-							body: JSON.stringify(
-								{
-									total : total,
-									shippingCost : shippingCost,
-									subtotal : subtotal,
-									externalReference : idOrder,
-									discount : discount
-								
-								}
-							),
-						}).then(response => {
+							body: JSON.stringify({
+								total: total,
+								shippingCost: shippingCost,
+								subtotal: subtotal,
+								externalReference: idOrder,
+								discount: discount
+							}),
+						})
+						.then(response => {
 							if (response.ok) {
 								return response.json();
 							}
@@ -895,13 +920,11 @@
 						})
 						.then(data => {
 							console.log('Respuesta del servidor:', data);
-							console.log(data);
 							preference_id = data.preferenceId
 							const mp = new MercadoPago("{{config('services.mercadopago.key')}}", {
 								locale: 'es-AR'
 							});
 							const bricksBuilder = mp.bricks();
-
 
 							mp.bricks().create("wallet", "wallet_container", {
 								initialization: {
@@ -910,20 +933,20 @@
 								},
 								customization: {
 									texts: {
-										
 										valueProp: 'smart_option',
 									},
 								},
 							});
-							// Puedes manejar la respuesta del servidor aquí
+							resolve(preference_id); // Resuelve la promesa con el preferenceId
 						})
 						.catch(error => {
 							console.error('Error al enviar los datos:', error);
+							reject(error); // Rechaza la promesa con el error
 						});
-				
-					
-				}
-			}		
+					} 
+				});
+			}
+		
 		
 		
 			function testZippin() {
@@ -1127,104 +1150,108 @@
 
 			
 			function saveOrder() {
-			
-				var nombre = document.querySelector('input[name="nombre"]').value;
-				var apellido = document.querySelector('input[name="apellido"]').value;
-				var documento = document.querySelector('input[name="dni"]').value;
-				var email = document.querySelector('input[name="email"]').value;
-				var telefono = document.querySelector('input[name="telefono"]').value;
-				var tipo_entrega = document.querySelector('input[name="tipoEntrega"]:checked').value;
-				if (tipo_entrega === "envio") {
-					codigo_postal = document.querySelector('input[name="codigoPostal"]').value;
-					provincia = document.querySelector('input[name="provincia"]').value;	
-					localidad = document.querySelector('input[name="localidad"]').value;
-					calle = document.querySelector('input[name="calle"]').value;
-					altura = document.querySelector('input[name="altura"]').value;
-					direccion = calle + " " + altura;
-					comentarios = document.querySelector('input[name="comentarios"]').value;
-					valor_envio = parseInt(document.querySelector('input[name="carrier"]:checked').value);
-				}
-				var cantidad_items = document.querySelectorAll('.cart_product').length;
-				var valor_subtotal = subtotal;
-				var valor_total = total;
-
-				const modelo = document.querySelectorAll('.item_type');
-
-				// Obtener todos los elementos con la clase 'item_title'
-				const diseno = document.querySelectorAll('.item_title');
-				const nombreImagen = document.querySelectorAll('.item_nombre_imagen');
-
-				// Crear un array para almacenar los modelos de los elementos del carrito junto con sus títulos
-				const itemsCart = [];
-
-				// Recorrer todos los elementos y extraer los modelos junto con sus títulos
-				modelo.forEach((item, index) => {
-					// Obtener el texto dentro del elemento 'item_type' y 'item_title'
-					const tipo = item.textContent.trim();
-					let titulo = diseno[index].textContent.trim();
-					let nombreImagenPNG = nombreImagen[index].textContent.trim();
-					if (titulo === "Diseño personalizado") {
-						titulo = "Diseno personalizado";
+				return new Promise((resolve, reject) => {
+					var nombre = document.querySelector('input[name="nombre"]').value;
+					var apellido = document.querySelector('input[name="apellido"]').value;
+					var documento = document.querySelector('input[name="dni"]').value;
+					var email = document.querySelector('input[name="email"]').value;
+					var telefono = document.querySelector('input[name="telefono"]').value;
+					var tipo_entrega = document.querySelector('input[name="tipoEntrega"]:checked').value;
+					var codigo_postal = 0;
+					var provincia = '';
+					var localidad = ''; 
+					var calle = '';
+					var altura= '';
+					var direccion= '';
+					var comentarios = '';
+					var valor_envio= 0;
+					if (tipo_entrega === "envio") {
+						codigo_postal = document.querySelector('input[name="codigoPostal"]').value;
+						provincia = document.querySelector('input[name="provincia"]').value;    
+						localidad = document.querySelector('input[name="localidad"]').value;
+						calle = document.querySelector('input[name="calle"]').value;
+						altura = document.querySelector('input[name="altura"]').value;
+						direccion = calle + " " + altura;
+						comentarios = document.querySelector('input[name="comentarios"]').value;
+						valor_envio = parseInt(document.querySelector('input[name="carrier"]:checked').value);
 					}
-					// Agregar el modelo junto con su título al array de modelos
-					itemsCart.push({ modelo: tipo, diseno: titulo, nombreImagen: nombreImagenPNG });
-				});
-				console.log(itemsCart);
-				console.log(email, nombre, apellido, documento, tipo_entrega,cantidad_items, valor_subtotal );
-				console.log(codigo_postal, provincia, localidad, direccion, comentarios, valor_envio);
-				console.log(logistic_type, service_type_code, carrier_id, point_id_selected);
-				console.log( valor_total);
-				
-				const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+					var cantidad_items = document.querySelectorAll('.cart_product').length;
+					var valor_subtotal = subtotal;
+					var valor_total = total;
 
-				fetch('/guardar-orden', {
-					method: 'POST',
-					headers: {
-						'Content-Type': 'application/json',
-						'X-CSRF-TOKEN': '{{ csrf_token() }}' // Agrega el token CSRF de Laravel
-					},
-					body: JSON.stringify({
-						nombre: nombre,
-						apellido: apellido,
-						documento: documento,
-						email: email,
-						telefono: telefono,
-						tipo_entrega: tipo_entrega,
-						codigo_postal: codigo_postal,
-						provincia: provincia,
-						localidad: localidad,
-						calle: calle,
-						altura :altura,
-						direccion: direccion,
-						observacion_entrega: comentarios,
-						valor_envio: valor_envio,
-						cantidad_items: cantidad_items,
-						valor_subtotal: valor_subtotal,
-						valor_total: valor_total,
-						logistic_type: logistic_type,
-						service_type_code: service_type_code,
-						carrier_id: carrier_id,
-						point_id_selected: point_id_selected,
-						items_cart: itemsCart	
+					const modelo = document.querySelectorAll('.item_type');
 
+					// Obtener todos los elementos con la clase 'item_title'
+					const diseno = document.querySelectorAll('.item_title');
+					const nombreImagen = document.querySelectorAll('.item_nombre_imagen');
+
+					// Crear un array para almacenar los modelos de los elementos del carrito junto con sus títulos
+					const itemsCart = [];
+
+					// Recorrer todos los elementos y extraer los modelos junto con sus títulos
+					modelo.forEach((item, index) => {
+						// Obtener el texto dentro del elemento 'item_type' y 'item_title'
+						const tipo = item.textContent.trim();
+						let titulo = diseno[index].textContent.trim();
+						let nombreImagenPNG = nombreImagen[index].textContent.trim();
+						if (titulo === "Diseño personalizado") {
+							titulo = "Diseno personalizado";
+						}
+						// Agregar el modelo junto con su título al array de modelos
+						itemsCart.push({ modelo: tipo, diseno: titulo, nombreImagen: nombreImagenPNG });
+					});
+
+					const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+					fetch('/guardar-orden', {
+						method: 'POST',
+						headers: {
+							'Content-Type': 'application/json',
+							'X-CSRF-TOKEN': '{{ csrf_token() }}' // Agrega el token CSRF de Laravel
+						},
+						body: JSON.stringify({
+							nombre: nombre,
+							apellido: apellido,
+							documento: documento,
+							email: email,
+							telefono: telefono,
+							tipo_entrega: tipo_entrega,
+							codigo_postal: codigo_postal,
+							provincia: provincia,
+							localidad: localidad,
+							calle: calle,
+							altura :altura,
+							direccion: direccion,
+							observacion_entrega: comentarios,
+							valor_envio: valor_envio,
+							cantidad_items: cantidad_items,
+							valor_subtotal: valor_subtotal,
+							valor_total: valor_total,
+							logistic_type: logistic_type,
+							service_type_code: service_type_code,
+							carrier_id: carrier_id,
+							point_id_selected: point_id_selected,
+							items_cart: itemsCart  
+						})
 					})
-				})
-				.then(response => {
-					if (response.ok) {
-						return response.json();
-					}
-					throw new Error('Error en la respuesta del servidor.');
-				})
-				.then(data => {
-					console.log('Respuesta del servidor:', data);
-					idOrder = data.id;
-					 // Puedes manejar la respuesta del servidor aquí
-				})
-				.catch(error => {
-					console.error('Error al enviar los datos:', error);
+					.then(response => {
+						if (response.ok) {
+							return response.json();
+						}
+						throw new Error('Error en la respuesta del servidor.');
+					})
+					.then(data => {
+						console.log('Respuesta del servidor:', data);
+						idOrder = data.id;
+						resolve(data.id); // Resuelve la promesa con el ID de la orden
+					})
+					.catch(error => {
+						console.error('Error al enviar los datos:', error);
+						reject(error); // Rechaza la promesa con el error
+					});
 				});
-			
 			}
+
 			function updateOrder(){
 				fetch('/actualizar-orden', {
 					method: 'POST',
@@ -1254,38 +1281,37 @@
 					console.error('Error al enviar los datos:', error);
 				});
 			}
-			function updateDescuento(){
-				fetch('/actualizar-descuento', {
-					method: 'POST',
-					headers: {
-						'Content-Type': 'application/json',
-						'X-CSRF-TOKEN': '{{ csrf_token() }}' // Agrega el token CSRF de Laravel
-					},
-					body: JSON.stringify({
-						preference_id: preference_id,
-						idOrder: idOrder,
-						discount : discount,
-						
-
-							
-
+			function updateDescuento() {
+				return new Promise((resolve, reject) => {
+					fetch('/actualizar-descuento', {
+						method: 'POST',
+						headers: {
+							'Content-Type': 'application/json',
+							'X-CSRF-TOKEN': '{{ csrf_token() }}' // Agrega el token CSRF de Laravel
+						},
+						body: JSON.stringify({
+							preference_id: preference_id,
+							idOrder: idOrder,
+							discount: discount,
+						})
 					})
-				})
-				.then(response => {
-					if (response.ok) {
-						return response.json();
-					}
-					throw new Error('Error en la respuesta del servidor.');
-				})
-				.then(data => {
-					console.log('Respuesta del servidor:', data);
-					
-					 // Puedes manejar la respuesta del servidor aquí
-				})
-				.catch(error => {
-					console.error('Error al enviar los datos:', error);
+					.then(response => {
+						if (response.ok) {
+							return response.json();
+						}
+						throw new Error('Error en la respuesta del servidor.');
+					})
+					.then(data => {
+						console.log('Respuesta del servidor:', data);
+						resolve(); // Resuelve la promesa cuando la operación se completa
+					})
+					.catch(error => {
+						console.error('Error al enviar los datos:', error);
+						reject(error); // Rechaza la promesa con el error
+					});
 				});
 			}
+
 			
 
 			
