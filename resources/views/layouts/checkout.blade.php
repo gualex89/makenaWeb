@@ -746,9 +746,15 @@
 					subtotal = parseFloat(subtotalValor.textContent.replace('$', ''));
 
 					// Check if the discount code is correct
-					if (discountCode === 'AMOMAKENA' || discountCode === 'MAKENAMAYO6' || discountCode === 'IVANYGABY') {
-						if (discountCode === 'AMOMAKENA') {
+					if (discountCode === 'MKN2X5 ' || discountCode === 'MAKENAMAYO6' || discountCode === 'MKN3X5' || discountCode === 'MKN4X5') {
+						if (discountCode === 'MKN2X5') {
 							discount = subtotal * 0.10;
+						}
+						if (discountCode === 'MKN3X5') {
+							discount = subtotal * 0.15;
+						}
+						if (discountCode === 'MKN4X5') {
+							discount = subtotal * 0.20;
 						}
 						if (discountCode === 'MAKENAMAYO6') {
 							discount = subtotal * 0.38;
