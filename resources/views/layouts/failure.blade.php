@@ -86,7 +86,7 @@
 									<li>
 										<button type="button" class="cart_btn">
 											<i class="fal fa-shopping-cart"></i>
-											<span class="btn_badge">2</span>
+											<span class="btn_badge">0</span>
 										</button>
 									</li>
 									<li><button type="button" class="mobile_menu_btn"><i class="far fa-bars"></i></button></li>
