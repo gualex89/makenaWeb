@@ -320,7 +320,7 @@
 							</aside>
 						</div>
 			
-						<div class="col-lg-9 order-last">
+						<div class="col-lg-9 order-last" id="ver-categoria">
 							<div class="tab-content">
 								<div id="grid_layout" class="tab-pane active">
 									<div class="row mb_50 justify-content-center">
@@ -615,6 +615,9 @@
 
     // Función para mostrar/ocultar imágenes según la categoría
     function showImages(category) {
+		if (window.innerWidth < 600 && window.location.pathname.startsWith('/catalogo') && window.location.search.includes('categoria=')) {
+			window.scrollBy({ top: 500, behavior: 'smooth' });
+		}
         $('.image-item').hide(); // Ocultar todas las imágenes
 
         if (category === 'all') {
