@@ -26,6 +26,9 @@ class CatalogueController extends Controller
             $query->where('file_name', 'like', $categoria . '%');
         }
     
+        // Ordenar por ID descendente (más alto primero)
+        $query->orderBy('id', 'desc');
+    
         // Paginar los resultados
         $imagesCatalogo = $query->paginate(12);
         $totalImagesCatalogo = $imagesCatalogo->total();
@@ -39,11 +42,9 @@ class CatalogueController extends Controller
         foreach ($misProductos as $producto) {
             if ($producto->name === 'Dragon Ball') {
                 $precioFundas = $producto->price;
-                
             }     
             if ($producto->name === 'Popsockets') {
                 $precioPopSockets = $producto->price;
-                 // Terminamos el bucle una vez que encontramos el producto "fundas"
             }
             if ($producto->name === 'Fundas para Parejas') {
                 $precioFundasDobles = $producto->price;
@@ -53,6 +54,7 @@ class CatalogueController extends Controller
         // Pasar los datos a la vista
         return view('layouts.catalogo', compact('imagesCatalogo', 'totalImagesCatalogo', 'precioFundas', 'precioPopSockets', 'precioFundasDobles'));
     }
+    
     public function obtenerMarcas(){
         $marcas = Cover::distinct()->pluck('marca');
         return response()->json($marcas);
