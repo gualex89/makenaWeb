@@ -807,7 +807,7 @@
 
 					if ($('#radioRetiro').is(':checked')) {
 
-						$('#tercerAcordeon').removeAttr('disabled');
+						
 						$('#collapseThree').collapse('show');
 
 						let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
@@ -822,6 +822,7 @@
 							return updateOrder(idOrder, preference_id);
 						})
 						.then(() => {
+							$('#tercerAcordeon').removeAttr('disabled');
 							console.log("Todos los pasos completados correctamente.");
 						})
 						.catch(error => {
@@ -847,7 +848,7 @@
 					if (calle !== '' && altura !== '') {
 
 					// Habilitar y expandir el tercer acordeón
-						$('#tercerAcordeon').removeAttr('disabled');
+						
 						$('#collapseThree').collapse('show');
 						let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 						updateCartItems(cartItems);
@@ -861,6 +862,7 @@
 							return updateOrder(idOrder, preference_id);
 						})
 						.then(() => {
+							$('#tercerAcordeon').removeAttr('disabled');
 							console.log("Todos los pasos completados correctamente.");
 						})
 						.catch(error => {
@@ -872,7 +874,7 @@
 				});
 				$('#continuarButtonRetiroSucursal').on('click', function() {
 					// Habilitar y expandir el tercer acordeón
-					$('#tercerAcordeon').removeAttr('disabled');
+					
 					$('#collapseThree').collapse('show');
 					let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 					updateCartItems(cartItems);
@@ -886,6 +888,7 @@
 						return updateOrder(idOrder, preference_id);
 					})
 					.then(() => {
+						$('#tercerAcordeon').removeAttr('disabled');
 						console.log("Todos los pasos completados correctamente.");
 					})
 					.catch(error => {
