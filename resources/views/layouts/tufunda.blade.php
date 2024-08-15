@@ -956,20 +956,20 @@
 					var exportCanvas = document.createElement('canvas');
 					exportCanvas.id = 'exportCanvas';
 					var dpr = window.devicePixelRatio || 1;
-					exportCanvas.width = 1024 * dpr;
+					exportCanvas.width = 1152 * dpr;
 					exportCanvas.height = 1584 * dpr;
 					var exportContext = exportCanvas.getContext('2d');
 					exportContext.scale(dpr, dpr);
 
 					var exportFabricCanvas = new fabric.Canvas(exportCanvas);
-					exportFabricCanvas.setWidth(1024);
+					exportFabricCanvas.setWidth(1152);
 					exportFabricCanvas.setHeight(1584);
 
 					console.log(exportCanvas.width, exportCanvas.height);
 					console.log(canvas.width, canvas.height);
 
 					// Calcular las proporciones de escalado
-					const scaleWidth = 1024 / canvas.width;
+					const scaleWidth = 1152 / canvas.width;
 					const scaleHeight = 1584 / canvas.height;
 
 					// Clonar todos los objetos del canvas visible al canvas de alta definición
