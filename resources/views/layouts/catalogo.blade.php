@@ -243,6 +243,7 @@
 												<li><a href="/catalogo?categoria=DB">Dragon Ball</a></li>
 												<li><a href="/catalogo?categoria=CH">El viaje de Chihiro</a></li>
 												<li><a href="/catalogo?categoria=EV">Evangelion</a></li>
+												<li><a href="/catalogo?categoria=FN">Frieren</a></li>
 												<li><a href="/catalogo?categoria=HK">Haikyuu!</a></li>
 												<li><a href="/catalogo?categoria=HH">Hunter X Hunter</a></li>
 												<li><a href="/catalogo?categoria=JJ">Jojo's</a></li>
@@ -260,7 +261,7 @@
 										<li class="parent"><a href="#">Gaming</a>
 											<ul>
 												<li><a href="/catalogo?categoria=AC">Assasins Creed</a></li>
-												<li><a href="/catalogo?categoria=FN">Fortnite</a></li>
+												<li><a href="/catalogo?categoria=FRN">Fortnite</a></li>
 												<li><a href="/catalogo?categoria=GW">God of War</a></li>
 												<li><a href="/catalogo?categoria=LOL">Lol</a></li>
 												<li><a href="/catalogo?categoria=RE">Resident Evil</a></li>
