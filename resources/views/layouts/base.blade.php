@@ -279,7 +279,7 @@
    ================================================== -->
 
 
-        <section class="video_section">
+        {{-- <section class="video_section">
             <div class="container">
                 <div class="row">
                     <div class="col-md-6">
@@ -295,7 +295,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> --}}
 
 
         <!-- product_section - start
