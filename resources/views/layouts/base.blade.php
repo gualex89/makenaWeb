@@ -8,13 +8,16 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <title>Fundas para celulares en Argentina - Makena</title>
-    <meta name="description" content="Encuentra fundas personalizadas para todo tipo de celulares. Protege tu dispositivo con estilo en Makena. Envíos en toda Argentina.">
-    <meta name="keywords" content="fundas para celulares, fundas personalizadas, protección móvil, fundas de iPhone, fundas de Samsung, Makena fundas">
+    <meta name="description"
+        content="Encuentra fundas personalizadas para todo tipo de celulares. Protege tu dispositivo con estilo en Makena. Envíos en toda Argentina.">
+    <meta name="keywords"
+        content="fundas para celulares, fundas personalizadas, protección móvil, fundas de iPhone, fundas de Samsung, Makena fundas">
     <link rel="canonical" href="https://makenafundas.com.ar">
-    
+
     <!-- Open Graph Meta -->
     <meta property="og:title" content="Fundas para celulares en Argentina - Makena">
-    <meta property="og:description" content="Compra fundas personalizadas y de alta calidad para tu celular. Envíos rápidos y precios accesibles en toda Argentina.">
+    <meta property="og:description"
+        content="Compra fundas personalizadas y de alta calidad para tu celular. Envíos rápidos y precios accesibles en toda Argentina.">
     <meta property="og:image" content="https://makenafundas.com.ar/images/logo/makenaminiicon.png">
     <meta property="og:url" content="https://makenafundas.com.ar">
     <meta property="og:type" content="website">
@@ -279,23 +282,30 @@
    ================================================== -->
 
 
-        {{-- <section class="video_section">
+        <section class="video_section mb-1">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-12">
                         <div class="video">
-                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/xBblttAMNTI" frameborder="0" allowfullscreen></iframe>
+                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/nZBAXstf5Zs"
+                                frameborder="0" allowfullscreen></iframe>
 
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-sm-12">
                         <div class="descripcion">
-                            <p>Descripción del video...</p>
+                            <p style="font-size: 50px; text-align: center; font-weight: bold; line-height: 1.2;"><span
+                                    style="color: #F831FE">Todo</span> lo que buscabas</p>
+
+                            <p style="font-size: 35px; text-align: center; line-height: 1.4;">Acabado brillante,
+                                impresión <strong>Ultra HD 1200 DPI</strong> altura borde de cámara 1.5mm para
+                                <strong>protegerla</strong> y agarres laterales <strong>anti-slip</strong>.</p>
                         </div>
                     </div>
+
                 </div>
             </div>
-        </section> --}}
+        </section>
 
 
         <!-- product_section - start
