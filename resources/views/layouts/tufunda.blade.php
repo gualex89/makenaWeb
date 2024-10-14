@@ -651,9 +651,12 @@
 							hasControls: true,
 							hasBorders: true,
 							selectable: true,
-							cornerColor: 'red'
+							cornerColor: 'red',
+							originX: 'center',
+              originY: 'center'
 						});
-				
+						img.left = canvas.width / 2;
+            img.top = canvas.height / 2;
 						canvas.add(img);
 						
 						userImg = img;
