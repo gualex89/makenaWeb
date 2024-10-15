@@ -594,110 +594,99 @@
 			});
 			imagenCover.style.pointerEvents = 'none';
 		</script>
+		<script>
+			var canvas = new fabric.Canvas('canvas', {
+				selection: false, // Deshabilitar la selección múltiple
+				passive: true
+			});
+			
+			var fondoImg, userImg, texto;
+			var tiposDeLetra = [
+				'Arial',
+				'Comic Sans MS',
+				'Impact',
+				'Franklin Gothic Medium',
+				'Arial Black',
+				'Tahoma',
+				'Lucida Sans Unicode',
+				'Oswald'
+			];
+			var indiceTipoLetra = 0;
+			function cargarImagen() {
+				document.getElementById('imageLoader').click();
+			}
+			function mostrarAviso() {
+				var aviso = document.getElementById("aviso");
+				aviso.innerText = "¡Producto agregado al carrito!";
+				aviso.style.display = "block";
+				// Oculta el aviso después de 3 segundos
+				setTimeout(function() {
+					aviso.style.display = "none";
+				}, 3000);
+			}
 		
+			function cargarImagenDeFondo(url) {
+				fabric.Image.fromURL(url, function (bgImg) {
+					bgImg.set({
+						selectable: false,
+						crossOrigin: 'anonymous'  // Agrega esta línea
+					});
+					bgImg.opacity = 0;
+					bgImg.scaleToWidth(canvas.width);
+					bgImg.scaleToHeight(canvas.height);
+					canvas.add(bgImg);
+					fondoImg = bgImg;
+				});
+			}
+			document.getElementById('imageLoader').addEventListener('change', function(e) {
+				var file = e.target.files[0];
 
-        <script>
-            var canvas = new fabric.Canvas('canvas', {
-                selection: true, // Permitir la selección de objetos
-                passive: true
-            });
-        
-            var fondoImg, userImg, texto;
-            var tiposDeLetra = [
-                'Arial',
-                'Comic Sans MS',
-                'Impact',
-                'Franklin Gothic Medium',
-                'Arial Black',
-                'Tahoma',
-                'Lucida Sans Unicode',
-                'Oswald'
-            ];
-            var indiceTipoLetra = 0;
-            var initialScaleX, initialScaleY, startDistance;
-            var isDragging = false;
-            var lastPosX, lastPosY;
-        
-            function cargarImagen() {
-                document.getElementById('imageLoader').click();
-            }
-        
-            function mostrarAviso() {
-                var aviso = document.getElementById("aviso");
-                aviso.innerText = "¡Producto agregado al carrito!";
-                aviso.style.display = "block";
-                setTimeout(function () {
-                    aviso.style.display = "none";
-                }, 3000);
-            }
-        
-            function cargarImagenDeFondo(url) {
-                fabric.Image.fromURL(url, function (bgImg) {
-                    bgImg.set({
-                        selectable: false,
-                        crossOrigin: 'anonymous'
-                    });
-                    bgImg.opacity = 0;
-                    bgImg.scaleToWidth(canvas.width);
-                    bgImg.scaleToHeight(canvas.height);
-                    canvas.add(bgImg);
-                    fondoImg = bgImg;
-                });
-            }
-        
-            document.getElementById('imageLoader').addEventListener('change', function (e) {
-                var file = e.target.files[0];
-        
-                if (file.size > 3 * 1024 * 1024) { // Limitar tamaño a 3MB
-                    alert("El archivo es demasiado grande. El tamaño máximo permitido es de 3 MB.");
-                    return;
-                }
-        
-                var reader = new FileReader();
-        
-                reader.onload = function (e) {
-                    fabric.Image.fromURL(e.target.result, function (img) {
-        
-                        img.set({
-                            hasControls: true,
-                            hasBorders: true,
-                            selectable: true,
-                            cornerColor: 'red',
-                            originX: 'center',
+				if (file.size > 3 * 1024 * 1024) { // 3 MB en bytes
+					alert("El archivo es demasiado grande. El tamaño máximo permitido es de 3 MB.");
+					return;
+				}
+
+				var reader = new FileReader();
+			
+				reader.onload = function(e) {
+					fabric.Image.fromURL(e.target.result, function(img) {
+						
+						img.set({
+							hasControls: true,
+							hasBorders: true,
+							selectable: true,
+							cornerColor: 'red',
+							originX: 'center',
                             originY: 'center'
-                        });
-                        img.left = canvas.width / 2;
+						});
+						img.left = canvas.width / 2;
                         img.top = canvas.height / 2;
-                        canvas.add(img);
-        
-                        userImg = img;
+						canvas.add(img);
+						
+						userImg = img;
                         canvas.setActiveObject(img);
-        
-                        document.getElementById('imageLoader').value = '';
-                        img.on('mousedown', function () {
+						/* canvas.sendToBack(userImg); */
+
+						document.getElementById('imageLoader').value = '';
+                        img.on('mousedown', function() {
                             canvas.setActiveObject(img);
-                            document.getElementById('gesture-layer').style.pointerEvents = 'auto'; // Habilitar gesture-layer si es imagen
-                        });
-        
-                    });
-                };
-        
-                reader.readAsDataURL(file);
-        
-                // Mover imagen de fondo al fondo
-                canvas.sendToBack(fondoImg);
-                canvas.renderAll();
-        
-                // Mostrar botones y controles relacionados
-                $('#cambiarOrden').show();
-                $('#btnEliminar').show();
-                $('#divTamanioImagen').show();
-                $('#divRotacionImagen').show();
-                $('#agregarAlCarritoBtn').show();
-            });
-        
-            // Eventos táctiles para manejar el pellizco y arrastre en dispositivos móviles
-            document.getElementById('gesture-layer').addEventListener('touchstart', function (e) {
+                            document.getElementById('gesture-layer').style.pointerEvents = 'auto'; // Habilita gesture-layer si es imagen
+                });
+						
+					});
+				};
+				canvas.sendToBack(fondoImg);
+				canvas.renderAll();
+				
+				reader.readAsDataURL(file);
+				$('#cambiarOrden').show();
+				$('#btnEliminar').show();
+				$('#divTamanioImagen').show();
+				$('#divRotacionImagen').show();
+				$('#agregarAlCarritoBtn').show();
+			});
+
+            document.getElementById('gesture-layer').addEventListener('touchstart', function(e) {
                 var activeObject = canvas.getActiveObject();
                 if (activeObject && activeObject.type === 'image' && e.touches.length === 2) {
                     e.preventDefault();
@@ -710,11 +699,12 @@
                     lastPosX = touch.clientX;
                     lastPosY = touch.clientY;
                 } else {
-                    document.getElementById('gesture-layer').style.pointerEvents = 'none'; // Desactivar gesture-layer si no es imagen
+                    document.getElementById('gesture-layer').style.pointerEvents =
+                        'none'; // Desactiva gesture-layer si no es imagen
                 }
             });
-        
-            document.getElementById('gesture-layer').addEventListener('touchmove', function (e) {
+
+            document.getElementById('gesture-layer').addEventListener('touchmove', function(e) {
                 var activeObject = canvas.getActiveObject();
                 if (activeObject && activeObject.type === 'image' && e.touches.length === 2) {
                     e.preventDefault();
@@ -735,8 +725,8 @@
                     canvas.renderAll();
                 }
             });
-        
-            document.getElementById('gesture-layer').addEventListener('touchend', function (e) {
+
+            document.getElementById('gesture-layer').addEventListener('touchend', function(e) {
                 var activeObject = canvas.getActiveObject();
                 if (activeObject && activeObject.type === 'image') {
                     if (e.touches.length === 0 && isDragging) {
@@ -746,150 +736,223 @@
                     initialScaleY = null;
                     startDistance = null;
                 } else {
-                    document.getElementById('gesture-layer').style.pointerEvents = 'none'; // Desactivar gesture-layer si no es imagen
+                    document.getElementById('gesture-layer').style.pointerEvents =
+                        'none'; // Desactiva gesture-layer si no es imagen
                 }
             });
-        
-            // Función para obtener la distancia entre dos toques
-            function getDistance(touch1, touch2) {
-                var deltaX = touch1.clientX - touch2.clientX;
-                var deltaY = touch1.clientY - touch2.clientY;
-                return Math.sqrt(deltaX * deltaX + deltaY * deltaY);
-            }
-        
-            function cambiarColorCanvas(colorOrImage) {
-                if (colorOrImage.startsWith("http") || colorOrImage.startsWith("data:")) {
-                    fabric.Image.fromURL(colorOrImage, function (img) {
-                        img.scaleToWidth(canvas.width);
-                        img.scaleToHeight(canvas.height);
-                        img.set({
-                            selectable: false
-                        });
-                        canvas.setBackgroundImage(img, canvas.renderAll.bind(canvas));
-                    });
-                } else {
-                    canvas.setBackgroundColor(colorOrImage);
-                    canvas.renderAll();
-                }
-            }
-        
-            function cambiarOrden() {
-                var activeObject = canvas.getActiveObject();
-                if (activeObject) {
-                    canvas.bringForward(activeObject);
-                    canvas.renderAll();
-                }
-            }
-        
-            function eliminarElementoSeleccionado() {
-                var activeObject = canvas.getActiveObject();
-                if (activeObject) {
-                    canvas.remove(activeObject);
-                    canvas.discardActiveObject();
-                    canvas.sendToBack(fondoImg);
-                    canvas.renderAll();
-                    userImg = null;
-                    $('#imageLoader').val('');
-                }
-            }
-        
-            function enviarAlFondo() {
-                if (fondoImg) {
-                    canvas.sendToBack(fondoImg);
-                    canvas.renderAll();
-                    $('#editarFunda').hide();
-                    $('#cambiarOrden').show();
-                }
-            }
-        
-            function descargarImagenSubida() {
-                if (userImg) {
-                    const dataURL = userImg.toDataURL("image/png");
-                    const a = document.createElement("a");
-                    a.download = "imagen_subida";
-                    a.href = dataURL;
-                    a.click();
-                }
-            }
-        
-            function agregarTexto() {
-                var canvasWidth = canvas.width;
-                var canvasHeight = canvas.height;
-                var texto = new fabric.Textbox('Texto aquí', {
-                    left: canvasWidth / 2,
-                    top: canvasHeight / 2,
-                    width: 200,
-                    fontSize: 20,
-                    fontFamily: tiposDeLetra[indiceTipoLetra],
-                    fill: 'black',
-                    selectable: true,
-                    hasControls: true,
-                    editable: true,
-                    passive: true
-                });
-        
-                canvas.add(texto);
-                canvas.setActiveObject(texto);
-                canvas.requestRenderAll();
-        
-                texto.on('mousedown', function () {
+
+			function cambiarColorCanvas(colorOrImage) {
+				if (colorOrImage.startsWith("http") || colorOrImage.startsWith("data:")) {
+				// Si la entrada parece ser una URL de imagen o datos de imagen,
+				// la utilizamos como fondo de imagen.
+				fabric.Image.fromURL(colorOrImage, function(img) {
+					img.scaleToWidth(canvas.width);
+					img.scaleToHeight(canvas.height);
+					img.set({
+					selectable: false
+					});
+					canvas.setBackgroundImage(img, canvas.renderAll.bind(canvas));
+				});
+				} else {
+				// Si la entrada no parece ser una URL de imagen, la consideramos como un color.
+				canvas.setBackgroundColor(colorOrImage);
+				canvas.renderAll();
+				}
+			}
+		
+			function cambiarOrden() {
+				
+				var activeObject = canvas.getActiveObject();
+				if (activeObject) {
+					canvas.bringForward(activeObject);
+					canvas.renderAll();
+				}
+				
+				
+			}
+			function eliminarElementoSeleccionado() {
+				var activeObject = canvas.getActiveObject();
+
+				if (activeObject) {
+				canvas.remove(activeObject);
+				canvas.discardActiveObject();
+				canvas.sendToBack(fondoImg);
+				canvas.renderAll();
+				userImg = null;
+				$('#imageLoader').val(''); 
+				
+
+				}
+			}
+		
+			function enviarAlFondo() {
+				if (fondoImg) {
+					canvas.sendToBack(fondoImg);
+					canvas.renderAll();
+					$('#editarFunda').hide();
+					$('#cambiarOrden').show();
+
+				}
+			}
+		
+			function descargarImagenSubida() {
+			if (userImg) {
+				const dataURL = userImg.toDataURL("image/png");
+				const a = document.createElement("a");
+				a.download = "imagen_subida";
+				a.href = dataURL;
+				a.click();
+			  }
+			}
+		
+			function agregarTexto() {
+				var canvasWidth = canvas.width;
+				var canvasHeight = canvas.height;
+				var texto = new fabric.Textbox('Texto aquí', {
+					left: canvasWidth / 2, // Centrar horizontalmente
+					top: canvasHeight / 2, // Centrar verticalmente
+					width: 200,
+					fontSize: 20,
+					fontFamily: tiposDeLetra[indiceTipoLetra],
+					fill: 'black',
+					selectable: true,
+					hasControls: true,
+					editable: true,
+					passive: true
+				});
+
+				canvas.add(texto);
+				canvas.setActiveObject(texto);
+				canvas.requestRenderAll();
+
+                texto.on('mousedown', function() {
                     canvas.setActiveObject(texto);
-                    document.getElementById('gesture-layer').style.pointerEvents = 'none'; // Desactiva gesture-layer si es texto
+                    document.getElementById('gesture-layer').style.pointerEvents =
+                        'none'; // Desactiva gesture-layer si es texto
                 });
-            }
-        
-            function cambiarTipoDeLetra() {
-                if (canvas.getActiveObject() && canvas.getActiveObject().isType('textbox')) {
-                    var obj = canvas.getActiveObject();
-                    indiceTipoLetra = (indiceTipoLetra + 1) % tiposDeLetra.length;
-                    obj.set("fontFamily", tiposDeLetra[indiceTipoLetra]);
-                    canvas.requestRenderAll();
-                }
-            }
-        
-            function cambiarColorTexto(color) {
-                if (canvas.getActiveObject() && canvas.getActiveObject().isType('textbox')) {
-                    var obj = canvas.getActiveObject();
-                    obj.set("fill", color);
-                    canvas.requestRenderAll();
-                }
-            }
-        
-            function aumentarTamano() {
-                cambiarTamanoTexto(2);
-            }
-        
-            function reducirTamano() {
-                cambiarTamanoTexto(-2);
-            }
-        
-            function cambiarTamanoTexto(delta) {
-                if (canvas.getActiveObject() && canvas.getActiveObject().isType('textbox')) {
-                    var obj = canvas.getActiveObject();
-                    obj.set("fontSize", obj.fontSize + delta);
-                    canvas.requestRenderAll();
-                }
-            }
-        
-            // Cambiar tamaño de la imagen
-            function cambiarTamanoImagen(delta) {
+			}
+		
+			function cambiarTipoDeLetra() {
+			  if (canvas.getActiveObject() && canvas.getActiveObject().isType('textbox')) {
+				var obj = canvas.getActiveObject();
+				indiceTipoLetra = (indiceTipoLetra + 1) % tiposDeLetra.length;
+				obj.set("fontFamily", tiposDeLetra[indiceTipoLetra]);
+				canvas.requestRenderAll();
+				console.log(tiposDeLetra[indiceTipoLetra]);
+			  }
+			}
+		
+			function cambiarColorTexto(color) {
+			  if (canvas.getActiveObject() && canvas.getActiveObject().isType('textbox')) {
+				var obj = canvas.getActiveObject();
+				obj.set("fill", color);
+				userImg && userImg.set("fill", color);
+				canvas.requestRenderAll();
+			  }
+			}
+		
+			function aumentarTamano() {
+			  cambiarTamanoTexto(2);
+			}
+		
+			function reducirTamano() {
+			  cambiarTamanoTexto(-2);
+			}
+		
+			function cambiarTamanoTexto(delta) {
+				if (canvas.getActiveObject() && canvas.getActiveObject().isType('textbox')) {
+					var obj = canvas.getActiveObject();
+					obj.set("fontSize", parseInt(delta));
+					canvas.requestRenderAll();
+				 }
+			}
+			function cambiarTamanoImagen(delta) {
+				var obj = canvas.getActiveObject();
+
+				if (obj && obj.type === 'image') {
+					// Dividir el rango del deslizador en 10 posiciones
+					var posicion = Math.round(delta / 15) * 10;
+
+					// Calcular la cantidad de cambio basada en la posición
+					var cambioEscala = (posicion - 100) / 100;
+
+					// Aplicar el cambio en la escala tanto horizontal como verticalmente
+					obj.scaleX = 1 + cambioEscala;
+					obj.scaleY = 1 + cambioEscala;
+
+					
+
+					// Actualizar el lienzo
+					canvas.renderAll();
+				}
+			}
+			function rotarImagen(grados) {
                 var obj = canvas.getActiveObject();
+
                 if (obj && obj.type === 'image') {
-                    obj.scaleX = obj.scaleX + delta;
-                    obj.scaleY = obj.scaleY + delta;
+                    // Rango completo de rotación (360 grados)
+                    var rangoRotacion = 360;
+
+                    // Obtener el rango completo del control deslizante (de min a max)
+                    var rangoControlDeslizante = parseFloat(document.getElementById('imageRotationSlider').max) - parseFloat(document.getElementById('imageRotationSlider').min);
+
+                    // Calcular la rotación proporcional al rango completo del control deslizante
+                    var rotacionDeseada = (parseFloat(grados) / rangoControlDeslizante) * rangoRotacion;
+
+                    // Aplicar la rotación al objeto
+                    obj.set('angle', rotacionDeseada);
+
+                    // Actualizar el lienzo
                     canvas.renderAll();
                 }
-            }
-        
-            function rotarImagen(grados) {
-                var obj = canvas.getActiveObject();
-                if (obj && obj.type === 'image') {
-                    obj.set('angle', grados);
-                    canvas.renderAll();
-                }
-            }
-        
-            // Función para manejar la visibilidad del gesture-layer según el ancho de pantalla
+             }
+			
+			function cambiarRotacionTexto(angulo) {
+				if (canvas.getActiveObject() && canvas.getActiveObject().isType('textbox')) {
+					var obj = canvas.getActiveObject();
+					obj.set({
+					"angle": parseInt(angulo),
+					"originX": "center",
+					"originY": "center"
+					});
+					canvas.requestRenderAll();
+				}
+			}
+		
+			
+			function restablecerCanvas() {
+    			canvas.clear();
+				canvas.renderAll();
+				$('#imagenCover').attr('src', '');
+				document.getElementById('agregarAlCarritoBtn').style.display = "none";
+				$('#cambiarOrden').hide();
+				$('#btnEliminar').hide();
+				$('#divTamanioImagen').hide();
+				$('#divRotacionImagen').hide();
+				$('#agregarAlCarritoBtn').hide();
+				$('#subirImagen').hide();
+			}
+			function limpiarDropdowns() {
+				$('#modelosDropdown').val('');
+				$('#modelosDropdown').empty();
+				$('#modelosDropdown').append($('<option>', { // Agrega una nueva opción "Seleccione"
+					value: '',
+					text: 'Seleccione'
+				}));
+				$('#modelosDropdown').niceSelect('update');
+				$('#marcasDropdown').val('');
+				$('#marcasDropdown').niceSelect('update');
+				
+			}
+			function mostrarDesplegable() {
+				var desplegableContainer = document.getElementById('desplegableContainer');
+				desplegableContainer.style.right = '0';
+			}
+
+			function ocultarDesplegable() {
+				var desplegableContainer = document.getElementById('desplegableContainer');
+				desplegableContainer.style.right = '-100%';
+			}
             function adjustGestureLayer() {
                 const gestureLayer = document.getElementById('gesture-layer');
                 if (window.innerWidth < 480) {
@@ -898,12 +961,9 @@
                     gestureLayer.style.display = 'none';
                 }
             }
-        
-            // Eventos para ajustar el gesture-layer en la carga y al redimensionar la ventana
             window.addEventListener('load', adjustGestureLayer);
-            window.addEventListener('resize', adjustGestureLayer);
-        </script>
-        
+            window.addEventListener('resize', adjustGestureLayer);	
+		</script>
 		<script>
 			function toggleDesplegable(id) {
 				var desplegable = document.getElementById(id);
