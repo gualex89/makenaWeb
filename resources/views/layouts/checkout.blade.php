@@ -763,7 +763,7 @@
 						if (discountCode === 'MKN2X5') {
 							discount = subtotal * 0.10;
 						}
-						if (discountCode === 'CAMILANGA10OFF') {
+						if (discountCode === 'CAMILANGA') {
 							discount = subtotal * 0.10;
 						}
 						if (discountCode === 'MKN3X5') {
