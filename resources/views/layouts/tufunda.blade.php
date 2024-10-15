@@ -261,7 +261,7 @@
 												<canvas id="canvas" width="360" height="495" class="mx-auto d-block"></canvas>
 											</div>
                                             <div id="gesture-layer"
-                                                style="position: absolute; top: 65px; left: 71px; width: 65%; height: 65%;">
+                                                style="position: absolute; top: 32px; left: 112px; width: 53%; height: 75%;">
                                             </div>
 											<div class="container">
 												<div class="col-lg-12  barra_de_texto">
