@@ -260,6 +260,9 @@
 												<img src="" id="imagenCover" alt="">
 												<canvas id="canvas" width="360" height="495" class="mx-auto d-block"></canvas>
 											</div>
+                                            <div id="gesture-layer"
+                                                style="position: absolute; top: 65px; left: 71px; width: 65%; height: 65%;">
+                                            </div>
 											<div class="container">
 												<div class="col-lg-12  barra_de_texto">
 													
@@ -653,16 +656,21 @@
 							selectable: true,
 							cornerColor: 'red',
 							originX: 'center',
-              originY: 'center'
+                            originY: 'center'
 						});
 						img.left = canvas.width / 2;
-            img.top = canvas.height / 2;
+                        img.top = canvas.height / 2;
 						canvas.add(img);
 						
 						userImg = img;
+                        canvas.setActiveObject(img);
 						/* canvas.sendToBack(userImg); */
 
 						document.getElementById('imageLoader').value = '';
+                        img.on('mousedown', function() {
+                            canvas.setActiveObject(img);
+                            document.getElementById('gesture-layer').style.pointerEvents = 'auto'; // Habilita gesture-layer si es imagen
+                });
 						
 					});
 				};
@@ -676,6 +684,62 @@
 				$('#divRotacionImagen').show();
 				$('#agregarAlCarritoBtn').show();
 			});
+
+            document.getElementById('gesture-layer').addEventListener('touchstart', function(e) {
+                var activeObject = canvas.getActiveObject();
+                if (activeObject && activeObject.type === 'image' && e.touches.length === 2) {
+                    e.preventDefault();
+                    startDistance = getDistance(e.touches[0], e.touches[1]);
+                    initialScaleX = userImg.scaleX;
+                    initialScaleY = userImg.scaleY;
+                } else if (activeObject && activeObject.type === 'image' && e.touches.length === 1) {
+                    isDragging = true;
+                    var touch = e.touches[0];
+                    lastPosX = touch.clientX;
+                    lastPosY = touch.clientY;
+                } else {
+                    document.getElementById('gesture-layer').style.pointerEvents =
+                        'none'; // Desactiva gesture-layer si no es imagen
+                }
+            });
+
+            document.getElementById('gesture-layer').addEventListener('touchmove', function(e) {
+                var activeObject = canvas.getActiveObject();
+                if (activeObject && activeObject.type === 'image' && e.touches.length === 2) {
+                    e.preventDefault();
+                    var currentDistance = getDistance(e.touches[0], e.touches[1]);
+                    var scale = currentDistance / startDistance;
+                    userImg.scaleX = initialScaleX * scale;
+                    userImg.scaleY = initialScaleY * scale;
+                    canvas.renderAll();
+                } else if (activeObject && activeObject.type === 'image' && e.touches.length === 1 && isDragging) {
+                    e.preventDefault();
+                    var touch = e.touches[0];
+                    var deltaX = touch.clientX - lastPosX;
+                    var deltaY = touch.clientY - lastPosY;
+                    userImg.left += deltaX;
+                    userImg.top += deltaY;
+                    lastPosX = touch.clientX;
+                    lastPosY = touch.clientY;
+                    canvas.renderAll();
+                }
+            });
+
+            document.getElementById('gesture-layer').addEventListener('touchend', function(e) {
+                var activeObject = canvas.getActiveObject();
+                if (activeObject && activeObject.type === 'image') {
+                    if (e.touches.length === 0 && isDragging) {
+                        isDragging = false;
+                    }
+                    initialScaleX = null;
+                    initialScaleY = null;
+                    startDistance = null;
+                } else {
+                    document.getElementById('gesture-layer').style.pointerEvents =
+                        'none'; // Desactiva gesture-layer si no es imagen
+                }
+            });
+
 			function cambiarColorCanvas(colorOrImage) {
 				if (colorOrImage.startsWith("http") || colorOrImage.startsWith("data:")) {
 				// Si la entrada parece ser una URL de imagen o datos de imagen,
@@ -759,6 +823,12 @@
 				canvas.add(texto);
 				canvas.setActiveObject(texto);
 				canvas.requestRenderAll();
+
+                texto.on('mousedown', function() {
+                    canvas.setActiveObject(texto);
+                    document.getElementById('gesture-layer').style.pointerEvents =
+                        'none'; // Desactiva gesture-layer si es texto
+                });
 			}
 		
 			function cambiarTipoDeLetra() {
@@ -881,7 +951,17 @@
 			function ocultarDesplegable() {
 				var desplegableContainer = document.getElementById('desplegableContainer');
 				desplegableContainer.style.right = '-100%';
-			}	
+			}
+            function adjustGestureLayer() {
+                const gestureLayer = document.getElementById('gesture-layer');
+                if (window.innerWidth < 480) {
+                    gestureLayer.style.display = 'block';
+                } else {
+                    gestureLayer.style.display = 'none';
+                }
+            }
+            window.addEventListener('load', adjustGestureLayer);
+            window.addEventListener('resize', adjustGestureLayer);	
 		</script>
 		<script>
 			function toggleDesplegable(id) {
