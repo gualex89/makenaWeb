@@ -612,6 +612,9 @@
 				'Oswald'
 			];
 			var indiceTipoLetra = 0;
+            var initialScaleX, initialScaleY, startDistance;
+            var isDragging = false;
+            var lastPosX, lastPosY;
 			function cargarImagen() {
 				document.getElementById('imageLoader').click();
 			}
