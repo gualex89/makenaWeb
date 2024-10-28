@@ -1,61 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+<head>
 
-	<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Fundas de Celu Manga y Anime - Samsung, Motorola, Xiaomi, iPhone | Makena</title>
+    <meta name="description" content="Todo lo que buscas en una funda con acabado brillante, imagen Ultra HD y agarres laterales anti-slip para Samsung, Motorola, Xiaomi y iPhone. Amplio catálogo disponible.">
+    <meta name="keywords" content="fundas para celulares, fundas, carcasas, anime, manga, Dragon Ball, Naruto, Samsung, iPhone, Xiaomi, Motorola, Argentina, imagen, catálogo, personalizar">
 
-		<title>Makena</title>
-		<link rel="shortcut icon" href="images/logo/makenaminiicon.png">
+    <link rel="canonical" href="https://makenafundas.com.ar/catalogo">
+    <link rel="shortcut icon" href="images/logo/makenaminiicon.png">
 
-		<!-- fraimwork - css include -->
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <!-- Open Graph Meta -->
+    <meta property="og:title" content="Fundas de Celu Manga y Anime - Makena">
+    <meta property="og:description" content="Encuentra fundas con acabado brillante, imagen Ultra HD y agarres anti-slip. Samsung, Motorola, Xiaomi, iPhone. Amplio catálogo de anime y manga.">
+    <meta property="og:image" content="https://makenafundas.com.ar/images/logo/makenaminiicon.png">
+    <meta property="og:url" content="https://makenafundas.com.ar/catalogo">
+    <meta property="og:type" content="website">
 
-		<!-- icon - css include -->
-		<link rel="stylesheet" type="text/css" href="css/fontawesome.css">
+    <!-- Twitter Card Meta -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fundas de Celu Manga y Anime - Makena">
+    <meta name="twitter:description" content="Fundas de alta calidad para Samsung, Motorola, Xiaomi y iPhone. Amplio catálogo de anime y manga en Makena.">
+    <meta name="twitter:image" content="https://makenafundas.com.ar/images/logo/makenaminiicon.png">
 
-		<!-- animation - css include -->
-		<link rel="stylesheet" type="text/css" href="css/animate.css">
+    <!-- CSS & Frameworks -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/fontawesome.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/nice-select.css">
+    <link rel="stylesheet" type="text/css" href="css/slick.css">
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css">
+    <link rel="stylesheet" type="text/css" href="css/magnific-popup.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 
-		<!-- nice select - css include -->
-		<link rel="stylesheet" type="text/css" href="css/nice-select.css">
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-P9QG5632');</script>
+    <!-- End Google Tag Manager -->
 
-		<!-- carousel - css include -->
-		<link rel="stylesheet" type="text/css" href="css/slick.css">
-		<link rel="stylesheet" type="text/css" href="css/slick-theme.css">
+    <!-- Custom Styles -->
+    <style>
+        .sb_category ul ul {
+            display: none;
+            list-style: none;
+        }
+        
+        .sb_category ul li.active > ul {
+            display: block;
+        }
+    </style>
 
-		<!-- popup images & videos - css include -->
-		<link rel="stylesheet" type="text/css" href="css/magnific-popup.css">
-
-		<!-- jquery ui - css include -->
-		<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
-
-		<!-- custom - css include -->
-		<link rel="stylesheet" type="text/css" href="css/style.css">
-
-		<!-- Google Tag Manager -->
-		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-		})(window,document,'script','dataLayer','GTM-P9QG5632');</script>
-	<!-- End Google Tag Manager -->
-
-		<style>
-			.sb_category ul ul {
-				display: none;
-				list-style: none;
-			}
-	
-			
-			.sb_category ul li.active > ul {
-				display: block;
-			}
-		</style>
-
-	</head>
+</head>
 
 
 	<body class="home_motorcycle">

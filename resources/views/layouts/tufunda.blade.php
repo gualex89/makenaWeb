@@ -1,51 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+<head>
 
-	<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>Fundas Personalizadas para tu Celu - Samsung, Motorola, Xiaomi, iPhone | Makena</title>
+    <meta name="description" content="Crea tu funda personalizada para Samsung, Motorola, Xiaomi o iPhone con Makena. Ingresa en nuestro editor y diseña tu funda como quieras. Envíos a toda Argentina.">
+    <meta name="keywords" content="fundas personalizadas, fundas celulares, carcasas, anime, Dragon Ball, Naruto, Samsung, iPhone, Xiaomi, Motorola, Argentina, foto, imagen, diseño, editor en línea">
+    <link rel="canonical" href="https://makenafundas.com.ar/tufunda">
 
-		<title>Makena</title>
-		<link rel="shortcut icon" href="images/logo/makenaminiicon.png">
+    <!-- Open Graph Meta -->
+    <meta property="og:title" content="Fundas Personalizadas para tu Celu - Makena">
+    <meta property="og:description" content="Diseña fundas para Samsung, Motorola, Xiaomi o iPhone en Makena. Explora nuestro editor y crea tu funda personalizada.">
+    <meta property="og:image" content="https://makenafundas.com.ar/images/logo/makenaminiicon.png">
+    <meta property="og:url" content="https://makenafundas.com.ar/tufunda">
+    <meta property="og:type" content="website">
 
-		<!-- fraimwork - css include -->
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <!-- Twitter Card Meta -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fundas Personalizadas para tu Celu - Makena">
+    <meta name="twitter:description" content="Crea fundas personalizadas para Samsung, Motorola, Xiaomi e iPhone en Makena. Usa nuestro editor y diseña como quieras.">
+    <meta name="twitter:image" content="https://makenafundas.com.ar/images/logo/makenaminiicon.png">
 
-		<!-- icon - css include -->
-		<link rel="stylesheet" type="text/css" href="css/fontawesome.css">
+    <link rel="shortcut icon" href="images/logo/makenaminiicon.png">
 
-		<!-- animation - css include -->
-		<link rel="stylesheet" type="text/css" href="css/animate.css">
+    <!-- fraimwork - css include -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <!-- icon - css include -->
+    <link rel="stylesheet" type="text/css" href="css/fontawesome.css">
+    <!-- animation - css include -->
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <!-- nice select - css include -->
+    <link rel="stylesheet" type="text/css" href="css/nice-select.css">
+    <!-- carousel - css include -->
+    <link rel="stylesheet" type="text/css" href="css/slick.css">
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css">
+    <!-- popup images & videos - css include -->
+    <link rel="stylesheet" type="text/css" href="css/magnific-popup.css">
+    <!-- jquery ui - css include -->
+    <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+    <!-- custom - css include -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 
-		<!-- nice select - css include -->
-		<link rel="stylesheet" type="text/css" href="css/nice-select.css">
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-P9QG5632');</script>
+    <!-- End Google Tag Manager -->
 
-		<!-- carousel - css include -->
-		<link rel="stylesheet" type="text/css" href="css/slick.css">
-		<link rel="stylesheet" type="text/css" href="css/slick-theme.css">
+    <!-- Fabric.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.5.0/fabric.min.js"></script>
 
-		<!-- popup images & videos - css include -->
-		<link rel="stylesheet" type="text/css" href="css/magnific-popup.css">
+</head>
 
-		<!-- jquery ui - css include -->
-		<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
-
-		<!-- custom - css include -->
-		<link rel="stylesheet" type="text/css" href="css/style.css">
-
-		<!-- Google Tag Manager -->
-		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-		})(window,document,'script','dataLayer','GTM-P9QG5632');</script>
-		<!-- End Google Tag Manager -->
-
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.5.0/fabric.min.js"></script>
-	</head>
 
 
 	<body class="home_motorcycle">
