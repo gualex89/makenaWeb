@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
 
@@ -7,45 +7,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>Fundas para celulares en Argentina - Makena</title>
-    <meta name="description"
-        content="Encuentra fundas personalizadas para todo tipo de celulares. Protege tu dispositivo con estilo en Makena. Envíos en toda Argentina.">
-    <meta name="keywords"
-        content="fundas para celulares, fundas personalizadas, protección móvil, fundas de iPhone, fundas de Samsung, Makena fundas">
+    <title>Fundas para tu Celu - Makena | Personalizadas para Samsung, Motorola, Xiaomi e iPhone</title>
+    <meta name="description" content="Fundas personalizadas para Samsung, Motorola, Xiaomi y iPhone en Makena. Elige entre más de 1000 modelos o crea tu diseño. Envíos a toda Argentina.">
+    <meta name="keywords" content="fundas personalizadas, fundas celulares, carcasas, anime, Dragon Ball, iPhone, Samsung, Argentina">
     <link rel="canonical" href="https://makenafundas.com.ar">
 
     <!-- Open Graph Meta -->
     <meta property="og:title" content="Fundas para celulares en Argentina - Makena">
-    <meta property="og:description"
-        content="Compra fundas personalizadas y de alta calidad para tu celular. Envíos rápidos y precios accesibles en toda Argentina.">
+    <meta property="og:description" content="Compra fundas personalizadas y de alta calidad para tu celular. Envíos rápidos y precios accesibles en toda Argentina.">
     <meta property="og:image" content="https://makenafundas.com.ar/images/logo/makenaminiicon.png">
     <meta property="og:url" content="https://makenafundas.com.ar">
     <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fundas para tu Celu - Makena">
+    <meta name="twitter:description" content="Fundas personalizadas para Samsung, Motorola, Xiaomi y iPhone. ¡Crea tu funda en Makena!">
+    <meta name="twitter:image" content="https://makenafundas.com.ar/images/logo/makenaminiicon.png">
 
     <link rel="shortcut icon" href="images/logo/makenaminiicon.png">
 
     <!-- fraimwork - css include -->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-
     <!-- icon - css include -->
     <link rel="stylesheet" type="text/css" href="css/fontawesome.css">
-
     <!-- animation - css include -->
     <link rel="stylesheet" type="text/css" href="css/animate.css">
-
     <!-- nice select - css include -->
     <link rel="stylesheet" type="text/css" href="css/nice-select.css">
-
     <!-- carousel - css include -->
     <link rel="stylesheet" type="text/css" href="css/slick.css">
     <link rel="stylesheet" type="text/css" href="css/slick-theme.css">
-
     <!-- popup images & videos - css include -->
     <link rel="stylesheet" type="text/css" href="css/magnific-popup.css">
-
     <!-- jquery ui - css include -->
     <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
-
     <!-- custom - css include -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
@@ -69,6 +65,7 @@
     <!-- End Google Tag Manager -->
 
 </head>
+
 
 
 
