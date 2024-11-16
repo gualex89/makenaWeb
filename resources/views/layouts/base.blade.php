@@ -21,7 +21,7 @@
 
     <!-- Twitter Card Meta -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Fundas para tu Celu - Makena">
+    <meta name="twitter:title" content="Fundas para tu Celular - Makena">
     <meta name="twitter:description" content="Fundas personalizadas para Samsung, Motorola, Xiaomi y iPhone. ¡Crea tu funda en Makena!">
     <meta name="twitter:image" content="https://makenafundas.com.ar/images/logo/makenaminiicon.png">
 
@@ -103,7 +103,7 @@
                         <div class="brand_logo">
                             <a class="brand_link" href="/">
                                 <img src="images/logo/logomakena.png" srcset="images/logo/logomakena.png 2x"
-                                    alt="logo_not_found">
+                                    alt="logo de makena">
                             </a>
 
                             <ul class="mh_action_btns ul_li clearfix">
@@ -203,7 +203,7 @@
                 <div class="msb_widget brand_logo text-center">
                     <a href="index.html">
                         <img src="images/logo/logo_25_1x.png" srcset="images/logo/logo_black.png"
-                            alt="logo_not_found">
+                            alt="logo negro de makena">
                     </a>
                 </div>
 
@@ -324,7 +324,7 @@
                                 <div class="motorcycle_product_grid">
                                     <div class="item_image">
                                         <a href="/catalogo">
-                                            <img src="{{ Voyager::image($producto->image) }}" alt="image_not_found">
+                                            <img src="{{ Voyager::image($producto->image) }}" alt="Funda personalizada de {{ $producto->name }}">
                                         </a>
                                     </div>
                                     <div class="item_content">
@@ -357,7 +357,7 @@
 
             <div class="deco_image motorcycle_image_1">
                 <img class="imagen_lateral_base" style="display: none" src="images/backgroundLateral.png"
-                    alt="image_not_found">
+                    alt="Funda personalizada lateral">
             </div>
         </section>
         <!-- product_section - end
@@ -374,7 +374,7 @@
                 <div class="row no-gutters">
                     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                         <div class="feature_fullimage text-center">
-                            <img src="images/ventajastpu.webp" alt="image_not_found">
+                            <img src="images/ventajastpu.webp" alt="Fundas personalizadas con Bordes antideslizantes">
                             <div class="item_content">
                                 <h3 class="item_title text-white mb_30">BORDES</h3>
                                 <h3 class="item_title text-white mb_30">ANTIDESLIZANTES</h3>
@@ -384,7 +384,7 @@
 
                     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                         <div class="feature_fullimage text-center fondo-ventajas">
-                            <img src="images/ventajastpu2.webp" alt="image_not_found">
+                            <img src="images/ventajastpu2.webp" alt="Fundas personalizadas con laminas de aluminio">
                             <div class="item_content">
                                 <h3 class="item_title text-white mb_30">LÁMINA DE</h3>
                                 <h3 class="item_title text-white mb_30">ALUMINIO</h3>
@@ -394,7 +394,7 @@
 
                     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                         <div class="feature_fullimage text-center">
-                            <img src="images/ventajastpu3.webp" alt="image_not_found">
+                            <img src="images/ventajastpu3.webp" alt="Fundas personalizadas con cubierta TPU">
                             <div class="item_content">
                                 <h3 class="item_title text-white mb_30">CUBIERTA</h3>
                                 <h3 class="item_title text-white mb_30">TPU</h3>
@@ -404,7 +404,7 @@
 
                     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                         <div class="feature_fullimage text-center">
-                            <img src="images/ventajastpu4.webp" alt="image_not_found">
+                            <img src="images/ventajastpu4.webp" alt="Fundas personalizadas con Bordes antideslizantes">
                             <div class="item_content">
                                 <h3 class="item_title text-white mb_30">BORDES</h3>
                                 <h3 class="item_title text-white mb_30">ANTI-GOLPES</h3>
@@ -431,7 +431,7 @@
                         <div class="item">
                             <div class="motorcycle_testimonial_item bg_white">
                                 <div class="item_image">
-                                    <img src="images/seComplico.webp" alt="image_not_found">
+                                    <img src="images/seComplico.webp" alt="Funda personalizada">
                                 </div>
                                 <div class="item_content">
                                     <h4 class="sub_title">¿Se complicó?</h4>
@@ -479,7 +479,7 @@
                         <div class="footer_widget footer_about text-center">
                             <div class="brand_logo mb_30">
                                 <a href="#!">
-                                    <img src="images/logo/logomakena.png" alt="logo_not_found">
+                                    <img src="images/logo/logomakena.png" alt="logo makena">
                                 </a>
                             </div>
 
@@ -616,7 +616,7 @@
                     const cartItemHTML = `
 							<li>
 								<div class="item_image">
-									<img src="${cartItem.image}" alt="${cartItem.name}"> <!-- Usar la URL de la imagen -->
+									<img src="${cartItem.image}" alt="Funda en carrito ${cartItem.name}"> <!-- Usar la URL de la imagen -->
 								</div>
 								<div class="item_content">
 									<h4 class="item_title">${cartItem.name}</h4>
