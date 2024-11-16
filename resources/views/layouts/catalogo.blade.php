@@ -83,7 +83,7 @@
 						<div class="col-lg-2">
 							<div class="brand_logo">
 								<a class="brand_link" href="/">
-									<img src="images/logo/logomakena.png"  alt="logo_not_found">
+									<img src="images/logo/logomakena.png"  alt="logo makena">
 								</a>
 
 								<ul class="mh_action_btns ul_li clearfix">
@@ -184,7 +184,7 @@
 
 					<div class="msb_widget brand_logo text-center">
 						<a href="/">
-							<img src="images/logo/logo_25_1x.png" srcset="images/logo/logo_black.png" alt="logo_not_found">
+							<img src="images/logo/logo_25_1x.png" srcset="images/logo/logo_black.png" alt="logo negro de makena">
 						</a>
 					</div>
 
@@ -341,7 +341,7 @@
 										<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 image-item" data-category="{{ substr($image->file_name, 0, 2) }}">
 											<div class="motorcycle_product_grid">
 												<div class="item_image">
-													<img src="{{ Voyager::image($image->image) }}" alt="{{ $image->file_name }}">
+													<img src="{{ Voyager::image($image->image) }}" alt="{{ $image->nombreFundas }}">
 													<ul class="product_action_btns ul_li_block text-uppercase text-center clearfix">
 														<li><a class="alCarrito" href="#!"><span><i class="fas fa-shopping-cart"></i></span> <span>Agregar al Carrito</span></a></li>
 														<li><a href="#!" class="ver-btn" data-image="{{ Voyager::image($image->image) }}" data-title="{{ $image->file_name }}"><span><i class="fas fa-search"></i></span> <span>Ver</span></a></li>
@@ -448,7 +448,7 @@
 							<div class="footer_widget footer_about text-center">
 								<div class="brand_logo mb_30">
 									<a href="#!">
-										<img src="images/logo/logomakena.png" alt="logo_not_found">
+										<img src="images/logo/logomakena.png" alt="logo makena">
 									</a>
 								</div>
 
@@ -496,7 +496,7 @@
 						</button>
 					</div>
 					<div class="modal-body">
-						<img src="" alt="Imagen del Producto" id="productImage" style="max-width: 100%;">
+						<img src="" alt="{{ $image->nombreFundas }}" id="productImage" style="max-width: 100%;">
 					</div>
 				</div>
 			</div>
@@ -670,7 +670,7 @@
 						const cartItemHTML = `
 							<li>
 								<div class="item_image">
-									<img src="${cartItem.image}" alt="${cartItem.name}">
+									<img src="${cartItem.image}" alt="Funda en carrito ${cartItem.name}">
 								</div>
 								<div class="item_content">
 									<h4 class="item_title">${cartItem.name}</h4>

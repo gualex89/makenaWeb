@@ -98,7 +98,7 @@
 						<div class="col-lg-2">
 							<div class="brand_logo">
 								<a class="brand_link" href="/">
-									<img src="images/logo/logomakena.png"  alt="logo_not_found">
+									<img src="images/logo/logomakena.png"  alt="logo makena">
 								</a>
 
 								<ul class="mh_action_btns ul_li clearfix">
@@ -157,7 +157,7 @@
 
 					<div class="msb_widget brand_logo text-center">
 						<a href="/">
-							<img src="images/logo/logo_black.png" srcset="images/logo/logo_black.png" alt="logo_not_found">
+							<img src="images/logo/logo_black.png" srcset="images/logo/logo_black.png" alt="logo negro makena">
 						</a>
 					</div>
 
@@ -455,7 +455,7 @@
 							<div class="footer_widget footer_about text-center">
 								<div class="brand_logo mb_30">
 									<a href="#!">
-										<img src="images/logo/logomakena.png"  alt="logo_not_found">
+										<img src="images/logo/logomakena.png"  alt="logo makena">
 									</a>
 								</div>
 
@@ -697,7 +697,7 @@
 								<td>
 									<div class="cart_product">
 										<div class="item_image">
-											<img src="${cartItem.image}" alt="${cartItem.name}">
+											<img src="${cartItem.image}" alt="Funda en carrito ${cartItem.name}">
 										</div>
 										<div class="item_content">
 											<h4 class="item_title">${cartItem.name}</h4>
