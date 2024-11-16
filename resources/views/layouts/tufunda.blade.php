@@ -265,7 +265,7 @@
 
 										<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 image-item">
 											<div class="container">
-												<img src="" id="imagenCover" alt="">
+												<img src="" id="imagenCover" alt="imagen de funda personalizada sin diseño">
 												<canvas id="canvas" width="360" height="495" class="mx-auto d-block"></canvas>
 											</div>
                                             <div id="gesture-layer"
@@ -387,7 +387,7 @@
 							<div class="footer_widget footer_about text-center">
 								<div class="brand_logo mb_30">
 									<a href="#!">
-										<img src="images/logo/logomakena.png"  alt="logo_not_found">
+										<img src="images/logo/logomakena.png"  alt="logo makena">
 									</a>
 								</div>
 
@@ -1159,7 +1159,7 @@
 						const cartItemHTML = `
 							<li>
 								<div class="item_image">
-									<img src="${cartItem.image}" alt="${cartItem.name}"> <!-- Usar la URL de la imagen -->
+									<img src="${cartItem.image}" alt="Funda en carrito ${cartItem.name}"> <!-- Usar la URL de la imagen -->
 								</div>
 								<div class="item_content">
 									<h4 class="item_title">${cartItem.name}</h4>
