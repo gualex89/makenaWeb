@@ -92,7 +92,7 @@
 						<div class="col-lg-2">
 							<div class="brand_logo">
 								<a class="brand_link" href="/">
-									<img src="images/logo/logomakena.png" alt="logo_not_found">
+									<img src="images/logo/logomakena.png" alt="logo makena">
 								</a>
 
 								<ul class="mh_action_btns ul_li clearfix">
@@ -156,7 +156,7 @@
 
 					<div class="msb_widget brand_logo text-center">
 						<a href="/">
-							<img src="images/logo/logo_25_1x.png" srcset="images/logo/logo_black.png" alt="logo_not_found">
+							<img src="images/logo/logo_25_1x.png" srcset="images/logo/logo_black.png" alt="logo negro makena">
 						</a>
 					</div>
 
@@ -199,7 +199,7 @@
 			<section class="cart_section sec_ptb_140 clearfix cart_section vh-100 d-flex justify-content-center align-items-center">
 				<div class="container text-center">
 					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-						<img src="images/logos/fail.png" alt="" width="20%">
+						<img src="images/logos/fail.png" alt="icono fail" width="20%">
 						<h1>¡Oh No, Ocurrió un error en el pago!</h1>
 
 						<h3></h3>
@@ -239,7 +239,7 @@
 							<div class="footer_widget footer_about text-center">
 								<div class="brand_logo mb_30">
 									<a href="#!">
-										<img src="images/logo/logomakena.png" alt="logo_not_found">
+										<img src="images/logo/logomakena.png" alt="logo makena">
 									</a>
 								</div>
 
@@ -394,7 +394,7 @@
 								<td>
 									<div class="cart_product">
 										<div class="item_image">
-											<img src="${cartItem.image}" alt="${cartItem.name}">
+											<img src="${cartItem.image}" alt="Funda en carrito ${cartItem.name}">
 										</div>
 										<div class="item_content">
 											<h4 class="item_title">${cartItem.name}</h4>
