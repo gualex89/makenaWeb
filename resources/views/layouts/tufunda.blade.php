@@ -265,7 +265,7 @@
 
 										<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 image-item">
 											<div class="container">
-												<img src="" id="imagenCover" alt="imagen de funda personalizada sin diseño">
+												<img src="" id="imagenCover" >
 												<canvas id="canvas" width="360" height="495" class="mx-auto d-block"></canvas>
 											</div>
                                             <div id="gesture-layer"
