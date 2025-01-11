@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\Download;
 use MercadoPago\MercadoPagoConfig;
 use MercadoPago\Client\Preference\PreferenceClient;
 use Illuminate\Http\Request;
@@ -43,6 +44,23 @@ class CheckoutController extends Controller
         $order->items_cart = json_encode($data['items_cart']);
         $order->save();
         $id =$order->id_order;
+
+        $itemsCart = $data['items_cart'];
+
+    
+        foreach ($itemsCart as $item) {
+            $download = new Download();
+            $download->order_id = $id;
+            $download->modelo = $item['modelo'];
+            $download->imprimible = $item['nombreImagen'];
+            $download->composicion = "Comp-" . $item['nombreImagen'];
+            
+            
+            $download->save();
+        }
+
+
+        
         
         return response()->json(['message' => 'Orden guardada exitosamente', 'id' => $id]);
         
