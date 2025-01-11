@@ -678,6 +678,12 @@ hr {
   z-index: 1;
   width: 384px;
 }
+
+#div_imagen{
+  margin-top: 10px !important;
+
+}
+
 #canvas{
   width: 360px;
   height: 495px;
@@ -27186,9 +27192,13 @@ blockquote .blockquote_title {
   }
   #imagenCover{
     width: 382px;
-    left: 30px;
+    left: 68px;
     position: absolute;
     z-index: 1;
+  }
+  #div_imagen{
+    margin-top: 10px !important;
+  
   }
 
   /* global - end */

@@ -68,7 +68,12 @@ class TuFundaController extends Controller
     }
 
     public function obtenerImagen($modelo){
-        $imagen = Cover::where('modelo', $modelo)->pluck('imagen');
-        return response()->json($imagen);
+    
+        $imagen = Cover::where('modelo', $modelo)->pluck('imagen')->first();
+        $imprimible = Cover::where('modelo', $modelo)->pluck('imprimible')->first();
+        
+        $result = collect([$imagen, $imprimible]);
+        
+        return response()->json($result);
     }
 }

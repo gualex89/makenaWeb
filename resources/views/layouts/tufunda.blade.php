@@ -263,16 +263,17 @@
 											</a>
 										</div>
 
-										<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 image-item">
+										<div id="div_imagen" class="col-lg-6 col-md-6 col-sm-6 col-xs-12 image-item">
 											<div class="container">
-												<img src="" id="imagenCover" >
-												<canvas id="canvas" width="360" height="495" class="mx-auto d-block"></canvas>
+												<img src="" id="imagenCover" style="max-width: 285px !important; left: 71px !important" alt="">
+												<img src="" id="imagenCoverCanilleras" style="max-width: 498px ; width: 498px; left: 0px !important" alt="">
+												<img src="" id="imagenCoverImprimible" alt="">
+												<canvas id="canvas" width="260" height="551" class="mx-auto d-block"></canvas>
+												<div id="gesture-layer" style="position: absolute; top: 65px; left: 71px; width: 65%; height: 65%;">
+												</div>
 											</div>
-                                            <div id="gesture-layer"
-                                                style="position: absolute; top: 32px; left: 112px; width: 53%; height: 75%;">
-                                                
-                                            </div>
-											<div class="container">
+                                            
+											<div class="container mt-5">
 												<div class="col-lg-12  barra_de_texto">
 													
 													<input type="file" id="imageLoader" style="display: none" accept="image/*" />
@@ -572,6 +573,25 @@
 				// Manejar cambio en el dropdown de modelos
 				$('#modelosDropdown').change(function() {
 					restablecerCanvas()
+
+					canvas.setWidth(260);
+					canvas.setHeight(551);
+
+					var canvasElement = document.getElementById('canvas');
+					var divImagenElement = document.getElementById('div_imagen');
+
+					if (window.innerWidth <= 480) {
+						imagenCover.style.setProperty('left', '50px', 'important');
+						divImagenElement.style.setProperty('margin-top', '5px', 'important');
+						canvasElement.style.setProperty('left', '20px', 'important');
+
+					} else {
+						divImagenElement.style.setProperty('margin-top', '-55px', 'important');
+						canvasElement.style.setProperty('left', '50px', 'important');
+						canvasElement.style.setProperty('top', '0px', 'important');
+					}
+
+
 					// Obtener el modelo seleccionado en el dropdown
 					var modeloSeleccionado = $(this).val();
 					console.log(modeloSeleccionado);
@@ -579,10 +599,17 @@
 					$.get('/obtener-imagen/' + modeloSeleccionado, function(data) {
 						// La respuesta 'data' debería contener la información de la imagen u otro dato que necesitas
 						console.log(data);
+
 						var rutaImagen = "storage\\" + data[0];
+						var rutaImagenImprimible = "storage\\" + data[1];
+
 						console.log(rutaImagen);
+						console.log(rutaImagenImprimible);
+
 						$('#imagenCover').attr('src', rutaImagen);
+
 						cargarImagenDeFondo(rutaImagen);
+						cargarImagenDeFondoImprimible(rutaImagenImprimible);
 						//$('#imagenResultado').attr('src', rutaImagen);
 					});
 					$('#subirImagen').show();
@@ -651,6 +678,19 @@
 							fondoImg = bgImg;
 					});
 			}
+			function cargarImagenDeFondoImprimible(url) {
+            fabric.Image.fromURL(url, function(bgImg) {
+                bgImg.set({
+                    selectable: false,
+                    crossOrigin: 'anonymous'
+                });
+                bgImg.opacity = 0;
+                bgImg.scaleToWidth(canvas.width);
+                bgImg.scaleToHeight(canvas.height);
+                canvas.add(bgImg);
+                fondoImgImprimible = bgImg;
+            });
+        }
 	
 			document.getElementById('imageLoader').addEventListener('change', function(e) {
 					var file = e.target.files[0];
@@ -968,6 +1008,8 @@
 				let subtotal = 0;
 				let total = 0;
 				let cartItems = [];
+				let widthVariable = 943;
+        let heightVariable = 2000;
 		
 				function updateCartCounter() {
 					const badgeElements = document.querySelectorAll('.btn_badge');
@@ -986,71 +1028,91 @@
 				const agregarAlCarritoBtn = document.getElementById('agregarAlCarritoBtn');
 
 				// Agregar evento click al botón "Agregar al Carrito"
-				document.getElementById('agregarAlCarritoBtn').addEventListener('click', function() {
-					const selectedMarca = document.getElementById('marcasDropdown').value;
-					const selectedModelo = document.getElementById('modelosDropdown').value;
-					$('#chargingModal').modal('show');
-					const modeloSinEspacios = selectedModelo.replace(/\s+/g, '-');
-					
-					const uniqueName = modeloSinEspacios + '_' + Date.now() + '_' + Math.floor(100 + Math.random() * 900) + '.png';
-					const uniqueNameComposicion = 'Comp-' + uniqueName;
-					$('#btn_carrito').hide();
-					/* setTimeout(() => {
-						$('#btn_carrito').show();
-					},3000); */
+				document.getElementById('agregarAlCarritoBtn').addEventListener('click', function () {
+    const selectedMarca = document.getElementById('marcasDropdown').value;
+    const selectedModelo = document.getElementById('modelosDropdown').value;
+    $('#chargingModal').modal('show');
+    const modeloSinEspacios = selectedModelo.replace(/\s+/g, '-');
 
-					// Renderizar todo
-					if (fondoImg) {
-						fondoImg.opacity = 1;
-						canvas.bringToFront(fondoImg);
-						canvas.renderAll();
-					}
+    const uniqueName = modeloSinEspacios + '_' + Date.now() + '_' + Math.floor(100 + Math.random() * 900) + '.png';
+    const uniqueNameComposicion = 'Comp-' + uniqueName;
+    $('#btn_carrito').hide();
 
-					canvas.renderAll();
-					const dataComposicionURL = canvas.toDataURL({
-						format: 'png',
-						quality: 1
-					});
+    // Aplica reducción al userImg antes de generar las imágenes
+    const reductionFactor = 0.90; // 
+    if (userImg) {
+        userImg.scaleX *= reductionFactor;
+        userImg.scaleY *= reductionFactor;
+        canvas.renderAll();
+    }
 
-					if (fondoImg) {
-						fondoImg.opacity = 0;
-						canvas.bringToFront(fondoImg);
-						canvas.renderAll();
-					}
-					
-					// Crear un nuevo canvas de alta resolución para la exportación
-					var exportCanvas = document.createElement('canvas');
-					exportCanvas.id = 'exportCanvas';
-					var dpr = window.devicePixelRatio || 1;
-					exportCanvas.width = 1152 * dpr;
-					exportCanvas.height = 1584 * dpr;
-					var exportContext = exportCanvas.getContext('2d');
-					exportContext.scale(dpr, dpr);
+    // Generar la primera imagen (dataComposicionURL)
+    if (fondoImg) {
+        fondoImg.opacity = 1;
+        canvas.bringToFront(fondoImg);
+        canvas.renderAll();
+    }
 
-					var exportFabricCanvas = new fabric.Canvas(exportCanvas);
-					exportFabricCanvas.setWidth(1152);
-					exportFabricCanvas.setHeight(1584);
+    const dataComposicionURL = canvas.toDataURL({
+        format: 'png',
+        quality: 1,
+    });
 
-					console.log(exportCanvas.width, exportCanvas.height);
-					console.log(canvas.width, canvas.height);
+    if (fondoImg) {
+        fondoImg.opacity = 0;
+        canvas.bringToFront(fondoImg);
+        canvas.renderAll();
+        fondoImgImprimible.opacity = 1;
+        canvas.bringToFront(fondoImgImprimible);
+        canvas.renderAll();
+    }
 
-					// Calcular las proporciones de escalado
-					const scaleWidth = 1152 / canvas.width;
-					const scaleHeight = 1584 / canvas.height;
+    // Crear un nuevo canvas de alta resolución para la exportación
+    var exportCanvas = document.createElement('canvas');
+    exportCanvas.id = 'exportCanvas';
+    var dpr = window.devicePixelRatio || 1;
+    exportCanvas.width = widthVariable * dpr;
+    exportCanvas.height = heightVariable * dpr;
+    var exportContext = exportCanvas.getContext('2d');
+    exportContext.scale(dpr, dpr);
 
-					// Clonar todos los objetos del canvas visible al canvas de alta definición
-					canvas.getObjects().forEach(function(obj) {
-						var clonedObj = fabric.util.object.clone(obj);
-						clonedObj.scaleX = obj.scaleX * scaleWidth;
-						clonedObj.scaleY = obj.scaleY * scaleHeight;
-						clonedObj.left = obj.left * scaleWidth;
-						clonedObj.top = obj.top * scaleHeight;
-						exportFabricCanvas.add(clonedObj);
-					});
+    var exportFabricCanvas = new fabric.Canvas(exportCanvas);
+    exportFabricCanvas.setWidth(widthVariable);
+    exportFabricCanvas.setHeight(heightVariable);
 
-					exportFabricCanvas.renderAll();
+    const scaleWidth = widthVariable / canvas.width;
+    const scaleHeight = heightVariable / canvas.height;
 
-					var dataURL = exportFabricCanvas.toDataURL({ format: 'png', quality: 1.0 });
+    canvas.getObjects().forEach(function (obj) {
+        var clonedObj = fabric.util.object.clone(obj);
+
+        if (obj === userImg) {
+            // Aplicar la reducción también en el exportCanvas
+            clonedObj.scaleX = obj.scaleX * scaleWidth;
+            clonedObj.scaleY = obj.scaleY * scaleHeight;
+        } else {
+            clonedObj.scaleX = obj.scaleX * scaleWidth;
+            clonedObj.scaleY = obj.scaleY * scaleHeight;
+        }
+
+        clonedObj.left = obj.left * scaleWidth;
+        clonedObj.top = obj.top * scaleHeight;
+        exportFabricCanvas.add(clonedObj);
+    });
+
+    exportFabricCanvas.renderAll();
+
+    var dataURL = exportFabricCanvas.toDataURL({
+        format: 'png',
+        quality: 1.0,
+    });
+
+    // Restaura la escala de userImg para el canvas principal
+    if (userImg) {
+        userImg.scaleX /= reductionFactor;
+        userImg.scaleY /= reductionFactor;
+        canvas.renderAll();
+    }
 					
 
 					const formData = new FormData();
