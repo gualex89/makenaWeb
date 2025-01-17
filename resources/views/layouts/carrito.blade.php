@@ -410,6 +410,8 @@
 										<div class="item_content">
 											<h4 class="item_title">${cartItem.name}</h4>
 											<span class="item_type">${cartItem.marca} ${cartItem.modelo}</span>
+											${cartItem.marca2 ? `<span class="item_type">${cartItem.marca2} ${cartItem.modelo2}</span>` : ``}
+
 										</div>
 										<button type="button" class="remove_btn">
 											<i class="fal fa-times"></i>

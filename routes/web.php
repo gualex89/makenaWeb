@@ -25,6 +25,9 @@ Route::get('/rechazado', [HomeImagesController::class, 'rechazado'])->name('rech
 // RUTAS DEL CATALOGO
 Route::get('/catalogo', [CatalogueController::class, 'catalogo'])->name('catalogo');
 
+Route::get('/catalogo-duo', [CatalogueController::class, 'catalogoDuo'])->name('catalogoDuo');
+
+
 //RUTAS TUFUNDA
 
 Route::get('/tufunda', [TuFundaController::class, 'tufunda'])->name('tufunda');

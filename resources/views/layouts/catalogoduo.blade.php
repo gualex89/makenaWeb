@@ -99,7 +99,7 @@
 							</div>
 						</div>
 
-						<div class="col-lg-8">
+						<div class="col-lg-6">
 							<nav class="main_menu clearfix">
 								<ul class="ul_li_center clearfix">
 									<li class="menu_item_has_child">
@@ -114,14 +114,11 @@
 									<li class="menu_item_has_child">
 										<a href="/frecuentes">Preguntas Frecuentes</a>
 									</li>
-									<li class="menu_item_has_child">
-										<a href="/catalogo-duo">Fundas Dobles</a>
-									</li>
 								</ul>
 							</nav>
 						</div>
 
-						<div class="col-lg-2">
+						<div class="col-lg-4">
 							<ul class="action_items ul_li_right clearfix">
 								<li>
 									<button type="button" class="cart_btn">CARRITO <small class="btn_badge">0</small></button>
@@ -227,132 +224,26 @@
 			<section class="product_section sec_ptb_50 clearfix" style="margin-top: 80px">
 				<div class="container maxw_1430">
 					<div class="row justify-content-lg-between">
-						<div id="filtro_lateral" class="col-lg-3 order-first">
-							<aside class="motorcycle_sidebar sidebar_section" data-bg-color="#f9f9f9">
-								<div class="sb_widget sb_category">
-									<h3 class="sb_widget_title">Categorías</h3>
-									<ul class="ul_li_block clearfix">
-										<li class="parent"><a href="/catalogo" data-category="all">Todas</a></li>
-										<li class="parent"><a href="#">Anime</a>
-											<ul>
-												<li><a href="/catalogo?categoria=AT" >Attack on Titan</a></li>
-												<li><a href="/catalogo?categoria=BK">Berserk</a></li>
-												<li><a href="/catalogo?categoria=BH">Boku no Hero Academia</a></li>
-												<li><a href="/catalogo?categoria=CZ">Caballeros Del Zodiaco</a></li>
-												<li><a href="/catalogo?categoria=DN">Death Note</a></li>
-												<li><a href="/catalogo?categoria=DS">Demon Slayer</a></li>
-												<li><a href="/catalogo?categoria=DB">Dragon Ball</a></li>
-												<li><a href="/catalogo?categoria=CH">El viaje de Chihiro</a></li>
-												<li><a href="/catalogo?categoria=EV">Evangelion</a></li>
-												<li><a href="/catalogo?categoria=FN">Frieren</a></li>
-												<li><a href="/catalogo?categoria=HK">Haikyuu!</a></li>
-												<li><a href="/catalogo?categoria=HH">Hunter X Hunter</a></li>
-												<li><a href="/catalogo?categoria=JJ">Jojo's</a></li>
-												<li><a href="/catalogo?categoria=JK">Jujutsu Kaisen</a></li>
-												<li><a href="/catalogo?categoria=NA">Naruto</a></li>
-												<li><a href="/catalogo?categoria=OP">One Piece</a></li>
-												<li><a href="/catalogo?categoria=PK">Pokemon</a></li>
-												<li><a href="/catalogo?categoria=SM">Sailor Moon</a></li>
-												<li><a href="/catalogo?categoria=SD">Slam Dunk</a></li>
-												<li><a href="/catalogo?categoria=AMS">Más...</a></li>
-											</ul>
-										</li>
-										<li class="parent"><a href="/catalogo?categoria=BS">Basquet</a></li>
-											
-										<li class="parent"><a href="#">Gaming</a>
-											<ul>
-												<li><a href="/catalogo?categoria=AC">Assasins Creed</a></li>
-												<li><a href="/catalogo?categoria=FRN">Fortnite</a></li>
-												<li><a href="/catalogo?categoria=GW">God of War</a></li>
-												<li><a href="/catalogo?categoria=LOL">Lol</a></li>
-												<li><a href="/catalogo?categoria=RE">Resident Evil</a></li>
-												<li><a href="/catalogo?categoria=TLU">The Last of us</a></li>
-												<li><a href="/catalogo?categoria=TW">The Witcher</a></li>
-												<li><a href="/catalogo?categoria=VL">Valorant</a></li>
-												<li><a href="/catalogo?categoria=OTR">Más...</a></li>
-
-											</ul>
-										</li>
-										<li class="parent"><a href="/catalogo?categoria=DI">Diseños</a></li>
-											
-										<li class="parent"><a href="#">Futbol</a>
-											<ul>
-												<li><a href="/catalogo?categoria=FB">Boca</a></li>
-												<li><a href="/catalogo?categoria=FTI">Clubes internacionales</a></li>
-												<li><a href="/catalogo?categoria=FI">Independiente</a></li>
-												<li><a href="/catalogo?categoria=FME">Messi</a></li>
-												<li><a href="/catalogo?categoria=FMO">Momentos del futbol</a></li>
-												<li><a href="/catalogo?categoria=FON">Más clubes nacionales</a></li>
-												<li><a href="/catalogo?categoria=FRA">Racing</a></li>
-												<li><a href="/catalogo?categoria=FRI">River</a></li>
-												<li><a href="/catalogo?categoria=FSL">San Lorenzo</a></li>
-												<li><a href="/catalogo?categoria=FSA">Seleccion argentina</a></li>
-											</ul>
-										</li>
-										<li class="parent"><a href="/catalogo?categoria=ME">Momentos Épicos</a></li>
-										<li class="parent"><a href="/catalogo?categoria=RT">Retro</a></li>
-										
-										
-										<li class="parent"><a href="#">Música</a>
-											<ul>
-												<li><a href="/catalogo?categoria=MM">Mas</a></li>
-												<li><a href="/catalogo?categoria=MP">POP</a></li>
-												<li><a href="/catalogo?categoria=MRI">Rock Internacional</a></li>
-												<li><a href="/catalogo?categoria=MRN">Rock Nacional</a></li>
-												<li><a href="/catalogo?categoria=MUR">Urbano</a></li>
-											</ul>
-										</li>
-										<li class="parent"><a href="#">Películas</a>
-											<ul>
-												<li><a href= "/catalogo?categoria=DY">Disney</a></li>
-												<li><a href= "/catalogo?categoria=HP">Harry Potter</a></li>
-												<li><a href= "/catalogo?categoria=LR">Lord of the Rings</a></li>
-												<li><a href= "/catalogo?categoria=MV">Marvel</a></li>
-												<li><a href= "/catalogo?categoria=SW">Star Wars</a></li>
-												<li><a href= "/catalogo?categoria=VF">Volver al Futuro</a></li>
-												<li><a href= "/catalogo?categoria=PMS">Más...</a></li>
-											</ul>
-										</li>
-										<li class="parent"><a href= "#">Tv y Series</a>
-											<ul>
-												<li><a href= "/catalogo?categoria=AV">Avatar</a></li>
-												<li><a href= "/catalogo?categoria=FRD">Friends</a></li>
-												<li><a href= "/catalogo?categoria=GT">Games of thrones</a></li>
-												<li><a href= "/catalogo?categoria=HA">Hora de aventura</a></li>
-												<li><a href= "/catalogo?categoria=HD">House of the Dragon</a></li>
-												<li><a href= "/catalogo?categoria=LS">Los Simpsons</a></li>
-												<li><a href= "/catalogo?categoria=PB">Peacky Blinders</a></li>
-												<li><a href= "/catalogo?categoria=RM">Rick y Morty</a></li>
-												<li><a href= "/catalogo?categoria=ST">Stranger Things</a></li>
-												<li><a href= "/catalogo?categoria=TU">The Last of us</a></li>
-												<li><a href= "/catalogo?categoria=TWD">The Walking Death</a></li>
-												<li><a href= "/catalogo?categoria=OS">Más...</a></li>
-												
-											</ul>
-										</li>
-										
-									</ul>
-								</div>
-							</aside>
-						</div>
+						
 			
-						<div class="col-lg-9 order-last" id="ver-categoria">
+						<div class="col-lg-12 order-last" id="ver-categoria">
 							<div class="tab-content">
 								<div id="grid_layout" class="tab-pane active">
 									<div class="row mb_50 justify-content-center">
-										@foreach($imagesCatalogo as $image)
+										@foreach($imagesCatalogoDuo as $image)
 										<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 image-item" data-category="{{ substr($image->file_name, 0, 2) }}">
 											<div class="motorcycle_product_grid">
 												<div class="item_image">
 													<img src="{{ Voyager::image($image->image) }}" alt="{{ $image->nombreFundas }}">
 													<ul class="product_action_btns ul_li_block text-uppercase text-center clearfix">
-														<li><a class="alCarrito" href="#!"><span><i class="fas fa-shopping-cart"></i></span> <span>Agregar al Carrito</span></a></li>
+														<li><a class="alCarrito" href="#!" data-image="{{ Voyager::image($image->image) }}" data-title="{{ $image->file_name }}"><span><i class="fas fa-shopping-cart"></i></span> <span>Agregar al Carrito</span></a></li>
+														
 														<li><a href="#!" class="ver-btn" data-image="{{ Voyager::image($image->image) }}" data-title="{{ $image->file_name }}"><span><i class="fas fa-search"></i></span> <span>Ver</span></a></li>
 														
 													</ul>
 												</div>
 												<div class="item_content">
-													<span class="item_price">{{$precioFundas}}</span>
+													<span class="item_price">{{$precioFundasDobles}}</span>
 													<h3  class="item_title" id="codigo_producto">
 														<a href="#!">{{$image->file_name}}</a>
 													</h3>
@@ -370,16 +261,16 @@
 									</div>
 									<div class="pagination-info text-center">
 										<p>
-											Mostrando {{ $imagesCatalogo->firstItem() }} a {{ $imagesCatalogo->lastItem() }} de {{ $imagesCatalogo->total() }} resultados
+											Mostrando {{ $imagesCatalogoDuo->firstItem() }} a {{ $imagesCatalogoDuo->lastItem() }} de {{ $imagesCatalogoDuo->total() }} resultados
 										</p>
 										<div class="pagination-navigation carousel_nav">
 											<div class="pagination-navigation carousel_nav">
-												<button type="button" class="pagination-button main_left_arrow{{ $imagesCatalogo->onFirstPage() ? ' disabled' : '' }}"
-														onclick="if (!this.classList.contains('disabled')) { window.location='{{ $imagesCatalogo->previousPageUrl() }}{{ request()->has('categoria') ? '&categoria=' . request('categoria') : '' }}'; }">
+												<button type="button" class="pagination-button main_left_arrow{{ $imagesCatalogoDuo->onFirstPage() ? ' disabled' : '' }}"
+														onclick="if (!this.classList.contains('disabled')) { window.location='{{ $imagesCatalogoDuo->previousPageUrl() }}{{ request()->has('categoria') ? '&categoria=' . request('categoria') : '' }}'; }">
 													<i class="fal fa-arrow-left"></i>
 												</button>
-												<button type="button" class="pagination-button main_right_arrow{{ $imagesCatalogo->hasMorePages() ? '' : ' disabled' }}"
-														onclick="if (!this.classList.contains('disabled')) { window.location='{{ $imagesCatalogo->nextPageUrl() }}{{ request()->has('categoria') ? '&categoria=' . request('categoria') : '' }}'; }">
+												<button type="button" class="pagination-button main_right_arrow{{ $imagesCatalogoDuo->hasMorePages() ? '' : ' disabled' }}"
+														onclick="if (!this.classList.contains('disabled')) { window.location='{{ $imagesCatalogoDuo->nextPageUrl() }}{{ request()->has('categoria') ? '&categoria=' . request('categoria') : '' }}'; }">
 													<i class="fal fa-arrow-right"></i>
 												</button>
 											</div>
@@ -403,7 +294,7 @@
 				<div class="modal-dialog" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
-					<h3 class="modal-title" id="addToCartModalLabel">Seleccioná tu modelo</h3>
+					<h3 class="modal-title" id="addToCartModalLabel">Seleccioná tus modelos</h3>
 					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -411,19 +302,43 @@
 					<div class="modal-body">
 						<div class="sb_widget sb_recent_post seleccionadores">
 							<div class="sb_widget sb_category">
-								
-								<div class="col-lg-12 divMarcaDropdown2">
-									<label for="marcasDropdown" style="font-weight: bold; font-size: larger; margin:10px">Marca</label>
-									<select name="marcas" id="marcasDropdown">
-										<option value="">Seleccione</option> 
-									</select>
+								<div class="row">
+									<h3 class="col-lg-6">Funda #1</h3>
+									<h3 class="col-lg-6">Funda #2</h3>
+									
 								</div>
-								<div class="col-lg-12 divModeloDropdown2">
-									<label for="marcasDropdown" style="font-weight: bold; font-size: larger; margin:10px">Modelo</label>
-									<select name="modelos" id="modelosDropdown">
-										<option value="">Seleccione</option>
-									</select>
+								<div class="row">
+
+
+									<div class="col-lg-6 divMarcaDropdown2">
+										<label for="marcasDropdown" style="font-weight: bold; font-size: larger; margin:10px">Marca</label>
+										<select name="marcas" id="marcasDropdown">
+											<option value="">Seleccione</option> 
+										</select>
+									</div>
+									<div class="col-lg-6 divMarcaDropdown2">
+										<label for="marcasDropdown2" style="font-weight: bold; font-size: larger; margin:10px">Marca</label>
+										<select name="marcas2" id="marcasDropdown2">
+											<option value="">Seleccione</option> 
+										</select>
+									</div>
 								</div>
+								<div class="row">
+
+									<div class="col-lg-6 divModeloDropdown2">
+										<label for="marcasDropdown" style="font-weight: bold; font-size: larger; margin:10px">Modelo</label>
+										<select name="modelos" id="modelosDropdown">
+											<option value="">Seleccione</option>
+										</select>
+									</div>
+									<div class="col-lg-6 divModeloDropdown2">
+										<label for="marcasDropdown2" style="font-weight: bold; font-size: larger; margin:10px">Modelo</label>
+										<select name="modelos2" id="modelosDropdown2">
+											<option value="">Seleccione</option>
+										</select>
+								</div>
+								</div>
+								<img src="" alt="{{ $image->nombreFundas }}" id="productImageAlcarrito" style="max-width: 100%;">
 							</div>
 						</div>
 					</div>
@@ -489,7 +404,7 @@
 		<!-- footer_section - end
 		================================================== -->
 		{{-- modal de la imagen del modelo --}}
-		<div class="modal fade" id="productImageModal" tabindex="-1" role="dialog" aria-labelledby="productImageModalLabel" aria-hidden="true">
+		<div class="modal fade" id="productImageModal" tabindex="-1" role="dialog" aria-labelledby="productImageModalLabel" aria-hidden="true" style="width: 1000px;">
 			<div class="modal-dialog modal-sm" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -637,7 +552,9 @@
 				document.getElementById('addToCartModalOkButton').addEventListener('click', function() {
 					const selectedMarca = document.getElementById('marcasDropdown').value;
 					const selectedModelo = document.getElementById('modelosDropdown').value;
-
+					const selectedMarca2 = document.getElementById('marcasDropdown2').value;
+					const selectedModelo2 = document.getElementById('modelosDropdown2').value;
+					
 					// Verificar si se ha seleccionado un modelo
 					if (selectedModelo) {
 						const pendingCartItem = {
@@ -645,7 +562,9 @@
 							price: price,
 							image: imageUrl,
 							marca: selectedMarca,
-							modelo: selectedModelo
+							modelo: selectedModelo,
+							marca2: selectedMarca2,
+							modelo2: selectedModelo2
 						};
 
 						// Agregar el artículo al carrito
@@ -745,6 +664,12 @@
 				document.querySelectorAll('.product_action_btns .alCarrito').forEach(btn => {
 					btn.addEventListener('click', function(event) {
 						event.preventDefault();
+
+						const imageUrl = this.getAttribute('data-image');
+						const productName = this.getAttribute('data-title');
+						const productImageElement = document.getElementById('productImageAlcarrito');
+						productImageElement.src = imageUrl;
+
 						const productItem = this.closest('.motorcycle_product_grid');
 						addToCart(productItem);
 					});
@@ -779,6 +704,8 @@
 					data.forEach(function(marca) {
 						$('#marcasDropdown').append('<option value="' + marca + '">' + marca + '</option>');
 						$('#marcasDropdown').niceSelect('update');
+						$('#marcasDropdown2').append('<option value="' + marca + '">' + marca + '</option>');
+						$('#marcasDropdown2').niceSelect('update');
 					});
 				});
 		
@@ -802,7 +729,39 @@
 						});
 					});
 				});
+				
+				$('#marcasDropdown2').change(function() {
+					var marcaSeleccionada2 = $(this).val();
+		
+					// Hacer una solicitud AJAX para obtener modelos según la marca seleccionada
+					$.get('/obtener-modelos/' + marcaSeleccionada2, function(data) {
+						// Limpiar modelos existentes
+						$('#modelosDropdown2').empty();
+						$('#modelosDropdown2').append($('<option>', {
+							value: '',
+							text: 'Seleccione'
+						}));
+		
+						// Llenar modelos
+						data.forEach(function(modelo) {
+							$('#modelosDropdown2').append('<option value="' + modelo + '">' + modelo + '</option>');
+							$('#modelosDropdown2').niceSelect('update');
+						});
+					});
+				});
+
 				$('#modelosDropdown').change(function() {
+					// Verificar si se ha seleccionado un modelo
+					if ($(this).val() !== '') {
+						// Si se seleccionó un modelo, habilitar el botón "OK"
+						$('#addToCartModalOkButton').prop('disabled', false);
+					} else {
+						// Si no se seleccionó un modelo, deshabilitar el botón "OK"
+						$('#addToCartModalOkButton').prop('disabled', true);
+					}
+				});
+
+				$('#modelosDropdown2').change(function() {
 					// Verificar si se ha seleccionado un modelo
 					if ($(this).val() !== '') {
 						// Si se seleccionó un modelo, habilitar el botón "OK"
@@ -815,6 +774,25 @@
 			});
 
 		</script>
+
+		<style>
+			.modal-dialog {
+				max-height: 100vh; /* Limita la altura al tamaño de la pantalla */
+				margin: 0 auto; /* Asegura un centrado vertical */
+			}
+
+			.modal-content {
+				max-height: 100vh; /* Asegura que el contenido no exceda la pantalla */
+				overflow: hidden; /* Evita que el contenido desborde la modal */
+				display: flex;
+				flex-direction: column; /* Asegura que el header, body y footer se comporten correctamente */
+			}
+
+			.modal-body {
+				overflow-y: auto; /* Hace el contenido interno desplazable */
+				flex-grow: 1; /* Permite que el cuerpo ocupe el espacio disponible */
+			}
+		</style>
 		
 		
 		

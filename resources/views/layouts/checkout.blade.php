@@ -702,6 +702,7 @@
 										<div class="item_content">
 											<h4 class="item_title">${cartItem.name}</h4>
 											<span class="item_type">${cartItem.marca} ${cartItem.modelo}</span>
+											${cartItem.marca2 ? `<span class="item_type2">${cartItem.marca2} ${cartItem.modelo2}</span>` : ``}
 											<span style="display: none" class="item_nombre_imagen">${cartItem.uniqueName}</span>
 										</div>
 									</div>
@@ -1205,26 +1206,47 @@
 					var valor_total = total;
 
 					const modelo = document.querySelectorAll('.item_type');
+					const modelo2 = document.querySelectorAll('.item_type2');
 
 					// Obtener todos los elementos con la clase 'item_title'
 					const diseno = document.querySelectorAll('.item_title');
 					const nombreImagen = document.querySelectorAll('.item_nombre_imagen');
 
 					// Crear un array para almacenar los modelos de los elementos del carrito junto con sus títulos
-					const itemsCart = [];
+					// Crear un array para almacenar los modelos de los elementos del carrito junto con sus títulos
+const itemsCart = [];
 
-					// Recorrer todos los elementos y extraer los modelos junto con sus títulos
-					modelo.forEach((item, index) => {
-						// Obtener el texto dentro del elemento 'item_type' y 'item_title'
-						const tipo = item.textContent.trim();
-						let titulo = diseno[index].textContent.trim();
-						let nombreImagenPNG = nombreImagen[index].textContent.trim();
-						if (titulo === "Diseño personalizado") {
-							titulo = "Diseno personalizado";
-						}
-						// Agregar el modelo junto con su título al array de modelos
-						itemsCart.push({ modelo: tipo, diseno: titulo, nombreImagen: nombreImagenPNG });
-					});
+// Iterar sobre cada elemento de `modelo`
+modelo.forEach((item, index) => {
+    // Obtener el texto del modelo principal
+    const tipo = item.textContent.trim();
+
+    // Buscar el modelo secundario relacionado dentro del contenedor padre
+    const parent = item.closest('.cart_product'); // Ajusta esta clase si cambia la estructura
+    const tipo2Element = parent?.querySelector('.item_type2') || null;
+    const tipo2 = tipo2Element ? tipo2Element.textContent.trim() : '';
+
+    // Obtener otros datos necesarios
+    const titulo = diseno[index]?.textContent.trim() || '';
+    const nombreImagenPNG = nombreImagen[index]?.textContent.trim() || 'undefined';
+
+    // Ajustar el título si es "Diseño personalizado"
+    const tituloFinal = titulo === "Diseño personalizado" ? "Diseno personalizado" : titulo;
+
+    // Concatenar tipo y tipo2 si tipo2 existe
+    const modeloConcatenado = tipo2 ? `${tipo} - ${tipo2}` : tipo;
+
+    // Agregar el modelo junto con su título al array de modelos
+    itemsCart.push({
+        modelo: modeloConcatenado,
+        diseno: tituloFinal,
+        nombreImagen: nombreImagenPNG,
+    });
+});
+
+console.log(itemsCart);
+
+
 
 					const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 

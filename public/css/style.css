@@ -19096,6 +19096,11 @@ blockquote .blockquote_title {
   color: #0684ff;
   display: block;
 }
+.cart_product .item_type2 {
+  line-height: 1;
+  color: #0684ff;
+  display: block;
+}
 .cart_product .remove_btn {
   width: 45px;
   left: -80px;
@@ -21783,6 +21788,9 @@ blockquote .blockquote_title {
   }
 
   .cart_product .item_type {
+    font-size: 13px;
+  }
+  .cart_product .item_type2 {
     font-size: 13px;
   }
 

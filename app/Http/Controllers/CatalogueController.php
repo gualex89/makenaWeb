@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Catalogue;
 use App\Models\Cover;
 use App\Models\Product;
+use App\Models\Duo;
 
 
 
@@ -53,6 +54,44 @@ class CatalogueController extends Controller
     
         // Pasar los datos a la vista
         return view('layouts.catalogo', compact('imagesCatalogo', 'totalImagesCatalogo', 'precioFundas', 'precioPopSockets', 'precioFundasDobles'));
+    }
+    
+    public function catalogoDuo(Request $request){
+
+        
+    
+        // Consulta inicial sin filtrar por categoría
+        $query = Duo::query();
+    
+        // Si se especifica una categoría, filtrar por esa categoría
+        
+        // Ordenar por ID descendente (más alto primero)
+        $query->orderBy('id', 'desc');
+    
+        // Paginar los resultados
+        $imagesCatalogoDuo = $query->paginate(12);
+        $totalImagesCatalogoDuo = Duo::all();
+    
+        //Obetenemos los productos para así obtener precios
+        $misProductos = Product::all();
+        $precioFundas = null;
+        $precioPopSockets = null;
+        $precioFundasDobles = null;
+    
+        foreach ($misProductos as $producto) {
+            if ($producto->name === 'Dragon Ball') {
+                $precioFundas = $producto->price;
+            }     
+            if ($producto->name === 'Popsockets') {
+                $precioPopSockets = $producto->price;
+            }
+            if ($producto->name === 'Sailor Moon') {
+                $precioFundasDobles = $producto->price;
+            }
+        }
+    
+        // Pasar los datos a la vista
+        return view('layouts.catalogoduo', compact('imagesCatalogoDuo', 'totalImagesCatalogoDuo', 'precioFundas', 'precioPopSockets', 'precioFundasDobles'));
     }
     
     public function obtenerMarcas(){

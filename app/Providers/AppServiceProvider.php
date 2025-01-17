@@ -5,6 +5,8 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use App\Models\Catalogue;
 use App\Observers\ImageObserver;
+use App\Models\Duo;
+use App\Observers\ImageDuoObserver;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -22,5 +24,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Catalogue::observe(ImageObserver::class);
+        Duo::observe(ImageDuoObserver::class);
     }
 }
