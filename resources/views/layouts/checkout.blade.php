@@ -91,59 +91,7 @@
 
 		<!-- header_section - start
 		================================================== -->
-		<header class="header_section motorcycle_header sticky_header clearfix">
-			<div class="header_content_wrap d-flex align-items-center" id="cintillo_carrito">
-				<div class="container-fluid prl_90">
-					<div class="row align-items-center">
-						<div class="col-lg-2">
-							<div class="brand_logo">
-								<a class="brand_link" href="/">
-									<img src="images/logo/logomakena.png"  alt="logo makena">
-								</a>
-
-								<ul class="mh_action_btns ul_li clearfix">
-									
-									
-									<li><button type="button" class="mobile_menu_btn"><i class="far fa-bars"></i></button></li>
-								</ul>
-							</div>
-						</div>
-
-						<div class="col-lg-6">
-							<nav class="main_menu clearfix">
-								<ul class="ul_li_center clearfix">
-									<li class="menu_item_has_child">
-										<a href="/">Home</a>
-									</li>
-									<li class="menu_item_has_child">
-										<a href="/catalogo">Catálogo</a>
-									</li>
-									<li class="menu_item_has_child">
-										<a href="/tufunda">Crea tu Funda</a>
-									</li>
-									<li class="menu_item_has_child">
-										<a href="/frecuentes">Preguntas Frecuentes</a>
-									</li>
-								</ul>
-							</nav>
-						</div>
-
-						<div class="col-lg-4">
-							<ul class="action_items ul_li_right clearfix">
-								
-								<li>
-									<button type="button" class="mobile_menu_btn bg_carparts_red">
-										<i class="fas fa-th"></i>
-									</button>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			
-		</header>
+		@include('partials.header')
 		<!-- header_section - end
 		================================================== -->
 

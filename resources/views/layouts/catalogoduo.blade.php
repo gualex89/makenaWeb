@@ -73,76 +73,17 @@
 		</div>
 		<!-- backtotop - end -->
 
-		<!-- preloader - start -->
-		<!-- <div id="preloader"></div> -->
-		<!-- preloader - end -->
-		<header class="header_section motorcycle_header sticky_header clearfix">
-			<div class="header_content_wrap d-flex align-items-center" id="cintillo_carrito">
-				<div class="container-fluid prl_90">
-					<div class="row align-items-center">
-						<div class="col-lg-2">
-							<div class="brand_logo">
-								<a class="brand_link" href="/">
-									<img src="images/logo/logomakena.png"  alt="logo makena">
-								</a>
+	
+		<!-- header_section - start -->
+		@include('partials.header')
 
-								<ul class="mh_action_btns ul_li clearfix">
-									
-									<li>
-										<button type="button" class="cart_btn">
-											<i class="fal fa-shopping-cart"></i>
-											<span class="btn_badge">0</span>
-										</button>
-									</li>
-									<li><button type="button" class="mobile_menu_btn"><i class="far fa-bars"></i></button></li>
-								</ul>
-							</div>
-						</div>
-
-						<div class="col-lg-6">
-							<nav class="main_menu clearfix">
-								<ul class="ul_li_center clearfix">
-									<li class="menu_item_has_child">
-										<a href="/">Home</a>
-									</li>
-									<li class="menu_item_has_child">
-										<a href="/catalogo">Catálogo</a>
-									</li>
-									<li class="menu_item_has_child">
-										<a href="/tufunda">Crea tu Funda</a>
-									</li>
-									<li class="menu_item_has_child">
-										<a href="/frecuentes">Preguntas Frecuentes</a>
-									</li>
-								</ul>
-							</nav>
-						</div>
-
-						<div class="col-lg-4">
-							<ul class="action_items ul_li_right clearfix">
-								<li>
-									<button type="button" class="cart_btn">CARRITO <small class="btn_badge">0</small></button>
-								</li>
-								<li>
-									<button type="button" class="mobile_menu_btn bg_carparts_red">
-										<i class="fas fa-th"></i>
-									</button>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			
-		</header>
 		<!-- header_section - end
 		================================================== 
 
 		
 
 
-		<!-- main body - start
+
 		================================================== -->
 		<main>
 
@@ -152,63 +93,8 @@
 		
 			<!-- sidebar mobile menu & sidebar cart - start
 			================================================== -->
-			<div class="sidebar-menu-wrapper">
-				<div class="cart_sidebar">
-					<button type="button" class="close_btn"><i class="fal fa-times"></i></button>
+			@include('partials.sidebar')
 
-					<ul class="cart_items_list ul_li_block mb_30 clearfix">
-						
-					</ul>
-
-					<ul class="total_price ul_li_block mb_30 clearfix">
-						<li>
-							<span>Subtotal:</span>
-							<span>$0</span>
-						</li>
-						
-						
-						<li>
-							<span>Total:</span>
-							<span>$0</span>
-						</li>
-					</ul>
-
-					<ul class="btns_group ul_li_block clearfix">
-						<li><a href="/carrito">Ir al carrito</a></li>
-						
-					</ul>
-				</div>
-
-				<div class="sidebar_mobile_menu">
-					<button type="button" class="close_btn"><i class="fal fa-times"></i></button>
-
-					<div class="msb_widget brand_logo text-center">
-						<a href="/">
-							<img src="images/logo/logo_25_1x.png" srcset="images/logo/logo_black.png" alt="logo negro de makena">
-						</a>
-					</div>
-
-					<div class="msb_widget mobile_menu_list clearfix">
-						<h3 class="title_text mb_15 text-uppercase"><i class="far fa-bars mr-2"></i> Menu</h3>
-						<ul class="ul_li_block clearfix">
-							<li>
-								<a href="/" aria-haspopup="true" aria-expanded="false">Home</a>
-							</li>
-							<li>
-								<a href="/catalogo" aria-haspopup="true" aria-expanded="false">Catálogo</a>
-							</li>
-							<li>
-								<a href="/tufunda" aria-haspopup="true" aria-expanded="false">Crea tu Funda</a>
-							</li>
-							<li>
-								<a href="/frecuentes" aria-haspopup="true" aria-expanded="false">Preguntas Frecuentes</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-
-				<div class="overlay"></div>
-			</div>
 			<!-- sidebar mobile menu & sidebar cart - end
 			================================================== -->
 
@@ -302,48 +188,48 @@
 					<div class="modal-body">
 						<div class="sb_widget sb_recent_post seleccionadores">
 							<div class="sb_widget sb_category">
-								<div class="row">
-									<h3 class="col-lg-6">Funda #1</h3>
-									<h3 class="col-lg-6">Funda #2</h3>
-									
-								</div>
-								<div class="row">
-
-
-									<div class="col-lg-6 divMarcaDropdown2">
-										<label for="marcasDropdown" style="font-weight: bold; font-size: larger; margin:10px">Marca</label>
-										<select name="marcas" id="marcasDropdown">
-											<option value="">Seleccione</option> 
-										</select>
+								<div class="row gx-3 gy-3 text-center">
+									<!-- Funda #1 -->
+									<div class="col-lg-6 col-md-6 col-6 d-flex flex-column align-items-center">
+											{{-- <h3>Funda #1</h3> --}}
+											<div class="divMarcaDropdown2 d-flex flex-column align-items-center">
+													<label for="marcasDropdown" class="fw-bold text-center" style="font-size: larger; ">Marca</label>
+													<select name="marcas" id="marcasDropdown" class="form-control text-center" style="width: 50%;">
+															<option value="">Seleccione</option>
+													</select>
+											</div>
+											<div class="divModeloDropdown2  d-flex flex-column align-items-center">
+													<label for="modelosDropdown" class="fw-bold text-center" style="font-size: larger; ">Modelo</label>
+													<select name="modelos" id="modelosDropdown" class="form-control text-center" style="width: 50%;">
+															<option value="">Seleccione</option>
+													</select>
+											</div>
 									</div>
-									<div class="col-lg-6 divMarcaDropdown2">
-										<label for="marcasDropdown2" style="font-weight: bold; font-size: larger; margin:10px">Marca</label>
-										<select name="marcas2" id="marcasDropdown2">
-											<option value="">Seleccione</option> 
-										</select>
+							
+									<!-- Funda #2 -->
+									<div class="col-lg-6 col-md-6 col-6 d-flex flex-column align-items-center">
+											{{-- <h3>Funda #2</h3> --}}
+											<div class="divMarcaDropdown2 d-flex flex-column align-items-center">
+													<label for="marcasDropdown2" class="fw-bold text-center" style="font-size: larger; ">Marca</label>
+													<select name="marcas2" id="marcasDropdown2" class="form-control text-center" style="width: 50%;">
+															<option value="">Seleccione</option>
+													</select>
+											</div>
+											<div class="divModeloDropdown2  d-flex flex-column align-items-center">
+													<label for="modelosDropdown2" class="fw-bold text-center" style="font-size: larger; ">Modelo</label>
+													<select name="modelos2" id="modelosDropdown2" class="form-control text-center" style="width: 50%;">
+															<option value="">Seleccione</option>
+													</select>
+											</div>
 									</div>
-								</div>
-								<div class="row">
-
-									<div class="col-lg-6 divModeloDropdown2">
-										<label for="marcasDropdown" style="font-weight: bold; font-size: larger; margin:10px">Modelo</label>
-										<select name="modelos" id="modelosDropdown">
-											<option value="">Seleccione</option>
-										</select>
-									</div>
-									<div class="col-lg-6 divModeloDropdown2">
-										<label for="marcasDropdown2" style="font-weight: bold; font-size: larger; margin:10px">Modelo</label>
-										<select name="modelos2" id="modelosDropdown2">
-											<option value="">Seleccione</option>
-										</select>
-								</div>
-								</div>
+							</div>
+							
 								<img src="" alt="{{ $image->nombreFundas }}" id="productImageAlcarrito" style="max-width: 100%;">
 							</div>
 						</div>
 					</div>
-					<div class="modal-footer">
-						<button type="button" id="addToCartModalOkButton" class="btn btn-secondary" data-dismiss="modal" disabled>OK</button>
+					<div style="z-index: 2000" class="modal-footer">
+						<button type="button" id="addToCartModalOkButton" class="btn btn-secondary" data-dismiss="modal" disabled>AGREGAR AL CARRITO</button>
 					</div>
 				</div>
 				</div>
@@ -404,8 +290,8 @@
 		<!-- footer_section - end
 		================================================== -->
 		{{-- modal de la imagen del modelo --}}
-		<div class="modal fade" id="productImageModal" tabindex="-1" role="dialog" aria-labelledby="productImageModalLabel" aria-hidden="true" style="width: 1000px;">
-			<div class="modal-dialog modal-sm" role="document">
+		<div class="modal fade" id="productImageModal" tabindex="-1" role="dialog" aria-labelledby="productImageModalLabel" aria-hidden="true" >
+			<div class="modal-dialog modal-md" role="document">
 				<div class="modal-content">
 					<div class="modal-header">
 						<h5 class="modal-title" id="productImageModalLabel">{{ $image->file_name }}</h5>
