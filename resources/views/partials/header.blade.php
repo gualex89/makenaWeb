@@ -30,9 +30,9 @@
                           <li class="menu_item_has_child">
                               <a href="/tufunda">Crea tu Funda</a>
                           </li>
-                          <li class="menu_item_has_child">
+                          {{-- <li class="menu_item_has_child">
                               <a href="/catalogo-duo">Fundas Duo</a>
-                          </li>
+                          </li> --}}
                           <li class="menu_item_has_child">
                               <a href="/frecuentes">Preguntas Frecuentes</a>
                           </li>
