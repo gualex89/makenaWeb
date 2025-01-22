@@ -46,9 +46,9 @@
         <li>
           <a href="/tufunda" aria-haspopup="true" aria-expanded="false">Crea tu Funda</a>
         </li>
-        {{-- <li>
+        <li>
           <a href="/catalogo-duo" aria-haspopup="true" aria-expanded="false">Fundas Duo</a>
-        </li> --}}
+        </li>
         <li>
           <a href="/frecuentes" aria-haspopup="true" aria-expanded="false">Preguntas Frecuentes</a>
         </li>
