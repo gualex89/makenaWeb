@@ -137,6 +137,7 @@
 												<li><a href="/catalogo?categoria=PK">Pokemon</a></li>
 												<li><a href="/catalogo?categoria=SM">Sailor Moon</a></li>
 												<li><a href="/catalogo?categoria=SD">Slam Dunk</a></li>
+												<li><a href="/catalogo?categoria=SLV">Solo Leveling</a></li>
 												<li><a href="/catalogo?categoria=AMS">Más...</a></li>
 											</ul>
 										</li>
@@ -144,9 +145,11 @@
 											
 										<li class="parent"><a href="#">Gaming</a>
 											<ul>
+												<li><a href="/catalogo?categoria=ARC">Arcane</a></li>
 												<li><a href="/catalogo?categoria=AC">Assasins Creed</a></li>
 												<li><a href="/catalogo?categoria=FRN">Fortnite</a></li>
 												<li><a href="/catalogo?categoria=GW">God of War</a></li>
+												<li><a href="/catalogo?categoria=HKN">Hollow Knigth</a></li>
 												<li><a href="/catalogo?categoria=LOL">Lol</a></li>
 												<li><a href="/catalogo?categoria=RE">Resident Evil</a></li>
 												<li><a href="/catalogo?categoria=TLU">The Last of us</a></li>
@@ -198,6 +201,7 @@
 										</li>
 										<li class="parent"><a href= "#">Tv y Series</a>
 											<ul>
+												<li><a href="/catalogo?categoria=ARC">Arcane</a></li>
 												<li><a href= "/catalogo?categoria=AV">Avatar</a></li>
 												<li><a href= "/catalogo?categoria=FRD">Friends</a></li>
 												<li><a href= "/catalogo?categoria=GT">Games of thrones</a></li>
