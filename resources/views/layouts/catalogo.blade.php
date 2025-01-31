@@ -264,7 +264,7 @@
 												<li><a href="/catalogo?categoria=AC">Assasins Creed</a></li>
 												<li><a href="/catalogo?categoria=FRN">Fortnite</a></li>
 												<li><a href="/catalogo?categoria=GW">God of War</a></li>
-												<li><a href="/catalogo?categoria=HKN">Hollow Knigthr</a></li>
+												<li><a href="/catalogo?categoria=HKN">Hollow Knigth</a></li>
 												<li><a href="/catalogo?categoria=LOL">Lol</a></li>
 												<li><a href="/catalogo?categoria=RE">Resident Evil</a></li>
 												<li><a href="/catalogo?categoria=TLU">The Last of us</a></li>
