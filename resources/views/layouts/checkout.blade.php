@@ -701,7 +701,8 @@
 										</div>
 										<div class="item_content">
 											<h4 class="item_title">${cartItem.name}</h4>
-											<span class="item_type">${cartItem.marca} ${cartItem.modelo}</span>
+											<span class= "item_marca">${cartItem.marca}</span>
+											<span class="item_type">${cartItem.modelo}</span>
 											<span style="display: none" class="item_nombre_imagen">${cartItem.uniqueName}</span>
 										</div>
 									</div>
@@ -1205,25 +1206,29 @@
 					var valor_total = total;
 
 					const modelo = document.querySelectorAll('.item_type');
+					
 
 					// Obtener todos los elementos con la clase 'item_title'
 					const diseno = document.querySelectorAll('.item_title');
 					const nombreImagen = document.querySelectorAll('.item_nombre_imagen');
+					const marca = document.querySelectorAll('.item_marca');
+					console.log(diseno);
 
 					// Crear un array para almacenar los modelos de los elementos del carrito junto con sus títulos
 					const itemsCart = [];
 
 					// Recorrer todos los elementos y extraer los modelos junto con sus títulos
 					modelo.forEach((item, index) => {
-						// Obtener el texto dentro del elemento 'item_type' y 'item_title'
-						const tipo = item.textContent.trim();
-						let titulo = diseno[index].textContent.trim();
-						let nombreImagenPNG = nombreImagen[index].textContent.trim();
-						if (titulo === "Diseño personalizado") {
-							titulo = "Diseno personalizado";
-						}
-						// Agregar el modelo junto con su título al array de modelos
-						itemsCart.push({ modelo: tipo, diseno: titulo, nombreImagen: nombreImagenPNG });
+							const tipo = item.textContent.trim();
+							let titulo = diseno[index].textContent.trim();
+							const nombreImagenPNG = nombreImagen[index]?.textContent.trim() || "";
+							const itemMarca = marca[index]?.textContent.trim() || "";
+
+							if (titulo === "Diseño personalizado") {
+									titulo = "Diseno personalizado";
+							}
+
+							itemsCart.push({ modelo: tipo, diseno: titulo, marca: itemMarca, nombreImagen: nombreImagenPNG });
 					});
 
 					const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
