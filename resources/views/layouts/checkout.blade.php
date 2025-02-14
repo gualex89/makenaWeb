@@ -717,7 +717,7 @@
 							discount = subtotal * 0.15;
 						}
 						if (discountCode === 'MKN4X5') {
-							discount = subtotal * 0.95;
+							discount = subtotal * 0.20;
 						}
 						if (discountCode === 'MAKENAMAYO6') {
 							discount = subtotal * 0.38;
