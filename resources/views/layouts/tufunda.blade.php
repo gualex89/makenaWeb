@@ -179,7 +179,7 @@
 												</div>
 												<div class="col-lg-12 barra_de_texto">
 													<div class="col-lg-12 col-md-12 col-sm-12">
-														<a id="agregarAlCarritoBtn" class="custom_btn bg_carparts_inverso text-uppercase special_button" style="max-width: 200%; margin: 0px; display: none"> FINALIZAR    <i class="fas fa-shopping-cart cart-icon"></i> </a>
+														<a id="agregarAlCarritoBtn" class="custom_btn bg_carparts_inverso text-uppercase special_button" style="max-width: 200%; margin: 0px; display: none"> Agregar a mi pedido <i class="fas fa-shopping-cart cart-icon"></i> </a>
 													</div>
 												</div>		
 												

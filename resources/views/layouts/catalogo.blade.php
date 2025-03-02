@@ -233,7 +233,7 @@
 												<div class="item_image">
 													<img src="{{ Voyager::image($image->image) }}" alt="{{ $image->nombreFundas }}">
 													<ul class="product_action_btns ul_li_block text-uppercase text-center clearfix">
-														<li><a class="alCarrito" href="#!"><span><i class="fas fa-shopping-cart"></i></span> <span>Agregar al Carrito</span></a></li>
+														<li><a class="alCarrito" href="#!"><span><i class="fas fa-shopping-cart"></i></span> <span>Seleccioná tu modelo</span></a></li>
 														<li><a href="#!" class="ver-btn" data-image="{{ Voyager::image($image->image) }}" data-title="{{ $image->file_name }}"><span><i class="fas fa-search"></i></span> <span>Ver</span></a></li>
 														
 													</ul>
@@ -315,7 +315,7 @@
 						</div>
 					</div>
 					<div class="modal-footer">
-						<button type="button" id="addToCartModalOkButton" class="btn btn-secondary" data-dismiss="modal" disabled>OK</button>
+						<button type="button" id="addToCartModalOkButton" class="btn btn-secondary" data-dismiss="modal" disabled>Agregar al carrito</button>
 					</div>
 				</div>
 				</div>
