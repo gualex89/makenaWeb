@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\EnviosController;
 use App\Http\Controllers\MercadoPago;
 use App\Http\Controllers\MercadoPagoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('/mercado-pago', [MercadoPagoController::class, 'crearPreferencia'])->name('crearPreferencia');
+
+
+
+Route::get('/consulta-envio/{codigoPostal}', [EnviosController::class, 'consultaEnvio']);
