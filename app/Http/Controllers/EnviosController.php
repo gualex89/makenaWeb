@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\PostalCode;
 use Illuminate\Support\Facades\Http;
+use App\Models\Token;
 
 class EnviosController extends Controller
 {
@@ -17,9 +18,10 @@ class EnviosController extends Controller
     }
     public function consultaEnvio($codigoPostal)
     {
+        
         $tarifasMotoMakena = $this->objPostalCode->getEnviosByCP($codigoPostal);
-        /* $token = $this->obtenerToken(); */
-        $token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNYWtlbmEiLCJhdWQiOiJDb3JyZW8gQXJnZW50aW5vIiwibWVtYmVyIG9mIjoiQXBpTWlDb3JyZW9Qcm9kIiwiaXNzIjoiQ09SQVNBIiwiZXhwIjoxNzQxOTAyODQ4LCJpYXQiOjE3NDE4OTM4NDgsImp0aSI6IjAwMSJ9.rD4aioQLZbvauvv4wqp0ziogXRAnvCN8ZCMkPWZe7kg';
+        $token = $this->obtenerToken();
+        
         $provinceCode = $this->objPostalCode->getProvinceCode($codigoPostal);
         
         $resultados = [];
@@ -37,7 +39,7 @@ class EnviosController extends Controller
         ->where('productType', 'EP');
         
         $destination = [
-            "id" => rand(1000, 9999),
+            "id" => $tarifasMotoMakena[0]->id,
             "city" => $tarifasMotoMakena[0]->localidad ?? "Desconocido",
             "state" => $tarifasMotoMakena[0]->provincia ?? "Desconocido",
             "country" => "Argentina",
@@ -143,23 +145,36 @@ class EnviosController extends Controller
 
     public function obtenerToken()
     {
-        // Configurar credenciales
-        $username = 'Makena';
-        $password = 'Paleta12+';
+        $tokenFromBD = Token::where('id', 1)->first();
+        if ($tokenFromBD && $tokenFromBD->expire > now()) {
+            return $tokenFromBD->token;
+        } else {
+           // Configurar credenciales
+            $username = 'Makena';
+            $password = 'Paleta12+';
 
-        // Hacer la solicitud a la API
-        $response = Http::withBasicAuth($username, $password)
-                        ->post('https://api.correoargentino.com.ar/micorreo/v1/token');
+            // Hacer la solicitud a la API
+            $response = Http::withBasicAuth($username, $password)
+                            ->post('https://api.correoargentino.com.ar/micorreo/v1/token');
 
-        // Manejar la respuesta
-        if ($response->successful()) {
-            return $response['token'];
+        
+            // Manejar la respuesta
+            if ($response->successful()) {
+                // Actualizar el token en la base de datos en el id 1
+                Token::where('id', 1)->update([
+                    'token' => $response['token'],
+                    'expire' => $response['expire']
+                ]);
+                
+                return $response['token'];
+            }
+
+            return response()->json([
+                'message' => 'Error al obtener el token',
+                'error' => $response->body()
+            ], $response->status());
         }
-
-        return response()->json([
-            'message' => 'Error al obtener el token',
-            'error' => $response->body()
-        ], $response->status());
+        
     }
 
     

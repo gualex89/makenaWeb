@@ -21,7 +21,7 @@ class PostalCode extends Model
     public function getEnviosByCP($codigoPostal) {
         
         return DB::table('postal_codes')
-        ->select('postal_codes.provincia', 'postal_codes.localidad', 'cordon.precio')
+        ->select('postal_codes.provincia', 'postal_codes.localidad', 'cordon.precio', 'postal_codes.id')
         ->join('cordon','postal_codes.cordon_id','=','cordon.id')
         ->where('cp','=',$codigoPostal)
         ->get();
