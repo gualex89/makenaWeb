@@ -8,116 +8,135 @@ use Illuminate\Support\Facades\Http;
 
 class EnviosController extends Controller
 {
-    public $envioByCP;
-
+    public $objPostalCode;
+    
+    
     public function __construct() {
-        $this->envioByCP = new PostalCode();
+        $this->objPostalCode = new PostalCode();
        
     }
     public function consultaEnvio($codigoPostal)
-
-{
-    // Obtener tarifas de Moto Makena
-    $tarifasMotoMakena = $this->envioByCP->getEnviosByCP($codigoPostal);
-    
-    
-    // Obtener token para la API de Correo Argentino
-    $token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNYWtlbmEiLCJhdWQiOiJDb3JyZW8gQXJnZW50aW5vIiwibWVtYmVyIG9mIjoiQXBpTWlDb3JyZW9Qcm9kIiwiaXNzIjoiQ09SQVNBIiwiZXhwIjoxNzQxODIyOTE1LCJpYXQiOjE3NDE4MTM5MTUsImp0aSI6IjAwMSJ9.1Fd0HCsWMYzFFYFwM1CkL395jVAbqYb1WIoQPQDw7r4';
-    
-    // Obetener agencias de Correo Argentino
-
-
-
-    $agencias = $this->obtenerAgenciasFiltradas($token);
-    
-    // Obtener tarifas de Correo Argentino
-    $tarifasCA = $this->obtenerTarifas($token, $codigoPostal);
-    $tarifasCAArray = $tarifasCA->original; // 🔥 SOLUCIÓN APLICADA
-
-    
-    
-    // Extraer solo las tarifas de tipo "EP" (Expreso)
-    $tarifas = collect($tarifasCAArray['data']['rates'])
-    ->where('productType', 'EP');
-    
-    /* dd($tarifasMotoMakena[0]->localidad); */
-    // Datos base de destino
-    $destination = [
-        "id" => rand(1000, 9999),
-        "city" => $tarifasMotoMakena[0]->localidad ?? "Desconocido",
-        "state" => $tarifasMotoMakena[0]->provincia ?? "Desconocido",
-        "country" => "Argentina",
-        "zipcode" => $codigoPostal,
-        "geolocation" => [
-            "lat" => null,
-            "lng" => null
-        ]
-    ];
-    /* dd($destination); */
-
-    // Construcción de opciones de envío
-    $all_results = [];
-
-    // Opción de Mensajería Propia (si aplica)
-    if (!empty($tarifasMotoMakena)) {
-        $all_results[] = [
-            "selectable" => true,
-            "logistic_type" => "self_service",
-            "carrier" => [
-                "id" => 7,
-                "name" => "Motomensajería Makena",
-                "rating" => 1,
-                "logo" => null
-            ],
-            "service_type" => [
-                "id" => 1,
-                "code" => "standard_delivery",
-                "name" => "Entrega a domicilio",
-                "is_urgent" => 0
-            ],
-            "amounts" => [
-                "price_shipment" => $tarifasMotoMakena[0]->precio,
-                "price" => $tarifasMotoMakena[0]->precio,
-                "price_incl_tax" => $tarifasMotoMakena[0]->precio * 1.21,
-                "seller_price" => $tarifasMotoMakena[0]->precio,
-                "seller_price_incl_tax" => $tarifasMotoMakena[0]->precio * 1.21
-            ]
+    {
+        $tarifasMotoMakena = $this->objPostalCode->getEnviosByCP($codigoPostal);
+        /* $token = $this->obtenerToken(); */
+        $token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJNYWtlbmEiLCJhdWQiOiJDb3JyZW8gQXJnZW50aW5vIiwibWVtYmVyIG9mIjoiQXBpTWlDb3JyZW9Qcm9kIiwiaXNzIjoiQ09SQVNBIiwiZXhwIjoxNzQxOTAyODQ4LCJpYXQiOjE3NDE4OTM4NDgsImp0aSI6IjAwMSJ9.rD4aioQLZbvauvv4wqp0ziogXRAnvCN8ZCMkPWZe7kg';
+        $provinceCode = $this->objPostalCode->getProvinceCode($codigoPostal);
+        
+        $resultados = [];
+        foreach ($provinceCode as $provincia) {
+            $provinciaCodigo = $provincia->provinceCode;
+            $agencias = $this->obtenerAgenciasFiltradas($token, $codigoPostal, $provinciaCodigo);
+            if ($agencias->isNotEmpty()) {
+                $resultados[] = $agencias;
+            }
+        }
+        
+        $tarifasCA = $this->obtenerTarifas($token, $codigoPostal);
+        $tarifasCAArray = $tarifasCA->original;
+        $tarifas = collect($tarifasCAArray['data']['rates'])
+        ->where('productType', 'EP');
+        
+        $destination = [
+            "id" => rand(1000, 9999),
+            "city" => $tarifasMotoMakena[0]->localidad ?? "Desconocido",
+            "state" => $tarifasMotoMakena[0]->provincia ?? "Desconocido",
+            "country" => "Argentina",
+            "zipcode" => $codigoPostal,
+            "geolocation" => ["lat" => null, "lng" => null]
         ];
-    }
+        
+        $all_results = [];
+        /* dd($tarifasMotoMakena); */
+        if ($tarifasMotoMakena->isNotEmpty()) {
+            /* dd('entro'); */
+            $all_results[] = [
+                "selectable" => true,
+                "logistic_type" => "self_service",
+                "carrier" => [
+                    "id" => 7,
+                    "name" => "Motomensajería Makena",
+                    "rating" => 1,
+                    "logo" => null
+                ],
+                "service_type" => [
+                    "id" => 1,
+                    "code" => "standard_delivery",
+                    "name" => "Entrega a domicilio",
+                    "is_urgent" => 0
+                ],
+                "amounts" => [
+                    "price_shipment" => $tarifasMotoMakena[0]->precio,
+                    "price" => $tarifasMotoMakena[0]->precio,
+                    "price_incl_tax" => $tarifasMotoMakena[0]->precio * 1.21,
+                    "seller_price" => $tarifasMotoMakena[0]->precio,
+                    "seller_price_incl_tax" => $tarifasMotoMakena[0]->precio * 1.21
+                    ]
+                ];
+            }
+            
+        foreach ($tarifas as $tarifa) {
+            $pickupPoints = [];
+            
+            if ($tarifa['deliveredType'] == 'S' && !empty($resultados)) {
+                foreach ($resultados as $agencias) {
+                    foreach ($agencias as $agencia) {
+                        
+                        $pickupPoints[] = [
+                            "point_id" => $agencia['code'],
+                            "description" => $agencia['name'],
+                            "open_hours" => null,
+                            "phone" => null,
+                            "location" => [
+                                "street" => $agencia['location']['address']['streetName'],
+                                "street_number" => $agencia['location']['address']['streetNumber'],
+                                "street_extras" =>  null,
+                                "city" => $agencia['location']['address']['city'],
+                                "state" => $agencia['location']['address']['province'],
+                                "zipcode" => $codigoPostal,
+                                "geolocation" => [
+                                    "lat" => $agencia['location']['latitude'] ?? null,
+                                    "lng" => $agencia['location']['longitude'] ?? null,
+                                    "distance" => null
+                                    ]
+                                    ]
+                                ];
+                                /* dd($pickupPoints); */
+                            }
+                }
+            }
+            
+            $all_results[] = [
+                "selectable" => true,
+                "logistic_type" => "carrier_dropoff",
+                "carrier" => [
+                    "id" => 233,
+                    "name" => "Correo Argentino",
+                    "rating" => 1,
+                    "logo" => "https://zippincore.s3.amazonaws.com/carriers/correo-argentino/a7owGcEu8d6iMRfzb74qhk66dZZM7kCJkK4dG04C.png"
+                ],
+                "service_type" => [
+                    "id" => ($tarifa['deliveredType'] == 'S') ? 9 : 1,
+                    "code" => ($tarifa['deliveredType'] == 'S') ? "pickup_point" : "standard_delivery",
+                    "name" => ($tarifa['deliveredType'] == 'S') ? "Retiro en Sucursal" : "Entrega a domicilio",
+                    "is_urgent" => 0
+                ],
+                "amounts" => [
+                    "price_shipment" => $tarifa['price'],
+                    "price" => $tarifa['price'],
+                    "price_incl_tax" => $tarifa['price'] * 1.21,
+                    "seller_price" => $tarifa['price'],
+                    "seller_price_incl_tax" => $tarifa['price'] * 1.21
+                ],
+                "pickup_points" => $pickupPoints
+            ];
+        }
 
-    // Opciones de Correo Argentino (Domicilio y Sucursal)
-    foreach ($tarifas as $tarifa) {
-        $all_results[] = [
-            "selectable" => true,
-            "logistic_type" => "carrier_dropoff",
-            "carrier" => [
-                "id" => 233,
-                "name" => "Correo Argentino",
-                "rating" => 1,
-                "logo" => "https://zippincore.s3.amazonaws.com/carriers/correo-argentino/a7owGcEu8d6iMRfzb74qhk66dZZM7kCJkK4dG04C.png"
-            ],
-            "service_type" => [
-                "id" => ($tarifa['deliveredType'] == 'S') ? 9 : 1,
-                "code" => ($tarifa['deliveredType'] == 'S') ? "pickup_point" : "standard_delivery",
-                "name" => ($tarifa['deliveredType'] == 'S') ? "Retiro en Sucursal" : "Entrega a domicilio",
-                "is_urgent" => 0
-            ],
-            "amounts" => [
-                "price_shipment" => $tarifa['price'],
-                "price" => $tarifa['price'],
-                "price_incl_tax" => $tarifa['price'] * 1.21,
-                "seller_price" => $tarifa['price'],
-                "seller_price_incl_tax" => $tarifa['price'] * 1.21
-            ]
-        ];
+        return response()->json([
+            "sorted_by" => "price",
+            "destination" => $destination,
+            "all_results" => $all_results
+        ]);
     }
-
-    return response()->json([
-        "sorted_by" => "price",
-        "destination" => $destination,
-        "all_results" => $all_results
-    ]);
-}
 
 
 
@@ -187,13 +206,15 @@ class EnviosController extends Controller
             'error' => $response->body()
         ], $response->status());
     }
-    function obtenerAgenciasFiltradas($token) {
+    function obtenerAgenciasFiltradas($token, $postalCode, $provinceCode) {
+
+        
         $url = "https://api.correoargentino.com.ar/micorreo/v1/agencies";
        
     
         $response = Http::withToken($token)->get($url, [
             'customerId' => '0001067208',
-            'provinceCode' => 'B'
+            'provinceCode' => $provinceCode
         ]);
     
         if ($response->failed()) {
@@ -202,10 +223,11 @@ class EnviosController extends Controller
     
         $agencias = collect($response->json());
     
+        $codigoConcatenado = $provinceCode . $postalCode;
         // Filtrar agencias cuyo postalCode comienza con "B1704"
-        $filtradas = $agencias->filter(function ($agencia) {
+        $filtradas = $agencias->filter(function ($agencia) use ($codigoConcatenado) {
             return isset($agencia['location']['address']['postalCode']) && 
-                   str_starts_with($agencia['location']['address']['postalCode'], 'B1704');
+                   str_starts_with($agencia['location']['address']['postalCode'], $codigoConcatenado);
         });
     
         return $filtradas->values(); // Reindexar los resultados

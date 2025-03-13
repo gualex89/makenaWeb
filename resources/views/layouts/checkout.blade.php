@@ -928,7 +928,7 @@
 				var codigoPostal = document.getElementById('numeroCP').value;
 				
 				// Realizar solicitud a la ruta que apunta al controlador
-				fetch('/test-zippin/' + codigoPostal) 
+				fetch('/api/consulta-envio/' + codigoPostal) 
 					.then(response => response.json())
 					.then(data => {
 						// Manejar la respuesta aquí

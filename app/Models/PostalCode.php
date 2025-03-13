@@ -27,5 +27,14 @@ class PostalCode extends Model
         ->get();
     }
 
+    public function getProvinceCode($codigoPostal) {
+        return DB::table('postal_codes')
+        ->select('provinceCode')
+        ->where('cp', '=', $codigoPostal)
+        ->distinct()
+        ->get();
+    }
+
+
     
 }
