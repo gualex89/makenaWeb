@@ -48,8 +48,9 @@ class EnviosController extends Controller
         ];
         
         $all_results = [];
+        
         /* dd($tarifasMotoMakena); */
-        if ($tarifasMotoMakena->isNotEmpty()) {
+        if ($tarifasMotoMakena->isNotEmpty() && $tarifasMotoMakena[0]->cordonId != 4) {
             /* dd('entro'); */
             $all_results[] = [
                 "selectable" => true,

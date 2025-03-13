@@ -261,7 +261,7 @@
 																		<b>PROVINCIA*</b>
 																	</label>
 																</div>
-																<input type="text" name="provincia" class="form-control" readonly>
+																<input type="text" name="provincia" class="form-control" >
 															</div>
 														</div>
 														<div class="col-lg-6">
@@ -271,7 +271,7 @@
 																		<b>LOCALIDAD*</b>
 																	</label>
 																</div>
-																<input type="text" name="localidad" class="form-control" readonly>
+																<input type="text" name="localidad" class="form-control" >
 															</div>
 														</div>
 														<div class="col-lg-6">
@@ -923,6 +923,7 @@
 		
 		
 			function testZippin() {
+				hideRadioTipoEntrega();
 				hidePickupPoints();
 				hideFormAddress();
 				var codigoPostal = document.getElementById('numeroCP').value;
