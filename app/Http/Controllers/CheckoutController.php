@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\PostalCode;
 use MercadoPago\MercadoPagoConfig;
 use MercadoPago\Client\Preference\PreferenceClient;
 use Illuminate\Http\Request;
@@ -27,6 +28,7 @@ class CheckoutController extends Controller
         $order->codigo_postal = $data['codigo_postal'];
         $order->tipo_entrega = $data['tipo_entrega'];
         $order->provincia = $data['provincia'];
+        $order->provinceCode = $data['provinceCode'];
         $order->localidad = $data['localidad'];
         $order->calle = $data['calle'];
         $order->altura = $data['altura']; 
@@ -96,6 +98,16 @@ class CheckoutController extends Controller
         
         
     }
+
+    public function obtenerProvincias($codigoPostal) {
+        $provincias = PostalCode::where('cp', $codigoPostal)
+                        ->orderBy('provincia', 'asc') // Ordenar alfabéticamente
+                        ->distinct()
+                        ->get(['provincia', 'provinceCode']); // Obtener ambos campos
+    
+        return response()->json($provincias);
+    }
+    
 
     
 }

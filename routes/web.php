@@ -66,6 +66,7 @@ Route::post('/actualizar-orden', [CheckoutController::class, 'updateOrder']);
 
 Route::post('/actualizar-descuento', [CheckoutController::class, 'updateDiscount']);
 
+Route::get('/obtener-provincias/{codigoPostal}', [CheckoutController::class, 'obtenerProvincias']);
 
 Route::get('/frecuentes', [FrecuentesController::class, 'Frecuentes'])->name('Frecuentes');
 

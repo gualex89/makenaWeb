@@ -261,7 +261,11 @@
 																		<b>PROVINCIA*</b>
 																	</label>
 																</div>
-																<input type="text" name="provincia" class="form-control" >
+																<div class="divProvinciaDropdown">
+																	<select name="provincia" id="provinciasDropdown" class="form-control" style="width: 100%">
+																		<option value="">Seleccione</option>
+																	</select>
+																</div>
 															</div>
 														</div>
 														<div class="col-lg-6">
@@ -803,11 +807,13 @@
 				
 		
 				$('#continuarButton2').on('click', function() {
-					// Verificar si se han completado los campos del segundo formulario (dirección de envío)
+					// Verificar si se han completado los campos del segundo formulario (dirección de envío
 					var provincia = $('select[name=provincia]').val();
 					var localidad = $('input[name=localidad]').val().trim();
 					var calle = $('input[name=calle]').val().trim();
 					var altura = $('input[name=altura]').val().trim();
+
+					console.log(provincia, localidad, calle, altura);
 
 					if (calle !== '' && altura !== '') {
 
@@ -1019,12 +1025,37 @@
 							showPickupPoints(result);
 							hideFormAddress();
 						} else if (service_type === "Entrega a domicilio" && radioField.checked) {
+							var codigoPostal = document.getElementById('numeroCP').value;
 
+							$.get('/obtener-provincias/' + codigoPostal, function(data) {
+									console.log(data);
+
+									// Limpiar opciones previas y agregar una opción por defecto
+									$('#provinciasDropdown').empty().append('<option value="">Seleccione una provincia</option>');
+
+									// Verificar si hay datos
+									if (data.length > 0) {
+											data.forEach(function(provincia) {
+													$('#provinciasDropdown').append('<option value="' + provincia.provinceCode + '">' + provincia.provincia + '</option>');
+											});
+
+											// Seleccionar el primer elemento automáticamente
+											$('#provinciasDropdown').val(data[0].provinceCode).change();
+
+											// También actualizar el input oculto si es necesario
+											
+											document.querySelector('input[name="localidad"]').value = localidad;
+									}
+
+									// Actualizar niceSelect si lo usas
+									$('#provinciasDropdown').niceSelect('update');
+							});
+
+							// Ocultar y mostrar elementos adicionales según sea necesario
 							hidePickupPoints();
 							showFormAddress();
 							$('#continuarButtonRetiroSucursal').hide();
-							document.querySelector('input[name="provincia"]').value = provincia;
-							document.querySelector('input[name="localidad"]').value = localidad;
+
 						} else {
 							hidePickupPoints();
 							showFormAddress();
@@ -1133,6 +1164,7 @@
 					var tipo_entrega = document.querySelector('input[name="tipoEntrega"]:checked').value;
 					var codigo_postal = 0;
 					var provincia = '';
+					var provinceCode = '';
 					var localidad = ''; 
 					var calle = '';
 					var altura= '';
@@ -1141,7 +1173,8 @@
 					var valor_envio= 0;
 					if (tipo_entrega === "envio") {
 						codigo_postal = document.querySelector('input[name="codigoPostal"]').value;
-						provincia = document.querySelector('input[name="provincia"]').value;    
+						provincia = $('select[name=provincia] option:selected').text();
+						provinceCode = $('select[name=provincia]').val();    
 						localidad = document.querySelector('input[name="localidad"]').value;
 						calle = document.querySelector('input[name="calle"]').value;
 						altura = document.querySelector('input[name="altura"]').value;
@@ -1162,37 +1195,37 @@
 
 					// Crear un array para almacenar los modelos de los elementos del carrito junto con sus títulos
 					// Crear un array para almacenar los modelos de los elementos del carrito junto con sus títulos
-const itemsCart = [];
+					const itemsCart = [];
 
-// Iterar sobre cada elemento de `modelo`
-modelo.forEach((item, index) => {
-    // Obtener el texto del modelo principal
-    const tipo = item.textContent.trim();
+					// Iterar sobre cada elemento de `modelo`
+					modelo.forEach((item, index) => {
+							// Obtener el texto del modelo principal
+							const tipo = item.textContent.trim();
 
-    // Buscar el modelo secundario relacionado dentro del contenedor padre
-    const parent = item.closest('.cart_product'); // Ajusta esta clase si cambia la estructura
-    const tipo2Element = parent?.querySelector('.item_type2') || null;
-    const tipo2 = tipo2Element ? tipo2Element.textContent.trim() : '';
+							// Buscar el modelo secundario relacionado dentro del contenedor padre
+							const parent = item.closest('.cart_product'); // Ajusta esta clase si cambia la estructura
+							const tipo2Element = parent?.querySelector('.item_type2') || null;
+							const tipo2 = tipo2Element ? tipo2Element.textContent.trim() : '';
 
-    // Obtener otros datos necesarios
-    const titulo = diseno[index]?.textContent.trim() || '';
-    const nombreImagenPNG = nombreImagen[index]?.textContent.trim() || 'undefined';
+							// Obtener otros datos necesarios
+							const titulo = diseno[index]?.textContent.trim() || '';
+							const nombreImagenPNG = nombreImagen[index]?.textContent.trim() || 'undefined';
 
-    // Ajustar el título si es "Diseño personalizado"
-    const tituloFinal = titulo === "Diseño personalizado" ? "Diseno personalizado" : titulo;
+							// Ajustar el título si es "Diseño personalizado"
+							const tituloFinal = titulo === "Diseño personalizado" ? "Diseno personalizado" : titulo;
 
-    // Concatenar tipo y tipo2 si tipo2 existe
-    const modeloConcatenado = tipo2 ? `${tipo} - ${tipo2}` : tipo;
+							// Concatenar tipo y tipo2 si tipo2 existe
+							const modeloConcatenado = tipo2 ? `${tipo} - ${tipo2}` : tipo;
 
-    // Agregar el modelo junto con su título al array de modelos
-    itemsCart.push({
-        modelo: modeloConcatenado,
-        diseno: tituloFinal,
-        nombreImagen: nombreImagenPNG,
-    });
-});
+							// Agregar el modelo junto con su título al array de modelos
+							itemsCart.push({
+									modelo: modeloConcatenado,
+									diseno: tituloFinal,
+									nombreImagen: nombreImagenPNG,
+							});
+					});
 
-console.log(itemsCart);
+					console.log(itemsCart);
 
 
 
@@ -1213,6 +1246,7 @@ console.log(itemsCart);
 							tipo_entrega: tipo_entrega,
 							codigo_postal: codigo_postal,
 							provincia: provincia,
+							provinceCode: provinceCode,
 							localidad: localidad,
 							calle: calle,
 							altura :altura,

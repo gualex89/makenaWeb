@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Order;
 use Illuminate\Http\Request;
 use App\Models\PostalCode;
 use Illuminate\Support\Facades\Http;
@@ -18,6 +19,7 @@ class EnviosController extends Controller
     }
     public function consultaEnvio($codigoPostal)
     {
+        $creaEnvio = $this->crearEnvio();//eliminar es solo para pruebas
         
         $tarifasMotoMakena = $this->objPostalCode->getEnviosByCP($codigoPostal);
         $token = $this->obtenerToken();
@@ -36,7 +38,7 @@ class EnviosController extends Controller
         $tarifasCA = $this->obtenerTarifas($token, $codigoPostal);
         $tarifasCAArray = $tarifasCA->original;
         $tarifas = collect($tarifasCAArray['data']['rates'])
-        ->where('productType', 'EP');
+        ->where('productType', 'CP');
         
         $destination = [
             "id" => $tarifasMotoMakena[0]->id,
@@ -70,9 +72,9 @@ class EnviosController extends Controller
                 "amounts" => [
                     "price_shipment" => $tarifasMotoMakena[0]->precio,
                     "price" => $tarifasMotoMakena[0]->precio,
-                    "price_incl_tax" => $tarifasMotoMakena[0]->precio * 1.21,
+                    "price_incl_tax" => $tarifasMotoMakena[0]->precio,
                     "seller_price" => $tarifasMotoMakena[0]->precio,
-                    "seller_price_incl_tax" => $tarifasMotoMakena[0]->precio * 1.21
+                    "seller_price_incl_tax" => $tarifasMotoMakena[0]->precio 
                     ]
                 ];
             }
@@ -126,9 +128,9 @@ class EnviosController extends Controller
                 "amounts" => [
                     "price_shipment" => $tarifa['price'],
                     "price" => $tarifa['price'],
-                    "price_incl_tax" => $tarifa['price'] * 1.21,
+                    "price_incl_tax" => $tarifa['price'] ,
                     "seller_price" => $tarifa['price'],
-                    "seller_price_incl_tax" => $tarifa['price'] * 1.21
+                    "seller_price_incl_tax" => $tarifa['price'] 
                 ],
                 "pickup_points" => $pickupPoints
             ];
@@ -194,10 +196,10 @@ class EnviosController extends Controller
             "postalCodeOrigin" => "1824",
             "postalCodeDestination" => $codigoPostal,
             "dimensions" => [
-                "weight" => 2500,
-                "height" => 10,
-                "width" => 20,
-                "length" => 30
+                "weight" => 150,
+                "height" => 5,
+                "width" => 10,
+                "length" => 20
             ]
         ];
 
@@ -247,6 +249,133 @@ class EnviosController extends Controller
         });
     
         return $filtradas->values(); // Reindexar los resultados
+    }
+    public function crearEnvio()
+    {
+        $orden = Order::find(322); //cambiar por el $id_orden
+        /* dd($orden->id_order); */
+        $token = $this->obtenerToken();
+
+
+        // URL del endpoint
+        $url = 'https://api.correoargentino.com.ar/micorreo/v1/shipping/import';
+
+        // Datos de la solicitud
+
+        if ($orden->service_type_code == "standard_delivery") {
+            
+            $data = [
+                "customerId" => "0001067208",
+                "extOrderId" => $orden->id_order,
+                "orderNumber" => $orden->id_order,
+                "sender" => [
+                    "name" => 'Makena Fundas',
+                    "phone" => null,
+                    "cellPhone" => '1151490655',
+                    "email" => 'makenafundas@gmail.com',
+                    "originAddress" => [
+                        "streetName" => 'Manuel Castro',
+                        "streetNumber" => '5563',
+                        "floor" => null,
+                        "apartment" => null,
+                        "city" => 'Lanus',
+                        "provinceCode" => 'B',
+                        "postalCode" => '1824'
+                    ]
+                ],
+                "recipient" => [
+                    "name" => $orden->nombre . ' ' . $orden->apellido,
+                    "phone" => "",
+                    "cellPhone" => $orden->telefono,
+                    "email" => $orden->email,
+                ],
+                "shipping" => [
+                    "deliveryType" => "D",
+                    "agency" => null,
+                    "address" => [
+                        "streetName" => $orden->calle,
+                        "streetNumber" => $orden->altura,
+                        "floor" => $orden->observacion_entrega,
+                        "apartment" => "",
+                        "city" => $orden->provincia,
+                        "provinceCode" => $orden->provinceCode,
+                        "postalCode" => $orden->codigo_postal
+                    ],
+                    "weight" => 150,
+                    "declaredValue" => 13500.00,
+                    "height" => 5,  
+                    "length" => 20,
+                    "width" => 10
+                ]
+            ];
+        } else if ($orden->service_type_code == "pickup_point")
+        {
+            $data = [
+                "customerId" => "0001067208",
+                "extOrderId" => $orden->id_order,
+                "orderNumber" => $orden->id_order,
+                "sender" => [
+                    "name" => 'Makena Fundas',
+                    "phone" => null,
+                    "cellPhone" => '1151490655',
+                    "email" => 'makenafundas@gmail.com',
+                    "originAddress" => [
+                        "streetName" => 'Manuel Castro',
+                        "streetNumber" => '5563',
+                        "floor" => null,
+                        "apartment" => null,
+                        "city" => 'Lanus',
+                        "provinceCode" => 'B',
+                        "postalCode" => '1824'
+                    ]
+                ],
+                "recipient" => [
+                    "name" => $orden->nombre . ' ' . $orden->apellido,
+                    "phone" => "",
+                    "cellPhone" => $orden->telefono,
+                    "email" => $orden->email,
+                ],
+                "shipping" => [
+                    "deliveryType" => "S",
+                    "agency" => $orden->point_id,
+                    "address" => [
+                        "streetName" => '',
+                        "streetNumber" => '',
+                        "floor" => '',
+                        "apartment" => "",
+                        "city" => $orden->provincia,
+                        "provinceCode" => $orden->provinceCode,
+                        "postalCode" => $orden->codigo_postal
+                    ],
+                    "weight" => 150,
+                    "declaredValue" => 13500.00,
+                    "height" => 5,  
+                    "length" => 20,
+                    "width" => 10
+                ]
+            ];
+        }
+
+        // Realizar la petición con el token en la cabecera
+        $response = Http::withToken($token)
+            ->withHeaders([
+                'Content-Type' => 'application/json',
+                
+            ])
+            ->post($url, $data);
+
+        // Manejar la respuesta
+        if ($response->successful()) {
+            return response()->json([
+                'message' => 'Envio creado correctamente',
+                'data' => $response->json()
+            ]);
+        }
+
+        return response()->json([
+            'message' => 'Error al obtener tarifas',
+            'error' => $response->body()
+        ], $response->status());
     }
 
 }
