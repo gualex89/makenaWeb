@@ -1192,6 +1192,8 @@
 					// Obtener todos los elementos con la clase 'item_title'
 					const diseno = document.querySelectorAll('.item_title');
 					const nombreImagen = document.querySelectorAll('.item_nombre_imagen');
+					const marca = document.querySelectorAll('.item_marca');
+					console.log(diseno);
 
 					// Crear un array para almacenar los modelos de los elementos del carrito junto con sus títulos
 					// Crear un array para almacenar los modelos de los elementos del carrito junto con sus títulos
@@ -1201,6 +1203,8 @@
 					modelo.forEach((item, index) => {
 							// Obtener el texto del modelo principal
 							const tipo = item.textContent.trim();
+							
+
 
 							// Buscar el modelo secundario relacionado dentro del contenedor padre
 							const parent = item.closest('.cart_product'); // Ajusta esta clase si cambia la estructura
@@ -1209,7 +1213,7 @@
 
 							// Obtener otros datos necesarios
 							const titulo = diseno[index]?.textContent.trim() || '';
-							const nombreImagenPNG = nombreImagen[index]?.textContent.trim() || 'undefined';
+							
 
 							// Ajustar el título si es "Diseño personalizado"
 							const tituloFinal = titulo === "Diseño personalizado" ? "Diseno personalizado" : titulo;
@@ -1217,10 +1221,16 @@
 							// Concatenar tipo y tipo2 si tipo2 existe
 							const modeloConcatenado = tipo2 ? `${tipo} - ${tipo2}` : tipo;
 
+							const nombreImagenPNG = nombreImagen[index]?.textContent.trim() || "";
+							const itemMarca = marca[index]?.textContent.trim() || "";
+
+							
+
 							// Agregar el modelo junto con su título al array de modelos
 							itemsCart.push({
 									modelo: modeloConcatenado,
 									diseno: tituloFinal,
+									marca: itemMarca,
 									nombreImagen: nombreImagenPNG,
 							});
 					});
