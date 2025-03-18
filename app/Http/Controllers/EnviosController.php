@@ -24,7 +24,7 @@ class EnviosController extends Controller
     }
     public function consultaEnvio($codigoPostal)
     {
-        $this->envioService->crearEnvio(327);//eliminar es solo para pruebas
+        
         
         $tarifasMotoMakena = $this->objPostalCode->getEnviosByCP($codigoPostal);
         $token = $this->envioService->obtenerToken();
