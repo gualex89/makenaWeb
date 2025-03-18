@@ -1187,7 +1187,7 @@
 					var valor_total = total;
 
 					const modelo = document.querySelectorAll('.item_type');
-					const modelo2 = document.querySelectorAll('.item_type2');
+					
 
 					// Obtener todos los elementos con la clase 'item_title'
 					const diseno = document.querySelectorAll('.item_title');
@@ -1196,43 +1196,20 @@
 					console.log(diseno);
 
 					// Crear un array para almacenar los modelos de los elementos del carrito junto con sus títulos
-					// Crear un array para almacenar los modelos de los elementos del carrito junto con sus títulos
 					const itemsCart = [];
 
-					// Iterar sobre cada elemento de `modelo`
+					// Recorrer todos los elementos y extraer los modelos junto con sus títulos
 					modelo.forEach((item, index) => {
-							// Obtener el texto del modelo principal
 							const tipo = item.textContent.trim();
-							
-
-
-							// Buscar el modelo secundario relacionado dentro del contenedor padre
-							const parent = item.closest('.cart_product'); // Ajusta esta clase si cambia la estructura
-							const tipo2Element = parent?.querySelector('.item_type2') || null;
-							const tipo2 = tipo2Element ? tipo2Element.textContent.trim() : '';
-
-							// Obtener otros datos necesarios
-							const titulo = diseno[index]?.textContent.trim() || '';
-							
-
-							// Ajustar el título si es "Diseño personalizado"
-							const tituloFinal = titulo === "Diseño personalizado" ? "Diseno personalizado" : titulo;
-
-							// Concatenar tipo y tipo2 si tipo2 existe
-							const modeloConcatenado = tipo2 ? `${tipo} - ${tipo2}` : tipo;
-
+							let titulo = diseno[index].textContent.trim();
 							const nombreImagenPNG = nombreImagen[index]?.textContent.trim() || "";
 							const itemMarca = marca[index]?.textContent.trim() || "";
 
-							
+							if (titulo === "Diseño personalizado") {
+									titulo = "Diseno personalizado";
+							}
 
-							// Agregar el modelo junto con su título al array de modelos
-							itemsCart.push({
-									modelo: modeloConcatenado,
-									diseno: tituloFinal,
-									marca: itemMarca,
-									nombreImagen: nombreImagenPNG,
-							});
+							itemsCart.push({ modelo: tipo, diseno: titulo, marca: itemMarca, nombreImagen: nombreImagenPNG });
 					});
 
 					console.log(itemsCart);

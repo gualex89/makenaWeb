@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Download;
 use App\Models\Order;
 use App\Models\PostalCode;
 use MercadoPago\MercadoPagoConfig;
@@ -50,6 +51,7 @@ class CheckoutController extends Controller
 
         
         foreach ($itemsCart as $item) {
+            dd($item);
             $download = new Download();
             $download->order_id = $id;
             $download->modelo = $item['modelo'];
