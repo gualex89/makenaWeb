@@ -49,13 +49,13 @@ class CheckoutController extends Controller
 
         
         foreach ($itemsCart as $item) {
-            
             $download = new Download();
             $download->order_id = $id;
             $download->modelo = $item['modelo'];
             $download->imprimible = $item['nombreImagen'];
             $download->composicion = "Comp-" . $item['nombreImagen'];
             $download->marca = $item['marca'];
+            $download->diseno = $item['diseno'];
             
             
             $download->save();
