@@ -51,7 +51,7 @@ class CheckoutController extends Controller
 
         
         foreach ($itemsCart as $item) {
-            dd($item);
+            
             $download = new Download();
             $download->order_id = $id;
             $download->modelo = $item['modelo'];

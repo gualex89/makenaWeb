@@ -653,8 +653,10 @@
 										</div>
 										<div class="item_content">
 											<h4 class="item_title">${cartItem.name}</h4>
-											<span class="item_type">${cartItem.marca} ${cartItem.modelo}</span>
-											${cartItem.marca2 ? `<span class="item_type2">${cartItem.marca2} ${cartItem.modelo2}</span>` : ``}
+											<span class= "item_marca">${cartItem.marca}</span>
+											<span class="item_type">${cartItem.modelo}</span>
+											${cartItem.marca2 ? `<span class="item_marca2">${cartItem.marca2}</span>` : ``}
+											${cartItem.marca2 ? `<span class="item_type2">${cartItem.modelo2}</span>` : ``}
 											<span style="display: none" class="item_nombre_imagen">${cartItem.uniqueName}</span>
 										</div>
 									</div>
@@ -1186,33 +1188,45 @@
 					var valor_subtotal = subtotal;
 					var valor_total = total;
 
-					const modelo = document.querySelectorAll('.item_type');
+					
 					
 
 					// Obtener todos los elementos con la clase 'item_title'
 					const diseno = document.querySelectorAll('.item_title');
-					const nombreImagen = document.querySelectorAll('.item_nombre_imagen');
-					const marca = document.querySelectorAll('.item_marca');
-					console.log(diseno);
+                    const nombreImagen = document.querySelectorAll('.item_nombre_imagen');
+                    const marca = document.querySelectorAll('.item_marca');
+                    const modelo = document.querySelectorAll('.item_type');
 
-					// Crear un array para almacenar los modelos de los elementos del carrito junto con sus títulos
-					const itemsCart = [];
 
-					// Recorrer todos los elementos y extraer los modelos junto con sus títulos
-					modelo.forEach((item, index) => {
-							const tipo = item.textContent.trim();
-							let titulo = diseno[index].textContent.trim();
-							const nombreImagenPNG = nombreImagen[index]?.textContent.trim() || "";
-							const itemMarca = marca[index]?.textContent.trim() || "";
 
-							if (titulo === "Diseño personalizado") {
-									titulo = "Diseno personalizado";
-							}
+                    const itemsCart = [];
 
-							itemsCart.push({ modelo: tipo, diseno: titulo, marca: itemMarca, nombreImagen: nombreImagenPNG });
-					});
+                    document.querySelectorAll('.item_type').forEach((item, index) => {
+                        let container = item.closest('tr'); // Buscamos el <tr> como contenedor más cercano
 
-					console.log(itemsCart);
+                        if (!container) {
+                            console.warn(`No se encontró el contenedor para el elemento en el índice ${index}`);
+                            return;
+                        }
+
+                        let titulo = container.querySelector('.item_title')?.textContent.trim() || "";
+                        let nombreImagenPNG = container.querySelector('.item_nombre_imagen')?.textContent.trim() || "";
+                        let itemMarca = container.querySelector('.item_marca')?.textContent.trim() || "";
+                        let itemModelo = item.textContent.trim();
+
+                        // Buscar modelo2 y marca2 dentro del mismo contenedor del producto
+                        let itemModelo2 = container.querySelector('.item_type2')?.textContent.trim() || "";
+                        let itemMarca2 = container.querySelector('.item_marca2')?.textContent.trim() || "";
+
+                        // Solo concatenar si existen valores en modelo2 y marca2
+                        const modeloFinal = itemModelo2 ? `${itemModelo} -> ${itemModelo2}` : itemModelo;
+                        const marcaFinal = itemMarca2 ? `${itemMarca} -> ${itemMarca2}` : itemMarca;
+
+                        itemsCart.push({ modelo: modeloFinal, diseno: titulo, marca: marcaFinal, nombreImagen: nombreImagenPNG });
+                    });
+
+                    console.log(itemsCart);
+
 
 
 
