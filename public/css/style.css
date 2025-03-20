@@ -19710,6 +19710,14 @@ blockquote .blockquote_title {
   font-size: 19px;
     
 }
+.divProvinciaDropdown .nice-select {
+  width: 100%;
+  font-size: 19px;
+  height: 60px;
+  font-size: 1rem;
+  padding: 10px 30px;
+    
+}
 .divMarcaDropdown .nice-select {
   width: 100%;
   font-size: 19px;

@@ -6,9 +6,18 @@ use Illuminate\Http\Request;
 use App\Models\Order;
 use Illuminate\Support\Facades\Mail;
 use GuzzleHttp\Client;
+use App\Http\Controllers\EnviosController;
+use App\Services\EnvioService;
 
 class webhook extends Controller
 {
+    
+    protected $envioService;
+
+    public function __construct(EnvioService $envioService) {
+        $this->envioService = $envioService;
+       
+    }
     // Función para manejar los webhook
     public function handleWebhook(Request $request)
     {
@@ -44,7 +53,11 @@ class webhook extends Controller
                         ]);
                         
                     }
-                    $this->crearEnvio($apiExternalReference);
+                    if ($order->logistic_type == 'carrier_dropoff') {
+                        
+                        $this->envioService->crearEnvio($apiExternalReference);
+                    }
+                    /* $this->crearEnvio($apiExternalReference); */
                     $this->sendEmail($emailComprador, $apiExternalReference, $id);
                     $this->sendMailNuevaVenta($BDdatos, $id);
                 }
