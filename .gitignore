@@ -3,3 +3,15 @@
 /public/storage/
 /public/storage
 .vscode
+# Ignorar la carpeta vendor (si no la necesitas en el repo)
+vendor/
+
+# Ignorar archivos de Composer
+composer.lock
+composer.phar
+
+# Ignorar archivos y logs no deseados
+error_log
+app/default.php
+default.php
+panel/
