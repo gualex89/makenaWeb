@@ -1023,7 +1023,32 @@
 						const provincia = data.destination.state;
 						const localidad = data.destination.city;
 						
+						
 						if (service_type == "Retiro en Sucursal" && radioField.checked) {
+							var codigoPostal = document.getElementById('numeroCP').value;
+							$.get('/obtener-provincias/' + codigoPostal, function(data) {
+									console.log(data);
+
+									// Limpiar opciones previas y agregar una opción por defecto
+									$('#provinciasDropdown').empty().append('<option value="">Seleccione una provincia</option>');
+
+									// Verificar si hay datos
+									if (data.length > 0) {
+											data.forEach(function(provincia) {
+													$('#provinciasDropdown').append('<option value="' + provincia.provinceCode + '">' + provincia.provincia + '</option>');
+											});
+
+											// Seleccionar el primer elemento automáticamente
+											$('#provinciasDropdown').val(data[0].provinceCode).change();
+
+											// También actualizar el input oculto si es necesario
+											
+											document.querySelector('input[name="localidad"]').value = localidad;
+									}
+
+									// Actualizar niceSelect si lo usas
+									$('#provinciasDropdown').niceSelect('update');
+							});
 							showPickupPoints(result);
 							hideFormAddress();
 						} else if (service_type === "Entrega a domicilio" && radioField.checked) {
