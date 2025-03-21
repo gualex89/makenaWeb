@@ -935,6 +935,19 @@
 				hidePickupPoints();
 				hideFormAddress();
 				var codigoPostal = document.getElementById('numeroCP').value;
+
+				var logistic_type;
+				var service_type_code;
+				var carrier_id;
+				var point_id_selected;
+				// Referencia al botón
+				var button = document.getElementById('continuarTipoEntregaButton');
+
+				// Cambiar estado del botón a "buscando"
+				button.innerText = 'Buscando...';
+				button.style.backgroundColor = '#CCCCCC';
+				button.style.color = '#F831FE'; // color de texto, ajusta según tu diseño
+				button.disabled = true;
 				
 				// Realizar solicitud a la ruta que apunta al controlador
 				fetch('/api/consulta-envio/' + codigoPostal) 
@@ -958,6 +971,13 @@
 						// Mostrar el error en el div si lo deseas
 						document.getElementById('response').innerHTML = 'Error: ' + error.message;
 						document.getElementById('radioFields').innerHTML = '';
+					})
+					.finally(() => {
+						// Restaurar estado del botón
+						button.innerText = 'Buscar';
+						button.style.backgroundColor = ''; // restaurar color original (usa clase)
+						button.style.color = ''; // restaurar color original
+						button.disabled = false;
 					});
 			}
 			var logistic_type;
