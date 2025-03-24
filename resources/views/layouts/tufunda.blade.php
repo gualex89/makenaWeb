@@ -111,7 +111,7 @@
 			<!-- product_section - start
 			================================================== -->
 			<div id="aviso" class="aviso-flotante"></div>
-			<section class="product_section sec_ptb_50 clearfix" id="seccionTufunda" style="margin-top: 60px">
+			<section class="product_section sec_ptb_50  clearfix" id="seccionTufunda" style="margin-top: 60px">
 				<div class="container maxw_1430">
 					<div class="row justify-content-lg-between">
 						<div class="col-lg-3 col-md-6 mx-auto ">
@@ -133,7 +133,7 @@
 								</div>
 								<div class="abtn_wrap col3 text-center mt-3" id="div_del_boton" data-animation="fadeInUp" data-delay=".8s">
 									<div class="col-lg-12 col-md-12 col-sm-12">
-										<a id="btnEmpezarDeNuevo" href="#btnEmpezarDeNuevo" class="custom_btn bg_carparts_red text-uppercase special_button lodesactive" style="max-width: 200px;" >Ir a la Funda</a>
+										<a id="btnEmpezarDeNuevo" href="#" class="custom_btn bg_carparts_red text-uppercase special_button lodesactive" style="max-width: 200px;" >Ir a la Funda</a>
 									</div>
 
 								</div>
@@ -151,6 +151,8 @@
 
 										<div id="div_imagen" class="col-lg-6 col-md-6 col-sm-6 col-xs-12 image-item">
 											<div class="container">
+												<div id= "div_referencia" class="mt-1"></div>
+												<div id= "div_referenciaB" style="margin-top: 10px; color: white" class="">B</div>
 												<img src="" id="imagenCover" style="max-width: 285px !important; left: 71px !important" alt="">
 												<img src="" id="imagenCoverCanilleras" style="max-width: 498px ; width: 498px; left: 0px !important" alt="">
 												<img src="" id="imagenCoverImprimible" alt="">
@@ -159,28 +161,28 @@
 												</div>
 											</div>
                                             
-											<div class="container mt-5">
+											<div class="container mt-3 mb-1" >
 												<div class="col-lg-12  barra_de_texto">
 													
 													<input type="file" id="imageLoader" style="display: none" accept="image/*" />
-													<button onclick="cargarImagen()" id="subirImagen" class="css-button css-button-rounded css-button-rounded--rose" style="min-width: 70px; display: none " > <i class="fas fa-upload"></i></button>
-													<button onclick="eliminarElementoSeleccionado()" id="btnEliminar" class="css-button css-button-rounded css-button-rounded--rose" style="min-width: 70px; display: none " ><i class="fas fa-trash"></i></button>
-													<button onclick="cambiarOrden()" id="cambiarOrden" class="css-button css-button-sliding-to-bottom css-button-sliding-to-bottom--rose buttons-editor" style="display: none">Traer al frente</button>
+													<button onclick="cargarImagen()" id="subirImagen" class="css-button css-button-rounded css-button-rounded--rose" style="min-width: 70px; max-height: 30px; display: none; z-index: 1000 " > <i style="align-items: center; display: flex; justify-content: center " class="fas fa-upload"></i></button>
+													<button onclick="eliminarElementoSeleccionado()" id="btnEliminar" class="css-button css-button-rounded css-button-rounded--rose" style="min-width: 70px; max-height: 30px; display: none; z-index: 1000 " ><i style="align-items: center; display: flex; justify-content: center " class="fas fa-trash"></i></button>
+													<button onclick="cambiarOrden()" id="cambiarOrden" class="css-button css-button-sliding-to-bottom css-button-sliding-to-bottom--rose buttons-editor" style="display: none; max-height: 30px; z-index: 1000; line-height: 20px !important;">Traer al frente</button>
 													
 												</div>
-												<div class="col-lg-12 barra_de_texto" style="display: flex">
+												<div class="col-lg-12 barra_de_texto" style="display: flex ; margin-top: 0px">
 													<div class="col-lg-6" id="divTamanioImagen" style="display: none">
-														<label for="tamañoImagen" class="d-block">Tamaño imagen</label>
+														<label style="margin-bottom: -10px" for="tamañoImagen" class="d-block">Tamaño imagen</label>
 														<input type="range" id="imageSizeSlider" min="10" max="200" value="100" oninput="cambiarTamanoImagen(this.value)">
 													</div>
 													<div class="col-lg-6" id="divRotacionImagen" style="display: none" >
-														<label for="rotacionImagen" class="d-block">Rotación imagen</label>
+														<label style="margin-bottom: -10px" for="rotacionImagen" class="d-block">Rotación imagen</label>
 														<input type="range" id="imageRotationSlider" min="0" max="360" value="0" oninput="rotarImagen(this.value)">
 													</div>
 												</div>
-												<div class="col-lg-12 barra_de_texto">
+												<div class="col-lg-12 barra_de_texto" style="margin-top: 0px">
 													<div class="col-lg-12 col-md-12 col-sm-12">
-														<a id="agregarAlCarritoBtn" class="custom_btn bg_carparts_inverso text-uppercase special_button" style="max-width: 200%; margin: 0px; display: none"> Agregar a mi pedido <i class="fas fa-shopping-cart cart-icon"></i> </a>
+														<a id="agregarAlCarritoBtn" class="custom_btn bg_carparts_inverso text-uppercase special_button" style="max-width: 200%; margin: 0px; display: none; max-height: 30px"> Agregar a mi pedido <i class="fas fa-shopping-cart cart-icon"></i> </a>
 													</div>
 												</div>		
 												
@@ -1214,6 +1216,23 @@
 						removeFromCart(item);
 					}
 				});
+			});
+		</script>
+		<script>
+			document.getElementById('btnEmpezarDeNuevo').addEventListener('click', function (e) {
+				e.preventDefault(); // evita el comportamiento por defecto
+		
+				const destino = document.getElementById('div_referenciaB');
+		
+				if (destino) {
+					const offset = -20; // cantidad de píxeles hacia abajo
+					const top = destino.getBoundingClientRect().top + window.pageYOffset + offset;
+		
+					window.scrollTo({
+						top: top,
+						behavior: 'smooth'
+					});
+				}
 			});
 		</script>
 		
