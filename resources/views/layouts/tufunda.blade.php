@@ -483,17 +483,19 @@
 					$.get('/obtener-imagen/' + modeloSeleccionado, function(data) {
 						// La respuesta 'data' debería contener la información de la imagen u otro dato que necesitas
 						console.log(data);
+
 						var rutaImagen = "storage\\" + data[0];
+						var rutaImagenImprimible = "storage\\" + data[1];
+
 						console.log(rutaImagen);
+						console.log(rutaImagenImprimible);
+
 						$('#imagenCover').attr('src', rutaImagen);
+
 						cargarImagenDeFondo(rutaImagen);
+						cargarImagenDeFondoImprimible(rutaImagenImprimible);
 						//$('#imagenResultado').attr('src', rutaImagen);
 					});
-					$('#subirImagen').show();
-					$('#desplegable1').show();
-					$('#desplegable2').show();
-					document.getElementById('btnEmpezarDeNuevo').classList.remove('lodesactive');
-					
 				});
 			});
 		</script>
