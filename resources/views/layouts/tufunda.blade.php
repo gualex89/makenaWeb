@@ -496,6 +496,10 @@
 						cargarImagenDeFondoImprimible(rutaImagenImprimible);
 						//$('#imagenResultado').attr('src', rutaImagen);
 					});
+					$('#subirImagen').show();
+					$('#desplegable1').show();
+					$('#desplegable2').show();
+					document.getElementById('btnEmpezarDeNuevo').classList.remove('lodesactive');
 				});
 			});
 		</script>
