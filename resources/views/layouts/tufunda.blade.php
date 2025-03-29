@@ -925,10 +925,11 @@
     $('#btn_carrito').hide();
 
     // Aplica reducción al userImg antes de generar las imágenes
-    const reductionFactor = 0.90; // 
+    const reductionFactor = 0.99; // 
     if (userImg) {
         userImg.scaleX *= reductionFactor;
         userImg.scaleY *= reductionFactor;
+				userImg.top += 15;
         canvas.renderAll();
     }
 
