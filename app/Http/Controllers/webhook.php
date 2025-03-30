@@ -22,11 +22,11 @@ class webhook extends Controller
     // Función para manejar los webhook
     public function handleWebhook(Request $request)
     {
-        /* return "ok"; */
+        
         try{
-            // desde aqui
+            
             // Obtener datos del webhook
-            /* $datos = $request->all();
+            $datos = $request->all();
             $id = $datos['data']['id'];
             
             $response = Http::withHeaders([
@@ -34,19 +34,10 @@ class webhook extends Controller
                 'Authorization' => 'Bearer '. env('MP_ACCESS_TOKEN')
             ])->get('https://api.mercadopago.com/v1/payments/' . $id);
 
-            if ($response->successful()) { */ // esto debe volver
-                $id= "97720605019";
-                $response = collect([
-                    'external_reference' => '329', // ID de la orden en tu base de datos
-                    'status' => 'approved',
-                    'transaction_details' => [
-                        'total_paid_amount' => 1500,
-                    ]
-                ]);
-            
+            if ($response->successful()) { 
+                
                 //Datos que vienen de la API
-                /* $payment_data = $response->json(); */ // esto debe cambiarse
-                $payment_data = $response;
+                $payment_data = $response->json(); 
                 $apiExternalReference = $payment_data['external_reference'];
                 $apiStatus = $payment_data['status'];
                 $apiMontoPagado = $payment_data['transaction_details'] ['total_paid_amount'];
@@ -77,7 +68,7 @@ class webhook extends Controller
                 }
                 
                 
-            /* } */ // esto debe volver   
+            }    
             
             
             return response()->json(['status' => 'success', 'message' => 'Webhook procesado correctamente']);
