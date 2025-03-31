@@ -929,7 +929,7 @@
     if (userImg) {
         userImg.scaleX *= reductionFactor;
         userImg.scaleY *= reductionFactor;
-				userImg.top += 15;
+				userImg.top += 7;
         canvas.renderAll();
     }
 
