@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Request;
 use App\Models\Order;
+use App\Models\Download;
 use Illuminate\Support\Facades\Mail;
 use GuzzleHttp\Client;
 use App\Http\Controllers\EnviosController;
@@ -21,7 +22,9 @@ class webhook extends Controller
     // Función para manejar los webhook
     public function handleWebhook(Request $request)
     {
+        
         try{
+            
             // Obtener datos del webhook
             $datos = $request->all();
             $id = $datos['data']['id'];
@@ -31,16 +34,18 @@ class webhook extends Controller
                 'Authorization' => 'Bearer '. env('MP_ACCESS_TOKEN')
             ])->get('https://api.mercadopago.com/v1/payments/' . $id);
 
-            if ($response->successful()) {
-
+            if ($response->successful()) { 
+                
                 //Datos que vienen de la API
-                $payment_data = $response->json();
+                $payment_data = $response->json(); 
                 $apiExternalReference = $payment_data['external_reference'];
                 $apiStatus = $payment_data['status'];
                 $apiMontoPagado = $payment_data['transaction_details'] ['total_paid_amount'];
-
+                
                 //Datos de la base de datos
                 $BDdatos = Order::find($apiExternalReference);
+                $downloads = Download::where('order_id', $apiExternalReference)->get();
+                
                 $montoAPagar = $BDdatos->total;
                 $emailComprador = $BDdatos->email;
 
@@ -58,7 +63,7 @@ class webhook extends Controller
                         $this->envioService->crearEnvio($apiExternalReference);
                     }
                     /* $this->crearEnvio($apiExternalReference); */
-                    $this->sendEmail($emailComprador, $apiExternalReference, $id);
+                    $this->sendEmail($emailComprador, $apiExternalReference, $id, $downloads, $BDdatos);
                     $this->sendMailNuevaVenta($BDdatos, $id);
                 }
                 
@@ -71,14 +76,16 @@ class webhook extends Controller
             return response()->json(['status' => 'error', 'message' => $e->getMessage()]);
         }
     }
-    public function sendEmail($emailComprador, $apiExternalReference, $payment_id){ 
+    public function sendEmail($emailComprador, $apiExternalReference, $payment_id, $downloads, $BDdatos){ 
         $emailTo = $emailComprador;
         $pathToImage = public_path('images/logo/logo_black.png');
 
         Mail::send('emails.graciasEmail', [
             'orden' => $apiExternalReference,
             'payment_id' => $payment_id,
-            'pathToImage' => $pathToImage
+            'pathToImage' => $pathToImage,
+            'downloads' => $downloads,
+            'BDdatos' => $BDdatos
 
         ], function ($message) use ($emailTo, $pathToImage) {
             $message->to($emailTo)->subject('Gracias por tu compra');
