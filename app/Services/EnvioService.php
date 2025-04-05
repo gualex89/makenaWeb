@@ -53,13 +53,14 @@ class EnvioService
                     "deliveryType" => "D",
                     "agency" => null,
                     "address" => [
-                        "streetName" => $orden->calle,
+                        "streetName" => $orden->calle . ' ' . $orden->altura . ', ' . $orden->observacion_entrega,
                         "streetNumber" => $orden->altura,
                         "floor" => $orden->observacion_entrega,
                         "apartment" => "",
                         "city" => $orden->provincia,
                         "provinceCode" => $orden->provinceCode,
-                        "postalCode" => $orden->codigo_postal
+                        "postalCode" => $orden->codigo_postal,
+                        "observation"=> $orden->observacion_entrega,
                     ],
                     "weight" => 150,
                     "declaredValue" => 13500.00,
