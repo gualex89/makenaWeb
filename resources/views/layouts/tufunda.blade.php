@@ -915,93 +915,93 @@
 
 				// Agregar evento click al botón "Agregar al Carrito"
 				document.getElementById('agregarAlCarritoBtn').addEventListener('click', function () {
-    const selectedMarca = document.getElementById('marcasDropdown').value;
-    const selectedModelo = document.getElementById('modelosDropdown').value;
-    $('#chargingModal').modal('show');
-    const modeloSinEspacios = selectedModelo.replace(/\s+/g, '-');
+					const selectedMarca = document.getElementById('marcasDropdown').value;
+					const selectedModelo = document.getElementById('modelosDropdown').value;
+					$('#chargingModal').modal('show');
+					const modeloSinEspacios = selectedModelo.replace(/\s+/g, '-');
 
-    const uniqueName = modeloSinEspacios + '_' + Date.now() + '_' + Math.floor(100 + Math.random() * 900) + '.png';
-    const uniqueNameComposicion = 'Comp-' + uniqueName;
-    $('#btn_carrito').hide();
+					const uniqueName = modeloSinEspacios + '_' + Date.now() + '_' + Math.floor(100 + Math.random() * 900) + '.png';
+					const uniqueNameComposicion = 'Comp-' + uniqueName;
+					$('#btn_carrito').hide();
 
-    // Aplica reducción al userImg antes de generar las imágenes
-    const reductionFactor = 0.92; // 
-    if (userImg) {
-        userImg.scaleX *= reductionFactor;
-        userImg.scaleY *= reductionFactor;
-				userImg.top += 7;
-				userImg.left -= 3;
-        canvas.renderAll();
-    }
+					// Aplica reducción al userImg antes de generar las imágenes
+					const reductionFactor = 0.92; // 
+					if (userImg) {
+							userImg.scaleX *= reductionFactor;
+							userImg.scaleY *= reductionFactor;
+							userImg.top += 7;
+							userImg.left -= 3;
+							canvas.renderAll();
+					}
 
-    // Generar la primera imagen (dataComposicionURL)
-    if (fondoImg) {
-        fondoImg.opacity = 1;
-        canvas.bringToFront(fondoImg);
-        canvas.renderAll();
-    }
+					// Generar la primera imagen (dataComposicionURL)
+					if (fondoImg) {
+							fondoImg.opacity = 1;
+							canvas.bringToFront(fondoImg);
+							canvas.renderAll();
+					}
 
-    const dataComposicionURL = canvas.toDataURL({
-        format: 'png',
-        quality: 1,
-    });
+					const dataComposicionURL = canvas.toDataURL({
+							format: 'png',
+							quality: 1,
+					});
 
-    if (fondoImg) {
-        fondoImg.opacity = 0;
-        canvas.bringToFront(fondoImg);
-        canvas.renderAll();
-        fondoImgImprimible.opacity = 1;
-        canvas.bringToFront(fondoImgImprimible);
-        canvas.renderAll();
-    }
+					if (fondoImg) {
+							fondoImg.opacity = 0;
+							canvas.bringToFront(fondoImg);
+							canvas.renderAll();
+							fondoImgImprimible.opacity = 1;
+							canvas.bringToFront(fondoImgImprimible);
+							canvas.renderAll();
+					}
 
-    // Crear un nuevo canvas de alta resolución para la exportación
-    var exportCanvas = document.createElement('canvas');
-    exportCanvas.id = 'exportCanvas';
-    var dpr = window.devicePixelRatio || 1;
-    exportCanvas.width = widthVariable * dpr;
-    exportCanvas.height = heightVariable * dpr;
-    var exportContext = exportCanvas.getContext('2d');
-    exportContext.scale(dpr, dpr);
+					// Crear un nuevo canvas de alta resolución para la exportación
+					var exportCanvas = document.createElement('canvas');
+					exportCanvas.id = 'exportCanvas';
+					var dpr = window.devicePixelRatio || 1;
+					exportCanvas.width = widthVariable * dpr;
+					exportCanvas.height = heightVariable * dpr;
+					var exportContext = exportCanvas.getContext('2d');
+					exportContext.scale(dpr, dpr);
 
-    var exportFabricCanvas = new fabric.Canvas(exportCanvas);
-    exportFabricCanvas.setWidth(widthVariable);
-    exportFabricCanvas.setHeight(heightVariable);
+					var exportFabricCanvas = new fabric.Canvas(exportCanvas);
+					exportFabricCanvas.setWidth(widthVariable);
+					exportFabricCanvas.setHeight(heightVariable);
 
-    const scaleWidth = widthVariable / canvas.width;
-    const scaleHeight = heightVariable / canvas.height;
+					const scaleWidth = widthVariable / canvas.width;
+					const scaleHeight = heightVariable / canvas.height;
 
-    canvas.getObjects().forEach(function (obj) {
-        var clonedObj = fabric.util.object.clone(obj);
+					canvas.getObjects().forEach(function (obj) {
+						var clonedObj = fabric.util.object.clone(obj);
 
-        if (obj === userImg) {
-            // Aplicar la reducción también en el exportCanvas
-            clonedObj.scaleX = obj.scaleX * scaleWidth;
-            clonedObj.scaleY = obj.scaleY * scaleHeight;
-        } else {
-            clonedObj.scaleX = obj.scaleX * scaleWidth;
-            clonedObj.scaleY = obj.scaleY * scaleHeight;
-        }
+						if (obj === userImg) {
+								// Aplicar la reducción también en el exportCanvas
+								clonedObj.scaleX = obj.scaleX * scaleWidth;
+								clonedObj.scaleY = obj.scaleY * scaleHeight;
+						} else {
+								clonedObj.scaleX = obj.scaleX * scaleWidth;
+								clonedObj.scaleY = obj.scaleY * scaleHeight;
+						}
 
-        clonedObj.left = obj.left * scaleWidth;
-        clonedObj.top = obj.top * scaleHeight;
-        exportFabricCanvas.add(clonedObj);
-    });
+						clonedObj.left = obj.left * scaleWidth;
+						clonedObj.top = obj.top * scaleHeight;
+						exportFabricCanvas.add(clonedObj);
+					});
 
-    exportFabricCanvas.renderAll();
+					exportFabricCanvas.renderAll();
 
-    var dataURL = exportFabricCanvas.toDataURL({
-        format: 'png',
-        quality: 1.0,
-    });
+					var dataURL = exportFabricCanvas.toDataURL({
+							format: 'png',
+							quality: 1.0,
+					});
 
-    // Restaura la escala de userImg para el canvas principal
-    if (userImg) {
-        userImg.scaleX /= reductionFactor;
-        userImg.scaleY /= reductionFactor;
-				
-        canvas.renderAll();
-    }
+    			// Restaura la escala de userImg para el canvas principal
+					if (userImg) {
+							userImg.scaleX /= reductionFactor;
+							userImg.scaleY /= reductionFactor;
+							
+							canvas.renderAll();
+					}
 					
 
 					const formData = new FormData();
