@@ -156,7 +156,9 @@
 												<img src="" id="imagenCover" style="max-width: 285px !important; left: 71px !important" alt="">
 												<img src="" id="imagenCoverCanilleras" style="max-width: 498px ; width: 498px; left: 0px !important" alt="">
 												<img src="" id="imagenCoverImprimible" alt="">
-												<canvas id="canvas" width="260" height="551" class="mx-auto d-block"></canvas>
+												<canvas id="canvas" width="260" height="549" class="mx-auto d-block"></canvas>
+
+
 												<div id="gesture-layer" style="position: absolute; top: 65px; left: 71px; width: 65%; height: 65%;">
 												</div>
 											</div>
@@ -463,7 +465,7 @@
 					restablecerCanvas()
 
 					canvas.setWidth(260);
-					canvas.setHeight(551);
+					canvas.setHeight(548.7659574468085); 
 
 					var canvasElement = document.getElementById('canvas');
 					var divImagenElement = document.getElementById('div_imagen');
@@ -551,33 +553,73 @@
 			}
 	
 			function cargarImagenDeFondo(url) {
-					fabric.Image.fromURL(url, function (bgImg) {
-							bgImg.set({
-									selectable: false,
-									crossOrigin: 'anonymous'  // Agrega esta línea
-							});
-							bgImg.opacity = 0;
-							bgImg.scaleToWidth(canvas.width);
-							bgImg.scaleToHeight(canvas.height);
-							canvas.add(bgImg);
-							fondoImg = bgImg;
-					});
-			}
+  fabric.Image.fromURL(url, function (bgImg) {
+    // 🔁 Escalado proporcional tipo "contain" y le sumamos un 10%
+    const scaleX = canvas.width / bgImg.width;
+    const scaleY = canvas.height / bgImg.height;
+    const fondoScale = Math.min(scaleX, scaleY) * 1.11;
 
-			function cargarImagenDeFondoImprimible(url) {
-            fabric.Image.fromURL(url, function(bgImg) {
-                bgImg.set({
-                    selectable: false,
-                    crossOrigin: 'anonymous'
-                });
-                bgImg.opacity = 0;
-                bgImg.scaleToWidth(canvas.width);
-                bgImg.scaleToHeight(canvas.height);
-                canvas.add(bgImg);
-                fondoImgImprimible = bgImg;
-            });
-        }
-	
+    // ⚠️ Escalamos primero
+    bgImg.scale(fondoScale);
+
+    // 🎯 Luego centramos
+    bgImg.set({
+      left: canvas.width / 2 + 4,
+      top: canvas.height / 2 - 2,
+      originX: 'center',
+      originY: 'center',
+      selectable: false,
+      crossOrigin: 'anonymous',
+      opacity: 0
+    });
+
+    console.log('🧩 Fondo escalado y centrado:', {
+      width: bgImg.width,
+      height: bgImg.height,
+      scale: fondoScale,
+      left: bgImg.left,
+      top: bgImg.top
+    });
+
+    canvas.add(bgImg);
+    fondoImg = bgImg;
+    canvas.sendToBack(bgImg);
+  });
+}
+
+
+
+
+
+
+
+
+function cargarImagenDeFondoImprimible(url) {
+  fabric.Image.fromURL(url, function (bgImg) {
+    const scaleX = canvas.width / bgImg.width;
+    const scaleY = canvas.height / bgImg.height;
+    const fondoScale = Math.min(scaleX, scaleY) * 1.1; // igual que en la otra
+
+    bgImg.set({
+      selectable: false,
+      crossOrigin: 'anonymous',
+      originX: 'center',
+      originY: 'center',
+      left: canvas.width / 2 + 2,  // mismo ajuste a la izquierda
+      top: canvas.height / 2 + 2   // mismo ajuste hacia abajo
+    });
+
+    bgImg.scale(fondoScale);
+    bgImg.opacity = 0;
+
+    canvas.add(bgImg);
+    fondoImgImprimible = bgImg;
+    canvas.sendToBack(bgImg);
+  });
+}
+
+
+
 			document.getElementById('imageLoader').addEventListener('change', function(e) {
 					var file = e.target.files[0];
 	
@@ -589,30 +631,47 @@
 					var reader = new FileReader();
 	
 					reader.onload = function(e) {
-							fabric.Image.fromURL(e.target.result, function(img) {
-									img.set({
-											hasControls: true,
-											hasBorders: true,
-											selectable: true,
-											cornerColor: 'red',
-											originX: 'center',
-											originY: 'center'
-									});
-									img.left = canvas.width / 2;
-									img.top = canvas.height / 2;
-									canvas.add(img);
-	
-									userImg = img;
-									canvas.setActiveObject(img);
-									document.getElementById('imageLoader').value = '';
-	
-									img.on('mousedown', function() {
-											canvas.setActiveObject(img);
-											document.getElementById('gesture-layer').style.pointerEvents = 'auto'; // Habilita gesture-layer si es imagen
-									});
-	
-							});
-					};
+						fabric.Image.fromURL(e.target.result, function(img) {
+  img.set({
+    hasControls: true,
+    hasBorders: true,
+    selectable: true,
+    cornerColor: 'red',
+    originX: 'center',
+    originY: 'center'
+  });
+
+  // Centrar la imagen en el canvas
+  img.left = canvas.width / 2;
+  img.top = canvas.height / 2;
+
+  // Escalado proporcional (tipo contain)
+  const scaleX = canvas.width / img.width;
+  const scaleY = canvas.height / img.height;
+  const scale = Math.min(scaleX, scaleY);
+  img.scale(scale);
+
+  console.log('userImg loaded:', {
+    width: img.width,
+    height: img.height,
+    scale: scale,
+    left: img.left,
+    top: img.top
+  });
+
+  canvas.add(img);
+  userImg = img;
+  canvas.setActiveObject(img);
+  document.getElementById('imageLoader').value = '';
+
+  img.on('mousedown', function() {
+    canvas.setActiveObject(img);
+    document.getElementById('gesture-layer').style.pointerEvents = 'auto';
+  });
+});
+
+};
+
 					canvas.sendToBack(fondoImg);
 					canvas.renderAll();
 	
@@ -914,169 +973,126 @@
 				const agregarAlCarritoBtn = document.getElementById('agregarAlCarritoBtn');
 
 				// Agregar evento click al botón "Agregar al Carrito"
-				document.getElementById('agregarAlCarritoBtn').addEventListener('click', function () {
-					const selectedMarca = document.getElementById('marcasDropdown').value;
-					const selectedModelo = document.getElementById('modelosDropdown').value;
-					$('#chargingModal').modal('show');
-					const modeloSinEspacios = selectedModelo.replace(/\s+/g, '-');
+				document.getElementById('agregarAlCarritoBtn').addEventListener('click', async function () {
+  const selectedMarca = document.getElementById('marcasDropdown').value;
+  const selectedModelo = document.getElementById('modelosDropdown').value;
+  $('#chargingModal').modal('show');
 
-					const uniqueName = modeloSinEspacios + '_' + Date.now() + '_' + Math.floor(100 + Math.random() * 900) + '.png';
-					const uniqueNameComposicion = 'Comp-' + uniqueName;
-					$('#btn_carrito').hide();
+  const modeloSinEspacios = selectedModelo.replace(/\s+/g, '-');
+  const uniqueName = modeloSinEspacios + '_' + Date.now() + '_' + Math.floor(100 + Math.random() * 900) + '.png';
+  const uniqueNameComposicion = 'Comp-' + uniqueName;
 
-					// Aplica reducción al userImg antes de generar las imágenes
-					const reductionFactor = 0.92; // 
-					if (userImg) {
-							userImg.scaleX *= reductionFactor;
-							userImg.scaleY *= reductionFactor;
-							userImg.top += 7;
-							userImg.left -= 3;
-							canvas.renderAll();
-					}
+  $('#btn_carrito').hide();
 
-					// Generar la primera imagen (dataComposicionURL)
-					if (fondoImg) {
-							fondoImg.opacity = 1;
-							canvas.bringToFront(fondoImg);
-							canvas.renderAll();
-					}
+  // Mostrar la funda
+  if (fondoImg) {
+    fondoImg.opacity = 1;
+    canvas.bringToFront(fondoImg);
+    canvas.renderAll();
+  }
 
-					const dataComposicionURL = canvas.toDataURL({
-							format: 'png',
-							quality: 1,
-					});
+  const dataComposicionURL = canvas.toDataURL({ format: 'png', quality: 1 });
 
-					if (fondoImg) {
-							fondoImg.opacity = 0;
-							canvas.bringToFront(fondoImg);
-							canvas.renderAll();
-							fondoImgImprimible.opacity = 1;
-							canvas.bringToFront(fondoImgImprimible);
-							canvas.renderAll();
-					}
+  // Ocultar la funda y mostrar la imprimible
+  if (fondoImg) fondoImg.opacity = 0;
+  if (fondoImgImprimible) {
+    fondoImgImprimible.opacity = 1;
+    canvas.bringToFront(fondoImgImprimible);
+  }
+  canvas.renderAll();
 
-					// Crear un nuevo canvas de alta resolución para la exportación
-					var exportCanvas = document.createElement('canvas');
-					exportCanvas.id = 'exportCanvas';
-					var dpr = window.devicePixelRatio || 1;
-					exportCanvas.width = widthVariable * dpr;
-					exportCanvas.height = heightVariable * dpr;
-					var exportContext = exportCanvas.getContext('2d');
-					exportContext.scale(dpr, dpr);
+  // 🔍 DEPURACIÓN: Mostrar estado de cada objeto en el canvas
+  console.log("🎯 Medidas del canvas actual:", {
+    width: canvas.width,
+    height: canvas.height
+  });
 
-					var exportFabricCanvas = new fabric.Canvas(exportCanvas);
-					exportFabricCanvas.setWidth(widthVariable);
-					exportFabricCanvas.setHeight(heightVariable);
+  canvas.getObjects().forEach((obj, i) => {
+    console.log(`🖼️ Imagen ${i}`, {
+      width: obj.width,
+      height: obj.height,
+      scaleX: obj.scaleX,
+      scaleY: obj.scaleY,
+      left: obj.left,
+      top: obj.top,
+      originX: obj.originX,
+      originY: obj.originY
+    });
+  });
 
-					const scaleWidth = widthVariable / canvas.width;
-					const scaleHeight = heightVariable / canvas.height;
+  // Exportar directamente lo que está en el canvas (sin reescalar)
+  const dataURL = canvas.toDataURL({ format: 'png', quality: 1 });
 
-					canvas.getObjects().forEach(function (obj) {
-						var clonedObj = fabric.util.object.clone(obj);
+  // Enviar al servidor
+  const formData = new FormData();
+  formData.append('dataURL', dataURL);
+  formData.append('uniqueName', uniqueName);
+  formData.append('dataComposicionURL', dataComposicionURL);
+  formData.append('uniqueNameComposicion', uniqueNameComposicion);
 
-						if (obj === userImg) {
-								// Aplicar la reducción también en el exportCanvas
-								clonedObj.scaleX = obj.scaleX * scaleWidth;
-								clonedObj.scaleY = obj.scaleY * scaleHeight;
-						} else {
-								clonedObj.scaleX = obj.scaleX * scaleWidth;
-								clonedObj.scaleY = obj.scaleY * scaleHeight;
-						}
+  fetch('/guardar-imagen-personalizada', {
+    method: 'POST',
+    headers: {
+      'X-CSRF-TOKEN': csrfToken
+    },
+    body: formData
+  })
+  .then(response => {
+    if (!response.ok) throw new Error('Error al GUARDAR la imagen');
+    return response.json();
+  })
+  .then(data => {
+    $('#btn_carrito').show();
+    console.log('✅ Imagen exportada y guardada:', data);
 
-						clonedObj.left = obj.left * scaleWidth;
-						clonedObj.top = obj.top * scaleHeight;
-						exportFabricCanvas.add(clonedObj);
-					});
+    if (fondoImg) {
+      canvas.add(fondoImg);
+      canvas.renderAll();
+    }
 
-					exportFabricCanvas.renderAll();
+    const precio = {{ $precioFundas }};
+    const cartItem = {
+      name: "Diseño personalizado",
+      price: precio,
+      image: dataComposicionURL,
+      marca: selectedMarca,
+      modelo: selectedModelo,
+      uniqueName: uniqueName,
+      uniqueNameComposicion: uniqueNameComposicion
+    };
 
-					var dataURL = exportFabricCanvas.toDataURL({
-							format: 'png',
-							quality: 1.0,
-					});
+    cartItemCount++;
+    subtotal += cartItem.price;
+    total = subtotal;
+    cartItems.push(cartItem);
 
-    			// Restaura la escala de userImg para el canvas principal
-					if (userImg) {
-							userImg.scaleX /= reductionFactor;
-							userImg.scaleY /= reductionFactor;
-							
-							canvas.renderAll();
-					}
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    updateCartCounter();
+    updatePrices();
+    updateCartItems();
+    mostrarAviso();
+
+    document.getElementById('agregarAlCarritoBtn').style.display = 'none';
+    restablecerCanvas();
+    canvas.clear();
+
+    fondoImg.opacity = 1;
+    canvas.renderAll();
+    limpiarDropdowns();
+    $('#chargingModal').modal('hide');
+  })
+  .catch(error => {
+    console.error('❌ Error:', error);
+  });
+});
+
+
+
+
+
+					
 					
 
-					const formData = new FormData();
-					formData.append('dataURL', dataURL);
-					formData.append('uniqueName', uniqueName);
-					formData.append('dataComposicionURL', dataComposicionURL);
-					formData.append('uniqueNameComposicion', uniqueNameComposicion);
-					fetch('/guardar-imagen-personalizada', {
-						method: 'POST',
-						headers: {
-							'X-CSRF-TOKEN': csrfToken // Agregar el token CSRF a la cabecera de la petición
-						},
-						body: formData
-					})
-					.then(response => {
-						if (!response.ok) {
-							throw new Error('Error al GUARDAR la imagen');
-						}
-						return response.json();
-					})
-					.then(data => {
-						$('#btn_carrito').show();
-						// Lógica adicional después de agregar el artículo al carrito (si es necesario)
-						console.log('Se guardó la imagen: ', data);
-						if (fondoImg) {
-						canvas.add(fondoImg);
-						canvas.renderAll();
-					}
-
-					
-
-					//Este valor viene dado por el controlador, y viene de el precio que se le asigne en voyager a la funda
-					const precio = {{ $precioFundas }};
-					// Agregar la URL de la imagen al cartItems
-					const cartItem = {
-						name: "Diseño personalizado",
-						price: precio,
-						image: dataComposicionURL,
-						marca: selectedMarca,
-						modelo: selectedModelo,
-						uniqueName: uniqueName,
-						uniqueNameComposicion: uniqueNameComposicion
-					};
-					cartItemCount++;
-					subtotal += cartItem.price;
-					total = subtotal;
-
-					// Agregar el elemento al arreglo cartItems
-					cartItems.push(cartItem);
-
-					// Guardar el carrito en el almacenamiento local (si es necesario)
-					localStorage.setItem('cartItems', JSON.stringify(cartItems));
-
-					updateCartCounter();
-					updatePrices();
-					updateCartItems();
-					mostrarAviso();
-					document.getElementById('agregarAlCarritoBtn').style.display = 'none';
-					restablecerCanvas();
-					canvas.clear();
-
-					fondoImg.opacity = 1;
-					canvas.renderAll();
-					limpiarDropdowns();
-					$('#chargingModal').modal('hide');
-					})
-					.catch(error => {
-						console.error('Error:', error);
-					});
-
-					// Restaurar la imagen de fondo si se eliminó
-					
-				
-				});
-			
 					function addToCart(productItem) {
 						const price = parseFloat(productItem.querySelector('.item_price').textContent.replace('$', ''));
 						const itemName = productItem.querySelector('.item_title').textContent;
