@@ -973,116 +973,124 @@ function cargarImagenDeFondoImprimible(url) {
 				const agregarAlCarritoBtn = document.getElementById('agregarAlCarritoBtn');
 
 				// Agregar evento click al botón "Agregar al Carrito"
-				document.getElementById('agregarAlCarritoBtn').addEventListener('click', async function () {
+				document.getElementById('agregarAlCarritoBtn').addEventListener('click', function () {
   const selectedMarca = document.getElementById('marcasDropdown').value;
   const selectedModelo = document.getElementById('modelosDropdown').value;
   $('#chargingModal').modal('show');
-
   const modeloSinEspacios = selectedModelo.replace(/\s+/g, '-');
+
   const uniqueName = modeloSinEspacios + '_' + Date.now() + '_' + Math.floor(100 + Math.random() * 900) + '.png';
   const uniqueNameComposicion = 'Comp-' + uniqueName;
-
   $('#btn_carrito').hide();
 
-  // Mostrar la funda
+  // Mostrar la funda visible
   if (fondoImg) {
     fondoImg.opacity = 1;
     canvas.bringToFront(fondoImg);
     canvas.renderAll();
   }
 
-  const dataComposicionURL = canvas.toDataURL({ format: 'png', quality: 1 });
+  const dataComposicionURL = canvas.toDataURL({
+    format: 'png',
+    quality: 1,
+  });
 
   // Ocultar la funda y mostrar la imprimible
   if (fondoImg) fondoImg.opacity = 0;
   if (fondoImgImprimible) {
     fondoImgImprimible.opacity = 1;
     canvas.bringToFront(fondoImgImprimible);
-  }
-  canvas.renderAll();
-
-  // 🔍 DEPURACIÓN: Mostrar estado de cada objeto en el canvas
-  console.log("🎯 Medidas del canvas actual:", {
-    width: canvas.width,
-    height: canvas.height
-  });
-
-  canvas.getObjects().forEach((obj, i) => {
-    console.log(`🖼️ Imagen ${i}`, {
-      width: obj.width,
-      height: obj.height,
-      scaleX: obj.scaleX,
-      scaleY: obj.scaleY,
-      left: obj.left,
-      top: obj.top,
-      originX: obj.originX,
-      originY: obj.originY
-    });
-  });
-
-  // Exportar directamente lo que está en el canvas (sin reescalar)
-  const dataURL = canvas.toDataURL({ format: 'png', quality: 1 });
-
-  // Enviar al servidor
-  const formData = new FormData();
-  formData.append('dataURL', dataURL);
-  formData.append('uniqueName', uniqueName);
-  formData.append('dataComposicionURL', dataComposicionURL);
-  formData.append('uniqueNameComposicion', uniqueNameComposicion);
-
-  fetch('/guardar-imagen-personalizada', {
-    method: 'POST',
-    headers: {
-      'X-CSRF-TOKEN': csrfToken
-    },
-    body: formData
-  })
-  .then(response => {
-    if (!response.ok) throw new Error('Error al GUARDAR la imagen');
-    return response.json();
-  })
-  .then(data => {
-    $('#btn_carrito').show();
-    console.log('✅ Imagen exportada y guardada:', data);
-
-    if (fondoImg) {
-      canvas.add(fondoImg);
-      canvas.renderAll();
-    }
-
-    const precio = {{ $precioFundas }};
-    const cartItem = {
-      name: "Diseño personalizado",
-      price: precio,
-      image: dataComposicionURL,
-      marca: selectedMarca,
-      modelo: selectedModelo,
-      uniqueName: uniqueName,
-      uniqueNameComposicion: uniqueNameComposicion
-    };
-
-    cartItemCount++;
-    subtotal += cartItem.price;
-    total = subtotal;
-    cartItems.push(cartItem);
-
-    localStorage.setItem('cartItems', JSON.stringify(cartItems));
-    updateCartCounter();
-    updatePrices();
-    updateCartItems();
-    mostrarAviso();
-
-    document.getElementById('agregarAlCarritoBtn').style.display = 'none';
-    restablecerCanvas();
-    canvas.clear();
-
-    fondoImg.opacity = 1;
     canvas.renderAll();
-    limpiarDropdowns();
-    $('#chargingModal').modal('hide');
-  })
-  .catch(error => {
-    console.error('❌ Error:', error);
+  }
+
+  // Exportar en alta resolución sin desalinear
+  const exportCanvas = document.createElement('canvas');
+  const exportWidth = 1175;
+  const exportHeight = 2480;
+  exportCanvas.width = exportWidth;
+  exportCanvas.height = exportHeight;
+
+  const exportFabricCanvas = new fabric.Canvas(exportCanvas);
+  exportFabricCanvas.setWidth(exportWidth);
+  exportFabricCanvas.setHeight(exportHeight);
+
+  const exportScale = exportWidth / canvas.width;
+
+  // Clonamos y escalamos globalmente
+  Promise.all(canvas.getObjects().map(obj => {
+    return new Promise(resolve => {
+      obj.clone(cloned => {
+        cloned.scaleX = obj.scaleX * exportScale;
+        cloned.scaleY = obj.scaleY * exportScale;
+        cloned.left = obj.left * exportScale;
+        cloned.top = obj.top * exportScale;
+        cloned.originX = obj.originX;
+        cloned.originY = obj.originY;
+        resolve(cloned);
+      });
+    });
+  })).then(clonedObjects => {
+    clonedObjects.forEach(obj => exportFabricCanvas.add(obj));
+    exportFabricCanvas.renderAll();
+
+    const dataURL = exportFabricCanvas.toDataURL({
+      format: 'png',
+      quality: 1.0,
+    });
+
+    // Enviar al servidor
+    const formData = new FormData();
+    formData.append('dataURL', dataURL);
+    formData.append('uniqueName', uniqueName);
+    formData.append('dataComposicionURL', dataComposicionURL);
+    formData.append('uniqueNameComposicion', uniqueNameComposicion);
+
+    fetch('/guardar-imagen-personalizada', {
+      method: 'POST',
+      headers: {
+        'X-CSRF-TOKEN': csrfToken
+      },
+      body: formData
+    })
+    .then(response => {
+      if (!response.ok) throw new Error('Error al GUARDAR la imagen');
+      return response.json();
+    })
+    .then(data => {
+      $('#btn_carrito').show();
+      const precio = {{ $precioFundas }};
+      const cartItem = {
+        name: "Diseño personalizado",
+        price: precio,
+        image: dataComposicionURL,
+        marca: selectedMarca,
+        modelo: selectedModelo,
+        uniqueName: uniqueName,
+        uniqueNameComposicion: uniqueNameComposicion
+      };
+
+      cartItemCount++;
+      subtotal += cartItem.price;
+      total = subtotal;
+      cartItems.push(cartItem);
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+      updateCartCounter();
+      updatePrices();
+      updateCartItems();
+      mostrarAviso();
+      document.getElementById('agregarAlCarritoBtn').style.display = 'none';
+      restablecerCanvas();
+      canvas.clear();
+
+      fondoImg.opacity = 1;
+      canvas.renderAll();
+      limpiarDropdowns();
+      $('#chargingModal').modal('hide');
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
   });
 });
 
