@@ -553,124 +553,117 @@
 			}
 	
 			function cargarImagenDeFondo(url) {
-  fabric.Image.fromURL(url, function (bgImg) {
-    // 🔁 Escalado proporcional tipo "contain" y le sumamos un 10%
-    const scaleX = canvas.width / bgImg.width;
-    const scaleY = canvas.height / bgImg.height;
-    const fondoScale = Math.min(scaleX, scaleY) * 1.11;
+				fabric.Image.fromURL(url, function (bgImg) {
+					// 🔁 Escalado proporcional tipo "contain" y le sumamos un 10%
+					const scaleX = canvas.width / bgImg.width;
+					const scaleY = canvas.height / bgImg.height;
+					const fondoScale = Math.min(scaleX, scaleY) * 1.11;
 
-    // ⚠️ Escalamos primero
-    bgImg.scale(fondoScale);
+					// ⚠️ Escalamos primero
+					bgImg.scale(fondoScale);
 
-    // 🎯 Luego centramos
-    bgImg.set({
-      left: canvas.width / 2 + 4,
-      top: canvas.height / 2 - 2,
-      originX: 'center',
-      originY: 'center',
-      selectable: false,
-      crossOrigin: 'anonymous',
-      opacity: 0
-    });
+					// 🎯 Luego centramos
+					bgImg.set({
+						left: canvas.width / 2 + 4,
+						top: canvas.height / 2 - 2,
+						originX: 'center',
+						originY: 'center',
+						selectable: false,
+						crossOrigin: 'anonymous',
+						opacity: 0
+					});
 
-    console.log('🧩 Fondo escalado y centrado:', {
-      width: bgImg.width,
-      height: bgImg.height,
-      scale: fondoScale,
-      left: bgImg.left,
-      top: bgImg.top
-    });
+					console.log('🧩 Fondo escalado y centrado:', {
+						width: bgImg.width,
+						height: bgImg.height,
+						scale: fondoScale,
+						left: bgImg.left,
+						top: bgImg.top
+					});
 
-    canvas.add(bgImg);
-    fondoImg = bgImg;
-    canvas.sendToBack(bgImg);
-  });
-}
+					canvas.add(bgImg);
+					fondoImg = bgImg;
+					canvas.sendToBack(bgImg);
+				});
+			}
 
+			function cargarImagenDeFondoImprimible(url) {
+				fabric.Image.fromURL(url, function (bgImg) {
+					const scaleX = canvas.width / bgImg.width;
+					const scaleY = canvas.height / bgImg.height;
+					const fondoScale = Math.min(scaleX, scaleY); // igual que en la otra
 
+					bgImg.set({
+						selectable: false,
+						crossOrigin: 'anonymous',
+						originX: 'center',
+						originY: 'center',
+						left: canvas.width / 2 + 2,  // mismo ajuste a la izquierda
+						top: canvas.height / 2 + 2   // mismo ajuste hacia abajo
+					});
 
+					bgImg.scale(fondoScale);
+					bgImg.opacity = 0;
 
-
-
-
-
-function cargarImagenDeFondoImprimible(url) {
-  fabric.Image.fromURL(url, function (bgImg) {
-    const scaleX = canvas.width / bgImg.width;
-    const scaleY = canvas.height / bgImg.height;
-    const fondoScale = Math.min(scaleX, scaleY) * 1.1; // igual que en la otra
-
-    bgImg.set({
-      selectable: false,
-      crossOrigin: 'anonymous',
-      originX: 'center',
-      originY: 'center',
-      left: canvas.width / 2 + 2,  // mismo ajuste a la izquierda
-      top: canvas.height / 2 + 2   // mismo ajuste hacia abajo
-    });
-
-    bgImg.scale(fondoScale);
-    bgImg.opacity = 0;
-
-    canvas.add(bgImg);
-    fondoImgImprimible = bgImg;
-    canvas.sendToBack(bgImg);
-  });
-}
+					canvas.add(bgImg);
+					fondoImgImprimible = bgImg;
+					canvas.sendToBack(bgImg);
+				});
+			}
 
 
 
 			document.getElementById('imageLoader').addEventListener('change', function(e) {
-					var file = e.target.files[0];
-	
-					if (file.size > 6 * 1024 * 1024) { // 3 MB en bytes
-							alert("El archivo es demasiado grande. El tamaño máximo permitido es de 3 MB.");
-							return;
-					}
-	
-					var reader = new FileReader();
-	
-					reader.onload = function(e) {
-						fabric.Image.fromURL(e.target.result, function(img) {
-  img.set({
-    hasControls: true,
-    hasBorders: true,
-    selectable: true,
-    cornerColor: 'red',
-    originX: 'center',
-    originY: 'center'
-  });
+				var file = e.target.files[0];
 
-  // Centrar la imagen en el canvas
-  img.left = canvas.width / 2;
-  img.top = canvas.height / 2;
+				if (file.size > 6 * 1024 * 1024) { // 3 MB en bytes
+						alert("El archivo es demasiado grande. El tamaño máximo permitido es de 3 MB.");
+						return;
+				}
 
-  // Escalado proporcional (tipo contain)
-  const scaleX = canvas.width / img.width;
-  const scaleY = canvas.height / img.height;
-  const scale = Math.min(scaleX, scaleY);
-  img.scale(scale);
+				var reader = new FileReader();
 
-  console.log('userImg loaded:', {
-    width: img.width,
-    height: img.height,
-    scale: scale,
-    left: img.left,
-    top: img.top
-  });
+				reader.onload = function(e) {
+					fabric.Image.fromURL(e.target.result, function(img) {
+						img.set({
+							hasControls: true,
+							hasBorders: true,
+							selectable: true,
+							cornerColor: 'red',
+							originX: 'center',
+							originY: 'center'
+						});
 
-  canvas.add(img);
-  userImg = img;
-  canvas.setActiveObject(img);
-  document.getElementById('imageLoader').value = '';
+						// Centrar la imagen en el canvas
+						img.left = canvas.width / 2;
+						img.top = canvas.height / 2;
 
-  img.on('mousedown', function() {
-    canvas.setActiveObject(img);
-    document.getElementById('gesture-layer').style.pointerEvents = 'auto';
-  });
-});
+						// Escalado proporcional (tipo contain)
+						const scaleX = canvas.width / img.width;
+						const scaleY = canvas.height / img.height;
+						const scale = Math.min(scaleX, scaleY);
+						img.scale(scale);
 
-};
+						console.log('userImg loaded:', {
+							width: img.width,
+							height: img.height,
+							scale: scale,
+							left: img.left,
+							top: img.top
+						});
+
+						canvas.add(img);
+						userImg = img;
+						canvas.setActiveObject(img);
+						document.getElementById('imageLoader').value = '';
+
+						img.on('mousedown', function() {
+							canvas.setActiveObject(img);
+							document.getElementById('gesture-layer').style.pointerEvents = 'auto';
+						});
+					});
+
+				};
 
 					canvas.sendToBack(fondoImg);
 					canvas.renderAll();
@@ -1003,7 +996,7 @@ function cargarImagenDeFondoImprimible(url) {
     canvas.renderAll();
   }
 
-  // Exportar en alta resolución sin desalinear
+  // Exportar en alta resolución sin escalar dos veces
   const exportCanvas = document.createElement('canvas');
   const exportWidth = 1175;
   const exportHeight = 2480;
@@ -1016,18 +1009,25 @@ function cargarImagenDeFondoImprimible(url) {
 
   const exportScale = exportWidth / canvas.width;
 
-  // Clonamos y escalamos globalmente
   Promise.all(canvas.getObjects().map(obj => {
     return new Promise(resolve => {
       obj.clone(cloned => {
-        cloned.scaleX = obj.scaleX * exportScale;
-        cloned.scaleY = obj.scaleY * exportScale;
-        cloned.left = obj.left * exportScale;
-        cloned.top = obj.top * exportScale;
-        cloned.originX = obj.originX;
-        cloned.originY = obj.originY;
-        resolve(cloned);
-      });
+  const scaledWidth = obj.getScaledWidth() * exportScale;
+  const scaledHeight = obj.getScaledHeight() * exportScale;
+
+  // 🔍 Si es la imagen del usuario, reducimos un 5%
+  const ajuste = (obj === userImg) ? 0.92 : 1;
+
+  cloned.scaleToWidth(scaledWidth * ajuste);
+  cloned.scaleToHeight(scaledHeight * ajuste);
+
+  cloned.left = obj.left * exportScale;
+  cloned.top = obj.top * exportScale;
+  cloned.originX = obj.originX;
+  cloned.originY = obj.originY;
+
+  resolve(cloned);
+});
     });
   })).then(clonedObjects => {
     clonedObjects.forEach(obj => exportFabricCanvas.add(obj));
@@ -1093,6 +1093,7 @@ function cargarImagenDeFondoImprimible(url) {
     });
   });
 });
+
 
 
 
