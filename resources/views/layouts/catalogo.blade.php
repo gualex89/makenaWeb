@@ -122,6 +122,7 @@
 												<li><a href="/catalogo?categoria=BK">Berserk</a></li>
 												<li><a href="/catalogo?categoria=BH">Boku no Hero Academia</a></li>
 												<li><a href="/catalogo?categoria=CZ">Caballeros Del Zodiaco</a></li>
+												<li><a href="/catalogo?categoria=DDD">DanDaDan</a></li>
 												<li><a href="/catalogo?categoria=DN">Death Note</a></li>
 												<li><a href="/catalogo?categoria=DS">Demon Slayer</a></li>
 												<li><a href="/catalogo?categoria=DB">Dragon Ball</a></li>
