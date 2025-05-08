@@ -37,6 +37,12 @@
     <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
+		<!-- SweetAlert2 CSS -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.0/dist/sweetalert2.min.css">
+
+		<!-- SweetAlert2 JS -->
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.0/dist/sweetalert2.min.js"></script>
+
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-P9QG5632');</script>
     <!-- End Google Tag Manager -->
@@ -140,6 +146,12 @@
 												<li><a href="/catalogo?categoria=SD">Slam Dunk</a></li>
 												<li><a href="/catalogo?categoria=SLV">Solo Leveling</a></li>
 												<li><a href="/catalogo?categoria=AMS">Más...</a></li>
+											</ul>
+										</li>
+										<li class="parent"><a href="#">Automovilismo</a>
+											<ul>
+												<li><a href="/catalogo?categoria=CLP" >Colapinto</a></li>
+												
 											</ul>
 										</li>
 										<li class="parent"><a href="/catalogo?categoria=BS">Basquet</a></li>
@@ -489,6 +501,23 @@
 						element.textContent = cartItemCount;
 					});
 				}
+
+				function productoAgregadoAlCarrito() {
+						// Mostrar SweetAlert2 en la esquina superior derecha que desaparece después de 1 segundo
+						Swal.fire({
+								icon: 'success',
+								title: 'Producto agregado al carrito',
+								toast: true, // Hace que se muestre como una notificación tipo toast
+								position: 'top-end', // Lo coloca en la esquina superior derecha
+								showConfirmButton: false, // No muestra el botón de confirmación
+								timer: 1500, // Se cierra automáticamente después de 1 segundo (1000ms)
+								timerProgressBar: true,
+								iconColor: '#4CAF50', // Muestra una barra de progreso que indica el tiempo restante
+								didOpen: () => {
+										Swal.showLoading();
+								}
+						});
+				}
 				
 				function mostrarAviso() {
 					var aviso = document.getElementById("aviso");
@@ -544,7 +573,7 @@
 						localStorage.setItem('cartItems', JSON.stringify(cartItems));
 						updateCartItems();
 						updatePrices();
-						mostrarAviso();
+						productoAgregadoAlCarrito();
 						// Cerrar la modal solo si se ha completado con éxito la acción
 						$('#addToCartModal').modal('hide');
 					} else {

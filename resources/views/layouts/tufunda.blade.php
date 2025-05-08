@@ -45,6 +45,12 @@
     <!-- custom - css include -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
+		<!-- SweetAlert2 CSS -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.0/dist/sweetalert2.min.css">
+
+		<!-- SweetAlert2 JS -->
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.0/dist/sweetalert2.min.js"></script>
+
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-P9QG5632');</script>
     <!-- End Google Tag Manager -->
@@ -623,6 +629,29 @@
 
 				var reader = new FileReader();
 
+				// Mostrar SweetAlert2 con barra de progreso
+				Swal.fire({
+						title: 'Subiendo imagen...',
+						html: `
+								<div>Por favor espera mientras subimos tu imagen.</div>
+								<div class="progress" style="width: 100%; background: #f3f3f3; border-radius: 5px;">
+										<div id="swal-progress-bar" style="width: 0%; height: 20px; background: #4caf50; border-radius: 5px;"></div>
+								</div>
+						`,
+						allowOutsideClick: false,
+						showConfirmButton: false,
+						didOpen: () => {
+								Swal.showLoading();
+						}
+				});
+
+				reader.onprogress = function(event) {
+						if (event.lengthComputable) {
+								var percentLoaded = (event.loaded / event.total) * 100;
+								document.getElementById('swal-progress-bar').style.width = percentLoaded + '%';
+						}
+				};
+
 				reader.onload = function(e) {
 					fabric.Image.fromURL(e.target.result, function(img) {
 						img.set({
@@ -638,6 +667,7 @@
 						img.left = canvas.width / 2;
 						img.top = canvas.height / 2;
 
+			
 						// Escalado proporcional (tipo contain)
 						const scaleX = canvas.width / img.width;
 						const scaleY = canvas.height / img.height;
@@ -674,6 +704,9 @@
 					$('#divTamanioImagen').show();
 					$('#divRotacionImagen').show();
 					$('#agregarAlCarritoBtn').show();
+					
+					// Ocultar SweetAlert2
+					Swal.close();
 			});
 	
 			// Evento de selección para habilitar el gesture-layer solo con imágenes
@@ -935,6 +968,30 @@
 					contenido.style.display = 'none';
 				}
 			}
+
+			function enviarAlCarrito() {
+					// Mostrar SweetAlert2 de "Enviando al carrito"
+					Swal.fire({
+							title: 'Enviando al carrito...',
+							html: `
+									<div>Por favor espere mientras agregamos el producto al carrito.</div>
+									<div class="progress" style="width: 100%; background: #f3f3f3; border-radius: 5px;">
+											<div id="swal-progress-bar" style="width: 0%; height: 20px; background: #4caf50; border-radius: 5px;"></div>
+									</div>
+							`,
+							allowOutsideClick: false,
+							showConfirmButton: false,
+							didOpen: () => {
+									Swal.showLoading();
+							}
+					});
+
+					// Aquí iría el código real para enviar al carrito (proceso inmediato)
+					console.log('Producto enviado al carrito');
+					
+					// Cerrar SweetAlert2 cuando el proceso se complete (sin retraso)
+					
+			}
 		</script>
 		
 		
@@ -969,7 +1026,8 @@
 				document.getElementById('agregarAlCarritoBtn').addEventListener('click', function () {
   const selectedMarca = document.getElementById('marcasDropdown').value;
   const selectedModelo = document.getElementById('modelosDropdown').value;
-  $('#chargingModal').modal('show');
+  /* $('#chargingModal').modal('show'); */
+	enviarAlCarrito();
   const modeloSinEspacios = selectedModelo.replace(/\s+/g, '-');
 
   const uniqueName = modeloSinEspacios + '_' + Date.now() + '_' + Math.floor(100 + Math.random() * 900) + '.png';
@@ -1086,7 +1144,15 @@
       fondoImg.opacity = 1;
       canvas.renderAll();
       limpiarDropdowns();
-      $('#chargingModal').modal('hide');
+      /* $('#chargingModal').modal('hide'); */
+			Swal.close();
+			Swal.fire({
+        icon: 'success',
+        title: '¡Éxito!',
+        text: 'El producto ha sido enviado al carrito',
+        timer: 1000, // El mensaje de éxito se cierra automáticamente después de 2 segundos
+        showConfirmButton: false // No se necesita botón de "OK"
+    	});
     })
     .catch(error => {
       console.error('Error:', error);
