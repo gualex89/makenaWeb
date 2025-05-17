@@ -59,8 +59,8 @@ class EnvioService
                         "apartment" => "",
                         "city" => $orden->provincia,
                         "provinceCode" => $orden->provinceCode,
-                        "postalCode" => $orden->codigo_postal,
-                        "observation"=> $orden->observacion_entrega,
+                        "postalCode" => $orden->codigo_postal
+                        
                     ],
                     "weight" => 150,
                     "declaredValue" => 13500.00,
