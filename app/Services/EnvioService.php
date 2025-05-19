@@ -134,7 +134,7 @@ class EnvioService
         }
 
         return response()->json([
-            'message' => 'Error al obtener tarifas',
+            'message' => 'Error al crear envio',
             'error' => $response->body()
         ], $response->status());
     }
