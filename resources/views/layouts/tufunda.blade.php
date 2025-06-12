@@ -1070,22 +1070,20 @@
   Promise.all(canvas.getObjects().map(obj => {
     return new Promise(resolve => {
       obj.clone(cloned => {
-  const scaledWidth = obj.getScaledWidth() * exportScale;
-  const scaledHeight = obj.getScaledHeight() * exportScale;
+				// 🔍 Si es la imagen del usuario, reducimos un 5%
+				const ajuste = (obj === userImg) ? 0.92 : 1;
 
-  // 🔍 Si es la imagen del usuario, reducimos un 5%
-  const ajuste = (obj === userImg) ? 0.92 : 1;
+				cloned.scaleX = obj.scaleX * exportScale * ajuste;
+				cloned.scaleY = obj.scaleY * exportScale * ajuste;
 
-  cloned.scaleToWidth(scaledWidth * ajuste);
-  cloned.scaleToHeight(scaledHeight * ajuste);
+				cloned.left = obj.left * exportScale;
+				cloned.top = obj.top * exportScale;
+				cloned.originX = obj.originX;
+				cloned.originY = obj.originY;
 
-  cloned.left = obj.left * exportScale;
-  cloned.top = obj.top * exportScale;
-  cloned.originX = obj.originX;
-  cloned.originY = obj.originY;
+				resolve(cloned);
+			});
 
-  resolve(cloned);
-});
     });
   })).then(clonedObjects => {
     clonedObjects.forEach(obj => exportFabricCanvas.add(obj));
