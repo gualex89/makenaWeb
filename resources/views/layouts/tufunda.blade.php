@@ -1070,19 +1070,36 @@
   Promise.all(canvas.getObjects().map(obj => {
     return new Promise(resolve => {
       obj.clone(cloned => {
-				// 🔍 Si es la imagen del usuario, reducimos un 5%
-				const ajuste = (obj === userImg) ? 0.92 : 1;
+  const esTexto = obj.type === 'textbox';
+  const ajuste = (obj === userImg || esTexto) ? 0.92 : 1;
 
-				cloned.scaleX = obj.scaleX * exportScale * ajuste;
-				cloned.scaleY = obj.scaleY * exportScale * ajuste;
+  cloned.scaleX = obj.scaleX * exportScale * ajuste;
+  cloned.scaleY = obj.scaleY * exportScale * ajuste;
 
-				cloned.left = obj.left * exportScale;
-				cloned.top = obj.top * exportScale;
-				cloned.originX = obj.originX;
-				cloned.originY = obj.originY;
+  let left = obj.left * exportScale;
+  let top = obj.top * exportScale;
 
-				resolve(cloned);
-			});
+  if (esTexto) {
+    const offsetTop = 125;
+
+    // ⚖️ Calculamos ancho escalado real tras aplicar ajuste
+    const anchoFinal = obj.getScaledWidth() * exportScale * ajuste;
+
+    // 🧠 Compensamos la diferencia para centrarlo correctamente sin pasarnos
+    const compensacionIzquierda = Math.min((1 - ajuste) * anchoFinal / 2, 40);
+
+    left += compensacionIzquierda;
+    top += offsetTop;
+  }
+
+  cloned.left = left;
+  cloned.top = top;
+  cloned.originX = obj.originX;
+  cloned.originY = obj.originY;
+
+  resolve(cloned);
+});
+
 
     });
   })).then(clonedObjects => {
