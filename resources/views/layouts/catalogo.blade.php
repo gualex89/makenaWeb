@@ -247,14 +247,18 @@
 													<img src="{{ Voyager::image($image->image) }}" alt="{{ $image->nombreFundas }}">
 													<ul class="product_action_btns ul_li_block text-uppercase text-center clearfix">
 														<li><a class="alCarrito" href="#!"><span><i class="fas fa-shopping-cart"></i></span> <span>Seleccioná tu modelo</span></a></li>
-														<li><a href="#!" class="ver-btn" data-image="{{ Voyager::image($image->image) }}" data-title="{{ $image->file_name }}"><span><i class="fas fa-search"></i></span> <span>Ver</span></a></li>
+														<li>
+															<a href="{{ route('catalogo.show', $image->slug) }}">
+																<span><i class="fas fa-search"></i></span> <span>Ver</span>
+															</a>
+														</li>
 														
 													</ul>
 												</div>
 												<div class="item_content">
 													<span class="item_price">{{$precioFundas}}</span>
 													<h3  class="item_title" id="codigo_producto">
-														<a href="#!">{{$image->file_name}}</a>
+														<a href="{{ route('catalogo.show', $image->slug) }}">{{ $image->file_name }}</a>
 													</h3>
 													<ul class="rating_star ul_li clearfix">
 														<li><i class="fas fa-star"></i></li>
@@ -346,7 +350,7 @@
 			<div class="footer_widget_area sec_ptb_100 clearfix" data-background="images/backgrounds/makenaFooterBackground.webp">
 				<div class="container">
 					<div class="row justify-content-lg-between">
-
+						
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
 							<div class="footer_widget footer_about text-center">
 								<div class="brand_logo mb_30">

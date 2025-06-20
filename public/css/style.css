@@ -12275,6 +12275,40 @@ padding: 10px;
   margin-top: 30px;
   position: relative;
 }
+
+.item_price_dinamico{
+  z-index: 1;
+  
+  height: 35px;
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 37px;
+  padding: 0px 16px;
+  
+  text-align: center;
+  background-color: #202020;
+}
+.btn_seleccionar_modelo{
+  z-index: 1;
+  
+  height: 35px;
+  color: #ffffff;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 37px;
+  padding: 0px 16px;
+  
+  text-align: center;
+  background-color: #202020;
+}
+
+/* Button to select model - hover effect */
+.btn_seleccionar_modelo:hover {
+  background-color: #F831FE;
+  color: #ffffff;/* Add your desired hover styles here */
+
+}
 .motorcycle_product_grid .product_label {
   top: 25px;
   z-index: 1;
@@ -24796,6 +24830,41 @@ blockquote .blockquote_title {
   .sec_ptb_140 {
     padding: 100px 0px;
   }
+
+  /* Info Dianamico Section */
+  #info_dinamico {
+    /* Center align text within the element */
+    text-align: center;
+    margin-top: 10px !important;
+    padding-top: 0px !important;
+
+  }
+  #info_dinamico h1{
+    font-size: 2rem;
+
+  }
+  #info_dinamico h3{
+    font-size: 1.2rem;
+    
+
+  }
+
+  .contenedorGeneralDinamico{
+    /* padding-top: 0px !important; */
+  }
+
+  #imagenDinamico {
+    width: 60% !important;
+  }
+
+  .containerImagenDinamico{
+    margin-bottom: 0px !important;
+  }
+
+  .item_price_dinamico {
+    
+  }
+ 
 
   .mb_100 {
     margin-bottom: 80px;
