@@ -23,7 +23,7 @@
 
     <img src="{{ $message->embed($pathToImage) }}" alt="Logo de Makena">
     <h1>¡Tu compra se procesó de forma correcta!</h1>
-    <h2>Tu número de orden es: MK-{{ $orden }}</h2>
+    <h2>Tu número de orden es: {{ $orden }}</h2>
     <h3>ID de pago: {{ $payment_id }}</h3>
 
     @if(isset($downloads) && count($downloads) > 0)
