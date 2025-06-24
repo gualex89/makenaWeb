@@ -8,6 +8,7 @@ use App\Http\Controllers\TuFundaController;
 use App\Http\Controllers\CarritoController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\FrecuentesController;
+use App\Http\Controllers\OrdenCompraController;
 use App\Http\Controllers\ZippinController;
 use App\Http\Controllers\MercadoPagoController;
 use App\Http\Controllers\webhook;
@@ -72,3 +73,5 @@ Route::get('/frecuentes', [FrecuentesController::class, 'Frecuentes'])->name('Fr
 
 
 Route::post('/webhook', [webhook::class, 'handleWebhook']);
+
+Route::get('/checkout-orden-compra', [OrdenCompraController::class, 'mostrarOrden']);
