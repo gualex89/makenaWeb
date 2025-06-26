@@ -151,6 +151,7 @@
 										<li class="parent"><a href="#">Automovilismo</a>
 											<ul>
 												<li><a href="/catalogo?categoria=CLP" >Colapinto</a></li>
+												<li><a href="/catalogo?categoria=F1" >F1</a></li>
 												
 											</ul>
 										</li>
