@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 
     <meta charset="utf-8">
@@ -7,15 +8,18 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <title>Fundas de Celu Manga y Anime - Samsung, Motorola, Xiaomi, iPhone | Makena</title>
-    <meta name="description" content="Todo lo que buscas en una funda con acabado brillante, imagen Ultra HD y agarres laterales anti-slip para Samsung, Motorola, Xiaomi y iPhone. Amplio catálogo disponible.">
-    <meta name="keywords" content="fundas para celulares, fundas, carcasas, anime, manga, Dragon Ball, Naruto, Samsung, iPhone, Xiaomi, Motorola, Argentina, imagen, catálogo, personalizar">
+    <meta name="description"
+        content="Todo lo que buscas en una funda con acabado brillante, imagen Ultra HD y agarres laterales anti-slip para Samsung, Motorola, Xiaomi y iPhone. Amplio catálogo disponible.">
+    <meta name="keywords"
+        content="fundas para celulares, fundas, carcasas, anime, manga, Dragon Ball, Naruto, Samsung, iPhone, Xiaomi, Motorola, Argentina, imagen, catálogo, personalizar">
 
     <link rel="canonical" href="https://makenafundas.com.ar/catalogo">
     <link rel="shortcut icon" href="images/logo/makenaminiicon.png">
 
     <!-- Open Graph Meta -->
     <meta property="og:title" content="Fundas de Celu Manga y Anime - Makena">
-    <meta property="og:description" content="Encuentra fundas con acabado brillante, imagen Ultra HD y agarres anti-slip. Samsung, Motorola, Xiaomi, iPhone. Amplio catálogo de anime y manga.">
+    <meta property="og:description"
+        content="Encuentra fundas con acabado brillante, imagen Ultra HD y agarres anti-slip. Samsung, Motorola, Xiaomi, iPhone. Amplio catálogo de anime y manga.">
     <meta property="og:image" content="https://makenafundas.com.ar/images/logo/makenaminiicon.png">
     <meta property="og:url" content="https://makenafundas.com.ar/catalogo">
     <meta property="og:type" content="website">
@@ -23,7 +27,8 @@
     <!-- Twitter Card Meta -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Fundas de Celu Manga y Anime - Makena">
-    <meta name="twitter:description" content="Fundas de alta calidad para Samsung, Motorola, Xiaomi y iPhone. Amplio catálogo de anime y manga en Makena.">
+    <meta name="twitter:description"
+        content="Fundas de alta calidad para Samsung, Motorola, Xiaomi y iPhone. Amplio catálogo de anime y manga en Makena.">
     <meta name="twitter:image" content="https://makenafundas.com.ar/images/logo/makenaminiicon.png">
 
     <!-- CSS & Frameworks -->
@@ -35,10 +40,25 @@
     <link rel="stylesheet" type="text/css" href="css/slick-theme.css">
     <link rel="stylesheet" type="text/css" href="css/magnific-popup.css">
     <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}?v={{ time() }}">
+
 
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-P9QG5632');</script>
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-P9QG5632');
+    </script>
     <!-- End Google Tag Manager -->
 
     <!-- Custom Styles -->
@@ -47,8 +67,8 @@
             display: none;
             list-style: none;
         }
-        
-        .sb_category ul li.active > ul {
+
+        .sb_category ul li.active>ul {
             display: block;
         }
     </style>
@@ -56,426 +76,464 @@
 </head>
 
 
-	<body class="home_motorcycle">
+<body class="home_motorcycle">
 
 
-		<!-- Google Tag Manager (noscript) -->
-		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9QG5632"
-		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<!-- End Google Tag Manager (noscript) -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9QG5632" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
-		<!-- backtotop - start -->
-		<div id="thetop"></div>
-		<div class="backtotop bg_wts">
-			<a href="http://wa.me/541122444188" class="go_to_wts" >
-				<i class="fab fa-whatsapp" style="font-size: 24px;"></i>
-			</a>
-		</div>
-		<!-- backtotop - end -->
-
-	
-		<!-- header_section - start -->
-		@include('partials.header')
-
-		<!-- header_section - end
-		================================================== 
-
-		
+    <!-- backtotop - start -->
+    <div id="thetop"></div>
+    <div class="backtotop bg_wts">
+        <a href="http://wa.me/541122444188" class="go_to_wts">
+            <i class="fab fa-whatsapp" style="font-size: 24px;"></i>
+        </a>
+    </div>
+    <!-- backtotop - end -->
 
 
+    <!-- header_section - start -->
+    @include('partials.header')
 
-		================================================== -->
-		<main>
+    <!-- header_section - end
+  ==================================================
 
-			<!-- header_section - start
-		================================================== -->
-			
-		
-			<!-- sidebar mobile menu & sidebar cart - start
-			================================================== -->
-			@include('partials.sidebar')
-
-			<!-- sidebar mobile menu & sidebar cart - end
-			================================================== -->
+  
 
 
-			<!-- breadcrumb_section - start
-			================================================== -->
-			
-			<!-- breadcrumb_section - end
-			================================================== -->
-			<!-- product_section - start
-			================================================== -->
-			<div id="aviso" class="aviso-flotante"></div>
-			<section class="product_section sec_ptb_50 clearfix" style="margin-top: 80px">
-				<div class="container maxw_1430">
-					<div class="row justify-content-lg-between">
-						
-			
-						<div class="col-lg-12 order-last" id="ver-categoria">
-							<div class="tab-content">
-								<div id="grid_layout" class="tab-pane active">
-									<div class="row mb_50 justify-content-center">
-										@foreach($imagesCatalogoDuo as $image)
-										<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 image-item" data-category="{{ substr($image->file_name, 0, 2) }}">
-											<div class="motorcycle_product_grid">
-												<div class="item_image">
-													<img src="{{ Voyager::image($image->image) }}" alt="{{ $image->nombreFundas }}">
-													<ul class="product_action_btns ul_li_block text-uppercase text-center clearfix">
-														<li><a class="alCarrito" href="#!" data-image="{{ Voyager::image($image->image) }}" data-title="{{ $image->file_name }}"><span><i class="fas fa-shopping-cart"></i></span> <span>Agregar al Carrito</span></a></li>
-														
-														<li><a href="#!" class="ver-btn" data-image="{{ Voyager::image($image->image) }}" data-title="{{ $image->file_name }}"><span><i class="fas fa-search"></i></span> <span>Ver</span></a></li>
-														
-													</ul>
-												</div>
-												<div class="item_content">
-													<span class="item_price">{{$precioFundasDobles}}</span>
-													<h3  class="item_title" id="codigo_producto">
-														<a href="#!">{{$image->file_name}}</a>
-													</h3>
-													<ul class="rating_star ul_li clearfix">
-														<li><i class="fas fa-star"></i></li>
-														<li><i class="fas fa-star"></i></li>
-														<li><i class="fas fa-star"></i></li>
-														<li><i class="fas fa-star"></i></li>
-														<li><i class="fas fa-star"></i></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-										@endforeach
-									</div>
-									<div class="pagination-info text-center">
-										<p>
-											Mostrando {{ $imagesCatalogoDuo->firstItem() }} a {{ $imagesCatalogoDuo->lastItem() }} de {{ $imagesCatalogoDuo->total() }} resultados
-										</p>
-										<div class="pagination-navigation carousel_nav">
-											<div class="pagination-navigation carousel_nav">
-												<button type="button" class="pagination-button main_left_arrow{{ $imagesCatalogoDuo->onFirstPage() ? ' disabled' : '' }}"
-														onclick="if (!this.classList.contains('disabled')) { window.location='{{ $imagesCatalogoDuo->previousPageUrl() }}{{ request()->has('categoria') ? '&categoria=' . request('categoria') : '' }}'; }">
-													<i class="fal fa-arrow-left"></i>
-												</button>
-												<button type="button" class="pagination-button main_right_arrow{{ $imagesCatalogoDuo->hasMorePages() ? '' : ' disabled' }}"
-														onclick="if (!this.classList.contains('disabled')) { window.location='{{ $imagesCatalogoDuo->nextPageUrl() }}{{ request()->has('categoria') ? '&categoria=' . request('categoria') : '' }}'; }">
-													<i class="fal fa-arrow-right"></i>
-												</button>
-											</div>
-										</div>
-									<!-- Agregar enlaces de paginación aquí -->
-									
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!-- product_section - end
-			================================================== -->
+
+  ================================================== -->
+    <main>
+
+        <!-- header_section - start
+  ================================================== -->
 
 
-			
-			<!-- Modal -->
-			<div class="modal fade" id="addToCartModal" tabindex="-1" role="dialog" aria-labelledby="addToCartModalLabel" aria-hidden="true">
-				<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-					<h3 class="modal-title" id="addToCartModalLabel">Seleccioná tus modelos</h3>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-					</div>
-					<div class="modal-body">
-						<div class="sb_widget sb_recent_post seleccionadores">
-							<div class="sb_widget sb_category">
-								<div class="row gx-3 gy-3 text-center">
-									<!-- Funda #1 -->
-									<div class="col-lg-6 col-md-6 col-6 d-flex flex-column align-items-center">
-											{{-- <h3>Funda #1</h3> --}}
-											<div class="divMarcaDropdown2 d-flex flex-column align-items-center">
-													<label for="marcasDropdown" class="fw-bold text-center" style="font-size: larger; ">Marca</label>
-													<select name="marcas" id="marcasDropdown" class="form-control text-center" style="width: 50%;">
-															<option value="">Seleccione</option>
-													</select>
-											</div>
-											<div class="divModeloDropdown2  d-flex flex-column align-items-center">
-													<label for="modelosDropdown" class="fw-bold text-center" style="font-size: larger; ">Modelo</label>
-													<select name="modelos" id="modelosDropdown" class="form-control text-center" style="width: 50%;">
-															<option value="">Seleccione</option>
-													</select>
-											</div>
-									</div>
-							
-									<!-- Funda #2 -->
-									<div class="col-lg-6 col-md-6 col-6 d-flex flex-column align-items-center">
-											{{-- <h3>Funda #2</h3> --}}
-											<div class="divMarcaDropdown2 d-flex flex-column align-items-center">
-													<label for="marcasDropdown2" class="fw-bold text-center" style="font-size: larger; ">Marca</label>
-													<select name="marcas2" id="marcasDropdown2" class="form-control text-center" style="width: 50%;">
-															<option value="">Seleccione</option>
-													</select>
-											</div>
-											<div class="divModeloDropdown2  d-flex flex-column align-items-center">
-													<label for="modelosDropdown2" class="fw-bold text-center" style="font-size: larger; ">Modelo</label>
-													<select name="modelos2" id="modelosDropdown2" class="form-control text-center" style="width: 50%;">
-															<option value="">Seleccione</option>
-													</select>
-											</div>
-									</div>
-							</div>
-							
-								<img src="" alt="{{ $image->nombreFundas }}" id="productImageAlcarrito" style="max-width: 100%;">
-							</div>
-						</div>
-					</div>
-					<div style="z-index: 2000" class="modal-footer">
-						<button type="button" id="addToCartModalOkButton" class="btn btn-secondary" data-dismiss="modal" disabled>AGREGAR AL CARRITO</button>
-					</div>
-				</div>
-				</div>
-			</div>
+        <!-- sidebar mobile menu & sidebar cart - start
+   ================================================== -->
+        @include('partials.sidebar')
+
+        <!-- sidebar mobile menu & sidebar cart - end
+   ================================================== -->
 
 
-		</main>
-		<!-- main body - end
-		================================================== -->
+        <!-- breadcrumb_section - start
+   ================================================== -->
+
+        <!-- breadcrumb_section - end
+   ================================================== -->
+        <!-- product_section - start
+   ================================================== -->
+        <div id="aviso" class="aviso-flotante"></div>
+        <section class="product_section sec_ptb_50 clearfix" style="margin-top: 80px">
+            <div class="container maxw_1430">
+                <div class="row justify-content-lg-between">
 
 
-		<!-- footer_section - start
-		================================================== -->
-		<footer class="footer_section motorcycle_footer clearfix">
-			<div class="footer_widget_area sec_ptb_100 clearfix" data-background="images/backgrounds/makenaFooterBackground.webp">
-				<div class="container">
-					<div class="row justify-content-lg-between">
+                    <div class="col-lg-12 order-last" id="ver-categoria">
+                        <div class="tab-content">
+                            <div id="grid_layout" class="tab-pane active">
+                                <div class="row mb_50 justify-content-center">
+                                    @foreach ($imagesCatalogoDuo as $image)
+                                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 image-item"
+                                            data-category="{{ substr($image->file_name, 0, 2) }}">
+                                            <div class="motorcycle_product_grid">
+                                                <div class="item_image">
+                                                    <img src="{{ Voyager::image($image->image) }}"
+                                                        alt="{{ $image->nombreFundas }}">
+                                                    <ul
+                                                        class="product_action_btns ul_li_block text-uppercase text-center clearfix">
+                                                        <li><a class="alCarrito" href="#!"
+                                                                data-image="{{ Voyager::image($image->image) }}"
+                                                                data-title="{{ $image->file_name }}"><span><i
+                                                                        class="fas fa-shopping-cart"></i></span>
+                                                                <span>Agregar al Carrito</span></a></li>
 
-						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
-							<div class="footer_widget footer_about text-center">
-								<div class="brand_logo mb_30">
-									<a href="#!">
-										<img src="images/logo/logomakena.png" alt="logo makena">
-									</a>
-								</div>
+                                                        <li><a href="#!" class="ver-btn"
+                                                                data-image="{{ Voyager::image($image->image) }}"
+                                                                data-title="{{ $image->file_name }}"><span><i
+                                                                        class="fas fa-search"></i></span>
+                                                                <span>Ver</span></a></li>
 
-								<ul class="footer_contact_info ul_li_block mb_30 clearfix">
-									<li><span>Email:</span> contacto@makenafundas.com.ar</li>
-									<li><span>Teléfono:</span> 11 2244 4188</li>
-								</ul>
+                                                    </ul>
+                                                </div>
+                                                <div class="item_content">
+                                                    <span class="item_price">{{ $precioFundasDobles }}</span>
+                                                    <h3 class="item_title" id="codigo_producto">
+                                                        <a href="#!">{{ $image->file_name }}</a>
+                                                    </h3>
+                                                    <ul class="rating_star ul_li clearfix">
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                                <div class="pagination-info text-center">
+                                    <p>
+                                        Mostrando {{ $imagesCatalogoDuo->firstItem() }} a
+                                        {{ $imagesCatalogoDuo->lastItem() }} de {{ $imagesCatalogoDuo->total() }}
+                                        resultados
+                                    </p>
+                                    <div class="pagination-navigation carousel_nav">
+                                        <div class="pagination-navigation carousel_nav">
+                                            <button type="button"
+                                                class="pagination-button main_left_arrow{{ $imagesCatalogoDuo->onFirstPage() ? ' disabled' : '' }}"
+                                                onclick="if (!this.classList.contains('disabled')) { window.location='{{ $imagesCatalogoDuo->previousPageUrl() }}{{ request()->has('categoria') ? '&categoria=' . request('categoria') : '' }}'; }">
+                                                <i class="fal fa-arrow-left"></i>
+                                            </button>
+                                            <button type="button"
+                                                class="pagination-button main_right_arrow{{ $imagesCatalogoDuo->hasMorePages() ? '' : ' disabled' }}"
+                                                onclick="if (!this.classList.contains('disabled')) { window.location='{{ $imagesCatalogoDuo->nextPageUrl() }}{{ request()->has('categoria') ? '&categoria=' . request('categoria') : '' }}'; }">
+                                                <i class="fal fa-arrow-right"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- Agregar enlaces de paginación aquí -->
 
-								<ul class="circle_social_links ul_li clearfix justify-content-center d-flex">
-									<li><a href="https://www.instagram.com/makenafundas/"><i class="fab fa-instagram"></i></a></li>
-									<li><a href="https://wa.me/541122444188"><i class="fab fa-whatsapp"></i></a></li>
-									<li><a href="https://www.facebook.com/makenafundas"><i class="fab fa-facebook-f"></i></a></li>
-								</ul>
-							</div>
-						</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- product_section - end
+   ================================================== -->
 
-						
 
-						
 
-						
+        <!-- Modal -->
+        <div class="modal fade" id="addToCartModal" tabindex="-1" role="dialog"
+            aria-labelledby="addToCartModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title" id="addToCartModalLabel">Seleccioná tus modelos</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="sb_widget sb_recent_post seleccionadores">
+                            <div class="sb_widget sb_category">
+                                <div class="row gx-3 gy-3 text-center">
+                                    <!-- Funda #1 -->
+                                    <div class="col-lg-6 col-md-6 col-6 d-flex flex-column align-items-center">
+                                        {{-- <h3>Funda #1</h3> --}}
+                                        <div class="divMarcaDropdown2 d-flex flex-column align-items-center">
+                                            <label for="marcasDropdown" class="fw-bold text-center"
+                                                style="font-size: larger; ">Marca</label>
+                                            <select name="marcas" id="marcasDropdown"
+                                                class="form-control text-center" style="width: 50%;">
+                                                <option value="">Seleccione</option>
+                                            </select>
+                                        </div>
+                                        <div class="divModeloDropdown2  d-flex flex-column align-items-center">
+                                            <label for="modelosDropdown" class="fw-bold text-center"
+                                                style="font-size: larger; ">Modelo</label>
+                                            <select name="modelos" id="modelosDropdown"
+                                                class="form-control text-center" style="width: 50%;">
+                                                <option value="">Seleccione</option>
+                                            </select>
+                                        </div>
+                                    </div>
 
-					</div>
-				</div>
-			</div>
+                                    <!-- Funda #2 -->
+                                    <div class="col-lg-6 col-md-6 col-6 d-flex flex-column align-items-center">
+                                        {{-- <h3>Funda #2</h3> --}}
+                                        <div class="divMarcaDropdown2 d-flex flex-column align-items-center">
+                                            <label for="marcasDropdown2" class="fw-bold text-center"
+                                                style="font-size: larger; ">Marca</label>
+                                            <select name="marcas2" id="marcasDropdown2"
+                                                class="form-control text-center" style="width: 50%;">
+                                                <option value="">Seleccione</option>
+                                            </select>
+                                        </div>
+                                        <div class="divModeloDropdown2  d-flex flex-column align-items-center">
+                                            <label for="modelosDropdown2" class="fw-bold text-center"
+                                                style="font-size: larger; ">Modelo</label>
+                                            <select name="modelos2" id="modelosDropdown2"
+                                                class="form-control text-center" style="width: 50%;">
+                                                <option value="">Seleccione</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
 
-			<div class="footer_bottom text-center" data-bg-color="#151515">
-				<div class="container">
-					<p class="copyright_text mb-0">
-						© Diseñado por <a href="https://wa.me/56967656673" class="author_link text-white">Tatsu Web Design</a>
-					</p>
-				</div>
-			</div>
-		</footer>
-		<!-- footer_section - end
-		================================================== -->
-		{{-- modal de la imagen del modelo --}}
-		<div class="modal fade" id="productImageModal" tabindex="-1" role="dialog" aria-labelledby="productImageModalLabel" aria-hidden="true" >
-			<div class="modal-dialog modal-md" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="productImageModalLabel">{{ $image->file_name }}</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-					<div class="modal-body">
-						<img src="" alt="{{ $image->nombreFundas }}" id="productImage" style="max-width: 100%;">
-					</div>
-				</div>
-			</div>
-		</div>
+                                <img src="" alt="{{ $image->nombreFundas }}" id="productImageAlcarrito"
+                                    style="max-width: 100%;">
+                            </div>
+                        </div>
+                    </div>
+                    <div style="z-index: 2000" class="modal-footer">
+                        <button type="button" id="addToCartModalOkButton" class="btn btn-secondary"
+                            data-dismiss="modal" disabled>AGREGAR AL CARRITO</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-		
-		<!-- fraimwork - jquery include -->
-		<script src="js/jquery-3.5.1.min.js"></script>
-		<script src="js/popper.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
 
-		<!-- mobile menu - jquery include -->
-        <script src="js/mCustomScrollbar.js"></script>
+    </main>
+    <!-- main body - end
+  ================================================== -->
 
-		<!-- google map - jquery include -->
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDk2HrmqE4sWSei0XdKGbOMOHN3Mm2Bf-M&ver=2.1.6"></script>
-        <script src="js/gmaps.min.js"></script>
 
-		<!-- animation - jquery include -->
-        <script src="js/parallaxie.js"></script>
-        <script src="js/wow.min.js"></script>
+    <!-- footer_section - start
+  ================================================== -->
+    <footer class="footer_section motorcycle_footer clearfix">
+        <div class="footer_widget_area sec_ptb_100 clearfix"
+            data-background="images/backgrounds/makenaFooterBackground.webp">
+            <div class="container">
+                <div class="row justify-content-lg-between">
 
-		<!-- nice select - jquery include -->
-        <script src="js/nice-select.min.js"></script>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                        <div class="footer_widget footer_about text-center">
+                            <div class="brand_logo mb_30">
+                                <a href="#!">
+                                    <img src="images/logo/logomakena.png" alt="logo makena">
+                                </a>
+                            </div>
 
-		<!-- carousel - jquery include -->
-        <script src="js/slick.min.js"></script>
+                            <ul class="footer_contact_info ul_li_block mb_30 clearfix">
+                                <li><span>Email:</span> contacto@makenafundas.com.ar</li>
+                                <li><span>Teléfono:</span> 11 2244 4188</li>
+                            </ul>
 
-		<!-- countdown timer - jquery include -->
-        <script src="js/countdown.js"></script>
+                            <ul class="circle_social_links ul_li clearfix justify-content-center d-flex">
+                                <li><a href="https://www.instagram.com/makenafundas/"><i
+                                            class="fab fa-instagram"></i></a></li>
+                                <li><a href="https://wa.me/541122444188"><i class="fab fa-whatsapp"></i></a></li>
+                                <li><a href="https://www.facebook.com/makenafundas"><i
+                                            class="fab fa-facebook-f"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
 
-		<!-- popup images & videos - jquery include -->
-        <script src="js/magnific-popup.min.js"></script>
 
-		<!-- filtering & masonry layout - jquery include -->
-        <script src="js/isotope.pkgd.min.js"></script>
-        <script src="js/masonry.pkgd.min.js"></script>
-        <script src="js/imagesloaded.pkgd.min.js"></script>
 
-		<!-- jquery ui - jquery include -->
-        <script src="js/jquery-ui.js"></script>
 
-		<!-- custom - jquery include -->
-		<script src="js/custom.js"></script>
-		<script>
-			$(document).ready(function() {
-    // Mostrar todas las imágenes al cargar la página
-    showImages('all');
 
-    // Función para mostrar/ocultar imágenes según la categoría
-    function showImages(category) {
-		if (window.innerWidth < 600 && window.location.pathname.startsWith('/catalogo') && window.location.search.includes('categoria=')) {
-			window.scrollBy({ top: 500, behavior: 'smooth' });
-		}
-        $('.image-item').hide(); // Ocultar todas las imágenes
 
-        if (category === 'all') {
-            $('.image-item').show(); // Mostrar todas las imágenes si la categoría es 'all'
-        } else {
-            $('.image-item[data-category="' + category + '"]').show(); // Mostrar imágenes de la categoría seleccionada
-        }
-    }
 
-    // Manejar el clic en los enlaces de filtrado
-    $('a[data-category]').on('click', function(e) {
-        var category = $(this).data('category');
-        showImages(category);
-    });
+                </div>
+            </div>
+        </div>
 
-    // Capturar el clic en los elementos de categoría para alternar la clase 'active'
-    const parentItems = document.querySelectorAll('.parent');
+        <div class="footer_bottom text-center" data-bg-color="#151515">
+            <div class="container">
+                <p class="copyright_text mb-0">
+                    © Diseñado por <a href="https://wa.me/56967656673" class="author_link text-white">Tatsu Web
+                        Design</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- footer_section - end
+  ================================================== -->
+    {{-- modal de la imagen del modelo --}}
+    <div class="modal fade" id="productImageModal" tabindex="-1" role="dialog"
+        aria-labelledby="productImageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productImageModalLabel">{{ $image->file_name }}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="" alt="{{ $image->nombreFundas }}" id="productImage"
+                        style="max-width: 100%;">
+                </div>
+            </div>
+        </div>
+    </div>
 
-    parentItems.forEach(item => {
-        item.addEventListener('click', function (event) {
-            this.classList.toggle('active');
 
-            // Desactivar todas las categorías excepto la actual
-            parentItems.forEach(parent => {
-                if (parent !== this && parent.classList.contains('active')) {
-                    parent.classList.remove('active');
+    <!-- fraimwork - jquery include -->
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- mobile menu - jquery include -->
+    <script src="js/mCustomScrollbar.js"></script>
+
+    <!-- google map - jquery include -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDk2HrmqE4sWSei0XdKGbOMOHN3Mm2Bf-M&ver=2.1.6"></script>
+    <script src="js/gmaps.min.js"></script>
+
+    <!-- animation - jquery include -->
+    <script src="js/parallaxie.js"></script>
+    <script src="js/wow.min.js"></script>
+
+    <!-- nice select - jquery include -->
+    <script src="js/nice-select.min.js"></script>
+
+    <!-- carousel - jquery include -->
+    <script src="js/slick.min.js"></script>
+
+    <!-- countdown timer - jquery include -->
+    <script src="js/countdown.js"></script>
+
+    <!-- popup images & videos - jquery include -->
+    <script src="js/magnific-popup.min.js"></script>
+
+    <!-- filtering & masonry layout - jquery include -->
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/masonry.pkgd.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+
+    <!-- jquery ui - jquery include -->
+    <script src="js/jquery-ui.js"></script>
+
+    <!-- custom - jquery include -->
+    <script src="js/custom.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Mostrar todas las imágenes al cargar la página
+            showImages('all');
+
+            // Función para mostrar/ocultar imágenes según la categoría
+            function showImages(category) {
+                if (window.innerWidth < 600 && window.location.pathname.startsWith('/catalogo') && window.location
+                    .search.includes('categoria=')) {
+                    window.scrollBy({
+                        top: 500,
+                        behavior: 'smooth'
+                    });
                 }
+                $('.image-item').hide(); // Ocultar todas las imágenes
+
+                if (category === 'all') {
+                    $('.image-item').show(); // Mostrar todas las imágenes si la categoría es 'all'
+                } else {
+                    $('.image-item[data-category="' + category + '"]')
+                .show(); // Mostrar imágenes de la categoría seleccionada
+                }
+            }
+
+            // Manejar el clic en los enlaces de filtrado
+            $('a[data-category]').on('click', function(e) {
+                var category = $(this).data('category');
+                showImages(category);
+            });
+
+            // Capturar el clic en los elementos de categoría para alternar la clase 'active'
+            const parentItems = document.querySelectorAll('.parent');
+
+            parentItems.forEach(item => {
+                item.addEventListener('click', function(event) {
+                    this.classList.toggle('active');
+
+                    // Desactivar todas las categorías excepto la actual
+                    parentItems.forEach(parent => {
+                        if (parent !== this && parent.classList.contains('active')) {
+                            parent.classList.remove('active');
+                        }
+                    });
+                });
             });
         });
-    });
-});
+    </script>
 
-		</script>
-		
-		<script>
-			document.addEventListener("DOMContentLoaded", function() {
-				let cartItemCount = 0;
-				let subtotal = 0;
-				let total = 0;
-				let cartItems = [];
-		
-				function updateCartCounter() {
-					const badgeElements = document.querySelectorAll('.btn_badge');
-					badgeElements.forEach(function(element) {
-						element.textContent = cartItemCount;
-					});
-				}
-				
-				function mostrarAviso() {
-					var aviso = document.getElementById("aviso");
-					aviso.innerText = "¡Producto agregado al carrito!";
-					aviso.style.display = "block";
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let cartItemCount = 0;
+            let subtotal = 0;
+            let total = 0;
+            let cartItems = [];
 
-					// Oculta el aviso después de 3 segundos
-					setTimeout(function() {
-						aviso.style.display = "none";
-					}, 3000);
-				}
-				function updatePrices() {
-					const subtotalElement = document.querySelector('.total_price li:nth-child(1) span:nth-child(2)');
-					const totalElement = document.querySelector('.total_price li:nth-child(2) span:nth-child(2)');
-		
-					subtotalElement.textContent = `$${subtotal}`;
-					totalElement.textContent = `$${total}`;
-				}
-		
-				let price, itemName, imageUrl; // Definir las variables fuera de la función addToCart
+            function updateCartCounter() {
+                const badgeElements = document.querySelectorAll('.btn_badge');
+                badgeElements.forEach(function(element) {
+                    element.textContent = cartItemCount;
+                });
+            }
 
-				function addToCart(productItem) {
-					price = parseFloat(productItem.querySelector('.item_price').textContent.replace('$', ''));
-					itemName = productItem.querySelector('.item_title').textContent;
-					imageUrl = productItem.querySelector('img').getAttribute('src'); // Obtener la URL de la imagen completa
-					
-					// Mostrar la modal
-					$('#addToCartModal').modal('show');
-					
+            function mostrarAviso() {
+                var aviso = document.getElementById("aviso");
+                aviso.innerText = "¡Producto agregado al carrito!";
+                aviso.style.display = "block";
 
-				}
+                // Oculta el aviso después de 3 segundos
+                setTimeout(function() {
+                    aviso.style.display = "none";
+                }, 3000);
+            }
 
-				// Agregar un manejador de eventos para el botón "OK" dentro de la modal
-				document.getElementById('addToCartModalOkButton').addEventListener('click', function() {
-					const selectedMarca = document.getElementById('marcasDropdown').value;
-					const selectedModelo = document.getElementById('modelosDropdown').value;
-					const selectedMarca2 = document.getElementById('marcasDropdown2').value;
-					const selectedModelo2 = document.getElementById('modelosDropdown2').value;
-					
-					// Verificar si se ha seleccionado un modelo
-					if (selectedModelo) {
-						const pendingCartItem = {
-							name: itemName,
-							price: price,
-							image: imageUrl,
-							marca: selectedMarca,
-							modelo: selectedModelo,
-							marca2: selectedMarca2,
-							modelo2: selectedModelo2
-						};
+            function updatePrices() {
+                const subtotalElement = document.querySelector('.total_price li:nth-child(1) span:nth-child(2)');
+                const totalElement = document.querySelector('.total_price li:nth-child(2) span:nth-child(2)');
 
-						// Agregar el artículo al carrito
-						cartItemCount++;
-						subtotal += pendingCartItem.price;
-						total = subtotal;
-						cartItems.push(pendingCartItem);
-						localStorage.setItem('cartItems', JSON.stringify(cartItems));
-						updateCartItems();
-						updatePrices();
-						mostrarAviso();
-						// Cerrar la modal solo si se ha completado con éxito la acción
-						$('#addToCartModal').modal('hide');
-					} else {
-						// Si no se ha seleccionado un modelo, muestra un mensaje de alerta dentro de la modal
-						alert('Por favor, seleccione un modelo');
-					}
-				});
+                subtotalElement.textContent = `$${subtotal}`;
+                totalElement.textContent = `$${total}`;
+            }
 
-				function updateCartItems() {
-					const cartItemsList = document.querySelector('.cart_items_list');
-					cartItemsList.innerHTML = ''; // Limpiar la lista de elementos del carrito
+            let price, itemName, imageUrl; // Definir las variables fuera de la función addToCart
 
-					cartItems.forEach(cartItem => {
-						const cartItemHTML = `
+            function addToCart(productItem) {
+                price = parseFloat(productItem.querySelector('.item_price').textContent.replace('$', ''));
+                itemName = productItem.querySelector('.item_title').textContent;
+                imageUrl = productItem.querySelector('img').getAttribute(
+                'src'); // Obtener la URL de la imagen completa
+
+                // Mostrar la modal
+                $('#addToCartModal').modal('show');
+
+
+            }
+
+            // Agregar un manejador de eventos para el botón "OK" dentro de la modal
+            document.getElementById('addToCartModalOkButton').addEventListener('click', function() {
+                const selectedMarca = document.getElementById('marcasDropdown').value;
+                const selectedModelo = document.getElementById('modelosDropdown').value;
+                const selectedMarca2 = document.getElementById('marcasDropdown2').value;
+                const selectedModelo2 = document.getElementById('modelosDropdown2').value;
+
+                // Verificar si se ha seleccionado un modelo
+                if (selectedModelo) {
+                    const pendingCartItem = {
+                        name: itemName,
+                        price: price,
+                        image: imageUrl,
+                        marca: selectedMarca,
+                        modelo: selectedModelo,
+                        marca2: selectedMarca2,
+                        modelo2: selectedModelo2
+                    };
+
+                    // Agregar el artículo al carrito
+                    cartItemCount++;
+                    subtotal += pendingCartItem.price;
+                    total = subtotal;
+                    cartItems.push(pendingCartItem);
+                    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                    updateCartItems();
+                    updatePrices();
+                    mostrarAviso();
+                    // Cerrar la modal solo si se ha completado con éxito la acción
+                    $('#addToCartModal').modal('hide');
+                } else {
+                    // Si no se ha seleccionado un modelo, muestra un mensaje de alerta dentro de la modal
+                    alert('Por favor, seleccione un modelo');
+                }
+            });
+
+            function updateCartItems() {
+                const cartItemsList = document.querySelector('.cart_items_list');
+                cartItemsList.innerHTML = ''; // Limpiar la lista de elementos del carrito
+
+                cartItems.forEach(cartItem => {
+                    const cartItemHTML = `
 							<li>
 								<div class="item_image">
 									<img src="${cartItem.image}" alt="Funda en carrito ${cartItem.name}">
@@ -492,202 +550,214 @@
 								</div>
 							</li>
 						`;
-						cartItemsList.innerHTML += cartItemHTML;
-					});
-					
-					// Actualizar el contador del carrito
-					updateCartCounter();
-				}
-		
-				// Restaurar el carrito al cargar la página
-				function restoreCart() {
-					const storedCartItems = localStorage.getItem('cartItems');
-					if (storedCartItems) {
-						cartItems = JSON.parse(storedCartItems);
-						cartItemCount = cartItems.length;
-						cartItems.forEach(cartItem => {
-							subtotal += cartItem.price;
-						});
-						total = subtotal;
-		
-						updateCartItems();
-						updatePrices();
-					}
-				}
-				function removeFromCart(item) {
-					const itemName = item.querySelector('.item_title').textContent;
-					
-					// Encontrar el índice del elemento a eliminar en cartItems
-					const indexToRemove = cartItems.findIndex(cartItem => cartItem.name === itemName);
-					
-					if (indexToRemove !== -1) { // Verificar si se encontró el elemento
-						const price = cartItems[indexToRemove].price;
-						
-						// Actualizar subtotal y total
-						subtotal -= price;
-						total = subtotal;
-						
-						// Eliminar el elemento del carrito
-						cartItems.splice(indexToRemove, 1);
-						
-						// Actualizar el almacenamiento local
-						localStorage.setItem('cartItems', JSON.stringify(cartItems));
-						
-						// Actualizar el contador del carrito
-						cartItemCount--;
-						
-						// Actualizar la visualización del carrito
-						updateCartItems();
-						updatePrices();
-						updateCartCounter(); // Actualizar el contador del carrito
-					}
-				}
-					
-		
-				// Llamar a la función para restaurar el carrito al cargar la página
-				restoreCart();
-		
-				document.querySelectorAll('.product_action_btns .alCarrito').forEach(btn => {
-					btn.addEventListener('click', function(event) {
-						event.preventDefault();
+                    cartItemsList.innerHTML += cartItemHTML;
+                });
 
-						const imageUrl = this.getAttribute('data-image');
-						const productName = this.getAttribute('data-title');
-						const productImageElement = document.getElementById('productImageAlcarrito');
-						productImageElement.src = imageUrl;
+                // Actualizar el contador del carrito
+                updateCartCounter();
+            }
 
-						const productItem = this.closest('.motorcycle_product_grid');
-						addToCart(productItem);
-					});
-				});
-				document.querySelectorAll('.ver-btn').forEach(btn => {
-					btn.addEventListener('click', function(event) {
-						event.preventDefault();
-						const imageUrl = this.getAttribute('data-image');
-						const productName = this.getAttribute('data-title');
-						const productImageElement = document.getElementById('productImage');
-						productImageElement.src = imageUrl;
-						const modalTitleElement = document.getElementById('productImageModalLabel');
-						modalTitleElement.textContent = productName;
-						$('#productImageModal').modal('show');
-					});
-				});
-						
-				document.querySelector('.cart_items_list').addEventListener('click', function(event) {
-					if (event.target.classList.contains('remove_btn')) {
-						const item = event.target.closest('li');
-						removeFromCart(item);
-					}
-				});
-			});
-		</script>
-		<script>
-			$(document).ready(function() {
-				// Cargar marcas al cargar la página
-				$.get('/obtener-marcas', function(data) {
-					console.log(data);
-					
-					data.forEach(function(marca) {
-						$('#marcasDropdown').append('<option value="' + marca + '">' + marca + '</option>');
-						$('#marcasDropdown').niceSelect('update');
-						$('#marcasDropdown2').append('<option value="' + marca + '">' + marca + '</option>');
-						$('#marcasDropdown2').niceSelect('update');
-					});
-				});
-		
-				// Manejar cambio en el dropdown de marcas
-				$('#marcasDropdown').change(function() {
-					var marcaSeleccionada = $(this).val();
-		
-					// Hacer una solicitud AJAX para obtener modelos según la marca seleccionada
-					$.get('/obtener-modelos/' + marcaSeleccionada, function(data) {
-						// Limpiar modelos existentes
-						$('#modelosDropdown').empty();
-						$('#modelosDropdown').append($('<option>', {
-							value: '',
-							text: 'Seleccione'
-						}));
-		
-						// Llenar modelos
-						data.forEach(function(modelo) {
-							$('#modelosDropdown').append('<option value="' + modelo + '">' + modelo + '</option>');
-							$('#modelosDropdown').niceSelect('update');
-						});
-					});
-				});
-				
-				$('#marcasDropdown2').change(function() {
-					var marcaSeleccionada2 = $(this).val();
-		
-					// Hacer una solicitud AJAX para obtener modelos según la marca seleccionada
-					$.get('/obtener-modelos/' + marcaSeleccionada2, function(data) {
-						// Limpiar modelos existentes
-						$('#modelosDropdown2').empty();
-						$('#modelosDropdown2').append($('<option>', {
-							value: '',
-							text: 'Seleccione'
-						}));
-		
-						// Llenar modelos
-						data.forEach(function(modelo) {
-							$('#modelosDropdown2').append('<option value="' + modelo + '">' + modelo + '</option>');
-							$('#modelosDropdown2').niceSelect('update');
-						});
-					});
-				});
+            // Restaurar el carrito al cargar la página
+            function restoreCart() {
+                const storedCartItems = localStorage.getItem('cartItems');
+                if (storedCartItems) {
+                    cartItems = JSON.parse(storedCartItems);
+                    cartItemCount = cartItems.length;
+                    cartItems.forEach(cartItem => {
+                        subtotal += cartItem.price;
+                    });
+                    total = subtotal;
 
-				$('#modelosDropdown').change(function() {
-					// Verificar si se ha seleccionado un modelo
-					if ($(this).val() !== '') {
-						// Si se seleccionó un modelo, habilitar el botón "OK"
-						$('#addToCartModalOkButton').prop('disabled', false);
-					} else {
-						// Si no se seleccionó un modelo, deshabilitar el botón "OK"
-						$('#addToCartModalOkButton').prop('disabled', true);
-					}
-				});
+                    updateCartItems();
+                    updatePrices();
+                }
+            }
 
-				$('#modelosDropdown2').change(function() {
-					// Verificar si se ha seleccionado un modelo
-					if ($(this).val() !== '') {
-						// Si se seleccionó un modelo, habilitar el botón "OK"
-						$('#addToCartModalOkButton').prop('disabled', false);
-					} else {
-						// Si no se seleccionó un modelo, deshabilitar el botón "OK"
-						$('#addToCartModalOkButton').prop('disabled', true);
-					}
-				});
-			});
+            function removeFromCart(item) {
+                const itemName = item.querySelector('.item_title').textContent;
 
-		</script>
+                // Encontrar el índice del elemento a eliminar en cartItems
+                const indexToRemove = cartItems.findIndex(cartItem => cartItem.name === itemName);
 
-		<style>
-			.modal-dialog {
-				max-height: 100vh; /* Limita la altura al tamaño de la pantalla */
-				margin: 0 auto; /* Asegura un centrado vertical */
-			}
+                if (indexToRemove !== -1) { // Verificar si se encontró el elemento
+                    const price = cartItems[indexToRemove].price;
 
-			.modal-content {
-				max-height: 100vh; /* Asegura que el contenido no exceda la pantalla */
-				overflow: hidden; /* Evita que el contenido desborde la modal */
-				display: flex;
-				flex-direction: column; /* Asegura que el header, body y footer se comporten correctamente */
-			}
+                    // Actualizar subtotal y total
+                    subtotal -= price;
+                    total = subtotal;
 
-			.modal-body {
-				overflow-y: auto; /* Hace el contenido interno desplazable */
-				flex-grow: 1; /* Permite que el cuerpo ocupe el espacio disponible */
-			}
-		</style>
-		
-		
-		
-		
-		
+                    // Eliminar el elemento del carrito
+                    cartItems.splice(indexToRemove, 1);
 
-			
-		
+                    // Actualizar el almacenamiento local
+                    localStorage.setItem('cartItems', JSON.stringify(cartItems));
 
-		
-	</body>
+                    // Actualizar el contador del carrito
+                    cartItemCount--;
+
+                    // Actualizar la visualización del carrito
+                    updateCartItems();
+                    updatePrices();
+                    updateCartCounter(); // Actualizar el contador del carrito
+                }
+            }
+
+
+            // Llamar a la función para restaurar el carrito al cargar la página
+            restoreCart();
+
+            document.querySelectorAll('.product_action_btns .alCarrito').forEach(btn => {
+                btn.addEventListener('click', function(event) {
+                    event.preventDefault();
+
+                    const imageUrl = this.getAttribute('data-image');
+                    const productName = this.getAttribute('data-title');
+                    const productImageElement = document.getElementById('productImageAlcarrito');
+                    productImageElement.src = imageUrl;
+
+                    const productItem = this.closest('.motorcycle_product_grid');
+                    addToCart(productItem);
+                });
+            });
+            document.querySelectorAll('.ver-btn').forEach(btn => {
+                btn.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const imageUrl = this.getAttribute('data-image');
+                    const productName = this.getAttribute('data-title');
+                    const productImageElement = document.getElementById('productImage');
+                    productImageElement.src = imageUrl;
+                    const modalTitleElement = document.getElementById('productImageModalLabel');
+                    modalTitleElement.textContent = productName;
+                    $('#productImageModal').modal('show');
+                });
+            });
+
+            document.querySelector('.cart_items_list').addEventListener('click', function(event) {
+                if (event.target.classList.contains('remove_btn')) {
+                    const item = event.target.closest('li');
+                    removeFromCart(item);
+                }
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            // Cargar marcas al cargar la página
+            $.get('/obtener-marcas', function(data) {
+                console.log(data);
+
+                data.forEach(function(marca) {
+                    $('#marcasDropdown').append('<option value="' + marca + '">' + marca +
+                        '</option>');
+                    $('#marcasDropdown').niceSelect('update');
+                    $('#marcasDropdown2').append('<option value="' + marca + '">' + marca +
+                        '</option>');
+                    $('#marcasDropdown2').niceSelect('update');
+                });
+            });
+
+            // Manejar cambio en el dropdown de marcas
+            $('#marcasDropdown').change(function() {
+                var marcaSeleccionada = $(this).val();
+
+                // Hacer una solicitud AJAX para obtener modelos según la marca seleccionada
+                $.get('/obtener-modelos/' + marcaSeleccionada, function(data) {
+                    // Limpiar modelos existentes
+                    $('#modelosDropdown').empty();
+                    $('#modelosDropdown').append($('<option>', {
+                        value: '',
+                        text: 'Seleccione'
+                    }));
+
+                    // Llenar modelos
+                    data.forEach(function(modelo) {
+                        $('#modelosDropdown').append('<option value="' + modelo + '">' +
+                            modelo + '</option>');
+                        $('#modelosDropdown').niceSelect('update');
+                    });
+                });
+            });
+
+            $('#marcasDropdown2').change(function() {
+                var marcaSeleccionada2 = $(this).val();
+
+                // Hacer una solicitud AJAX para obtener modelos según la marca seleccionada
+                $.get('/obtener-modelos/' + marcaSeleccionada2, function(data) {
+                    // Limpiar modelos existentes
+                    $('#modelosDropdown2').empty();
+                    $('#modelosDropdown2').append($('<option>', {
+                        value: '',
+                        text: 'Seleccione'
+                    }));
+
+                    // Llenar modelos
+                    data.forEach(function(modelo) {
+                        $('#modelosDropdown2').append('<option value="' + modelo + '">' +
+                            modelo + '</option>');
+                        $('#modelosDropdown2').niceSelect('update');
+                    });
+                });
+            });
+
+            $('#modelosDropdown').change(function() {
+                // Verificar si se ha seleccionado un modelo
+                if ($(this).val() !== '') {
+                    // Si se seleccionó un modelo, habilitar el botón "OK"
+                    $('#addToCartModalOkButton').prop('disabled', false);
+                } else {
+                    // Si no se seleccionó un modelo, deshabilitar el botón "OK"
+                    $('#addToCartModalOkButton').prop('disabled', true);
+                }
+            });
+
+            $('#modelosDropdown2').change(function() {
+                // Verificar si se ha seleccionado un modelo
+                if ($(this).val() !== '') {
+                    // Si se seleccionó un modelo, habilitar el botón "OK"
+                    $('#addToCartModalOkButton').prop('disabled', false);
+                } else {
+                    // Si no se seleccionó un modelo, deshabilitar el botón "OK"
+                    $('#addToCartModalOkButton').prop('disabled', true);
+                }
+            });
+        });
+    </script>
+
+    <style>
+        .modal-dialog {
+            max-height: 100vh;
+            /* Limita la altura al tamaño de la pantalla */
+            margin: 0 auto;
+            /* Asegura un centrado vertical */
+        }
+
+        .modal-content {
+            max-height: 100vh;
+            /* Asegura que el contenido no exceda la pantalla */
+            overflow: hidden;
+            /* Evita que el contenido desborde la modal */
+            display: flex;
+            flex-direction: column;
+            /* Asegura que el header, body y footer se comporten correctamente */
+        }
+
+        .modal-body {
+            overflow-y: auto;
+            /* Hace el contenido interno desplazable */
+            flex-grow: 1;
+            /* Permite que el cuerpo ocupe el espacio disponible */
+        }
+    </style>
+
+
+
+
+
+
+
+
+
+
+</body>
+
 </html>

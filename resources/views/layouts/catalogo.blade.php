@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 
     <meta charset="utf-8">
@@ -7,15 +8,18 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <title>Fundas de Celu Manga y Anime - Samsung, Motorola, Xiaomi, iPhone | Makena</title>
-    <meta name="description" content="Todo lo que buscas en una funda con acabado brillante, imagen Ultra HD y agarres laterales anti-slip para Samsung, Motorola, Xiaomi y iPhone. Amplio catálogo disponible.">
-    <meta name="keywords" content="fundas para celulares, fundas, carcasas, anime, manga, Dragon Ball, Naruto, Samsung, iPhone, Xiaomi, Motorola, Argentina, imagen, catálogo, personalizar">
+    <meta name="description"
+        content="Todo lo que buscas en una funda con acabado brillante, imagen Ultra HD y agarres laterales anti-slip para Samsung, Motorola, Xiaomi y iPhone. Amplio catálogo disponible.">
+    <meta name="keywords"
+        content="fundas para celulares, fundas, carcasas, anime, manga, Dragon Ball, Naruto, Samsung, iPhone, Xiaomi, Motorola, Argentina, imagen, catálogo, personalizar">
 
     <link rel="canonical" href="https://makenafundas.com.ar/catalogo">
     <link rel="shortcut icon" href="images/logo/makenaminiicon.png">
 
     <!-- Open Graph Meta -->
     <meta property="og:title" content="Fundas de Celu Manga y Anime - Makena">
-    <meta property="og:description" content="Encuentra fundas con acabado brillante, imagen Ultra HD y agarres anti-slip. Samsung, Motorola, Xiaomi, iPhone. Amplio catálogo de anime y manga.">
+    <meta property="og:description"
+        content="Encuentra fundas con acabado brillante, imagen Ultra HD y agarres anti-slip. Samsung, Motorola, Xiaomi, iPhone. Amplio catálogo de anime y manga.">
     <meta property="og:image" content="https://makenafundas.com.ar/images/logo/makenaminiicon.png">
     <meta property="og:url" content="https://makenafundas.com.ar/catalogo">
     <meta property="og:type" content="website">
@@ -23,7 +27,8 @@
     <!-- Twitter Card Meta -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Fundas de Celu Manga y Anime - Makena">
-    <meta name="twitter:description" content="Fundas de alta calidad para Samsung, Motorola, Xiaomi y iPhone. Amplio catálogo de anime y manga en Makena.">
+    <meta name="twitter:description"
+        content="Fundas de alta calidad para Samsung, Motorola, Xiaomi y iPhone. Amplio catálogo de anime y manga en Makena.">
     <meta name="twitter:image" content="https://makenafundas.com.ar/images/logo/makenaminiicon.png">
 
     <!-- CSS & Frameworks -->
@@ -35,16 +40,31 @@
     <link rel="stylesheet" type="text/css" href="css/slick-theme.css">
     <link rel="stylesheet" type="text/css" href="css/magnific-popup.css">
     <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}?v={{ time() }}">
 
-		<!-- SweetAlert2 CSS -->
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.0/dist/sweetalert2.min.css">
 
-		<!-- SweetAlert2 JS -->
-		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.0/dist/sweetalert2.min.js"></script>
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.0/dist/sweetalert2.min.css">
+
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.0/dist/sweetalert2.min.js"></script>
 
     <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-P9QG5632');</script>
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-P9QG5632');
+    </script>
     <!-- End Google Tag Manager -->
 
     <!-- Custom Styles -->
@@ -53,8 +73,8 @@
             display: none;
             list-style: none;
         }
-        
-        .sb_category ul li.active > ul {
+
+        .sb_category ul li.active>ul {
             display: block;
         }
     </style>
@@ -62,537 +82,563 @@
 </head>
 
 
-	<body class="home_motorcycle">
+<body class="home_motorcycle">
 
 
-		<!-- Google Tag Manager (noscript) -->
-		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9QG5632"
-		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<!-- End Google Tag Manager (noscript) -->
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9QG5632" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
-		<!-- backtotop - start -->
-		<div id="thetop"></div>
-		<div class="backtotop bg_wts">
-			<a href="http://wa.me/541122444188" class="go_to_wts" >
-				<i class="fab fa-whatsapp" style="font-size: 24px;"></i>
-			</a>
-		</div>
-		<!-- backtotop - end -->
+    <!-- backtotop - start -->
+    <div id="thetop"></div>
+    <div class="backtotop bg_wts">
+        <a href="http://wa.me/541122444188" class="go_to_wts">
+            <i class="fab fa-whatsapp" style="font-size: 24px;"></i>
+        </a>
+    </div>
+    <!-- backtotop - end -->
 
-		<!-- preloader - start -->
-		<!-- <div id="preloader"></div> -->
-		<!-- preloader - end -->
-		@include('partials.header')
+    <!-- preloader - start -->
+    <!-- <div id="preloader"></div> -->
+    <!-- preloader - end -->
+    @include('partials.header')
 
-		<!-- header_section - end
-		================================================== 
+    <!-- header_section - end
+  ==================================================
 
-		
-
-
-		<!-- main body - start
-		================================================== -->
-		<main>
-
-			<!-- header_section - start
-		================================================== -->
-			
-		
-			<!-- sidebar mobile menu & sidebar cart - start
-			================================================== -->
-			@include('partials.sidebar')
-			<!-- sidebar mobile menu & sidebar cart - end
-			================================================== -->
+  
 
 
-			<!-- breadcrumb_section - start
-			================================================== -->
-			
-			<!-- breadcrumb_section - end
-			================================================== -->
-			<!-- product_section - start
-			================================================== -->
-			<div id="aviso" class="aviso-flotante"></div>
-			<section class="product_section sec_ptb_50 clearfix" style="margin-top: 80px">
-				<div class="container maxw_1430">
-					<div class="row justify-content-lg-between">
-						<div id="filtro_lateral" class="col-lg-3 order-first">
-							<aside class="motorcycle_sidebar sidebar_section" data-bg-color="#f9f9f9">
-								<div class="sb_widget sb_category">
-									<h3 class="sb_widget_title">Categorías</h3>
-									<ul class="ul_li_block clearfix">
-										<li class="parent"><a href="/catalogo" data-category="all">Todas</a></li>
-										<li class="parent"><a href="#">Anime</a>
-											<ul>
-												<li><a href="/catalogo?categoria=AT" >Attack on Titan</a></li>
-												<li><a href="/catalogo?categoria=BK">Berserk</a></li>
-												<li><a href="/catalogo?categoria=BH">Boku no Hero Academia</a></li>
-												<li><a href="/catalogo?categoria=CZ">Caballeros Del Zodiaco</a></li>
-												<li><a href="/catalogo?categoria=DAN">DanDaDan</a></li>
-												<li><a href="/catalogo?categoria=DN">Death Note</a></li>
-												<li><a href="/catalogo?categoria=DS">Demon Slayer</a></li>
-												<li><a href="/catalogo?categoria=DB">Dragon Ball</a></li>
-												<li><a href="/catalogo?categoria=CH">El viaje de Chihiro</a></li>
-												<li><a href="/catalogo?categoria=EV">Evangelion</a></li>
-												<li><a href="/catalogo?categoria=FN">Frieren</a></li>
-												<li><a href="/catalogo?categoria=HK">Haikyuu!</a></li>
-												<li><a href="/catalogo?categoria=HH">Hunter X Hunter</a></li>
-												<li><a href="/catalogo?categoria=JJ">Jojo's</a></li>
-												<li><a href="/catalogo?categoria=JK">Jujutsu Kaisen</a></li>
-												<li><a href="/catalogo?categoria=NA">Naruto</a></li>
-												<li><a href="/catalogo?categoria=OP">One Piece</a></li>
-												<li><a href="/catalogo?categoria=PK">Pokemon</a></li>
-												<li><a href="/catalogo?categoria=SM">Sailor Moon</a></li>
-												<li><a href="/catalogo?categoria=SD">Slam Dunk</a></li>
-												<li><a href="/catalogo?categoria=SLV">Solo Leveling</a></li>
-												<li><a href="/catalogo?categoria=AMS">Más...</a></li>
-											</ul>
-										</li>
-										<li class="parent"><a href="#">Automovilismo</a>
-											<ul>
-												<li><a href="/catalogo?categoria=CLP" >Colapinto</a></li>
-												<li><a href="/catalogo?categoria=F1" >F1</a></li>
-												
-											</ul>
-										</li>
-										<li class="parent"><a href="/catalogo?categoria=BS">Basquet</a></li>
-											
-										<li class="parent"><a href="#">Gaming</a>
-											<ul>
-												<li><a href="/catalogo?categoria=ARC">Arcane</a></li>
-												<li><a href="/catalogo?categoria=AC">Assasins Creed</a></li>
-												<li><a href="/catalogo?categoria=FRN">Fortnite</a></li>
-												<li><a href="/catalogo?categoria=GW">God of War</a></li>
-												<li><a href="/catalogo?categoria=HKN">Hollow Knigth</a></li>
-												<li><a href="/catalogo?categoria=LOL">Lol</a></li>
-												<li><a href="/catalogo?categoria=RE">Resident Evil</a></li>
-												<li><a href="/catalogo?categoria=TLU">The Last of us</a></li>
-												<li><a href="/catalogo?categoria=TW">The Witcher</a></li>
-												<li><a href="/catalogo?categoria=VL">Valorant</a></li>
-												<li><a href="/catalogo?categoria=OTR">Más...</a></li>
+  <!-- main body - start
+  ================================================== -->
+    <main>
 
-											</ul>
-										</li>
-										<li class="parent"><a href="/catalogo?categoria=DI">Diseños</a></li>
-											
-										<li class="parent"><a href="#">Futbol</a>
-											<ul>
-												<li><a href="/catalogo?categoria=FB">Boca</a></li>
-												<li><a href="/catalogo?categoria=FTI">Clubes internacionales</a></li>
-												<li><a href="/catalogo?categoria=FI">Independiente</a></li>
-												<li><a href="/catalogo?categoria=FME">Messi</a></li>
-												<li><a href="/catalogo?categoria=FMO">Momentos del futbol</a></li>
-												<li><a href="/catalogo?categoria=FON">Más clubes nacionales</a></li>
-												<li><a href="/catalogo?categoria=FRA">Racing</a></li>
-												<li><a href="/catalogo?categoria=FRI">River</a></li>
-												<li><a href="/catalogo?categoria=FSL">San Lorenzo</a></li>
-												<li><a href="/catalogo?categoria=FSA">Seleccion argentina</a></li>
-											</ul>
-										</li>
-										<li class="parent"><a href="/catalogo?categoria=ME">Momentos Épicos</a></li>
-										<li class="parent"><a href="/catalogo?categoria=RT">Retro</a></li>
-										
-										
-										<li class="parent"><a href="#">Música</a>
-											<ul>
-												<li><a href="/catalogo?categoria=MM">Mas</a></li>
-												<li><a href="/catalogo?categoria=MP">POP</a></li>
-												<li><a href="/catalogo?categoria=MRI">Rock Internacional</a></li>
-												<li><a href="/catalogo?categoria=MRN">Rock Nacional</a></li>
-												<li><a href="/catalogo?categoria=MUR">Urbano</a></li>
-											</ul>
-										</li>
-										<li class="parent"><a href="#">Películas</a>
-											<ul>
-												<li><a href= "/catalogo?categoria=DY">Disney</a></li>
-												<li><a href= "/catalogo?categoria=HP">Harry Potter</a></li>
-												<li><a href= "/catalogo?categoria=LR">Lord of the Rings</a></li>
-												<li><a href= "/catalogo?categoria=MV">Marvel</a></li>
-												<li><a href= "/catalogo?categoria=SW">Star Wars</a></li>
-												<li><a href= "/catalogo?categoria=VF">Volver al Futuro</a></li>
-												<li><a href= "/catalogo?categoria=PMS">Más...</a></li>
-											</ul>
-										</li>
-										<li class="parent"><a href= "#">Tv y Series</a>
-											<ul>
-												<li><a href="/catalogo?categoria=ARC">Arcane</a></li>
-												<li><a href= "/catalogo?categoria=AV">Avatar</a></li>
-												<li><a href= "/catalogo?categoria=FRD">Friends</a></li>
-												<li><a href= "/catalogo?categoria=GT">Games of thrones</a></li>
-												<li><a href= "/catalogo?categoria=HA">Hora de aventura</a></li>
-												<li><a href= "/catalogo?categoria=HD">House of the Dragon</a></li>
-												<li><a href= "/catalogo?categoria=LS">Los Simpsons</a></li>
-												<li><a href= "/catalogo?categoria=PB">Peacky Blinders</a></li>
-												<li><a href= "/catalogo?categoria=RM">Rick y Morty</a></li>
-												<li><a href= "/catalogo?categoria=ST">Stranger Things</a></li>
-												<li><a href= "/catalogo?categoria=TU">The Last of us</a></li>
-												<li><a href= "/catalogo?categoria=TWD">The Walking Death</a></li>
-												<li><a href= "/catalogo?categoria=OS">Más...</a></li>
-												
-											</ul>
-										</li>
-										
-									</ul>
-								</div>
-							</aside>
-						</div>
-			
-						<div class="col-lg-9 order-last" id="ver-categoria">
-							<div class="tab-content">
-								<div id="grid_layout" class="tab-pane active">
-									<div class="row mb_50 justify-content-center">
-										@foreach($imagesCatalogo as $image)
-										<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 image-item" data-category="{{ substr($image->file_name, 0, 2) }}">
-											<div class="motorcycle_product_grid">
-												<div class="item_image">
-													<img src="{{ Voyager::image($image->image) }}" alt="{{ $image->nombreFundas }}">
-													<ul class="product_action_btns ul_li_block text-uppercase text-center clearfix">
-														<li><a class="alCarrito" href="#!"><span><i class="fas fa-shopping-cart"></i></span> <span>Seleccioná tu modelo</span></a></li>
-														<li>
-															<a href="{{ route('catalogo.show', $image->slug) }}">
-																<span><i class="fas fa-search"></i></span> <span>Ver</span>
-															</a>
-														</li>
-														
-													</ul>
-												</div>
-												<div class="item_content">
-													<span class="item_price">{{$precioFundas}}</span>
-													<h3  class="item_title" id="codigo_producto">
-														<a href="{{ route('catalogo.show', $image->slug) }}">{{ $image->file_name }}</a>
-													</h3>
-													<ul class="rating_star ul_li clearfix">
-														<li><i class="fas fa-star"></i></li>
-														<li><i class="fas fa-star"></i></li>
-														<li><i class="fas fa-star"></i></li>
-														<li><i class="fas fa-star"></i></li>
-														<li><i class="fas fa-star"></i></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-										@endforeach
-									</div>
-									<div class="pagination-info text-center">
-										<p>
-											Mostrando {{ $imagesCatalogo->firstItem() }} a {{ $imagesCatalogo->lastItem() }} de {{ $imagesCatalogo->total() }} resultados
-										</p>
-										<div class="pagination-navigation carousel_nav">
-											<div class="pagination-navigation carousel_nav">
-												<button type="button" class="pagination-button main_left_arrow{{ $imagesCatalogo->onFirstPage() ? ' disabled' : '' }}"
-														onclick="if (!this.classList.contains('disabled')) { window.location='{{ $imagesCatalogo->previousPageUrl() }}{{ request()->has('categoria') ? '&categoria=' . request('categoria') : '' }}'; }">
-													<i class="fal fa-arrow-left"></i>
-												</button>
-												<button type="button" class="pagination-button main_right_arrow{{ $imagesCatalogo->hasMorePages() ? '' : ' disabled' }}"
-														onclick="if (!this.classList.contains('disabled')) { window.location='{{ $imagesCatalogo->nextPageUrl() }}{{ request()->has('categoria') ? '&categoria=' . request('categoria') : '' }}'; }">
-													<i class="fal fa-arrow-right"></i>
-												</button>
-											</div>
-										</div>
-									<!-- Agregar enlaces de paginación aquí -->
-									
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!-- product_section - end
-			================================================== -->
+        <!-- header_section - start
+  ================================================== -->
 
 
-			
-			<!-- Modal -->
-			<div class="modal fade" id="addToCartModal" tabindex="-1" role="dialog" aria-labelledby="addToCartModalLabel" aria-hidden="true">
-				<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-					<h3 class="modal-title" id="addToCartModalLabel">Seleccioná tu modelo</h3>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-					</div>
-					<div class="modal-body">
-						<div class="sb_widget sb_recent_post seleccionadores">
-							<div class="sb_widget sb_category">
-								
-								<div class="col-lg-12 divMarcaDropdown2">
-									<label for="marcasDropdown" style="font-weight: bold; font-size: larger; margin:10px">Marca</label>
-									<select name="marcas" id="marcasDropdown">
-										<option value="">Seleccione</option> 
-									</select>
-								</div>
-								<div class="col-lg-12 divModeloDropdown2">
-									<label for="marcasDropdown" style="font-weight: bold; font-size: larger; margin:10px">Modelo</label>
-									<select name="modelos" id="modelosDropdown">
-										<option value="">Seleccione</option>
-									</select>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="modal-footer">
-						<button type="button" id="addToCartModalOkButton" class="btn btn-secondary" data-dismiss="modal" disabled>Agregar al carrito</button>
-					</div>
-				</div>
-				</div>
-			</div>
+        <!-- sidebar mobile menu & sidebar cart - start
+   ================================================== -->
+        @include('partials.sidebar')
+        <!-- sidebar mobile menu & sidebar cart - end
+   ================================================== -->
 
 
-		</main>
-		<!-- main body - end
-		================================================== -->
+        <!-- breadcrumb_section - start
+   ================================================== -->
+
+        <!-- breadcrumb_section - end
+   ================================================== -->
+        <!-- product_section - start
+   ================================================== -->
+        <div id="aviso" class="aviso-flotante"></div>
+        <section class="product_section sec_ptb_50 clearfix" style="margin-top: 80px">
+            <div class="container maxw_1430">
+                <div class="row justify-content-lg-between">
+                    <div id="filtro_lateral" class="col-lg-3 order-first">
+                        <aside class="motorcycle_sidebar sidebar_section" data-bg-color="#f9f9f9">
+                            <div class="sb_widget sb_category">
+                                <h3 class="sb_widget_title">Categorías</h3>
+                                <ul class="ul_li_block clearfix">
+                                    <li class="parent"><a href="/catalogo" data-category="all">Todas</a></li>
+                                    <li class="parent"><a href="#">Anime</a>
+                                        <ul>
+                                            <li><a href="/catalogo?categoria=AT">Attack on Titan</a></li>
+                                            <li><a href="/catalogo?categoria=BK">Berserk</a></li>
+                                            <li><a href="/catalogo?categoria=BH">Boku no Hero Academia</a></li>
+                                            <li><a href="/catalogo?categoria=CZ">Caballeros Del Zodiaco</a></li>
+                                            <li><a href="/catalogo?categoria=DAN">DanDaDan</a></li>
+                                            <li><a href="/catalogo?categoria=DN">Death Note</a></li>
+                                            <li><a href="/catalogo?categoria=DS">Demon Slayer</a></li>
+                                            <li><a href="/catalogo?categoria=DB">Dragon Ball</a></li>
+                                            <li><a href="/catalogo?categoria=CH">El viaje de Chihiro</a></li>
+                                            <li><a href="/catalogo?categoria=EV">Evangelion</a></li>
+                                            <li><a href="/catalogo?categoria=FN">Frieren</a></li>
+                                            <li><a href="/catalogo?categoria=HK">Haikyuu!</a></li>
+                                            <li><a href="/catalogo?categoria=HH">Hunter X Hunter</a></li>
+                                            <li><a href="/catalogo?categoria=JJ">Jojo's</a></li>
+                                            <li><a href="/catalogo?categoria=JK">Jujutsu Kaisen</a></li>
+                                            <li><a href="/catalogo?categoria=NA">Naruto</a></li>
+                                            <li><a href="/catalogo?categoria=OP">One Piece</a></li>
+                                            <li><a href="/catalogo?categoria=PK">Pokemon</a></li>
+                                            <li><a href="/catalogo?categoria=SM">Sailor Moon</a></li>
+                                            <li><a href="/catalogo?categoria=SD">Slam Dunk</a></li>
+                                            <li><a href="/catalogo?categoria=SLV">Solo Leveling</a></li>
+                                            <li><a href="/catalogo?categoria=AMS">Más...</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="parent"><a href="#">Automovilismo</a>
+                                        <ul>
+                                            <li><a href="/catalogo?categoria=CLP">Colapinto</a></li>
+                                            <li><a href="/catalogo?categoria=F1">F1</a></li>
+
+                                        </ul>
+                                    </li>
+                                    <li class="parent"><a href="/catalogo?categoria=BS">Basquet</a></li>
+
+                                    <li class="parent"><a href="#">Gaming</a>
+                                        <ul>
+                                            <li><a href="/catalogo?categoria=ARC">Arcane</a></li>
+                                            <li><a href="/catalogo?categoria=AC">Assasins Creed</a></li>
+                                            <li><a href="/catalogo?categoria=FRN">Fortnite</a></li>
+                                            <li><a href="/catalogo?categoria=GW">God of War</a></li>
+                                            <li><a href="/catalogo?categoria=HKN">Hollow Knigth</a></li>
+                                            <li><a href="/catalogo?categoria=LOL">Lol</a></li>
+                                            <li><a href="/catalogo?categoria=RE">Resident Evil</a></li>
+                                            <li><a href="/catalogo?categoria=TLU">The Last of us</a></li>
+                                            <li><a href="/catalogo?categoria=TW">The Witcher</a></li>
+                                            <li><a href="/catalogo?categoria=VL">Valorant</a></li>
+                                            <li><a href="/catalogo?categoria=OTR">Más...</a></li>
+
+                                        </ul>
+                                    </li>
+                                    <li class="parent"><a href="/catalogo?categoria=DI">Diseños</a></li>
+
+                                    <li class="parent"><a href="#">Futbol</a>
+                                        <ul>
+                                            <li><a href="/catalogo?categoria=FB">Boca</a></li>
+                                            <li><a href="/catalogo?categoria=FTI">Clubes internacionales</a></li>
+                                            <li><a href="/catalogo?categoria=FI">Independiente</a></li>
+                                            <li><a href="/catalogo?categoria=FME">Messi</a></li>
+                                            <li><a href="/catalogo?categoria=FMO">Momentos del futbol</a></li>
+                                            <li><a href="/catalogo?categoria=FON">Más clubes nacionales</a></li>
+                                            <li><a href="/catalogo?categoria=FRA">Racing</a></li>
+                                            <li><a href="/catalogo?categoria=FRI">River</a></li>
+                                            <li><a href="/catalogo?categoria=FSL">San Lorenzo</a></li>
+                                            <li><a href="/catalogo?categoria=FSA">Seleccion argentina</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="parent"><a href="/catalogo?categoria=ME">Momentos Épicos</a></li>
+                                    <li class="parent"><a href="/catalogo?categoria=RT">Retro</a></li>
 
 
-		<!-- footer_section - start
-		================================================== -->
-		<footer class="footer_section motorcycle_footer clearfix">
-			<div class="footer_widget_area sec_ptb_100 clearfix" data-background="images/backgrounds/makenaFooterBackground.webp">
-				<div class="container">
-					<div class="row justify-content-lg-between">
-						
-						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
-							<div class="footer_widget footer_about text-center">
-								<div class="brand_logo mb_30">
-									<a href="#!">
-										<img src="images/logo/logomakena.png" alt="logo makena">
-									</a>
-								</div>
+                                    <li class="parent"><a href="#">Música</a>
+                                        <ul>
+                                            <li><a href="/catalogo?categoria=MM">Mas</a></li>
+                                            <li><a href="/catalogo?categoria=MP">POP</a></li>
+                                            <li><a href="/catalogo?categoria=MRI">Rock Internacional</a></li>
+                                            <li><a href="/catalogo?categoria=MRN">Rock Nacional</a></li>
+                                            <li><a href="/catalogo?categoria=MUR">Urbano</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="parent"><a href="#">Películas</a>
+                                        <ul>
+                                            <li><a href= "/catalogo?categoria=DY">Disney</a></li>
+                                            <li><a href= "/catalogo?categoria=HP">Harry Potter</a></li>
+                                            <li><a href= "/catalogo?categoria=LR">Lord of the Rings</a></li>
+                                            <li><a href= "/catalogo?categoria=MV">Marvel</a></li>
+                                            <li><a href= "/catalogo?categoria=SW">Star Wars</a></li>
+                                            <li><a href= "/catalogo?categoria=VF">Volver al Futuro</a></li>
+                                            <li><a href= "/catalogo?categoria=PMS">Más...</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="parent"><a href= "#">Tv y Series</a>
+                                        <ul>
+                                            <li><a href="/catalogo?categoria=ARC">Arcane</a></li>
+                                            <li><a href= "/catalogo?categoria=AV">Avatar</a></li>
+                                            <li><a href= "/catalogo?categoria=FRD">Friends</a></li>
+                                            <li><a href= "/catalogo?categoria=GT">Games of thrones</a></li>
+                                            <li><a href= "/catalogo?categoria=HA">Hora de aventura</a></li>
+                                            <li><a href= "/catalogo?categoria=HD">House of the Dragon</a></li>
+                                            <li><a href= "/catalogo?categoria=LS">Los Simpsons</a></li>
+                                            <li><a href= "/catalogo?categoria=PB">Peacky Blinders</a></li>
+                                            <li><a href= "/catalogo?categoria=RM">Rick y Morty</a></li>
+                                            <li><a href= "/catalogo?categoria=ST">Stranger Things</a></li>
+                                            <li><a href= "/catalogo?categoria=TU">The Last of us</a></li>
+                                            <li><a href= "/catalogo?categoria=TWD">The Walking Death</a></li>
+                                            <li><a href= "/catalogo?categoria=OS">Más...</a></li>
 
-								<ul class="footer_contact_info ul_li_block mb_30 clearfix">
-									<li><span>Email:</span> contacto@makenafundas.com.ar</li>
-									<li><span>Teléfono:</span> 11 2244 4188</li>
-								</ul>
+                                        </ul>
+                                    </li>
 
-								<ul class="circle_social_links ul_li clearfix justify-content-center d-flex">
-									<li><a href="https://www.instagram.com/makenafundas/"><i class="fab fa-instagram"></i></a></li>
-									<li><a href="https://wa.me/541122444188"><i class="fab fa-whatsapp"></i></a></li>
-									<li><a href="https://www.facebook.com/makenafundas"><i class="fab fa-facebook-f"></i></a></li>
-								</ul>
-							</div>
-						</div>
+                                </ul>
+                            </div>
+                        </aside>
+                    </div>
 
-						
+                    <div class="col-lg-9 order-last" id="ver-categoria">
+                        <div class="tab-content">
+                            <div id="grid_layout" class="tab-pane active">
+                                <div class="row mb_50 justify-content-center">
+                                    @foreach ($imagesCatalogo as $image)
+                                        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 image-item"
+                                            data-category="{{ substr($image->file_name, 0, 2) }}">
+                                            <div class="motorcycle_product_grid">
+                                                <div class="item_image">
+                                                    <img src="{{ Voyager::image($image->image) }}"
+                                                        alt="{{ $image->nombreFundas }}">
+                                                    <ul
+                                                        class="product_action_btns ul_li_block text-uppercase text-center clearfix">
+                                                        <li><a class="alCarrito" href="#!"><span><i
+                                                                        class="fas fa-shopping-cart"></i></span>
+                                                                <span>Seleccioná tu modelo</span></a></li>
+                                                        <li>
+                                                            <a href="{{ route('catalogo.show', $image->slug) }}">
+                                                                <span><i class="fas fa-search"></i></span>
+                                                                <span>Ver</span>
+                                                            </a>
+                                                        </li>
 
-						
+                                                    </ul>
+                                                </div>
+                                                <div class="item_content">
+                                                    <span class="item_price">{{ $precioFundas }}</span>
+                                                    <h3 class="item_title" id="codigo_producto">
+                                                        <a
+                                                            href="{{ route('catalogo.show', $image->slug) }}">{{ $image->file_name }}</a>
+                                                    </h3>
+                                                    <ul class="rating_star ul_li clearfix">
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                        <li><i class="fas fa-star"></i></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                </div>
+                                <div class="pagination-info text-center">
+                                    <p>
+                                        Mostrando {{ $imagesCatalogo->firstItem() }} a
+                                        {{ $imagesCatalogo->lastItem() }} de {{ $imagesCatalogo->total() }} resultados
+                                    </p>
+                                    <div class="pagination-navigation carousel_nav">
+                                        <div class="pagination-navigation carousel_nav">
+                                            <button type="button"
+                                                class="pagination-button main_left_arrow{{ $imagesCatalogo->onFirstPage() ? ' disabled' : '' }}"
+                                                onclick="if (!this.classList.contains('disabled')) { window.location='{{ $imagesCatalogo->previousPageUrl() }}{{ request()->has('categoria') ? '&categoria=' . request('categoria') : '' }}'; }">
+                                                <i class="fal fa-arrow-left"></i>
+                                            </button>
+                                            <button type="button"
+                                                class="pagination-button main_right_arrow{{ $imagesCatalogo->hasMorePages() ? '' : ' disabled' }}"
+                                                onclick="if (!this.classList.contains('disabled')) { window.location='{{ $imagesCatalogo->nextPageUrl() }}{{ request()->has('categoria') ? '&categoria=' . request('categoria') : '' }}'; }">
+                                                <i class="fal fa-arrow-right"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- Agregar enlaces de paginación aquí -->
 
-						
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- product_section - end
+   ================================================== -->
 
-					</div>
-				</div>
-			</div>
 
-			<div class="footer_bottom text-center" data-bg-color="#151515">
-				<div class="container">
-					<p class="copyright_text mb-0">
-						© Diseñado por <a href="https://wa.me/56967656673" class="author_link text-white">Tatsu Web Design</a>
-					</p>
-				</div>
-			</div>
-		</footer>
-		<!-- footer_section - end
-		================================================== -->
-		{{-- modal de la imagen del modelo --}}
-		<div class="modal fade" id="productImageModal" tabindex="-1" role="dialog" aria-labelledby="productImageModalLabel" aria-hidden="true">
-			<div class="modal-dialog modal-sm" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="productImageModalLabel">{{ $image->file_name }}</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-					<div class="modal-body">
-						<img src="" alt="{{ $image->nombreFundas }}" id="productImage" style="max-width: 100%;">
-					</div>
-				</div>
-			</div>
-		</div>
 
-		
-		<!-- fraimwork - jquery include -->
-		<script src="js/jquery-3.5.1.min.js"></script>
-		<script src="js/popper.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
+        <!-- Modal -->
+        <div class="modal fade" id="addToCartModal" tabindex="-1" role="dialog"
+            aria-labelledby="addToCartModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h3 class="modal-title" id="addToCartModalLabel">Seleccioná tu modelo</h3>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="sb_widget sb_recent_post seleccionadores">
+                            <div class="sb_widget sb_category">
 
-		<!-- mobile menu - jquery include -->
-        <script src="js/mCustomScrollbar.js"></script>
+                                <div class="col-lg-12 divMarcaDropdown2">
+                                    <label for="marcasDropdown"
+                                        style="font-weight: bold; font-size: larger; margin:10px">Marca</label>
+                                    <select name="marcas" id="marcasDropdown">
+                                        <option value="">Seleccione</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-12 divModeloDropdown2">
+                                    <label for="marcasDropdown"
+                                        style="font-weight: bold; font-size: larger; margin:10px">Modelo</label>
+                                    <select name="modelos" id="modelosDropdown">
+                                        <option value="">Seleccione</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="addToCartModalOkButton" class="btn btn-secondary"
+                            data-dismiss="modal" disabled>Agregar al carrito</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-		<!-- google map - jquery include -->
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDk2HrmqE4sWSei0XdKGbOMOHN3Mm2Bf-M&ver=2.1.6"></script>
-        <script src="js/gmaps.min.js"></script>
 
-		<!-- animation - jquery include -->
-        <script src="js/parallaxie.js"></script>
-        <script src="js/wow.min.js"></script>
+    </main>
+    <!-- main body - end
+  ================================================== -->
 
-		<!-- nice select - jquery include -->
-        <script src="js/nice-select.min.js"></script>
 
-		<!-- carousel - jquery include -->
-        <script src="js/slick.min.js"></script>
+    <!-- footer_section - start
+  ================================================== -->
+    <footer class="footer_section motorcycle_footer clearfix">
+        <div class="footer_widget_area sec_ptb_100 clearfix"
+            data-background="images/backgrounds/makenaFooterBackground.webp">
+            <div class="container">
+                <div class="row justify-content-lg-between">
 
-		<!-- countdown timer - jquery include -->
-        <script src="js/countdown.js"></script>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                        <div class="footer_widget footer_about text-center">
+                            <div class="brand_logo mb_30">
+                                <a href="#!">
+                                    <img src="images/logo/logomakena.png" alt="logo makena">
+                                </a>
+                            </div>
 
-		<!-- popup images & videos - jquery include -->
-        <script src="js/magnific-popup.min.js"></script>
+                            <ul class="footer_contact_info ul_li_block mb_30 clearfix">
+                                <li><span>Email:</span> contacto@makenafundas.com.ar</li>
+                                <li><span>Teléfono:</span> 11 2244 4188</li>
+                            </ul>
 
-		<!-- filtering & masonry layout - jquery include -->
-        <script src="js/isotope.pkgd.min.js"></script>
-        <script src="js/masonry.pkgd.min.js"></script>
-        <script src="js/imagesloaded.pkgd.min.js"></script>
+                            <ul class="circle_social_links ul_li clearfix justify-content-center d-flex">
+                                <li><a href="https://www.instagram.com/makenafundas/"><i
+                                            class="fab fa-instagram"></i></a></li>
+                                <li><a href="https://wa.me/541122444188"><i class="fab fa-whatsapp"></i></a></li>
+                                <li><a href="https://www.facebook.com/makenafundas"><i
+                                            class="fab fa-facebook-f"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
 
-		<!-- jquery ui - jquery include -->
-        <script src="js/jquery-ui.js"></script>
 
-		<!-- custom - jquery include -->
-		<script src="js/custom.js"></script>
-		<script>
-			$(document).ready(function() {
-    // Mostrar todas las imágenes al cargar la página
-    showImages('all');
 
-    // Función para mostrar/ocultar imágenes según la categoría
-    function showImages(category) {
-		if (window.innerWidth < 600 && window.location.pathname.startsWith('/catalogo') && window.location.search.includes('categoria=')) {
-			window.scrollBy({ top: 500, behavior: 'smooth' });
-		}
-        $('.image-item').hide(); // Ocultar todas las imágenes
 
-        if (category === 'all') {
-            $('.image-item').show(); // Mostrar todas las imágenes si la categoría es 'all'
-        } else {
-            $('.image-item[data-category="' + category + '"]').show(); // Mostrar imágenes de la categoría seleccionada
-        }
-    }
 
-    // Manejar el clic en los enlaces de filtrado
-    $('a[data-category]').on('click', function(e) {
-        var category = $(this).data('category');
-        showImages(category);
-    });
 
-    // Capturar el clic en los elementos de categoría para alternar la clase 'active'
-    const parentItems = document.querySelectorAll('.parent');
 
-    parentItems.forEach(item => {
-        item.addEventListener('click', function (event) {
-            this.classList.toggle('active');
+                </div>
+            </div>
+        </div>
 
-            // Desactivar todas las categorías excepto la actual
-            parentItems.forEach(parent => {
-                if (parent !== this && parent.classList.contains('active')) {
-                    parent.classList.remove('active');
+        <div class="footer_bottom text-center" data-bg-color="#151515">
+            <div class="container">
+                <p class="copyright_text mb-0">
+                    © Diseñado por <a href="https://wa.me/56967656673" class="author_link text-white">Tatsu Web
+                        Design</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- footer_section - end
+  ================================================== -->
+    {{-- modal de la imagen del modelo --}}
+    <div class="modal fade" id="productImageModal" tabindex="-1" role="dialog"
+        aria-labelledby="productImageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productImageModalLabel">{{ $image->file_name }}</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <img src="" alt="{{ $image->nombreFundas }}" id="productImage"
+                        style="max-width: 100%;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- fraimwork - jquery include -->
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- mobile menu - jquery include -->
+    <script src="js/mCustomScrollbar.js"></script>
+
+    <!-- google map - jquery include -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDk2HrmqE4sWSei0XdKGbOMOHN3Mm2Bf-M&ver=2.1.6"></script>
+    <script src="js/gmaps.min.js"></script>
+
+    <!-- animation - jquery include -->
+    <script src="js/parallaxie.js"></script>
+    <script src="js/wow.min.js"></script>
+
+    <!-- nice select - jquery include -->
+    <script src="js/nice-select.min.js"></script>
+
+    <!-- carousel - jquery include -->
+    <script src="js/slick.min.js"></script>
+
+    <!-- countdown timer - jquery include -->
+    <script src="js/countdown.js"></script>
+
+    <!-- popup images & videos - jquery include -->
+    <script src="js/magnific-popup.min.js"></script>
+
+    <!-- filtering & masonry layout - jquery include -->
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/masonry.pkgd.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+
+    <!-- jquery ui - jquery include -->
+    <script src="js/jquery-ui.js"></script>
+
+    <!-- custom - jquery include -->
+    <script src="js/custom.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Mostrar todas las imágenes al cargar la página
+            showImages('all');
+
+            // Función para mostrar/ocultar imágenes según la categoría
+            function showImages(category) {
+                if (window.innerWidth < 600 && window.location.pathname.startsWith('/catalogo') && window.location
+                    .search.includes('categoria=')) {
+                    window.scrollBy({
+                        top: 500,
+                        behavior: 'smooth'
+                    });
                 }
+                $('.image-item').hide(); // Ocultar todas las imágenes
+
+                if (category === 'all') {
+                    $('.image-item').show(); // Mostrar todas las imágenes si la categoría es 'all'
+                } else {
+                    $('.image-item[data-category="' + category + '"]')
+                .show(); // Mostrar imágenes de la categoría seleccionada
+                }
+            }
+
+            // Manejar el clic en los enlaces de filtrado
+            $('a[data-category]').on('click', function(e) {
+                var category = $(this).data('category');
+                showImages(category);
+            });
+
+            // Capturar el clic en los elementos de categoría para alternar la clase 'active'
+            const parentItems = document.querySelectorAll('.parent');
+
+            parentItems.forEach(item => {
+                item.addEventListener('click', function(event) {
+                    this.classList.toggle('active');
+
+                    // Desactivar todas las categorías excepto la actual
+                    parentItems.forEach(parent => {
+                        if (parent !== this && parent.classList.contains('active')) {
+                            parent.classList.remove('active');
+                        }
+                    });
+                });
             });
         });
-    });
-});
+    </script>
 
-		</script>
-		
-		<script>
-			document.addEventListener("DOMContentLoaded", function() {
-				let cartItemCount = 0;
-				let subtotal = 0;
-				let total = 0;
-				let cartItems = [];
-		
-				function updateCartCounter() {
-					const badgeElements = document.querySelectorAll('.btn_badge');
-					badgeElements.forEach(function(element) {
-						element.textContent = cartItemCount;
-					});
-				}
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let cartItemCount = 0;
+            let subtotal = 0;
+            let total = 0;
+            let cartItems = [];
 
-				function productoAgregadoAlCarrito() {
-						// Mostrar SweetAlert2 en la esquina superior derecha que desaparece después de 1 segundo
-						Swal.fire({
-								icon: 'success',
-								title: 'Producto agregado al carrito',
-								toast: true, // Hace que se muestre como una notificación tipo toast
-								position: 'top-end', // Lo coloca en la esquina superior derecha
-								showConfirmButton: false, // No muestra el botón de confirmación
-								timer: 1500, // Se cierra automáticamente después de 1 segundo (1000ms)
-								timerProgressBar: true,
-								iconColor: '#4CAF50', // Muestra una barra de progreso que indica el tiempo restante
-								didOpen: () => {
-										Swal.showLoading();
-								}
-						});
-				}
-				
-				function mostrarAviso() {
-					var aviso = document.getElementById("aviso");
-					aviso.innerText = "¡Producto agregado al carrito!";
-					aviso.style.display = "block";
+            function updateCartCounter() {
+                const badgeElements = document.querySelectorAll('.btn_badge');
+                badgeElements.forEach(function(element) {
+                    element.textContent = cartItemCount;
+                });
+            }
 
-					// Oculta el aviso después de 3 segundos
-					setTimeout(function() {
-						aviso.style.display = "none";
-					}, 3000);
-				}
-				function updatePrices() {
-					const subtotalElement = document.querySelector('.total_price li:nth-child(1) span:nth-child(2)');
-					const totalElement = document.querySelector('.total_price li:nth-child(2) span:nth-child(2)');
-		
-					subtotalElement.textContent = `$${subtotal}`;
-					totalElement.textContent = `$${total}`;
-				}
-		
-				let price, itemName, imageUrl; // Definir las variables fuera de la función addToCart
+            function productoAgregadoAlCarrito() {
+                // Mostrar SweetAlert2 en la esquina superior derecha que desaparece después de 1 segundo
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Producto agregado al carrito',
+                    toast: true, // Hace que se muestre como una notificación tipo toast
+                    position: 'top-end', // Lo coloca en la esquina superior derecha
+                    showConfirmButton: false, // No muestra el botón de confirmación
+                    timer: 1500, // Se cierra automáticamente después de 1 segundo (1000ms)
+                    timerProgressBar: true,
+                    iconColor: '#4CAF50', // Muestra una barra de progreso que indica el tiempo restante
+                    didOpen: () => {
+                        Swal.showLoading();
+                    }
+                });
+            }
 
-				function addToCart(productItem) {
-					price = parseFloat(productItem.querySelector('.item_price').textContent.replace('$', ''));
-					itemName = productItem.querySelector('.item_title').textContent;
-					imageUrl = productItem.querySelector('img').getAttribute('src'); // Obtener la URL de la imagen completa
-					
-					// Mostrar la modal
-					$('#addToCartModal').modal('show');
-					
+            function mostrarAviso() {
+                var aviso = document.getElementById("aviso");
+                aviso.innerText = "¡Producto agregado al carrito!";
+                aviso.style.display = "block";
 
-				}
+                // Oculta el aviso después de 3 segundos
+                setTimeout(function() {
+                    aviso.style.display = "none";
+                }, 3000);
+            }
 
-				// Agregar un manejador de eventos para el botón "OK" dentro de la modal
-				document.getElementById('addToCartModalOkButton').addEventListener('click', function() {
-					const selectedMarca = document.getElementById('marcasDropdown').value;
-					const selectedModelo = document.getElementById('modelosDropdown').value;
+            function updatePrices() {
+                const subtotalElement = document.querySelector('.total_price li:nth-child(1) span:nth-child(2)');
+                const totalElement = document.querySelector('.total_price li:nth-child(2) span:nth-child(2)');
 
-					// Verificar si se ha seleccionado un modelo
-					if (selectedModelo) {
-						const pendingCartItem = {
-							name: itemName,
-							price: price,
-							image: imageUrl,
-							marca: selectedMarca,
-							modelo: selectedModelo
-						};
+                subtotalElement.textContent = `$${subtotal}`;
+                totalElement.textContent = `$${total}`;
+            }
 
-						// Agregar el artículo al carrito
-						cartItemCount++;
-						subtotal += pendingCartItem.price;
-						total = subtotal;
-						cartItems.push(pendingCartItem);
-						localStorage.setItem('cartItems', JSON.stringify(cartItems));
-						updateCartItems();
-						updatePrices();
-						productoAgregadoAlCarrito();
-						// Cerrar la modal solo si se ha completado con éxito la acción
-						$('#addToCartModal').modal('hide');
-					} else {
-						// Si no se ha seleccionado un modelo, muestra un mensaje de alerta dentro de la modal
-						alert('Por favor, seleccione un modelo');
-					}
-				});
+            let price, itemName, imageUrl; // Definir las variables fuera de la función addToCart
 
-				function updateCartItems() {
-					const cartItemsList = document.querySelector('.cart_items_list');
-					cartItemsList.innerHTML = ''; // Limpiar la lista de elementos del carrito
+            function addToCart(productItem) {
+                price = parseFloat(productItem.querySelector('.item_price').textContent.replace('$', ''));
+                itemName = productItem.querySelector('.item_title').textContent;
+                imageUrl = productItem.querySelector('img').getAttribute(
+                'src'); // Obtener la URL de la imagen completa
 
-					cartItems.forEach(cartItem => {
-						const cartItemHTML = `
+                // Mostrar la modal
+                $('#addToCartModal').modal('show');
+
+
+            }
+
+            // Agregar un manejador de eventos para el botón "OK" dentro de la modal
+            document.getElementById('addToCartModalOkButton').addEventListener('click', function() {
+                const selectedMarca = document.getElementById('marcasDropdown').value;
+                const selectedModelo = document.getElementById('modelosDropdown').value;
+
+                // Verificar si se ha seleccionado un modelo
+                if (selectedModelo) {
+                    const pendingCartItem = {
+                        name: itemName,
+                        price: price,
+                        image: imageUrl,
+                        marca: selectedMarca,
+                        modelo: selectedModelo
+                    };
+
+                    // Agregar el artículo al carrito
+                    cartItemCount++;
+                    subtotal += pendingCartItem.price;
+                    total = subtotal;
+                    cartItems.push(pendingCartItem);
+                    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                    updateCartItems();
+                    updatePrices();
+                    productoAgregadoAlCarrito();
+                    // Cerrar la modal solo si se ha completado con éxito la acción
+                    $('#addToCartModal').modal('hide');
+                } else {
+                    // Si no se ha seleccionado un modelo, muestra un mensaje de alerta dentro de la modal
+                    alert('Por favor, seleccione un modelo');
+                }
+            });
+
+            function updateCartItems() {
+                const cartItemsList = document.querySelector('.cart_items_list');
+                cartItemsList.innerHTML = ''; // Limpiar la lista de elementos del carrito
+
+                cartItems.forEach(cartItem => {
+                    const cartItemHTML = `
 							<li>
 								<div class="item_image">
 									<img src="${cartItem.image}" alt="Funda en carrito ${cartItem.name}">
@@ -609,143 +655,146 @@
 								</div>
 							</li>
 						`;
-						cartItemsList.innerHTML += cartItemHTML;
-					});
-					
-					// Actualizar el contador del carrito
-					updateCartCounter();
-				}
-		
-				// Restaurar el carrito al cargar la página
-				function restoreCart() {
-					const storedCartItems = localStorage.getItem('cartItems');
-					if (storedCartItems) {
-						cartItems = JSON.parse(storedCartItems);
-						cartItemCount = cartItems.length;
-						cartItems.forEach(cartItem => {
-							subtotal += cartItem.price;
-						});
-						total = subtotal;
-		
-						updateCartItems();
-						updatePrices();
-					}
-				}
-				function removeFromCart(item) {
-					const itemName = item.querySelector('.item_title').textContent;
-					
-					// Encontrar el índice del elemento a eliminar en cartItems
-					const indexToRemove = cartItems.findIndex(cartItem => cartItem.name === itemName);
-					
-					if (indexToRemove !== -1) { // Verificar si se encontró el elemento
-						const price = cartItems[indexToRemove].price;
-						
-						// Actualizar subtotal y total
-						subtotal -= price;
-						total = subtotal;
-						
-						// Eliminar el elemento del carrito
-						cartItems.splice(indexToRemove, 1);
-						
-						// Actualizar el almacenamiento local
-						localStorage.setItem('cartItems', JSON.stringify(cartItems));
-						
-						// Actualizar el contador del carrito
-						cartItemCount--;
-						
-						// Actualizar la visualización del carrito
-						updateCartItems();
-						updatePrices();
-						updateCartCounter(); // Actualizar el contador del carrito
-					}
-				}
-					
-		
-				// Llamar a la función para restaurar el carrito al cargar la página
-				restoreCart();
-		
-				document.querySelectorAll('.product_action_btns .alCarrito').forEach(btn => {
-					btn.addEventListener('click', function(event) {
-						event.preventDefault();
-						const productItem = this.closest('.motorcycle_product_grid');
-						addToCart(productItem);
-					});
-				});
-				document.querySelectorAll('.ver-btn').forEach(btn => {
-					btn.addEventListener('click', function(event) {
-						event.preventDefault();
-						const imageUrl = this.getAttribute('data-image');
-						const productName = this.getAttribute('data-title');
-						const productImageElement = document.getElementById('productImage');
-						productImageElement.src = imageUrl;
-						const modalTitleElement = document.getElementById('productImageModalLabel');
-						modalTitleElement.textContent = productName;
-						$('#productImageModal').modal('show');
-					});
-				});
-						
-				document.querySelector('.cart_items_list').addEventListener('click', function(event) {
-					if (event.target.classList.contains('remove_btn')) {
-						const item = event.target.closest('li');
-						removeFromCart(item);
-					}
-				});
-			});
-		</script>
-		<script>
-			$(document).ready(function() {
-				// Cargar marcas al cargar la página
-				$.get('/obtener-marcas', function(data) {
-					console.log(data);
-					
-					data.forEach(function(marca) {
-						$('#marcasDropdown').append('<option value="' + marca + '">' + marca + '</option>');
-						$('#marcasDropdown').niceSelect('update');
-					});
-				});
-		
-				// Manejar cambio en el dropdown de marcas
-				$('#marcasDropdown').change(function() {
-					var marcaSeleccionada = $(this).val();
-		
-					// Hacer una solicitud AJAX para obtener modelos según la marca seleccionada
-					$.get('/obtener-modelos/' + marcaSeleccionada, function(data) {
-						// Limpiar modelos existentes
-						$('#modelosDropdown').empty();
-						$('#modelosDropdown').append($('<option>', {
-							value: '',
-							text: 'Seleccione'
-						}));
-		
-						// Llenar modelos
-						data.forEach(function(modelo) {
-							$('#modelosDropdown').append('<option value="' + modelo + '">' + modelo + '</option>');
-							$('#modelosDropdown').niceSelect('update');
-						});
-					});
-				});
-				$('#modelosDropdown').change(function() {
-					// Verificar si se ha seleccionado un modelo
-					if ($(this).val() !== '') {
-						// Si se seleccionó un modelo, habilitar el botón "OK"
-						$('#addToCartModalOkButton').prop('disabled', false);
-					} else {
-						// Si no se seleccionó un modelo, deshabilitar el botón "OK"
-						$('#addToCartModalOkButton').prop('disabled', true);
-					}
-				});
-			});
+                    cartItemsList.innerHTML += cartItemHTML;
+                });
 
-		</script>
-		
-		
-		
-		
-		
+                // Actualizar el contador del carrito
+                updateCartCounter();
+            }
 
-			
-		
+            // Restaurar el carrito al cargar la página
+            function restoreCart() {
+                const storedCartItems = localStorage.getItem('cartItems');
+                if (storedCartItems) {
+                    cartItems = JSON.parse(storedCartItems);
+                    cartItemCount = cartItems.length;
+                    cartItems.forEach(cartItem => {
+                        subtotal += cartItem.price;
+                    });
+                    total = subtotal;
 
-		
-	</body>
+                    updateCartItems();
+                    updatePrices();
+                }
+            }
+
+            function removeFromCart(item) {
+                const itemName = item.querySelector('.item_title').textContent;
+
+                // Encontrar el índice del elemento a eliminar en cartItems
+                const indexToRemove = cartItems.findIndex(cartItem => cartItem.name === itemName);
+
+                if (indexToRemove !== -1) { // Verificar si se encontró el elemento
+                    const price = cartItems[indexToRemove].price;
+
+                    // Actualizar subtotal y total
+                    subtotal -= price;
+                    total = subtotal;
+
+                    // Eliminar el elemento del carrito
+                    cartItems.splice(indexToRemove, 1);
+
+                    // Actualizar el almacenamiento local
+                    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+                    // Actualizar el contador del carrito
+                    cartItemCount--;
+
+                    // Actualizar la visualización del carrito
+                    updateCartItems();
+                    updatePrices();
+                    updateCartCounter(); // Actualizar el contador del carrito
+                }
+            }
+
+
+            // Llamar a la función para restaurar el carrito al cargar la página
+            restoreCart();
+
+            document.querySelectorAll('.product_action_btns .alCarrito').forEach(btn => {
+                btn.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const productItem = this.closest('.motorcycle_product_grid');
+                    addToCart(productItem);
+                });
+            });
+            document.querySelectorAll('.ver-btn').forEach(btn => {
+                btn.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const imageUrl = this.getAttribute('data-image');
+                    const productName = this.getAttribute('data-title');
+                    const productImageElement = document.getElementById('productImage');
+                    productImageElement.src = imageUrl;
+                    const modalTitleElement = document.getElementById('productImageModalLabel');
+                    modalTitleElement.textContent = productName;
+                    $('#productImageModal').modal('show');
+                });
+            });
+
+            document.querySelector('.cart_items_list').addEventListener('click', function(event) {
+                if (event.target.classList.contains('remove_btn')) {
+                    const item = event.target.closest('li');
+                    removeFromCart(item);
+                }
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            // Cargar marcas al cargar la página
+            $.get('/obtener-marcas', function(data) {
+                console.log(data);
+
+                data.forEach(function(marca) {
+                    $('#marcasDropdown').append('<option value="' + marca + '">' + marca +
+                        '</option>');
+                    $('#marcasDropdown').niceSelect('update');
+                });
+            });
+
+            // Manejar cambio en el dropdown de marcas
+            $('#marcasDropdown').change(function() {
+                var marcaSeleccionada = $(this).val();
+
+                // Hacer una solicitud AJAX para obtener modelos según la marca seleccionada
+                $.get('/obtener-modelos/' + marcaSeleccionada, function(data) {
+                    // Limpiar modelos existentes
+                    $('#modelosDropdown').empty();
+                    $('#modelosDropdown').append($('<option>', {
+                        value: '',
+                        text: 'Seleccione'
+                    }));
+
+                    // Llenar modelos
+                    data.forEach(function(modelo) {
+                        $('#modelosDropdown').append('<option value="' + modelo + '">' +
+                            modelo + '</option>');
+                        $('#modelosDropdown').niceSelect('update');
+                    });
+                });
+            });
+            $('#modelosDropdown').change(function() {
+                // Verificar si se ha seleccionado un modelo
+                if ($(this).val() !== '') {
+                    // Si se seleccionó un modelo, habilitar el botón "OK"
+                    $('#addToCartModalOkButton').prop('disabled', false);
+                } else {
+                    // Si no se seleccionó un modelo, deshabilitar el botón "OK"
+                    $('#addToCartModalOkButton').prop('disabled', true);
+                }
+            });
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+</body>
+
 </html>

@@ -62,7 +62,8 @@
     <!-- End Google Tag Manager -->
 
     <!-- custom - css include -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}?v={{ time() }}">
+
     <style>
         .sb_category ul ul {
             display: none;

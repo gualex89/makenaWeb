@@ -48,7 +48,8 @@
     <!-- jquery ui - css include -->
     <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
     <!-- custom - css include -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}?v={{ time() }}">
+
 
     <!-- SweetAlert2 CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.6.0/dist/sweetalert2.min.css">
