@@ -8,13 +8,16 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <title>Fundas para tu Celu - Makena | Personalizadas para Samsung, Motorola, Xiaomi e iPhone</title>
-    <meta name="description" content="Fundas personalizadas para Samsung, Motorola, Xiaomi y iPhone en Makena. Elige entre más de 1000 modelos o crea tu diseño. Envíos a toda Argentina.">
-    <meta name="keywords" content="fundas personalizadas, fundas celulares, carcasas, anime, Dragon Ball, iPhone, Samsung, Argentina">
+    <meta name="description"
+        content="Fundas personalizadas para Samsung, Motorola, Xiaomi y iPhone en Makena. Elige entre más de 1000 modelos o crea tu diseño. Envíos a toda Argentina.">
+    <meta name="keywords"
+        content="fundas personalizadas, fundas celulares, carcasas, anime, Dragon Ball, iPhone, Samsung, Argentina">
     <link rel="canonical" href="https://makenafundas.com.ar">
 
     <!-- Open Graph Meta -->
     <meta property="og:title" content="Fundas para celulares en Argentina - Makena">
-    <meta property="og:description" content="Compra fundas personalizadas y de alta calidad para tu celular. Envíos rápidos y precios accesibles en toda Argentina.">
+    <meta property="og:description"
+        content="Compra fundas personalizadas y de alta calidad para tu celular. Envíos rápidos y precios accesibles en toda Argentina.">
     <meta property="og:image" content="https://makenafundas.com.ar/images/logo/makenaminiicon.png">
     <meta property="og:url" content="https://makenafundas.com.ar">
     <meta property="og:type" content="website">
@@ -22,7 +25,8 @@
     <!-- Twitter Card Meta -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Fundas para tu Celular - Makena">
-    <meta name="twitter:description" content="Fundas personalizadas para Samsung, Motorola, Xiaomi y iPhone. ¡Crea tu funda en Makena!">
+    <meta name="twitter:description"
+        content="Fundas personalizadas para Samsung, Motorola, Xiaomi y iPhone. ¡Crea tu funda en Makena!">
     <meta name="twitter:image" content="https://makenafundas.com.ar/images/logo/makenaminiicon.png">
 
     <link rel="shortcut icon" href="images/logo/makenaminiicon.png">
@@ -172,11 +176,12 @@
                     <div class="col-md-6 col-sm-12">
                         <div class="descripcion">
                             <p style="font-size: 50px; text-align: center; font-weight: bold; line-height: 1.2;"><span
-                                    style="color: #F831FE">Todo</span> lo que buscabas</p>
+                                    style="color: #b321a6">Todo</span> lo que buscabas</p>
 
                             <p style="font-size: 35px; text-align: center; line-height: 1.4;">Acabado brillante,
                                 impresión <strong>Ultra HD 1200 DPI</strong> altura borde de cámara 1.5mm para
-                                <strong>protegerla</strong> y agarres laterales <strong>anti-slip</strong>.</p>
+                                <strong>protegerla</strong> y agarres laterales <strong>anti-slip</strong>.
+                            </p>
                         </div>
                     </div>
 
@@ -204,7 +209,8 @@
                                 <div class="motorcycle_product_grid">
                                     <div class="item_image">
                                         <a href="/catalogo">
-                                            <img src="{{ Voyager::image($producto->image) }}" alt="Funda personalizada de {{ $producto->name }}">
+                                            <img src="{{ Voyager::image($producto->image) }}"
+                                                alt="Funda personalizada de {{ $producto->name }}">
                                         </a>
                                     </div>
                                     <div class="item_content">
@@ -284,7 +290,8 @@
 
                     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                         <div class="feature_fullimage text-center">
-                            <img src="images/ventajastpu4.webp" alt="Fundas personalizadas con Bordes antideslizantes">
+                            <img src="images/ventajastpu4.webp"
+                                alt="Fundas personalizadas con Bordes antideslizantes">
                             <div class="item_content">
                                 <h3 class="item_title text-white mb_30">BORDES</h3>
                                 <h3 class="item_title text-white mb_30">ANTI-GOLPES</h3>
