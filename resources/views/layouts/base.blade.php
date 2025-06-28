@@ -47,7 +47,7 @@
     <!-- jquery ui - css include -->
     <link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
     <!-- custom - css include -->
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}?v={{ time() }}">
 
     <!-- Google Tag Manager -->
     <script>
