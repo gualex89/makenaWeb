@@ -72,3 +72,6 @@ Route::get('/frecuentes', [FrecuentesController::class, 'Frecuentes'])->name('Fr
 
 
 Route::post('/webhook', [webhook::class, 'handleWebhook']);
+
+Route::get('/catalogo/{slug}', [CatalogueController::class, 'show'])->name('catalogo.show');
+

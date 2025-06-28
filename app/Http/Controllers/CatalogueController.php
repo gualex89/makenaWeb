@@ -103,4 +103,26 @@ class CatalogueController extends Controller
         $modelos = Cover::where('marca', $marca)->pluck('modelo');
         return response()->json($modelos);
     }
+
+    public function show($slug)
+    {
+        $misProductos = Product::all();
+        $precioFundas = null;
+        $precioPopSockets = null;
+        $precioFundasDobles = null;
+    
+        foreach ($misProductos as $producto) {
+            if ($producto->name === 'Dragon Ball') {
+                $precioFundas = $producto->price;
+            }     
+            if ($producto->name === 'Popsockets') {
+                $precioPopSockets = $producto->price;
+            }
+            if ($producto->name === 'Sailor Moon') {
+                $precioFundasDobles = $producto->price;
+            }
+        }
+        $item = Catalogue::where('slug', $slug)->firstOrFail();
+        return view('layouts.catalogo_detalle', compact('item', 'precioFundas', 'precioPopSockets', 'precioFundasDobles'));
+    }
 }

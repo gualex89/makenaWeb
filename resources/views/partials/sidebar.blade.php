@@ -30,7 +30,8 @@
 
     <div class="msb_widget brand_logo text-center">
       <a href="/">
-        <img src="images/logo/logo_25_1x.png" srcset="images/logo/logo_black.png" alt="logo negro de makena">
+        <img src="{{ asset('images/logo/logo_black.png') }}" srcset="{{ asset('images/logo/logo_black.png') }}">
+
       </a>
     </div>
 
