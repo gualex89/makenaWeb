@@ -8,6 +8,7 @@ vendor/
 
 # Ignorar archivos de Composer
 composer.lock
+composer.json
 composer.phar
 
 # Ignorar archivos y logs no deseados
