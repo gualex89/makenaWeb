@@ -834,6 +834,12 @@
         }
       });
 
+      document.getElementById('pay-with-transfer').addEventListener('click', function() {
+        console.log(idOrder);
+        marcarComoTransferencia(idOrder);
+
+      });
+
       // Obtener los elementos del carrito almacenados en el localStorage
       let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 
@@ -1435,6 +1441,36 @@
           });
       });
     }
+
+    function marcarComoTransferencia(idOrder) {
+  fetch('/marcar-transferencia', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-CSRF-TOKEN': '{{ csrf_token() }}'
+    },
+    body: JSON.stringify({ idOrder: idOrder })
+  })
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      }
+      throw new Error('Error en la respuesta del servidor.');
+    })
+    .then(data => {
+      console.log('Respuesta del servidor:', data);
+      
+      // Codificar el ID en base64
+      const idBase64 = btoa(idOrder.toString());
+
+      // Redirigir a la URL con el ID codificado
+      window.location.href = `/datos-transferencia?orden=${idBase64}`;
+    })
+    .catch(error => {
+      console.error('Error al enviar los datos:', error);
+    });
+}
+
 
     function updateOrder() {
       fetch('/actualizar-orden', {

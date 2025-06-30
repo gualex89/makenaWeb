@@ -91,6 +91,30 @@ class CheckoutController extends Controller
         
         
     }
+    public function marcarTransferencia(Request $request){
+        $data = $request->all();
+        $idOrder = $data['idOrder'];
+        
+
+        $order = Order::find($idOrder);
+        if($order){
+            $order->update([
+                'esTransferencia' => 1,
+                
+            ]);
+            
+            
+            /* dd($order); */
+            // Devolver una respuesta o realizar alguna otra lógica si es necesario
+            return response()->json(['message' => 'Orden actualizada correctamente'], 200);
+        } else {
+            // La orden no fue encontrada, puedes manejar este caso según tu lógica de aplicación
+            return response()->json(['message' => 'Orden no encontrada', 'idOrder' => $idOrder], 404);
+        }
+        
+        
+        
+    }
     public function updateDiscount(Request $request){
         $data = $request->all();
         $idOrder = $data['idOrder'];

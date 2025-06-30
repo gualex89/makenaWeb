@@ -13,5 +13,6 @@ class Order extends Model
         'preference_id',
         'status',
         'envio_zippin',
+        'esTransferencia'
     ];
 }

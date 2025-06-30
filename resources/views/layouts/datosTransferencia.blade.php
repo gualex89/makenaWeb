@@ -139,21 +139,35 @@
 			
 				<!-- cart_section - start
 			================================================== -->
-			<section class="cart_section sec_ptb_140 clearfix cart_section vh-100 d-flex justify-content-center align-items-center">
+			<section class="cart_section sec_ptb_120 clearfix cart_section  d-flex justify-content-center align-items-center">
 				<div class="container text-center">
 					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-						<img src="images/logos/check.png" alt="icono check" width="15%">
-						<h1>¡Gracias por tu compra!</h1>
-						<h3>Recibirás un correo electrónico con la confirmación</h3>
-						<h3>de tu pedido y el número de orden.</h3>
-						<h2 class="mt-5">¿Querés seguir mirando?</h2>
-			
-						<a class="custom_btn bg_carparts_red text-uppercase" href="/catalogo">Ver Catálogo</a>
-			
-						<p class="mt-5">*La compra está sujeta a stock. En caso de no contar con <br>
-							el mismo en el momento de la compra, nos comunicaremos con ud.</p>
+						<h2><img src="images/logos/check.png" alt="icono check" width="5%"> ¡Recibimos tu pedido con éxito!</h2>
+						<h3>Ahora solo falta un paso para comenzar con la producción de tu funda 🤩</h3>
 					</div>
+				
+					<div class="card-transferencia mx-auto">
+						<p>💸 <strong>Elegiste pagar por transferencia bancaria.</strong></p>
+						<p>Para continuar con tu pedido, <strong>realizá la transferencia</strong><br>y <strong>envía el comprobante por WhatsApp.</strong></p>
+						<p>🕒 <strong>El pedido se confirma una vez recibido el comprobante.</strong></p>
+						
+						<p><strong>Tu número de orden es: <span style="font-size: 22px">{{$orden->id_order}}</span></strong></p>
+						<p><strong>Titular:</strong> Gabriela Oropeza<br>
+							 <strong>CVU:</strong> 0000003100051303419183<br>
+							 <strong>Alias:</strong> makenafundas.mp<br>
+							 <strong>CUIT:</strong> 27-95821492-3<br>
+							 <strong>Monto: </strong><span class="monto">{{ number_format($orden->total, 0, ',', '.') }}$</span>
+
+						</p>
+					</div>
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mt-2">
+						<!-- Enviar comprobante de pago por WhatsApp -->
+						<h4 ><a style="color: #b321a6" href="https://api.whatsapp.com/send/?phone=5491122444188&text=Hola%21+Te+env%C3%ADo+el+comprobante+de+mi+pedido+numero+de+orden+%23{{ $orden->id_order }}&type=phone_number&app_absent=0 " rel="noopener noreferrer" target="_blank">📤 Enviar comprobante por WhatsApp</a></h4>
+						
+					</div>
+					
 				</div>
+				
 			</section>
 			<!-- cart_section - end
 			================================================== -->
