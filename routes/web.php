@@ -79,5 +79,5 @@ Route::post('/webhook', [webhook::class, 'handleWebhook']);
 
 Route::get('/checkout-orden-compra', [OrdenCompraController::class, 'mostrarOrden']);
 
-Route::get('/datos-transferencia', [TransferenciaController::class, 'mostrarFormulario']);
+Route::get('/datos-transferencia', [TransferenciaController::class, 'mostrarFormulario'])->name('datosTransferencia');;
     

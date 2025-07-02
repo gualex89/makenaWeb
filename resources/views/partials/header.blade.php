@@ -41,7 +41,7 @@
               </div>
               <div class="col-lg-2">
                   <ul class="action_items ul_li_right clearfix">
-                    @if (!Route::is('Frecuentes') && !Route::is('carrito') && !Route::is('checkout') && !Route::is('aprobado') && !Route::is('rechazado'))
+                    @if (!Route::is('Frecuentes') && !Route::is('carrito') && !Route::is('checkout') && !Route::is('aprobado') && !Route::is('rechazado') && !Route::is('datosTransferencia'))
                     <li>
                         <button type="button" class="cart_btn">CARRITO <small class="btn_badge">0</small></button>
                     </li>
