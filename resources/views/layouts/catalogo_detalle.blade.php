@@ -64,7 +64,7 @@
             <div class="motorcycle_product_grid container_precio_dinamica">
                 <span class="item_price_dinamico">{{ $precioFundas }}</span>
                 <h6>Envíos a todo el país</h6>
-                <h6 class="d-none">🚚 Cotizá tu envío</h6>
+                <a href="/calcula-envio" target="_blank" >🚚 Cotizá tu envío</a>
             </div>
             <div class="motorcycle_product_grid">
                 <span>📱 Impresión HD ultra brillante</span><br>

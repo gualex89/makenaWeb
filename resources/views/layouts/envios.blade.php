@@ -412,6 +412,7 @@
 					label2.setAttribute('for', 'carrier_' + index);
 					label2.textContent = service_type;
 					label3.setAttribute('for', 'carrier_' + index);
+					label3.style.fontWeight = 'bold';
 					label3.textContent = '$' + price;
 
 					// Añadir el campo de selección radio y su etiqueta al div
