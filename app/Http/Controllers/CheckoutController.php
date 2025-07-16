@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Download;
 use App\Models\Order;
 use App\Models\PostalCode;
+use App\Models\Transferencia;
 use MercadoPago\MercadoPagoConfig;
 use MercadoPago\Client\Preference\PreferenceClient;
 use Illuminate\Http\Request;
@@ -102,6 +103,11 @@ class CheckoutController extends Controller
                 'esTransferencia' => 1,
                 
             ]);
+
+            $transferencia = new Transferencia();
+            $transferencia->order_id = $idOrder;
+            $transferencia->save();
+
             
             
             /* dd($order); */
