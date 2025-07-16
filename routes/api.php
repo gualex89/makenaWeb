@@ -3,6 +3,7 @@
 use App\Http\Controllers\EnviosController;
 use App\Http\Controllers\MercadoPago;
 use App\Http\Controllers\MercadoPagoController;
+use App\Http\Controllers\TransferenciaController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -27,3 +28,6 @@ Route::post('/mercado-pago', [MercadoPagoController::class, 'crearPreferencia'])
 
 
 Route::get('/consulta-envio/{codigoPostal}', [EnviosController::class, 'consultaEnvio']);
+
+Route::post('/webhook-transferencia', [TransferenciaController::class, 'webhookTransferencia'])->name('webhookTransferencia');
+

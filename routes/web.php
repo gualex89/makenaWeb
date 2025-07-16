@@ -8,9 +8,11 @@ use App\Http\Controllers\TuFundaController;
 use App\Http\Controllers\CarritoController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\FrecuentesController;
+use App\Http\Controllers\OrdenCompraController;
 use App\Http\Controllers\ZippinController;
 use App\Http\Controllers\MercadoPagoController;
 use App\Http\Controllers\webhook;
+use App\Http\Controllers\TransferenciaController;
 
 Route::get('/', [HomeImagesController::class, 'index'])->name('welcome');
 
@@ -64,6 +66,8 @@ Route::post('/guardar-orden', [CheckoutController::class, 'SaveOrder']);
 
 Route::post('/actualizar-orden', [CheckoutController::class, 'updateOrder']);
 
+Route::post('/marcar-transferencia', [CheckoutController::class, 'marcarTransferencia']);
+
 Route::post('/actualizar-descuento', [CheckoutController::class, 'updateDiscount']);
 
 Route::get('/obtener-provincias/{codigoPostal}', [CheckoutController::class, 'obtenerProvincias']);
@@ -73,5 +77,13 @@ Route::get('/frecuentes', [FrecuentesController::class, 'Frecuentes'])->name('Fr
 
 Route::post('/webhook', [webhook::class, 'handleWebhook']);
 
+
 Route::get('/catalogo/{slug}', [CatalogueController::class, 'show'])->name('catalogo.show');
+
+
+Route::get('/checkout-orden-compra', [OrdenCompraController::class, 'mostrarOrden']);
+
+Route::get('/datos-transferencia', [TransferenciaController::class, 'mostrarFormulario'])->name('datosTransferencia');;
+Route::get('/calcula-envio', [TransferenciaController::class, 'calculaEnvio'])->name('calculaEnvio');;
+    
 

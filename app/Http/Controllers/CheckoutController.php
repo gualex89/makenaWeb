@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Download;
 use App\Models\Order;
 use App\Models\PostalCode;
+use App\Models\Transferencia;
 use MercadoPago\MercadoPagoConfig;
 use MercadoPago\Client\Preference\PreferenceClient;
 use Illuminate\Http\Request;
@@ -86,6 +87,35 @@ class CheckoutController extends Controller
         } else {
             // La orden no fue encontrada, puedes manejar este caso según tu lógica de aplicación
             return response()->json(['message' => 'Orden no encontrada', 'idOrder' => $preference_id], 404);
+        }
+        
+        
+        
+    }
+    public function marcarTransferencia(Request $request){
+        $data = $request->all();
+        $idOrder = $data['idOrder'];
+        
+
+        $order = Order::find($idOrder);
+        if($order){
+            $order->update([
+                'esTransferencia' => 1,
+                
+            ]);
+
+            $transferencia = new Transferencia();
+            $transferencia->order_id = $idOrder;
+            $transferencia->save();
+
+            
+            
+            /* dd($order); */
+            // Devolver una respuesta o realizar alguna otra lógica si es necesario
+            return response()->json(['message' => 'Orden actualizada correctamente'], 200);
+        } else {
+            // La orden no fue encontrada, puedes manejar este caso según tu lógica de aplicación
+            return response()->json(['message' => 'Orden no encontrada', 'idOrder' => $idOrder], 404);
         }
         
         

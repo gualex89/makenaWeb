@@ -903,6 +903,9 @@ hr {
 .sec_ptb_100 {
   padding: 100px 0px;
 }
+.sec_ptb_120 {
+  padding: 120px 0px;
+}
 
 .sec_ptb_140 {
   padding: 140px 0px;
@@ -1211,6 +1214,9 @@ button {
 
 .bg_success {
   background-color: #39b54a;
+}
+.bg_transferencia {
+  background-color: #39b5b3;
 }
 
 .bg_carparts_red {
@@ -19781,6 +19787,27 @@ blockquote .blockquote_title {
   font-size: 16px;
   max-height: 210px;
   
+}
+.card-transferencia {
+  background-color: #efc6e8;
+  border-radius: 20px;
+  padding: 25px;
+  max-width: 600px;
+  text-align: left;
+  font-size: 20px;
+  color: #000;
+  margin-top: 30px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+  text-align: center  ;
+}
+
+.card-transferencia p {
+  margin-bottom: 10px;
+}
+
+.card-transferencia .monto {
+  color: #b321a6;
+  font-weight: bold;
 }
 
 
