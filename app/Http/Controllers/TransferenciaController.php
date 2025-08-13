@@ -47,8 +47,8 @@ class TransferenciaController extends Controller
         }
 
         $idNuevaOrden = $request->input('idNuevaOrden');
-        $idOrder = $request->input('idOrder');
         $idTransferencia = 'TR-' . $request->input('idTransferencia');
+        $idOrder = $request->input('idOrder');
 
 
         $BDdatos = Order::find($idNuevaOrden);
@@ -100,7 +100,7 @@ class TransferenciaController extends Controller
         });
     }
     public function sendMailNuevaVenta($BDdatos, $payment_id){
-        $emailTo = 'gualex89@gmail.com';
+        $emailTo = 'ventasmakena@gmail.com';
         $pathToImage = public_path('images/logo/logo_black.png');
         /* dd($pathToImage); */
         $itemsCart = json_decode($BDdatos->items_cart, true);
