@@ -57,6 +57,10 @@
         </table>
     @endif
 
+    <p>Tu pedido se encuentra en proceso. <br>
+        Nuestras fundas son personalizadas y únicas, por lo que requieren un <b>tiempo de producción de entre 24 y 72 horas hábiles</b> como mínimo.<br>
+        Si el modelo está fuera de stock, el plazo puede extenderse un poco más. Te avisaremos por mail cuando tu pedido esté listo para retiro o envío.</p>
+
     <h3>Si seleccionaste <span style="font-weight: bold; color: #b321a6">RETIRO</span> o envio por <span
             style="font-weight: bold; color: #b321a6">MOTOMENSAJERÍA</span> <br>
         -Recibirás un mail cuando tu pedido esté listo para retirar o ser enviado.
