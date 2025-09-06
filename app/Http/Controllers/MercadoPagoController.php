@@ -20,7 +20,7 @@ class MercadoPagoController extends Controller
         
         
         
-        MercadoPagoConfig::setAccessToken(env('MP_ACCESS_TOKEN'));
+        MercadoPagoConfig::setAccessToken(config('services.mercadopago.token'));
 
         $client = new PreferenceClient();
         $preference = $client->create([
