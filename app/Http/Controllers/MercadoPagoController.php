@@ -20,7 +20,7 @@ class MercadoPagoController extends Controller
         
         
         
-        MercadoPagoConfig::setAccessToken(env('MP_ACCESS_TOKEN'));
+        MercadoPagoConfig::setAccessToken(config('services.mercadopago.token'));
 
         $client = new PreferenceClient();
         $preference = $client->create([
@@ -33,9 +33,9 @@ class MercadoPagoController extends Controller
         ),
         "back_urls" => array(
             
-            "success" => env('SUCCESS_URL_MP'),
-            "failure" => env('ERROR_URL_MP'),
-            "pending" => env('ERROR_URL_MP')
+            "success" => config('services.mercadopago.success_url'),
+            "failure" => config('services.mercadopago.error_url'),
+            "pending" => config('services.mercadopago.error_url'),
             
         ),
         "auto_return" => "all",
