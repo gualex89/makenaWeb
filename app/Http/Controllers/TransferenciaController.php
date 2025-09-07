@@ -42,7 +42,9 @@ class TransferenciaController extends Controller
         if ($request->input('token') !== env('WEBHOOK_TOKEN')) {
             return response()->json([
                 'success' => false,
-                'message' => 'Token inválido'
+                'message' => 'Token inválido',
+                'tokenEnviado' => $request->input('token'),
+                'tokenEsperado' => env('WEBHOOK_TOKEN')
             ], 401);
         }
 
