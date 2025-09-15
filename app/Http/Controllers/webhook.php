@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Mail;
 use GuzzleHttp\Client;
 use App\Http\Controllers\EnviosController;
 use App\Services\EnvioService;
+use Illuminate\Support\Facades\Log; 
 
 class webhook extends Controller
 {
@@ -33,6 +34,11 @@ class webhook extends Controller
                 'Content-Type' => 'application/json',
                 'Authorization' => 'Bearer '. env('MP_ACCESS_TOKEN')
             ])->get('https://api.mercadopago.com/v1/payments/' . $id);
+
+            Log::info('Respuesta de Mercado Pago para ID: ' . $id, [
+                'status' => $response->status(),
+                'body' => $response->json()
+            ]);
 
             if ($response->successful()) { 
                 
