@@ -40,7 +40,7 @@ class webhook extends Controller
                 'body' => $response->json()
             ]);
 
-            if ($response) { 
+            if ($response->successful()) { 
                 
                 //Datos que vienen de la API
                 $payment_data = $response->json(); 
