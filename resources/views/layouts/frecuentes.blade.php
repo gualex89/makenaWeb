@@ -185,8 +185,26 @@
                             mal uso de la misma o confusiones en el modelo del celular.</p>
                         <h3 class="text-left">Si tenés dudas con respecto al modelo de tu celular podes consultar el
                             siguiente <a href="https://www.instagram.com/stories/highlights/17891378999691555/"
-                                style="color: #b321a6">tutorial</a> </h3>
-                        <p class="text-left"></p>
+                                style="color: #b321a6">tutorial</a> </h3> <br>
+                        <h2 class="text-left">Políticas de Devolución y Cambios </h2>
+                        <p class="text-left">En Makena Fundas cada producto es elaborado de manera personalizada, por lo que no trabajamos con devoluciones ni cambios salvo en casos de defectos de fabricación que imposibiliten el uso de la funda.</p>
+                        <p class="text-left">
+                            <strong>No realizamos cambios ni devoluciones por:</strong>
+                            <ul>
+                                <li class="text-left">Diferencias mínimas en el posicionamiento de la imagen (variaciones de milímetros son inevitables en el proceso de sublimación).</li>
+                                <li class="text-left">Variaciones leves en los tonos de color, ya que pueden cambiar según la iluminación de la foto, la pantalla del dispositivo o el material utilizado.</li>
+                                <li class="text-left">Pequeños puntos o imperfecciones propias del proceso de impresión, siempre que no afecten el uso o la protección del producto.</li>
+                            </ul>
+                        </p>
+                        <p class="text-left">
+                            <strong>Sí aceptamos devoluciones o cambios si:</strong>
+                            <ul>
+                                <li class="text-left">El producto llega roto o con fallas que impidan su uso.</li>
+                                <li class="text-left">El modelo recibido no coincide con el pedido realizado.</li>
+                            </ul>
+                        </p>
+                        <p class="text-left">En esos casos, el cliente deberá notificarnos dentro de las 48 horas de recibido el producto enviando fotos del mismo para que podamos gestionar la solución.</p>
+
                     </div>
 
                 </div>
