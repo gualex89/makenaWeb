@@ -607,6 +607,9 @@
             passive: true
         });
 
+        // Establecer left: 50px en el upper-canvas generado por Fabric.js
+        document.querySelector('.upper-canvas').style.left = '50px';
+
         var fondoImg, userImg, texto;
         var tiposDeLetra = [
             'Arial',
