@@ -153,8 +153,9 @@
 						
 						<p><strong>Tu número de orden es: <span style="font-size: 22px">{{$orden->id_order}}</span></strong></p>
 						<p><strong>Titular:</strong> Gabriela Oropeza<br>
-							 <strong>CVU:</strong> 0000003100051303419183<br>
-							 <strong>Alias:</strong> makenafundas.mp<br>
+							 <strong>CVU:</strong> 0070001630004045563624<br>
+							 <strong>Alias:</strong> makenafundas.gl <br>
+							 <strong>Banco:</strong> Galicia <br>
 							 <strong>CUIT:</strong> 27-95821492-3<br>
 							 <strong>Monto: </strong><span class="monto">{{ number_format($orden->total, 0, ',', '.') }}$</span>
 
