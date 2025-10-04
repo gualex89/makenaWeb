@@ -22,6 +22,16 @@ class HomeImagesController extends Controller
 
         return view('layouts.base', compact('sliderPrincipal', 'totalImages', 'misProductos') );
     }
+    public function homenew(){
+
+        $sliderPrincipal = Principalimage::all();
+        $totalImages= $sliderPrincipal->count();
+        
+        $misProductos = Product::all();
+
+
+        return view('layouts.newhome', compact('sliderPrincipal', 'totalImages', 'misProductos') );
+    }
     
     
     public function catalogo(){

@@ -85,5 +85,7 @@ Route::get('/checkout-orden-compra', [OrdenCompraController::class, 'mostrarOrde
 
 Route::get('/datos-transferencia', [TransferenciaController::class, 'mostrarFormulario'])->name('datosTransferencia');;
 Route::get('/calcula-envio', [TransferenciaController::class, 'calculaEnvio'])->name('calculaEnvio');;
-    
+
+
+Route::get('/homenew', [HomeImagesController::class, 'homenew'])->name('homenew');
 
