@@ -41,25 +41,53 @@
             <!-- header_section - end
             ================================================== -->
             
+            <!-- Banner_section - start
+            ================================================== -->
+
             <div class="swiper swiper-motorcycle-banner" style="width:100vw; max-width:1920px; height:42.25vw; max-height:1080px; margin:auto; position:relative;">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <img src="{{ asset('images/slider/motorcycle/bg1.png') }}" alt="Banner 1" style="width:100%; object-fit:cover;">
-                    </div>
-                    <div class="swiper-slide" style="position:relative;">
-                        <img src="{{ asset('images/slider/motorcycle/bg2.png') }}" alt="Banner 2" style="width:100%; object-fit:cover;">
-                        <div style="position:absolute; top:10%; left:10%; transform:translate(-50%,-50%); text-align:center; z-index:2;">
-                            <h3 style="color:#fff; font-size:3rem; text-shadow:0 2px 8px #000;">Hola</h3>
-                            <a href="#" class="tf-button style-1" style="margin-top:20px;">Ver más</a>
+                     @foreach ($banners as $banner)
+                        <div class="swiper-slide" style="position:relative;">
+                            <img src="{{ Voyager::image($banner->image) }}" alt="{{ $banner->name }}" style="width:100%; object-fit:cover;">
+                            <div style="position:absolute; top:10%; left:10%; transform:translate(-50%,-50%); text-align:center; z-index:2;">
+                                <h3 style="color:#fff; font-size:3rem; text-shadow:0 2px 8px #000;">{{ $banner->text1 }}</h3>
+                                <a href="{{ $banner->href }}" class="tf-button style-1" style="margin-top:20px; ">{{ $banner->name_button }}</a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="{{ asset('images/slider/motorcycle/bg3.png') }}" alt="Banner 3" style="width:100%;  object-fit:cover;">
-                    </div>
+                        
+                    @endforeach
                 </div>
                 <!-- Botones dentro del swiper -->
                 <div class="swiper-button-next next-3d over" style="z-index: 10; right: 20px;"></div>
                 <div class="swiper-button-prev prev-3d over" style="z-index: 10; left: 20px;"></div>
+            </div>
+
+            <!-- Banner_section - end
+            ================================================== -->
+            
+            
+            <div class="tf-card-box style-1 mt-5 p-5" style="width: 80%; margin:auto;">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <div class="video">
+                            <iframe width="100%" height="315" src="https://www.youtube.com/embed/nZBAXstf5Zs"
+                                frameborder="0" allowfullscreen></iframe>
+
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <div class="descripcion p-4" style="display: flex; flex-direction: column; justify-content: center; height: 100%;">
+                            <p style="font-size: 50px; text-align: center; font-weight: bold; line-height: 1.2;"><span
+                                    style="color: #b321a6">Todo</span> lo que buscabas</p>
+
+                            <p style="font-size: 26px; text-align: center; line-height: 1.4; align-items:center">Acabado brillante,
+                                impresión <strong>Ultra HD 1200 DPI</strong> altura borde de cámara 1.5mm para
+                                <strong>protegerla</strong> y agarres laterales <strong>anti-slip</strong>.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
             </div>
 
             
@@ -1376,7 +1404,6 @@
         <div class="cart_sidebar" style="display:none; position:fixed; top:0; right:0; width:370px; height:100vh; background:#181818; z-index:9999; box-shadow:-2px 0 10px rgba(0,0,0,0.2); overflow-y:auto;">
             <button type="button" class="close_btn" style="background:none; border:none; color:#fff; font-size:2rem; position:absolute; top:15px; right:15px; z-index:10001;"><i class="fas fa-times"></i></button>
             <div style="padding:40px 24px 24px 24px;">
-                <h3 style="color:#fff; margin-bottom:24px;">Tu carrito</h3>
                 <ul class="cart_items_list ul_li_block mb_30 clearfix" style="padding:0; margin:0 0 30px 0;">
                     <!-- Items del carrito se llenan por JS -->
                 </ul>
@@ -1506,7 +1533,7 @@
                 cartItems.forEach(cartItem => {
                     const cartItemHTML = `
                     <li style="background:transparent; margin-bottom:32px; padding:0; display:flex; align-items:center;">
-                        <div style="background:#fff; border-radius:18px; padding:12px; display:flex; align-items:center; width:100px; min-width:60px; justify-content:center;">
+                        <div style="background:#fff; border-radius:18px; padding:12px; display:flex; align-items:center; width:70px; min-width:30px; justify-content:center;">
                             <img src="${cartItem.image}" alt="Funda en carrito ${cartItem.name}" style="width:100%; border-radius:14px; display:block;"/>
                         </div>
                         <div class="item_content" style="color:#fff; margin-left:18px; position:relative; flex:1;">

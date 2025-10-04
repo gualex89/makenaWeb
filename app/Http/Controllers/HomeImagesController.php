@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Banner;
 use App\Models\Order;
 use App\Models\Principalimage;
 use Illuminate\Http\Request;
@@ -26,11 +27,12 @@ class HomeImagesController extends Controller
 
         $sliderPrincipal = Principalimage::all();
         $totalImages= $sliderPrincipal->count();
+        $banners = Banner::all();
         
         $misProductos = Product::all();
 
 
-        return view('layouts.newhome', compact('sliderPrincipal', 'totalImages', 'misProductos') );
+        return view('layouts.newhome', compact('sliderPrincipal', 'totalImages', 'misProductos', 'banners') );
     }
     
     
