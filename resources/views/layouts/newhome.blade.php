@@ -480,7 +480,7 @@
                     const cartItemHTML = `
                     <li style="background:transparent; margin-bottom:32px; padding:0; display:flex; align-items:center;">
                         <div style="background:#fff; border-radius:18px; padding:12px; display:flex; align-items:center; width:70px; min-width:30px; justify-content:center;">
-                            <img src="${cartItem.image}" alt="Funda en carrito ${cartItem.name}" style="width:100%; border-radius:14px; display:block;"/>
+                            <img src="${cartItem.image}" alt="Funda en carrito ${cartItem.name}" style="width:100%; border-radius:4px; display:block;"/>
                         </div>
                         <div class="item_content" style="color:#fff; margin-left:18px; position:relative; flex:1;">
                              
