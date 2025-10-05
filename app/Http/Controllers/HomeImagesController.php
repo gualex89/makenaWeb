@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Banner;
 use App\Models\CarruselCuadro;
+use App\Models\HomeCategoriasFunda;
 use App\Models\Order;
 use App\Models\Principalimage;
 use Illuminate\Http\Request;
@@ -30,11 +31,12 @@ class HomeImagesController extends Controller
         $totalImages= $sliderPrincipal->count();
         $banners = Banner::all();
         $carrusel_cuadros  = CarruselCuadro::all();
+        $home_categories_fundas = HomeCategoriasFunda::all();
         
         $misProductos = Product::all();
 
 
-        return view('layouts.newhome', compact('sliderPrincipal', 'totalImages', 'misProductos', 'banners', 'carrusel_cuadros') );
+        return view('layouts.newhome', compact('sliderPrincipal', 'totalImages', 'misProductos', 'banners', 'carrusel_cuadros', 'home_categories_fundas') );
     }
     
     

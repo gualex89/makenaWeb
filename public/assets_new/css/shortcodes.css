@@ -263,11 +263,12 @@
     object-fit: cover;
     -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
 }
 
 .tf-card-article:hover .card-media img {
-    -webkit-transform: scale(1.05);
-    transform: scale(1.05);
+    -webkit-transform: scale(1.02);
+    transform: scale(1.02);
     object-fit: cover;
 }
 
@@ -402,6 +403,7 @@
 .tf-card-box .card-media {
     position: relative;
     margin-bottom: 12px;
+    margin-top: 12px;
     border-radius: 25px;
     overflow: hidden;
 }
@@ -414,6 +416,8 @@
     -ms-transition    : all 0.2s ease;
     -o-transition     : all 0.2s ease;
     transition        : all 0.2s ease;
+    display: block;
+    margin: 0 auto;
 }
 
 .tf-card-box:hover .card-media a img {
@@ -522,8 +526,8 @@
 }
 
 .tf-card-box.style-1 .card-media img {
-    width: 235px;
-    height: 244px;
+    width: auto;
+    height: 350px;
 }
 
 .tf-card-box.style-1 .name {

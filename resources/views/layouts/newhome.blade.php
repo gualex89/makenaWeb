@@ -154,31 +154,19 @@
                 <div class="themesflat-container">
                     <div class="row">
                         
-                        
+                        @foreach ($home_categories_fundas as $home_categories_funda)
                         <div data-wow-delay="0s" class="wow fadeInUp col-xl-3 col-lg-4 col-md-6 col-sm-6">
                             <div class="tf-card-box style-1">
                                 <div class="card-media">
-                                    <a href="#">
-                                        <img src="{{ asset('assets_new/images/box-item/card-item-05.jpg') }}" alt="">
+                                    <a href="{{ $home_categories_funda->href }}">
+                                        <img src="{{ Voyager::image($home_categories_funda->image) }}" alt="{{ $home_categories_funda->name }}">
                                     </a>
-                                    <span class="wishlist-button icon-heart"></span>
-                                    <div class="featured-countdown">
-                                        <span class="js-countdown" data-timer="7500" data-labels="d,h,m,s"></span>
-                                    </div>
                                     <div class="button-place-bid">
-                                        <a href="#" data-toggle="modal" data-target="#popup_bid" class="tf-button"><span>Place Bid</span></a>
+                                        <a href="{{ $home_categories_funda->href }}"  class="tf-button"><span>Ir a {{$home_categories_funda->name}}</span></a>
                                     </div>
                                 </div>
-                                <h5 class="name"><a href="nft-detail-2.html">Dayco serpentine belt</a></h5>
-                                <div class="author flex items-center">
-                                    <div class="avatar">
-                                        <img src="{{ asset('assets_new/images/avatar/avatar-box-01.jpg') }}" alt="Image">
-                                    </div>
-                                    <div class="info">
-                                        <span>Posted by:</span>
-                                        <h6><a href="author-2.html">Cody Fisher</a> </h6>
-                                    </div>
-                                </div>
+                                <h5 class="name"><a href="nft-detail-2.html">{{ $home_categories_funda->name }}</a></h5>
+                                
                                 <div class="divider"></div>
                                 <div class="meta-info flex items-center justify-between">
                                     <span class="text-bid">Current Bid</span>
@@ -186,223 +174,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div data-wow-delay="0.1s" class="wow fadeInUp col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                            <div class="tf-card-box style-1">
-                                <div class="card-media">
-                                    <a href="#">
-                                        <img src="{{ asset('assets_new/images/box-item/card-item-06.jpg') }}" alt="">
-                                    </a>
-                                    <span class="wishlist-button icon-heart"></span>
-                                    <div class="featured-countdown">
-                                        <span class="js-countdown" data-timer="7500" data-labels="d,h,m,s"></span>
-                                    </div>
-                                    <div class="button-place-bid">
-                                        <a href="#" data-toggle="modal" data-target="#popup_bid" class="tf-button"><span>Place Bid</span></a>
-                                    </div>
-                                </div>
-                                <h5 class="name"><a href="nft-detail-2.html">Dayco serpentine belt</a></h5>
-                                <div class="author flex items-center">
-                                    <div class="avatar">
-                                        <img src="{{ asset('assets_new/images/avatar/avatar-box-02.jpg') }}" alt="Image">
-                                    </div>
-                                    <div class="info">
-                                        <span>Posted by:</span>
-                                        <h6><a href="author-2.html">Cody Fisher</a> </h6>
-                                    </div>
-                                </div>
-                                <div class="divider"></div>
-                                <div class="meta-info flex items-center justify-between">
-                                    <span class="text-bid">Current Bid</span>
-                                    <h6 class="price gem"><i class="icon-gem"></i>0,34</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-wow-delay="0.2s" class="wow fadeInUp col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                            <div class="tf-card-box style-1">
-                                <div class="card-media">
-                                    <a href="#">
-                                        <img src="{{ asset('assets_new/images/box-item/card-item-07.jpg') }}" alt="">
-                                    </a>
-                                    <span class="wishlist-button icon-heart"></span>
-                                    <div class="featured-countdown">
-                                        <span class="js-countdown" data-timer="7500" data-labels="d,h,m,s"></span>
-                                    </div>
-                                    <div class="button-place-bid">
-                                        <a href="#" data-toggle="modal" data-target="#popup_bid" class="tf-button"><span>Place Bid</span></a>
-                                    </div>
-                                </div>
-                                <h5 class="name"><a href="nft-detail-2.html">Dayco serpentine belt</a></h5>
-                                <div class="author flex items-center">
-                                    <div class="avatar">
-                                        <img src="{{ asset('assets_new/images/avatar/avatar-box-03.jpg') }}" alt="Image">
-                                    </div>
-                                    <div class="info">
-                                        <span>Posted by:</span>
-                                        <h6><a href="author-2.html">Cody Fisher</a> </h6>
-                                    </div>
-                                </div>
-                                <div class="divider"></div>
-                                <div class="meta-info flex items-center justify-between">
-                                    <span class="text-bid">Current Bid</span>
-                                    <h6 class="price gem"><i class="icon-gem"></i>0,34</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-wow-delay="0.3s" class="wow fadeInUp col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                            <div class="tf-card-box style-1">
-                                <div class="card-media">
-                                    <a href="#">
-                                        <img src="{{ asset('assets_new/images/box-item/card-item-08.jpg') }}" alt="">
-                                    </a>
-                                    <span class="wishlist-button icon-heart"></span>
-                                    <div class="featured-countdown">
-                                        <span class="js-countdown" data-timer="7500" data-labels="d,h,m,s"></span>
-                                    </div>
-                                    <div class="button-place-bid">
-                                        <a href="#" data-toggle="modal" data-target="#popup_bid" class="tf-button"><span>Place Bid</span></a>
-                                    </div>
-                                </div>
-                                <h5 class="name"><a href="nft-detail-2.html">Dayco serpentine belt</a></h5>
-                                <div class="author flex items-center">
-                                    <div class="avatar">
-                                        <img src="{{ asset('assets_new/images/avatar/avatar-box-04.jpg') }}" alt="Image">
-                                    </div>
-                                    <div class="info">
-                                        <span>Posted by:</span>
-                                        <h6><a href="author-2.html">Cody Fisher</a> </h6>
-                                    </div>
-                                </div>
-                                <div class="divider"></div>
-                                <div class="meta-info flex items-center justify-between">
-                                    <span class="text-bid">Current Bid</span>
-                                    <h6 class="price gem"><i class="icon-gem"></i>0,34</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-wow-delay="0s" class="wow fadeInUp col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                            <div class="tf-card-box style-1">
-                                <div class="card-media">
-                                    <a href="#">
-                                        <img src="{{ asset('assets_new/images/box-item/card-item-01.jpg') }}" alt="">
-                                    </a>
-                                    <span class="wishlist-button icon-heart"></span>
-                                    <div class="featured-countdown">
-                                        <span class="js-countdown" data-timer="7500" data-labels="d,h,m,s"></span>
-                                    </div>
-                                    <div class="button-place-bid">
-                                        <a href="#" data-toggle="modal" data-target="#popup_bid" class="tf-button"><span>Place Bid</span></a>
-                                    </div>
-                                </div>
-                                <h5 class="name"><a href="nft-detail-2.html">Dayco serpentine belt</a></h5>
-                                <div class="author flex items-center">
-                                    <div class="avatar">
-                                        <img src="{{ asset('assets_new/images/avatar/avatar-box-05.jpg') }}" alt="Image">
-                                    </div>
-                                    <div class="info">
-                                        <span>Posted by:</span>
-                                        <h6><a href="author-2.html">Cody Fisher</a> </h6>
-                                    </div>
-                                </div>
-                                <div class="divider"></div>
-                                <div class="meta-info flex items-center justify-between">
-                                    <span class="text-bid">Current Bid</span>
-                                    <h6 class="price gem"><i class="icon-gem"></i>0,34</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-wow-delay="0.1s" class="wow fadeInUp col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                            <div class="tf-card-box style-1">
-                                <div class="card-media">
-                                    <a href="#">
-                                        <img src="{{ asset('assets_new/images/box-item/card-item-02.jpg') }}" alt="">
-                                    </a>
-                                    <span class="wishlist-button icon-heart"></span>
-                                    <div class="featured-countdown">
-                                        <span class="js-countdown" data-timer="7500" data-labels="d,h,m,s"></span>
-                                    </div>
-                                    <div class="button-place-bid">
-                                        <a href="#" data-toggle="modal" data-target="#popup_bid" class="tf-button"><span>Place Bid</span></a>
-                                    </div>
-                                </div>
-                                <h5 class="name"><a href="nft-detail-2.html">Dayco serpentine belt</a></h5>
-                                <div class="author flex items-center">
-                                    <div class="avatar">
-                                        <img src="{{ asset('assets_new/images/avatar/avatar-box-06.jpg') }}" alt="Image">
-                                    </div>
-                                    <div class="info">
-                                        <span>Posted by:</span>
-                                        <h6><a href="author-2.html">Cody Fisher</a> </h6>
-                                    </div>
-                                </div>
-                                <div class="divider"></div>
-                                <div class="meta-info flex items-center justify-between">
-                                    <span class="text-bid">Current Bid</span>
-                                    <h6 class="price gem"><i class="icon-gem"></i>0,34</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-wow-delay="0.2s" class="wow fadeInUp col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                            <div class="tf-card-box style-1">
-                                <div class="card-media">
-                                    <a href="#">
-                                        <img src="{{ asset('assets_new/images/box-item/card-item-03.jpg') }}" alt="">
-                                    </a>
-                                    <span class="wishlist-button icon-heart"></span>
-                                    <div class="featured-countdown">
-                                        <span class="js-countdown" data-timer="7500" data-labels="d,h,m,s"></span>
-                                    </div>
-                                    <div class="button-place-bid">
-                                        <a href="#" data-toggle="modal" data-target="#popup_bid" class="tf-button"><span>Place Bid</span></a>
-                                    </div>
-                                </div>
-                                <h5 class="name"><a href="nft-detail-2.html">Dayco serpentine belt</a></h5>
-                                <div class="author flex items-center">
-                                    <div class="avatar">
-                                        <img src="{{ asset('assets_new/images/avatar/avatar-box-07.jpg') }}" alt="Image">
-                                    </div>
-                                    <div class="info">
-                                        <span>Posted by:</span>
-                                        <h6><a href="author-2.html">Cody Fisher</a> </h6>
-                                    </div>
-                                </div>
-                                <div class="divider"></div>
-                                <div class="meta-info flex items-center justify-between">
-                                    <span class="text-bid">Current Bid</span>
-                                    <h6 class="price gem"><i class="icon-gem"></i>0,34</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-wow-delay="0.2s" class="wow fadeInUp col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                            <div class="tf-card-box style-1">
-                                <div class="card-media">
-                                    <a href="#">
-                                        <img src="{{ asset('assets_new/images/box-item/card-item-04.jpg') }}" alt="">
-                                    </a>
-                                    <span class="wishlist-button icon-heart"></span>
-                                    <div class="featured-countdown">
-                                        <span class="js-countdown" data-timer="7500" data-labels="d,h,m,s"></span>
-                                    </div>
-                                    <div class="button-place-bid">
-                                        <a href="#" data-toggle="modal" data-target="#popup_bid" class="tf-button"><span>Place Bid</span></a>
-                                    </div>
-                                </div>
-                                <h5 class="name"><a href="nft-detail-2.html">Dayco serpentine belt</a></h5>
-                                <div class="author flex items-center">
-                                    <div class="avatar">
-                                        <img src="{{ asset('assets_new/images/avatar/avatar-box-01.jpg') }}" alt="Image">
-                                    </div>
-                                    <div class="info">
-                                        <span>Posted by:</span>
-                                        <h6><a href="author-2.html">Cody Fisher</a> </h6>
-                                    </div>
-                                </div>
-                                <div class="divider"></div>
-                                <div class="meta-info flex items-center justify-between">
-                                    <span class="text-bid">Current Bid</span>
-                                    <h6 class="price gem"><i class="icon-gem"></i>0,34</h6>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -533,7 +305,7 @@
                                                 <img src="{{ asset('assets_new/images/item-background/bg-action-1.png') }}" alt="">
                                             </div>
                                             <div class="swiper-slide">
-                                                <img src="{{ asset('assets_new/images/item-background/bg-action-1.png') }}" alt="">
+                                                <img src="{{ asset('assets_new/images/item-background/bg-action-2.png') }}" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -553,10 +325,10 @@
                                     }'>
                                         <div class="swiper-wrapper">
                                             <div class="swiper-slide">
-                                                <img src="{{ asset('assets_new/images/item-background/bg-action-1.png') }}" alt="">
+                                                <img src="{{ asset('assets_new/images/item-background/bg-action-3.png') }}" alt="">
                                             </div>
                                             <div class="swiper-slide">
-                                                <img src="{{ asset('assets_new/images/item-background/bg-action-1.png') }}" alt="">
+                                                <img src="{{ asset('assets_new/images/item-background/bg-action-4.png') }}" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -575,10 +347,10 @@
                                     }'>
                                         <div class="swiper-wrapper">
                                             <div class="swiper-slide">
-                                                <img src="{{ asset('assets_new/images/item-background/bg-action-1.png') }}" alt="">
+                                                <img src="{{ asset('assets_new/images/item-background/bg-action-6.png') }}" alt="">
                                             </div>
                                             <div class="swiper-slide">
-                                                <img src="{{ asset('assets_new/images/item-background/bg-action-1.png') }}" alt="">
+                                                <img src="{{ asset('assets_new/images/item-background/bg-action-6.png') }}" alt="">
                                             </div>
                                         </div>
                                     </div>

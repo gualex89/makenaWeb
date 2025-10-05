@@ -7,75 +7,49 @@
                     <div class="widget-logo flex-grow">
                         <div class="logo-footer" id="logo-footer">
                             <a href="index.html">
-                                <img id="logo_footer" src="{{ asset('assets_new/images/logo/logo.png') }}" 
-                                data-retina="{{ asset('assets_new/images/logo/logo@2x.png') }}">
+                                <img style="width: 198px" id="logo_header" src="{{ asset('images/logo/logomakena.png') }}" alt="logo_footer">
                             </a>
                         </div>
                     </div>
                     <div class="widget widget-menu style-1">
-                        <h5 class="title-widget">Marketplace</h5>
+                        <h5 class="title-widget">Políticas</h5>
                         <ul>
-                            <li><a href="#">All NFTs</a></li>
-                            <li><a href="#">Virtual worlds</a></li>
-                            <li><a href="#">Domain names</a></li>
-                            <li><a href="#">Photography</a></li>
-                            <li><a href="#">Digital art</a></li>
-                            <li><a href="#">Music</a></li>
+                            <li><a href="#">Políticas de Envío</a></li>
+                            <li><a href="#">Políticas de Garantía</a></li>
+                            <li><a href="#">Políticas de Compra</a></li>
+                            
                         </ul>
                     </div>
                     <div class="widget widget-menu style-2">
-                        <h5 class="title-widget">Resource</h5>
+                        <h5 class="title-widget">Contactanos</h5>
                         <ul>
-                            <li><a href="#">Help center</a></li>
-                            <li><a href="#">Platform status</a></li>
-                            <li><a href="#">Partners</a></li>
-                            <li><a href="#">Discount community</a></li>
-                            <li><a href="#">Live auctions</a></li>
-                            <li><a href="#">Discover</a></li>
+                            <li><a href="#">Email: contacto@makenafundas.com.ar</a></li>
+                            <li><a href="https://wa.me/541122444188">Teléfono: 11 2244 4188</a></li>
+                            
                         </ul>
                     </div>
-                    <div class="widget widget-menu style-3">
-                        <h5 class="title-widget">Account</h5>
-                        <ul>
-                            <li><a href="#">Authors</a></li>
-                            <li><a href="#">My Collection</a></li>
-                            <li><a href="#">Author Profile</a></li>
-                            <li><a href="#">Go to dashboard</a></li>
-                            <li><a href="#">Collection</a></li>
-                            <li><a href="#">Create Collection</a></li>
-                        </ul>
-                    </div>
+                    
                     <div class="widget-last">
-                        <div class="widget-menu style-4">
-                            <h5 class="title-widget">Company</h5>
-                            <ul>
-                                <li><a href="#">Help center</a></li>
-                                <li><a href="#">Platform status</a></li>
-                            </ul>
-                        </div>
-                        <h5 class="title-widget mt-30">Join the community</h5>
+                        
+                        <h5 class="title-widget mt-30">Redes Sociales</h5>
                         <div class="widget-social">
                             <ul class="flex">
-                                <li><a href="#" class="icon-facebook"></a></li>
-                                <li><a href="#" class="icon-twitter"></a></li>
-                                <li><a href="#" class="icon-vt"></a></li>
-                                <li><a href="#" class="icon-tiktok"></a></li>
-                                <li><a href="#" class="icon-youtube"></a></li>
+                                <li><a href="https://www.facebook.com/makenafundas" class="fab fa-facebook-f"></a></li>
+                                <li><a href="https://wa.me/541122444188" class="fab fa-whatsapp"></a></li>
+                                <li><a href="https://www.instagram.com/makenafundas/" class="fab fa-instagram"></a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>© 2023 OpeN9 - Made By Themesflat</p>
-            <ul class="flex">
+        <div class="footer-bottom row">
+            
+            <ul class="flex col-12 justify-center">
                 <li>
-                    <a href="#">Privacy Policy</a>
+                    <a href="https://wa.me/56967656673">© Diseñado por <strong>Tatsu Web Design</strong> </a>
                 </li>
-                <li>
-                    <a href="#">Terms of Service</a>
-                </li>
+                
             </ul>
         </div>
     </div>
