@@ -1794,9 +1794,9 @@ a:focus {
     display: flex;
     flex-direction: column;
     gap: 30px;
-    background: #232323;
+    
     width: 281px;
-    padding: 40px 0px;
+    padding: 0px 0px;
     z-index: 30;
     -webkit-transition: all 0.5s linear;
     -moz-transition: all 0.5s linear;
@@ -2048,7 +2048,7 @@ a:focus {
     font-weight: 500;
     line-height: 22px;
     margin-bottom: 6px;
-    padding: 12px 30px 12px 64px;
+    padding: 2px 0px 0px 0px;
     display: flex;
     align-items: center;
     cursor: pointer;
