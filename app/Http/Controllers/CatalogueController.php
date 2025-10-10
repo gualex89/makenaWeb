@@ -10,6 +10,7 @@ use App\Models\Cover;
 use App\Models\Product;
 use App\Models\Duo;
 use App\Models\HomeCategoriasFunda;
+use App\Models\Precio;
 use App\Models\Principalimage;
 
 class CatalogueController extends Controller
@@ -86,22 +87,15 @@ class CatalogueController extends Controller
         $carrusel_cuadros  = CarruselCuadro::all();
         $home_categories_fundas = HomeCategoriasFunda::all();
         
-        $misProductos = Product::all();
+        $preciosProductos = Precio::all();
+        $funda = $preciosProductos-> where('producto', 'funda')->first();
+        $precioFunda = $funda ? $funda->precio : null;
+        
     
-        foreach ($misProductos as $producto) {
-            if ($producto->name === 'Dragon Ball') {
-                $precioFundas = $producto->price;
-            }     
-            if ($producto->name === 'Popsockets') {
-                $precioPopSockets = $producto->price;
-            }
-            if ($producto->name === 'Fundas para Parejas') {
-                $precioFundasDobles = $producto->price;
-            }
-        }
+        
     
         // Pasar los datos a la vista
-        return view('layouts.newmakena.catalogonew', compact('sliderPrincipal', 'totalImages', 'misProductos', 'banners', 'carrusel_cuadros', 'home_categories_fundas'));
+        return view('layouts.newmakena.catalogonew', compact('imagesCatalogo', 'totalImagesCatalogo', 'precioFundas', 'precioPopSockets', 'precioFundasDobles','sliderPrincipal', 'totalImages', 'misProductos', 'banners', 'carrusel_cuadros', 'home_categories_fundas', 'precioFunda'));
     }
     
     public function catalogoDuo(Request $request){

@@ -2567,3 +2567,10 @@ body.background-white .tf-mouse-outer {
     font-weight:600; 
     margin-bottom:12px;
 }
+
+.form-label {
+    font-weight:600;
+    font-size:1.5rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
