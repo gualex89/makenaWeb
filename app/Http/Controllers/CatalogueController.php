@@ -167,4 +167,17 @@ class CatalogueController extends Controller
         $item = Catalogue::where('slug', $slug)->firstOrFail();
         return view('layouts.catalogo_detalle', compact('item', 'precioFundas', 'precioPopSockets', 'precioFundasDobles'));
     }
+    public function show2($slug)
+    {
+        $misProductos = Product::all();
+        
+
+        $preciosProductos = Precio::all();
+        $funda = $preciosProductos-> where('producto', 'funda')->first();
+        $precioFunda = $funda ? $funda->precio : null;
+    
+        
+        $item = Catalogue::where('slug', $slug)->firstOrFail();
+        return view('layouts.newmakena.catalogo_detalle2', compact('item', 'precioFunda'));
+    }
 }

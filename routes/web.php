@@ -80,6 +80,7 @@ Route::post('/webhook', [webhook::class, 'handleWebhook']);
 
 
 Route::get('/catalogo/{slug}', [CatalogueController::class, 'show'])->name('catalogo.show');
+Route::get('/catalogonew/{slug}', [CatalogueController::class, 'show2'])->name('catalogo.show2');
 
 
 Route::get('/checkout-orden-compra', [OrdenCompraController::class, 'mostrarOrden']);
