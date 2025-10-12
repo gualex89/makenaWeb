@@ -55,7 +55,7 @@
     <body class="body header-fixed counter-scroll">
         <div class="backtotop bg_wts">
             <a href="http://wa.me/541122444188" class="go_to_wts">
-                <i class="fab fa-whatsapp" style="font-size: 24px;"></i>
+                <i class="fab fa-whatsapp" style="font-size: 40px;"></i>
             </a>
         </div>
         <div id="wrapper">

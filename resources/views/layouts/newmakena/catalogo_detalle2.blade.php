@@ -41,94 +41,60 @@
             <div class="row">
                 <div data-wow-delay="0s" class="wow fadeInLeft col-md-6">
                     <div class="tf-card-box style-5 mb-0">
-                        <div class="card-media mb-0">
+                        <div class="card-media p-5">
                             <a href="#">
-                                <img src="{{ asset('assets_new/images/box-item/product-detail-01.jpg') }}" alt="">
+                                <img id="imagenDinamico" src="{{ Voyager::image($item->image) }}" alt="Funda de {{ $item->diseno }} modelo {{ $item->modeloCEO }}" class="img-fluid my-4" width="280" height="auto" />
                             </a>
                         </div>
-                        <h6 class="price gem"><i class="icon-gem"></i></h6>
-                        <div class="wishlist-button">10<i class="icon-heart"></i></div>
-                        <div class="featured-countdown">
-                            <span class="js-countdown" data-timer="7500" data-labels="d,h,m,s"></span>
-                        </div>
+                        
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div data-wow-delay="0s" class="wow fadeInRight infor-product">
-                        <div class="text">8SIAN Main Collection <span class="icon-tick"><span class="path1"></span><span class="path2"></span></span></div>
-                        <div class="menu_card">
-                            <div class="dropdown">
-                                <div class="icon">
-                                    <a href="javascript:void(0);" class="btn-link" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i class="icon-link-1"></i>
-                                    </a>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#"><i class="icon-link"></i>Copy link</a>
-                                        <a class="dropdown-item" href="#"><i class="icon-facebook"></i>Share on facebook</a>
-                                        <a class="dropdown-item mb-0" href="#"><i class="icon-twitter"></i>Share on twitter</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="dropdown">
-                                <div class="icon">
-                                    <a href="javascript:void(0);" class="btn-link" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <i class="icon-content"></i>
-                                    </a>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#"><i class="icon-refresh"></i>Refresh metadata</a>
-                                        <a class="dropdown-item mb-0" href="#"><i class="icon-report"></i>Report</a>
-                                    </div>
-                                </div>
-                            </div>
+                        
+                        
+                        <h2>Funda de {{ $item->diseno }} {{ $item->file_name }}</h2>
+                        <h3><span style="color: #b321a6">{{ $item->categoria }}</span></h3>
+
+                         <div class="container_cuotas pt-4">
+
+                            <h6>2 cuotas <span style="color: #b321a6; font-weight: bold">SIN</span> interés llevando <span
+                                    style="color: #b321a6; font-weight: bold">1</span> funda de cualquier modelo</h6><br>
+                            <h6>3 cuotas <span style="color: #b321a6; font-weight: bold">SIN</span> interés llevando <span
+                                    style="color: #b321a6; font-weight: bold">2 o MÁS</span></h6><br>
                         </div>
-                        <h2>Themesflat #0270</h2>
-                        <div class="author flex items-center mb-30">
-                            <div class="avatar">
-                                <img src="{{ asset('assets_new/images/avatar/avatar-box-05.jpg') }}" alt="Image">
-                            </div>
-                            <div class="info">
-                                <span>Owned by:</span>
-                                <h6><a href="author-1.html">Marvin McKinney</a> </h6>
-                            </div>
-                        </div>
-                        <div class="meta mb-20">
+                        
+                        <div class="meta mb-20 mt-5">
                             <div class="meta-item view">
-                                <i class="icon-show"></i>208 view
+                                📱 Impresión HD ultra brillante
                             </div>
                             <div class="meta-item rating">
-                                <i class="icon-link-2"></i>Top #2 trending
+                                💖 Diseño único y resistente
                             </div>
-                            <div class="meta-item favorites">
-                                <i class="icon-heart"></i>10 favorites
-                            </div>
+                            
                         </div>
                     </div>
-                    <div data-wow-delay="0s" class="wow fadeInRight product-item time-sales">
-                        <h6><i class="icon-clock"></i>Sale ends May 22 at 9:39</h6>
+
+                    
+
+                    <div class="mt-5">
+
+                        <h6>Envíos a todo el país</h6><br>
+                        <a href="/calcula-envio" target="_blank" ><h6>🚚 Cotizá tu envío</h6></a>
+                    </div>
+
+                    <div data-wow-delay="0s" class="wow fadeInRight product-item time-sales mt-20">
+                        
                         <div class="content">
-                            <div class="text">Current price</div>
+                            <div class="text">Precio</div>
                             <div class="flex justify-between">
-                                <p>0,032 ETH <span>$58,11</span></p>
-                                <a href="#" data-bs-toggle="modal" data-bs-target="#addToCartModal" class="tf-button style-1 h50 w216">Agregar al carrito<i class="icon-arrow-up-right2"></i></a>
+                                <p>{{ $precioFunda }} </p>
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#addToCartModal" class="tf-button style-1 h50 w216"><i class="fas fa-shopping-cart"></i>Seleccioná tu modelo</i></a>
                             </div>
                         </div>
                     </div>
-                    <div data-wow-delay="0s" class="wow fadeInRight product-item description">
-                        <h6><i class="icon-description"></i>Description</h6>
-                        <i class="icon-keyboard_arrow_down"></i>
-                        <div class="content">
-                            <p>8,888 NFTs of beautiful, Asian women painstakingly-crafted where even the most intricate details are steeped in historical significance. We envision 8SIAN being a global, inclusive community <span>see more</span></p>
-                        </div>
-                    </div>
-                    <div data-wow-delay="0s" class="wow fadeInRight product-item history">
-                        <h6><i class="icon-description"></i>Price History</h6>
-                        <i class="icon-keyboard_arrow_down"></i>
-                        <div class="content">
-                            <div class="chart">
-                                <canvas id="myChart"></canvas>
-                            </div>
-                        </div>
-                    </div>
+                    
+                    
                 </div>
             </div>
         </div>
