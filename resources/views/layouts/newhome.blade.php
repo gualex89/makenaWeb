@@ -119,7 +119,7 @@
                                     <div class="swiper-wrapper">
                                         @foreach ($carrusel_cuadros as $carrusel_cuadro)
                                             <div class="swiper-slide">
-                                                <div class="tf-card-box">
+                                                <div class="tf-card-box tf-card-box-cuadros">
                                                     <div class="card-media">
                                                         <a href="#">
                                                             <img src="{{ Voyager::image($carrusel_cuadro->image) }}" alt="Cuadro personalizado de {{ $carrusel_cuadro->name }}">

@@ -420,6 +420,10 @@
     margin: 0 auto;
 }
 
+.tf-card-box-cuadros .card-media img {
+    width: 100% !important;
+}
+
 .tf-card-box:hover .card-media a img {
     transform: scale(1.1);
 }
