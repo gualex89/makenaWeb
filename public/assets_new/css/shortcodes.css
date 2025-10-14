@@ -6223,3 +6223,8 @@ fieldset.password > i::before {
 .mt-20 {
     margin-top: 40px;
 }
+
+.frecuentes-listas {
+    font-size: 1.5rem;
+    color:#7A798A;
+}

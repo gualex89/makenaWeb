@@ -75,6 +75,7 @@ Route::post('/actualizar-descuento', [CheckoutController::class, 'updateDiscount
 Route::get('/obtener-provincias/{codigoPostal}', [CheckoutController::class, 'obtenerProvincias']);
 
 Route::get('/frecuentes', [FrecuentesController::class, 'Frecuentes'])->name('Frecuentes');
+Route::get('/frecuentesnew', [FrecuentesController::class, 'FrecuentesNew'])->name('FrecuentesNew');
 
 
 Route::post('/webhook', [webhook::class, 'handleWebhook']);
