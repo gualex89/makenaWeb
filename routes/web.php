@@ -29,6 +29,7 @@ Route::get('/catalogo', [CatalogueController::class, 'catalogo'])->name('catalog
 Route::get('/catalogonew', [CatalogueController::class, 'catalogoNew'])->name('catalogoNew');
 
 Route::get('/catalogo-duo', [CatalogueController::class, 'catalogoDuo'])->name('catalogoDuo');
+Route::get('/catalogo-duo-new', [CatalogueController::class, 'catalogoDuoNew'])->name('catalogoDuoNew');
 
 
 //RUTAS TUFUNDA

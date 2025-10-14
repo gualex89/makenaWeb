@@ -97,6 +97,50 @@ class CatalogueController extends Controller
         // Pasar los datos a la vista
         return view('layouts.newmakena.catalogonew', compact('imagesCatalogo', 'totalImagesCatalogo', 'precioFundas', 'precioPopSockets', 'precioFundasDobles','sliderPrincipal', 'totalImages', 'misProductos', 'banners', 'carrusel_cuadros', 'home_categories_fundas', 'precioFunda'));
     }
+    public function catalogoDuoNew(Request $request){
+
+        // Obtener el parámetro de categoría de la solicitud
+        $categoria = $request->query('categoria');
+    
+        // Consulta inicial sin filtrar por categoría
+        $query = Catalogue::query();
+    
+        // Si se especifica una categoría, filtrar por esa categoría
+        if($categoria) {
+            $query->where('file_name', 'like', $categoria . '%');
+        }
+    
+        // Ordenar por ID descendente (más alto primero)
+        $query->orderBy('id', 'desc');
+    
+        // Paginar los resultados
+        $imagesCatalogo = $query->paginate(12);
+        $totalImagesCatalogo = $imagesCatalogo->total();
+    
+        
+        
+        $preciosProductos = Precio::all();
+        $funda = $preciosProductos-> where('producto', 'fundas-duo')->first();
+        $precioFundaDuo = $funda ? $funda->precio : null;
+
+        // Consulta inicial sin filtrar por categoría
+        $query = Duo::query();
+    
+        // Si se especifica una categoría, filtrar por esa categoría
+        
+        // Ordenar por ID descendente (más alto primero)
+        $query->orderBy('id', 'desc');
+    
+        // Paginar los resultados
+        $imagesCatalogoDuo = $query->paginate(12);
+        $totalImagesCatalogoDuo = Duo::all();
+        
+    
+        
+    
+        // Pasar los datos a la vista
+        return view('layouts.newmakena.catalogoduonew', compact('totalImagesCatalogoDuo', 'imagesCatalogoDuo','imagesCatalogo', 'totalImagesCatalogo', 'precioFundaDuo'));
+    }
     
     public function catalogoDuo(Request $request){
 
