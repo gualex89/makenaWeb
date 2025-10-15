@@ -36,6 +36,8 @@ Route::get('/catalogo-duo-new', [CatalogueController::class, 'catalogoDuoNew'])-
 
 Route::get('/tufunda', [TuFundaController::class, 'tufunda'])->name('tufunda');
 
+Route::get('/tucuadro', [TuFundaController::class, 'tucuadro'])->name('tucuadro');
+
 Route::post('/guardar-imagen-personalizada', [TuFundaController::class, 'guardarImagenPersonalizada'])->name('guardarImagenPersonalizada');
 
 Route::post('/borrar-imagen-personalizada', [TuFundaController::class, 'borrarImagenPersonalizada'])->name('borrarImagenPersonalizada');

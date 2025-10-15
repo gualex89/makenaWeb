@@ -23,6 +23,10 @@ class TuFundaController extends Controller
         }   
         return view('layouts.tufunda', compact( 'precioFundas') );
     }
+    public function tucuadro(){
+         
+        return view('layouts.newmakena.tucuadro' );
+    }
 
     public function guardarImagenPersonalizada(Request $request){
 
