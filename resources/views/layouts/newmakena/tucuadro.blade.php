@@ -187,71 +187,84 @@ fileInput.addEventListener('change', function() {
                 }
 
                 document.getElementById('btnAgregarCarrito').addEventListener('click', async () => {
-  const fileInput = document.getElementById('fileInput');
-  const tamaño = document.querySelector('.btn-opcion.active[data-group="tamaño"]')?.dataset.value;
-  const colgante = document.querySelector('.btn-opcion.active[data-group="colgante"]')?.dataset.value;
-  const file = fileInput.files[0];
+                    const fileInput = document.getElementById('fileInput');
+                    const tamaño = document.querySelector('.btn-opcion.active[data-group="tamaño"]')?.dataset.value;
+                    const colgante = document.querySelector('.btn-opcion.active[data-group="colgante"]')?.dataset.value;
+                    const file = fileInput.files[0];
 
-  if (!file) return alert('Por favor, subí una imagen para tu cuadro.');
-  if (!tamaño) return alert('Por favor, seleccioná un tamaño.');
-  if (!colgante) return alert('Por favor, seleccioná un colgante.');
+                    if (!file) return Swal.fire({ icon: 'warning', title: 'Por favor, subí una imagen', confirmButtonText: 'Entendido',confirmButtonColor: '#b321a6' });
+                    if (!tamaño) return Swal.fire({ icon: 'warning', title: 'Seleccioná un tamaño',confirmButtonText: 'Entendido',    confirmButtonColor: '#b321a6' });
+                    if (!colgante) return Swal.fire({ icon: 'warning', title: 'Seleccioná un colgante', confirmButtonText: 'Entendido', confirmButtonColor: '#b321a6' });
 
-  try {
-    const formData = new FormData();
-    formData.append('file', file);
+                    try {
 
-    const response = await fetch('/upload-drive', {
-      method: 'POST',
-      body: formData
-    });
+                        Swal.fire({
+                        title: 'Subiendo tu imagen...',
+                        text: 'Por favor, espera un momento ⏳',
+                        allowOutsideClick: false,
+                        didOpen: () => {
+                            Swal.showLoading();
+                        }
+                        });
 
-    const result = await response.json();
-    if (!result?.file?.id) {
-      alert('Error al subir la imagen. Intenta nuevamente.');
-      return;
-    }
+                        const formData = new FormData();
+                        formData.append('file', file);
 
-    console.log(result.file.id);
+                        const response = await fetch('/upload-drive', {
+                        method: 'POST',
+                        body: formData
+                        });
 
-    const idDrive = result.file.id;
-    const imageUrl = result.file.thumbnail;;
+                        const result = await response.json();
+                        if (!result?.file?.id) {
+                        alert('Error al subir la imagen. Intenta nuevamente.');
+                        return;
+                        }
+
+                        console.log(result.file.id);
+
+                        const idDrive = result.file.id;
+                        const imageUrl = result.file.thumbnail;;
 
 
 
-    let price = 0;
-    if (tamaño === 'Basic') price = 25000;
-    else if (tamaño === 'Standard') price = 35000;
-    else if (tamaño === 'Epic') price = 45000;
+                        let price = 0;
+                        if (tamaño === 'Basic') price = 25000;
+                        else if (tamaño === 'Standard') price = 35000;
+                        else if (tamaño === 'Epic') price = 45000;
 
-    const pendingCartItem = {
-      name: 'Cuadro personalizado',
-      price: price,
-      image: imageUrl,
-      idDrive: idDrive,
-      tamaño: tamaño,
-      colgante: colgante
-    };
+                        const pendingCartItem = {
+                        name: 'Cuadro personalizado',
+                        price: price,
+                        image: imageUrl,
+                        idDrive: idDrive,
+                        tamaño: tamaño,
+                        colgante: colgante
+                        };
 
-    // Recuperar y actualizar carrito existente
-    cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-    cartItems.push(pendingCartItem);
-    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                        // Recuperar y actualizar carrito existente
+                        cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+                        cartItems.push(pendingCartItem);
+                        localStorage.setItem('cartItems', JSON.stringify(cartItems));
 
-    // Actualizar contador y precios
-    cartItemCount = cartItems.length;
-    subtotal = cartItems.reduce((sum, item) => sum + item.price, 0);
-    total = subtotal;
+                        // Actualizar contador y precios
+                        cartItemCount = cartItems.length;
+                        subtotal = cartItems.reduce((sum, item) => sum + item.price, 0);
+                        total = subtotal;
 
-    updateCartItems();
-    updatePrices();
-    updateCartCounter();
-    productoAgregadoAlCarrito();
+                        updateCartItems();
+                        updatePrices();
+                        updateCartCounter();
+                        Swal.close();
+                        productoAgregadoAlCarrito();
+                        limpiarCuadro();
 
-  } catch (error) {
-    console.error('Error al subir:', error);
-    alert('❌ No se pudo agregar el producto. Intenta nuevamente.');
-  }
-});
+                    } catch (error) {
+                        console.error('Error al subir:', error);
+                        Swal.close();
+                        Swal.fire({ icon: 'error', title: 'No se pudo agregar el producto', text: 'Intenta nuevamente.' });
+                    }
+                });
 
 
                 function productoAgregadoAlCarrito() {
@@ -390,6 +403,21 @@ fileInput.addEventListener('change', function() {
                         updateCartItems();
                         updatePrices();
                     }
+                }
+
+                function limpiarCuadro() {
+                    fileInput.value = ""; // limpia el input file
+
+                    // Oculta la vista previa
+                    const previewContainer = document.getElementById('previewContainer');
+                    const preview = document.getElementById('preview');
+                    preview.src = "";
+                    previewContainer.style.display = 'none';
+
+                    // Quita las selecciones activas
+                    document.querySelectorAll('.btn-opcion.active').forEach(btn => {
+                    btn.classList.remove('active');
+                    });
                 }
 
                 // Eliminar ítem
