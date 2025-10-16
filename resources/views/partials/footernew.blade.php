@@ -7,7 +7,7 @@
                     <div class="widget-logo flex-grow">
                         <div class="logo-footer" id="logo-footer">
                             <a href="index.html">
-                                <img style="width: 198px" id="logo_header" src="{{ asset('images/logo/logomakena.png') }}" alt="logo_footer">
+                                <img style="width: 198px" id="logo_header" src="{{ asset('images/logo/makenaicon.png') }}" alt="logo_footer">
                             </a>
                         </div>
                     </div>

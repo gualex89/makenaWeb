@@ -6228,3 +6228,60 @@ fieldset.password > i::before {
     font-size: 1.5rem;
     color:#7A798A;
 }
+
+.opciones-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
+  }
+
+  .grupo {
+    flex: 1;
+    text-align: center;
+  }
+
+  .botones {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .btn-opcion {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  border-radius: 6px;
+  padding: 8px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+  overflow: hidden;       /* 🔹 Elimina el scroll */
+  resize: none;           /* 🔹 Evita que se pueda redimensionar */
+  white-space: normal;    /* 🔹 Permite saltos de línea naturales */
+  text-align: center;     /* 🔹 Centra el texto */
+  display: inline-block;  /* 🔹 Asegura el comportamiento correcto */
+}
+
+.btn-opcion::-webkit-scrollbar {
+  display: none; /* 🔹 Oculta cualquier scrollbar en navegadores WebKit */
+}
+
+
+  .btn-opcion small {
+    display: block;
+    font-size: 11px;
+    color: #ccc;
+  }
+
+  .btn-opcion.active {
+    background-color: #b321a6;
+    border-color: #b321a6;
+    color: white;
+  }
+
+  #btnAgregarCarrito {
+    color: black;
+  }

@@ -566,33 +566,42 @@
 
                 function updateCartItems() {
                     const cartItemsList = document.querySelector('.cart_items_list');
-                    cartItemsList.innerHTML = ''; // Limpiar la lista de elementos del carrito
+                    if (!cartItemsList) return;
+
+                    cartItemsList.innerHTML = '';
 
                     cartItems.forEach(cartItem => {
-                        const cartItemHTML = `
+                    let tipoProducto = 'Funda';
+
+                    if (cartItem.marca2) {
+                    tipoProducto = 'Funda Doble';
+                    } else if (cartItem.name.toLowerCase().includes('cuadro')) {
+                    tipoProducto = 'Cuadro';
+                    }
+
+                    const cartItemHTML = `
                         <li style="background:transparent; margin-bottom:32px; padding:0; display:flex; align-items:center;">
-                            <div style="background:#fff; border-radius:18px; padding:12px; display:flex; align-items:center; width:70px; min-width:30px; justify-content:center;">
-                                <img src="${cartItem.image}" alt="Funda en carrito ${cartItem.name}" style="width:100%; border-radius:4px; display:block;"/>
+                        <div style="background:#fff; border-radius:18px; padding:12px; display:flex; align-items:center; width:70px; min-width:30px; justify-content:center;">
+                            <img src="${cartItem.image}" alt="${tipoProducto} ${cartItem.name}" style="width:100%; border-radius:4px; display:block;"/>
+                        </div>
+                        <div class="item_content" style="color:#fff; margin-left:18px; position:relative; flex:1;">
+                            <div style="padding-right:32px;">
+                            <span class="item_type" style="font-size:13px;">${tipoProducto}</span>
+                            <div style="font-weight:700; font-size:18px; margin:2px 0;"><span class="item_title">${cartItem.name}</span></div>
+                            <div style="font-size:15px; margin-bottom:2px;">${cartItem.marca || ''} ${cartItem.modelo || ''}</div>
+                            ${cartItem.marca2 ? `<div style="font-size:15px;">${cartItem.marca2} ${cartItem.modelo2}</div>` : ''}
+                            <div style="font-weight:700; font-size:17px; margin-top:6px;"><span class="item_price">$${cartItem.price.toLocaleString('es-CL')}</span></div>
                             </div>
-                            <div class="item_content" style="color:#fff; margin-left:18px; position:relative; flex:1;">
-                                
-                                <div style="padding-right:32px;">
-                                    <span class="item_type" style="font-size:13px;">${cartItem.marca2 ? `Funda Doble` : `Funda`}</span>
-                                    <div style="font-weight:700; font-size:18px; margin:2px 0 2px 0;"><span class="item_title">${cartItem.name}</span></div>
-                                    <div style="font-size:15px; margin-bottom:2px;">${cartItem.marca ? cartItem.marca : ''} ${cartItem.modelo ? cartItem.modelo : ''}</div>
-                                    ${cartItem.marca2 ? `<div style="font-size:15px;">${cartItem.marca2} ${cartItem.modelo2}</div>` : ''}
-                                    <div style="font-weight:700; font-size:17px; margin-top:6px;"><span class="item_price">$${cartItem.price}</span></div>
-                                </div>
-                            </div>
-                            <button type="button" class="remove_btn" style=" background:none; border:none; color:#fff; font-size:2rem;">
-                                <i class="bi bi-trash"></i>
-                            </button>
+                        </div>
+                        <button type="button" class="remove_btn" style="background:none; border:none; color:#fff; font-size:2rem;">
+                            <i class="bi bi-trash"></i>
+                        </button>
                         </li>
                     `;
-                        cartItemsList.innerHTML += cartItemHTML;
+
+                    cartItemsList.innerHTML += cartItemHTML;
                     });
 
-                    // Actualizar el contador del carrito
                     updateCartCounter();
                 }
 

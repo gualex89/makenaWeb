@@ -8,6 +8,10 @@ use App\Http\Controllers\TuFundaController;
 use App\Http\Controllers\CarritoController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\FrecuentesController;
+use App\Http\Controllers\GoogleAuthController;
+use App\Http\Controllers\GoogleDriveController;
+use App\Http\Controllers\GoogleDriveOAuthController;
+
 use App\Http\Controllers\OrdenCompraController;
 use App\Http\Controllers\ZippinController;
 use App\Http\Controllers\MercadoPagoController;
@@ -95,3 +99,10 @@ Route::get('/calcula-envio', [TransferenciaController::class, 'calculaEnvio'])->
 
 Route::get('/homenew', [HomeImagesController::class, 'homenew'])->name('homenew');
 
+
+
+Route::get('/google/auth', [GoogleAuthController::class, 'redirectToGoogle']);
+Route::get('/google/callback', [GoogleAuthController::class, 'handleGoogleCallback']);
+
+
+Route::post('/upload-drive', [GoogleDriveController::class, 'uploadToDrive'])->withoutMiddleware([\App\Http\Middleware\VerifyCsrfToken::class]);
