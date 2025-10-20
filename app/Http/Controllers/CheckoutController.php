@@ -60,6 +60,11 @@ class CheckoutController extends Controller
             $download->composicion = "Comp-" . $item['nombreImagen'];
             $download->marca = $item['marca'];
             $download->diseno = $item['diseno'];
+            $download->idDrive = $item['idDrive'];
+            if ($download->diseno === "Cuadro personalizado") {
+                $download->cuadro = 1;
+            }
+
             
             
             $download->save();

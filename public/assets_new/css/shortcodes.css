@@ -6254,7 +6254,7 @@ fieldset.password > i::before {
   color: white;
   border: 1px solid white;
   border-radius: 6px;
-  padding: 8px 20px;
+  padding: 0px 30px;
   cursor: pointer;
   font-size: 14px;
   transition: 0.3s;
@@ -6284,4 +6284,8 @@ fieldset.password > i::before {
 
   #btnAgregarCarrito {
     color: black;
+  }
+
+  .resaltado-color {
+    color: #dfdfdf
   }
