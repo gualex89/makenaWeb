@@ -60,7 +60,10 @@ Route::get('/obtener-imagen/{modelo}', [TuFundaController::class, 'obtenerImagen
 
 Route::get('/carrito', [CarritoController::class, 'carrito'])->name('carrito');
 
+Route::get('/carritonew', [CarritoController::class, 'carritonew'])->name('carritonew');
+
 Route::get('/checkout', [CheckoutController::class, 'checkout'])->name('checkout');
+Route::get('/checkoutnew', [CheckoutController::class, 'checkoutnew'])->name('checkoutnew');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

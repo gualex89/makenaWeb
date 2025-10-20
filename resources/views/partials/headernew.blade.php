@@ -32,7 +32,7 @@
                                     <a>Cuadros</a>
                                     <ul class="sub-menu">
                                         <li class="menu-item"><a href="/catalogo">Catálogo</a></li>
-                                        <li class="menu-item"><a href="explore-2.html">Crea tu Cuadro</a></li>
+                                        <li class="menu-item"><a href="/tucuadro">Crea tu Cuadro</a></li>
                                     </ul>
                                 </li>
                                 <li class="menu-item">
@@ -42,6 +42,7 @@
                                 
                             </ul>
                         </nav><!-- /#main-nav -->
+                        @if (!request()->is('carritonew'))
                         <div class="flat-wallet flex">
                             <div class="" id="wallet-header">
                                 <a href="javascript:void(0);" id="connectbtn" class="tf-button style-1 open-cart-sidebar">
@@ -52,6 +53,7 @@
                             
                             
                         </div>
+                        @endif
                     </div> 
                 </div>
             </div>

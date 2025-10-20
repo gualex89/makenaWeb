@@ -17,6 +17,11 @@ class CheckoutController extends Controller
     
         return view('layouts.checkout');
     }
+    public function checkoutnew(){
+   
+    
+        return view('layouts.newmakena.checkoutnew');
+    }
     public function SaveOrder(Request $request){
         $data = $request->all();
         
