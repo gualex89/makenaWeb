@@ -107,7 +107,7 @@
   position:relative;
 }
 .cart-scope .cart_product .item_image{
-  width:auto; min-width:auto; height:170px;
+  width:80px; min-width:90px; height:auto;
   border-radius:12px; overflow:hidden;
   box-shadow:0 3px 12px rgba(0,0,0,.35);
   border:1px solid #2a2a2a;

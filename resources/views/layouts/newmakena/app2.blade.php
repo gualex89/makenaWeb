@@ -24,6 +24,7 @@
         <meta name="twitter:title" content="@yield('twitter_title', 'Makena Fundas')">
         <meta name="twitter:description" content="@yield('twitter_description', 'Fundas de alta calidad con diseños de anime.')">
         <meta name="twitter:image" content="@yield('twitter_image', asset('images/logo/makenaminiicon.png'))">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <link rel="stylesheet" type="text/css" href="{{ asset('assets_new/css/style.css') }}">
 
@@ -36,6 +37,7 @@
         <!-- SweetAlert2 CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        
         
         
          <!-- SweetAlert2 CSS -->
