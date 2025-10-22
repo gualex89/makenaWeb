@@ -38,22 +38,46 @@
     <div class="msb_widget mobile_menu_list clearfix">
       <h3 class="title_text mb_15 text-uppercase"><i class="far fa-bars mr-2"></i> Menu</h3>
       <ul class="ul_li_block clearfix">
-        <li>
-          <a href="/" aria-haspopup="true" aria-expanded="false">Home</a>
-        </li>
-        <li>
-          <a href="/catalogo" aria-haspopup="true" aria-expanded="false">Catálogo</a>
-        </li>
-        <li>
-          <a href="/tufunda" aria-haspopup="true" aria-expanded="false">Crea tu Funda</a>
-        </li>
-        <li>
-          <a href="/catalogo-duo" aria-haspopup="true" aria-expanded="false">Fundas Duo</a>
-        </li>
-        <li>
-          <a href="/frecuentes" aria-haspopup="true" aria-expanded="false">Preguntas Frecuentes</a>
-        </li>
-      </ul>
+							<li >
+								<a href="/" aria-haspopup="true" aria-expanded="false">Home</a>
+								
+							</li>
+							<li class="dropdown">
+								<a href="#!" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Fundas <i class="fas fa-chevron-down ml-3"></i></a>
+								<ul class="dropdown-menu">
+									<li class="dropdown ul_li_block">
+										<a href="#!" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Catálogo</a>
+										
+									</li>
+
+									<li class="dropdown">
+										<a href="#!" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Crea tu Funda</a>
+										
+									</li>
+
+									<li class="dropdown">
+										<a href="#!" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Fundas Duo</a>
+										
+									</li>
+								</ul>
+							</li>
+							<li class="dropdown">
+								<a href="#!" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cuadros<i class="fas fa-chevron-down ml-3"></i></a>
+								<ul class="dropdown-menu">
+									<li class="dropdown">
+										<a href="#!" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Catálogo</a>
+										
+									</li>
+									
+									<li class="dropdown">
+										<a href="#!" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Crea tu Cuadro</a>
+										
+									</li>
+									
+								</ul>
+							</li>
+							<li><a href="contact.html">Preguntas Frecuentes</a></li>    
+						</ul>
     </div>
   </div>
 

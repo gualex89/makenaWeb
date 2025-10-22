@@ -20,22 +20,30 @@
               </div>
               <div class="col-lg-8">
                   <nav class="main_menu clearfix">
-                      <ul class="ul_li_center clearfix">
+                      <ul class="ul_li_center clearfix header_open9">
+                            <li class="menu_item_has_child">
+                                <a href="/">Home</a>
+                            </li>
+                            <li class="menu_item_has_child">
+                                <a href="#!">Fundas</a>
+                                <ul class="submenu">
+                                    <li><a href="/catalogo">Catálogo</a></li>
+                                    <li><a href="/tufunda">Crea tu funda</a></li>
+                                    <li><a href="/catalogo-duo">Fundas duo</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu_item_has_child">
+                                <a href="#!">Cuadros</a>
+                                <ul class="submenu">
+                                    <li><a href="shop_cart.html">Catálogo</a></li>
+                                    <li><a href="shop_checkout.html">Crea tu cuadro</a></li>
+                                    
+                                </ul>
+                            </li>
                           <li class="menu_item_has_child">
-                              <a href="/">Home</a>
+                                 <a href="/catalogo-duo">Preguntas Frecuentes</a>
                           </li>
-                          <li class="menu_item_has_child">
-                              <a href="/catalogo">Catálogo</a>
-                          </li>
-                          <li class="menu_item_has_child">
-                              <a href="/tufunda">Crea tu Funda</a>
-                          </li>
-                          <li class="menu_item_has_child">
-                                 <a href="/catalogo-duo">Fundas Duo</a>
-                          </li>
-                          <li class="menu_item_has_child">
-                              <a href="/frecuentes">Preguntas Frecuentes</a>
-                          </li>
+                          
                       </ul>
                   </nav>
               </div>
