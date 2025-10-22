@@ -49,9 +49,9 @@
                     @foreach ($banners as $banner)
                         <div class="swiper-slide" style="position:relative;">
                             <img src="{{ Voyager::image($banner->image) }}" alt="{{ $banner->name }}" style="width:100%; object-fit:cover;">
-                            <div style="position:absolute; top:10%; left:10%; transform:translate(-50%,-50%); text-align:center; z-index:2;">
-                                <h3 style="color:#fff; font-size:3rem; text-shadow:0 2px 8px #000;">{{ $banner->text1 }}</h3>
-                                <a href="{{ $banner->href }}" class="tf-button style-1" style="margin-top:20px; ">{{ $banner->name_button }}</a>
+                            <div style="position:absolute; bottom:7%; right:5%; transform:translate(-50%,-50%); text-align:center; z-index:2;">
+
+                                <a href="{{ $banner->href }}" class="tf-button style-1" style="margin-top:20px; width: 220px; height: 60px;">{{ $banner->name_button }}<i class="icon-arrow-up-right2"></i></a>
                             </div>
                         </div>
                         
