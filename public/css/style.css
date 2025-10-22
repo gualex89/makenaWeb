@@ -44,7 +44,7 @@ body {
   text-rendering: optimizelegibility;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 
 ::selection {
@@ -71,7 +71,7 @@ main {
 h1, h2, h3, h4, h5, h6 {
   color: #000000;
   font-weight: 700;
-  font-family: "Azeret Mono"
+  font-family: 'Manrope', sans-serif;
 }
 
 a,
@@ -184,7 +184,7 @@ hr {
   position: absolute;
   transition: 0.6s cubic-bezier(0.25, 1, 0.5, 1);
   transform: translate(-50%, -50%);
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .checkbox_item input:checked {
   border-color: #ce0b2b;
@@ -228,7 +228,7 @@ hr {
   display: inline-block;
   transform-origin: unset;
   transition: 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .option_select .nice-select .list {
   width: 100%;
@@ -416,7 +416,7 @@ hr {
   font-weight: 400;
   position: absolute;
   transform: translateY(-50%);
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .alldepartments_dropdown .alldepartments_menulist > li > a {
   color: #444444;
@@ -503,7 +503,7 @@ hr {
   justify-content: center;
   background-color: #ebebeb;
   transition: 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .slick-arrow:hover:before {
   color: #ffffff;
@@ -900,6 +900,10 @@ hr {
 ================================================== */
 .sec_ptb_50 {
   padding: 50px 0px;
+}
+
+.sec_ptb_60 {
+  padding: 60px 0px;
 }
 
 .sec_ptb_100 {
@@ -1783,7 +1787,7 @@ button {
   font-size: 24px;
   font-weight: 300;
   display: inline-block;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .modern_section_title .title_text {
   line-height: 1;
@@ -1797,7 +1801,7 @@ button {
   line-height: 1;
   font-size: 62px;
   font-weight: 800;
-  font-family: "Azeret Mono"
+  font-family: 'Manrope', sans-serif;
 }
 
 /* minimal section title - end */
@@ -1806,7 +1810,7 @@ button {
   line-height: 1;
   font-size: 44px;
   font-weight: 700;
-  font-family: "Azeret Mono"
+  font-family: 'Manrope', sans-serif;
 }
 .medical_section_title p {
   font-size: 20px;
@@ -2015,7 +2019,7 @@ button {
   font-size: 190px;
   position: absolute;
   transform: translateY(-50%);
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 
 /* gadget section title - end */
@@ -2216,7 +2220,7 @@ button {
   margin-left: 5px;
   display: inline-block;
   transform: translateY(1px);
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .menu_item_has_child .submenu {
   top: 100%;
@@ -2479,7 +2483,7 @@ button {
   margin-left: 6px;
   display: inline-block;
   vertical-align: middle;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .sidebar_mobile_menu .user_info .profile_info {
   display: flex;
@@ -2723,7 +2727,7 @@ button {
   padding: 18px 30px;
   letter-spacing: 0px;
   border-radius: 45px;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .carparts_header .main_menu > ul {
   margin: -15px 0px;
@@ -2738,7 +2742,7 @@ button {
   align-items: center;
   display: inline-flex;
   justify-content: center;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .carparts_header .main_menu ul > li:hover > a, .carparts_header .main_menu ul > li.active > a {
   color: #b321a6;
@@ -2746,7 +2750,7 @@ button {
 .carparts_header .menu_item_has_child .submenu > li > a {
   color: #040404;
   font-weight: 500;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .carparts_header .menu_item_has_child .submenu > li:hover > a, .carparts_header .menu_item_has_child .submenu > li.active > a {
   color: #b321a6;
@@ -2785,7 +2789,7 @@ button {
   display: block;
   line-height: 1;
   color: #040404;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .login_cart_btn span {
   font-size: 14px;
@@ -2938,7 +2942,7 @@ button {
   font-size: 24px;
   font-weight: 500;
   padding: 20px 0px;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .modern_mobile_sidebar .action_btns_group button {
   width: 60px;
@@ -3883,7 +3887,7 @@ button {
   position: absolute;
   align-items: center;
   justify-content: center;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .gadget_header .order_btn:hover {
   background-color: #051133;
@@ -3918,7 +3922,7 @@ button {
 }
 .gadget_header .main_menu > ul > li > a {
   color: #ffffff;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .gadget_header .main_menu .menu_item_has_child > a:after {
   display: none;
@@ -4299,7 +4303,7 @@ button {
 .carparts_footer .footer_useful_links a {
   color: #bababa;
   font-size: 18px;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .carparts_footer .footer_useful_links a:hover {
   color: #b321a6;
@@ -4311,7 +4315,7 @@ button {
   font-weight: 300;
   margin-bottom: 10px;
   color: #b321a6;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .footer_carparts_hotline span {
   display: block;
@@ -4406,7 +4410,7 @@ button {
   color: #818181;
   padding: 0px 100px;
   background-color: #141414;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .modern_footer .footer_about p {
   margin-bottom: 20px;
@@ -4566,7 +4570,7 @@ button {
   padding: 60px 0px;
 }
 .fashion_footer .copyright_text {
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 
 /* fashion footer - end
@@ -5246,7 +5250,7 @@ button {
   content: "";
   font-weight: 400;
   background-color: transparent;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .f2_breadcrumb_nav_wrap a {
   color: #333e48;
@@ -5272,7 +5276,7 @@ button {
 .g_breadcrumb_nav li {
   font-size: 20px;
   position: relative;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .g_breadcrumb_nav li:not(:last-child) {
   margin-right: 15px;
@@ -5382,7 +5386,7 @@ button {
   content: "";
   position: absolute;
   transform: translateY(-50%);
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .motorcycle_breadcrumb_nav li:not(:last-child) {
   margin-right: 25px;
@@ -5437,7 +5441,7 @@ button {
   font-weight: 400;
   position: absolute;
   transform: translateY(-50%);
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .sports_breadcrumb_nav li:last-child {
   padding-right: 0px;
@@ -5631,7 +5635,7 @@ button {
 .sb_category_accordion .card-header a:before {
   font-size: 400;
   content: "";
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .sb_category_accordion .card-header a:not(.collapsed) {
   color: #1c1f23;
@@ -5853,7 +5857,7 @@ padding: 10px;
   font-weight: 700;
   position: absolute;
   color: #b321a6;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .motorcycle_sidebar .sb_tags a {
   color: #8799a3;
@@ -6267,13 +6271,13 @@ padding: 10px;
   color: #1e1e1e;
   font-size: 16px;
   font-weight: 400;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .home_carparts p {
   font-family: "Lato";
 }
 .home_carparts h1, .home_carparts h2, .home_carparts h3, .home_carparts h4, .home_carparts h5, .home_carparts h6 {
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .home_carparts ::selection {
   color: #ffffff;
@@ -6286,36 +6290,36 @@ padding: 10px;
 .home_carparts :-moz-placeholder {
   color: #4a4949;
   font-weight: 500;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .home_carparts ::-moz-placeholder {
   color: #4a4949;
   font-weight: 500;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .home_carparts :-ms-input-placeholder {
   color: #4a4949;
   font-weight: 500;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .home_carparts ::-webkit-input-placeholder {
   color: #4a4949;
   font-weight: 500;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .home_carparts .option_select {
   font-weight: 500;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .home_carparts .custom_btn {
   font-size: 20px;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .home_carparts .custom_btn.btn_sm {
   font-size: 18px;
 }
 .home_carparts .submit_btn {
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .home_carparts .rating_star > li {
   color: #b321a6;
@@ -6497,7 +6501,7 @@ padding: 10px;
   font-weight: 700;
   color: #b321a6;
   margin-bottom: 20px;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .carparts_banner h1 {
   font-size: 80px;
@@ -6528,13 +6532,13 @@ padding: 10px;
   padding: 0px 35px;
   line-height: 65px;
   border-radius: 4px;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .carparts_search .option_select .nice-select span {
   color: #4a4949;
   font-size: 16px;
   font-weight: 500;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .carparts_search .form_item {
   margin: 0px;
@@ -6555,7 +6559,7 @@ padding: 10px;
   text-align: center;
   border-radius: 4px;
   text-transform: uppercase;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 
 /* banner section - start */
@@ -7196,10 +7200,10 @@ padding: 10px;
   color: #8f8f8f;
   font-size: 18px;
   font-weight: 400;
-  font-family: "Azeret Mono"
+  font-family: 'Manrope', sans-serif;
 }
 .home_classic_ecommerce h1, .home_classic_ecommerce h2, .home_classic_ecommerce h3, .home_classic_ecommerce h4, .home_classic_ecommerce h5, .home_classic_ecommerce h6 {
-  font-family: "Azeret Mono"
+  font-family: 'Manrope', sans-serif;
 }
 .home_classic_ecommerce .custom_btn {
   font-size: 16px;
@@ -7505,14 +7509,14 @@ padding: 10px;
 /* home fashion reset - start */
 .home_fashion {
   color: #525354;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .home_fashion p {
   font-family: "Roboto", sans-serif;
 }
 .home_fashion h1, .home_fashion h2, .home_fashion h3, .home_fashion h4, .home_fashion h5, .home_fashion h6 {
   color: #040404;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .home_fashion .custom_btn {
   padding: 10px 40px;
@@ -8057,7 +8061,7 @@ padding: 10px;
   font-weight: 700;
   margin-top: 1px;
   margin-left: 10px;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .fp_filter_bar .btns_group > li > button[aria-expanded=true] {
   color: #ff1d25;
@@ -8780,7 +8784,7 @@ padding: 10px;
 .home_gadget h1, .home_gadget h2, .home_gadget h3, .home_gadget h4, .home_gadget h5, .home_gadget h6 {
   color: #0e0e0e;
   font-weight: 700;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .home_gadget ::selection {
   color: #ffffff;
@@ -8997,7 +9001,7 @@ padding: 10px;
   font-weight: 400;
   color: #ff0000;
   margin-bottom: 10px;
-  font-family: "Azeret Mono"
+  font-family: 'Manrope', sans-serif;
 }
 .gadget_feature2_content h2 {
   font-size: 60px;
@@ -9042,7 +9046,7 @@ padding: 10px;
 .gadget_best_product .item_price {
   font-size: 22px;
   font-weight: 300;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .gadget_best_product .item_price strong {
   font-weight: 500;
@@ -9094,7 +9098,7 @@ padding: 10px;
   color: #ff0000;
   transform: translateY(-50%);
   background-color: transparent;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .best_drone_carousel .carousel_nav .left_arrow:before {
   left: -2px;
@@ -9368,13 +9372,13 @@ padding: 10px;
 }
 .home_creative_onelook h1, .home_creative_onelook h2, .home_creative_onelook h3, .home_creative_onelook h4, .home_creative_onelook h5, .home_creative_onelook h6 {
   color: #ffffff;
-  font-family: "Azeret Mono"
+  font-family: 'Manrope', sans-serif;
 }
 .home_creative_onelook .custom_btn {
   font-size: 17px;
   font-weight: 700;
   padding: 10px 50px;
-  font-family: "Azeret Mono"
+  font-family: 'Manrope', sans-serif;
 }
 .home_creative_onelook .custom_btn.btn_sm {
   font-size: 16px;
@@ -9382,7 +9386,7 @@ padding: 10px;
 }
 .home_creative_onelook .text_btn {
   color: #ffffff;
-  font-family: "Azeret Mono"
+  font-family: 'Manrope', sans-serif;
 }
 .home_creative_onelook .text_btn span:before {
   background-color: #ff0b20;
@@ -9500,31 +9504,31 @@ padding: 10px;
 }
 .home_modern h1, .home_modern h2, .home_modern h3, .home_modern h4, .home_modern h5, .home_modern h6 {
   color: #212121;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .home_modern .custom_btn {
   font-size: 16px;
   font-weight: 600;
   padding: 10px 50px;
   letter-spacing: 1px;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .home_modern .text_btn span {
   font-size: 16px;
   padding-bottom: 2px;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .home_modern :-moz-placeholder {
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .home_modern ::-moz-placeholder {
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .home_modern :-ms-input-placeholder {
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .home_modern ::-webkit-input-placeholder {
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 
 .modern_container {
@@ -9595,7 +9599,7 @@ padding: 10px;
   display: inline-block;
   text-transform: uppercase;
   background-color: #000000;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .modern_slider h4 {
   line-height: 1;
@@ -9654,7 +9658,7 @@ padding: 10px;
   right: 35px;
   text-align: right;
   position: absolute;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .modern_top_product .tab_menu li:not(:last-child) {
   margin-bottom: 15px;
@@ -9772,11 +9776,11 @@ padding: 10px;
 /* home reset - start */
 .home_lookbook_creative {
   color: #555555;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .home_lookbook_creative h1, .home_lookbook_creative h2, .home_lookbook_creative h3, .home_lookbook_creative h4, .home_lookbook_creative h5, .home_lookbook_creative h6 {
   color: #151515;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .home_lookbook_creative .custom_btn {
   font-size: 15px;
@@ -10007,11 +10011,11 @@ padding: 10px;
 .home_electronic {
   color: #878787;
   background-color: #f8f8f8;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .home_electronic h1, .home_electronic h2, .home_electronic h3, .home_electronic h4, .home_electronic h5, .home_electronic h6 {
   color: #282828;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .home_electronic .custom_btn {
   font-size: 16px;
@@ -10267,7 +10271,7 @@ padding: 10px;
   content: "";
   font-weight: 700;
   position: absolute;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .electronic_deals_grid .item_info_list li:not(:last-child) {
   margin-bottom: 12px;
@@ -10463,7 +10467,7 @@ padding: 10px;
   font-weight: 500;
   position: absolute;
   transform: translateY(-50%);
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .electronic_category_wrap li:hover > a {
   color: #0063d1;
@@ -11096,7 +11100,7 @@ padding: 10px;
   content: "";
   font-weight: 700;
   position: absolute;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .electronic_product_biglistlayout .item_info_list li:not(:last-child) {
   margin-bottom: 10px;
@@ -11225,10 +11229,10 @@ padding: 10px;
 /* home supermarket reset - start */
 .home_supermarket {
   background-color: #f5f6f9;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .home_supermarket h1, .home_supermarket h2, .home_supermarket h3, .home_supermarket h4, .home_supermarket h5, .home_supermarket h6 {
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .home_supermarket .custom_btn {
   font-size: 18px;
@@ -11308,7 +11312,7 @@ padding: 10px;
   color: #252525;
   font-size: 18px;
   font-weight: 300;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .supermarket_slider .slider_content h3 {
   color: #252525;
@@ -11322,7 +11326,7 @@ padding: 10px;
   font-size: 54px;
   font-weight: 700;
   margin-bottom: 30px;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .supermarket_slider .slider_content .item_price sup {
   line-height: 1;
@@ -11362,7 +11366,7 @@ padding: 10px;
   font-size: 14px;
   font-weight: 800;
   margin-bottom: 5px;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .supermarket_policy_item p {
   line-height: 1;
@@ -11491,11 +11495,11 @@ padding: 10px;
 /* home minimal reset - start */
 .home_medical {
   color: #7f8793;
-  font-family: "Azeret Mono"
+  font-family: 'Manrope', sans-serif;
 }
 .home_medical h1, .home_medical h2, .home_medical h3, .home_medical h4, .home_medical h5, .home_medical h6 {
   color: #030a0b;
-  font-family: "Azeret Mono"
+  font-family: 'Manrope', sans-serif;
 }
 .home_medical .custom_btn {
   font-size: 14px;
@@ -11672,12 +11676,12 @@ padding: 10px;
 /* home fashion minimal reset - start */
 .home_fashion_minimal {
   color: #525252;
-  font-family: "Azeret Mono"
+  font-family: 'Manrope', sans-serif;
 }
 .home_fashion_minimal h1, .home_fashion_minimal h2, .home_fashion_minimal h3, .home_fashion_minimal h4, .home_fashion_minimal h5, .home_fashion_minimal h6 {
   color: #232323;
   font-weight: 700;
-  font-family: "Azeret Mono"
+  font-family: 'Manrope', sans-serif;
 }
 .home_fashion_minimal .custom_btn {
   font-size: 15px;
@@ -11878,7 +11882,7 @@ padding: 10px;
 }
 .home_minimal h1, .home_minimal h2, .home_minimal h3, .home_minimal h4, .home_minimal h5, .home_minimal h6 {
   color: #030a0b;
-  font-family: "Azeret Mono"
+  font-family: 'Manrope', sans-serif;
 }
 .home_minimal .custom_btn {
   font-size: 14px;
@@ -11931,12 +11935,12 @@ padding: 10px;
 .home_motorcycle {
   color: #202020;
   font-size: 18px;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .home_motorcycle h1, .home_motorcycle h2, .home_motorcycle h3, .home_motorcycle h4, .home_motorcycle h5, .home_motorcycle h6 {
   color: #202020;
   font-weight: 700;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .home_motorcycle ::selection {
   color: #ffffff;
@@ -12969,12 +12973,12 @@ padding: 10px;
 .home_simple_shop {
   color: #6d6d6d;
   font-size: 18px;
-  font-family: "Azeret Mono"
+  font-family: 'Manrope', sans-serif;
 }
 .home_simple_shop h1, .home_simple_shop h2, .home_simple_shop h3, .home_simple_shop h4, .home_simple_shop h5, .home_simple_shop h6 {
   color: #000000;
   font-weight: 700;
-  font-family: "Azeret Mono"
+  font-family: 'Manrope', sans-serif;
 }
 .home_simple_shop ::selection {
   color: #ffffff;
@@ -13004,7 +13008,7 @@ padding: 10px;
   font-weight: 400;
   line-height: 60px;
   background-color: #e8e8e8;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .home_simple_shop .slick-arrow.slick-prev:before {
   content: "";
@@ -13570,19 +13574,19 @@ padding: 10px;
 .home_sports {
   color: #3b3b3b;
   font-size: 18px;
-  font-family: "Azeret Mono"
+  font-family: 'Manrope', sans-serif;
 }
 .home_sports h1, .home_sports h2, .home_sports h3, .home_sports h4, .home_sports h5, .home_sports h6 {
   color: #000000;
   font-weight: 700;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .home_sports .custom_btn {
   font-size: 18px;
   font-weight: 600;
   padding: 10px 40px;
   letter-spacing: 0px;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .home_sports .custom_btn.btn_sm {
   font-size: 16px;
@@ -13591,7 +13595,7 @@ padding: 10px;
 .home_sports .text_btn span {
   font-size: 19px;
   font-weight: 700;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .home_sports .text_btn span:before {
   height: 2px;
@@ -13634,7 +13638,7 @@ padding: 10px;
   line-height: 1;
   font-size: 19px;
   font-weight: 700;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .sports_slider .slide_count_wrap span:not(:last-child):after {
   content: "";
@@ -13658,7 +13662,7 @@ padding: 10px;
   border-radius: 0px;
   display: inline-block;
   background: transparent;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .sports_slider .carousel_nav button:after {
   top: 60%;
@@ -13846,7 +13850,7 @@ padding: 10px;
   border-radius: 4px;
   position: relative;
   background-color: #e6e6e6;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .sports_absolute_tabnav a:after {
   top: 50%;
@@ -13945,7 +13949,7 @@ padding: 10px;
   font-weight: 500;
   padding: 8px 10px;
   border-radius: 4px;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .sports_product_item .item_content {
   z-index: 2;
@@ -15460,7 +15464,7 @@ padding: 10px;
   position: absolute;
   transition: 0.6s cubic-bezier(0.25, 1, 0.5, 1);
   transform: translate(-50%, -50%);
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .fs_color_list input:checked:before {
   opacity: 1;
@@ -15667,7 +15671,7 @@ padding: 10px;
   font-size: 17px;
   font-weight: 600;
   position: relative;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .modern_tabs_nav a:not(.more_btn):before {
   width: 0px;
@@ -15692,7 +15696,7 @@ padding: 10px;
   font-size: 17px;
   font-weight: 600;
   padding: 17px 25px;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 
 .modern_product_item {
@@ -15700,7 +15704,7 @@ padding: 10px;
   color: #000000;
   max-width: 480px;
   margin: 30px auto 0px;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .modern_product_item .product_label {
   margin-bottom: 20px;
@@ -15791,7 +15795,7 @@ padding: 10px;
   padding: 0px 20px;
   line-height: 40px;
   text-align: center;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .modern_product_item .action_btns a.bg_black, .modern_product_item .action_btns button.bg_black {
   color: #ffffff;
@@ -15867,7 +15871,7 @@ padding: 10px;
   color: #000000;
   font-size: 25px;
   font-weight: 700;
-  font-family: "Azeret Mono"
+  font-family: 'Manrope', sans-serif;
 }
 .minimal_product_item:hover .item_title a {
   color: #da0a2c;
@@ -16558,7 +16562,7 @@ padding: 10px;
   color: #0062bd;
   font-size: 15px;
   font-weight: 700;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .supermarket_product_small:hover .item_title a {
   color: #cc1414;
@@ -17326,7 +17330,7 @@ blockquote .blockquote_title {
   font-weight: 700;
   position: relative;
   padding-bottom: 15px;
-  font-family: "Azeret Mono"
+  font-family: 'Manrope', sans-serif;
 }
 .details_description_tab .nav a:before {
   left: 0px;
@@ -17437,14 +17441,14 @@ blockquote .blockquote_title {
   line-height: 1;
   font-size: 30px;
   font-weight: 700;
-  font-family: "Azeret Mono"
+  font-family: 'Manrope', sans-serif;
 }
 .shop_details_content .item_brand .brand_title {
   color: #3d3d3d;
   font-size: 20px;
   font-weight: 700;
   margin-right: 15px;
-  font-family: "Azeret Mono"
+  font-family: 'Manrope', sans-serif;
 }
 .shop_details_content .item_brand .brand_image {
   width: 120px;
@@ -17480,7 +17484,7 @@ blockquote .blockquote_title {
   color: #838383;
   font-size: 17px;
   align-items: center;
-  font-family: "Azeret Mono"
+  font-family: 'Manrope', sans-serif;
 }
 .shop_details_content .item_color_list span {
   width: 30px;
@@ -17698,7 +17702,7 @@ blockquote .blockquote_title {
   position: absolute;
   transition: 0.6s cubic-bezier(0.25, 1, 0.5, 1);
   transform: translate(-50%, -50%);
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .furniture_details .nav_wrap .nav a img {
   width: 100%;
@@ -17847,12 +17851,12 @@ blockquote .blockquote_title {
 .gadget_details_section .item_price {
   font-size: 45px;
   font-weight: 700;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .gadget_details_section .sold_tile {
   font-size: 18px;
   font-weight: 600;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .gadget_details_section .sold_tile small {
   font-size: 18px;
@@ -17899,7 +17903,7 @@ blockquote .blockquote_title {
   display: flex;
   line-height: 1;
   align-items: center;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .gadget_product_info li:not(:last-child) {
   margin-bottom: 15px;
@@ -17959,7 +17963,7 @@ blockquote .blockquote_title {
   font-size: 17px;
   font-weight: 700;
   padding-left: 20px;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .gadget_product_description .info_video_wrap ul i {
   color: #ff0000;
@@ -17969,7 +17973,7 @@ blockquote .blockquote_title {
 /* modern details - start */
 .modern_details_section {
   font-weight: 300;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .modern_details_section p {
   color: #acacac;
@@ -17987,7 +17991,7 @@ blockquote .blockquote_title {
   font-size: 20px;
   font-weight: 500;
   align-items: center;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .modern_details_section .item_price span {
   padding: 5px 8px;
@@ -18012,7 +18016,7 @@ blockquote .blockquote_title {
 }
 .modern_details_section .fd_description_tab a {
   font-weight: 600;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 
 .modern_product_info li {
@@ -18021,7 +18025,7 @@ blockquote .blockquote_title {
   font-size: 18px;
   font-weight: 500;
   align-items: center;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .modern_product_info li:not(:last-child) {
   margin-bottom: 8px;
@@ -18058,7 +18062,7 @@ blockquote .blockquote_title {
   font-size: 20px;
   max-width: 860px;
   padding: 100px 130px;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .lc_details_section p {
   color: #acacac;
@@ -18068,7 +18072,7 @@ blockquote .blockquote_title {
   line-height: 1;
   font-size: 28px;
   color: #ff0000;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .lc_details_section .item_title {
   line-height: 1;
@@ -19010,7 +19014,7 @@ blockquote .blockquote_title {
   color: #636363;
   font-size: 18px;
   font-weight: 500;
-  font-family: "Azeret Mono";
+  font-family: 'Manrope', sans-serif;
 }
 .sports_description_tab .des_info_list li:not(:last-child) {
   margin-bottom: 10px;
@@ -19105,7 +19109,7 @@ blockquote .blockquote_title {
   font-size: 18px;
   font-weight: 800;
   color: #2e2e2e;
-  font-family: "Azeret Mono"
+  font-family: 'Manrope', sans-serif;
 }
 .cart_table tr th:first-child, .cart_table tr td:first-child {
   padding-left: 80px;
@@ -19296,7 +19300,7 @@ blockquote .blockquote_title {
 .checkout_collapse_content .wrap_heade a {
   font-weight: 800;
   color: #2e2e2e;
-  font-family: "Azeret Mono"
+  font-family: 'Manrope', sans-serif;
 }
 .checkout_collapse_content .wrap_heade a:hover {
   color: #ce0b2b;
@@ -19612,7 +19616,7 @@ blockquote .blockquote_title {
   font-size: 14px;
   font-weight: 600;
   color: #2e2e2e;
-  font-family: "Azeret Mono"
+  font-family: 'Manrope', sans-serif;
 }
 .compare_content_wrap2 .remove_btn {
   color: #cccccc;
@@ -19748,7 +19752,7 @@ blockquote .blockquote_title {
   color: #2e2e2e;
   font-size: 20px;
   font-weight: 700;
-  font-family: "Azeret Mono"
+  font-family: 'Manrope', sans-serif;
 }
 .reg_form_wrap .create_account_btn:hover {
   color: #ce0b2b;
@@ -19826,8 +19830,8 @@ blockquote .blockquote_title {
 }
 .header_open9 a {
   font-size: 1rem !important;
-  font-family: "Azeret Mono", monospace !important;
-  font-weight: 400 !important;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 500 !important;
 }
 .sidebar_mobile_menu .mobile_menu_list .dropdown-toggle:after {
   content: none !important;
@@ -19837,8 +19841,81 @@ li.menu_item_has_child::after {
   content: none !important;
   display: none !important;
 }
+li::marker {
+  content: none !important;
+  display: none !important;
+}
+/* widget-social */
+.widget-social ul li {
+    margin-right: 10px;
+}
+
+.widget-social ul li:last-child {
+    margin-right: 0;
+}
+
+.widget-social ul li a {
+    width: 38px;
+    height: 38px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 9px;
+}
 
 
+
+.widget-menu ul li a {
+    color: rgba(255, 255, 255, 0.53);
+    font-size: 14px;
+    
+    line-height: 22px;
+    position: relative;
+}
+.widget-menu ul li a:hover {
+    color: #b321a6
+}
+.title-widget {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff !important;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.widget-social ul {
+  display: flex;
+  gap: 10px; /* separa un poco los íconos, ajusta si quieres */
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.widget-social li {
+  display: inline-block;
+}
+
+.footer_widget ul {
+    padding-left: 0px;
+}
+
+.footer_widget.text_footer ul li a {
+    font-size: 0.9rem !important;
+    font-family: "Azeret Mono";
+}
+.footer_bottom ul li a {
+    font-size: 0.9rem !important;
+    font-family: "Azeret Mono";
+    color: rgba(255, 255, 255, 0.53) !important;
+}
+.footer_bottom ul li a:hover {
+    
+    color: #b321a6 !important;
+}
 /* contact page - end
 ==================================================================================================== */
 /* ==================================================================================================== */
@@ -24882,6 +24959,9 @@ li.menu_item_has_child::after {
   .sec_ptb_100 {
     padding: 80px 0px;
   }
+  .sec_ptb_60 {
+    padding: 50px 0px;
+  }
 
   .sec_ptb_140 {
     padding: 100px 0px;
@@ -28215,6 +28295,9 @@ li.menu_item_has_child::after {
   /* global - start */
   .sec_ptb_100 {
     padding: 60px 0px;
+  }
+  .sec_ptb_60 {
+    padding: 35px 0px;
   }
 
   .sec_ptb_140 {
