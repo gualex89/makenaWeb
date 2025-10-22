@@ -2574,3 +2574,105 @@ body.background-white .tf-mouse-outer {
     color: #ffffff;
     margin-bottom: 10px;
 }
+
+/* MIS ESTILOS PERSONALIZADOS */
+
+.tiulo-resaltado {
+    font-size: 50px; 
+    text-align: center; 
+    font-weight: bold; 
+    line-height: 1.2;
+}
+.parrafo-resaltado {
+font-size: 26px; 
+text-align: center; 
+line-height: 1.4; 
+align-items:center;
+}
+.swiper-slide .slide-btn-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 100%;
+    width: 100%;
+    pointer-events: none; /* evita bloquear clicks en la imagen; el botón recupera clicks */
+}
+.swiper-slide .slide-btn-wrapper .button-banner {
+    pointer-events: auto;
+    margin-right: 10%;
+    margin-bottom: 50%;
+}
+
+.heading {
+    margin-bottom: 1rem;
+}
+
+
+@media (max-width: 768px) {
+    .yt-video {
+        height: auto;
+    }
+
+    .tiulo-resaltado {
+        font-size: 2.3rem
+    }
+    .parrafo-resaltado {
+        font-size: 1.8rem; 
+    }
+    
+
+    .col-sm-6 {
+        width: 50% !important;
+        flex: 0 0 50% !important;
+        padding-left: 10px;
+        padding-right: 10px;
+        box-sizing: border-box;
+    } 
+    .widget-logo {
+        text-align: center;
+    }
+    .widget-last {
+        text-align: center;
+    }
+
+    .widget-last .widget-social ul {
+        justify-content: center; /* centra los íconos dentro del ul */
+    }
+    .footer-content {
+        justify-content: center; /* centra horizontalmente todos los widgets */
+        flex-wrap: wrap; /* permite que bajen en mobile si no caben */
+    }
+    .mobile-image {
+        display: block !important;
+    }
+    .desktop-image {
+        display: none;
+        width: 100%;
+        object-fit: cover;
+        height: auto   ;
+    }
+    .swiper-motorcycle-banner {
+        height: 100% !important;
+    }
+    
+
+                              
+    .swiper-slide .slide-btn-wrapper {
+        align-items: center;
+    }
+    .swiper-slide .slide-btn-wrapper .button-banner {
+        margin-right: 0;
+        margin-bottom: 0%;
+        margin-top: -10%;
+    }
+    .tf-title {
+        font-size: 2.4rem !important;
+        text-align: center;
+        width: 100%;
+    }
+    
+                                
+
+    
+}

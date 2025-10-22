@@ -2375,6 +2375,16 @@
     position: relative;
     z-index: 10;
 }
+.action__body h3 {
+    color: #161616;
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 44px;
+    margin-bottom: 30px;
+    max-width: 330px;
+    position: relative;
+    z-index: 10;
+}
 
 .action__body > .flex {
     position: relative;

@@ -3,15 +3,24 @@
         <div class="row">
             <div class="col-md-12">                              
                 <div id="site-header-inner"> 
-                    <div class="wrap-box flex" >
-                        <div id="site-logo">
+                    <div class="wrap-box flex row" >
+                        <div id="site-logo" class="col-6">
                             <div id="site-logo-inner" class="ml-4">
                                 <a href="index.html" rel="home" class="main-logo">
                                     <img style="width: 198px" id="logo_header" src="{{ asset('images/logo/logomakena.png') }}">
                                         
                                 </a>
+                                
+                                
                             </div>
                         </div><!-- logo -->
+                        <div class="col-6">
+
+                            <button type="button" class="cart_btn">
+                                <i class="fas fa-shopping-cart open-cart-sidebar"></i>
+                                <span class="btn_badge">0</span>
+                            </button>
+                        </div>
                         <div class="mobile-button">
                             <span></span>
                         </div><!-- /.mobile-button -->
@@ -97,3 +106,69 @@
         </div>
     </div>
 </header>
+<style>
+    /* Por defecto, no muestres el botón extra del carrito en desktop */
+.cart_btn { 
+  display: none;
+}
+
+/* Carrito solo visible en mobile */
+@media (max-width: 768px) {
+  /* Botón carrito: reset de estilos que vienen del theme */
+  .cart_btn{
+    position: absolute;
+    right: 70px;           /* ajusta si hace falta */
+    top: 15px;             /* ajusta si hace falta */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Reset para que no recorte el badge */
+    width: 28px;
+    height: 28px;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    line-height: 1 !important;
+    overflow: visible !important;  /* <- clave */
+    z-index: 101;
+  }
+
+  .cart_btn i{
+    font-size: 22px;
+    color: #fff !important;
+    position: relative;    /* stacking context para el icono */
+    z-index: 1;
+  }
+
+  .cart_btn .btn_badge{
+    position: absolute;
+    top: -6px;             /* muévelo fino si hace falta */
+    right: -8px;
+    min-width: 16px;
+    height: 16px;
+    padding: 0 4px;
+    border-radius: 9999px;
+    font-size: 10px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* que quede por encima de cualquier contenedor circular */
+    z-index: 10;
+    background: #b321a6;   /* si prefieres, pon el que usabas */
+    color: #fff;
+    font-weight: 700;
+    pointer-events: none;  /* no interfiera con el click del carrito */
+  }
+
+  /* Evita duplicado del botón grande en mobile */
+  .flat-wallet{ display: none !important; }
+}
+
+
+
+</style>

@@ -6,6 +6,7 @@ use App\Models\Banner;
 use App\Models\CarruselCuadro;
 use App\Models\HomeCategoriasFunda;
 use App\Models\Order;
+use App\Models\Precio;
 use App\Models\Principalimage;
 use Illuminate\Http\Request;
 use App\Models\Product;
@@ -35,8 +36,12 @@ class HomeImagesController extends Controller
         
         $misProductos = Product::all();
 
+        $preciosProductos = Precio::all();
+        $funda = $preciosProductos-> where('producto', 'funda')->first();
+        $precioFunda = $funda ? $funda->precio : null;
 
-        return view('layouts.newhome', compact('sliderPrincipal', 'totalImages', 'misProductos', 'banners', 'carrusel_cuadros', 'home_categories_fundas') );
+
+        return view('layouts.newhome', compact('sliderPrincipal', 'totalImages', 'misProductos', 'banners', 'carrusel_cuadros', 'home_categories_fundas', 'precioFunda') );
     }
     
     
