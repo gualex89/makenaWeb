@@ -1,5 +1,5 @@
 <header class="header_section motorcycle_header sticky_header clearfix">
-  <div class="header_content_wrap d-flex align-items-center" id="cintillo_carrito">
+  <div class="header_content_wrap d-flex align-items-center " id="cintillo_carrito">
       <div class="container-fluid prl_90">
           <div class="row align-items-center">
               <div class="col-lg-2">
@@ -22,10 +22,10 @@
                   <nav class="main_menu clearfix">
                       <ul class="ul_li_center clearfix header_open9">
                             <li class="menu_item_has_child">
-                                <a href="/">Home</a>
+                                <a href="/">Home </a>
                             </li>
                             <li class="menu_item_has_child">
-                                <a href="#!">Fundas</a>
+                                <a href="#!">Fundas<i style="font-size: 8px" class="fas fa-chevron-down ml-2"></i></a>
                                 <ul class="submenu">
                                     <li><a href="/catalogo">Catálogo</a></li>
                                     <li><a href="/tufunda">Crea tu funda</a></li>
@@ -33,7 +33,7 @@
                                 </ul>
                             </li>
                             <li class="menu_item_has_child">
-                                <a href="#!">Cuadros</a>
+                                <a href="#!">Cuadros<i style="font-size: 8px" class="fas fa-chevron-down ml-2"></i></a>
                                 <ul class="submenu">
                                     <li><a href="shop_cart.html">Catálogo</a></li>
                                     <li><a href="shop_checkout.html">Crea tu cuadro</a></li>
