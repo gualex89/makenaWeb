@@ -797,3 +797,27 @@
         width: 100% !important;
     }
 }
+
+/* === FIX: que se VEAN las categorías en móvil === */
+@media (max-width: 700px) {
+  #wrapper #page .section-menu-left {
+    position: relative !important;
+    left: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+  }
+
+  /* desactiva el modo off-canvas basado en .null */
+  #wrapper #page .section-menu-left.null {
+    left: 0 !important;
+  }
+}
+
+/* corrige la contradicción de 1440px que oculta .null */
+@media (max-width: 1440px) {
+  .section-menu-left.null,
+  #page.market-page .section-menu-left.null {
+    left: 0 !important;
+  }
+}

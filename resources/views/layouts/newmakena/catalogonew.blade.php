@@ -16,10 +16,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
         <!-- Theme Style -->
-        <link rel="stylesheet" type="text/css" href="{{ asset('assets_new/css/style.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets_new/css/style.css') }}?v={{ time() }}">
 
         <!-- Reponsive -->
-        <link rel="stylesheet" type="text/css" href="{{ asset('assets_new/css/responsive.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets_new/css/responsive.css') }}?v={{ time() }}">
 
         <!-- Favicon and Touch Icons  -->
         <link rel="shortcut icon" href="{{ asset('assets_new/icon/Favicon.png') }}">
@@ -169,7 +169,7 @@
                                                     <li><a href="/catalogo?categoria=DAN">DanDaDan</a></li>
                                                     <li><a href="/catalogo?categoria=DN">Death Note</a></li>
                                                     <li><a href="/catalogo?categoria=DS">Demon Slayer</a></li>
-                                                    <li><a href="/catalogo?categoria=DB">Dragon Ball</a></li>
+                                                    <li><a href="/catalogonew?categoria=DB">Dragon Ball</a></li>
                                                     <li><a href="/catalogo?categoria=CH">El viaje de Chihiro</a></li>
                                                     <li><a href="/catalogo?categoria=EV">Evangelion</a></li>
                                                     <li><a href="/catalogo?categoria=FN">Frieren</a></li>
@@ -297,7 +297,7 @@
                                                 </a>
                                                 <div class="button-place-bid">
                                                     <ul class="ul_li_block text-center clearfix">
-                                                        <li><a class="alCarrito tf-button p-2" href="#!"><span><i
+                                                        <li><a class="alCarrito tf-button p-4" href="#!"><span><i
                                                                         class="fas fa-shopping-cart"></i></span>
                                                                 <span>Seleccioná tu modelo</span></a></li>
                                                         <li class="pt-2">
@@ -820,7 +820,52 @@
                 });
             });
         </script>
+        <style>
+            /* --- Forzar visibilidad del sidebar en móviles --- */
+@media (max-width: 767.98px) {
+  .section-menu-left {
+    display: block !important;
+    margin-left: 0 !important;      /* quita el ml-5 que desplaza */
+    padding-left: 12px;
+    padding-right: 12px;
+    order: 0;
+  }
 
+  /* Asegura que el grid no lo "apriete" */
+  .section-menu-left.col-lg-2.col-md-12 {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  /* El menú debe ser vertical completo */
+  .categorias-menu,
+  .categorias-menu > li {
+    display: block !important;
+    width: 100% !important;
+  }
+
+  /* Si algún theme lo escondía */
+  .menu-tab.categorias-menu {
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}
+
+/* Evita que reglas del theme lo oculten en cualquier breakpoint */
+.section-menu-left,
+.menu-tab.categorias-menu {
+  display: block !important;
+}
+
+/* El contenedor no debe recortar accidentalmente */
+.categorias-container {
+  overflow: visible;       /* si algo se recorta, prueba visible */
+  position: relative;
+  z-index: 3;
+}
+
+        </style>
 
 
 

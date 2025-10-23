@@ -6350,3 +6350,6 @@ mb-20 {
 .cart_table .total_price {
   color: #39b54a;
 }
+.tf-button {
+    width: 140px !important;
+}
