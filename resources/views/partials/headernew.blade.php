@@ -15,11 +15,12 @@
                             </div>
                         </div><!-- logo -->
                         <div class="col-6">
-
+                             @if (!request()->is('carritonew', 'checkoutnew'))
                             <button type="button" class="cart_btn">
                                 <i class="fas fa-shopping-cart open-cart-sidebar"></i>
                                 <span class="btn_badge">0</span>
                             </button>
+                            @endif
                         </div>
                         <div class="mobile-button">
                             <span></span>
