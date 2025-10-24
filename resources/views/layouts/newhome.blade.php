@@ -54,7 +54,7 @@
 
                             <div class="slide-btn-wrapper">
                                 <div class="button-banner">
-                                    <a href="{{ $banner->href }}" class="tf-button style-1" style="width:220px; height:60px; display:inline-flex; align-items:center; justify-content:center;">
+                                    <a href="{{ $banner->href }}" class="tf-button style-1" style="width:195px !important; height:60px;  align-items:center; justify-content:center;">
                                         {{ $banner->name_button }}<i class="icon-arrow-up-right2" style="margin-left:8px;"></i>
                                     </a>
                                 </div>
