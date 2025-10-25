@@ -94,7 +94,7 @@
                             <div class="text">Precio</div>
                             <div class="flex justify-between">
                                 <p>{{ $precioCuadroBasic }} </p>
-                                <a href="#" data-bs-toggle="modal" data-bs-target="#addToCartModal" class="tf-button style-1 h50 w216"><i class="fas fa-shopping-cart"></i>Seleccioná tu modelo</i></a>
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#addToCartModalCuadros" class="tf-button style-1 h50 w216"><i class="fas fa-shopping-cart"></i>Seleccioná tu modelo</i></a>
                             </div>
                         </div>
                     </div>
@@ -105,6 +105,7 @@
         </div>
     </div>
 @endsection
+@include('partials.addToCartModalCuadros')
 @push('scripts')
     <script>
         document.querySelectorAll('.categorias-menu li.parent > a').forEach(link => {
@@ -204,13 +205,13 @@
                 'src'); // Obtener la URL de la imagen completa
 
                 // Mostrar la modal
-                $('#addToCartModal').modal('show');
+                $('#addToCartModalCuadros').modal('show');
 
 
             }
             document.getElementById('addToCartModalOkButton').addEventListener('click', function() {
-                const selectedMarca = document.getElementById('marcasDropdown').value;
-                const selectedModelo = document.getElementById('modelosDropdown').value;
+                const selectedMarca = document.getElementById('colganteDropdown').value;
+                const selectedModelo = document.getElementById('tamanoDropdown').value;
 
                 // Verificar si se ha seleccionado un modelo
                 if (selectedModelo) {
@@ -232,7 +233,7 @@
                     updatePrices();
                     productoAgregadoAlCarrito();
                     // Cerrar la modal solo si se ha completado con éxito la acción
-                    $('#addToCartModal').modal('hide');
+                    $('#addToCartModalCuadros').modal('hide');
                 } else {
                     // Si no se ha seleccionado un modelo, muestra un mensaje de alerta dentro de la modal
                     alert('Por favor, seleccione un modelo');
@@ -404,52 +405,7 @@
             });
         });
     </script>
-    <script>
-        $(document).ready(function() {
-            // Cargar marcas al cargar la página
-            $.get('/obtener-marcas', function(data) {
-                console.log(data);
-
-                data.forEach(function(marca) {
-                    $('#marcasDropdown').append('<option value="' + marca + '">' + marca +
-                        '</option>');
-                    $('#marcasDropdown').niceSelect('update');
-                });
-            });
-
-            // Manejar cambio en el dropdown de marcas
-            $('#marcasDropdown').change(function() {
-                var marcaSeleccionada = $(this).val();
-
-                // Hacer una solicitud AJAX para obtener modelos según la marca seleccionada
-                $.get('/obtener-modelos/' + marcaSeleccionada, function(data) {
-                    // Limpiar modelos existentes
-                    $('#modelosDropdown').empty();
-                    $('#modelosDropdown').append($('<option>', {
-                        value: '',
-                        text: 'Seleccione'
-                    }));
-
-                    // Llenar modelos
-                    data.forEach(function(modelo) {
-                        $('#modelosDropdown').append('<option value="' + modelo + '">' +
-                            modelo + '</option>');
-                        $('#modelosDropdown').niceSelect('update');
-                    });
-                });
-            });
-            $('#modelosDropdown').change(function() {
-                // Verificar si se ha seleccionado un modelo
-                if ($(this).val() !== '') {
-                    // Si se seleccionó un modelo, habilitar el botón "OK"
-                    $('#addToCartModalOkButton').prop('disabled', false);
-                } else {
-                    // Si no se seleccionó un modelo, deshabilitar el botón "OK"
-                    $('#addToCartModalOkButton').prop('disabled', true);
-                }
-            });
-        });
-    </script>
+    
     <script>
         $(document).ready(function() {
             // Mostrar todas las imágenes al cargar la página
@@ -506,4 +462,32 @@
             img.addEventListener('mouseleave', () => img.src = original);
         });
     </script>
+    <script>
+            $(document).ready(function() {
+                // Cargar marcas al cargar la página
+
+                
+                $('#tamanoDropdown').change(function() {
+                    console.log('Hola');
+                    // Verificar si se ha seleccionado un modelo
+                    if ($(this).val() !== '' && $('#colganteDropdown').val() !== '') {
+                        // Si se seleccionó un modelo, habilitar el botón "OK"
+                        $('#addToCartModalOkButton').prop('disabled', false);
+                    } else {
+                        // Si no se seleccionó un modelo, deshabilitar el botón "OK"
+                        $('#addToCartModalOkButton').prop('disabled', true);
+                    }
+                });
+                $('#colganteDropdown').change(function() {
+                    // Verificar si se ha seleccionado un modelo
+                    if ($(this).val() !== '' && $('#tamanoDropdown').val() !== '') {
+                        // Si se seleccionó un modelo, habilitar el botón "OK"
+                        $('#addToCartModalOkButton').prop('disabled', false);
+                    } else {
+                        // Si no se seleccionó un modelo, deshabilitar el botón "OK"
+                        $('#addToCartModalOkButton').prop('disabled', true);
+                    }
+                });
+            });
+        </script>
 @endpush

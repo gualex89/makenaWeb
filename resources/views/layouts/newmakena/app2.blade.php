@@ -73,6 +73,7 @@
                 </main>
             </div>
             @include('partials.addToCartModal')
+            
              <!-- footer_section - start
              ================================================== -->
              @include('partials.footernew')
