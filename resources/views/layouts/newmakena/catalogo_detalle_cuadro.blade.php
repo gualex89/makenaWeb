@@ -41,12 +41,17 @@
             <div class="row">
                 <div data-wow-delay="0s" class="wow fadeInLeft col-md-6">
                     <div class="tf-card-box style-5 mb-0">
-                        <div class="card-media p-5">
+                        <div class="card-media p-5 image-hover-container">
                             <a href="#">
-                                <img id="imagenDinamico" src="{{ Voyager::image($item->image) }}" alt="Funda de {{ $item->diseno }} modelo {{ $item->modeloCEO }}" class="img-fluid my-4" width="280" height="auto" />
+                                <img src="{{ Voyager::image($item->image) }}" 
+                                    alt="Funda de {{ $item->diseno }} modelo {{ $item->modeloCEO }}" 
+                                    class="main-img img-fluid my-4" width="280" height="auto" />
+
+                                <img src="{{ Voyager::image($item->image2) }}" 
+                                    alt="Funda de {{ $item->diseno }} - vista alterna" 
+                                    class="hover-img img-fluid my-4" width="280" height="auto" />
                             </a>
                         </div>
-                        
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -88,7 +93,7 @@
                         <div class="content">
                             <div class="text">Precio</div>
                             <div class="flex justify-between">
-                                <p>{{ $precioFunda }} </p>
+                                <p>{{ $precioCuadroBasic }} </p>
                                 <a href="#" data-bs-toggle="modal" data-bs-target="#addToCartModal" class="tf-button style-1 h50 w216"><i class="fas fa-shopping-cart"></i>Seleccioná tu modelo</i></a>
                             </div>
                         </div>
@@ -490,6 +495,15 @@
                     });
                 });
             });
+        });
+        //Hover imagen dinámico
+        document.addEventListener('DOMContentLoaded', function() {
+            const img = document.getElementById('imagenDinamico');
+            const original = img.src;
+            const hover = img.dataset.hover;
+
+            img.addEventListener('mouseenter', () => img.src = hover);
+            img.addEventListener('mouseleave', () => img.src = original);
         });
     </script>
 @endpush

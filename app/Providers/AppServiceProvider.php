@@ -4,8 +4,10 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use App\Models\Catalogue;
+use App\Models\CatalogueCuadro;
 use App\Observers\ImageObserver;
 use App\Models\Duo;
+use App\Observers\ImageCuadroObserver;
 use App\Observers\ImageDuoObserver;
 
 class AppServiceProvider extends ServiceProvider
@@ -25,5 +27,6 @@ class AppServiceProvider extends ServiceProvider
     {
         Catalogue::observe(ImageObserver::class);
         Duo::observe(ImageDuoObserver::class);
+        CatalogueCuadro::observe(ImageCuadroObserver::class);
     }
 }

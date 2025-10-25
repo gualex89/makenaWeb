@@ -31,6 +31,7 @@ Route::get('/rechazado', [HomeImagesController::class, 'rechazado'])->name('rech
 // RUTAS DEL CATALOGO
 Route::get('/catalogo', [CatalogueController::class, 'catalogo'])->name('catalogo');
 Route::get('/catalogonew', [CatalogueController::class, 'catalogoNew'])->name('catalogoNew');
+Route::get('/catalogocuadros', [CatalogueController::class, 'catalogoCuadros'])->name('catalogoCuadros');
 
 Route::get('/catalogo-duo', [CatalogueController::class, 'catalogoDuo'])->name('catalogoDuo');
 Route::get('/catalogo-duo-new', [CatalogueController::class, 'catalogoDuoNew'])->name('catalogoDuoNew');
@@ -92,6 +93,7 @@ Route::post('/webhook', [webhook::class, 'handleWebhook']);
 
 Route::get('/catalogo/{slug}', [CatalogueController::class, 'show'])->name('catalogo.show');
 Route::get('/catalogonew/{slug}', [CatalogueController::class, 'show2'])->name('catalogo.show2');
+Route::get('/catalogocuadros/{slug}', [CatalogueController::class, 'showCuadro'])->name('catalogo.showCuadro');
 
 
 Route::get('/checkout-orden-compra', [OrdenCompraController::class, 'mostrarOrden']);

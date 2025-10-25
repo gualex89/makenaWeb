@@ -6,6 +6,7 @@ use App\Models\Banner;
 use App\Models\CarruselCuadro;
 use Illuminate\Http\Request;
 use App\Models\Catalogue;
+use App\Models\CatalogueCuadro;
 use App\Models\Cover;
 use App\Models\Product;
 use App\Models\Duo;
@@ -211,6 +212,22 @@ class CatalogueController extends Controller
         $item = Catalogue::where('slug', $slug)->firstOrFail();
         return view('layouts.catalogo_detalle', compact('item', 'precioFundas', 'precioPopSockets', 'precioFundasDobles'));
     }
+    public function showCuadro($slug)
+    {
+        $preciosProductos = Precio::all();
+        $cuadroBasic = $preciosProductos-> where('producto', 'cuadro-basic')->first();
+        $precioCuadroBasic = $cuadroBasic ? $cuadroBasic->precio : null;
+        
+        $cuadroStandard = $preciosProductos-> where('producto', 'cuadro-standard')->first();
+        $precioCuadroStandard = $cuadroStandard ? $cuadroStandard->precio : null;
+        
+        $cuadroEpic = $preciosProductos-> where('producto', 'cuadro-epic')->first();
+        $precioCuadroEpic = $cuadroEpic ? $cuadroEpic->precio : null;
+
+        $item = CatalogueCuadro::where('slug', $slug)->firstOrFail();
+        return view('layouts.newmakena.catalogo_detalle_cuadro', compact('item', 'precioCuadroBasic', 'precioCuadroStandard', 'precioCuadroEpic'));
+    }
+
     public function show2($slug)
     {
         $misProductos = Product::all();
@@ -223,5 +240,50 @@ class CatalogueController extends Controller
         
         $item = Catalogue::where('slug', $slug)->firstOrFail();
         return view('layouts.newmakena.catalogo_detalle2', compact('item', 'precioFunda'));
+    }
+    public function catalogoCuadros(Request $request){
+
+        
+        // Obtener el parámetro de categoría de la solicitud
+        $categoria = $request->query('categoria');
+    
+        // Consulta inicial sin filtrar por categoría
+        $query = CatalogueCuadro::query();
+        
+    
+        // Si se especifica una categoría, filtrar por esa categoría
+        if($categoria) {
+            $query->where('file_name', 'like', $categoria . '%');
+        }
+    
+        // Ordenar por ID descendente (más alto primero)
+        $query->orderBy('id', 'desc');
+    
+        // Paginar los resultados
+        $imagesCatalogo = $query->paginate(12);
+        $totalImagesCatalogo = $imagesCatalogo->total();
+
+        
+        
+        
+        $preciosProductos = Precio::all();
+        $cuadroBasic = $preciosProductos-> where('producto', 'cuadro-basic')->first();
+        $precioCuadroBasic = $cuadroBasic ? $cuadroBasic->precio : null;
+        
+        $cuadroStandard = $preciosProductos-> where('producto', 'cuadro-standard')->first();
+        $precioCuadroStandard = $cuadroStandard ? $cuadroStandard->precio : null;
+        
+        $cuadroEpic = $preciosProductos-> where('producto', 'cuadro-epic')->first();
+        $precioCuadroEpic = $cuadroEpic ? $cuadroEpic->precio : null;
+        
+        // Consulta inicial sin filtrar por categoría
+        
+        
+       
+    
+        
+    
+        // Pasar los datos a la vista
+        return view('layouts.newmakena.catalogocuadros', compact('imagesCatalogo', 'totalImagesCatalogo', 'precioCuadroBasic', 'precioCuadroStandard', 'precioCuadroEpic'));
     }
 }

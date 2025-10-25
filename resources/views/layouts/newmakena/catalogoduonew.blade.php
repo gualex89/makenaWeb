@@ -430,7 +430,9 @@
                     document.body.style.overflow = '';
                 }
 
-                document.querySelector('.open-cart-sidebar').addEventListener('click', openCartSidebar);
+                document.querySelectorAll('.open-cart-sidebar').forEach(btn => {
+                    btn.addEventListener('click', openCartSidebar);
+                });
                 document.querySelector('.cart_sidebar .close_btn').addEventListener('click', closeCartSidebar);
 
                 document.addEventListener('mousedown', function(event) {

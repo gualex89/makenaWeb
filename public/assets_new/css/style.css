@@ -2704,6 +2704,34 @@ align-items:center;
 /* precio a la derecha */
 .cart-scope .item_price{ display:inline-block; font-size:2.2rem; font-weight:700; }
 
+
+.image-hover-container {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.image-hover-container img {
+  transition: opacity 0.4s ease;
+  display: block;
+}
+
+.image-hover-container .hover-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.image-hover-container:hover .hover-img {
+  opacity: 1;
+}
+
+.image-hover-container:hover .main-img {
+  opacity: 0;
+}
+
+
 /* responsive tweaks */
 @media (max-width: 991.98px){
     .cart-scope .cart_product{ align-items:flex-start; }

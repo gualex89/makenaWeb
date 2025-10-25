@@ -294,6 +294,7 @@
                                             <div class="card-media">
                                                 <a href="{{ route('catalogo.show', $image->slug) }}">
                                                     <img src="{{ Voyager::image($image->image) }}" alt="{{ $image->file_name }}">
+                                                    <img src="{{ Voyager::image($image->image2) }}" alt="{{ $image->file_name }}">
                                                 </a>
                                                 <div class="button-place-bid">
                                                     <ul class="ul_li_block text-center clearfix">
@@ -301,7 +302,7 @@
                                                                         class="fas fa-shopping-cart"></i></span>
                                                                 <span>Seleccioná tu modelo</span></a></li>
                                                         <li class="pt-2">
-                                                            <a class="tf-button" href="{{ route('catalogo.show', $image->slug) }}">
+                                                            <a class="tf-button" href="{{ route('catalogo.showCuadro', $image->slug) }}">
                                                                 <span><i class="fas fa-search"></i></span>
                                                                 <span>Ver</span>
                                                             </a>
@@ -316,7 +317,7 @@
                                             <div class="divider"></div>
                                             <div class="meta-info flex items-center justify-between">
                                                 <span class="text-bid"></span>
-                                                <h5 class="item_price price gem">{{$precioFunda}}</h5>
+                                                <h5 class="item_price price gem">{{$precioCuadroBasic}}</h5>
                                             </div>
                                         </div>
                                     </div>
