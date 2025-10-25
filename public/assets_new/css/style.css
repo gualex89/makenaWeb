@@ -2731,6 +2731,9 @@ align-items:center;
   opacity: 0;
 }
 
+#btnAgregarCarrito {
+    width: 220px !important;
+}
 
 /* responsive tweaks */
 @media (max-width: 991.98px){

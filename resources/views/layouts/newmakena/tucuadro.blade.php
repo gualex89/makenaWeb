@@ -78,7 +78,7 @@
     </div>
 
     <div class="d-flex justify-content-center my-4">
-        <button id="btnAgregarCarrito" class="tf-button style-1 h50 w216"><i class="fas fa-shopping-cart"></i>Agregar al Carrito</button>
+        <button id="btnAgregarCarrito" class="tf-button style-1 h50 "><i class="fas fa-shopping-cart"></i>Agregar al Carrito</button>
     </div>
 
     <div class="mb-5">

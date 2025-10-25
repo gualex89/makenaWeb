@@ -41,11 +41,11 @@
             <div class="row">
                 <div data-wow-delay="0s" class="wow fadeInLeft col-md-6">
                     <div class="tf-card-box style-5 mb-0">
-                        <div class="card-media p-5 image-hover-container">
+                        <div class="card-media  image-hover-container">
                             <a href="#">
                                 <img src="{{ Voyager::image($item->image) }}" 
                                     alt="Funda de {{ $item->diseno }} modelo {{ $item->modeloCEO }}" 
-                                    class="main-img img-fluid my-4" width="280" height="auto" />
+                                    class="main-img img-fluid " width="280" height="auto" />
 
                                 <img src="{{ Voyager::image($item->image2) }}" 
                                     alt="Funda de {{ $item->diseno }} - vista alterna" 
