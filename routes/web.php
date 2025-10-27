@@ -99,7 +99,8 @@ Route::get('/catalogocuadros/{slug}', [CatalogueController::class, 'showCuadro']
 Route::get('/checkout-orden-compra', [OrdenCompraController::class, 'mostrarOrden']);
 
 Route::get('/datos-transferencia', [TransferenciaController::class, 'mostrarFormulario'])->name('datosTransferencia');;
-Route::get('/calcula-envio', [TransferenciaController::class, 'calculaEnvio'])->name('calculaEnvio');;
+Route::get('/calcula-envio', [TransferenciaController::class, 'calculaEnvio'])->name('calculaEnvio');
+Route::get('/calcula-tu-envio', [TransferenciaController::class, 'calculaTuEnvio'])->name('calculaTuEnvio');
 
 
 Route::get('/homenew', [HomeImagesController::class, 'homenew'])->name('homenew');

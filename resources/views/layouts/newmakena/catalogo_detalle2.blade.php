@@ -40,7 +40,7 @@
         <div class="themesflat-container">
             <div class="row">
                 <div data-wow-delay="0s" class="wow fadeInLeft col-md-6">
-                    <div class="tf-card-box style-5 mb-0">
+                    <div class="tf-card-box tf-card-box-funda  style-5 mb-0">
                         <div class="card-media p-5">
                             <a href="#">
                                 <img id="imagenDinamico" src="{{ Voyager::image($item->image) }}" alt="Funda de {{ $item->diseno }} modelo {{ $item->modeloCEO }}" class="img-fluid my-4" width="280" height="auto" />

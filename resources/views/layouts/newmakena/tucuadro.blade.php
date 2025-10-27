@@ -1,11 +1,11 @@
 @extends('layouts.newmakena.app2')
 
 @section('content')
-<div id="create" class="tabcontent active px-5 mx-5 mt-5">
+<div id="create" class="tabcontent active mt-5 contenedor-tucuadro">
     <div class="wrapper-content-create">
         <div class="heading-section">
             <h2 class="tf-title">Crea tu Cuadro</h2>
-            <p>
+            <p class=" mt-3 text-align-start">
                 Nuestros cuadros están fabricados en <strong class="resaltado-color">aluminio</strong> con un grosor de <strong class="resaltado-color">1 mm</strong>,
                 con acabado <strong class="resaltado-color">brillante</strong> tipo espejo e <strong class="resaltado-color">impresión 4K</strong>
                 para lograr colores intensos y máxima definición.
@@ -21,7 +21,8 @@
                     
                                 <!-- Contenido de texto -->
                                 <div id="uploadText" style="text-align:center; flex:1; min-width:250px;">
-                                    <h4 style="font-weight:700;">Cada imagen tiene una historia. Creá la tuya</h4>
+                                    <h4 style="font-weight:700;">Cada imagen tiene una historia.</h4>
+                                    <h4 class="mt-2">Creá la tuya</h4>
                                     <p class="text mt-2">Cargá la imagen para tu cuadro aquí</p>
                                     <div class="text filename">PNG ó JPG</div>
                                     <button type="button" onclick="document.getElementById('fileInput').click()" 
@@ -152,7 +153,7 @@
         <script src="{{ asset('assets_new/js/SplitText.js') }}"></script>
         <script src="{{ asset('assets_new/js/wow.min.js') }}"></script>
         <script src="{{ asset('assets_new/js/ScrollTrigger.js') }}"></script>
-        <script src="{{ asset('assets_new/js/gsap-animation.js') }}"></script>
+        
         <script src="{{ asset('assets_new/js/tsparticles.min.js') }}"></script>
         <script src="{{ asset('assets_new/js/tsparticles.js') }}"></script>
         <script src="{{ asset('assets_new/js/main.js') }}"></script>
@@ -304,7 +305,7 @@
         let price, itemName, imageUrl;
 
         // Mostrar la modal al hacer clic en “Seleccioná tu modelo”
-        function addToCart(productItem) {
+       /*  function addToCart(productItem) {
             price = parseFloat(productItem.querySelector('.item_price').textContent.replace('$', ''));
             itemName = productItem.querySelector('.item_title').textContent;
             imageUrl = productItem.querySelector('img').getAttribute('src');
@@ -316,7 +317,7 @@
             // Mostrar modal moderna Bootstrap 5
             $('#addToCartModal').modal('show');
         }
-
+ */
         // Confirmar selección desde la modal
         document.getElementById('addToCartModalOkButton').addEventListener('click', function() {
             const selectedMarca = document.getElementById('marcasDropdown').value;
@@ -371,8 +372,8 @@
 
             if (cartItem.marca2) {
             tipoProducto = 'Funda Doble';
-            } else if (cartItem.name.toLowerCase().includes('cuadro')) {
-            tipoProducto = 'Cuadro';
+            } else if (cartItem.name && typeof cartItem.name === 'string' && cartItem.name.toLowerCase().includes('cuadro')) {
+                tipoProducto = 'Cuadro';
             }
 
             const cartItemHTML = `
@@ -386,7 +387,7 @@
                     <div style="font-weight:700; font-size:18px; margin:2px 0;"><span class="item_title">${cartItem.name}</span></div>
                     <div style="font-size:15px; margin-bottom:2px;">${cartItem.marca || cartItem.tamaño} ${cartItem.modelo || cartItem.colgante}</div>
                     ${cartItem.marca2 ? `<div style="font-size:15px;">${cartItem.marca2} ${cartItem.modelo2}</div>` : ''}
-                    <div style="font-weight:700; font-size:17px; margin-top:6px;"><span class="item_price">$${cartItem.price.toLocaleString('es-CL')}</span></div>
+                    <div style="font-weight:700; font-size:17px; margin-top:6px;"><span class="item_price">$${cartItem.price ? Number(cartItem.price).toLocaleString('es-CL') : '0'}</span></div>
                     </div>
                 </div>
                 <button type="button" class="remove_btn" style="background:none; border:none; color:#fff; font-size:2rem;">

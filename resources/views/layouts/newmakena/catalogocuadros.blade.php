@@ -296,6 +296,17 @@
                                                     <img src="{{ Voyager::image($image->image) }}" alt="{{ $image->file_name }}">
                                                     <img src="{{ Voyager::image($image->image2) }}" alt="{{ $image->file_name }}">
                                                 </a>
+                                                {{-- <div class="card-media  image-hover-container">
+                                                    <a href="#">
+                                                        <img src="{{ Voyager::image($image->image) }}" 
+                                                            alt="Funda de {{ $image->diseno }} modelo {{ $image->modeloCEO }}" 
+                                                            class="main-img img-fluid " width="280" height="auto" />
+
+                                                        <img src="{{ Voyager::image($image->image2) }}" 
+                                                            alt="Funda de {{ $image->diseno }} - vista alterna" 
+                                                            class="hover-img img-fluid my-4" width="280" height="auto" />
+                                                    </a>
+                                                </div> --}}
                                                 <div class="button-place-bid">
                                                     <ul class="ul_li_block text-center clearfix">
                                                         <li><a class="alCarrito tf-button p-4" href="#!"><span><i

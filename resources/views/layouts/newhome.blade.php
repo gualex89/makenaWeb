@@ -1,19 +1,34 @@
 <!DOCTYPE html>
-<!--[if IE 8 ]><html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
-<!--<![endif]-->
-
+<html lang="es">
+    
 <head>
-    <!-- Basic Page Needs -->
     <meta charset="utf-8">
-    <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
-    <title>Open9 | NFT Marketplace HTML Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <meta name="author" content="themesflat.com">
+    <title>Fundas para tu Celu - Makena | Personalizadas para Samsung, Motorola, Xiaomi e iPhone</title>
+    <meta name="description"
+        content="Fundas personalizadas para Samsung, Motorola, Xiaomi y iPhone en Makena. Elige entre más de 1000 modelos o crea tu diseño. Envíos a toda Argentina.">
+    <meta name="keywords"
+        content="fundas personalizadas, fundas celulares, carcasas, anime, Dragon Ball, iPhone, Samsung, Argentina">
+    <link rel="canonical" href="https://makenafundas.com.ar">
 
-    <!-- Mobile Specific Metas -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Open Graph Meta -->
+    <meta property="og:title" content="Fundas para celulares en Argentina - Makena">
+    <meta property="og:description"
+        content="Compra fundas personalizadas y de alta calidad para tu celular. Envíos rápidos y precios accesibles en toda Argentina.">
+    <meta property="og:image" content="https://makenafundas.com.ar/images/logo/makenaminiicon.png">
+    <meta property="og:url" content="https://makenafundas.com.ar">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fundas para tu Celular - Makena">
+    <meta name="twitter:description"
+        content="Fundas personalizadas para Samsung, Motorola, Xiaomi y iPhone. ¡Crea tu funda en Makena!">
+    <meta name="twitter:image" content="https://makenafundas.com.ar/images/logo/makenaminiicon.png">
+
+    <link rel="shortcut icon" href="images/logo/makenaminiicon.png">
 
     <!-- Theme Style -->
     <link rel="stylesheet" type="text/css" href="{{ asset('assets_new/css/style.css') }}">
@@ -22,8 +37,8 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets_new/css/responsive.css') }}">
 
     <!-- Favicon and Touch Icons  -->
-    <link rel="shortcut icon" href="{{ asset('assets_new/icon/Favicon.png') }}">
-    <link rel="apple-touch-icon-precomposed" href="{{ asset('assets_new/icon/Favicon.png') }}">
+    <link rel="shortcut icon" href="{{ asset('images/logo/makenaminiicon.png') }}">
+    <link rel="apple-touch-icon-precomposed" href="{{ asset('images/logo/makenaminiicon.png') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -128,12 +143,10 @@
                                             <div class="swiper-slide">
                                                 <div class="tf-card-box tf-card-box-cuadros">
                                                     <div class="card-media">
-                                                        <a href="#">
+                                                        <a href="catalogocuadros">
                                                             <img src="{{ Voyager::image($carrusel_cuadro->image) }}" alt="Cuadro personalizado de {{ $carrusel_cuadro->name }}">
                                                         </a>
-                                                        <div class="button-place-bid">
-                                                            <a href="#" data-toggle="modal" data-target="#popup_bid" class="tf-button"><span>Place Bid</span></a>
-                                                        </div>
+                                                        
                                                     </div>
                                                     <div class="meta-info text-center">
                                                         <h5 class="name"><a href="nft-detail-2.html">{{ $carrusel_cuadro->name }}</a></h5>

@@ -2584,11 +2584,17 @@ body.background-white .tf-mouse-outer {
     line-height: 1.2;
 }
 .parrafo-resaltado {
-font-size: 26px; 
-text-align: center; 
-line-height: 1.4; 
-align-items:center;
+    font-size: 26px; 
+    text-align: center; 
+    line-height: 1.4; 
+    align-items:center;
 }
+.my-small {
+    font-size: 1.5rem;
+    
+    
+}
+
 .swiper-slide .slide-btn-wrapper {
     display: flex;
     flex-direction: column;
@@ -2735,6 +2741,15 @@ align-items:center;
     width: 220px !important;
 }
 
+.tf-card-box .card-media-cuadros img {
+    width: 100%;
+}
+
+.contenedor-tucuadro {
+    padding : 0 3rem;
+    margin: 0 3rem;
+}
+
 /* responsive tweaks */
 @media (max-width: 991.98px){
     .cart-scope .cart_product{ align-items:flex-start; }
@@ -2812,6 +2827,18 @@ align-items:center;
     .cart-scope .cart_product .remove_btn {
         top: -17px;
         right: -45px;
+    }
+
+    .contenedor-tucuadro {
+        padding : 0 1rem;
+        margin: 0 1rem;
+    }
+    #imagenDinamico {
+        width: 200px !important;
+    }
+
+    .tf-card-box-funda {
+        margin: auto 20px auto 20px !important;
     }
     
                                 

@@ -41,7 +41,7 @@
                                 <li class="menu-item menu-item-has-children">
                                     <a>Cuadros</a>
                                     <ul class="sub-menu">
-                                        <li class="menu-item"><a href="/catalogo">Catálogo</a></li>
+                                        <li class="menu-item"><a href="/catalogocuadros">Catálogo</a></li>
                                         <li class="menu-item"><a href="/tucuadro">Crea tu Cuadro</a></li>
                                     </ul>
                                 </li>

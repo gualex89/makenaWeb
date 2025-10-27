@@ -18,24 +18,24 @@
             
             <!-- Marca -->
             <div class="col-md-6 mb-4">
-                <label for="colganteDropdown" class="form-label label-dd">Tamaño</label>
-                <select class="form-control form-control-lg" id="colganteDropdown" name="marcas"
+                <label for="tamanoDropdown" class="form-label label-dd">Tamaño</label>
+                <select class="form-control form-control-lg" id="tamanoDropdown" name="marcas"
                 style="background:#fff; border:2px solid #ddd; border-radius:10px; color:#333;">
                 <option value="">Seleccione una marca</option>
-                <option value="basic">Basic 20x30cm</option>
-                <option value="standard">Standard 30x40cm</option>
-                <option value="epic">Epic 40x60cm</option>
+                <option value="Basic">Basic 20x30cm</option>
+                <option value="Standard">Standard 30x40cm</option>
+                <option value="Epic">Epic 40x60cm</option>
                 </select>
             </div>
 
             <!-- Modelo -->
             <div class="col-md-6 mb-4">
-                <label for="tamanoDropdown" class="form-label label-dd">Colgante</label>
-                <select class="form-control form-control-lg" id="tamanoDropdown" name="modelos"
+                <label for="colganteDropdown" class="form-label label-dd">Colgante</label>
+                <select class="form-control form-control-lg" id="colganteDropdown" name="modelos"
                 style="background:#fff; border:2px solid #ddd; border-radius:10px; color:#333;">
                 <option value="">Seleccione un modelo</option>
-                <option value="hook">Hook</option>
-                <option value="iman">Iman</option>
+                <option value="Hook">Hook</option>
+                <option value="Iman">Iman</option>
                 </select>
             </div>
 

@@ -41,14 +41,15 @@
             <div class="row">
                 <div data-wow-delay="0s" class="wow fadeInLeft col-md-6">
                     <div class="tf-card-box style-5 mb-0">
-                        <div class="card-media  image-hover-container">
+                        <div class="card-media card-media-cuadros  image-hover-container">
                             <a href="#">
-                                <img src="{{ Voyager::image($item->image) }}" 
-                                    alt="Funda de {{ $item->diseno }} modelo {{ $item->modeloCEO }}" 
+                                <img id="imagenPrincipal" src="{{ Voyager::image($item->image) }}" 
+                                    alt="Cuadro de {{ $item->diseno }} modelo {{ $item->modeloCEO }}" 
                                     class="main-img img-fluid " width="280" height="auto" />
 
-                                <img src="{{ Voyager::image($item->image2) }}" 
-                                    alt="Funda de {{ $item->diseno }} - vista alterna" 
+                                <img id="imagenDinamico" src="{{ Voyager::image($item->image2) }}"
+                                    data-hover="{{ Voyager::image($item->image2) }}" 
+                                    alt="Cuadro de {{ $item->diseno }} - vista alterna" 
                                     class="hover-img img-fluid my-4" width="280" height="auto" />
                             </a>
                         </div>
@@ -56,9 +57,9 @@
                 </div>
                 <div class="col-md-6">
                     <div data-wow-delay="0s" class="wow fadeInRight infor-product">
-                        
-                        
-                        <h2>Funda de {{ $item->diseno }} {{ $item->file_name }}</h2>
+
+
+                        <h2 class="item_title">Cuadro de {{ $item->diseno }} {{ $item->file_name }}</h2>
                         <h3><span style="color: #b321a6">{{ $item->categoria }}</span></h3>
 
                          <div class="container_cuotas pt-4">
@@ -94,7 +95,7 @@
                             <div class="text">Precio</div>
                             <div class="flex justify-between">
                                 <p>{{ $precioCuadroBasic }} </p>
-                                <a href="#" data-bs-toggle="modal" data-bs-target="#addToCartModalCuadros" class="tf-button style-1 h50 w216"><i class="fas fa-shopping-cart"></i>Seleccioná tu modelo</i></a>
+                                <a id="btnAgregarCarrito"  href="#" data-bs-toggle="modal" data-bs-target="#addToCartModalCuadros" class="tf-button style-1 h50"><i class="fas fa-shopping-cart"></i>Seleccioná tu modelo</i></a>
                             </div>
                         </div>
                     </div>
@@ -104,8 +105,8 @@
             </div>
         </div>
     </div>
+    @include('partials.addToCartModalCuadros')
 @endsection
-@include('partials.addToCartModalCuadros')
 @push('scripts')
     <script>
         document.querySelectorAll('.categorias-menu li.parent > a').forEach(link => {
@@ -201,81 +202,117 @@
             function addToCart(productItem) {
                 price = parseFloat(productItem.querySelector('.item_price').textContent.replace('$', ''));
                 itemName = productItem.querySelector('.item_title').textContent;
-                imageUrl = productItem.querySelector('img').getAttribute(
-                'src'); // Obtener la URL de la imagen completa
+                imageUrl = productItem.querySelector('img').getAttribute('src');
 
-                // Mostrar la modal
-                $('#addToCartModalCuadros').modal('show');
+                // Mostrar la imagen en la modal
+                const productImageElement = document.getElementById('productImageAlcarrito');
+                if (productImageElement) productImageElement.src = imageUrl;
 
-
+                // Mostrar modal moderna Bootstrap 5
+                $('#addToCartModal').modal('show');
             }
-            document.getElementById('addToCartModalOkButton').addEventListener('click', function() {
-                const selectedMarca = document.getElementById('colganteDropdown').value;
-                const selectedModelo = document.getElementById('tamanoDropdown').value;
+            document.getElementById('addToCartModalOkButton').addEventListener('click', async () => {
+                const fileInput = document.getElementById('fileInput');
+                const tamaño = document.getElementById('tamanoDropdown').value;
+                const colgante = document.getElementById('colganteDropdown').value;
+                console.log(tamaño, colgante);
+                
+                
 
-                // Verificar si se ha seleccionado un modelo
-                if (selectedModelo) {
+                try {
+
+                    Swal.fire({
+                    title: 'Subiendo tu imagen...',
+                    text: 'Por favor, espera un momento ⏳',
+                    allowOutsideClick: false,
+                    didOpen: () => {
+                        Swal.showLoading();
+                    }
+                    });
+
+                    imageUrl = document.getElementById('imagenPrincipal').src;
+                    itemName = document.querySelector('.item_title').textContent;
+
+                    console.log(imageUrl);
+
+
+
+                    if (tamaño === 'Basic') priceText = "{{$precioCuadroBasic}}";
+                    else if (tamaño === 'Standard') priceText = "{{$precioCuadroStandard}}";
+                    else if (tamaño === 'Epic') priceText = "{{$precioCuadroEpic}}";
+
+                    // Elimina símbolos de $, espacios y puntos de miles
+                    const price = parseFloat(
+                    priceText.toString().replace(/[^0-9.,]/g, '').replace('.', '').replace(',', '.')
+                    );
+
                     const pendingCartItem = {
-                        name: itemName,
-                        price: price,
-                        image: imageUrl,
-                        marca: selectedMarca,
-                        modelo: selectedModelo
+                    name: itemName,
+                    price: price,
+                    image: imageUrl,
+                    tamaño: tamaño,
+                    colgante: colgante
                     };
 
-                    // Agregar el artículo al carrito
-                    cartItemCount++;
-                    subtotal += pendingCartItem.price;
-                    total = subtotal;
+                    // Recuperar y actualizar carrito existente
+                    cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
                     cartItems.push(pendingCartItem);
                     localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+                    // Actualizar contador y precios
+                    cartItemCount = cartItems.length;
+                    subtotal = cartItems.reduce((sum, item) => sum + item.price, 0);
+                    total = subtotal;
+
                     updateCartItems();
                     updatePrices();
+                    updateCartCounter();
+                    Swal.close();
                     productoAgregadoAlCarrito();
-                    // Cerrar la modal solo si se ha completado con éxito la acción
                     $('#addToCartModalCuadros').modal('hide');
-                } else {
-                    // Si no se ha seleccionado un modelo, muestra un mensaje de alerta dentro de la modal
-                    alert('Por favor, seleccione un modelo');
+                    
+
+                } catch (error) {
+                    console.error('Error al subir la imagen:', error);
                 }
             });
 
             function updateCartItems() {
-                const cartItemsList = document.querySelector('.cart_items_list');
-                if (!cartItemsList) return;
+            const cartItemsList = document.querySelector('.cart_items_list');
+            if (!cartItemsList) return;
 
-                cartItemsList.innerHTML = '';
+            cartItemsList.innerHTML = '';
 
-                cartItems.forEach(cartItem => {
-                let tipoProducto = 'Funda';
+            cartItems.forEach(cartItem => {
+            let tipoProducto = 'Funda';
 
-                if (cartItem.marca2) {
-                tipoProducto = 'Funda Doble';
-                } else if (cartItem.name.toLowerCase().includes('cuadro')) {
+            if (cartItem.marca2) {
+            tipoProducto = 'Funda Doble';
+            } else if (cartItem.name && typeof cartItem.name === 'string' && cartItem.name.toLowerCase().includes('cuadro')) {
                 tipoProducto = 'Cuadro';
-                }
+            }
 
-                const cartItemHTML = `
-                    <li style="background:transparent; margin-bottom:32px; padding:0; display:flex; align-items:center;">
-                    <div style="background:#fff; border-radius:18px; padding:12px; display:flex; align-items:center; width:70px; min-width:30px; justify-content:center;">
-                        <img src="${cartItem.image}" alt="${tipoProducto} ${cartItem.name}" style="width:100%; border-radius:4px; display:block;"/>
+            const cartItemHTML = `
+                <li style="background:transparent; margin-bottom:32px; padding:0; display:flex; align-items:center;">
+                <div style="background:#fff; border-radius:18px; padding:12px; display:flex; align-items:center; width:70px; min-width:30px; justify-content:center;">
+                    <img src="${cartItem.image}" alt="${tipoProducto} ${cartItem.name}" style="width:100%; border-radius:4px; display:block;"/>
+                </div>
+                <div class="item_content" style="color:#fff; margin-left:18px; position:relative; flex:1;">
+                    <div style="padding-right:32px;">
+                    <span class="item_type" style="font-size:13px;">${tipoProducto}</span>
+                    <div style="font-weight:700; font-size:18px; margin:2px 0;"><span class="item_title">${cartItem.name}</span></div>
+                    <div style="font-size:15px; margin-bottom:2px;">${cartItem.marca || cartItem.tamaño} ${cartItem.modelo || cartItem.colgante}</div>
+                    ${cartItem.marca2 ? `<div style="font-size:15px;">${cartItem.marca2} ${cartItem.modelo2}</div>` : ''}
+                    <div style="font-weight:700; font-size:17px; margin-top:6px;"><span class="item_price">$${cartItem.price ? Number(cartItem.price).toLocaleString('es-CL') : '0'}</span></div>
                     </div>
-                    <div class="item_content" style="color:#fff; margin-left:18px; position:relative; flex:1;">
-                        <div style="padding-right:32px;">
-                        <span class="item_type" style="font-size:13px;">${tipoProducto}</span>
-                        <div style="font-weight:700; font-size:18px; margin:2px 0;"><span class="item_title">${cartItem.name}</span></div>
-                        <div style="font-size:15px; margin-bottom:2px;">${cartItem.marca || ''} ${cartItem.modelo || ''}</div>
-                        ${cartItem.marca2 ? `<div style="font-size:15px;">${cartItem.marca2} ${cartItem.modelo2}</div>` : ''}
-                        <div style="font-weight:700; font-size:17px; margin-top:6px;"><span class="item_price">$${cartItem.price.toLocaleString('es-CL')}</span></div>
-                        </div>
-                    </div>
-                    <button type="button" class="remove_btn" style="background:none; border:none; color:#fff; font-size:2rem;">
-                        <i class="bi bi-trash"></i>
-                    </button>
-                    </li>
-                `;
+                </div>
+                <button type="button" class="remove_btn" style="background:none; border:none; color:#fff; font-size:2rem;">
+                    <i class="bi bi-trash"></i>
+                </button>
+                </li>
+            `;
 
-                cartItemsList.innerHTML += cartItemHTML;
+            cartItemsList.innerHTML += cartItemHTML;
                 });
 
                 updateCartCounter();
@@ -455,12 +492,19 @@
         //Hover imagen dinámico
         document.addEventListener('DOMContentLoaded', function() {
             const img = document.getElementById('imagenDinamico');
+            if (!img) return;
+
             const original = img.src;
             const hover = img.dataset.hover;
 
-            img.addEventListener('mouseenter', () => img.src = hover);
-            img.addEventListener('mouseleave', () => img.src = original);
+            img.addEventListener('mouseenter', () => {
+                if (hover) img.src = hover;
+            });
+            img.addEventListener('mouseleave', () => {
+                img.src = original;
+            });
         });
+
     </script>
     <script>
             $(document).ready(function() {
