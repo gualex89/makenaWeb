@@ -73,11 +73,8 @@
                             </div>
                         </div>
                         <div class="container_cuotas pt-4">
+                            <h6>Hasta <span style="color: #b321a6; font-weight: bold">3</span> cuotas<span style="color: #b321a6; font-weight: bold"> sin interés</span></h6><br>
                             
-                            <h6>2 cuotas <span style="color: #b321a6; font-weight: bold">SIN</span> interés llevando <span
-                                    style="color: #b321a6; font-weight: bold">1</span> funda de cualquier modelo</h6><br>
-                            <h6>3 cuotas <span style="color: #b321a6; font-weight: bold">SIN</span> interés llevando <span
-                                    style="color: #b321a6; font-weight: bold">2 o MÁS</span></h6><br>
                         </div>
                         
                          <div class="meta mb-20 mt-5">
