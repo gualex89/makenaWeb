@@ -36,47 +36,56 @@
 @section('canonical', url()->current())
 
 @section('content')
-    <div class="tf-section-2 product-detail">
-        <div class="themesflat-container">
-            <div class="row">
+<div class="tf-section-2 product-detail">
+    <div class="themesflat-container">
+        <div class="row">
                 <div data-wow-delay="0s" class="wow fadeInLeft col-md-6">
                     <div class="tf-card-box style-5 mb-0">
                         <div class="card-media card-media-cuadros  image-hover-container">
                             <a href="#">
                                 <img id="imagenPrincipal" src="{{ Voyager::image($item->image) }}" 
-                                    alt="Cuadro de {{ $item->diseno }} modelo {{ $item->modeloCEO }}" 
-                                    class="main-img img-fluid " width="280" height="auto" />
-
+                                alt="Cuadro de {{ $item->diseno }} modelo {{ $item->modeloCEO }}" 
+                                class="main-img img-fluid " width="280" height="auto" />
+                                
                                 <img id="imagenDinamico" src="{{ Voyager::image($item->image2) }}"
-                                    data-hover="{{ Voyager::image($item->image2) }}" 
-                                    alt="Cuadro de {{ $item->diseno }} - vista alterna" 
-                                    class="hover-img img-fluid my-4" width="280" height="auto" />
+                                data-hover="{{ Voyager::image($item->image2) }}" 
+                                alt="Cuadro de {{ $item->diseno }} - vista alterna" 
+                                class="hover-img img-fluid my-4" width="280" height="auto" />
                             </a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div data-wow-delay="0s" class="wow fadeInRight infor-product">
-
-
+                        
+                        
                         <h2 class="item_title">Cuadro de {{ $item->diseno }} {{ $item->file_name }}</h2>
                         <h3><span style="color: #b321a6">{{ $item->categoria }}</span></h3>
-
-                         <div class="container_cuotas pt-4">
-
+                        
+                        <div data-wow-delay="0s" class="wow fadeInRight product-item time-sales mt-20">
+                            
+                            <div class="content">
+                                <div class="text">Precios desde </div>
+                                <div class="flex justify-between">
+                                    <p>{{ $precioCuadroBasic }} </p>
+                                    <a id="btnAgregarCarrito"  href="#" data-bs-toggle="modal" data-bs-target="#addToCartModalCuadros" class="tf-button style-1 h50"><i class="fas fa-shopping-cart"></i>Seleccionar tamaño</i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container_cuotas pt-4">
+                            
                             <h6>2 cuotas <span style="color: #b321a6; font-weight: bold">SIN</span> interés llevando <span
                                     style="color: #b321a6; font-weight: bold">1</span> funda de cualquier modelo</h6><br>
                             <h6>3 cuotas <span style="color: #b321a6; font-weight: bold">SIN</span> interés llevando <span
                                     style="color: #b321a6; font-weight: bold">2 o MÁS</span></h6><br>
                         </div>
                         
-                        <div class="meta mb-20 mt-5">
+                         <div class="meta mb-20 mt-5">
                             <div class="meta-item view">
-                                📱 Impresión HD ultra brillante
+                                Impresión Ultra HD &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Aluminio Premium 1.15 mm&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Acabado Brillante Espejo&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Colgantes Incluidos a Elección&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Impresión de más de 1200 DPI
+                                    
                             </div>
-                            <div class="meta-item rating">
-                                💖 Diseño único y resistente
-                            </div>
+                            
                             
                         </div>
                     </div>
@@ -86,19 +95,9 @@
                     <div class="mt-5">
 
                         <h6>Envíos a todo el país</h6><br>
-                        <a href="/calcula-envio" target="_blank" ><h6>🚚 Cotizá tu envío</h6></a>
+                        <a href="/calcula-envio" target="_blank" ><h6>🚚 Cotizá tu envío acá</h6></a>
                     </div>
 
-                    <div data-wow-delay="0s" class="wow fadeInRight product-item time-sales mt-20">
-                        
-                        <div class="content">
-                            <div class="text">Precio</div>
-                            <div class="flex justify-between">
-                                <p>{{ $precioCuadroBasic }} </p>
-                                <a id="btnAgregarCarrito"  href="#" data-bs-toggle="modal" data-bs-target="#addToCartModalCuadros" class="tf-button style-1 h50"><i class="fas fa-shopping-cart"></i>Seleccioná tu modelo</i></a>
-                            </div>
-                        </div>
-                    </div>
                     
                     
                 </div>

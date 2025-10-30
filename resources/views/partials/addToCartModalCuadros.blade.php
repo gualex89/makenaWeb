@@ -1,6 +1,7 @@
 <div class="modal fade" id="addToCartModalCuadros" tabindex="-1" role="dialog" aria-labelledby="addToCartModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-        <div class="modal-content">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document" style="max-width: 750px !important;">
+        <div class="modal-content" style="max-width: 800px !important; width:100%">
+
         
         <!-- Header -->
         <div class="modal-header border-0 pb-0 text-center d-block">
@@ -22,9 +23,9 @@
                 <select class="form-control form-control-lg" id="tamanoDropdown" name="marcas"
                 style="background:#fff; border:2px solid #ddd; border-radius:10px; color:#333;">
                 <option value="">Seleccione una marca</option>
-                <option value="Basic">Basic 20x30cm</option>
-                <option value="Standard">Standard 30x40cm</option>
-                <option value="Epic">Epic 40x60cm</option>
+                <option value="Basic">Basic 20x30cm ${{ number_format((int) str_replace('$', '', $precioCuadroBasic), 0, ',', '.') }}</option>
+                <option value="Standard">Standard 30x40cm ${{ number_format((int) str_replace('$', '', $precioCuadroStandard), 0, ',', '.') }}</option>
+                <option value="Epic">Epic 40x60cm ${{ number_format((int) str_replace('$', '', $precioCuadroEpic), 0, ',', '.') }}</option>
                 </select>
             </div>
 

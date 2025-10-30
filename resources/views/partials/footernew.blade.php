@@ -14,10 +14,10 @@
                     <div class="widget widget-menu style-1">
                         <h5 class="title-widget">Políticas</h5>
                         <ul>
-                            <li><a href="#">Políticas de Envío</a></li>
-                            <li><a href="#">Políticas de Garantía</a></li>
-                            <li><a href="#">Políticas de Compra</a></li>
+                            <li><a href="/politica-envio">Políticas de Envío</a></li>
+                            <li><a href="/politica-devolucion-cambios">Políticas Devolución y Cambios</a></li>
                             
+
                         </ul>
                     </div>
                     <div class="widget widget-menu style-2">

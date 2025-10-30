@@ -55,22 +55,31 @@
                         
                         <h2>Funda de {{ $item->diseno }} {{ $item->file_name }}</h2>
                         <h3><span style="color: #b321a6">{{ $item->categoria }}</span></h3>
-
-                         <div class="container_cuotas pt-4">
+                        
+                        <div data-wow-delay="0s" class="wow fadeInRight product-item time-sales mt-20">
+                            
+                            <div class="content">
+                                <div class="text">Precio</div>
+                                <div class="flex justify-between">
+                                    <p>{{ $precioFunda }} </p>
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#addToCartModal" class="tf-button style-1 h50 w216"><i class="fas fa-shopping-cart"></i>Seleccioná tu modelo</i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container_cuotas pt-4">
 
                             <h6>2 cuotas <span style="color: #b321a6; font-weight: bold">SIN</span> interés llevando <span
-                                    style="color: #b321a6; font-weight: bold">1</span> funda de cualquier modelo</h6><br>
+                                style="color: #b321a6; font-weight: bold">1</span> funda de cualquier modelo</h6><br>
                             <h6>3 cuotas <span style="color: #b321a6; font-weight: bold">SIN</span> interés llevando <span
-                                    style="color: #b321a6; font-weight: bold">2 o MÁS</span></h6><br>
+                                style="color: #b321a6; font-weight: bold">2 o MÁS</span></h6><br>
                         </div>
-                        
+                                
                         <div class="meta mb-20 mt-5">
                             <div class="meta-item view">
-                                📱 Impresión HD ultra brillante
+                                Diseño único y resistente&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Impresión HD Ultra Brillante&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Bordes Anti-Slip&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Ajuste exacto para cada modelo&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Botones suaves con cortes perfectos
+                                    
                             </div>
-                            <div class="meta-item rating">
-                                💖 Diseño único y resistente
-                            </div>
+                            
                             
                         </div>
                     </div>
@@ -80,19 +89,9 @@
                     <div class="mt-5">
 
                         <h6>Envíos a todo el país</h6><br>
-                        <a href="/calcula-envio" target="_blank" ><h6>🚚 Cotizá tu envío</h6></a>
+                        <a href="/calcula-envio" target="_blank" ><h6>🚚 Cotizá tu envío acá</h6></a>
                     </div>
 
-                    <div data-wow-delay="0s" class="wow fadeInRight product-item time-sales mt-20">
-                        
-                        <div class="content">
-                            <div class="text">Precio</div>
-                            <div class="flex justify-between">
-                                <p>{{ $precioFunda }} </p>
-                                <a href="#" data-bs-toggle="modal" data-bs-target="#addToCartModal" class="tf-button style-1 h50 w216"><i class="fas fa-shopping-cart"></i>Seleccioná tu modelo</i></a>
-                            </div>
-                        </div>
-                    </div>
                     
                     
                 </div>

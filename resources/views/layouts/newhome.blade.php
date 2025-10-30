@@ -137,10 +137,11 @@
                                 <img class="absolute item8" src="{{ asset('assets_new/images/item-background/item5.png' ) }}" alt="">
                             </div>
                             <div class="relative">
+                                <h2 class="tf-title pb-30 text-center">Top Cuadros mas vendidos</h2>
                                 <div class="swiper swiper-3d-7" >
                                     <div class="swiper-wrapper">
                                         @foreach ($carrusel_cuadros as $carrusel_cuadro)
-                                            <div class="swiper-slide">
+                                        <div class="swiper-slide">
                                                 <div class="tf-card-box tf-card-box-cuadros">
                                                     <div class="card-media">
                                                         <a href="catalogocuadros">
@@ -150,13 +151,13 @@
                                                     </div>
                                                     <div class="meta-info text-center">
                                                         <h5 class="name"><a href="nft-detail-2.html">{{ $carrusel_cuadro->name }}</a></h5>
-                                                        <h6 class="price gem"><i class="icon-gem"></i>{{ $carrusel_cuadro->text1 }}</h6>
+                                                        <h6 class="price gem">{{ $carrusel_cuadro->text1 }}</h6>
                                                     </div>
                                                 </div>
                                             </div>
-                                        @endforeach
-                                    </div>
-                                    <div class="swiper-pagination pagination-number"></div>
+                                            @endforeach
+                                        </div>
+                                        <div class="swiper-pagination pagination-number"></div>
                                 </div>
                                 <div class="swiper-button-next next-3d over"></div>
                                 <div class="swiper-button-prev prev-3d over"></div>
@@ -165,12 +166,13 @@
                     </div>
                 </div>
             </div>
-
             
-
             
-
+            
+            
+            
             <div class="tf-section-3 discover-item ">
+                <h2 class="tf-title pb-30 text-center">Categorías de Fundas destacadas</h2>
                 <div class="themesflat-container">
                     <div class="row">
                         

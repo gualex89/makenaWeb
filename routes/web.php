@@ -15,6 +15,7 @@ use App\Http\Controllers\GoogleDriveOAuthController;
 use App\Http\Controllers\OrdenCompraController;
 use App\Http\Controllers\ZippinController;
 use App\Http\Controllers\MercadoPagoController;
+use App\Http\Controllers\PoliticasController;
 use App\Http\Controllers\webhook;
 use App\Http\Controllers\TransferenciaController;
 
@@ -86,6 +87,10 @@ Route::get('/obtener-provincias/{codigoPostal}', [CheckoutController::class, 'ob
 
 Route::get('/frecuentes', [FrecuentesController::class, 'Frecuentes'])->name('Frecuentes');
 Route::get('/frecuentesnew', [FrecuentesController::class, 'FrecuentesNew'])->name('FrecuentesNew');
+
+Route::get('/politica-envio', [PoliticasController::class, 'envio'])->name('politica.envio');
+Route::get('/politica-devolucion-cambios', [PoliticasController::class, 'devolucionCambios'])->name('politica.devolucion_cambios');
+
 
 
 Route::post('/webhook', [webhook::class, 'handleWebhook']);

@@ -292,11 +292,11 @@
                                     <div data-wow-delay="0s" class="wow fadeInUp col-xl-3 col-lg-4 col-md-6 col-sm-6">
                                         <div class="tf-card-box style-1 motorcycle_product_grid">
                                             <div class="card-media">
-                                                <a href="{{ route('catalogo.show', $image->slug) }}">
+                                                {{-- <a href="{{ route('catalogo.show', $image->slug) }}">
                                                     <img src="{{ Voyager::image($image->image) }}" alt="{{ $image->file_name }}">
                                                     <img src="{{ Voyager::image($image->image2) }}" alt="{{ $image->file_name }}">
-                                                </a>
-                                                {{-- <div class="card-media  image-hover-container">
+                                                </a> --}}
+                                                <div class="card-media  image-hover-container">
                                                     <a href="#">
                                                         <img src="{{ Voyager::image($image->image) }}" 
                                                             alt="Funda de {{ $image->diseno }} modelo {{ $image->modeloCEO }}" 
@@ -306,12 +306,12 @@
                                                             alt="Funda de {{ $image->diseno }} - vista alterna" 
                                                             class="hover-img img-fluid my-4" width="280" height="auto" />
                                                     </a>
-                                                </div> --}}
+                                                </div>
                                                 <div class="button-place-bid">
                                                     <ul class="ul_li_block text-center clearfix">
                                                         <li><a class="alCarrito tf-button p-4" href="#!"><span><i
                                                                         class="fas fa-shopping-cart"></i></span>
-                                                                <span>Seleccioná tu modelo</span></a></li>
+                                                                <span>Seleccionar tamaño</span></a></li>
                                                         <li class="pt-2">
                                                             <a class="tf-button" href="{{ route('catalogo.showCuadro', $image->slug) }}">
                                                                 <span><i class="fas fa-search"></i></span>
@@ -327,7 +327,7 @@
                                             
                                             <div class="divider"></div>
                                             <div class="meta-info flex items-center justify-between">
-                                                <span class="text-bid"></span>
+                                                <span class="text-bid">Precios desde</span>
                                                 <h5 class="item_price price gem">{{$precioCuadroBasic}}</h5>
                                             </div>
                                         </div>

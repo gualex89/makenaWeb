@@ -4983,6 +4983,7 @@ img {
 .infor-product .meta {
     display: flex;
     gap: 10px;
+    max-width: 74%;
 }
 
 .infor-product .meta-item {
@@ -4995,7 +4996,7 @@ img {
     font-size: 14px;
     font-weight: 800;
     line-height: 19px;
-    text-transform: capitalize;
+    
 }
 
 .infor-product .meta-item i {
