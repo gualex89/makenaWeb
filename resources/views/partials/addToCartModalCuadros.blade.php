@@ -22,10 +22,12 @@
                 <label for="tamanoDropdown" class="form-label label-dd">Tamaño</label>
                 <select class="form-control form-control-lg" id="tamanoDropdown" name="marcas"
                 style="background:#fff; border:2px solid #ddd; border-radius:10px; color:#333;">
-                <option value="">Seleccione una marca</option>
-                <option value="Basic">Basic 20x30cm ${{ number_format((int) str_replace('$', '', $precioCuadroBasic), 0, ',', '.') }}</option>
-                <option value="Standard">Standard 30x40cm ${{ number_format((int) str_replace('$', '', $precioCuadroStandard), 0, ',', '.') }}</option>
-                <option value="Epic">Epic 40x60cm ${{ number_format((int) str_replace('$', '', $precioCuadroEpic), 0, ',', '.') }}</option>
+                <option value="">Seleccione un Tamaño</option>
+                @foreach ($cuadrosActivos as $cuadro)
+
+                <option value={{ $cuadro->name }}>{{ $cuadro->name }} {{ $cuadro->tamano }} ${{ number_format((int) str_replace('$', '', $cuadro->precio), 0, ',', '.') }}</option>
+                
+                @endforeach
                 </select>
             </div>
 
@@ -34,7 +36,7 @@
                 <label for="colganteDropdown" class="form-label label-dd">Colgante</label>
                 <select class="form-control form-control-lg" id="colganteDropdown" name="modelos"
                 style="background:#fff; border:2px solid #ddd; border-radius:10px; color:#333;">
-                <option value="">Seleccione un modelo</option>
+                <option value="">Seleccione un Colgante</option>
                 <option value="Hook">Hook</option>
                 <option value="Iman">Iman</option>
                 </select>

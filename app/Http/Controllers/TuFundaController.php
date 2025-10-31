@@ -26,17 +26,21 @@ class TuFundaController extends Controller
     }
     public function tucuadro(){
 
-        $preciosProductos = Precio::all();
-        $cuadroBasic = $preciosProductos-> where('producto', 'cuadro-basic')->first();
-        $precioCuadroBasic = $cuadroBasic ? $cuadroBasic->precio : null;
-        
-        $cuadroStandard = $preciosProductos-> where('producto', 'cuadro-standard')->first();
+        $Productos = Precio::all();
+        $cuadrosActivos = Precio::where('activo', 1)
+                        ->where('esCuadro', 1)
+                        ->get();
+
+        /* dd($cuadrosActivos); */
+        /* $precioCuadroBasic = $productosActivos ? $productosActivos->precio : null;
+
+        $cuadroStandard = $productosActivos-> where('producto', 'cuadro-standard')->first();
         $precioCuadroStandard = $cuadroStandard ? $cuadroStandard->precio : null;
         
         $cuadroEpic = $preciosProductos-> where('producto', 'cuadro-epic')->first();
         $precioCuadroEpic = $cuadroEpic ? $cuadroEpic->precio : null;
-
-        return view('layouts.newmakena.tucuadro', compact('precioCuadroBasic', 'precioCuadroStandard', 'precioCuadroEpic'));
+ */
+        return view('layouts.newmakena.tucuadro', compact('cuadrosActivos'));
     }
 
     public function guardarImagenPersonalizada(Request $request){

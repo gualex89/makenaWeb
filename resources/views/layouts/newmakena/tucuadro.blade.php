@@ -53,18 +53,13 @@
             <div class="grupo text-align-center">
                 <h4>Elegí el tamaño</h4>
                 <div class="botones mt-3 d-flex flex-wrap" style="gap: 4rem;">
+                    @foreach ($cuadrosActivos as $cuadro)
                     <div class="row-mb-3">
-                        <button type="button" class="btn-opcion" data-group="tamaño" data-value="Basic">Basic<br><p style="font-size: 1.6rem; color: white">20 x 30 cm</p></button>
-                        <p style="font-size: 1.7rem">${{ number_format((int) str_replace('$', '', $precioCuadroBasic), 0, ',', '.') }}</p>
+                        <button type="button" class="btn-opcion" data-group="tamaño" data-value="{{ $cuadro->name }}">{{ $cuadro->name }}<br><p style="font-size: 1.6rem; color: white">{{ $cuadro->tamano }}</p></button>
+                        <p style="font-size: 1.7rem">${{ number_format((int) str_replace('$', '', $cuadro->precio), 0, ',', '.') }}</p>
                     </div>
-                    <div class="row-mb-3">
-                        <button type="button" class="btn-opcion" data-group="tamaño" data-value="Standard">Standard<br><p style="font-size: 1.6rem; color: white">30 x 40 cm</p></button>
-                        <p style="font-size: 1.7rem">${{ number_format((int) str_replace('$', '', $precioCuadroStandard), 0, ',', '.') }}</p>
-                    </div>
-                    <div class="row-mb-3">
-                        <button type="button" class="btn-opcion" data-group="tamaño" data-value="Epic">Epic<br><p style="font-size: 1.6rem; color: white">40 x 60 cm</p></button>
-                        <p style="font-size: 1.7rem">${{ number_format((int) str_replace('$', '', $precioCuadroEpic), 0, ',', '.') }}</p>
-                    </div>
+                    @endforeach
+                    
                 </div>
 
             </div>

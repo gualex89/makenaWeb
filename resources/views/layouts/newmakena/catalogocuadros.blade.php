@@ -323,7 +323,7 @@
                                                     
                                                 </div>
                                             </div>
-                                            <h5 class="name item_title"><a href="nft-detail-2.html">{{ $image->file_name }}</a></h5>
+                                            <h6 class="name item_title"><a href="nft-detail-2.html">Cuadro de {{ $image->diseno }} <br> {{ $image->file_name }}</a></h6>
                                             
                                             <div class="divider"></div>
                                             <div class="meta-info flex items-center justify-between">
@@ -546,17 +546,25 @@
 
                 }
                 document.getElementById('addToCartModalOkButton').addEventListener('click', function() {
-                    const selectedMarca = document.getElementById('colganteDropdown').value;
-                    const selectedModelo = document.getElementById('tamanoDropdown').value;
+                    
+                    const tamaño = document.getElementById('tamanoDropdown').value;
+                    const colgante = document.getElementById('colganteDropdown').value;
 
+                    if (tamaño === 'Basic') priceText = "{{$precioCuadroBasic}}";
+                    else if (tamaño === 'Standard') priceText = "{{$precioCuadroStandard}}";
+                    else if (tamaño === 'Epic') priceText = "{{$precioCuadroEpic}}";
+
+                    const price = parseFloat(
+                    priceText.toString().replace(/[^0-9.,]/g, '').replace('.', '').replace(',', '.')
+                    );
                     // Verificar si se ha seleccionado un modelo
-                    if (selectedModelo) {
+                    if (colgante) {
                         const pendingCartItem = {
                             name: itemName,
                             price: price,
                             image: imageUrl,
-                            marca: selectedMarca,
-                            modelo: selectedModelo
+                            tamaño: tamaño,
+                            colgante: colgante
                         };
 
                         // Agregar el artículo al carrito
@@ -587,10 +595,9 @@
 
                     if (cartItem.marca2) {
                     tipoProducto = 'Funda Doble';
-                    } else if (cartItem.name.toLowerCase().includes('cuadro')) {
-                    tipoProducto = 'Cuadro';
+                    } else if (cartItem.name && typeof cartItem.name === 'string' && cartItem.name.toLowerCase().includes('cuadro')) {
+                        tipoProducto = 'Cuadro';
                     }
-
                     const cartItemHTML = `
                         <li style="background:transparent; margin-bottom:32px; padding:0; display:flex; align-items:center;">
                         <div style="background:#fff; border-radius:18px; padding:12px; display:flex; align-items:center; width:70px; min-width:30px; justify-content:center;">
@@ -600,9 +607,9 @@
                             <div style="padding-right:32px;">
                             <span class="item_type" style="font-size:13px;">${tipoProducto}</span>
                             <div style="font-weight:700; font-size:18px; margin:2px 0;"><span class="item_title">${cartItem.name}</span></div>
-                            <div style="font-size:15px; margin-bottom:2px;">${cartItem.marca || ''} ${cartItem.modelo || ''}</div>
+                            <div style="font-size:15px; margin-bottom:2px;">${cartItem.marca || cartItem.tamaño} ${cartItem.modelo || cartItem.colgante}</div>
                             ${cartItem.marca2 ? `<div style="font-size:15px;">${cartItem.marca2} ${cartItem.modelo2}</div>` : ''}
-                            <div style="font-weight:700; font-size:17px; margin-top:6px;"><span class="item_price">$${cartItem.price.toLocaleString('es-CL')}</span></div>
+                            <div style="font-weight:700; font-size:17px; margin-top:6px;"><span class="item_price">$${cartItem.price ? Number(cartItem.price).toLocaleString('es-CL') : '0'}</span></div>
                             </div>
                         </div>
                         <button type="button" class="remove_btn" style="background:none; border:none; color:#fff; font-size:2rem;">

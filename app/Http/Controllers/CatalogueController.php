@@ -213,19 +213,19 @@ class CatalogueController extends Controller
         return view('layouts.catalogo_detalle', compact('item', 'precioFundas', 'precioPopSockets', 'precioFundasDobles'));
     }
     public function showCuadro($slug)
-    {
-        $preciosProductos = Precio::all();
-        $cuadroBasic = $preciosProductos-> where('producto', 'cuadro-basic')->first();
-        $precioCuadroBasic = $cuadroBasic ? $cuadroBasic->precio : null;
-        
-        $cuadroStandard = $preciosProductos-> where('producto', 'cuadro-standard')->first();
-        $precioCuadroStandard = $cuadroStandard ? $cuadroStandard->precio : null;
-        
-        $cuadroEpic = $preciosProductos-> where('producto', 'cuadro-epic')->first();
-        $precioCuadroEpic = $cuadroEpic ? $cuadroEpic->precio : null;
+
+    {   
+        $Productos = Precio::all();
+        $cuadrosActivos = Precio::where('activo', 1)
+                        ->where('esCuadro', 1)
+                        ->get();
 
         $item = CatalogueCuadro::where('slug', $slug)->firstOrFail();
-        return view('layouts.newmakena.catalogo_detalle_cuadro', compact('item', 'precioCuadroBasic', 'precioCuadroStandard', 'precioCuadroEpic'));
+        $precioCuadroBasic = $cuadrosActivos->where('producto', 'cuadro-basic')->first()->precio ?? null;
+        $precioCuadroStandard = $cuadrosActivos->where('producto', 'cuadro-standard')->first()->precio ?? null;
+        $precioCuadroEpic = $cuadrosActivos->where('producto', 'cuadro-epic')->first()->precio ?? null;
+
+        return view('layouts.newmakena.catalogo_detalle_cuadro', compact('item', 'cuadrosActivos', 'precioCuadroBasic', 'precioCuadroStandard', 'precioCuadroEpic'));
     }
 
     public function show2($slug)
@@ -266,16 +266,16 @@ class CatalogueController extends Controller
         
         
         
-        $preciosProductos = Precio::all();
-        $cuadroBasic = $preciosProductos-> where('producto', 'cuadro-basic')->first();
-        $precioCuadroBasic = $cuadroBasic ? $cuadroBasic->precio : null;
-        
-        $cuadroStandard = $preciosProductos-> where('producto', 'cuadro-standard')->first();
-        $precioCuadroStandard = $cuadroStandard ? $cuadroStandard->precio : null;
-        
-        $cuadroEpic = $preciosProductos-> where('producto', 'cuadro-epic')->first();
-        $precioCuadroEpic = $cuadroEpic ? $cuadroEpic->precio : null;
-        
+        $Productos = Precio::all();
+        $cuadrosActivos = Precio::where('activo', 1)
+                        ->where('esCuadro', 1)
+                        ->get();
+
+        $precioCuadroBasic = $cuadrosActivos->where('producto', 'cuadro-basic')->first()->precio ?? null;
+        $precioCuadroStandard = $cuadrosActivos->where('producto', 'cuadro-standard')->first()->precio ?? null;
+        $precioCuadroEpic = $cuadrosActivos->where('producto', 'cuadro-epic')->first()->precio ?? null;
+       
+
         // Consulta inicial sin filtrar por categoría
         
         
@@ -284,6 +284,6 @@ class CatalogueController extends Controller
         
     
         // Pasar los datos a la vista
-        return view('layouts.newmakena.catalogocuadros', compact('imagesCatalogo', 'totalImagesCatalogo', 'precioCuadroBasic', 'precioCuadroStandard', 'precioCuadroEpic'));
+        return view('layouts.newmakena.catalogocuadros', compact('imagesCatalogo', 'totalImagesCatalogo', 'cuadrosActivos', 'precioCuadroBasic', 'precioCuadroStandard', 'precioCuadroEpic'));
     }
 }
