@@ -768,7 +768,7 @@
 
                 // Check if the discount code is correct
                 if (discountCode === 'MKN2X5' || discountCode === 'MAKENAMAYO6' || discountCode ===
-                    'MKN3X5' || discountCode === 'PRIMAKENA') {
+                    'MKN3X5' || discountCode === 'PRIMAKENA' || discountCode === 'CYBERMAKENA' || discountCode === 'cybermakena') {
 
                     if (discountCode === 'MKN2X5') {
                         discount = subtotal * 0.10;
@@ -783,6 +783,9 @@
 
                     if (discountCode === 'PRIMAKENA') {
                         discount = subtotal * 0.10;
+                    }
+                    if (discountCode === 'CYBERMAKENA' || discountCode === 'cybermakena') {
+                        discount = subtotal * 0.15;
                     }
 
 
