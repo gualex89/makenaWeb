@@ -1,9 +1,9 @@
 @extends('layouts.newmakena.app2')
 
-@section('title', 'Funda de ' . $item->diseno . ' para ' . $item->modeloCEO . ' | ' . $item->categoria . ' - Makena')
+@section('title', 'Cuadro de ' . $item->diseno . ' | ' . $item->categoria . ' - Makena')
 
 @section('meta_description',
-    'Funda personalizada de ' .
+    'Cuadro personalizada de ' .
     $item->diseno .
     ' para modelo ' .
     $item->modeloCEO .
@@ -11,24 +11,21 @@
     Categoría: ' .
     $item->categoria .
     '. Alta calidad y diseño exclusivo.')
-@section('meta_keywords', 'fundas anime, funda personalizada, funda ' . $item->diseno . ', ' .
-    strtolower($item->categoria) . ', ' . $item->modeloCEO)
+@section('meta_keywords', 'Cuadros anime, Cuadro personalizado, Cuadro de ' . $item->diseno . ', ' .
+    strtolower($item->categoria) )
 
 
-@section('og_title', 'Funda de ' . $item->diseno . ' para ' . $item->modeloCEO . ' | ' . $item->categoria . ' - Makena')
+@section('og_title', 'Cuadro de ' . $item->diseno  . ' | ' . $item->categoria . ' - Makena')
 @section('og_description',
-    'Conseguí tu funda de ' .
+    'Conseguí tu cuadro de ' .
     $item->diseno .
     ' de la categoría ' .
     $item->categoria .
-    ' con
-    imagen ultra HD y agarres antideslizantes. Compatible con ' .
-    $item->modeloCEO .
-    '.')
+    ' con imagen ultra HD y Colgantes incluidos.')
 @section('og_image', Voyager::image($item->image))
 
 @section('twitter_title', 'Funda ' . $item->diseno . ' para ' . $item->modeloCEO . ' | ' . $item->categoria)
-@section('twitter_description', 'Diseños de ' . $item->diseno . ' en fundas para ' . $item->modeloCEO . '. Categoría: '
+@section('twitter_description', 'Cuadros con diseño perosonalizados de ' . $item->diseno . '. Categoría: '
     . $item->categoria . '. ¡Ideal para fans de anime y manga!')
 @section('twitter_image', Voyager::image($item->image))
 

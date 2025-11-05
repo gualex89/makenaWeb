@@ -6,7 +6,7 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
 
         <title>@yield('title', 'Fundas Personalizadas - Makena')</title>
-        <meta name="description" content="@yield('meta_description', 'Catálogo de fundas personalizadas para celulares con diseños de anime y manga.')">
+        <meta name="description" content="@yield('meta_description', 'Fundas personalizadas para celulares y Cuadros con diseños de anime y manga.')">
         <meta name="keywords" content="@yield('meta_keywords', 'fundas personalizadas, celulares, anime, manga, Makena')">
 
         <link rel="canonical" href="@yield('canonical', url()->current())">
@@ -31,9 +31,7 @@
         <!-- Reponsive -->
         <link rel="stylesheet" type="text/css" href="{{ asset('assets_new/css/responsive.css') }}">
 
-        <!-- Favicon and Touch Icons  -->
-        <link rel="shortcut icon" href="{{ asset('assets_new/icon/Favicon.png') }}">
-        <link rel="apple-touch-icon-precomposed" href="{{ asset('assets_new/icon/Favicon.png') }}">
+        
         <!-- SweetAlert2 CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">

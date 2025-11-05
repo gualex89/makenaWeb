@@ -1,19 +1,35 @@
 <!DOCTYPE html>
-<!--[if IE 8 ]><html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
-<!--<![endif]-->
+<html lang="es">
+
 
     <head>
-        <!-- Basic Page Needs -->
         <meta charset="utf-8">
-        <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
-        <title>Open9 | NFT Marketplace HTML Template</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-        <meta name="author" content="themesflat.com">
+        <title>Cuadros de Manga y Anime - Metalicos y Personalizados | Makena</title>
+        <meta name="description"
+            content="Todo lo que buscas en un cuadro con acabado brillante, imagen Ultra HD y Colgantes Incluidos.">
+        <meta name="keywords"
+            content="Cuadros brillantes metalicos, anime, manga, Dragon Ball, Naruto, Argentina, imagen, catálogo, personalizar">
 
-        <!-- Mobile Specific Metas -->
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link rel="canonical" href="https://makenafundas.com.ar/catalogo-cuadros">
+        <link rel="shortcut icon" href="images/logo/makenaminiicon.png">
+
+        <!-- Open Graph Meta -->
+        <meta property="og:title" content="Cuadros de Manga y Anime - Makena">
+        <meta property="og:description"
+            content="Encuentra cuadros con acabado brillante, imagen Ultra HD y colgantes incluidos. Amplio catálogo de anime y manga.">
+        <meta property="og:image" content="https://makenafundas.com.ar/images/logo/makenaminiicon.png">
+        <meta property="og:url" content="https://makenafundas.com.ar/catalogo-cuadros">
+        <meta property="og:type" content="website">
+
+        <!-- Twitter Card Meta -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Cuadros de Manga y Anime - Makena">
+        <meta name="twitter:description"
+            content="Cuadros de alta calidad para Samsung, Motorola, Xiaomi y iPhone. Amplio catálogo de anime y manga en Makena.">
+        <meta name="twitter:image" content="https://makenafundas.com.ar/images/logo/makenaminiicon.png">
 
         <!-- Theme Style -->
         <link rel="stylesheet" type="text/css" href="{{ asset('assets_new/css/style.css') }}?v={{ time() }}">
@@ -21,9 +37,7 @@
         <!-- Reponsive -->
         <link rel="stylesheet" type="text/css" href="{{ asset('assets_new/css/responsive.css') }}?v={{ time() }}">
 
-        <!-- Favicon and Touch Icons  -->
-        <link rel="shortcut icon" href="{{ asset('assets_new/icon/Favicon.png') }}">
-        <link rel="apple-touch-icon-precomposed" href="{{ asset('assets_new/icon/Favicon.png') }}">
+        
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
