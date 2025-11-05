@@ -35,13 +35,13 @@
                             <li class="menu_item_has_child">
                                 <a href="#!">Cuadros<i style="font-size: 8px" class="fas fa-chevron-down ml-2"></i></a>
                                 <ul class="submenu">
-                                    <li><a href="shop_cart.html">Catálogo</a></li>
-                                    <li><a href="shop_checkout.html">Crea tu cuadro</a></li>
+                                    <li><a href="/catalogocuadros">Catálogo</a></li>
+                                    <li><a href="/tucuadro">Crea tu cuadro</a></li>
                                     
                                 </ul>
                             </li>
                           <li class="menu_item_has_child">
-                                 <a href="/catalogo-duo">Preguntas Frecuentes</a>
+                                 <a href="/frecuentes">Preguntas Frecuentes</a>
                           </li>
                           
                       </ul>

@@ -28,14 +28,14 @@
                         <nav id="main-nav" class="main-nav ml-5">
                             <ul id="menu-primary-menu" class="menu">
                                 <li class="menu-item">
-                                    <a>Home</a>
+                                    <a href="/">Home</a>
                                 </li>
                                 <li class="menu-item menu-item-has-children">
                                     <a>Fundas</a>
                                     <ul class="sub-menu">
                                         <li class="menu-item"><a href="/catalogo">Catálogo</a></li>
-                                        <li class="menu-item"><a href="explore-2.html">Crea tu Funda</a></li>
-                                        <li class="menu-item"><a href="explore-3.html">Fundas Duo</a></li>
+                                        <li class="menu-item"><a href="/tufunda">Crea tu Funda</a></li>
+                                        <li class="menu-item"><a href="/catalogo-duo">Fundas Duo</a></li>
                                     </ul>
                                 </li>
                                 <li class="menu-item menu-item-has-children">
@@ -46,7 +46,7 @@
                                     </ul>
                                 </li>
                                 <li class="menu-item">
-                                    <a>Preguntas Frecuentes</a>
+                                    <a href="/frecuentes">Preguntas Frecuentes</a>
                                     
                                 </li>
                                 

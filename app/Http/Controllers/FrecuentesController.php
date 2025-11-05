@@ -10,12 +10,7 @@ class FrecuentesController extends Controller
 
         
 
-        return view('layouts.frecuentes' );
-    }
-    public function FrecuentesNew(){
-
-        
-
         return view('layouts.newmakena.frecuentesnew' );
     }
+    
 }

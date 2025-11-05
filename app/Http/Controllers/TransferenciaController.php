@@ -34,13 +34,9 @@ class TransferenciaController extends Controller
 
     public function calculaEnvio(Request $request){
 
-        return view('layouts.envios');
+         return view('layouts.newmakena.enviosnew');
     }
-    public function calculaTuEnvio(Request $request){
-
-        return view('layouts.newmakena.enviosnew');
-    }
-
+    
     public function webhookTransferencia(Request $request)
     {
         if ($request->input('token') !== env('WEBHOOK_TOKEN')) {

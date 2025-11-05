@@ -20,16 +20,6 @@ class HomeImagesController extends Controller
 
         $sliderPrincipal = Principalimage::all();
         $totalImages= $sliderPrincipal->count();
-        
-        $misProductos = Product::all();
-
-
-        return view('layouts.base', compact('sliderPrincipal', 'totalImages', 'misProductos') );
-    }
-    public function homenew(){
-
-        $sliderPrincipal = Principalimage::all();
-        $totalImages= $sliderPrincipal->count();
         $banners = Banner::all();
         $carrusel_cuadros  = CarruselCuadro::all();
         $home_categories_fundas = HomeCategoriasFunda::all();
@@ -43,7 +33,7 @@ class HomeImagesController extends Controller
 
         return view('layouts.newhome', compact('sliderPrincipal', 'totalImages', 'misProductos', 'banners', 'carrusel_cuadros', 'home_categories_fundas', 'precioFunda') );
     }
-    
+   
     
     public function catalogo(){
 
