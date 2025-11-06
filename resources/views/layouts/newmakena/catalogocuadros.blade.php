@@ -176,118 +176,35 @@
                                             <li class="parent" style=" padding: 0px 24px;">
                                                 <a href="#">Anime</a>
                                                 <ul>
-                                                    <li><a href="/catalogo?categoria=AT">Attack on Titan</a></li>
-                                                    <li><a href="/catalogo?categoria=BK">Berserk</a></li>
-                                                    <li><a href="/catalogo?categoria=BH">Boku no Hero Academia</a></li>
-                                                    <li><a href="/catalogo?categoria=CZ">Caballeros del Zodiaco</a></li>
-                                                    <li><a href="/catalogo?categoria=DAN">DanDaDan</a></li>
-                                                    <li><a href="/catalogo?categoria=DN">Death Note</a></li>
-                                                    <li><a href="/catalogo?categoria=DS">Demon Slayer</a></li>
+                                                    <li><a href="/catalogocuadros?categoria=AT">Attack on Titan</a></li>
+                                                    <li><a href="/catalogocuadros?categoria=BK">Berserk</a></li>
+                                                    <li><a href="/catalogocuadros?categoria=BH">Boku no Hero Academia</a></li>
+                                                    <li><a href="/catalogocuadros?categoria=DS">Demon Slayer</a></li>
                                                     <li><a href="/catalogonew?categoria=DB">Dragon Ball</a></li>
-                                                    <li><a href="/catalogo?categoria=CH">El viaje de Chihiro</a></li>
-                                                    <li><a href="/catalogo?categoria=EV">Evangelion</a></li>
-                                                    <li><a href="/catalogo?categoria=FN">Frieren</a></li>
-                                                    <li><a href="/catalogo?categoria=HK">Haikyuu!</a></li>
-                                                    <li><a href="/catalogo?categoria=HH">Hunter X Hunter</a></li>
-                                                    <li><a href="/catalogo?categoria=JJ">Jojo's</a></li>
-                                                    <li><a href="/catalogo?categoria=JK">Jujutsu Kaisen</a></li>
-                                                    <li><a href="/catalogo?categoria=NA">Naruto</a></li>
-                                                    <li><a href="/catalogo?categoria=OP">One Piece</a></li>
-                                                    <li><a href="/catalogo?categoria=PK">Pokemon</a></li>
-                                                    <li><a href="/catalogo?categoria=SM">Sailor Moon</a></li>
-                                                    <li><a href="/catalogo?categoria=SD">Slam Dunk</a></li>
-                                                    <li><a href="/catalogo?categoria=SLV">Solo Leveling</a></li>
-                                                    <li><a href="/catalogo?categoria=AMS">Más...</a></li>
+                                                    <li><a href="/catalogocuadros?categoria=EV">Evangelion</a></li>
+                                                    <li><a href="/catalogocuadros?categoria=FN">Frieren</a></li>
+                                                    <li><a href="/catalogocuadros?categoria=HH">Hunter X Hunter</a></li>
+                                                    <li><a href="/catalogocuadros?categoria=JK">Jujutsu Kaisen</a></li>
+                                                    <li><a href="/catalogocuadros?categoria=NA">Naruto</a></li>
+                                                    <li><a href="/catalogocuadros?categoria=OP">One Piece</a></li>
+                                                    <li><a href="/catalogocuadros?categoria=PK">Pokemon</a></li>
+                                                    <li><a href="/catalogocuadros?categoria=SM">Sailor Moon</a></li>
+                                                    <li><a href="/catalogocuadros?categoria=SLV">Solo Leveling</a></li>
                                                 </ul>
                                             </li>
                                             <li class="parent" style="border-bottom:1px solid #333; padding: 0px 24px;">
-                                                <a href="#">Automovilismo</a>
+                                                <a href="#">Deportes</a>
                                                 <ul>
-                                                    <li><a href="/catalogo?categoria=CLP">Colapinto</a></li>
-                                                    <li><a href="/catalogo?categoria=F1">F1</a></li>
-                                                </ul>
-                                            </li>
-                                            <li style="border-bottom:1px solid #333; padding: 0px 24px;">
-                                                <a href="/catalogo?categoria=BS">Básquet</a>
-                                            </li>
-                                            <li class="parent" style="border-bottom:1px solid #333; padding: 0px 24px;">
-                                                <a href="#">Gaming</a>
-                                                <ul>
-                                                    <li><a href="/catalogo?categoria=ARC">Arcane</a></li>
-                                                    <li><a href="/catalogo?categoria=AC">Assassin’s Creed</a></li>
-                                                    <li><a href="/catalogo?categoria=FRN">Fortnite</a></li>
-                                                    <li><a href="/catalogo?categoria=GW">God of War</a></li>
-                                                    <li><a href="/catalogo?categoria=HKN">Hollow Knight</a></li>
-                                                    <li><a href="/catalogo?categoria=LOL">LOL</a></li>
-                                                    <li><a href="/catalogo?categoria=RE">Resident Evil</a></li>
-                                                    <li><a href="/catalogo?categoria=TLU">The Last of Us</a></li>
-                                                    <li><a href="/catalogo?categoria=TW">The Witcher</a></li>
-                                                    <li><a href="/catalogo?categoria=VL">Valorant</a></li>
-                                                    <li><a href="/catalogo?categoria=OTR">Más...</a></li>
-                                                </ul>
-                                            </li>
-                                            <li style="border-bottom:1px solid #333; padding: 0px 24px;">
-                                                <a href="/catalogo?categoria=DI">Diseños</a>
-                                            </li>
-                                            <li class="parent" style="border-bottom:1px solid #333; padding: 0px 24px;">
-                                                <a href="#">Fútbol</a>
-                                                <ul>
-                                                    <li><a href="/catalogo?categoria=FB">Boca</a></li>
-                                                    <li><a href="/catalogo?categoria=FTI">Clubes Internacionales</a></li>
-                                                    <li><a href="/catalogo?categoria=FI">Independiente</a></li>
+                                                    <li><a href="/catalogo?categoria=FES">Estadios</a></li>
                                                     <li><a href="/catalogo?categoria=FME">Messi</a></li>
-                                                    <li><a href="/catalogo?categoria=FMO">Momentos del Fútbol</a></li>
-                                                    <li><a href="/catalogo?categoria=FON">Más clubes nacionales</a></li>
-                                                    <li><a href="/catalogo?categoria=FRA">Racing</a></li>
-                                                    <li><a href="/catalogo?categoria=FRI">River</a></li>
-                                                    <li><a href="/catalogo?categoria=FSL">San Lorenzo</a></li>
-                                                    <li><a href="/catalogo?categoria=FSA">Selección Argentina</a></li>
-                                                </ul>
-                                            </li>
-                                            <li style="border-bottom:1px solid #333; padding: 0px 24px;">
-                                                <a href="/catalogo?categoria=ME">Momentos Épicos</a>
-                                            </li>
-                                            <li style="border-bottom:1px solid #333; padding: 0px 24px;">
-                                                <a href="/catalogo?categoria=RT">Retro</a>
-                                            </li>
-                                            <li class="parent" style="border-bottom:1px solid #333; padding: 0px 24px;">
-                                                <a href="#">Música</a>
-                                                <ul>
-                                                    <li><a href="/catalogo?categoria=MM">Más</a></li>
-                                                    <li><a href="/catalogo?categoria=MP">Pop</a></li>
-                                                    <li><a href="/catalogo?categoria=MRI">Rock Internacional</a></li>
-                                                    <li><a href="/catalogo?categoria=MRN">Rock Nacional</a></li>
-                                                    <li><a href="/catalogo?categoria=MUR">Urbano</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="parent" style="border-bottom:1px solid #333; padding:1px 24px;">
-                                                <a href="#">Películas</a>
-                                                <ul>
-                                                    <li><a href="/catalogo?categoria=DY">Disney</a></li>
-                                                    <li><a href="/catalogo?categoria=HP">Harry Potter</a></li>
-                                                    <li><a href="/catalogo?categoria=LR">Lord of the Rings</a></li>
-                                                    <li><a href="/catalogo?categoria=MV">Marvel</a></li>
-                                                    <li><a href="/catalogo?categoria=SW">Star Wars</a></li>
-                                                    <li><a href="/catalogo?categoria=VF">Volver al Futuro</a></li>
-                                                    <li><a href="/catalogo?categoria=PMS">Más...</a></li>
+                                                    <li><a href="/catalogo?categoria=FSA">Seleccion Argentina</a></li>
                                                 </ul>
                                             </li>
                                             <li class="parent" style="padding: 0px 24px;">
-                                                <a href="#">TV y Series</a>
+                                                <a href="#">Series</a>
                                                 <ul>
                                                     <li><a href="/catalogo?categoria=ARC">Arcane</a></li>
-                                                    <li><a href="/catalogo?categoria=AV">Avatar</a></li>
-                                                    <li><a href="/catalogo?categoria=FRD">Friends</a></li>
-                                                    <li><a href="/catalogo?categoria=GT">Game of Thrones</a></li>
-                                                    <li><a href="/catalogo?categoria=HA">Hora de Aventura</a></li>
-                                                    <li><a href="/catalogo?categoria=HD">House of the Dragon</a></li>
-                                                    <li><a href="/catalogo?categoria=LS">Los Simpsons</a></li>
-                                                    <li><a href="/catalogo?categoria=PB">Peaky Blinders</a></li>
-                                                    <li><a href="/catalogo?categoria=RM">Rick y Morty</a></li>
-                                                    <li><a href="/catalogo?categoria=ST">Stranger Things</a></li>
-                                                    <li><a href="/catalogo?categoria=TU">The Last of Us</a></li>
-                                                    <li><a href="/catalogo?categoria=TWD">The Walking Dead</a></li>
-                                                    <li><a href="/catalogo?categoria=OS">Más...</a></li>
+                                                    
                                                 </ul>
                                             </li>
                                         </ul>
