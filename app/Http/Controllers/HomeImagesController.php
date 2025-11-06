@@ -86,7 +86,7 @@ class HomeImagesController extends Controller
             $this->sendEmail($emailComprador, $apiExternalReference, $payment_id);
             $this->sendMailNuevaVenta($BDdatos, $payment_id); */
 
-            return view('layouts.success', [
+            return view('layouts.newmakena.success', [
                 'mensaje' => $preferenceId,
             
             ]);
@@ -165,7 +165,7 @@ class HomeImagesController extends Controller
             
         }
 
-        return view('layouts.failure' );
+        return view('layouts.newmakena.failure' );
     }
     public function crearEnvio($preferenceId){
 

@@ -52,7 +52,7 @@
                                 
                             </ul>
                         </nav><!-- /#main-nav -->
-                        @if (!request()->is('carrito', 'checkout'))
+                        @if (!request()->is('carrito', 'checkout', 'aprobado', 'rechazado', 'datosTransferencia', 'success', 'rechazado'))
                         <div class="flat-wallet flex">
                             <div class="" id="wallet-header">
                                 <a href="javascript:void(0);" id="connectbtn" class="tf-button style-1 open-cart-sidebar">
