@@ -88,19 +88,19 @@
                         <a class="item-menu-mobile">Fundas</a>
                         <ul class="sub-menu-mobile">
                             <li class="menu-item"><a href="/catalogo">Catálogo</a></li>
-                            <li class="menu-item"><a href="explore-2.html">Crea tu Funda</a></li>
-                            <li class="menu-item"><a href="explore-3.html">Fundas Duo</a></li>
+                            <li class="menu-item"><a href="/tufunda">Crea tu Funda</a></li>
+                            <li class="menu-item"><a href="/catalogo-duo">Fundas Duo</a></li>
                         </ul>
                     </li>
                     <li class="menu-item menu-item-has-children-mobile">
                         <a class="item-menu-mobile">Cuadros</a>
                         <ul class="sub-menu-mobile">
-                            <li class="menu-item"><a href="/catalogo">Catálogo</a></li>
-                            <li class="menu-item"><a href="explore-2.html">Crea tu Cuadro</a></li>
+                            <li class="menu-item"><a href="/catalogocuadros">Catálogo</a></li>
+                            <li class="menu-item"><a href="/tucuadro">Crea tu Cuadro</a></li>
                         </ul>
                     </li>
                     <li class="menu-item">
-                        <a class="item-menu-mobile" href="contact-us.html">Preguntas Frecuentes</a>
+                        <a class="item-menu-mobile" href="frecuentes">Preguntas Frecuentes</a>
                     </li>
                 </ul>
             </nav>
