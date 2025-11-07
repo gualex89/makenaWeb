@@ -6,7 +6,7 @@
                     <div class="wrap-box flex row" >
                         <div id="site-logo" class="col-6">
                             <div id="site-logo-inner" class="ml-4">
-                                <a href="index.html" rel="home" class="main-logo">
+                                <a href="/" rel="home" class="main-logo">
                                     <img style="width: 198px" id="logo_header" src="{{ asset('images/logo/logomakena.png') }}">
                                         
                                 </a>

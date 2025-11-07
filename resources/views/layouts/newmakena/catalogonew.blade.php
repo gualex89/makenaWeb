@@ -183,7 +183,7 @@
                                                     <li><a href="/catalogo?categoria=DAN">DanDaDan</a></li>
                                                     <li><a href="/catalogo?categoria=DN">Death Note</a></li>
                                                     <li><a href="/catalogo?categoria=DS">Demon Slayer</a></li>
-                                                    <li><a href="/catalogonew?categoria=DB">Dragon Ball</a></li>
+                                                    <li><a href="/catalogo?categoria=DB">Dragon Ball</a></li>
                                                     <li><a href="/catalogo?categoria=CH">El viaje de Chihiro</a></li>
                                                     <li><a href="/catalogo?categoria=EV">Evangelion</a></li>
                                                     <li><a href="/catalogo?categoria=FN">Frieren</a></li>
