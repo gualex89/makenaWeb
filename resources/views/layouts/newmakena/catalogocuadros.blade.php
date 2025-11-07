@@ -171,7 +171,7 @@
                                     <div class="categorias-container">
                                         <ul class="menu-tab categorias-menu">
                                             <li style="padding: 0px 24px;">
-                                                <a href="/catalogo" data-category="all">Todas</a>
+                                                <a href="/catalogocuadros" data-category="all">Todas</a>
                                             </li>
                                             <li class="parent" style=" padding: 0px 24px;">
                                                 <a href="#">Anime</a>
@@ -180,7 +180,7 @@
                                                     <li><a href="/catalogocuadros?categoria=BK">Berserk</a></li>
                                                     <li><a href="/catalogocuadros?categoria=BH">Boku no Hero Academia</a></li>
                                                     <li><a href="/catalogocuadros?categoria=DS">Demon Slayer</a></li>
-                                                    <li><a href="/catalogonew?categoria=DB">Dragon Ball</a></li>
+                                                    <li><a href="/catalogocuadros?categoria=DB">Dragon Ball</a></li>
                                                     <li><a href="/catalogocuadros?categoria=EV">Evangelion</a></li>
                                                     <li><a href="/catalogocuadros?categoria=FN">Frieren</a></li>
                                                     <li><a href="/catalogocuadros?categoria=HH">Hunter X Hunter</a></li>
@@ -195,15 +195,15 @@
                                             <li class="parent" style="border-bottom:1px solid #333; padding: 0px 24px;">
                                                 <a href="#">Deportes</a>
                                                 <ul>
-                                                    <li><a href="/catalogo?categoria=FES">Estadios</a></li>
-                                                    <li><a href="/catalogo?categoria=FME">Messi</a></li>
-                                                    <li><a href="/catalogo?categoria=FSA">Seleccion Argentina</a></li>
+                                                    <li><a href="/catalogocuadros?categoria=FES">Estadios</a></li>
+                                                    <li><a href="/catalogocuadros?categoria=FME">Messi</a></li>
+                                                    <li><a href="/catalogocuadros?categoria=FSA">Seleccion Argentina</a></li>
                                                 </ul>
                                             </li>
                                             <li class="parent" style="padding: 0px 24px;">
                                                 <a href="#">Series</a>
                                                 <ul>
-                                                    <li><a href="/catalogo?categoria=ARC">Arcane</a></li>
+                                                    <li><a href="/catalogocuadros?categoria=ARC">Arcane</a></li>
                                                     
                                                 </ul>
                                             </li>
