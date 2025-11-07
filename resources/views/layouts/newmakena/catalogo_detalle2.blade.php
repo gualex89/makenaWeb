@@ -53,15 +53,15 @@
                     <div data-wow-delay="0s" class="wow fadeInRight infor-product">
                         
                         
-                        <h2>Funda de {{ $item->diseno }} {{ $item->file_name }}</h2>
+                        <h2 id="product-title" class="item_title">Funda de {{ $item->diseno }} {{ $item->file_name }}</h2>
                         <h3><span style="color: #b321a6">{{ $item->categoria }}</span></h3>
                         
                         <div data-wow-delay="0s" class="wow fadeInRight product-item time-sales mt-20">
                             
                             <div class="content">
-                                <div class="text">Precio</div>
+                                <div id="product-price" class="text">Precio</div>
                                 <div class="flex justify-between">
-                                    <p>{{ $precioFunda }} </p>
+                                    <p id="item_price" class="item_price">{{ $precioFunda }} </p>
                                     <a href="#" data-bs-toggle="modal" data-bs-target="#addToCartModal" class="tf-button style-1 h50 w216"><i class="fas fa-shopping-cart"></i>Seleccioná tu modelo</i></a>
                                 </div>
                             </div>
@@ -192,19 +192,25 @@
                 updatePrices();
             } */
             function addToCart(productItem) {
-                price = parseFloat(productItem.querySelector('.item_price').textContent.replace('$', ''));
-                itemName = productItem.querySelector('.item_title').textContent;
-                imageUrl = productItem.querySelector('img').getAttribute(
-                'src'); // Obtener la URL de la imagen completa
+                console.log("Entró a addToCart()");
+                
+                itemName = document.getElementById('product-title').textContent.trim();
+                price = parseFloat(document.getElementById('item_price').textContent.replace('$', '').trim());
+                imageUrl = document.getElementById('imagenDinamico').getAttribute('src');
 
-                // Mostrar la modal
+                console.log({ itemName, price, imageUrl }); // <-- verifica que llegan los valores
+
                 $('#addToCartModal').modal('show');
-
-
             }
-            document.getElementById('addToCartModalOkButton').addEventListener('click', function() {
+
+            $(document).on('click', '#addToCartModalOkButton', function() {
+
                 const selectedMarca = document.getElementById('marcasDropdown').value;
                 const selectedModelo = document.getElementById('modelosDropdown').value;
+
+                itemName = document.getElementById('product-title').textContent.trim();
+                price = parseFloat(document.getElementById('item_price').textContent.replace('$', '').trim());
+                imageUrl = document.getElementById('imagenDinamico').getAttribute('src');
 
                 // Verificar si se ha seleccionado un modelo
                 if (selectedModelo) {
