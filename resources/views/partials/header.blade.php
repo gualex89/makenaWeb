@@ -1,5 +1,5 @@
 <header class="header_section motorcycle_header sticky_header clearfix">
-  <div class="header_content_wrap d-flex align-items-center" id="cintillo_carrito">
+  <div class="header_content_wrap d-flex align-items-center " id="cintillo_carrito">
       <div class="container-fluid prl_90">
           <div class="row align-items-center">
               <div class="col-lg-2">
@@ -20,28 +20,36 @@
               </div>
               <div class="col-lg-8">
                   <nav class="main_menu clearfix">
-                      <ul class="ul_li_center clearfix">
+                      <ul class="ul_li_center clearfix header_open9">
+                            <li class="menu_item_has_child">
+                                <a href="/">Home </a>
+                            </li>
+                            <li class="menu_item_has_child">
+                                <a href="#!">Fundas<i style="font-size: 8px" class="fas fa-chevron-down ml-2"></i></a>
+                                <ul class="submenu">
+                                    <li><a href="/catalogo">Catálogo</a></li>
+                                    <li><a href="/tufunda">Crea tu funda</a></li>
+                                    <li><a href="/catalogo-duo">Fundas duo</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu_item_has_child">
+                                <a href="#!">Cuadros<i style="font-size: 8px" class="fas fa-chevron-down ml-2"></i></a>
+                                <ul class="submenu">
+                                    <li><a href="/catalogocuadros">Catálogo</a></li>
+                                    <li><a href="/tucuadro">Crea tu cuadro</a></li>
+                                    
+                                </ul>
+                            </li>
                           <li class="menu_item_has_child">
-                              <a href="/">Home</a>
+                                 <a href="/frecuentes">Preguntas Frecuentes</a>
                           </li>
-                          <li class="menu_item_has_child">
-                              <a href="/catalogo">Catálogo</a>
-                          </li>
-                          <li class="menu_item_has_child">
-                              <a href="/tufunda">Crea tu Funda</a>
-                          </li>
-                          <li class="menu_item_has_child">
-                              <a href="/catalogo-duo">Fundas Duo</a>
-                          </li>
-                          <li class="menu_item_has_child">
-                              <a href="/frecuentes">Preguntas Frecuentes</a>
-                          </li>
+                          
                       </ul>
                   </nav>
               </div>
               <div class="col-lg-2">
                   <ul class="action_items ul_li_right clearfix">
-                    @if (!Route::is('Frecuentes') && !Route::is('carrito') && !Route::is('checkout') && !Route::is('aprobado') && !Route::is('rechazado') && !Route::is('datosTransferencia'))
+                    @if (!Route::is('Frecuentes') && !Route::is('carrito') && !Route::is('checkout') && !Route::is('aprobado') && !Route::is('rechazado') && !Route::is('datosTransferencia') && !Route::is('success') && !Route::is('rechazado'))
                     <li>
                         <button type="button" class="cart_btn">CARRITO <small class="btn_badge">0</small></button>
                     </li>
@@ -57,3 +65,4 @@
       </div>
   </div>
 </header>
+

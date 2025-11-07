@@ -706,11 +706,12 @@
 										</div>
 										<div class="item_content">
 											<h4 class="item_title">${cartItem.name}</h4>
-											<span class= "item_marca">${cartItem.marca}</span>
-											<span class="item_type">${cartItem.modelo}</span>
+											<span class= "item_marca">${cartItem.marca || cartItem.tamaño}</span>
+											<span class="item_type">${cartItem.modelo || cartItem.colgante}</span>
 											${cartItem.marca2 ? `<span class="item_marca2">${cartItem.marca2}</span>` : ``}
 											${cartItem.marca2 ? `<span class="item_type2">${cartItem.modelo2}</span>` : ``}
 											<span style="display: none" class="item_nombre_imagen">${cartItem.uniqueName}</span>
+											<span style="display: none" class="item_id_drive">${cartItem.idDrive}</span>
 										</div>
 									</div>
 								</td>
@@ -1346,8 +1347,8 @@
                     }
 
                     let titulo = container.querySelector('.item_title')?.textContent.trim() || "";
-                    let nombreImagenPNG = container.querySelector('.item_nombre_imagen')?.textContent
-                        .trim() || "";
+                    let nombreImagenPNG = container.querySelector('.item_nombre_imagen')?.textContent.trim() || "";
+                    let idDrive = container.querySelector('.item_id_drive')?.textContent.trim() || "";
                     let itemMarca = container.querySelector('.item_marca')?.textContent.trim() || "";
                     let itemModelo = item.textContent.trim();
 
@@ -1363,7 +1364,8 @@
                         modelo: modeloFinal,
                         diseno: titulo,
                         marca: marcaFinal,
-                        nombreImagen: nombreImagenPNG
+                        nombreImagen: nombreImagenPNG,
+                        idDrive: idDrive
                     });
                 });
 

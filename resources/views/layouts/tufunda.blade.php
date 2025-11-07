@@ -137,7 +137,7 @@
         <!-- product_section - start
    ================================================== -->
         <div id="aviso" class="aviso-flotante"></div>
-        <section class="product_section sec_ptb_50  clearfix" id="seccionTufunda" style="margin-top: 60px">
+        <section class="product_section sec_ptb_50  clearfix" id="seccionTufunda" style="margin-top: 90px">
             <div class="container maxw_1430">
                 <div class="row justify-content-lg-between">
                     <div class="col-lg-3 col-md-6 mx-auto ">
@@ -342,10 +342,10 @@
     <!-- main body - end
   ================================================== -->
 
-
+    @include('partials.footer')
     <!-- footer_section - start
   ================================================== -->
-    <footer class="footer_section motorcycle_footer clearfix">
+    {{-- <footer class="footer_section motorcycle_footer clearfix">
         <div class="footer_widget_area sec_ptb_100 clearfix"
             data-background="images/backgrounds/makenaFooterBackground.webp">
             <div class="container">
@@ -392,7 +392,7 @@
                 </p>
             </div>
         </div>
-    </footer>
+    </footer> --}}
     <!-- footer_section - end
   ================================================== -->
     <div class="modal fade" id="chargingModal" tabindex="-1" role="dialog"

@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Banner;
+use App\Models\CarruselCuadro;
+use App\Models\HomeCategoriasFunda;
 use App\Models\Order;
+use App\Models\Precio;
 use App\Models\Principalimage;
 use Illuminate\Http\Request;
 use App\Models\Product;
@@ -16,13 +20,20 @@ class HomeImagesController extends Controller
 
         $sliderPrincipal = Principalimage::all();
         $totalImages= $sliderPrincipal->count();
+        $banners = Banner::all();
+        $carrusel_cuadros  = CarruselCuadro::all();
+        $home_categories_fundas = HomeCategoriasFunda::all();
         
         $misProductos = Product::all();
 
+        $preciosProductos = Precio::all();
+        $funda = $preciosProductos-> where('producto', 'funda')->first();
+        $precioFunda = $funda ? $funda->precio : null;
 
-        return view('layouts.base', compact('sliderPrincipal', 'totalImages', 'misProductos') );
+
+        return view('layouts.newhome', compact('sliderPrincipal', 'totalImages', 'misProductos', 'banners', 'carrusel_cuadros', 'home_categories_fundas', 'precioFunda') );
     }
-    
+   
     
     public function catalogo(){
 
@@ -75,7 +86,7 @@ class HomeImagesController extends Controller
             $this->sendEmail($emailComprador, $apiExternalReference, $payment_id);
             $this->sendMailNuevaVenta($BDdatos, $payment_id); */
 
-            return view('layouts.success', [
+            return view('layouts.newmakena.success', [
                 'mensaje' => $preferenceId,
             
             ]);
@@ -154,7 +165,7 @@ class HomeImagesController extends Controller
             
         }
 
-        return view('layouts.failure' );
+        return view('layouts.newmakena.failure' );
     }
     public function crearEnvio($preferenceId){
 

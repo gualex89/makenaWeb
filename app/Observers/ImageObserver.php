@@ -4,6 +4,7 @@ namespace App\Observers;
 
 use App\Models\Catalogue;
 
+
 class ImageObserver
 {
     public function created(Catalogue $image)

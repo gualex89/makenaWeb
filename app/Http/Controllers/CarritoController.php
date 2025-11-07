@@ -9,7 +9,7 @@ class CarritoController extends Controller
 {
     public function carrito(){
 
-        return view('layouts.carrito');
-}
-
+        return view('layouts.newmakena.carritonew');
+    }
+    
 }

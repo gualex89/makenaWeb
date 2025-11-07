@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Storage;
 
 use Illuminate\Http\Request;
 use App\Models\Cover;
+use App\Models\Precio;
 use App\Models\Product;
 
 class TuFundaController extends Controller
@@ -22,6 +23,24 @@ class TuFundaController extends Controller
         
         }   
         return view('layouts.tufunda', compact( 'precioFundas') );
+    }
+    public function tucuadro(){
+
+        $Productos = Precio::all();
+        $cuadrosActivos = Precio::where('activo', 1)
+                        ->where('esCuadro', 1)
+                        ->get();
+
+        /* dd($cuadrosActivos); */
+        /* $precioCuadroBasic = $productosActivos ? $productosActivos->precio : null;
+
+        $cuadroStandard = $productosActivos-> where('producto', 'cuadro-standard')->first();
+        $precioCuadroStandard = $cuadroStandard ? $cuadroStandard->precio : null;
+        
+        $cuadroEpic = $preciosProductos-> where('producto', 'cuadro-epic')->first();
+        $precioCuadroEpic = $cuadroEpic ? $cuadroEpic->precio : null;
+ */
+        return view('layouts.newmakena.tucuadro', compact('cuadrosActivos'));
     }
 
     public function guardarImagenPersonalizada(Request $request){
