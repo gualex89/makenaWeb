@@ -46,7 +46,7 @@
             <tbody>
                 @foreach ($downloads as $item)
                     <tr>
-                        <td>Funda</td>
+                        <td>{{ $item['cuadro'] == 1 ? 'Cuadro' : 'Funda' }}</td>
                         <td>{{ $item['marca'] ?? '-' }}</td>
                         <td>{{ $item['modelo'] ?? '-' }}</td>
                         <td>{{ $item['diseno'] ?? '-' }}</td>
