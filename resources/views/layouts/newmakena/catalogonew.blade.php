@@ -230,6 +230,12 @@
                                                 <a href="/catalogo?categoria=DI">Diseños</a>
                                             </li>
                                             <li class="parent" style="border-bottom:1px solid #333; padding: 0px 24px;">
+                                                <a href="#">Hello kitty</a>
+                                                <ul>
+                                                    <li><a href="/catalogo?categoria=KR">Kuromi</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="parent" style="border-bottom:1px solid #333; padding: 0px 24px;">
                                                 <a href="#">Fútbol</a>
                                                 <ul>
                                                     <li><a href="/catalogo?categoria=FB">Boca</a></li>
