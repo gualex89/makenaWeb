@@ -3,15 +3,10 @@
 @section('title', 'Cuadro de ' . $item->diseno . ' | ' . $item->categoria . ' - Makena')
 
 @section('meta_description',
-    'Cuadro personalizada de ' .
-    $item->diseno .
-    ' para modelo ' .
-    $item->modeloCEO .
-    '.
-    Categoría: ' .
-    $item->categoria .
+    $item->nombreCuadros .
+        '. Categoría: ' . $item->categoria .
     '. Alta calidad y diseño exclusivo.')
-@section('meta_keywords', 'Cuadros anime, Cuadro personalizado, Cuadro de ' . $item->diseno . ', ' .
+@section('meta_keywords', 'Cuadros ' . $item->categoria . ', Cuadro personalizado, Cuadro de ' . $item->diseno . ', ' .
     strtolower($item->categoria) )
 
 
