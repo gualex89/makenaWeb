@@ -26179,6 +26179,15 @@ li::marker {
   .motorcycle_product_list .item_image img {
     max-height: 210px;
   }
+  .motorcycle_header .header_content_wrap {
+		min-height: auto;
+		padding: 0px 0px !important;
+  }
+  #seccionTufunda {
+    transform: scale(0.9);
+    transform-origin: top center;
+    transition: transform 0.4s ease;
+  }
 
   /* motorcycle shop - end */
 }

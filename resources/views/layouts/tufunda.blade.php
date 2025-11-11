@@ -1427,7 +1427,7 @@
             const destino = document.getElementById('div_referenciaB');
 
             if (destino) {
-                const offset = -20; // cantidad de píxeles hacia abajo
+                const offset = -70; // cantidad de píxeles hacia abajo
                 const top = destino.getBoundingClientRect().top + window.pageYOffset + offset;
 
                 window.scrollTo({
