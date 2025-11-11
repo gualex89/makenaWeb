@@ -2840,6 +2840,9 @@ body.background-white .tf-mouse-outer {
     .tf-card-box-funda {
         margin: auto 20px auto 20px !important;
     }
+    .botones-hover-catalogo {
+        display: none !important;
+    }
     
                                 
 

@@ -46,17 +46,17 @@
 								<a href="#!" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Fundas <i class="fas fa-chevron-down ml-3"></i></a>
 								<ul class="dropdown-menu">
 									<li class="dropdown ul_li_block">
-										<a href="#!" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Catálogo</a>
+										<a href="/catalogo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Catálogo</a>
 										
 									</li>
 
 									<li class="dropdown">
-										<a href="#!" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Crea tu Funda</a>
+										<a href="/tufunda" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Crea tu Funda</a>
 										
 									</li>
 
 									<li class="dropdown">
-										<a href="#!" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Fundas Duo</a>
+										<a href="/catalogo-duo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Fundas Duo</a>
 										
 									</li>
 								</ul>
@@ -65,18 +65,18 @@
 								<a href="#!" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Cuadros<i class="fas fa-chevron-down ml-3"></i></a>
 								<ul class="dropdown-menu">
 									<li class="dropdown">
-										<a href="#!" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Catálogo</a>
+										<a href="/catalogocuadros" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Catálogo</a>
 										
 									</li>
 									
 									<li class="dropdown">
-										<a href="#!" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Crea tu Cuadro</a>
+										<a href="/tucuadro" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Crea tu Cuadro</a>
 										
 									</li>
 									
 								</ul>
 							</li>
-							<li><a href="contact.html">Preguntas Frecuentes</a></li>    
+							<li><a href="/frecuentes">Preguntas Frecuentes</a></li>    
 						</ul>
     </div>
   </div>

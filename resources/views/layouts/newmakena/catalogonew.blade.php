@@ -315,7 +315,7 @@
                                                 <a href="{{ route('catalogo.show', $image->slug) }}">
                                                     <img src="{{ Voyager::image($image->image) }}" alt="{{ $image->file_name }}">
                                                 </a>
-                                                <div class="button-place-bid">
+                                                <div class="button-place-bid botones-hover-catalogo">
                                                     <ul class="ul_li_block text-center clearfix">
                                                         <li><a class="alCarrito tf-button p-4" href="#!"><span><i
                                                                         class="fas fa-shopping-cart"></i></span>

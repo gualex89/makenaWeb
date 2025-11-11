@@ -228,7 +228,7 @@
                                                     <img src="{{ Voyager::image($image->image2) }}" alt="{{ $image->file_name }}">
                                                 </a> --}}
                                                 <div class="card-media  image-hover-container">
-                                                    <a href="#">
+                                                    <a href="{{ route('catalogo.showCuadro', $image->slug) }}">
                                                         <img src="{{ Voyager::image($image->image) }}" 
                                                             alt="Funda de {{ $image->diseno }} modelo {{ $image->modeloCEO }}" 
                                                             class="main-img img-fluid " width="280" height="auto" />
@@ -238,7 +238,7 @@
                                                             class="hover-img img-fluid my-4" width="280" height="auto" />
                                                     </a>
                                                 </div>
-                                                <div class="button-place-bid">
+                                                <div class="button-place-bid botones-hover-catalogo">
                                                     <ul class="ul_li_block text-center clearfix">
                                                         <li><a class="alCarrito tf-button p-4" href="#!"><span><i
                                                                         class="fas fa-shopping-cart"></i></span>
