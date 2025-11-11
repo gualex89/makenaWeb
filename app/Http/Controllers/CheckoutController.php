@@ -54,14 +54,18 @@ class CheckoutController extends Controller
         
         foreach ($itemsCart as $item) {
             
-            $download = new Download();
+            $download = new Download();           
             $download->order_id = $id;
             $download->modelo = $item['modelo'];
             $download->imprimible = $item['nombreImagen'];
             $download->composicion = "Comp-" . $item['nombreImagen'];
             $download->marca = $item['marca'];
-            $download->diseno = $item['diseno'];
-            $download->idDrive = $item['idDrive'];
+            $download->diseno = $item['diseno'];            
+            if (isset($item['idDrive']) && !empty($item['idDrive'])) {
+                $download->idDrive = $item['idDrive'];
+            } else {
+                $download->idDrive = null;
+            }
             if ($download->diseno === "Cuadro personalizado") {
                 $download->cuadro = 1;
             }
