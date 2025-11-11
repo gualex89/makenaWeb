@@ -39,10 +39,10 @@
                                 alt="Cuadro de {{ $item->diseno }} modelo {{ $item->modeloCEO }}" 
                                 class="main-img img-fluid " width="280" height="auto" />
                                 
-                                <img id="imagenDinamico" src="{{ Voyager::image($item->image2) }}"
+                                <img id="imagenDinamico-cuadros" src="{{ Voyager::image($item->image2) }}"
                                 data-hover="{{ Voyager::image($item->image2) }}" 
                                 alt="Cuadro de {{ $item->diseno }} - vista alterna" 
-                                class="hover-img img-fluid my-4" width="280" height="auto" />
+                                class="hover-img img-fluid " width="280" height="auto" />
                             </a>
                         </div>
                     </div>
@@ -96,6 +96,11 @@
     @include('partials.addToCartModalCuadros')
 @endsection
 @push('scripts')
+    <script>
+        
+    </script>
+
+    
     <script>
         document.querySelectorAll('.categorias-menu li.parent > a').forEach(link => {
             link.addEventListener('click', e => {
