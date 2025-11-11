@@ -331,7 +331,7 @@
                                                     
                                                 </div>
                                             </div>
-                                            <h5 class="name item_title"><a href="nft-detail-2.html">{{ $image->file_name }}</a></h5>
+                                            <h5 class="name item_title"><a href="{{ route('catalogo.show', $image->slug) }}">{{ $image->file_name }}</a></h5>
                                             
                                             <div class="divider"></div>
                                             <div class="meta-info flex items-center justify-between">

@@ -254,7 +254,7 @@
                                                     
                                                 </div>
                                             </div>
-                                            <h6 class="name item_title"><a href="nft-detail-2.html">Cuadro de {{ $image->diseno }} <br> {{ $image->file_name }}</a></h6>
+                                            <h6 class="name item_title"><a href="{{ route('catalogo.showCuadro', $image->slug) }}">Cuadro de {{ $image->diseno }} <br> {{ $image->file_name }}</a></h6>
                                             
                                             <div class="divider"></div>
                                             <div class="meta-info flex items-center justify-between">
