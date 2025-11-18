@@ -178,6 +178,7 @@
                                                 <ul>
                                                     <li><a href="/catalogo?categoria=AT">Attack on Titan</a></li>
                                                     <li><a href="/catalogo?categoria=BK">Berserk</a></li>
+                                                    <li><a href="/catalogo?categoria=BC">Black Clover</a></li>
                                                     <li><a href="/catalogo?categoria=BH">Boku no Hero Academia</a></li>
                                                     <li><a href="/catalogo?categoria=CZ">Caballeros del Zodiaco</a></li>
                                                     <li><a href="/catalogo?categoria=DAN">DanDaDan</a></li>
