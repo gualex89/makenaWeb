@@ -55,6 +55,8 @@ class webhook extends Controller
                 $montoAPagar = $BDdatos->total;
                 $emailComprador = $BDdatos->email;
 
+                Log::info('Estado de la orden: ' . $apiStatus);
+
                 if($apiStatus == 'approved'){
                     $order = Order::find($apiExternalReference);
                     
