@@ -57,7 +57,7 @@ class webhook extends Controller
 
                 Log::info('Estado de la orden: ' . $apiStatus);
 
-                if($apiStatus == 'approved' || $apiStatus == 'in_mediation'){
+                if($apiStatus == 'approved'){
                     $order = Order::find($apiExternalReference);
                     
                     if($order){ 
