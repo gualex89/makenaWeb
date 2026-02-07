@@ -152,12 +152,12 @@
 						<p>🕒 <strong>El pedido se confirma una vez recibido el comprobante.</strong></p>
 						
 						<p><strong>Tu número de orden es: <span style="font-size: 22px">{{$orden->id_order}}</span></strong></p>
-						<p><strong>Titular:</strong> Gabriela Oropeza<br>
-							 <strong>CVU:</strong> 0070001630004045563624<br>
-							 <strong>Alias:</strong> makenafundas.gl <br>
-							 <strong>Banco:</strong> Galicia <br>
+						<p><strong>Titular:</strong> Ivan Leonel Ortega<br>
+							 <strong>CVU:</strong>0000003100040255388469<br>
+							 <strong>Alias:</strong> makenafundas.mp <br>
+							 <strong>Banco:</strong> Mercado Pago <br>
 							 <strong>CUIT:</strong> 27-95821492-3<br>
-							 <strong>Monto: </strong><span class="monto">{{ number_format($orden->total, 0, ',', '.') }}$</span>
+							 <strong>Monto: </strong><span class="monto">${{ number_format($orden->total, 0, ',', '.') }}</span>
 
 						</p>
 					</div>
