@@ -549,8 +549,8 @@
             $('#modelosDropdown').change(function() {
                 restablecerCanvas()
 
-                canvas.setWidth(260);
-                canvas.setHeight(548.7659574468085);
+                canvas.setWidth(285);
+                canvas.setHeight(601);
 
                 var canvasElement = document.getElementById('canvas');
                 var divImagenElement = document.getElementById('div_imagen');
@@ -562,8 +562,8 @@
 
                 } else {
                     divImagenElement.style.setProperty('margin-top', '-5px', 'important');
-                    canvasElement.style.setProperty('left', '50px', 'important');
-                    canvasElement.style.setProperty('top', '0px', 'important');
+                    canvasElement.style.setProperty('left', '41px', 'important');
+                    canvasElement.style.setProperty('top', '-30px', 'important');
                 }
                 // Obtener el modelo seleccionado en el dropdown
                 var modeloSeleccionado = $(this).val();
@@ -642,60 +642,29 @@
 
         function cargarImagenDeFondo(url) {
             fabric.Image.fromURL(url, function(bgImg) {
-                // 🔁 Escalado proporcional tipo "contain" y le sumamos un 10%
-                const scaleX = canvas.width / bgImg.width;
-                const scaleY = canvas.height / bgImg.height;
-                const fondoScale = Math.min(scaleX, scaleY) * 1.11;
-
-                // ⚠️ Escalamos primero
-                bgImg.scale(fondoScale);
-
-                // 🎯 Luego centramos
                 bgImg.set({
-                    left: canvas.width / 2 + 4,
-                    top: canvas.height / 2 - 2,
-                    originX: 'center',
-                    originY: 'center',
                     selectable: false,
-                    crossOrigin: 'anonymous',
-                    opacity: 0
+                    crossOrigin: 'anonymous' // Agrega esta línea
                 });
-
-                console.log('🧩 Fondo escalado y centrado:', {
-                    width: bgImg.width,
-                    height: bgImg.height,
-                    scale: fondoScale,
-                    left: bgImg.left,
-                    top: bgImg.top
-                });
-
+                bgImg.opacity = 0;
+                bgImg.scaleToWidth(canvas.width);
+                bgImg.scaleToHeight(canvas.height);
                 canvas.add(bgImg);
                 fondoImg = bgImg;
-                canvas.sendToBack(bgImg);
             });
         }
 
         function cargarImagenDeFondoImprimible(url) {
             fabric.Image.fromURL(url, function(bgImg) {
-                const scaleX = canvas.width / bgImg.width;
-                const scaleY = canvas.height / bgImg.height;
-                const fondoScale = Math.min(scaleX, scaleY); // igual que en la otra
-
                 bgImg.set({
                     selectable: false,
-                    crossOrigin: 'anonymous',
-                    originX: 'center',
-                    originY: 'center',
-                    left: canvas.width / 2 + 2, // mismo ajuste a la izquierda
-                    top: canvas.height / 2 + 2 // mismo ajuste hacia abajo
+                    crossOrigin: 'anonymous' // Agrega esta línea
                 });
-
-                bgImg.scale(fondoScale);
                 bgImg.opacity = 0;
-
+                bgImg.scaleToWidth(canvas.width);
+                bgImg.scaleToHeight(canvas.height);
                 canvas.add(bgImg);
                 fondoImgImprimible = bgImg;
-                canvas.sendToBack(bgImg);
             });
         }
 
@@ -1089,8 +1058,8 @@
             let subtotal = 0;
             let total = 0;
             let cartItems = [];
-            let widthVariable = 943;
-            let heightVariable = 2000;
+            let widthVariable = 285;
+            let heightVariable = 601;
 
             function updateCartCounter() {
                 const badgeElements = document.querySelectorAll('.btn_badge');
@@ -1142,24 +1111,24 @@
                 }
 
                 // Exportar en alta resolución sin escalar dos veces
-                const exportCanvas = document.createElement('canvas');
-                const exportWidth = 1175;
-                const exportHeight = 2480;
-                exportCanvas.width = exportWidth;
-                exportCanvas.height = exportHeight;
+                var exportCanvas = document.createElement('canvas');
+                exportCanvas.id = 'exportCanvas';
+                var dpr = window.devicePixelRatio || 1;
+                exportCanvas.width = widthVariable * dpr;
+                exportCanvas.height = heightVariable * dpr;
+                var exportContext = exportCanvas.getContext('2d');
+                exportContext.scale(dpr, dpr);
 
-                const exportFabricCanvas = new fabric.Canvas(exportCanvas);
-                exportFabricCanvas.setWidth(exportWidth);
-                exportFabricCanvas.setHeight(exportHeight);
+                var exportFabricCanvas = new fabric.Canvas(exportCanvas);
+                exportFabricCanvas.setWidth(widthVariable);
+                exportFabricCanvas.setHeight(heightVariable);
 
-                const exportScale = exportWidth / canvas.width;
-
+                const exportScale = 1;
                 Promise.all(canvas.getObjects().map(obj => {
                     return new Promise(resolve => {
                         obj.clone(cloned => {
                             const esTexto = obj.type === 'textbox';
-                            const ajuste = (obj === userImg || esTexto) ? 0.92 :
-                                1;
+                            const ajuste = (obj === userImg || esTexto) ? 1 : 1;
 
                             cloned.scaleX = obj.scaleX * exportScale * ajuste;
                             cloned.scaleY = obj.scaleY * exportScale * ajuste;
@@ -1199,6 +1168,7 @@
                     const dataURL = exportFabricCanvas.toDataURL({
                         format: 'png',
                         quality: 1.0,
+                        multiplier: 4
                     });
 
                     // Enviar al servidor
