@@ -674,7 +674,7 @@
             var file = e.target.files[0];
 
             if (file.size > 6 * 1024 * 1024) { // 3 MB en bytes
-                alert("El archivo es demasiado grande. El tamaño máximo permitido es de 3 MB.");
+                alert("El archivo es demasiado grande. El tamaño máximo permitido es de 6 MB.");
                 return;
             }
 
