@@ -558,6 +558,7 @@
                 if (window.innerWidth <= 480) {
                     imagenCover.style.setProperty('left', '50px', 'important');
                     divImagenElement.style.setProperty('margin-top', '5px', 'important');
+                    canvasElement.style.setProperty('top', '-30px', 'important');
                     canvasElement.style.setProperty('left', '20px', 'important');
 
                 } else {
