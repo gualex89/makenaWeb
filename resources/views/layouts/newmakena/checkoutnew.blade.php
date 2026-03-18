@@ -1,255 +1,270 @@
 @extends('layouts.newmakena.app2')
 
 @section('content')
-
     <section class="checkout-scope cart_section sec_ptb_20 clearfix my-20">
         <section class="checkout_section sec_ptb_140 clearfix">
             <div class="container">
 
-            <div class="accordion" id="accordionExample">
+                <div class="accordion" id="accordionExample">
 
-                {{-- 1) DATOS PERSONALES --}}
-                <div class="card">
-                <div class="card-header" id="headingOne">
-                    <h4 class="mb-0">
-                    <button id="primerAcordeon" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                            aria-expanded="true" aria-controls="collapseOne">
-                        Datos Personales
-                    </button>
-                    </h4>
-                </div>
-
-                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                    <div class="card-body">
-                    <div class="form_wrap">
-                        <div class="row g-3">
-                        <div class="col-lg-4">
-                            <div class="form_item">
-                            <span class="input_title">Nombre<sup>*</sup></span>
-                            <input type="text" name="nombre" class="form-control" value="{{ old('nombre') }}">
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="form_item">
-                            <span class="input_title">Apellido<sup>*</sup></span>
-                            <input type="text" name="apellido" class="form-control" value="{{ old('apellido') }}">
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="form_item">
-                            <span class="input_title">DNI<sup>*</sup></span>
-                            <input type="text" name="dni" class="form-control" maxlength="8"
-                                    oninput="this.value = this.value.replace(/[^0-9]/g, '');"
-                                    value="{{ old('dni') }}">
-                            </div>
-                        </div>
+                    {{-- 1) DATOS PERSONALES --}}
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h4 class="mb-0">
+                                <button id="primerAcordeon" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Datos Personales
+                                </button>
+                            </h4>
                         </div>
 
-                        <div class="row g-3">
-                        <div class="col-lg-6 form_item">
-                            <span class="input_title">Email<sup>*</sup></span>
-                            <input type="email" name="email" class="form-control" value="{{ old('email') }}" required>
-                        </div>
-                        <div class="col-lg-6 form_item">
-                            <span class="input_title">Telefono<sup>*</sup></span>
-                            <input type="tel" name="telefono" class="form-control" id="telefonoInput" pattern="\d*" title="Ingrese solo números"
-                                value="{{ old('telefono') }}">
-                        </div>
-                        </div>
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                            data-bs-parent="#accordionExample">
+                            <div class="card-body">
+                                <div class="form_wrap">
+                                    <div class="row g-3">
+                                        <div class="col-lg-4">
+                                            <div class="form_item">
+                                                <span class="input_title">Nombre<sup>*</sup></span>
+                                                <input type="text" name="nombre" class="form-control"
+                                                    value="{{ old('nombre') }}">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="form_item">
+                                                <span class="input_title">Apellido<sup>*</sup></span>
+                                                <input type="text" name="apellido" class="form-control"
+                                                    value="{{ old('apellido') }}">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <div class="form_item">
+                                                <span class="input_title">DNI<sup>*</sup></span>
+                                                <input type="text" name="dni" class="form-control" maxlength="8"
+                                                    oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+                                                    value="{{ old('dni') }}">
+                                            </div>
+                                        </div>
+                                    </div>
 
-                        <div class="mt-3">
-                        <button id="continuarButton1" class="custom_btn bg_carparts_red text-uppercase special_button w-100 d-block"
-                                style="max-width:220px;">Continuar</button>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                </div>
+                                    <div class="row g-3">
+                                        <div class="col-lg-6 form_item">
+                                            <span class="input_title">Email<sup>*</sup></span>
+                                            <input type="email" name="email" class="form-control"
+                                                value="{{ old('email') }}" required>
+                                        </div>
+                                        <div class="col-lg-6 form_item">
+                                            <span class="input_title">Telefono<sup>*</sup></span>
+                                            <input type="tel" name="telefono" class="form-control" id="telefonoInput"
+                                                pattern="\d*" title="Ingrese solo números" value="{{ old('telefono') }}">
+                                        </div>
+                                    </div>
 
-                {{-- 2) TIPO DE ENTREGA --}}
-                <div class="card">
-                <div class="card-header" id="headingTwo">
-                    <h4 class="mb-0">
-                    <button class="collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-                            aria-expanded="false" aria-controls="collapseTwo" id="segundoAcordeon" disabled>
-                        Tipo de entrega
-                    </button>
-                    </h4>
-                </div>
-
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                    <div class="card-body">
-                    <div class="form_wrap">
-
-                        <div class="row g-3">
-                            <div class="col-lg-6">
-                                <div class="form-check form-check-inline">
-                                <input class="form-check-input custom-radio" type="radio" name="tipoEntrega" id="radioRetiro" value="retiro">
-                                <label class="form-check-label text-white" for="radioRetiro">Retiro</label>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-check form-check-inline">
-                                <input class="form-check-input custom-radio" type="radio" name="tipoEntrega" id="radioEnvio" value="envio">
-                                <label class="form-check-label text-white" for="radioEnvio">Envío</label>
+                                    <div class="mt-3">
+                                        <button id="continuarButton1"
+                                            class="custom_btn bg_carparts_red text-uppercase special_button w-100 d-block"
+                                            style="max-width:220px;">Continuar</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
-
-                        <div id="mensajeEntrega"  style="font-size: 2rem" class="mt-3 d-inline-block"></div>
-                        <small id="soloNumeros" class="pl-5 d-none">Solo Números</small>
-
-                        <div id="codigoPostalContainer" class="form_item mt-3" style="display: none;">
-                            <span class="input_title">Código Postal<sup>*</sup></span>
-                            <input id="numeroCP" type="text" name="codigoPostal" class="form-control my-3">
-                            <a class="mt-4" href="https://www.correoargentino.com.ar/formularios/cpa" target="_blank"><small style="font-size: 1.4rem">No sé mi Código Postal</small></a>
-                            <div class="mt-2">
-                                <button onclick="testZippin()" id="continuarTipoEntregaButton" class="custom_btn bg_carparts_red text-uppercase special_button w-100 d-block mt-4" style="max-width:220px;">Buscar</button>
-                            </div>
-                        </div>
-
                     </div>
 
-                    <div class="mt-3">
-                        <button id="continuarButtonRetiro"
+                    {{-- 2) TIPO DE ENTREGA --}}
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <h4 class="mb-0">
+                                <button class="collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"
+                                    id="segundoAcordeon" disabled>
+                                    Tipo de entrega
+                                </button>
+                            </h4>
+                        </div>
+
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                            data-bs-parent="#accordionExample">
+                            <div class="card-body">
+                                <div class="form_wrap">
+
+                                    <div class="row g-3">
+                                        <div class="col-lg-6">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input custom-radio" type="radio"
+                                                    name="tipoEntrega" id="radioRetiro" value="retiro">
+                                                <label class="form-check-label text-white" for="radioRetiro">Retiro</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input custom-radio" type="radio"
+                                                    name="tipoEntrega" id="radioEnvio" value="envio">
+                                                <label class="form-check-label text-white" for="radioEnvio">Envío</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div id="mensajeEntrega" style="font-size: 2rem" class="mt-3 d-inline-block"></div>
+                                    <small id="soloNumeros" class="pl-5 d-none">Solo Números</small>
+
+                                    <div id="codigoPostalContainer" class="form_item mt-3" style="display: none;">
+                                        <span class="input_title">Código Postal<sup>*</sup></span>
+                                        <input id="numeroCP" type="text" name="codigoPostal"
+                                            class="form-control my-3">
+                                        <a class="mt-4" href="https://www.correoargentino.com.ar/formularios/cpa"
+                                            target="_blank"><small style="font-size: 1.4rem">No sé mi Código
+                                                Postal</small></a>
+                                        <div class="mt-2">
+                                            <button onclick="testZippin()" id="continuarTipoEntregaButton"
+                                                class="custom_btn bg_carparts_red text-uppercase special_button w-100 d-block mt-4"
+                                                style="max-width:220px;">Buscar</button>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="mt-3">
+                                    <button id="continuarButtonRetiro"
                                         class="custom_btn bg_carparts_red text-uppercase special_button"
                                         style=" max-width: 220px;">Continuar</button>
-                    </div>
-
-                    <div id="radioFields" class="mt-3"></div>
-
-                    <div id="radioFieldsPuntoDeEntrega" class="mt-3">
-                        <div id="mensajePuntoDeEntrega"></div>
-                    </div>
-
-                    <button id="continuarButtonRetiroSucursal"
-                                        class="custom_btn bg_carparts_red text-uppercase special_button"
-                                        style=" max-width: 220px; display:none">Continuar</button>
-
-                    <div id="formAddress" class="card-body px-0" style="display: none">
-                        <div class="form_wrap">
-                        <div class="row g-3">
-                            <div class="col-lg-6">
-                            <div class="form_item">
-                                <label><b>PROVINCIA*</b></label>
-                                <div class="divProvinciaDropdown">
-                                <select name="provincia" id="provinciasDropdown" class="form-control" style="width: 100%; height: 50px; font-size: 14px;">
-                                    <option value="">Seleccione</option>
-                                </select>
-                                </div>
-                            </div>
-                            </div>
-                            <div class="col-lg-6">
-                            <div class="form_item">
-                                <label><b>LOCALIDAD*</b></label>
-                                <input type="text" name="localidad" class="form-control">
-                            </div>
-                            </div>
-                            <div class="col-lg-6">
-                            <div class="form_item">
-                                <label><b>CALLE*</b></label>
-                                <input type="text" name="calle" class="form-control">
-                            </div>
-                            </div>
-                            <div class="col-lg-6">
-                            <div class="form_item">
-                                <label><b>ALTURA*</b></label>
-                                <input type="text" name="altura" class="form-control">
-                            </div>
-                            </div>
-                            <div class="col-lg-12">
-                            <div class="form_item">
-                                <label><b>OBSERVACIONES PARA LA ENTREGA</b></label>
-                                <input type="text" name="comentarios" class="form-control">
-                            </div>
-                            </div>
-                        </div>
-                        </div>
-                        <div class="mt-3">
-                        <button id="continuarButton2" class="custom_btn bg_carparts_red text-uppercase special_button w-100 d-block"
-                                style="max-width:220px;">Continuar</button>
-                        </div>
-                    </div>
-
-                    </div>
-                </div>
-                </div>
-
-                {{-- 3) PAGAR --}}
-                <div class="card">
-                <div class="card-header" id="headingThree">
-                    <h4 class="mb-0">
-                    <button class="collapsed" type="button" aria-expanded="false" aria-controls="collapseThree"
-                            id="tercerAcordeon" disabled>
-                        Pagar
-                    </button>
-                    </h4>
-                </div>
-
-                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                    <section class="cart_section sec_ptb_10 clearfix">
-                        <div class="container">
-                            <div class="row g-4 align-items-start">
-
-                            <div class="col-lg-8">
-                                <div class="cart_table">
-                                <table class="table my-4">
-                                    <thead class="text-uppercase ">
-                                    <tr>
-                                        <th>Producto</th>
-                                        <th class="text-end">Precio</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody></tbody>
-                                </table>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-4 col-md-12">
-                                <div class="cart_summary">
-                                <h3 class="summary_title">Total</h3>
-                                <ul class="summary_list">
-                                    <li><span>Subtotal</span> <span id="subtotalValor">$0</span></li>
-                                    <li><span>Envío</span> <span id="envioValor">$0</span></li>
-                                    <li id="descuentoSpan" style="display:none;"><span>Descuento</span> <span id="descuentoValor">$0</span></li>
-                                    <li class="summary_total"><span>Total</span> <span id="totalValor">$0</span></li>
-                                </ul>
-
-                                <div id="mercadopago_container">
-                                    <div id="wallet_container"></div>
                                 </div>
 
-                                <ul class="ul_li_block clearfix my-4">
-                                    <div>
-                                    <input type="text" id="discount-code" placeholder="Código de Descuento" class="form-control">
+                                <div id="radioFields" class="mt-3"></div>
+
+                                <div id="radioFieldsPuntoDeEntrega" class="mt-3">
+                                    <div id="mensajePuntoDeEntrega"></div>
+                                </div>
+
+                                <button id="continuarButtonRetiroSucursal"
+                                    class="custom_btn bg_carparts_red text-uppercase special_button"
+                                    style=" max-width: 220px; display:none">Continuar</button>
+
+                                <div id="formAddress" class="card-body px-0" style="display: none">
+                                    <div class="form_wrap">
+                                        <div class="row g-3">
+                                            <div class="col-lg-6">
+                                                <div class="form_item">
+                                                    <label><b>PROVINCIA*</b></label>
+                                                    <div class="divProvinciaDropdown">
+                                                        <select name="provincia" id="provinciasDropdown"
+                                                            class="form-control"
+                                                            style="width: 100%; height: 50px; font-size: 14px;">
+                                                            <option value="">Seleccione</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="form_item">
+                                                    <label><b>LOCALIDAD*</b></label>
+                                                    <input type="text" name="localidad" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="form_item">
+                                                    <label><b>CALLE*</b></label>
+                                                    <input type="text" name="calle" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="form_item">
+                                                    <label><b>ALTURA*</b></label>
+                                                    <input type="text" name="altura" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <div class="form_item">
+                                                    <label><b>OBSERVACIONES PARA LA ENTREGA</b></label>
+                                                    <input type="text" name="comentarios" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
-                                </ul>
-
-                                <button id="apply-discount" class="custom_btn bg_success w-100">Aplicar Descuento</button>
+                                    <div class="mt-3">
+                                        <button id="continuarButton2"
+                                            class="custom_btn bg_carparts_red text-uppercase special_button w-100 d-block"
+                                            style="max-width:220px;">Continuar</button>
+                                    </div>
                                 </div>
-                            </div>
 
                             </div>
                         </div>
-                    </section>
-                </div>
-                </div>
+                    </div>
 
-            </div>
+                    {{-- 3) PAGAR --}}
+                    <div class="card">
+                        <div class="card-header" id="headingThree">
+                            <h4 class="mb-0">
+                                <button class="collapsed" type="button" aria-expanded="false"
+                                    aria-controls="collapseThree" id="tercerAcordeon" disabled>
+                                    Pagar
+                                </button>
+                            </h4>
+                        </div>
+
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                            data-bs-parent="#accordionExample">
+                            <section class="cart_section sec_ptb_10 clearfix">
+                                <div class="container">
+                                    <div class="row g-4 align-items-start">
+
+                                        <div class="col-lg-8">
+                                            <div class="cart_table">
+                                                <table class="table my-4">
+                                                    <thead class="text-uppercase ">
+                                                        <tr>
+                                                            <th>Producto</th>
+                                                            <th class="text-end">Precio</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody></tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-12">
+                                            <div class="cart_summary">
+                                                <h3 class="summary_title">Total</h3>
+                                                <ul class="summary_list">
+                                                    <li><span>Subtotal</span> <span id="subtotalValor">$0</span></li>
+                                                    <li><span>Envío</span> <span id="envioValor">$0</span></li>
+                                                    <li id="descuentoSpan" style="display:none;"><span>Descuento</span>
+                                                        <span id="descuentoValor">$0</span></li>
+                                                    <li class="summary_total"><span>Total</span> <span
+                                                            id="totalValor">$0</span></li>
+                                                </ul>
+
+                                                <div id="mercadopago_container">
+                                                    <div id="wallet_container"></div>
+                                                </div>
+
+                                                <ul class="ul_li_block clearfix my-4">
+                                                    <div>
+                                                        <input type="text" id="discount-code"
+                                                            placeholder="Código de Descuento" class="form-control">
+                                                    </div>
+                                                </ul>
+
+                                                <button id="apply-discount" class="custom_btn bg_success w-100">Aplicar
+                                                    Descuento</button>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+
+                </div>
 
             </div>
         </section>
     </section>
-
-
-
 @endsection
 
 @push('scripts')
-
-    
- 
     <script>
         $(document).ready(function() {
             // Mostrar todas las imágenes al cargar la página
@@ -333,7 +348,7 @@
                 alert("Por favor, complete todos los campos del formulario de datos personales.");
             }
 
-            
+
         });
         $('input[name=tipoEntrega]').on('change', function() {
             var selectedValue = $('input[name=tipoEntrega]:checked').val();
@@ -833,7 +848,7 @@
                 radioFieldsDiv.appendChild(row);
 
                 // Evento de cambio
-                radioField.addEventListener('change', function () {
+                radioField.addEventListener('change', function() {
                     logistic_type = result.logistic_type;
                     service_type_code = result.service_type.code;
                     carrier_id = result.carrier.id;
@@ -843,15 +858,16 @@
 
                     if (service_type == "Retiro en Sucursal" && radioField.checked) {
                         var codigoPostal = document.getElementById('numeroCP').value;
-                        $.get('/obtener-provincias/' + codigoPostal, function (data) {
+                        $.get('/obtener-provincias/' + codigoPostal, function(data) {
                             $('#provinciasDropdown').empty().append(
                                 '<option value="">Seleccione una provincia</option>'
                             );
 
                             if (data.length > 0) {
-                                data.forEach(function (provincia) {
+                                data.forEach(function(provincia) {
                                     $('#provinciasDropdown').append('<option value="' +
-                                        provincia.provinceCode + '">' + provincia.provincia + '</option>');
+                                        provincia.provinceCode + '">' + provincia
+                                        .provincia + '</option>');
                                 });
 
                                 $('#provinciasDropdown').val(data[0].provinceCode).change();
@@ -866,15 +882,16 @@
                     } else if (service_type === "Entrega a domicilio" && radioField.checked) {
                         var codigoPostal = document.getElementById('numeroCP').value;
 
-                        $.get('/obtener-provincias/' + codigoPostal, function (data) {
+                        $.get('/obtener-provincias/' + codigoPostal, function(data) {
                             $('#provinciasDropdown').empty().append(
                                 '<option value="">Seleccione una provincia</option>'
                             );
 
                             if (data.length > 0) {
-                                data.forEach(function (provincia) {
+                                data.forEach(function(provincia) {
                                     $('#provinciasDropdown').append('<option value="' +
-                                        provincia.provinceCode + '">' + provincia.provincia + '</option>');
+                                        provincia.provinceCode + '">' + provincia
+                                        .provincia + '</option>');
                                 });
 
                                 $('#provinciasDropdown').val(data[0].provinceCode).change();
@@ -911,51 +928,52 @@
         }
 
         function showPickupPoints(result) {
-  const wrap = document.getElementById('radioFieldsPuntoDeEntrega');
-  wrap.innerHTML = '';
+            const wrap = document.getElementById('radioFieldsPuntoDeEntrega');
+            wrap.innerHTML = '';
 
-  const h3 = document.createElement('h3');
-  h3.textContent = 'Elige tu punto de entrega';
-  wrap.appendChild(h3);
+            const h3 = document.createElement('h3');
+            h3.textContent = 'Elige tu punto de entrega';
+            wrap.appendChild(h3);
 
-  const puntosDeEntrega = result.pickup_points || [];
+            const puntosDeEntrega = result.pickup_points || [];
 
-  puntosDeEntrega.forEach((p, index) => {
-    const point_id = p.point_id;
-    const nombrePunto = p.description;
-    const dir = `${p.location.street} ${p.location.street_number} - ${p.location.city}, ${p.location.state}`;
+            puntosDeEntrega.forEach((p, index) => {
+                const point_id = p.point_id;
+                const nombrePunto = p.description;
+                const dir =
+                    `${p.location.street} ${p.location.street_number} - ${p.location.city}, ${p.location.state}`;
 
-    // contenedor bootstrap
-    const formCheck = document.createElement('div');
-    formCheck.className = 'form-check my-4';
+                // contenedor bootstrap
+                const formCheck = document.createElement('div');
+                formCheck.className = 'form-check my-4';
 
-    // input RADIO **NATIVO** (solo form-check-input)
-    const input = document.createElement('input');
-    input.type = 'radio';
-    input.name = 'punto';
-    input.value = point_id;
-    input.id = `punto_${index}`;
-    input.className = 'form-check-input'; // <- nada de custom-radio
+                // input RADIO **NATIVO** (solo form-check-input)
+                const input = document.createElement('input');
+                input.type = 'radio';
+                input.name = 'punto';
+                input.value = point_id;
+                input.id = `punto_${index}`;
+                input.className = 'form-check-input'; // <- nada de custom-radio
 
-    // label bootstrap
-    const label = document.createElement('label');
-    label.className = 'form-check-label text-white';
-    label.htmlFor = input.id;
-    label.textContent = ` ${nombrePunto} → ${dir}`;
+                // label bootstrap
+                const label = document.createElement('label');
+                label.className = 'form-check-label text-white';
+                label.htmlFor = input.id;
+                label.textContent = ` ${nombrePunto} → ${dir}`;
 
-    formCheck.appendChild(input);
-    formCheck.appendChild(label);
-    wrap.appendChild(formCheck);
+                formCheck.appendChild(input);
+                formCheck.appendChild(label);
+                wrap.appendChild(formCheck);
 
-    // (opcional) preseleccionar el primero
-    if (index === 0) input.checked = true;
+                // (opcional) preseleccionar el primero
+                
 
-    input.addEventListener('change', function () {
-      point_id_selected = point_id;
-      $('#continuarButtonRetiroSucursal').show();
-    });
-  });
-}
+                input.addEventListener('change', function() {
+                    point_id_selected = point_id;
+                    $('#continuarButtonRetiroSucursal').show();
+                });
+            });
+        }
 
 
         function hidePickupPoints() {
@@ -1043,7 +1061,8 @@
                     }
 
                     let titulo = container.querySelector('.item_title')?.textContent.trim() || "";
-                    let nombreImagenPNG = container.querySelector('.item_nombre_imagen')?.textContent.trim() || "";
+                    let nombreImagenPNG = container.querySelector('.item_nombre_imagen')?.textContent
+                    .trim() || "";
                     let idDrive = container.querySelector('.item_id_drive')?.textContent.trim() || "";
                     let itemMarca = container.querySelector('.item_marca')?.textContent.trim() || "";
                     let itemModelo = item.textContent.trim();
@@ -1185,131 +1204,138 @@
     </script>
 @endpush
 @push('head')
+    <style>
+        .cart_product .item_image img {
+            height: 100px;
+            width: auto;
+            object-fit: contain;
+            /* evita deformaciones */
+            display: block;
+            margin: 0 auto;
+            /* centra horizontalmente */
+        }
 
-<style>
+        /* radios custom visibles en fondo oscuro */
+        .checkout-scope .custom-radio {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            margin-right: 8px;
+            display: inline-block;
+            position: relative;
+            cursor: pointer;
+            background-color: transparent;
+            vertical-align: middle;
+            transition: all 0.2s ease-in-out;
+        }
 
-.cart_product .item_image img {
-  height: 100px;
-  width: auto;
-  object-fit: contain; /* evita deformaciones */
-  display: block;
-  margin: 0 auto; /* centra horizontalmente */
-}
-  /* radios custom visibles en fondo oscuro */
-.checkout-scope .custom-radio {
-  appearance: none;
-  -webkit-appearance: none;
-  width: 20px;
-  height: 20px;
-  border: 2px solid #fff;
-  border-radius: 50%;
-  margin-right: 8px;
-  display: inline-block;
-  position: relative;
-  cursor: pointer;
-  background-color: transparent;
-  vertical-align: middle;
-  transition: all 0.2s ease-in-out;
-}
+        .checkout-scope .custom-radio:checked {
+            border-color: #b321a6;
+            background-color: #b321a6;
+        }
 
-.checkout-scope .custom-radio:checked {
-  border-color: #b321a6;
-  background-color: #b321a6;
-}
+        .checkout-scope .custom-radio:checked::after {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: white;
+        }
 
-.checkout-scope .custom-radio:checked::after {
-  content: '';
-  position: absolute;
-  top: 4px;
-  left: 4px;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: white;
-}
+        .checkout-scope .form-check-label {
+            color: #fff;
+            font-weight: 600;
+            font-size: 1.4rem;
+            cursor: pointer;
+        }
 
-.checkout-scope .form-check-label {
-  color: #fff;
-  font-weight: 600;
-  font-size: 1.4rem;
-  cursor: pointer;
-}
-/* Contenedor principal: opciones en columna */
-.checkout-scope #radioFields {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
+        /* Contenedor principal: opciones en columna */
+        .checkout-scope #radioFields {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
 
-/* Cada opción en una fila horizontal */
-.checkout-scope #radioFields .carrier-row {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  color: #fff; /* Cambia a #333 si fondo claro */
-}
+        /* Cada opción en una fila horizontal */
+        .checkout-scope #radioFields .carrier-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            color: #fff;
+            /* Cambia a #333 si fondo claro */
+        }
 
-/* Precio alineado a la derecha, sin irse al borde */
-.checkout-scope #radioFields .carrier-price {
-  
-  font-weight: 700;
-  white-space: nowrap;
-}
+        /* Precio alineado a la derecha, sin irse al borde */
+        .checkout-scope #radioFields .carrier-price {
 
-/* Labels sin márgenes extra */
-.checkout-scope #radioFields label {
-  margin: 0;
-  white-space: nowrap;
-  font-weight: 500;
-}
+            font-weight: 700;
+            white-space: nowrap;
+        }
 
-/* Radio alineado */
-.checkout-scope #radioFields .carrier-radio {
-  margin: 0;
-}
+        /* Labels sin márgenes extra */
+        .checkout-scope #radioFields label {
+            margin: 0;
+            white-space: nowrap;
+            font-weight: 500;
+        }
 
-/* Por si quedan <br> sueltos del código previo */
-.checkout-scope #radioFields br {
-  display: none;
-}
+        /* Radio alineado */
+        .checkout-scope #radioFields .carrier-radio {
+            margin: 0;
+        }
 
-/* Caja del select */
-.nice-select {
-  background-color: #1a1a1a !important; /* fondo oscuro */
-  color: #fff !important;               /* texto blanco */
-  border: 1px solid #666 !important;
-  border-radius: 4px;
-  height: 40px;
-  line-height: 38px;
-  padding-right: 30px; /* espacio para la flecha */
-}
+        /* Por si quedan <br> sueltos del código previo */
+        .checkout-scope #radioFields br {
+            display: none;
+        }
 
-/* Flechita blanca */
-.nice-select::after {
-  border-bottom: 2px solid #fff !important;
-  border-right: 2px solid #fff !important;
-  right: 12px;               /* ajusta la posición horizontal */
-  width: 7px;
-  height: 7px;
-}
+        /* Caja del select */
+        .nice-select {
+            background-color: #1a1a1a !important;
+            /* fondo oscuro */
+            color: #fff !important;
+            /* texto blanco */
+            border: 1px solid #666 !important;
+            border-radius: 4px;
+            height: 40px;
+            line-height: 38px;
+            padding-right: 30px;
+            /* espacio para la flecha */
+        }
 
-/* Cuando el select está abierto (rotar flecha) */
-.nice-select.open::after {
-  transform: rotate(-135deg);
-}
+        /* Flechita blanca */
+        .nice-select::after {
+            border-bottom: 2px solid #fff !important;
+            border-right: 2px solid #fff !important;
+            right: 12px;
+            /* ajusta la posición horizontal */
+            width: 7px;
+            height: 7px;
+        }
 
-/* Lista desplegable */
-.nice-select .list {
-  background-color: #1a1a1a !important;
-  color: #fff !important;
-  border: 1px solid #666 !important;
-}
+        /* Cuando el select está abierto (rotar flecha) */
+        .nice-select.open::after {
+            transform: rotate(-135deg);
+        }
 
-/* Hover sobre opciones */
-.nice-select .option:hover {
-  background-color: #333 !important;
-  color: #fff !important;
-}
+        /* Lista desplegable */
+        .nice-select .list {
+            background-color: #1a1a1a !important;
+            color: #fff !important;
+            border: 1px solid #666 !important;
+        }
+
+        /* Hover sobre opciones */
+        .nice-select .option:hover {
+            background-color: #333 !important;
+            color: #fff !important;
+        }
 
 
 
@@ -1318,67 +1344,212 @@
 
 
 
-/* ====== SCOPE CHECKOUT ====== */
-.checkout-scope { color:#fff; min-height:60vh; }
+        /* ====== SCOPE CHECKOUT ====== */
+        .checkout-scope {
+            color: #fff;
+            min-height: 60vh;
+        }
 
-/* cards del acordeón */
-.checkout-scope .card { background:#1b1b1b; border:1px solid #2a2a2a; border-radius:12px; overflow:hidden; }
-.checkout-scope .card + .card { margin-top:16px; }
-.checkout-scope .card-header { background:#222; border-bottom:1px solid #2a2a2a; padding:12px 16px; }
-.checkout-scope .card-header h4 { margin:0; }
-.checkout-scope .card-header button {
-  background:transparent; border:0; color:#fff; font-weight:800; letter-spacing:.02em; font-size:1.6rem;
-}
-.checkout-scope .card-header button[disabled] { opacity:.5; cursor:not-allowed; }
+        /* cards del acordeón */
+        .checkout-scope .card {
+            background: #1b1b1b;
+            border: 1px solid #2a2a2a;
+            border-radius: 12px;
+            overflow: hidden;
+        }
 
-.checkout-scope .card-body { padding:16px; }
+        .checkout-scope .card+.card {
+            margin-top: 16px;
+        }
 
-/* inputs y labels */
-.checkout-scope .input_title,
-.checkout-scope label { font-weight:700; font-size:1.3rem; display:block; margin-bottom:6px; }
-.checkout-scope .form-control {
-  background:#141414; border:1px solid #2a2a2a; color:#fff;
-}
-.checkout-scope .form-control:focus { border-color:#b321a6; box-shadow:none; }
+        .checkout-scope .card-header {
+            background: #222;
+            border-bottom: 1px solid #2a2a2a;
+            padding: 12px 16px;
+        }
 
-/* botones principales */
-.checkout-scope .custom_btn { border-radius:10px; }
-.checkout-scope .special_button { font-weight:700; letter-spacing:.02em; }
+        .checkout-scope .card-header h4 {
+            margin: 0;
+        }
 
-/* resumen de pago / lado derecho */
-.checkout-scope .cart_summary{
-  background:#1f1f1f; border:1px solid #2a2a2a; border-radius:14px; padding:18px; position:sticky; top:24px;
-}
-.checkout-scope .summary_title{ margin:0 0 12px 0; font-size:1.8rem; font-weight:800; }
-.checkout-scope .summary_list{ list-style:none; margin:0 0 16px 0; padding:0; }
-.checkout-scope .summary_list li{
-  display:flex; justify-content:space-between; align-items:center; padding:10px 0; border-bottom:1px solid #2a2a2a; font-size:1.5rem;
-}
-.checkout-scope .summary_list li:last-child{ border-bottom:none; }
-.checkout-scope .summary_list .summary_total{ font-size:1.7rem; font-weight:800; }
+        .checkout-scope .card-header button {
+            background: transparent;
+            border: 0;
+            color: #fff;
+            font-weight: 800;
+            letter-spacing: .02em;
+            font-size: 1.6rem;
+        }
 
-/* tabla de pagar */
-.checkout-scope .cart_table thead tr{ background:#ededed; }
-.checkout-scope .cart_table thead th{ color:#111; text-transform:uppercase; font-weight:800; letter-spacing:.03em; padding:14px 16px; border:none; }
-.checkout-scope .cart_table tbody td{ vertical-align:middle; border-top:1px solid #2a2a2a; padding:16px; }
-.checkout-scope .cart_product{ display:flex; gap:14px; align-items:center; position:relative; }
-.checkout-scope .cart_product .item_image{ width:100px; min-width:90px; height:auto; border-radius:10px; overflow:hidden; border:1px solid #2a2a2a; }
-.checkout-scope .cart_product .item_image img{ width:100%; height:100%; object-fit:cover; display:block; }
-.checkout-scope .cart_product .item_title{ font-size:1.5rem; margin:0 0 6px 0; font-weight:700; }
-.checkout-scope .cart_product .item_type{ display:block; opacity:.8; font-size:1.2rem; }
-.checkout-scope .item_price{ display:inline-block; font-size:1.9rem; font-weight:700; }
-.checkout-scope .remove_btn{ position:absolute; top:6px; right:6px; background:transparent; border:0; color:#bbb; }
-.checkout-scope .remove_btn:hover{ color:#fff; }
+        .checkout-scope .card-header button[disabled] {
+            opacity: .5;
+            cursor: not-allowed;
+        }
 
-/* radios de entrega */
-.checkout-scope .form-check-input{ margin-top:0; }
+        .checkout-scope .card-body {
+            padding: 16px;
+        }
 
-/* pequeños ajustes */
-.checkout-scope .g-3>[class^="col-"], .checkout-scope .g-4>[class^="col-"] { padding-top:.5rem; }
+        /* inputs y labels */
+        .checkout-scope .input_title,
+        .checkout-scope label {
+            font-weight: 700;
+            font-size: 1.3rem;
+            display: block;
+            margin-bottom: 6px;
+        }
 
-/* Responsivo */
-@media (max-width: 991.98px){
-  .checkout-scope .cart_summary{ position:static; }
-}
-</style>
+        .checkout-scope .form-control {
+            background: #141414;
+            border: 1px solid #2a2a2a;
+            color: #fff;
+        }
+
+        .checkout-scope .form-control:focus {
+            border-color: #b321a6;
+            box-shadow: none;
+        }
+
+        /* botones principales */
+        .checkout-scope .custom_btn {
+            border-radius: 10px;
+        }
+
+        .checkout-scope .special_button {
+            font-weight: 700;
+            letter-spacing: .02em;
+        }
+
+        /* resumen de pago / lado derecho */
+        .checkout-scope .cart_summary {
+            background: #1f1f1f;
+            border: 1px solid #2a2a2a;
+            border-radius: 14px;
+            padding: 18px;
+            position: sticky;
+            top: 24px;
+        }
+
+        .checkout-scope .summary_title {
+            margin: 0 0 12px 0;
+            font-size: 1.8rem;
+            font-weight: 800;
+        }
+
+        .checkout-scope .summary_list {
+            list-style: none;
+            margin: 0 0 16px 0;
+            padding: 0;
+        }
+
+        .checkout-scope .summary_list li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #2a2a2a;
+            font-size: 1.5rem;
+        }
+
+        .checkout-scope .summary_list li:last-child {
+            border-bottom: none;
+        }
+
+        .checkout-scope .summary_list .summary_total {
+            font-size: 1.7rem;
+            font-weight: 800;
+        }
+
+        /* tabla de pagar */
+        .checkout-scope .cart_table thead tr {
+            background: #ededed;
+        }
+
+        .checkout-scope .cart_table thead th {
+            color: #111;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: .03em;
+            padding: 14px 16px;
+            border: none;
+        }
+
+        .checkout-scope .cart_table tbody td {
+            vertical-align: middle;
+            border-top: 1px solid #2a2a2a;
+            padding: 16px;
+        }
+
+        .checkout-scope .cart_product {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+            position: relative;
+        }
+
+        .checkout-scope .cart_product .item_image {
+            width: 100px;
+            min-width: 90px;
+            height: auto;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #2a2a2a;
+        }
+
+        .checkout-scope .cart_product .item_image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .checkout-scope .cart_product .item_title {
+            font-size: 1.5rem;
+            margin: 0 0 6px 0;
+            font-weight: 700;
+        }
+
+        .checkout-scope .cart_product .item_type {
+            display: block;
+            opacity: .8;
+            font-size: 1.2rem;
+        }
+
+        .checkout-scope .item_price {
+            display: inline-block;
+            font-size: 1.9rem;
+            font-weight: 700;
+        }
+
+        .checkout-scope .remove_btn {
+            position: absolute;
+            top: 6px;
+            right: 6px;
+            background: transparent;
+            border: 0;
+            color: #bbb;
+        }
+
+        .checkout-scope .remove_btn:hover {
+            color: #fff;
+        }
+
+        /* radios de entrega */
+        .checkout-scope .form-check-input {
+            margin-top: 0;
+        }
+
+        /* pequeños ajustes */
+        .checkout-scope .g-3>[class^="col-"],
+        .checkout-scope .g-4>[class^="col-"] {
+            padding-top: .5rem;
+        }
+
+        /* Responsivo */
+        @media (max-width: 991.98px) {
+            .checkout-scope .cart_summary {
+                position: static;
+            }
+        }
+    </style>
 @endpush

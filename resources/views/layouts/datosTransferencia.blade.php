@@ -156,7 +156,7 @@
 							 <strong>CVU:</strong>0000003100040255388469<br>
 							 <strong>Alias:</strong> makenafundas.mp <br>
 							 <strong>Banco:</strong> Mercado Pago <br>
-							 <strong>CUIT:</strong> 27-95821492-3<br>
+							 <strong>CUIT:</strong> 20-33571432-7<br>
 							 <strong>Monto: </strong><span class="monto">${{ number_format($orden->total, 0, ',', '.') }}</span>
 
 						</p>
