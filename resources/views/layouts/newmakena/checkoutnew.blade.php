@@ -230,7 +230,8 @@
                                                     <li><span>Subtotal</span> <span id="subtotalValor">$0</span></li>
                                                     <li><span>Envío</span> <span id="envioValor">$0</span></li>
                                                     <li id="descuentoSpan" style="display:none;"><span>Descuento</span>
-                                                        <span id="descuentoValor">$0</span></li>
+                                                        <span id="descuentoValor">$0</span>
+                                                    </li>
                                                     <li class="summary_total"><span>Total</span> <span
                                                             id="totalValor">$0</span></li>
                                                 </ul>
@@ -966,7 +967,7 @@
                 wrap.appendChild(formCheck);
 
                 // (opcional) preseleccionar el primero
-                
+
 
                 input.addEventListener('change', function() {
                     point_id_selected = point_id;
@@ -1062,7 +1063,7 @@
 
                     let titulo = container.querySelector('.item_title')?.textContent.trim() || "";
                     let nombreImagenPNG = container.querySelector('.item_nombre_imagen')?.textContent
-                    .trim() || "";
+                        .trim() || "";
                     let idDrive = container.querySelector('.item_id_drive')?.textContent.trim() || "";
                     let itemMarca = container.querySelector('.item_marca')?.textContent.trim() || "";
                     let itemModelo = item.textContent.trim();
@@ -1549,6 +1550,90 @@
         @media (max-width: 991.98px) {
             .checkout-scope .cart_summary {
                 position: static;
+                margin-top: 2rem;
+            }
+
+            .checkout-scope .checkout_section.sec_ptb_140 {
+                padding-top: 40px;
+                padding-bottom: 40px;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+
+            /* Transformar tabla en tarjetas para móvil */
+            .checkout-scope .cart_table thead {
+                display: none;
+            }
+
+            .checkout-scope .cart_table tbody tr {
+                display: block;
+                padding: 1.5rem;
+                border: 1px solid #2a2a2a;
+                border-radius: 12px;
+                margin-bottom: 1rem;
+                background: #1a1a1a;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            }
+
+            .checkout-scope .cart_table tbody td {
+                display: block;
+                width: 100%;
+                border: none;
+                padding: 0.5rem 0;
+            }
+
+            .checkout-scope .cart_table tbody td:last-child {
+                text-align: right !important;
+                border-top: 1px solid rgba(255, 255, 255, 0.05);
+                margin-top: 0.5rem;
+                padding-top: 1rem;
+            }
+
+            .checkout-scope .cart_product {
+                gap: 15px;
+            }
+
+            .checkout-scope .cart_product .item_image {
+                width: 75px;
+                min-width: 75px;
+            }
+
+            .checkout-scope .cart_product .item_title {
+                font-size: 1.4rem;
+                color: #fff;
+            }
+
+            .checkout-scope .item_price {
+                font-size: 2.2rem !important;
+                color: #b321a6;
+                font-weight: 800;
+            }
+
+            /* Ajustes de espaciado general */
+            .checkout-scope .card-header button {
+                padding: 1.5rem 1rem;
+                width: 100%;
+                text-align: left;
+                font-size: 1.4rem;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .checkout-scope .special_button {
+                max-width: 100% !important;
+                padding: 15px !important;
+            }
+
+            .checkout-scope .container {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            .checkout-scope .summary_list li {
+                font-size: 1.4rem;
+                padding: 12px 0;
             }
         }
     </style>
