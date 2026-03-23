@@ -29,6 +29,9 @@ Route::get('/catalogo/{slug}', [CatalogueController::class, 'show'])->name('cata
 Route::get('/catalogocuadros', [CatalogueController::class, 'catalogoCuadros'])->name('catalogoCuadros');
 Route::get('/catalogocuadros/{slug}', [CatalogueController::class, 'showCuadro'])->name('catalogo.showCuadro');
 
+Route::get('/catalogoremeras', [CatalogueController::class, 'catalogoRemeras'])->name('catalogoRemeras');
+Route::get('/catalogoremeras/{slug}', [CatalogueController::class, 'showRemera'])->name('catalogo.showRemera');
+
 Route::get('/catalogo-duo', [CatalogueController::class, 'catalogoDuo'])->name('catalogoDuo');
 
 Route::get('/tufunda', [TuFundaController::class, 'tufunda'])->name('tufunda');

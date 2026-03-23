@@ -189,4 +189,49 @@ class CatalogueController extends Controller
         // Pasar los datos a la vista
         return view('layouts.newmakena.catalogocuadros', compact('imagesCatalogo', 'totalImagesCatalogo', 'cuadrosActivos', 'precioCuadroBasic', 'precioCuadroStandard', 'precioCuadroEpic'));
     }
+    public function catalogoRemeras(Request $request){
+
+        
+        // Obtener el parámetro de categoría de la solicitud
+        $categoria = $request->query('categoria');
+    
+        // Consulta inicial sin filtrar por categoría
+        $query = CatalogueCuadro::query();
+        
+    
+        // Si se especifica una categoría, filtrar por esa categoría
+        if($categoria) {
+            $query->where('file_name', 'like', $categoria . '%');
+        }
+    
+        // Ordenar por ID descendente (más alto primero)
+        $query->orderBy('id', 'desc');
+    
+        // Paginar los resultados
+        $imagesCatalogo = $query->paginate(12);
+        $totalImagesCatalogo = $imagesCatalogo->total();
+
+        
+        
+        
+        $Productos = Precio::all();
+        $cuadrosActivos = Precio::where('activo', 1)
+                        ->where('esCuadro', 1)
+                        ->get();
+
+        $precioCuadroBasic = $cuadrosActivos->where('producto', 'cuadro-basic')->first()->precio ?? null;
+        $precioCuadroStandard = $cuadrosActivos->where('producto', 'cuadro-standard')->first()->precio ?? null;
+        $precioCuadroEpic = $cuadrosActivos->where('producto', 'cuadro-epic')->first()->precio ?? null;
+       
+
+        // Consulta inicial sin filtrar por categoría
+        
+        
+       
+    
+        
+    
+        // Pasar los datos a la vista
+        return view('layouts.newmakena.catalogoremeras', compact('imagesCatalogo', 'totalImagesCatalogo', 'cuadrosActivos', 'precioCuadroBasic', 'precioCuadroStandard', 'precioCuadroEpic'));
+    }
 }
