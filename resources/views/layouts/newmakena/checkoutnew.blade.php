@@ -427,25 +427,44 @@
                     const itemPrice = cartItem.price; // Precio individual del producto
                     subtotal += itemPrice; // Sumamos el precio individual al subtotal total
 
+                    let tipoProducto;
+                    if (cartItem.tipo) {
+                        tipoProducto = cartItem.tipo;
+                    } else if (cartItem.marca2) {
+                        tipoProducto = 'Funda Doble';
+                    } else if (cartItem.talle) {
+                        tipoProducto = 'Remera';
+                    } else if (cartItem.name && typeof cartItem.name === 'string' && cartItem.name
+                        .toLowerCase().includes('cuadro')) {
+                        tipoProducto = 'Cuadro';
+                    } else {
+                        tipoProducto = 'Funda';
+                    }
+
+                    // Detalle adicional según tipo
+                    let detalle = '';
+                    if (cartItem.talle) detalle = `Talle: ${cartItem.talle}`;
+                    else if (cartItem.tamaño) detalle =
+                        `${cartItem.tamaño}${cartItem.colgante ? ' / ' + cartItem.colgante : ''}`;
+                    else if (cartItem.marca) detalle = `${cartItem.marca} ${cartItem.modelo || ''}`;
+                    if (cartItem.marca2) detalle += ` | ${cartItem.marca2} ${cartItem.modelo2 || ''}`;
+
                     const cartItemHTML = `
 							<tr>
 								<td>
-									<div class="cart_product">
-										<div class="item_image">
-											<img src="${cartItem.image}" alt="Funda en carrito ${cartItem.name}">
+									<div class="cart_product" style="display:flex; align-items:center;">
+										<div class="item_image" style="width:70px; margin-right:15px;">
+											<img src="${cartItem.image}" alt="${tipoProducto} ${cartItem.name}" style="width:100%; border-radius:4px;">
 										</div>
 										<div class="item_content">
-											<h4 class="item_title">${cartItem.name}</h4>
-											<span class= "item_marca">${cartItem.marca || cartItem.tamaño}</span>
-											<span class="item_type">${cartItem.modelo || cartItem.colgante}</span>
-											${cartItem.marca2 ? `<span class="item_marca2">${cartItem.marca2}</span>` : ``}
-											${cartItem.marca2 ? `<span class="item_type2">${cartItem.modelo2}</span>` : ``}
-											<span style="display: none" class="item_nombre_imagen">${cartItem.uniqueName}</span>
-											<span style="display: none" class="item_id_drive">${cartItem.idDrive}</span>
+                                            <h4 class="item_title" style="margin:2px 0;">${cartItem.name}</h4>
+											${detalle ? `<div style="font-size:15px; margin-bottom:2px;">${detalle}</div>` : ''}
+											<span style="display: none" class="item_nombre_imagen">${cartItem.uniqueName || ''}</span>
+											<span style="display: none" class="item_id_drive">${cartItem.idDrive || ''}</span>
 										</div>
 									</div>
 								</td>
-								<td><span class="item_price" style="font-size: 30px; ">$${itemPrice.toFixed(2)}</span></td> 
+								<td><span class="item_price" style="font-size: 30px; ">$${itemPrice.toLocaleString('es-CL')}</span></td> 
 							</tr>
 						`;
                     cartTableBody.append(cartItemHTML);

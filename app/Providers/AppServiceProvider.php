@@ -9,6 +9,8 @@ use App\Observers\ImageObserver;
 use App\Models\Duo;
 use App\Observers\ImageCuadroObserver;
 use App\Observers\ImageDuoObserver;
+use App\Models\CatalogueRemera;
+use App\Observers\ImageRemeraObserver;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -28,5 +30,6 @@ class AppServiceProvider extends ServiceProvider
         Catalogue::observe(ImageObserver::class);
         Duo::observe(ImageDuoObserver::class);
         CatalogueCuadro::observe(ImageCuadroObserver::class);
+        CatalogueRemera::observe(ImageRemeraObserver::class);
     }
 }

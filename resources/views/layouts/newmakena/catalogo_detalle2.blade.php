@@ -43,57 +43,66 @@
                     <div class="tf-card-box tf-card-box-funda  style-5 mb-0">
                         <div class="card-media p-5">
                             <a href="#">
-                                <img id="imagenDinamico" src="{{ Voyager::image($item->image) }}" alt="Funda de {{ $item->diseno }} modelo {{ $item->modeloCEO }}" class="img-fluid my-4" width="280" height="auto" />
+                                <img id="imagenDinamico" src="{{ Voyager::image($item->image) }}"
+                                    alt="Funda de {{ $item->diseno }} modelo {{ $item->modeloCEO }}" class="img-fluid my-4"
+                                    width="280" height="auto" />
                             </a>
                         </div>
-                        
+
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div data-wow-delay="0s" class="wow fadeInRight infor-product">
-                        
-                        
+
+
                         <h2 id="product-title" class="item_title">Funda de {{ $item->diseno }} {{ $item->file_name }}</h2>
                         <h3><span style="color: #b321a6">{{ $item->categoria }}</span></h3>
-                        
+
                         <div data-wow-delay="0s" class="wow fadeInRight product-item time-sales mt-20">
-                            
+
                             <div class="content">
                                 <div id="product-price" class="text">Precio</div>
                                 <div class="flex justify-between">
                                     <p id="item_price" class="item_price">{{ $precioFunda }} </p>
-                                    <a href="#" data-bs-toggle="modal" data-bs-target="#addToCartModal" class="tf-button style-1 h50 w216"><i class="fas fa-shopping-cart"></i>Seleccioná tu modelo</i></a>
+                                    <a href="#" data-bs-toggle="modal" data-bs-target="#addToCartModal"
+                                        class="tf-button style-1 h50 w216"><i class="fas fa-shopping-cart"></i>Seleccioná tu
+                                        modelo</i></a>
                                 </div>
                             </div>
                         </div>
                         <div class="container_cuotas pt-4">
 
                             <h6>2 cuotas <span style="color: #b321a6; font-weight: bold">SIN</span> interés llevando <span
-                                style="color: #b321a6; font-weight: bold">1</span> funda de cualquier modelo</h6><br>
+                                    style="color: #b321a6; font-weight: bold">1</span> funda de cualquier modelo</h6><br>
                             <h6>3 cuotas <span style="color: #b321a6; font-weight: bold">SIN</span> interés llevando <span
-                                style="color: #b321a6; font-weight: bold">2 o MÁS</span></h6><br>
+                                    style="color: #b321a6; font-weight: bold">2 o MÁS</span></h6><br>
                         </div>
-                                
+
                         <div class="meta mb-20 mt-5">
                             <div class="meta-item view">
-                                Diseño único y resistente&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Impresión HD Ultra Brillante&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Bordes Anti-Slip&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Ajuste exacto para cada modelo&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Botones suaves con cortes perfectos
-                                    
+                                Diseño único y resistente&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Impresión HD Ultra
+                                Brillante&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Bordes
+                                Anti-Slip&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Ajuste exacto para cada
+                                modelo&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Botones suaves con cortes perfectos
+
                             </div>
-                            
-                            
+
+
                         </div>
                     </div>
 
-                    
+
 
                     <div class="mt-5">
 
                         <h6>Envíos a todo el país</h6><br>
-                        <a href="/calcula-envio" target="_blank" ><h6>🚚 Cotizá tu envío acá</h6></a>
+                        <a href="/calcula-envio" target="_blank">
+                            <h6>🚚 Cotizá tu envío acá</h6>
+                        </a>
                     </div>
 
-                    
-                    
+
+
                 </div>
             </div>
         </div>
@@ -129,7 +138,7 @@
             }
 
             function productoAgregadoAlCarrito() {
-            // Mostrar SweetAlert2 en la esquina superior derecha que desaparece después de 1 segundo
+                // Mostrar SweetAlert2 en la esquina superior derecha que desaparece después de 1 segundo
                 Swal.fire({
                     icon: 'success',
                     title: 'Producto agregado al carrito',
@@ -164,7 +173,7 @@
                 totalElement.textContent = `$${total.toFixed(2)}`;
             }
 
-            let price, itemName, imageUrl; 
+            let price, itemName, imageUrl;
 
             /* function addToCart(productItem) {
                 const price = parseFloat(productItem.querySelector('.item_price').textContent.replace('$', ''));
@@ -193,12 +202,16 @@
             } */
             function addToCart(productItem) {
                 console.log("Entró a addToCart()");
-                
+
                 itemName = document.getElementById('product-title').textContent.trim();
                 price = parseFloat(document.getElementById('item_price').textContent.replace('$', '').trim());
                 imageUrl = document.getElementById('imagenDinamico').getAttribute('src');
 
-                console.log({ itemName, price, imageUrl }); // <-- verifica que llegan los valores
+                console.log({
+                    itemName,
+                    price,
+                    imageUrl
+                }); // <-- verifica que llegan los valores
 
                 $('#addToCartModal').modal('show');
             }
@@ -209,7 +222,8 @@
                 const selectedModelo = document.getElementById('modelosDropdown').value;
 
                 itemName = document.getElementById('product-title').textContent.trim();
-                price = parseFloat(document.getElementById('item_price').textContent.replace('$', '').trim());
+                price = parseFloat(document.getElementById('item_price').textContent.replace('$', '')
+                    .trim());
                 imageUrl = document.getElementById('imagenDinamico').getAttribute('src');
 
                 // Verificar si se ha seleccionado un modelo
@@ -219,7 +233,8 @@
                         price: price,
                         image: imageUrl,
                         marca: selectedMarca,
-                        modelo: selectedModelo
+                        modelo: selectedModelo,
+                        tipo: 'Funda'
                     };
 
                     // Agregar el artículo al carrito
@@ -246,35 +261,48 @@
                 cartItemsList.innerHTML = '';
 
                 cartItems.forEach(cartItem => {
-                let tipoProducto = 'Funda';
+                    let tipoProducto;
+                    if (cartItem.tipo) {
+                        tipoProducto = cartItem.tipo;
+                    } else if (cartItem.marca2) {
+                        tipoProducto = 'Funda Doble';
+                    } else if (cartItem.talle) {
+                        tipoProducto = 'Remera';
+                    } else if (cartItem.name && typeof cartItem.name === 'string' && cartItem.name
+                        .toLowerCase().includes('cuadro')) {
+                        tipoProducto = 'Cuadro';
+                    } else {
+                        tipoProducto = 'Funda';
+                    }
 
-                if (cartItem.marca2) {
-                tipoProducto = 'Funda Doble';
-                } else if (cartItem.name.toLowerCase().includes('cuadro')) {
-                tipoProducto = 'Cuadro';
-                }
+                    // Detalle adicional según tipo
+                    let detalle = '';
+                    if (cartItem.talle) detalle = `Talle: ${cartItem.talle}`;
+                    else if (cartItem.tamaño) detalle =
+                        `${cartItem.tamaño}${cartItem.colgante ? ' / ' + cartItem.colgante : ''}`;
+                    else if (cartItem.marca) detalle = `${cartItem.marca} ${cartItem.modelo || ''}`;
+                    if (cartItem.marca2) detalle += ` | ${cartItem.marca2} ${cartItem.modelo2 || ''}`;
 
-                const cartItemHTML = `
-                    <li style="background:transparent; margin-bottom:32px; padding:0; display:flex; align-items:center;">
-                    <div style="background:#fff; border-radius:18px; padding:12px; display:flex; align-items:center; width:70px; min-width:30px; justify-content:center;">
-                        <img src="${cartItem.image}" alt="${tipoProducto} ${cartItem.name}" style="width:100%; border-radius:4px; display:block;"/>
-                    </div>
-                    <div class="item_content" style="color:#fff; margin-left:18px; position:relative; flex:1;">
-                        <div style="padding-right:32px;">
-                        <span class="item_type" style="font-size:13px;">${tipoProducto}</span>
-                        <div style="font-weight:700; font-size:18px; margin:2px 0;"><span class="item_title">${cartItem.name}</span></div>
-                        <div style="font-size:15px; margin-bottom:2px;">${cartItem.marca || ''} ${cartItem.modelo || ''}</div>
-                        ${cartItem.marca2 ? `<div style="font-size:15px;">${cartItem.marca2} ${cartItem.modelo2}</div>` : ''}
-                        <div style="font-weight:700; font-size:17px; margin-top:6px;"><span class="item_price">$${cartItem.price.toLocaleString('es-CL')}</span></div>
+                    const cartItemHTML = `
+                        <li style="background:transparent; margin-bottom:32px; padding:0; display:flex; align-items:center;">
+                        <div style="background:#fff; border-radius:18px; padding:12px; display:flex; align-items:center; width:70px; min-width:30px; justify-content:center;">
+                            <img src="${cartItem.image}" alt="${tipoProducto} ${cartItem.name}" style="width:100%; border-radius:4px; display:block;"/>
                         </div>
-                    </div>
-                    <button type="button" class="remove_btn" style="background:none; border:none; color:#fff; font-size:2rem;">
-                        <i class="bi bi-trash"></i>
-                    </button>
-                    </li>
-                `;
+                        <div class="item_content" style="color:#fff; margin-left:18px; position:relative; flex:1;">
+                            <div style="padding-right:32px;">
+                             
+                            <div style="font-weight:700; font-size:18px; margin:2px 0;"><span class="item_title">${cartItem.name}</span></div>
+                            ${detalle ? `<div style="font-size:15px; margin-bottom:2px;">${detalle}</div>` : ''}
+                            <div style="font-weight:700; font-size:17px; margin-top:6px;"><span class="item_price">$${cartItem.price ? Number(cartItem.price).toLocaleString('es-CL') : '0'}</span></div>
+                            </div>
+                        </div>
+                        <button type="button" class="remove_btn" style="background:none; border:none; color:#fff; font-size:2rem;">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                        </li>
+                    `;
 
-                cartItemsList.innerHTML += cartItemHTML;
+                    cartItemsList.innerHTML += cartItemHTML;
                 });
 
                 updateCartCounter();
@@ -363,6 +391,7 @@
                 document.querySelector('.cart_sidebar').style.display = 'block';
                 document.body.style.overflow = 'hidden';
             }
+
             function closeCartSidebar() {
                 document.querySelector('.cart_sidebar').style.display = 'none';
                 document.body.style.overflow = '';
@@ -374,7 +403,7 @@
         });
     </script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             const parents = document.querySelectorAll('.categorias-menu li.parent');
 
             parents.forEach(parent => {
@@ -382,24 +411,24 @@
                 const submenu = parent.querySelector('ul');
 
                 link.addEventListener('click', e => {
-                e.preventDefault();
+                    e.preventDefault();
 
-                // Cerrar todos los demás
-                document.querySelectorAll('.categorias-menu li.parent').forEach(other => {
-                    if (other !== parent) {
-                    other.classList.remove('open');
-                    const otherSub = other.querySelector('ul');
-                    if (otherSub) otherSub.style.maxHeight = null;
+                    // Cerrar todos los demás
+                    document.querySelectorAll('.categorias-menu li.parent').forEach(other => {
+                        if (other !== parent) {
+                            other.classList.remove('open');
+                            const otherSub = other.querySelector('ul');
+                            if (otherSub) otherSub.style.maxHeight = null;
+                        }
+                    });
+
+                    // Alternar este
+                    parent.classList.toggle('open');
+                    if (submenu.style.maxHeight) {
+                        submenu.style.maxHeight = null;
+                    } else {
+                        submenu.style.maxHeight = submenu.scrollHeight + "px";
                     }
-                });
-
-                // Alternar este
-                parent.classList.toggle('open');
-                if (submenu.style.maxHeight) {
-                    submenu.style.maxHeight = null;
-                } else {
-                    submenu.style.maxHeight = submenu.scrollHeight + "px";
-                }
                 });
             });
         });
@@ -470,7 +499,7 @@
                     $('.image-item').show(); // Mostrar todas las imágenes si la categoría es 'all'
                 } else {
                     $('.image-item[data-category="' + category + '"]')
-                .show(); // Mostrar imágenes de la categoría seleccionada
+                        .show(); // Mostrar imágenes de la categoría seleccionada
                 }
             }
 
