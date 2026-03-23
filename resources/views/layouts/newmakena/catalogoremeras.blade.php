@@ -246,6 +246,7 @@
                                                         <li><a class="alCarrito tf-button p-4" href="#!"
                                                                 data-price-id="{{ $image->price_id }}"
                                                                 data-nombre="{{ $image->nombreRemeras }}"
+                                                                data-modelo="{{ $image->file_name }}"
                                                                 data-imagen="{{ Voyager::image($image->image) }}"><span><i
                                                                         class="fas fa-shopping-cart"></i></span>
                                                                 <span>Seleccionar talle</span></a></li>
@@ -525,8 +526,9 @@
                     event.preventDefault();
 
                     pendingPriceId = this.dataset.priceId;
-                    pendingNombre = this.dataset.nombre;
+                    pendingNombre = this.dataset.nombre + ' - ' + this.dataset.modelo;
                     pendingImagen = this.dataset.imagen;
+                    pendingModelo = this.dataset.modelo;
 
                     // Obtener precio del elemento más cercano
                     const priceEl = this.closest('.motorcycle_product_grid').querySelector(
@@ -572,6 +574,8 @@
                     image: pendingImagen,
                     talle: talleSeleccionado,
                     tipo: 'Remera',
+                    marca: talleSeleccionado,
+                    modelo: pendingModelo
                 };
 
                 cartItemCount++;

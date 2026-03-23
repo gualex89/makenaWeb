@@ -223,7 +223,7 @@
 
                 itemName = document.getElementById('product-title').textContent.trim();
                 price = parseFloat(document.getElementById('item_price').textContent.replace('$', '')
-                    .trim());
+                .trim());
                 imageUrl = document.getElementById('imagenDinamico').getAttribute('src');
 
                 // Verificar si se ha seleccionado un modelo
@@ -290,7 +290,7 @@
                         </div>
                         <div class="item_content" style="color:#fff; margin-left:18px; position:relative; flex:1;">
                             <div style="padding-right:32px;">
-                             
+                            <span class="item_type" style="font-size:13px;">${tipoProducto}</span>
                             <div style="font-weight:700; font-size:18px; margin:2px 0;"><span class="item_title">${cartItem.name}</span></div>
                             ${detalle ? `<div style="font-size:15px; margin-bottom:2px;">${detalle}</div>` : ''}
                             <div style="font-weight:700; font-size:17px; margin-top:6px;"><span class="item_price">$${cartItem.price ? Number(cartItem.price).toLocaleString('es-CL') : '0'}</span></div>
