@@ -247,7 +247,8 @@
                                                                 data-price-id="{{ $image->price_id }}"
                                                                 data-nombre="{{ $image->nombreRemeras }}"
                                                                 data-modelo="{{ $image->file_name }}"
-                                                                data-imagen="{{ Voyager::image($image->image) }}"><span><i
+                                                                data-imagen="{{ Voyager::image($image->image) }}"
+                                                                data-tipo="{{ $image->tipo_producto }}" ><span><i
                                                                         class="fas fa-shopping-cart"></i></span>
                                                                 <span>Seleccionar talle</span></a></li>
                                                         <li class="pt-2">
@@ -529,6 +530,7 @@
                     pendingNombre = this.dataset.nombre + ' - ' + this.dataset.modelo;
                     pendingImagen = this.dataset.imagen;
                     pendingModelo = this.dataset.modelo;
+                    pendingTipo = this.dataset.tipo;
 
                     // Obtener precio del elemento más cercano
                     const priceEl = this.closest('.motorcycle_product_grid').querySelector(
@@ -573,7 +575,7 @@
                     price: pendingPrecio,
                     image: pendingImagen,
                     talle: talleSeleccionado,
-                    tipo: 'Remera',
+                    tipo: pendingTipo,
                     marca: talleSeleccionado,
                     modelo: pendingModelo
                 };

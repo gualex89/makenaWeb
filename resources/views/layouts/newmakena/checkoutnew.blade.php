@@ -422,6 +422,8 @@
                 const cartTableBody = $('.cart_section table tbody');
                 cartTableBody.html('');
 
+                console.log(cartItems);
+
                 // Inicializamos el subtotal a 0
                 cartItems.forEach(function(cartItem, index) {
                     const itemPrice = cartItem.price; // Precio individual del producto
@@ -435,6 +437,7 @@
 											<img src="${cartItem.image}" alt="Funda en carrito ${cartItem.name}">
 										</div>
 										<div class="item_content">
+                                            <span class="item_tipo_producto" style="font-size:13px; color:#aaa;">${cartItem.tipo}</span>
 											<h4 class="item_title">${cartItem.name}</h4>
 											<span class= "item_marca">${cartItem.marca || cartItem.tamaño}</span>
 											<span class="item_type">${cartItem.modelo || cartItem.colgante}</span>
@@ -1048,6 +1051,7 @@
                 const nombreImagen = document.querySelectorAll('.item_nombre_imagen');
                 const marca = document.querySelectorAll('.item_marca');
                 const modelo = document.querySelectorAll('.item_type');
+                
 
 
 
@@ -1075,13 +1079,17 @@
                     // Solo concatenar si existen valores en modelo2 y marca2
                     const modeloFinal = itemModelo2 ? `${itemModelo} -> ${itemModelo2}` : itemModelo;
                     const marcaFinal = itemMarca2 ? `${itemMarca} -> ${itemMarca2}` : itemMarca;
+                    const tipoProducto = container.querySelector('.item_tipo_producto')?.textContent.trim() || "";
+                    console.log(tipoProducto);
+                    
 
                     itemsCart.push({
                         modelo: modeloFinal,
                         diseno: titulo,
                         marca: marcaFinal,
                         nombreImagen: nombreImagenPNG,
-                        idDrive: idDrive
+                        idDrive: idDrive,
+                        tipo_producto: tipoProducto
                     });
                 });
 

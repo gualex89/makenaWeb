@@ -216,8 +216,9 @@ class CatalogueController extends Controller
             $query->where('file_name', 'like', $categoria . '%');
         }
 
-        $query->select('catalogue_remeras.*', 'precios.precio as precioRemera');
+        $query->select('catalogue_remeras.*', 'precios.precio as precioRemera', 'precios.producto as tipo_producto');
         $query->join('precios', 'catalogue_remeras.price_id', '=', 'precios.id');
+        
 
         // Ordenar por ID descendente (más alto primero)
         $query->orderBy('catalogue_remeras.id', 'desc');

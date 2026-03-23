@@ -37,7 +37,7 @@
             <thead>
                 <tr>
                     <th>Producto</th>
-                    <th>Marca</th>
+                    <th>Marca / Talle</th>
                     <th>Modelo</th>
                     <th>Diseño</th>
 
@@ -46,7 +46,7 @@
             <tbody>
                 @foreach ($downloads as $item)
                     <tr>
-                        <td>{{ $item['cuadro'] == 1 ? 'Cuadro' : 'Funda' }}</td>
+                        <td>{{ $item['tipo_producto'] }}</td>
                         <td>{{ $item['marca'] ?? '-' }}</td>
                         <td>{{ $item['modelo'] ?? '-' }}</td>
                         <td>{{ $item['diseno'] ?? '-' }}</td>

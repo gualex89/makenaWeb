@@ -69,7 +69,7 @@ class CheckoutController extends Controller
             if ($download->diseno === "Cuadro personalizado") {
                 $download->cuadro = 1;
             }
-
+            $download->tipo_producto = $item['tipo_producto'];
             
             
             $download->save();
