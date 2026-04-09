@@ -155,6 +155,20 @@ class CatalogueController extends Controller
 
         return view('layouts.newmakena.catalogo_detalle_cuadro', compact('item', 'cuadrosActivos', 'precioCuadroBasic', 'precioCuadroStandard', 'precioCuadroEpic'));
     }
+    public function showRemera($slug)
+
+    {
+        
+        $Productos = Precio::all();
+        $tallesPorProducto = Talle::where('activo', 1)
+        ->get()
+        ->groupBy('product_id');
+        
+        
+        
+
+        return view('layouts.newmakena.catalogo_detalle_remera', compact( 'tallesPorProducto'));
+    }
 
 
     public function catalogoCuadros(Request $request)

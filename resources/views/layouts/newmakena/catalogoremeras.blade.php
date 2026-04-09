@@ -230,7 +230,7 @@
                                                     <img src="{{ Voyager::image($image->image2) }}" alt="{{ $image->file_name }}">
                                                 </a> --}}
                                                 <div class="card-media  image-hover-container">
-                                                    <a href="{{ route('catalogo.showCuadro', $image->slug) }}">
+                                                    <a href="{{ route('catalogo.showRemera', $image->slug) }}">
                                                         <img src="{{ Voyager::image($image->image) }}"
                                                             alt="Funda de {{ $image->diseno }} modelo {{ $image->modeloCEO }}"
                                                             class="main-img img-fluid " width="280" height="auto" />
@@ -253,7 +253,7 @@
                                                                 <span>Seleccionar talle</span></a></li>
                                                         <li class="pt-2">
                                                             <a class="tf-button"
-                                                                href="{{ route('catalogo.showCuadro', $image->slug) }}">
+                                                                href="{{ route('catalogo.showRemera', $image->slug) }}">
                                                                 <span><i class="fas fa-search"></i></span>
                                                                 <span>Ver</span>
                                                             </a>
@@ -264,7 +264,7 @@
                                                 </div>
                                             </div>
                                             <h6 class="name item_title"><a
-                                                    href="{{ route('catalogo.showCuadro', $image->slug) }}">
+                                                    href="{{ route('catalogo.showRemera', $image->slug) }}">
                                                     {{ $image->nombreRemeras }} <br> {{ $image->file_name }}</a></h6>
 
                                             <div class="divider"></div>
