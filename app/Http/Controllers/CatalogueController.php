@@ -155,65 +155,51 @@ class CatalogueController extends Controller
 
         return view('layouts.newmakena.catalogo_detalle_cuadro', compact('item', 'cuadrosActivos', 'precioCuadroBasic', 'precioCuadroStandard', 'precioCuadroEpic'));
     }
-    public function showRemera($slug)
-
-    {
-        
-        $Productos = Precio::all();
-        $tallesPorProducto = Talle::where('activo', 1)
-        ->get()
-        ->groupBy('product_id');
-        
-        
-        
-
-        return view('layouts.newmakena.catalogo_detalle_remera', compact( 'tallesPorProducto'));
-    }
-
-
+    
+    
     public function catalogoCuadros(Request $request)
     {
-
-
+        
+        
         // Obtener el parámetro de categoría de la solicitud
         $categoria = $request->query('categoria');
-
+        
         // Consulta inicial sin filtrar por categoría
         $query = CatalogueCuadro::query();
-
-
+        
+        
         // Si se especifica una categoría, filtrar por esa categoría
         if ($categoria) {
             $query->where('file_name', 'like', $categoria . '%');
         }
-
+        
         // Ordenar por ID descendente (más alto primero)
         $query->orderBy('id', 'desc');
-
+        
         // Paginar los resultados
         $imagesCatalogo = $query->paginate(12);
         $totalImagesCatalogo = $imagesCatalogo->total();
-
-
-
-
+        
+        
+        
+        
         $Productos = Precio::all();
         $cuadrosActivos = Precio::where('activo', 1)
-            ->where('esCuadro', 1)
-            ->get();
-
+        ->where('esCuadro', 1)
+        ->get();
+        
         $precioCuadroBasic = $cuadrosActivos->where('producto', 'cuadro-basic')->first()->precio ?? null;
         $precioCuadroStandard = $cuadrosActivos->where('producto', 'cuadro-standard')->first()->precio ?? null;
         $precioCuadroEpic = $cuadrosActivos->where('producto', 'cuadro-epic')->first()->precio ?? null;
-
-
+        
+        
         // Consulta inicial sin filtrar por categoría
-
-
-
-
-
-
+        
+        
+        
+        
+        
+        
         // Pasar los datos a la vista
         return view('layouts.newmakena.catalogocuadros', compact('imagesCatalogo', 'totalImagesCatalogo', 'cuadrosActivos', 'precioCuadroBasic', 'precioCuadroStandard', 'precioCuadroEpic'));
     }
@@ -221,31 +207,50 @@ class CatalogueController extends Controller
     {
         // Obtener el parámetro de categoría de la solicitud
         $categoria = $request->query('categoria');
-
+        
         // Consulta inicial sin filtrar por categoría
         $query = CatalogueRemera::query();
-
+        
         // Si se especifica una categoría, filtrar por esa categoría
         if ($categoria) {
             $query->where('file_name', 'like', $categoria . '%');
         }
-
+        
         $query->select('catalogue_remeras.*', 'precios.precio as precioRemera', 'precios.producto as tipo_producto');
         $query->join('precios', 'catalogue_remeras.price_id', '=', 'precios.id');
         
 
         // Ordenar por ID descendente (más alto primero)
         $query->orderBy('catalogue_remeras.id', 'desc');
-
+        
         // Paginar los resultados
         $imagesCatalogo = $query->paginate(12);
         $totalImagesCatalogo = $imagesCatalogo->total();
-
+        
         // Talles activos agrupados por product_id para el dropdown del modal
         $tallesPorProducto = Talle::where('activo', 1)
-            ->get()
-            ->groupBy('product_id');
-
+        ->get()
+        ->groupBy('product_id');
+        
         return view('layouts.newmakena.catalogoremeras', compact('imagesCatalogo', 'totalImagesCatalogo', 'tallesPorProducto'));
+    }
+    public function showRemera($slug)
+    
+    {
+        
+        $item = CatalogueRemera::where('slug', $slug)
+                ->join('precios', 'catalogue_remeras.price_id', '=', 'precios.id')   
+                ->firstOrFail();
+        
+        $precioRemera = $item->precioRemera;
+        $Productos = Precio::all();
+        $tallesPorProducto = Talle::where('activo', 1)
+        ->get()
+        ->groupBy('product_id');
+        
+        
+        
+    
+        return view('layouts.newmakena.catalogo_detalle_remera', compact( 'tallesPorProducto', 'item'));
     }
 }
