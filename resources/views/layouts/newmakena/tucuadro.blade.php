@@ -244,9 +244,9 @@
 
 
                 let price = 0;
-                if (tamaño === 'Basic') price = 25000;
-                else if (tamaño === 'Standard') price = 35000;
-                else if (tamaño === 'Epic') price = 45000;
+                if (tamaño === 'Basic') price = 29900;
+                else if (tamaño === 'Standard') price = 44900;
+                else if (tamaño === 'Epic') price = 74900;
 
                 const pendingCartItem = {
                 name: 'Cuadro personalizado',
