@@ -106,7 +106,7 @@
                         </ul>
                     </li>
                     <li class="menu-item menu-item-has-children-mobile">
-                        <a class="item-menu-mobile">Remeras</a>
+                        <a class="item-menu-mobile">Remeras y Buzos</a>
                         <ul class="sub-menu-mobile">
                             <li class="menu-item"><a href="/catalogoremeras">Catálogo</a></li>
                         </ul>
