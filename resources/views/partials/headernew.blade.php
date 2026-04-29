@@ -46,7 +46,7 @@
                                     </ul>
                                 </li>
                                 <li class="menu-item menu-item-has-children">
-                                    <a>Remeras</a>
+                                    <a>Remeras y Buzos</a>
                                     <ul class="sub-menu">
                                         <li class="menu-item"><a href="/catalogoremeras">Catálogo</a></li>
                                     </ul>
