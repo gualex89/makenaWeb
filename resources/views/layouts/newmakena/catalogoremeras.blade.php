@@ -171,44 +171,19 @@
                                 <div class="categorias-container">
                                     <ul class="menu-tab categorias-menu">
                                         <li style="padding: 0px 24px;">
-                                            <a href="/catalogocuadros" data-category="all">Todas</a>
+                                            <a href="/catalogoremeras" data-category="all">Todas</a>
                                         </li>
-                                        <li class="parent" style=" padding: 0px 24px;">
-                                            <a href="#">Anime</a>
-                                            <ul>
-                                                <li><a href="/catalogocuadros?categoria=AT">Attack on Titan</a></li>
-                                                <li><a href="/catalogocuadros?categoria=BK">Berserk</a></li>
-                                                <li><a href="/catalogocuadros?categoria=BH">Boku no Hero Academia</a>
-                                                </li>
-                                                <li><a href="/catalogocuadros?categoria=DS">Demon Slayer</a></li>
-                                                <li><a href="/catalogocuadros?categoria=DB">Dragon Ball</a></li>
-                                                <li><a href="/catalogocuadros?categoria=EV">Evangelion</a></li>
-                                                <li><a href="/catalogocuadros?categoria=FN">Frieren</a></li>
-                                                <li><a href="/catalogocuadros?categoria=HH">Hunter X Hunter</a></li>
-                                                <li><a href="/catalogocuadros?categoria=JK">Jujutsu Kaisen</a></li>
-                                                <li><a href="/catalogocuadros?categoria=NA">Naruto</a></li>
-                                                <li><a href="/catalogocuadros?categoria=OP">One Piece</a></li>
-                                                <li><a href="/catalogocuadros?categoria=PK">Pokemon</a></li>
-                                                <li><a href="/catalogocuadros?categoria=SM">Sailor Moon</a></li>
-                                                <li><a href="/catalogocuadros?categoria=SLV">Solo Leveling</a></li>
-                                            </ul>
+                                        <li class="" style=" padding: 0px 24px;">
+                                            <a href="/catalogoremeras?categoria=ANM">Anime</a>
                                         </li>
-                                        <li class="parent" style="border-bottom:1px solid #333; padding: 0px 24px;">
-                                            <a href="#">Deportes</a>
-                                            <ul>
-                                                <li><a href="/catalogocuadros?categoria=FES">Estadios</a></li>
-                                                <li><a href="/catalogocuadros?categoria=FME">Messi</a></li>
-                                                <li><a href="/catalogocuadros?categoria=FSA">Seleccion Argentina</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="parent" style="padding: 0px 24px;">
-                                            <a href="#">Series</a>
-                                            <ul>
-                                                <li><a href="/catalogocuadros?categoria=ARC">Arcane</a></li>
 
-                                            </ul>
                                         </li>
+                                        <li class="" style="border-bottom:1px solid #333; padding: 0px 24px;">
+                                            <a href="/catalogoremeras?categoria=JPU">Japanese Urban-style</a>
+                                        </li>
+
+                                        </li>
+
                                     </ul>
                                 </div>
                             </div>
@@ -248,7 +223,7 @@
                                                                 data-nombre="{{ $image->nombreRemeras }}"
                                                                 data-modelo="{{ $image->file_name }}"
                                                                 data-imagen="{{ Voyager::image($image->image) }}"
-                                                                data-tipo="{{ $image->tipo_producto }}" ><span><i
+                                                                data-tipo="{{ $image->tipo_producto }}"><span><i
                                                                         class="fas fa-shopping-cart"></i></span>
                                                                 <span>Seleccionar talle</span></a></li>
                                                         <li class="pt-2">
@@ -263,7 +238,7 @@
 
                                                 </div>
                                             </div>
-                                            <h6 class="name item_title"><a
+                                            <h6 class="name item_title" style="min-height: 72px;"><a
                                                     href="{{ route('catalogo.showRemera', $image->slug) }}">
                                                     {{ $image->nombreRemeras }} <br> {{ $image->file_name }}</a></h6>
 
