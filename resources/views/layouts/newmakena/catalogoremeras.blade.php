@@ -7,28 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <title>Fundas de Celu Manga y Anime - Samsung, Motorola, Xiaomi, iPhone | Makena</title>
+    <title>Cuadros de Manga y Anime - Metalicos y Personalizados | Makena</title>
     <meta name="description"
-        content="Todo lo que buscas en una funda con acabado brillante, imagen Ultra HD y agarres laterales anti-slip para Samsung, Motorola, Xiaomi y iPhone. Amplio catálogo disponible.">
+        content="Todo lo que buscas en un cuadro con acabado brillante, imagen Ultra HD y Colgantes Incluidos.">
     <meta name="keywords"
-        content="fundas para celulares, fundas, carcasas, anime, manga, Dragon Ball, Naruto, Samsung, iPhone, Xiaomi, Motorola, Argentina, imagen, catálogo, personalizar">
+        content="Cuadros brillantes metalicos, anime, manga, Dragon Ball, Naruto, Argentina, imagen, catálogo, personalizar">
 
-    <link rel="canonical" href="https://makenafundas.com.ar/catalogo">
+    <link rel="canonical" href="https://makenafundas.com.ar/catalogo-cuadros">
     <link rel="shortcut icon" href="images/logo/makenaminiicon.png">
 
     <!-- Open Graph Meta -->
-    <meta property="og:title" content="Fundas de Celu Manga y Anime - Makena">
+    <meta property="og:title" content="Cuadros de Manga y Anime - Makena">
     <meta property="og:description"
-        content="Encuentra fundas con acabado brillante, imagen Ultra HD y agarres anti-slip. Samsung, Motorola, Xiaomi, iPhone. Amplio catálogo de anime y manga.">
+        content="Encuentra cuadros con acabado brillante, imagen Ultra HD y colgantes incluidos. Amplio catálogo de anime y manga.">
     <meta property="og:image" content="https://makenafundas.com.ar/images/logo/makenaminiicon.png">
-    <meta property="og:url" content="https://makenafundas.com.ar/catalogo">
+    <meta property="og:url" content="https://makenafundas.com.ar/catalogo-cuadros">
     <meta property="og:type" content="website">
 
     <!-- Twitter Card Meta -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Fundas de Celu Manga y Anime - Makena">
+    <meta name="twitter:title" content="Cuadros de Manga y Anime - Makena">
     <meta name="twitter:description"
-        content="Fundas de alta calidad para Samsung, Motorola, Xiaomi y iPhone. Amplio catálogo de anime y manga en Makena.">
+        content="Cuadros de alta calidad para Samsung, Motorola, Xiaomi y iPhone. Amplio catálogo de anime y manga en Makena.">
     <meta name="twitter:image" content="https://makenafundas.com.ar/images/logo/makenaminiicon.png">
 
     <!-- Theme Style -->
@@ -171,132 +171,19 @@
                                 <div class="categorias-container">
                                     <ul class="menu-tab categorias-menu">
                                         <li style="padding: 0px 24px;">
-                                            <a href="/catalogo" data-category="all">Todas</a>
+                                            <a href="/catalogoremeras" data-category="all">Todas</a>
                                         </li>
-                                        <li class="parent" style=" padding: 0px 24px;">
-                                            <a href="#">Anime</a>
-                                            <ul>
-                                                <li><a href="/catalogo?categoria=AT">Attack on Titan</a></li>
-                                                <li><a href="/catalogo?categoria=BK">Berserk</a></li>
-                                                <li><a href="/catalogo?categoria=BC">Black Clover</a></li>
-                                                <li><a href="/catalogo?categoria=BH">Boku no Hero Academia</a></li>
-                                                <li><a href="/catalogo?categoria=CZ">Caballeros del Zodiaco</a></li>
-                                                <li><a href="/catalogo?categoria=DAN">DanDaDan</a></li>
-                                                <li><a href="/catalogo?categoria=DN">Death Note</a></li>
-                                                <li><a href="/catalogo?categoria=DS">Demon Slayer</a></li>
-                                                <li><a href="/catalogo?categoria=DB">Dragon Ball</a></li>
-                                                <li><a href="/catalogo?categoria=CH">El viaje de Chihiro</a></li>
-                                                <li><a href="/catalogo?categoria=EV">Evangelion</a></li>
-                                                <li><a href="/catalogo?categoria=FN">Frieren</a></li>
-                                                <li><a href="/catalogo?categoria=HK">Haikyuu!</a></li>
-                                                <li><a href="/catalogo?categoria=HH">Hunter X Hunter</a></li>
-                                                <li><a href="/catalogo?categoria=JJ">Jojo's</a></li>
-                                                <li><a href="/catalogo?categoria=JK">Jujutsu Kaisen</a></li>
-                                                <li><a href="/catalogo?categoria=NA">Naruto</a></li>
-                                                <li><a href="/catalogo?categoria=OP">One Piece</a></li>
-                                                <li><a href="/catalogo?categoria=PK">Pokemon</a></li>
-                                                <li><a href="/catalogo?categoria=SM">Sailor Moon</a></li>
-                                                <li><a href="/catalogo?categoria=SD">Slam Dunk</a></li>
-                                                <li><a href="/catalogo?categoria=SLV">Solo Leveling</a></li>
-                                                <li><a href="/catalogo?categoria=AMS">Más...</a></li>
-                                            </ul>
+                                        <li class="" style=" padding: 0px 24px;">
+                                            <a href="/catalogoremeras?categoria=ANM">Anime</a>
                                         </li>
-                                        <li class="parent" style="border-bottom:1px solid #333; padding: 0px 24px;">
-                                            <a href="#">Automovilismo</a>
-                                            <ul>
-                                                <li><a href="/catalogo?categoria=CLP">Colapinto</a></li>
-                                                <li><a href="/catalogo?categoria=F1">F1</a></li>
-                                            </ul>
+
                                         </li>
-                                        <li style="border-bottom:1px solid #333; padding: 0px 24px;">
-                                            <a href="/catalogo?categoria=BS">Básquet</a>
+                                        <li class="" style="border-bottom:1px solid #333; padding: 0px 24px;">
+                                            <a href="/catalogoremeras?categoria=JPU">Japanese Urban-style</a>
                                         </li>
-                                        <li class="parent" style="border-bottom:1px solid #333; padding: 0px 24px;">
-                                            <a href="#">Gaming</a>
-                                            <ul>
-                                                <li><a href="/catalogo?categoria=ARC">Arcane</a></li>
-                                                <li><a href="/catalogo?categoria=AC">Assassin’s Creed</a></li>
-                                                <li><a href="/catalogo?categoria=FRN">Fortnite</a></li>
-                                                <li><a href="/catalogo?categoria=GW">God of War</a></li>
-                                                <li><a href="/catalogo?categoria=HKN">Hollow Knight</a></li>
-                                                <li><a href="/catalogo?categoria=LOL">LOL</a></li>
-                                                <li><a href="/catalogo?categoria=RE">Resident Evil</a></li>
-                                                <li><a href="/catalogo?categoria=TLU">The Last of Us</a></li>
-                                                <li><a href="/catalogo?categoria=TW">The Witcher</a></li>
-                                                <li><a href="/catalogo?categoria=VL">Valorant</a></li>
-                                                <li><a href="/catalogo?categoria=OTR">Más...</a></li>
-                                            </ul>
+
                                         </li>
-                                        <li style="border-bottom:1px solid #333; padding: 0px 24px;">
-                                            <a href="/catalogo?categoria=DI">Diseños</a>
-                                        </li>
-                                        <li class="parent" style="border-bottom:1px solid #333; padding: 0px 24px;">
-                                            <a href="#">Hello kitty</a>
-                                            <ul>
-                                                <li><a href="/catalogo?categoria=KR">Kuromi</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="parent" style="border-bottom:1px solid #333; padding: 0px 24px;">
-                                            <a href="#">Fútbol</a>
-                                            <ul>
-                                                <li><a href="/catalogo?categoria=FB">Boca</a></li>
-                                                <li><a href="/catalogo?categoria=FTI">Clubes Internacionales</a></li>
-                                                <li><a href="/catalogo?categoria=FI">Independiente</a></li>
-                                                <li><a href="/catalogo?categoria=FME">Messi</a></li>
-                                                <li><a href="/catalogo?categoria=FMO">Momentos del Fútbol</a></li>
-                                                <li><a href="/catalogo?categoria=FON">Más clubes nacionales</a></li>
-                                                <li><a href="/catalogo?categoria=FRA">Racing</a></li>
-                                                <li><a href="/catalogo?categoria=FRI">River</a></li>
-                                                <li><a href="/catalogo?categoria=FSL">San Lorenzo</a></li>
-                                                <li><a href="/catalogo?categoria=FSA">Selección Argentina</a></li>
-                                            </ul>
-                                        </li>
-                                        <li style="border-bottom:1px solid #333; padding: 0px 24px;">
-                                            <a href="/catalogo?categoria=ME">Momentos Épicos</a>
-                                        </li>
-                                        <li style="border-bottom:1px solid #333; padding: 0px 24px;">
-                                            <a href="/catalogo?categoria=RT">Retro</a>
-                                        </li>
-                                        <li class="parent" style="border-bottom:1px solid #333; padding: 0px 24px;">
-                                            <a href="#">Música</a>
-                                            <ul>
-                                                <li><a href="/catalogo?categoria=MM">Más</a></li>
-                                                <li><a href="/catalogo?categoria=MP">Pop</a></li>
-                                                <li><a href="/catalogo?categoria=MRI">Rock Internacional</a></li>
-                                                <li><a href="/catalogo?categoria=MRN">Rock Nacional</a></li>
-                                                <li><a href="/catalogo?categoria=MUR">Urbano</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="parent" style="border-bottom:1px solid #333; padding:1px 24px;">
-                                            <a href="#">Películas</a>
-                                            <ul>
-                                                <li><a href="/catalogo?categoria=DY">Disney</a></li>
-                                                <li><a href="/catalogo?categoria=HP">Harry Potter</a></li>
-                                                <li><a href="/catalogo?categoria=LR">Lord of the Rings</a></li>
-                                                <li><a href="/catalogo?categoria=MV">Marvel</a></li>
-                                                <li><a href="/catalogo?categoria=SW">Star Wars</a></li>
-                                                <li><a href="/catalogo?categoria=VF">Volver al Futuro</a></li>
-                                                <li><a href="/catalogo?categoria=PMS">Más...</a></li>
-                                            </ul>
-                                        </li>
-                                        <li class="parent" style="padding: 0px 24px;">
-                                            <a href="#">TV y Series</a>
-                                            <ul>
-                                                <li><a href="/catalogo?categoria=ARC">Arcane</a></li>
-                                                <li><a href="/catalogo?categoria=AV">Avatar</a></li>
-                                                <li><a href="/catalogo?categoria=FRD">Friends</a></li>
-                                                <li><a href="/catalogo?categoria=GT">Game of Thrones</a></li>
-                                                <li><a href="/catalogo?categoria=HA">Hora de Aventura</a></li>
-                                                <li><a href="/catalogo?categoria=HD">House of the Dragon</a></li>
-                                                <li><a href="/catalogo?categoria=LS">Los Simpsons</a></li>
-                                                <li><a href="/catalogo?categoria=PB">Peaky Blinders</a></li>
-                                                <li><a href="/catalogo?categoria=RM">Rick y Morty</a></li>
-                                                <li><a href="/catalogo?categoria=ST">Stranger Things</a></li>
-                                                <li><a href="/catalogo?categoria=TU">The Last of Us</a></li>
-                                                <li><a href="/catalogo?categoria=TWD">The Walking Dead</a></li>
-                                                <li><a href="/catalogo?categoria=OS">Más...</a></li>
-                                            </ul>
-                                        </li>
+
                                     </ul>
                                 </div>
                             </div>
@@ -313,18 +200,35 @@
                                     <div data-wow-delay="0s" class="wow fadeInUp col-xl-3 col-lg-4 col-md-6 col-sm-6">
                                         <div class="tf-card-box style-1 motorcycle_product_grid">
                                             <div class="card-media">
-                                                <a href="{{ route('catalogo.show', $image->slug) }}">
-                                                    <img src="{{ Voyager::image($image->image) }}"
-                                                        alt="{{ $image->file_name }}">
-                                                </a>
+                                                {{-- <a href="{{ route('catalogo.show', $image->slug) }}">
+                                                    <img src="{{ Voyager::image($image->image) }}" alt="{{ $image->file_name }}">
+                                                    <img src="{{ Voyager::image($image->image2) }}" alt="{{ $image->file_name }}">
+                                                </a> --}}
+                                                <div class="card-media  image-hover-container">
+                                                    <a href="{{ route('catalogo.showRemera', $image->slug) }}">
+                                                        <img src="{{ Voyager::image($image->image) }}"
+                                                            alt="Funda de {{ $image->diseno }} modelo {{ $image->modeloCEO }}"
+                                                            class="main-img img-fluid " width="280" height="auto" />
+
+                                                        <img src="{{ Voyager::image($image->image2) }}"
+                                                            alt="Funda de {{ $image->diseno }} - vista alterna"
+                                                            class="hover-img img-fluid my-4" width="280"
+                                                            height="auto" />
+                                                    </a>
+                                                </div>
                                                 <div class="button-place-bid botones-hover-catalogo">
                                                     <ul class="ul_li_block text-center clearfix">
-                                                        <li><a class="alCarrito tf-button p-4" href="#!"><span><i
+                                                        <li><a class="alCarrito tf-button p-4" href="#!"
+                                                                data-price-id="{{ $image->price_id }}"
+                                                                data-nombre="{{ $image->nombreRemeras }}"
+                                                                data-modelo="{{ $image->file_name }}"
+                                                                data-imagen="{{ Voyager::image($image->image) }}"
+                                                                data-tipo="{{ $image->tipo_producto }}"><span><i
                                                                         class="fas fa-shopping-cart"></i></span>
-                                                                <span>Seleccioná tu modelo</span></a></li>
+                                                                <span>Seleccionar talle</span></a></li>
                                                         <li class="pt-2">
                                                             <a class="tf-button"
-                                                                href="{{ route('catalogo.show', $image->slug) }}">
+                                                                href="{{ route('catalogo.showRemera', $image->slug) }}">
                                                                 <span><i class="fas fa-search"></i></span>
                                                                 <span>Ver</span>
                                                             </a>
@@ -334,14 +238,17 @@
 
                                                 </div>
                                             </div>
-                                            <h5 class="name item_title"><a
-                                                    href="{{ route('catalogo.show', $image->slug) }}">{{ $image->file_name }}</a>
-                                            </h5>
+                                            <h6 class="name item_title" style="min-height: 72px;"><a
+                                                    href="{{ route('catalogo.showRemera', $image->slug) }}">
+                                                    {{ $image->nombreRemeras }} <br> {{ $image->file_name }}</a></h6>
 
                                             <div class="divider"></div>
                                             <div class="meta-info flex items-center justify-between">
-                                                <span class="text-bid"></span>
-                                                <h5 class="item_price price gem">{{ $precioFunda }}</h5>
+                                                <span class="text-bid">Precio</span>
+                                                <h5 class="item_price price gem">
+
+                                                    ${{ number_format((float) preg_replace('/[^0-9.]/', '', $image->precioRemera), 0, ',', '.') }}
+                                                </h5>
                                             </div>
                                         </div>
                                     </div>
@@ -374,7 +281,7 @@
                 </div>
                 <!-- Modal -->
                 <!-- Modal: Seleccionar modelo -->
-                @include('partials.addToCartModal')
+                @include('partials.addToCartModalRemeras')
 
             </main>
 
@@ -482,135 +389,50 @@
             let total = 0;
             let cartItems = [];
 
+            // Variables temporales para el producto pendiente de agregar
+            let pendingPriceId = null;
+            let pendingNombre = null;
+            let pendingImagen = null;
+            let pendingPrecio = null;
+
             function updateCartCounter() {
-                const badgeElements = document.querySelectorAll('.btn_badge');
-                badgeElements.forEach(function(element) {
-                    element.textContent = cartItemCount;
-                });
+                document.querySelectorAll('.btn_badge').forEach(el => el.textContent = cartItemCount);
             }
 
             function productoAgregadoAlCarrito() {
-                // Mostrar SweetAlert2 en la esquina superior derecha que desaparece después de 1 segundo
                 Swal.fire({
                     icon: 'success',
                     title: 'Producto agregado al carrito',
-                    toast: true, // Hace que se muestre como una notificación tipo toast
-                    position: 'top-end', // Lo coloca en la esquina superior derecha
-                    showConfirmButton: false, // No muestra el botón de confirmación
-                    timer: 1500, // Se cierra automáticamente después de 1 segundo (1000ms)
+                    toast: true,
+                    position: 'top-end',
+                    showConfirmButton: false,
+                    timer: 1500,
                     timerProgressBar: true,
-                    iconColor: '#4CAF50', // Muestra una barra de progreso que indica el tiempo restante
-                    didOpen: () => {
-                        Swal.showLoading();
-                    }
+                    iconColor: '#4CAF50',
                 });
             }
 
-            function mostrarAviso() {
-                var aviso = document.getElementById("aviso");
-                aviso.innerText = "¡Producto agregado al carrito!";
-                aviso.style.display = "block";
-
-                // Oculta el aviso después de 3 segundos
-                setTimeout(function() {
-                    aviso.style.display = "none";
-                }, 3000);
-            }
-
             function updatePrices() {
-                const subtotalElement = document.querySelector('.total_price li:nth-child(1) span:nth-child(2)');
-                const totalElement = document.querySelector('.total_price li:nth-child(2) span:nth-child(2)');
-
-                subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
-                totalElement.textContent = `$${total.toFixed(2)}`;
+                const subtotalEl = document.querySelector('.total_price li:nth-child(1) span:nth-child(2)');
+                const totalEl = document.querySelector('.total_price li:nth-child(2) span:nth-child(2)');
+                if (subtotalEl) subtotalEl.textContent = `$${subtotal.toLocaleString('es-CL')}`;
+                if (totalEl) totalEl.textContent = `$${total.toLocaleString('es-CL')}`;
             }
-
-            let price, itemName, imageUrl;
-
-            /* function addToCart(productItem) {
-                const price = parseFloat(productItem.querySelector('.item_price').textContent.replace('$', ''));
-                const itemName = productItem.querySelector('.item_title').textContent;
-                const imageUrl = productItem.querySelector('img').getAttribute(
-                    'src'); // Obtener la URL de la imagen completa
-
-                cartItemCount++;
-                subtotal += price;
-                total = subtotal;
-
-                const cartItem = {
-                    name: itemName,
-                    price: price,
-                    image: imageUrl // Guardar la URL completa de la imagen en el objeto del carrito
-                };
-
-                cartItems.push(cartItem);
-
-                // Guardar el carrito en el almacenamiento local
-                localStorage.setItem('cartItems', JSON.stringify(cartItems));
-
-                // Llamar a la función para mostrar los elementos del carrito
-                updateCartItems();
-                updatePrices();
-            } */
-            function addToCart(productItem) {
-                price = parseFloat(productItem.querySelector('.item_price').textContent.replace('$', ''));
-                itemName = productItem.querySelector('.item_title').textContent;
-                imageUrl = productItem.querySelector('img').getAttribute(
-                    'src'); // Obtener la URL de la imagen completa
-
-                // Mostrar la modal
-                $('#addToCartModal').modal('show');
-
-
-            }
-            document.getElementById('addToCartModalOkButton').addEventListener('click', function() {
-                const selectedMarca = document.getElementById('marcasDropdown').value;
-                const selectedModelo = document.getElementById('modelosDropdown').value;
-
-                // Verificar si se ha seleccionado un modelo
-                if (selectedModelo) {
-                    const pendingCartItem = {
-                        name: itemName,
-                        price: price,
-                        image: imageUrl,
-                        marca: selectedMarca,
-                        modelo: selectedModelo,
-                        tipo: 'Funda',
-                    };
-
-                    // Agregar el artículo al carrito
-                    cartItemCount++;
-                    subtotal += pendingCartItem.price;
-                    total = subtotal;
-                    cartItems.push(pendingCartItem);
-                    localStorage.setItem('cartItems', JSON.stringify(cartItems));
-                    updateCartItems();
-                    updatePrices();
-                    productoAgregadoAlCarrito();
-                    // Cerrar la modal solo si se ha completado con éxito la acción
-                    $('#addToCartModal').modal('hide');
-                } else {
-                    // Si no se ha seleccionado un modelo, muestra un mensaje de alerta dentro de la modal
-                    alert('Por favor, seleccione un modelo');
-                }
-            });
 
             function updateCartItems() {
                 const cartItemsList = document.querySelector('.cart_items_list');
                 if (!cartItemsList) return;
-
                 cartItemsList.innerHTML = '';
-
                 cartItems.forEach(cartItem => {
                     let tipoProducto;
                     if (cartItem.tipo) {
                         tipoProducto = cartItem.tipo;
                     } else if (cartItem.marca2) {
                         tipoProducto = 'Funda Doble';
-                    } else if (cartItem.talle) {
-                        tipoProducto = 'Remera';
                     } else if (cartItem.name && cartItem.name.toLowerCase().includes('cuadro')) {
                         tipoProducto = 'Cuadro';
+                    } else if (cartItem.name && cartItem.name.toLowerCase().includes('remera')) {
+                        tipoProducto = 'Remera';
                     } else {
                         tipoProducto = 'Funda';
                     }
@@ -623,17 +445,17 @@
                     else if (cartItem.marca) detalle = `${cartItem.marca} ${cartItem.modelo || ''}`;
                     if (cartItem.marca2) detalle += ` | ${cartItem.marca2} ${cartItem.modelo2 || ''}`;
 
-                    const cartItemHTML = `
+                    cartItemsList.innerHTML += `
                         <li style="background:transparent; margin-bottom:32px; padding:0; display:flex; align-items:center;">
                         <div style="background:#fff; border-radius:18px; padding:12px; display:flex; align-items:center; width:70px; min-width:30px; justify-content:center;">
                             <img src="${cartItem.image}" alt="${tipoProducto} ${cartItem.name}" style="width:100%; border-radius:4px; display:block;"/>
                         </div>
                         <div class="item_content" style="color:#fff; margin-left:18px; position:relative; flex:1;">
                             <div style="padding-right:32px;">
-                            <span class="item_type d-none" style="font-size:13px;">${tipoProducto}</span>
+                            
                             <div style="font-weight:700; font-size:18px; margin:2px 0;"><span class="item_title">${cartItem.name}</span></div>
                             ${detalle ? `<div style="font-size:15px; margin-bottom:2px;">${detalle}</div>` : ''}
-                            <div style="font-weight:700; font-size:17px; margin-top:6px;"><span class="item_price">$${cartItem.price.toLocaleString('es-CL')}</span></div>
+                            <div style="font-weight:700; font-size:17px; margin-top:6px;"><span class="item_price">$${cartItem.price ? Number(cartItem.price).toLocaleString('es-CL') : '0'}</span></div>
                             </div>
                         </div>
                         <button type="button" class="remove_btn" style="background:none; border:none; color:#fff; font-size:2rem;">
@@ -641,92 +463,118 @@
                         </button>
                         </li>
                     `;
-
-                    cartItemsList.innerHTML += cartItemHTML;
                 });
-
                 updateCartCounter();
             }
 
-            // Restaurar el carrito al cargar la página
             function restoreCart() {
-                const storedCartItems = localStorage.getItem('cartItems');
-                if (storedCartItems) {
-                    cartItems = JSON.parse(storedCartItems);
+                const stored = localStorage.getItem('cartItems');
+                if (stored) {
+                    cartItems = JSON.parse(stored);
                     cartItemCount = cartItems.length;
-                    cartItems.forEach(cartItem => {
-                        subtotal += cartItem.price;
-                    });
+                    cartItems.forEach(item => subtotal += item.price);
                     total = subtotal;
-
                     updateCartItems();
                     updatePrices();
                 }
             }
 
             function removeFromCart(item) {
-                const itemName = item.querySelector('.item_title').textContent;
-
-                // Encontrar el índice del elemento a eliminar en cartItems
-                const indexToRemove = cartItems.findIndex(cartItem => cartItem.name === itemName);
-
-                if (indexToRemove !== -1) { // Verificar si se encontró el elemento
-                    const price = cartItems[indexToRemove].price;
-
-                    // Actualizar subtotal y total
-                    subtotal -= price;
+                const name = item.querySelector('.item_title').textContent;
+                const idx = cartItems.findIndex(c => c.name === name);
+                if (idx !== -1) {
+                    subtotal -= cartItems[idx].price;
                     total = subtotal;
-
-                    // Eliminar el elemento del carrito
-                    cartItems.splice(indexToRemove, 1);
-
-                    // Actualizar el almacenamiento local
-                    localStorage.setItem('cartItems', JSON.stringify(cartItems));
-
-                    // Actualizar el contador del carrito
+                    cartItems.splice(idx, 1);
                     cartItemCount--;
-
-                    // Actualizar la visualización del carrito
+                    localStorage.setItem('cartItems', JSON.stringify(cartItems));
                     updateCartItems();
                     updatePrices();
-                    updateCartCounter(); // Actualizar el contador del carrito
+                    updateCartCounter();
                 }
             }
 
-
-            // Llamar a la función para restaurar el carrito al cargar la página
             restoreCart();
 
+            // --- Abrir modal con talles según price_id ---
             document.querySelectorAll('.alCarrito').forEach(btn => {
                 btn.addEventListener('click', function(event) {
                     event.preventDefault();
-                    const productItem = this.closest('.motorcycle_product_grid');
-                    addToCart(productItem);
+
+                    pendingPriceId = this.dataset.priceId;
+                    pendingNombre = this.dataset.nombre + ' - ' + this.dataset.modelo;
+                    pendingImagen = this.dataset.imagen;
+                    pendingModelo = this.dataset.modelo;
+                    pendingTipo = this.dataset.tipo;
+
+                    // Obtener precio del elemento más cercano
+                    const priceEl = this.closest('.motorcycle_product_grid').querySelector(
+                        '.item_price');
+                    pendingPrecio = priceEl ? parseFloat(priceEl.textContent.replace(/[^0-9,]/g, '')
+                        .replace(',', '.')) : 0;
+
+                    // Llenar dropdown de talles
+                    const select = document.getElementById('talleDropdown');
+                    select.innerHTML = '<option value="">Seleccione un Talle</option>';
+
+                    const talles = tallesPorProducto[pendingPriceId] || [];
+                    talles.forEach(talle => {
+                        const opt = document.createElement('option');
+                        opt.value = talle.nombre || talle.talle || talle.name;
+                        opt.textContent = talle.nombre || talle.talle || talle.name;
+                        select.appendChild(opt);
+                    });
+
+                    // Deshabilitar botón hasta que elijan talle
+                    document.getElementById('addToCartModalRemerasOkButton').disabled = true;
+
+                    $('#addToCartModalRemeras').modal('show');
                 });
             });
 
+            // Habilitar botón OK cuando se seleccione un talle
+            document.getElementById('talleDropdown').addEventListener('change', function() {
+                document.getElementById('addToCartModalRemerasOkButton').disabled = !this.value;
+            });
 
+            // Confirmar y agregar al carrito
+            document.getElementById('addToCartModalRemerasOkButton').addEventListener('click', function() {
+                const talleSeleccionado = document.getElementById('talleDropdown').value;
+                if (!talleSeleccionado) {
+                    alert('Por favor, seleccione un talle');
+                    return;
+                }
+
+                const cartItem = {
+                    name: pendingNombre,
+                    price: pendingPrecio,
+                    image: pendingImagen,
+                    talle: talleSeleccionado,
+                    tipo: pendingTipo,
+                    marca: talleSeleccionado,
+                    modelo: pendingModelo
+                };
+
+                cartItemCount++;
+                subtotal += cartItem.price;
+                total = subtotal;
+                cartItems.push(cartItem);
+                localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                updateCartItems();
+                updatePrices();
+                productoAgregadoAlCarrito();
+
+                $('#addToCartModalRemeras').modal('hide');
+            });
+
+            // Eliminar del carrito
             document.querySelector('.cart_items_list').addEventListener('click', function(event) {
-                if (
-                    event.target.classList.contains('remove_btn') ||
-                    (event.target.closest('.remove_btn'))
-                ) {
-                    const item = event.target.closest('li');
-                    removeFromCart(item);
-                }
-            });
-            document.addEventListener('mousedown', function(event) {
-                const sidebar = document.querySelector('.cart_sidebar');
-                if (
-                    sidebar.style.display === 'block' &&
-                    !sidebar.contains(event.target) &&
-                    !event.target.classList.contains('open-cart-sidebar')
-                ) {
-                    closeCartSidebar();
+                if (event.target.classList.contains('remove_btn') || event.target.closest('.remove_btn')) {
+                    removeFromCart(event.target.closest('li'));
                 }
             });
 
-            // Mostrar/ocultar sidebar del carrito
+            // Sidebar del carrito
             function openCartSidebar() {
                 document.querySelector('.cart_sidebar').style.display = 'block';
                 document.body.style.overflow = 'hidden';
@@ -736,12 +584,20 @@
                 document.querySelector('.cart_sidebar').style.display = 'none';
                 document.body.style.overflow = '';
             }
-            document.querySelectorAll('.open-cart-sidebar').forEach(btn => {
-                btn.addEventListener('click', openCartSidebar);
+
+            document.addEventListener('mousedown', function(event) {
+                const sidebar = document.querySelector('.cart_sidebar');
+                if (sidebar.style.display === 'block' && !sidebar.contains(event.target) && !event.target
+                    .classList.contains('open-cart-sidebar')) {
+                    closeCartSidebar();
+                }
             });
+            document.querySelectorAll('.open-cart-sidebar').forEach(btn => btn.addEventListener('click',
+                openCartSidebar));
             document.querySelector('.cart_sidebar .close_btn').addEventListener('click', closeCartSidebar);
         });
     </script>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const parents = document.querySelectorAll('.categorias-menu li.parent');
@@ -776,40 +632,20 @@
     <script>
         $(document).ready(function() {
             // Cargar marcas al cargar la página
-            $.get('/obtener-marcas', function(data) {
-                console.log(data);
 
-                data.forEach(function(marca) {
-                    $('#marcasDropdown').append('<option value="' + marca + '">' + marca +
-                        '</option>');
-                    $('#marcasDropdown').niceSelect('update');
-                });
-            });
-
-            // Manejar cambio en el dropdown de marcas
-            $('#marcasDropdown').change(function() {
-                var marcaSeleccionada = $(this).val();
-
-                // Hacer una solicitud AJAX para obtener modelos según la marca seleccionada
-                $.get('/obtener-modelos/' + marcaSeleccionada, function(data) {
-                    // Limpiar modelos existentes
-                    $('#modelosDropdown').empty();
-                    $('#modelosDropdown').append($('<option>', {
-                        value: '',
-                        text: 'Seleccione'
-                    }));
-
-                    // Llenar modelos
-                    data.forEach(function(modelo) {
-                        $('#modelosDropdown').append('<option value="' + modelo + '">' +
-                            modelo + '</option>');
-                        $('#modelosDropdown').niceSelect('update');
-                    });
-                });
-            });
-            $('#modelosDropdown').change(function() {
+            $('#tamanoDropdown').change(function() {
                 // Verificar si se ha seleccionado un modelo
-                if ($(this).val() !== '') {
+                if ($(this).val() !== '' && $('#colganteDropdown').val() !== '') {
+                    // Si se seleccionó un modelo, habilitar el botón "OK"
+                    $('#addToCartModalOkButton').prop('disabled', false);
+                } else {
+                    // Si no se seleccionó un modelo, deshabilitar el botón "OK"
+                    $('#addToCartModalOkButton').prop('disabled', true);
+                }
+            });
+            $('#colganteDropdown').change(function() {
+                // Verificar si se ha seleccionado un modelo
+                if ($(this).val() !== '' && $('#tamanoDropdown').val() !== '') {
                     // Si se seleccionó un modelo, habilitar el botón "OK"
                     $('#addToCartModalOkButton').prop('disabled', false);
                 } else {

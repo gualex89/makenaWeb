@@ -1,29 +1,29 @@
 @extends('layouts.newmakena.app2')
 
-@section('title', 'Cuadro de ' . $item->diseno . ' | ' . $item->categoria . ' - Makena')
+@section('title', 'Remera de ' . $item->diseno . ' | ' . $item->categoria . ' - Makena')
 
 @section('meta_description',
-    $item->nombreCuadros .
+    $item->nombreRemeras .
     '. Categoría: ' .
     $item->categoria .
     '. Alta calidad y diseño
     exclusivo.')
-@section('meta_keywords', 'Cuadros ' . $item->categoria . ', Cuadro personalizado, Cuadro de ' . $item->diseno . ', ' .
+@section('meta_keywords', 'Remeras ' . $item->categoria . ', Remera personalizada, Remera de ' . $item->diseno . ', ' .
     strtolower($item->categoria))
 
 
-@section('og_title', 'Cuadro de ' . $item->diseno . ' | ' . $item->categoria . ' - Makena')
+@section('og_title', 'Remera de ' . $item->diseno . ' | ' . $item->categoria . ' - Makena')
 @section('og_description',
-    'Conseguí tu cuadro de ' .
+    'Conseguí tu remera de ' .
     $item->diseno .
     ' de la categoría ' .
     $item->categoria .
     ' con
-    imagen ultra HD y Colgantes incluidos.')
+    diseño premium.')
 @section('og_image', Voyager::image($item->image))
 
-@section('twitter_title', 'Funda ' . $item->diseno . ' para ' . $item->modeloCEO . ' | ' . $item->categoria)
-@section('twitter_description', 'Cuadros con diseño perosonalizados de ' . $item->diseno . '. Categoría: ' .
+@section('twitter_title', 'Remera ' . $item->diseno . ' | ' . $item->categoria)
+@section('twitter_description', 'Remeras con diseño personalizados de ' . $item->diseno . '. Categoría: ' .
     $item->categoria . '. ¡Ideal para fans de anime y manga!')
 @section('twitter_image', Voyager::image($item->image))
 
@@ -39,12 +39,12 @@
                         <div class="card-media card-media-cuadros  image-hover-container">
                             <a href="#">
                                 <img id="imagenPrincipal" src="{{ Voyager::image($item->image) }}"
-                                    alt="Cuadro de {{ $item->diseno }} modelo {{ $item->modeloCEO }}"
+                                    alt="Remera de {{ $item->diseno }}"
                                     class="main-img img-fluid " width="280" height="auto" />
 
                                 <img id="imagenDinamico-cuadros" src="{{ Voyager::image($item->image2) }}"
                                     data-hover="{{ Voyager::image($item->image2) }}"
-                                    alt="Cuadro de {{ $item->diseno }} - vista alterna" class="hover-img img-fluid "
+                                    alt="Remera de {{ $item->diseno }} - vista alterna" class="hover-img img-fluid "
                                     width="280" height="auto" />
                             </a>
                         </div>
@@ -54,18 +54,23 @@
                     <div data-wow-delay="0s" class="wow fadeInRight infor-product">
 
 
-                        <h2 class="item_title">Cuadro de {{ $item->diseno }} {{ $item->file_name }}</h2>
+                        <h2 class="item_title">{{ $item->nombreRemeras }} {{ $item->file_name }}</h2>
                         <h3><span style="color: #b321a6">{{ $item->categoria }}</span></h3>
 
                         <div data-wow-delay="0s" class="wow fadeInRight product-item time-sales mt-20">
 
                             <div class="content">
-                                <div class="text">Precios desde </div>
+                                <div class="text">Precio </div>
                                 <div class="flex justify-between">
-                                    <p>{{ $precioCuadroBasic }} </p>
-                                    <a id="btnAgregarCarrito" href="#" data-bs-toggle="modal"
-                                        data-bs-target="#addToCartModalCuadros" class="tf-button style-1 h50"><i
-                                            class="fas fa-shopping-cart"></i>Seleccionar tamaño</i></a>
+                                    <p class="item_price">${{ number_format((float) preg_replace('/[^0-9.]/', '', $item->precio), 0, ',', '.') }} </p>
+                                    <a id="btnAgregarCarrito" href="#" 
+                                        data-price-id="{{ $item->price_id }}"
+                                        data-nombre="{{ $item->nombreRemeras }}"
+                                        data-modelo="{{ $item->file_name }}"
+                                        data-imagen="{{ Voyager::image($item->image) }}"
+                                        data-tipo="Remera"
+                                        class="tf-button style-1 h50 alCarrito"><i
+                                            class="fas fa-shopping-cart"></i>Seleccionar talle</a>
                                 </div>
                             </div>
                         </div>
@@ -77,11 +82,7 @@
 
                         <div class="meta mb-20 mt-5">
                             <div class="meta-item view">
-                                Impresión Ultra HD &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Aluminio Premium 1.15
-                                mm&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Acabado Brillante
-                                Espejo&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Colgantes Incluidos a
-                                Elección&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Impresión de más de 1200 DPI
-
+                                Algodón Premium&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Estampado de Alta Durabilidad&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Corte Oversize&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Diseños Exclusivos
                             </div>
 
 
@@ -104,7 +105,7 @@
             </div>
         </div>
     </div>
-    @include('partials.addToCartModalCuadros')
+    @include('partials.addToCartModalRemeras')
 @endsection
 @push('scripts')
     <script></script>
@@ -174,57 +175,57 @@
                 totalElement.textContent = `$${total.toFixed(2)}`;
             }
 
-            let price, itemName, imageUrl;
+            // Variables temporales para el producto pendiente de agregar
+            let pendingPriceId = null;
+            let pendingNombre = null;
+            let pendingImagen = null;
+            let pendingPrecio = null;
+            let pendingModelo = null;
+            let pendingTipo = null;
 
-            /* function addToCart(productItem) {
-                const price = parseFloat(productItem.querySelector('.item_price').textContent.replace('$', ''));
-                const itemName = productItem.querySelector('.item_title').textContent;
-                const imageUrl = productItem.querySelector('img').getAttribute(
-                    'src'); // Obtener la URL de la imagen completa
+            const tallesPorProducto = @json($tallesPorProducto);
 
-                cartItemCount++;
-                subtotal += price;
-                total = subtotal;
+            function addToCart(btn) {
+                pendingPriceId = btn.dataset.priceId;
+                pendingNombre = btn.dataset.nombre + ' - ' + btn.dataset.modelo;
+                pendingImagen = btn.dataset.imagen;
+                pendingModelo = btn.dataset.modelo;
+                pendingTipo = btn.dataset.tipo;
 
-                const cartItem = {
-                    name: itemName,
-                    price: price,
-                    image: imageUrl // Guardar la URL completa de la imagen en el objeto del carrito
-                };
+                // Obtener precio del elemento
+                const priceEl = document.querySelector('.item_price');
+                pendingPrecio = priceEl ? parseFloat(priceEl.textContent.replace(/[^0-9,]/g, '').replace(',', '.')) : 0;
 
-                cartItems.push(cartItem);
+                // Llenar dropdown de talles
+                const select = document.getElementById('talleDropdown');
+                if (select) {
+                    select.innerHTML = '<option value="">Seleccione un Talle</option>';
 
-                // Guardar el carrito en el almacenamiento local
-                localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                    const talles = tallesPorProducto[pendingPriceId] || [];
+                    talles.forEach(talle => {
+                        const opt = document.createElement('option');
+                        opt.value = talle.nombre || talle.talle || talle.name;
+                        opt.textContent = talle.nombre || talle.talle || talle.name;
+                        select.appendChild(opt);
+                    });
 
-                // Llamar a la función para mostrar los elementos del carrito
-                updateCartItems();
-                updatePrices();
-            } */
-            function addToCart(productItem) {
-                price = parseFloat(productItem.querySelector('.item_price').textContent.replace('$', ''));
-                itemName = productItem.querySelector('.item_title').textContent;
-                imageUrl = productItem.querySelector('img').getAttribute('src');
+                    // Deshabilitar botón hasta que elijan talle
+                    document.getElementById('addToCartModalRemerasOkButton').disabled = true;
+                }
 
-                // Mostrar la imagen en la modal
-                const productImageElement = document.getElementById('productImageAlcarrito');
-                if (productImageElement) productImageElement.src = imageUrl;
-
-                // Mostrar modal moderna Bootstrap 5
-                $('#addToCartModal').modal('show');
+                $('#addToCartModalRemeras').modal('show');
             }
-            document.getElementById('addToCartModalOkButton').addEventListener('click', async () => {
-                const fileInput = document.getElementById('fileInput');
-                const tamaño = document.getElementById('tamanoDropdown').value;
-                const colgante = document.getElementById('colganteDropdown').value;
-                console.log(tamaño, colgante);
 
-
+            document.getElementById('addToCartModalRemerasOkButton').addEventListener('click', async () => {
+                const talleSeleccionado = document.getElementById('talleDropdown').value;
+                if (!talleSeleccionado) {
+                    alert('Por favor, seleccione un talle');
+                    return;
+                }
 
                 try {
-
                     Swal.fire({
-                        title: 'Subiendo tu imagen...',
+                        title: 'Agregando al carrito...',
                         text: 'Por favor, espera un momento ⏳',
                         allowOutsideClick: false,
                         didOpen: () => {
@@ -232,30 +233,14 @@
                         }
                     });
 
-                    imageUrl = document.getElementById('imagenPrincipal').src;
-                    itemName = document.querySelector('.item_title').textContent;
-
-                    console.log(imageUrl);
-
-
-
-                    if (tamaño === 'Basic') priceText = "{{ $precioCuadroBasic }}";
-                    else if (tamaño === 'Standard') priceText = "{{ $precioCuadroStandard }}";
-                    else if (tamaño === 'Epic') priceText = "{{ $precioCuadroEpic }}";
-
-                    // Elimina símbolos de $, espacios y puntos de miles
-                    const price = parseFloat(
-                        priceText.toString().replace(/[^0-9.,]/g, '').replace('.', '').replace(',',
-                            '.')
-                    );
-
                     const pendingCartItem = {
-                        name: itemName,
-                        price: price,
-                        image: imageUrl,
-                        tamaño: tamaño,
-                        colgante: colgante,
-                        tipo: 'Cuadro'
+                        name: pendingNombre,
+                        price: pendingPrecio,
+                        image: pendingImagen,
+                        talle: talleSeleccionado,
+                        tipo: 'Remera',
+                        marca: talleSeleccionado,
+                        modelo: pendingModelo
                     };
 
                     // Recuperar y actualizar carrito existente
@@ -273,13 +258,20 @@
                     updateCartCounter();
                     Swal.close();
                     productoAgregadoAlCarrito();
-                    $('#addToCartModalCuadros').modal('hide');
-
+                    $('#addToCartModalRemeras').modal('hide');
 
                 } catch (error) {
-                    console.error('Error al subir la imagen:', error);
+                    console.error('Error al agregar al carrito:', error);
                 }
             });
+
+            // Habilitar botón OK cuando se seleccione un talle
+            const talleDropdown = document.getElementById('talleDropdown');
+            if (talleDropdown) {
+                talleDropdown.addEventListener('change', function() {
+                    document.getElementById('addToCartModalRemerasOkButton').disabled = !this.value;
+                });
+            }
 
             function updateCartItems() {
                 const cartItemsList = document.querySelector('.cart_items_list');
@@ -387,8 +379,7 @@
             document.querySelectorAll('.alCarrito').forEach(btn => {
                 btn.addEventListener('click', function(event) {
                     event.preventDefault();
-                    const productItem = this.closest('.motorcycle_product_grid');
-                    addToCart(productItem);
+                    addToCart(this);
                 });
             });
 
@@ -509,7 +500,7 @@
         });
         //Hover imagen dinámico
         document.addEventListener('DOMContentLoaded', function() {
-            const img = document.getElementById('imagenDinamico');
+            const img = document.getElementById('imagenDinamico-cuadros');
             if (!img) return;
 
             const original = img.src;
@@ -525,30 +516,7 @@
     </script>
     <script>
         $(document).ready(function() {
-            // Cargar marcas al cargar la página
-
-
-            $('#tamanoDropdown').change(function() {
-                console.log('Hola');
-                // Verificar si se ha seleccionado un modelo
-                if ($(this).val() !== '' && $('#colganteDropdown').val() !== '') {
-                    // Si se seleccionó un modelo, habilitar el botón "OK"
-                    $('#addToCartModalOkButton').prop('disabled', false);
-                } else {
-                    // Si no se seleccionó un modelo, deshabilitar el botón "OK"
-                    $('#addToCartModalOkButton').prop('disabled', true);
-                }
-            });
-            $('#colganteDropdown').change(function() {
-                // Verificar si se ha seleccionado un modelo
-                if ($(this).val() !== '' && $('#tamanoDropdown').val() !== '') {
-                    // Si se seleccionó un modelo, habilitar el botón "OK"
-                    $('#addToCartModalOkButton').prop('disabled', false);
-                } else {
-                    // Si no se seleccionó un modelo, deshabilitar el botón "OK"
-                    $('#addToCartModalOkButton').prop('disabled', true);
-                }
-            });
+            // Lógica específica para dropdowns si fuera necesaria
         });
     </script>
 @endpush

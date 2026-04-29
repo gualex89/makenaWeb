@@ -45,6 +45,12 @@
                                         <li class="menu-item"><a href="/tucuadro">Crea tu Cuadro</a></li>
                                     </ul>
                                 </li>
+                                {{-- <li class="menu-item menu-item-has-children">
+                                    <a>Remeras y Buzos</a>
+                                    <ul class="sub-menu">
+                                        <li class="menu-item"><a href="/catalogoremeras">Catálogo</a></li>
+                                    </ul>
+                                </li> --}}
                                 <li class="menu-item">
                                     <a href="/frecuentes">Preguntas Frecuentes</a>
                                     
@@ -99,6 +105,12 @@
                             <li class="menu-item"><a href="/tucuadro">Crea tu Cuadro</a></li>
                         </ul>
                     </li>
+                    {{-- <li class="menu-item menu-item-has-children-mobile" style="display: none;">
+                        <a class="item-menu-mobile">Remeras y Buzos</a>
+                        <ul class="sub-menu-mobile">
+                            <li class="menu-item"><a href="/catalogoremeras">Catálogo</a></li>
+                        </ul>
+                    </li> --}}
                     <li class="menu-item">
                         <a class="item-menu-mobile" href="frecuentes">Preguntas Frecuentes</a>
                     </li>

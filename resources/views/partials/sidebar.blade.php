@@ -66,14 +66,18 @@
 								<ul class="dropdown-menu">
 									<li class="dropdown">
 										<a href="/catalogocuadros" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Catálogo</a>
-										
 									</li>
-									
 									<li class="dropdown">
 										<a href="/tucuadro" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Crea tu Cuadro</a>
-										
 									</li>
-									
+								</ul>
+							</li>
+							<li class="dropdown">
+								<a href="#!" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Remeras<i class="fas fa-chevron-down ml-3"></i></a>
+								<ul class="dropdown-menu">
+									<li class="dropdown">
+										<a href="/catalogoremeras" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Catálogo</a>
+									</li>
 								</ul>
 							</li>
 							<li><a href="/frecuentes">Preguntas Frecuentes</a></li>    

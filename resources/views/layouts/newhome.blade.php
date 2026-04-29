@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-    
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -47,10 +47,10 @@
 
 <body class="body">
     <div class="backtotop bg_wts">
-            <a href="http://wa.me/541122444188" class="go_to_wts">
-                <i class="fab fa-whatsapp" style="font-size: 40px;"></i>
-            </a>
-        </div>
+        <a href="http://wa.me/541122444188" class="go_to_wts">
+            <i class="fab fa-whatsapp" style="font-size: 40px;"></i>
+        </a>
+    </div>
 
     <div id="wrapper">
         <div id="page" class="pt-40 home-1">
@@ -60,28 +60,31 @@
             @include('partials.headernew')
             <!-- header_section - end
             ================================================== -->
-            
+
             <!-- Banner_section - start
             ================================================== -->
 
-            <div class="swiper swiper-motorcycle-banner" style="width:100vw; max-width:1920px; height:42.25vw; max-height:1080px; margin:auto; position:relative;">
+            <div class="swiper swiper-motorcycle-banner"
+                style="width:100vw; max-width:1920px; height:42.25vw; max-height:1080px; margin:auto; position:relative;">
                 <div class="swiper-wrapper">
                     @foreach ($banners as $banner)
-                        
                         <div class="swiper-slide" style="position:relative;">
-                            <img src="{{ Voyager::image($banner->image) }}" alt="{{ $banner->name }}" style="width:100%; object-fit:cover;" class="desktop-image">
-                            <img src="{{ Voyager::image($banner->image_mobile) }}" alt="{{ $banner->name }}" style="width:100%; object-fit:cover; display:none;" class="mobile-image">
+                            <img src="{{ Voyager::image($banner->image) }}" alt="{{ $banner->name }}"
+                                style="width:100%; object-fit:cover;" class="desktop-image">
+                            <img src="{{ Voyager::image($banner->image_mobile) }}" alt="{{ $banner->name }}"
+                                style="width:100%; object-fit:cover; display:none;" class="mobile-image">
 
                             <div class="slide-btn-wrapper">
                                 <div class="button-banner">
-                                    <a href="{{ $banner->href }}" class="tf-button style-1" style="width:195px !important; height:60px;  align-items:center; justify-content:center;">
-                                        {{ $banner->name_button }}<i class="icon-arrow-up-right2" style="margin-left:8px;"></i>
+                                    <a href="{{ $banner->href }}" class="tf-button style-1"
+                                        style="width:195px !important; height:60px;  align-items:center; justify-content:center;">
+                                        {{ $banner->name_button }}<i class="icon-arrow-up-right2"
+                                            style="margin-left:8px;"></i>
                                     </a>
                                 </div>
                             </div>
-                            
+
                         </div>
-                        
                     @endforeach
                 </div>
                 <!-- Botones dentro del swiper -->
@@ -91,23 +94,24 @@
 
             <!-- Banner_section - end
             ================================================== -->
-            
-            
+
+
             <div class="tf-card-box style-1 mt-5 p-5" style="width: 80%; margin:auto;">
                 <div class="row">
                     <div class="col-md-6 col-sm-12">
                         <div class="video">
-                            <iframe width="100%" height="315" class="yt-video" src="https://www.youtube.com/embed/nZBAXstf5Zs"
-                                frameborder="0" allowfullscreen></iframe>
+                            <iframe width="100%" height="315" class="yt-video"
+                                src="https://www.youtube.com/embed/nZBAXstf5Zs" frameborder="0"
+                                allowfullscreen></iframe>
 
                         </div>
                     </div>
                     <div class="col-md-6 col-sm-12">
-                        <div class="descripcion p-4" style="display: flex; flex-direction: column; justify-content: center; height: 100%;">
-                            <p class="tiulo-resaltado"><span
-                                    style="color: #b321a6">Todo</span> lo que buscabas</p>
+                        <div class="descripcion p-4"
+                            style="display: flex; flex-direction: column; justify-content: center; height: 100%;">
+                            <p class="tiulo-resaltado"><span style="color: #b321a6">Todo</span> lo que buscabas</p>
 
-                            <p class="parrafo-resaltado" >Acabado brillante,
+                            <p class="parrafo-resaltado">Acabado brillante,
                                 impresión <strong>Ultra HD 1200 DPI</strong> altura borde de cámara 1.5mm para
                                 <strong>protegerla</strong> y agarres laterales <strong>anti-slip</strong>.
                             </p>
@@ -117,7 +121,7 @@
                 </div>
             </div>
 
-            
+
 
             <div class="flat-pages-title">
                 <div class="widget-bg-line">
@@ -130,39 +134,48 @@
                 <div class="themesflat-container w1490">
                     <div class="row">
                         <div class="col-12 pages-title">
-                            
+
                             <div class="icon-background">
-                                <img class="absolute item1" src="{{ asset('assets_new/images/item-background/item1.png') }} " alt="">
-                                <img class="absolute item2" src="{{ asset('assets_new/images/item-background/item2.png') }} " alt="">
-                                
-                                <img class="absolute item4" src="{{ asset('assets_new/images/item-background/item1.png') }} " alt="">
-                                <img class="absolute item5" src="{{ asset('assets_new/images/item-background/item1.png') }}" alt="">
-                                
-                                <img class="absolute item7" src="{{ asset('assets_new/images/item-background/item5.png' ) }}" alt="">
-                                <img class="absolute item8" src="{{ asset('assets_new/images/item-background/item5.png' ) }}" alt="">
+                                <img class="absolute item1"
+                                    src="{{ asset('assets_new/images/item-background/item1.png') }} " alt="">
+                                <img class="absolute item2"
+                                    src="{{ asset('assets_new/images/item-background/item2.png') }} " alt="">
+
+                                <img class="absolute item4"
+                                    src="{{ asset('assets_new/images/item-background/item1.png') }} " alt="">
+                                <img class="absolute item5"
+                                    src="{{ asset('assets_new/images/item-background/item1.png') }}" alt="">
+
+                                <img class="absolute item7"
+                                    src="{{ asset('assets_new/images/item-background/item5.png') }}" alt="">
+                                <img class="absolute item8"
+                                    src="{{ asset('assets_new/images/item-background/item5.png') }}" alt="">
                             </div>
                             <div class="relative">
                                 <h2 class="tf-title pb-30 text-center">Top Cuadros mas vendidos</h2>
-                                <div class="swiper swiper-3d-7" >
+                                <div class="swiper swiper-3d-7">
                                     <div class="swiper-wrapper">
                                         @foreach ($carrusel_cuadros as $carrusel_cuadro)
-                                        <div class="swiper-slide">
+                                            <div class="swiper-slide">
                                                 <div class="tf-card-box tf-card-box-cuadros">
                                                     <div class="card-media">
                                                         <a href="catalogocuadros">
-                                                            <img src="{{ Voyager::image($carrusel_cuadro->image) }}" alt="Cuadro personalizado de {{ $carrusel_cuadro->name }}">
+                                                            <img src="{{ Voyager::image($carrusel_cuadro->image) }}"
+                                                                alt="Cuadro personalizado de {{ $carrusel_cuadro->name }}">
                                                         </a>
-                                                        
+
                                                     </div>
                                                     <div class="meta-info text-center">
-                                                        <h5 class="name"><a href="nft-detail-2.html">{{ $carrusel_cuadro->name }}</a></h5>
+                                                        <h5 class="name"><a
+                                                                href="nft-detail-2.html">{{ $carrusel_cuadro->name }}</a>
+                                                        </h5>
                                                         <h6 class="price gem">{{ $carrusel_cuadro->text1 }}</h6>
                                                     </div>
                                                 </div>
                                             </div>
-                                            @endforeach
-                                        </div>
-                                        <div class="swiper-pagination pagination-number"></div>
+                                        @endforeach
+                                    </div>
+                                    <div class="swiper-pagination pagination-number"></div>
                                 </div>
                                 <div class="swiper-button-next next-3d over"></div>
                                 <div class="swiper-button-prev prev-3d over"></div>
@@ -171,36 +184,39 @@
                     </div>
                 </div>
             </div>
-            
-            
-            
-            
-            
+
+
+
+
+
             <div class="tf-section-3 discover-item ">
                 <h2 class="tf-title pb-30 text-center">Categorías de Fundas destacadas</h2>
                 <div class="themesflat-container">
                     <div class="row">
-                        
+
                         @foreach ($home_categories_fundas as $home_categories_funda)
-                        <div data-wow-delay="0s" class="wow fadeInUp col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                            <div class="tf-card-box style-1">
-                                <div class="card-media">
-                                    <a href="{{ $home_categories_funda->href }}">
-                                        <img src="{{ Voyager::image($home_categories_funda->image) }}" alt="{{ $home_categories_funda->name }}">
-                                    </a>
-                                    <div class="button-place-bid">
-                                        <a href="{{ $home_categories_funda->href }}"  class="tf-button"><span>Ir a {{$home_categories_funda->name}}</span></a>
+                            <div data-wow-delay="0s" class="wow fadeInUp col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                                <div class="tf-card-box style-1">
+                                    <div class="card-media">
+                                        <a href="{{ $home_categories_funda->href }}">
+                                            <img src="{{ Voyager::image($home_categories_funda->image) }}"
+                                                alt="{{ $home_categories_funda->name }}">
+                                        </a>
+                                        <div class="button-place-bid">
+                                            <a href="{{ $home_categories_funda->href }}" class="tf-button"><span>Ir a
+                                                    {{ $home_categories_funda->name }}</span></a>
+                                        </div>
+                                    </div>
+                                    <h5 class="name"><a
+                                            href="nft-detail-2.html">{{ $home_categories_funda->name }}</a></h5>
+
+                                    <div class="divider"></div>
+                                    <div class="meta-info flex items-center justify-between">
+
+                                        <h6 class="price gem"><i class="icon-dollar"></i>{{ $precioFunda }}</h6>
                                     </div>
                                 </div>
-                                <h5 class="name"><a href="nft-detail-2.html">{{ $home_categories_funda->name }}</a></h5>
-                                
-                                <div class="divider"></div>
-                                <div class="meta-info flex items-center justify-between">
-
-                                    <h6 class="price gem"><i class="icon-dollar"></i>{{ $precioFunda }}</h6>
-                                </div>
                             </div>
-                        </div>
                         @endforeach
                     </div>
                 </div>
@@ -217,37 +233,40 @@
                         <div class="col-lg-4 col-md-6">
                             <div class="tf-box-icon relative text-center">
                                 <div class="image">
-                                    <img src="{{ asset('assets_new/icon/envios.png') }}" alt=""> 
-                                                                                                              
+                                    <img src="{{ asset('assets_new/icon/envios.png') }}" alt="">
+
                                 </div>
                                 <h5 class="heading"><a href="contact-us.html">Envíos a todo el país</a></h5>
-                                <p class="content">Recibí tu pedido donde estés. Trabajamos con envíos rápidos y seguros a todas las provincias.</p>
-                                
+                                <p class="content">Recibí tu pedido donde estés. Trabajamos con envíos rápidos y
+                                    seguros a todas las provincias.</p>
+
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6">
                             <div class="tf-box-icon relative text-center type-1">
                                 <div class="image">
-                                    <img src="{{ asset('assets_new/icon/medios_pagos.png') }}" alt=""> 
-                                                                                                            
+                                    <img src="{{ asset('assets_new/icon/medios_pagos.png') }}" alt="">
+
                                 </div>
-                                <h5 class="heading"><a href="contact-us.html">Aceptamos todos los medios de pago</a></h5>
-                                <p class="content">Elegí la forma de pago que más te convenga, con un proceso simple y completamente seguro.</p>
-                                
+                                <h5 class="heading"><a href="contact-us.html">Aceptamos todos los medios de pago</a>
+                                </h5>
+                                <p class="content">Elegí la forma de pago que más te convenga, con un proceso simple y
+                                    completamente seguro.</p>
+
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6">
                             <div class="tf-box-icon relative text-center">
                                 <div class="image">
-                                    <img src="{{ asset('assets_new/icon/compra_segura.png') }}" alt=""> 
-                                                                                                             
+                                    <img src="{{ asset('assets_new/icon/compra_segura.png') }}" alt="">
+
                                 </div>
                                 <h5 class="heading"><a href="contact-us.html">Tu compra es segura</a></h5>
                                 <p class="content">Protegemos tus datos y tu información en cada transacción.</p>
-                                
+
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
@@ -262,11 +281,14 @@
                                 </div>
                                 <h3>Dale tu toque o encontrá el match ideal</h3>
                                 <div class="flat-button flex">
-                                    <a href="/tufunda" class="tf-button style-2 h50 w190 mr-10">Crea tu Funda<i class="icon-arrow-up-right2"></i></a>
-                                    <a href="/catalogo" class="tf-button style-2 h50 w230">Ir al Catálogo<i class="icon-arrow-up-right2"></i></a>
+                                    <a href="/tufunda" class="tf-button style-2 h50 w190 mr-10">Crea tu Funda<i
+                                            class="icon-arrow-up-right2"></i></a>
+                                    <a href="/catalogo" class="tf-button style-2 h50 w230">Ir al Catálogo<i
+                                            class="icon-arrow-up-right2"></i></a>
                                 </div>
                                 <div class="bg-home7">
-                                    <div class="swiper-container autoslider3reverse" data-swiper='{
+                                    <div class="swiper-container autoslider3reverse"
+                                        data-swiper='{
                                         "loop":true,
                                         "slidesPerView": "auto",
                                         "spaceBetween": 14,
@@ -281,14 +303,17 @@
                                     }'>
                                         <div class="swiper-wrapper">
                                             <div class="swiper-slide">
-                                                <img src="{{ asset('assets_new/images/item-background/bg-action-1.png') }}" alt="">
+                                                <img src="{{ asset('assets_new/images/item-background/bg-action-1.png') }}"
+                                                    alt="">
                                             </div>
                                             <div class="swiper-slide">
-                                                <img src="{{ asset('assets_new/images/item-background/bg-action-2.png') }}" alt="">
+                                                <img src="{{ asset('assets_new/images/item-background/bg-action-2.png') }}"
+                                                    alt="">
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="swiper-container autoslider4reverse" data-swiper='{
+                                    <div class="swiper-container autoslider4reverse"
+                                        data-swiper='{
                                         "loop":true,
                                         "slidesPerView": "auto",
                                         "spaceBetween": 14,
@@ -304,14 +329,17 @@
                                     }'>
                                         <div class="swiper-wrapper">
                                             <div class="swiper-slide">
-                                                <img src="{{ asset('assets_new/images/item-background/bg-action-3.png') }}" alt="">
+                                                <img src="{{ asset('assets_new/images/item-background/bg-action-3.png') }}"
+                                                    alt="">
                                             </div>
                                             <div class="swiper-slide">
-                                                <img src="{{ asset('assets_new/images/item-background/bg-action-4.png') }}" alt="">
+                                                <img src="{{ asset('assets_new/images/item-background/bg-action-4.png') }}"
+                                                    alt="">
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="swiper-container autoslider3reverse" data-swiper='{
+                                    <div class="swiper-container autoslider3reverse"
+                                        data-swiper='{
                                         "loop":true,
                                         "slidesPerView": "auto",
                                         "spaceBetween": 14,
@@ -326,10 +354,12 @@
                                     }'>
                                         <div class="swiper-wrapper">
                                             <div class="swiper-slide">
-                                                <img src="{{ asset('assets_new/images/item-background/bg-action-6.png') }}" alt="">
+                                                <img src="{{ asset('assets_new/images/item-background/bg-action-6.png') }}"
+                                                    alt="">
                                             </div>
                                             <div class="swiper-slide">
-                                                <img src="{{ asset('assets_new/images/item-background/bg-action-6.png') }}" alt="">
+                                                <img src="{{ asset('assets_new/images/item-background/bg-action-6.png') }}"
+                                                    alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -339,19 +369,22 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- footer_section - start
             ================================================== -->
             @include('partials.footernew')
             <!-- footer_section - end
             ================================================== -->
-        
+
         </div>
         <!-- /#page -->
 
         <!-- Carrito Sidebar -->
-        <div class="cart_sidebar" style="display:none; position:fixed; top:0; right:0; width:370px; height:100vh; background:#181818; z-index:9999; box-shadow:-2px 0 10px rgba(0,0,0,0.2); overflow-y:auto;">
-            <button type="button" class="close_btn" style="background:none; border:none; color:#fff; font-size:2rem; position:absolute; top:15px; right:15px; z-index:10001;"><i class="fas fa-times"></i></button>
+        <div class="cart_sidebar"
+            style="display:none; position:fixed; top:0; right:0; width:370px; height:100vh; background:#181818; z-index:9999; box-shadow:-2px 0 10px rgba(0,0,0,0.2); overflow-y:auto;">
+            <button type="button" class="close_btn"
+                style="background:none; border:none; color:#fff; font-size:2rem; position:absolute; top:15px; right:15px; z-index:10001;"><i
+                    class="fas fa-times"></i></button>
             <div style="padding:40px 24px 24px 24px;">
                 <ul class="cart_items_list ul_li_block mb_30 clearfix" style="padding:0; margin:0 0 30px 0;">
                     <!-- Items del carrito se llenan por JS -->
@@ -372,16 +405,18 @@
             </div>
         </div>
 
-        
+
 
     </div>
     <!-- /#wrapper -->
 
-    
+
 
     <div class="progress-wrap active-progress">
         <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 286.138;"></path>
+            <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
+                style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 286.138;">
+            </path>
         </svg>
     </div>
 
@@ -438,7 +473,8 @@
                 const cartItem = {
                     name: itemName,
                     price: price,
-                    image: imageUrl // Guardar la URL completa de la imagen en el objeto del carrito
+                    image: imageUrl, // Guardar la URL completa de la imagen en el objeto del carrito
+                    tipo: 'Funda'
                 };
 
                 cartItems.push(cartItem);
@@ -452,19 +488,33 @@
             }
 
             function updateCartItems() {
-                    const cartItemsList = document.querySelector('.cart_items_list');
-                    if (!cartItemsList) return;
+                const cartItemsList = document.querySelector('.cart_items_list');
+                if (!cartItemsList) return;
 
-                    cartItemsList.innerHTML = '';
+                cartItemsList.innerHTML = '';
 
-                    cartItems.forEach(cartItem => {
-                    let tipoProducto = 'Funda';
-
-                    if (cartItem.marca2) {
-                    tipoProducto = 'Funda Doble';
-                    } else if (cartItem.name.toLowerCase().includes('cuadro')) {
-                    tipoProducto = 'Cuadro';
+                cartItems.forEach(cartItem => {
+                    let tipoProducto;
+                    if (cartItem.tipo) {
+                        tipoProducto = cartItem.tipo;
+                    } else if (cartItem.marca2) {
+                        tipoProducto = 'Funda Doble';
+                    } else if (cartItem.talle) {
+                        tipoProducto = 'Remera';
+                    } else if (cartItem.name && typeof cartItem.name === 'string' && cartItem.name
+                        .toLowerCase().includes('cuadro')) {
+                        tipoProducto = 'Cuadro';
+                    } else {
+                        tipoProducto = 'Funda';
                     }
+
+                    // Detalle adicional según tipo
+                    let detalle = '';
+                    if (cartItem.talle) detalle = `Talle: ${cartItem.talle}`;
+                    else if (cartItem.tamaño) detalle =
+                        `${cartItem.tamaño}${cartItem.colgante ? ' / ' + cartItem.colgante : ''}`;
+                    else if (cartItem.marca) detalle = `${cartItem.marca} ${cartItem.modelo || ''}`;
+                    if (cartItem.marca2) detalle += ` | ${cartItem.marca2} ${cartItem.modelo2 || ''}`;
 
                     const cartItemHTML = `
                         <li style="background:transparent; margin-bottom:32px; padding:0; display:flex; align-items:center;">
@@ -473,11 +523,10 @@
                         </div>
                         <div class="item_content" style="color:#fff; margin-left:18px; position:relative; flex:1;">
                             <div style="padding-right:32px;">
-                            <span class="item_type" style="font-size:13px;">${tipoProducto}</span>
+                             
                             <div style="font-weight:700; font-size:18px; margin:2px 0;"><span class="item_title">${cartItem.name}</span></div>
-                            <div style="font-size:15px; margin-bottom:2px;">${cartItem.marca || ''} ${cartItem.modelo || ''}</div>
-                            ${cartItem.marca2 ? `<div style="font-size:15px;">${cartItem.marca2} ${cartItem.modelo2}</div>` : ''}
-                            <div style="font-weight:700; font-size:17px; margin-top:6px;"><span class="item_price">$${cartItem.price.toLocaleString('es-CL')}</span></div>
+                            ${detalle ? `<div style="font-size:15px; margin-bottom:2px;">${detalle}</div>` : ''}
+                            <div style="font-weight:700; font-size:17px; margin-top:6px;"><span class="item_price">$${cartItem.price ? Number(cartItem.price).toLocaleString('es-CL') : '0'}</span></div>
                             </div>
                         </div>
                         <button type="button" class="remove_btn" style="background:none; border:none; color:#fff; font-size:2rem;">
@@ -487,10 +536,10 @@
                     `;
 
                     cartItemsList.innerHTML += cartItemHTML;
-                    });
+                });
 
-                    updateCartCounter();
-                }
+                updateCartCounter();
+            }
 
             // Restaurar el carrito al cargar la página
             function restoreCart() {
@@ -574,6 +623,7 @@
                 document.querySelector('.cart_sidebar').style.display = 'block';
                 document.body.style.overflow = 'hidden';
             }
+
             function closeCartSidebar() {
                 document.querySelector('.cart_sidebar').style.display = 'none';
                 document.body.style.overflow = '';
@@ -585,22 +635,23 @@
         });
     </script>
     <script>
-document.addEventListener("DOMContentLoaded", function() {
-    new Swiper('.swiper-motorcycle-banner', {
-        loop: true,
-        navigation: {
-            nextEl: '.swiper-motorcycle-banner .swiper-button-next',
-            prevEl: '.swiper-motorcycle-banner .swiper-button-prev',
-        },
-        autoplay: {
-            delay: 4000,
-            disableOnInteraction: false,
-        },
-        effect: 'slide'
-    });
-});
-</script>
+        document.addEventListener("DOMContentLoaded", function() {
+            new Swiper('.swiper-motorcycle-banner', {
+                loop: true,
+                navigation: {
+                    nextEl: '.swiper-motorcycle-banner .swiper-button-next',
+                    prevEl: '.swiper-motorcycle-banner .swiper-button-prev',
+                },
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                },
+                effect: 'slide'
+            });
+        });
+    </script>
 
 
 </body>
+
 </html>

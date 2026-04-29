@@ -1200,7 +1200,8 @@
                                 marca: selectedMarca,
                                 modelo: selectedModelo,
                                 uniqueName: uniqueName,
-                                uniqueNameComposicion: uniqueNameComposicion
+                                uniqueNameComposicion: uniqueNameComposicion,
+                                tipo: 'Funda'
                             };
 
                             cartItemCount++;
@@ -1276,21 +1277,47 @@
                 cartItemsList.innerHTML = ''; // Limpiar la lista de elementos del carrito
 
                 cartItems.forEach(cartItem => {
+                    let tipoProducto;
+                    if (cartItem.tipo) {
+                        tipoProducto = cartItem.tipo;
+                    } else if (cartItem.marca2) {
+                        tipoProducto = 'Funda Doble';
+                    } else if (cartItem.talle) {
+                        tipoProducto = 'Remera';
+                    } else if (cartItem.name && typeof cartItem.name === 'string' && cartItem.name
+                        .toLowerCase().includes('cuadro')) {
+                        tipoProducto = 'Cuadro';
+                    } else {
+                        tipoProducto = 'Funda';
+                    }
+
+                    // Detalle adicional según tipo
+                    let detalle = '';
+                    if (cartItem.talle) detalle = `Talle: ${cartItem.talle}`;
+                    else if (cartItem.tamaño) detalle =
+                        `${cartItem.tamaño}${cartItem.colgante ? ' / ' + cartItem.colgante : ''}`;
+                    else if (cartItem.marca) detalle = `${cartItem.marca} ${cartItem.modelo || ''}`;
+                    if (cartItem.marca2) detalle += ` | ${cartItem.marca2} ${cartItem.modelo2 || ''}`;
+
                     const cartItemHTML = `
-							<li>
-								<div class="item_image">
-									<img src="${cartItem.image}" alt="Funda en carrito ${cartItem.name}"> <!-- Usar la URL de la imagen -->
-								</div>
-								<div class="item_content"> 
-									<span class="item_type">${cartItem.marca2 ? `Funda Doble ` : `Funda ` }<h4 class="item_title">${cartItem.name}</h4>
-									${cartItem.marca} ${cartItem.modelo}
-									${cartItem.marca2 ? `<span class="item_type">${cartItem.marca2} ${cartItem.modelo2}</span>` : ``}
-									
-									<b> <span class="item_price">$${cartItem.price}</span> </b>
-								</div>
-								<button type="button" class="remove_btn"><i class="fal fa-trash-alt remove_btn"></i></button>
-							</li>
-						`;
+                        <li style="background:transparent; margin-bottom:32px; padding:0; display:flex; align-items:center;">
+                        <div style="background:#fff; border-radius:18px; padding:12px; display:flex; align-items:center; width:70px; min-width:30px; justify-content:center;">
+                            <img src="${cartItem.image}" alt="${tipoProducto} ${cartItem.name}" style="width:100%; border-radius:4px; display:block;"/>
+                        </div>
+                        <div class="item_content" style="color:#000; margin-left:18px; position:relative; flex:1;">
+                            <div style="padding-right:32px;">
+                             
+                            <div style="font-weight:700; font-size:18px; margin:2px 0;"><span class="item_title">${cartItem.name}</span></div>
+                            ${detalle ? `<div style="font-size:15px; margin-bottom:2px;">${detalle}</div>` : ''}
+                            <div style="font-weight:700; font-size:17px; margin-top:6px;"><span class="item_price">$${cartItem.price ? Number(cartItem.price).toLocaleString('es-CL') : '0'}</span></div>
+                            </div>
+                        </div>
+                        <button type="button" class="remove_btn" style="background:none; border:none; color:#fff; font-size:2rem;">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                        </li>
+                    `;
+
                     cartItemsList.innerHTML += cartItemHTML;
                 });
 
