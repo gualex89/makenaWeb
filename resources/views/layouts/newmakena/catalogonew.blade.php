@@ -297,6 +297,19 @@
                                                 <li><a href="/catalogo?categoria=OS">Más...</a></li>
                                             </ul>
                                         </li>
+                                        <li class="parent" style="padding: 0px 24px;">
+                                            <a style="width: 78px" href="#">K-Pop</a>
+                                            <ul>
+                                                <li><a href="/catalogo?categoria=KBTS">BTS</a></li>
+                                                <li><a href="/catalogo?categoria=KSKD">Stray Kids</a></li>
+                                                <li><a href="/catalogo?categoria=KBPK">Blackpink</a></li>
+                                                <li><a href="/catalogo?categoria=KSVT">Seventeen</a></li>
+                                                <li><a href="/catalogo?categoria=KNJS">NewJeans</a></li>
+                                                <li><a href="/catalogo?categoria=KTWC">Twice</a></li>
+                                                <li><a href="/catalogo?categoria=KOTS">Otros</a></li>
+                                            </ul>
+                                        </li>
+
                                     </ul>
                                 </div>
                             </div>
