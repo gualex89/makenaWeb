@@ -1350,7 +1350,7 @@
         const nombreImagen = document.querySelectorAll('.item_nombre_imagen');
         const marca = document.querySelectorAll('.item_marca');
         const modelo = document.querySelectorAll('.item_type');
-
+        const tipo_producto = "funda";
 
 
         const itemsCart = [];
@@ -1381,7 +1381,8 @@
             modelo: modeloFinal,
             diseno: titulo,
             marca: marcaFinal,
-            nombreImagen: nombreImagenPNG
+            nombreImagen: nombreImagenPNG,
+            tipo_producto: tipo_producto
           });
         });
 
